@@ -1,5 +1,14 @@
 # CHANGELOG
 
+## v1.9.0 - 2023-03-15
+
+<!-- Automatically generated in https://github.com/shishifubing/ci-actions-common/actions/runs/4431820642 -->
+### Features
+
+- **release**: do not create a release if there are no categorized PRs by @tiandaoburen in [#114](https://github.com/shishifubing/ci-actions-common/pull/114)
+
+**Full Changelog**: https://github.com/shishifubing/ci-actions-common/compare/v1.8.0...v1.9.0
+
 ## v1.8.0 - 2023-03-14
 
 <!-- Automatically generated in https://github.com/shishifubing/ci-actions-common/actions/runs/4421075249 -->
