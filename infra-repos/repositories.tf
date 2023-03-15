@@ -47,7 +47,7 @@ locals {
 
     "${local.owner}.github.io" = {
       description = join(" ", [
-        "Website"
+        "Website (WIP)"
       ])
       homepage_url = join("/", [
         "https://${local.owner_fqdn}"
@@ -193,7 +193,7 @@ locals {
     # app repositories
     "app-android-anki-chinese-flashcards-enricher" = {
       description = join(" ", [
-        "Android app to streamline my Chinese learning workflow"
+        "Android app I plan to make"
       ])
       homepage_url = join("/", [
         local.owner_url, "app-android-anki-chinese-flashcards-enricher"
