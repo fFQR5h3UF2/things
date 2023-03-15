@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.10.0 - 2023-03-15
+
+<!-- Automatically generated in https://github.com/shishifubing/infra-repos-shishifubing/actions/runs/4431739654 -->
+### Features
+
+- **repos**: update repository descriptions by @tiandaoburen in [#91](https://github.com/shishifubing/infra-repos-shishifubing/pull/91)
+
+**Full Changelog**: https://github.com/shishifubing/infra-repos-shishifubing/compare/v0.9.21...v0.10.0
+
 ## v0.9.22 - 2023-03-14
 
 <!-- Automatically generated in https://github.com/shishifubing/infra-repos-shishifubing/actions/runs/4420990851 -->
