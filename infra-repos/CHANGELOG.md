@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.11.0 - 2023-03-19
+
+<!-- Automatically generated in https://github.com/shishifubing/infra-repos-shishifubing/actions/runs/4463145885 -->
+### Features
+
+- **org**: add team_repository for team `owners` by @tiandaoburen in [#93](https://github.com/shishifubing/infra-repos-shishifubing/pull/93)
+
+**Full Changelog**: https://github.com/shishifubing/infra-repos-shishifubing/compare/v0.10.0...v0.11.0
+
 ## v0.10.0 - 2023-03-15
 
 <!-- Automatically generated in https://github.com/shishifubing/infra-repos-shishifubing/actions/runs/4431739654 -->
