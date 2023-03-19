@@ -24,6 +24,18 @@ resource "github_team_repository" "admins" {
   permission = "admin"
 }
 
+data "github_team" "owners" {
+  slug = "owners"
+}
+
+resource "github_team_repository" "owners" {
+  for_each = module.repositories
+
+  team_id    = data.github_team.owners.id
+  repository = each.value.repository.name
+  permission = "admin"
+}
+
 resource "github_organization_settings" "organization" {
   billing_email                                                = local.email
   company                                                      = local.name
