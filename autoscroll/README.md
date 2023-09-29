@@ -6,7 +6,6 @@
 [![Status][badge-status-finished]][url-repo]
 [![Version][badge-version]][url-version]
 [![Release][badge-workflow-release]][url-workflow-release]
-[![Conventional Commits][badge-conventionalcommits]][url-conventionalcommits]
 
 Cross-platform CLI app enabling universal autoscroll
 
@@ -216,8 +215,6 @@ EndSection
 
 <!-- external links -->
 
-[url-conventionalcommits]: https://conventionalcommits.org
-
 <!-- badge links -->
 
 [badge-status-finished]: https://img.shields.io/badge/status-finished-informational
@@ -226,5 +223,3 @@ EndSection
 [badge-version]: https://img.shields.io/github/v/release/shishifubing/app-cli-autoscroll?label=version
 
 <!-- other badge links -->
-
-[badge-conventionalcommits]: https://img.shields.io/badge/conventional--commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white
