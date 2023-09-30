@@ -1,18 +1,73 @@
-# github repositories
-module "repositories" {
-  for_each = local.repositories
-  source   = "./modules/repository"
+terraform {
+  backend "s3" {}
 
-  repository_name = each.key
-  config          = each.value
+  required_providers {
+    github = {
+      source  = "integrations/github"
+      version = "~> 5"
+    }
+    gitlab = {
+      source  = "gitlabhq/gitlab"
+      version = "~> 15"
+    }
+    time = {
+      source  = "hashicorp/time"
+      version = "~> 0.9"
+    }
+  }
+}
+
+locals {
+  owner           = "shishifubing"
+  owner_url       = "https://github.com/${local.owner}"
+  repo_names      = toset(data.github_repositories.repos.names)
+  repo_full_names = toset(data.github_repositories.repos.full_names)
+}
+
+provider "github" {
+  owner = local.owner
+}
+
+provider "gitlab" {}
+
+
+data "github_repositories" "repos" {
+  query           = "org:${local.owner}"
+  include_repo_id = true
+}
+
+resource "github_membership" "bot" {
+  username = "shishifubing-bot"
+  role     = "member"
+}
+
+resource "github_team" "admins" {
+  name                      = "admins"
+  description               = "Grants admin rights to all shishifubing repositories"
+  privacy                   = "closed"
+  create_default_maintainer = true
+}
+
+resource "github_team_membership" "bot" {
+  team_id  = github_team.admins.id
+  username = github_membership.bot.username
+  role     = "maintainer"
+}
+
+resource "github_team_repository" "admins" {
+  for_each = local.repo_names
+
+  team_id    = github_team.admins.id
+  repository = each.value
+  permission = "admin"
 }
 
 module "branch_protections_main" {
-  for_each = module.repositories
+  for_each = local.repo_names
   source   = "./modules/branch_protection"
 
   config = {
-    repository_id                   = each.value.repository.node_id
+    repository_id                   = each.value
     pattern                         = "main"
     enforce_admins                  = true
     required_approving_review_count = 0
@@ -28,12 +83,12 @@ module "branch_protections_main" {
 }
 
 module "branch_protections_wildcard" {
-  for_each   = module.repositories
+  for_each   = local.repo_names
   source     = "./modules/branch_protection"
   depends_on = [module.branch_protections_main]
 
   config = {
-    repository_id           = each.value.repository.node_id
+    repository_id           = each.value
     pattern                 = "*"
     required_linear_history = true
     allows_deletions        = true
@@ -50,15 +105,15 @@ module "branch_protections_wildcard" {
 }
 
 resource "github_repository_tag_protection" "protections" {
-  for_each   = module.repositories
-  repository = each.value.repository.name
+  for_each   = local.repo_names
+  repository = each.value
   pattern    = "v*"
 }
 
 resource "github_branch_default" "default" {
-  for_each = module.repositories
+  for_each = local.repo_names
 
-  repository = each.key
+  repository = each.value
   branch     = "main"
 }
 
@@ -85,7 +140,7 @@ resource "time_static" "day" {
 }
 
 resource "gitlab_project" "repositories" {
-  for_each = module.repositories
+  for_each = local.repo_names
 
   lifecycle {
     # ignore all changes to not clutter logs
@@ -95,17 +150,15 @@ resource "gitlab_project" "repositories" {
   }
 
   # gitlab repository names cannot start with a special character
-  name = substr(each.value.repository.name, 0, 1) == "." ? format(
+  name = substr(each.value, 0, 1) == "." ? format(
     "dot-%s",
-    substr(each.value.repository.name, 1, length(each.value.repository.name))
-  ) : each.value.repository.name
+    substr(each.value, 1, length(each.value))
+  ) : each.value
   description = join(" ", [
-    each.value.repository.description,
-    "[mirror of ${each.value.repository.html_url}]",
+    "mirror of https://github.com/${local.owner}/${each.value}",
     "[${time_static.day.rfc3339}]"
   ])
-  import_url       = each.value.repository.http_clone_url
+  import_url       = "https://github.com/${local.owner}/${each.value}"
   namespace_id     = data.gitlab_group.group.group_id
-  topics           = toset(each.value.repository.topics)
-  visibility_level = each.value.repository.visibility
+  visibility_level = "public"
 }
