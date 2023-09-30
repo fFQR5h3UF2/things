@@ -2,10 +2,10 @@
 # Manual edits may be lost in future updates.
 
 provider "registry.terraform.io/gitlabhq/gitlab" {
-  version     = "15.7.1"
-  constraints = "15.7.1"
+  version     = "15.11.0"
+  constraints = "~> 15.0"
   hashes = [
-    "h1:3HgOW8mV3/06AG3XdcfBXAGYelZ8hOBHBJZDXGHvSuk=",
+    "h1:uAm0lMAKfcNzjQ7a7aAtV44I8zGIuFd2Y+JYqT/9544=",
   ]
 }
 
@@ -18,9 +18,9 @@ provider "registry.terraform.io/hashicorp/time" {
 }
 
 provider "registry.terraform.io/integrations/github" {
-  version     = "5.14.0"
-  constraints = "5.14.0"
+  version     = "5.39.0"
+  constraints = ">= 5.0.0, ~> 5.0"
   hashes = [
-    "h1:x4jVVdNaP3KAypcnwFQlttRsmm3hNSx0CTrb7RXzktE=",
+    "h1:mpO68ifHJruMIuSvOuCa4PQt841arZr50O+uCxjhVak=",
   ]
 }
