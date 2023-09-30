@@ -3,8 +3,8 @@
 # [`infra-repos-shishifubing`][url-repo]
 
 [![License][badge-license]][url-license]
+[![Version][badge-version]][url-version]
 [![Terraform][badge-workflow-terraform]][url-workflow-terraform]
-[![Conventional Commits][badge-conventionalcommits]][url-conventionalcommits]
 
 Terraform module managing [shishifubing][url-owner] organization
 
@@ -95,19 +95,19 @@ make
 [url-repo]: https://github.com/shishifubing/infra-repos-shishifubing
 [url-license]: https://github.com/shishifubing/infra-repos-shishifubing/blob/main/LICENSE
 [url-workflow-terraform]: https://github.com/shishifubing/infra-repos-shishifubing/actions/workflows/terraform.yml?branch=main
+[url-version]: https://github.com/shishifubing/infra-repos-shishifubing/releases/latest
 
 <!-- external links -->
 
 [url-owner]: https://github.com/shishifubing
 [url-owner-gitlab]: https://gitlab.com/shishifubing
 [url-setup]: https://github.com/shishifubing/infra-cloud-shishifubing.com/tree/main/cloud/yandex#setup-terraform-backend-and-local-environment
-[url-conventionalcommits]: https://conventionalcommits.org
 
 <!-- badge links -->
 
 [badge-workflow-terraform]: https://img.shields.io/github/actions/workflow/status/shishifubing/infra-repos-shishifubing/terraform.yml?branch=main&label=terraform&logo=github
 [badge-license]: https://img.shields.io/github/license/shishifubing/infra-repos-shishifubing.svg
-[badge-conventionalcommits]: https://img.shields.io/badge/conventional%20commits-1.0.0-%23FE5196?logo=conventionalcommits&logoColor=white
+[badge-version]: https://img.shields.io/github/v/release/shishifubing/infra-repos-shishifubing?label=version
 
 <!-- BEGIN_TF_DOCS -->
 
@@ -115,16 +115,16 @@ make
 
 | Name                                                            | Version |
 | --------------------------------------------------------------- | ------- |
-| <a name="requirement_github"></a> [github](#requirement_github) | 5.14.0  |
-| <a name="requirement_gitlab"></a> [gitlab](#requirement_gitlab) | 15.7.1  |
-| <a name="requirement_time"></a> [time](#requirement_time)       | 0.9.1   |
+| <a name="requirement_github"></a> [github](#requirement_github) | ~> 5    |
+| <a name="requirement_gitlab"></a> [gitlab](#requirement_gitlab) | ~> 15   |
+| <a name="requirement_time"></a> [time](#requirement_time)       | ~> 0.9  |
 
 ## Providers
 
 | Name                                                      | Version |
 | --------------------------------------------------------- | ------- |
-| <a name="provider_github"></a> [github](#provider_github) | 5.14.0  |
-| <a name="provider_gitlab"></a> [gitlab](#provider_gitlab) | 15.7.1  |
+| <a name="provider_github"></a> [github](#provider_github) | 5.39.0  |
+| <a name="provider_gitlab"></a> [gitlab](#provider_gitlab) | 15.11.0 |
 | <a name="provider_time"></a> [time](#provider_time)       | 0.9.1   |
 
 ## Modules
@@ -133,24 +133,23 @@ make
 | -------------------------------------------------------------------------------------------------------------------- | --------------------------- | ------- |
 | <a name="module_branch_protections_main"></a> [branch_protections_main](#module_branch_protections_main)             | ./modules/branch_protection | n/a     |
 | <a name="module_branch_protections_wildcard"></a> [branch_protections_wildcard](#module_branch_protections_wildcard) | ./modules/branch_protection | n/a     |
-| <a name="module_repositories"></a> [repositories](#module_repositories)                                              | ./modules/repository        | n/a     |
 
 ## Resources
 
 | Name                                                                                                                                                               | Type        |
 | ------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------- |
-| [github_actions_organization_permissions.main](https://registry.terraform.io/providers/integrations/github/5.14.0/docs/resources/actions_organization_permissions) | resource    |
-| [github_branch_default.default](https://registry.terraform.io/providers/integrations/github/5.14.0/docs/resources/branch_default)                                  | resource    |
-| [github_membership.bot](https://registry.terraform.io/providers/integrations/github/5.14.0/docs/resources/membership)                                              | resource    |
-| [github_organization_settings.organization](https://registry.terraform.io/providers/integrations/github/5.14.0/docs/resources/organization_settings)               | resource    |
-| [github_repository_tag_protection.protections](https://registry.terraform.io/providers/integrations/github/5.14.0/docs/resources/repository_tag_protection)        | resource    |
-| [github_team.admins](https://registry.terraform.io/providers/integrations/github/5.14.0/docs/resources/team)                                                       | resource    |
-| [github_team_membership.bot](https://registry.terraform.io/providers/integrations/github/5.14.0/docs/resources/team_membership)                                    | resource    |
-| [github_team_repository.admins](https://registry.terraform.io/providers/integrations/github/5.14.0/docs/resources/team_repository)                                 | resource    |
-| [gitlab_project.repositories](https://registry.terraform.io/providers/gitlabhq/gitlab/15.7.1/docs/resources/project)                                               | resource    |
-| [time_rotating.day](https://registry.terraform.io/providers/hashicorp/time/0.9.1/docs/resources/rotating)                                                          | resource    |
-| [time_static.day](https://registry.terraform.io/providers/hashicorp/time/0.9.1/docs/resources/static)                                                              | resource    |
-| [gitlab_group.group](https://registry.terraform.io/providers/gitlabhq/gitlab/15.7.1/docs/data-sources/group)                                                       | data source |
+| [github_actions_organization_permissions.main](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/actions_organization_permissions) | resource    |
+| [github_branch_default.default](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/branch_default)                                  | resource    |
+| [github_membership.bot](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/membership)                                              | resource    |
+| [github_repository_tag_protection.protections](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/repository_tag_protection)        | resource    |
+| [github_team.admins](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team)                                                       | resource    |
+| [github_team_membership.bot](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team_membership)                                    | resource    |
+| [github_team_repository.admins](https://registry.terraform.io/providers/integrations/github/latest/docs/resources/team_repository)                                 | resource    |
+| [gitlab_project.repositories](https://registry.terraform.io/providers/gitlabhq/gitlab/latest/docs/resources/project)                                               | resource    |
+| [time_rotating.day](https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/rotating)                                                         | resource    |
+| [time_static.day](https://registry.terraform.io/providers/hashicorp/time/latest/docs/resources/static)                                                             | resource    |
+| [github_repositories.repos](https://registry.terraform.io/providers/integrations/github/latest/docs/data-sources/repositories)                                     | data source |
+| [gitlab_group.group](https://registry.terraform.io/providers/gitlabhq/gitlab/latest/docs/data-sources/group)                                                       | data source |
 
 ## Inputs
 
@@ -158,8 +157,6 @@ No inputs.
 
 ## Outputs
 
-| Name                                                                    | Description                 |
-| ----------------------------------------------------------------------- | --------------------------- |
-| <a name="output_repositories"></a> [repositories](#output_repositories) | list of github repositories |
+No outputs.
 
 <!-- END_TF_DOCS -->
