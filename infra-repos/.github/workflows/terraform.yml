@@ -2,8 +2,8 @@ name: terraform
 
 on:
   schedule:
-    # runs at 00:00
-    - cron: 0 0 * * *
+    # runs every monday at 9 am
+    - cron: 0 9 * * 1
   push:
     paths: 
       - "**/*.tf"
