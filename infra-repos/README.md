@@ -12,19 +12,14 @@ Terraform module managing [shishifubing][url-owner] organization
 
 ## About The Project
 
-I have a decent number of repositories. It's a pain to keep them all uniform,
-so I decided to write a terraform module to manage them
+This terraform module's main purpose is making repositories uniform
 
 ### Features
 
 - Manages:
 
-  - repositories
   - branch protection rules
   - default branches
-  - organization settings
-  - organization membership
-  - organization teams
   - github action permissions
   - tag protection rules
 
