@@ -7,31 +7,20 @@
 [![Version][badge-version]][url-version]
 [![Release][badge-workflow-release]][url-workflow-release]
 
-Cross-platform CLI app enabling universal autoscroll
+CLI app for autoscroll
 
 </div>
 
 ## About The Project
 
-I bought a Logitech Marble Mouse and couldn't make the autoscroll work on Linux, 
-so I decided to make a python package to solve this problem 
+This package implements autoscroll, so you can autoscroll without depending on OS or mouse drivers 
 
-It was a pretty much pointless idea because on Linux you can achieve autoscroll using config files
-(see [the example](#xorg-server-config-example)) and for Windows there are usually drivers,
-but I decided to finish the project anyway
+## Features
 
-The package supports only mouse buttons
-
-The package requires `pynput` to work, to display an icon you need to install `pyside6` (`qt6` package)
-
-```bash
-pip install autoscroll pyside6
-```
-
-Built-in icon: <img src="https://raw.githubusercontent.com/shishifubing-com/app-cli-autoscroll/master/autoscroll/resources/img/icon.svg" width="50" height="50">
-
-You can run it on startup by creating a systemd service on Linux or by adding
-the `.exe` file of the script in the venv folder to autostart on Windows
+- Pretty useless
+- Has a config file with hot-reload
+- Python3, PyQt6
+- Some argparse tinkering
 
 ## Usage
 
@@ -182,26 +171,6 @@ debug:
   -ds, --debug-scroll   if set, scroll info will be printed to stdout
   -di, --debug-initial  if set, startup configuration will be printed to stdout
 ```
-
-## xorg-server config example
-
-```conf
-# https://wiki.archlinux.org/title/Logitech_Marble_Mouse#Configuration_file
-# https://help.ubuntu.com/community/Logitech_Marblemouse_USB
-# https://bbs.archlinux.org/viewtopic.php?id=261138
-# path - /etc/X11/xorg.conf.d/40-trackball.conf
-Section "InputClass"
-  Identifier   "Marble Mouse"
-  MatchProduct "Logitech USB Trackball"
-  Driver       "libinput"
-  Option       "ScrollMethod"     "button"
-  Option       "ScrollButton"     "1"
-  Option       "MiddleEmulation"  "true"
-  Option       "ButtonMapping"    "3 2 1 4 5 6 7 9 8"
-  Option       "NaturalScrolling" "true"
-EndSection
-```
-
 
 <!-- relative links -->
 
