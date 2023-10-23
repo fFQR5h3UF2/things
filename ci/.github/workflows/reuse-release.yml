@@ -56,7 +56,7 @@ jobs:
       - name: Build changelog
         id: changelog
         if: steps.info.outputs.create == 'true'
-        uses: mikepenz/release-changelog-builder-action@c73ff7421c59fa0d090dcfe62e24a758977c699d # v3.7.0
+        uses: mikepenz/release-changelog-builder-action@6fd5cc6eaf7567dbd0f9666061215bb476f012fc # v4.0.1
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
