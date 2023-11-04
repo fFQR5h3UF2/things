@@ -1,5 +1,16 @@
 # CHANGELOG
 
+## v1.9.15 - 2023-11-04
+
+<!-- Automatically generated in https://github.com/shishifubing/ci-actions-common/actions/runs/6756687374 -->
+### Features
+
+- **workflows**: change gitversion config in [#143](https://github.com/shishifubing/ci-actions-common/pull/143)
+- **workflows**: change release config in [#145](https://github.com/shishifubing/ci-actions-common/pull/145)
+- **workflows**: change tag version in [#144](https://github.com/shishifubing/ci-actions-common/pull/144)
+
+**Full Changelog**: https://github.com/shishifubing/ci-actions-common/compare/v1.9.0...v1.9.15
+
 ## v1.9.0 - 2023-03-15
 
 <!-- Automatically generated in https://github.com/shishifubing/ci-actions-common/actions/runs/4431820642 -->
