@@ -59,7 +59,7 @@ jobs:
           GIT_COMMITTER_NAME: ${{ steps.import_gpg.outputs.name }}
           GIT_COMMITTER_EMAIL: ${{ steps.import_gpg.outputs.email }}
         run: |
-          tag="v${{ steps.gitversion.outputs.assemblyFileVersion }}"
+          tag="v${{ steps.gitversion.outputs.fullSemVer }}"
           commits_count="${GITVERSION_COMMITSSINCEVERSIONSOURCE}"
           commits=$(git log -n "${commits_count}" --skip=1 --pretty='format:  - %H %s')
 
