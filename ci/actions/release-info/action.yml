@@ -1,11 +1,6 @@
 name: release-info
 description: get release info
 
-inputs:
-  generate:
-    descrpiption: whether to generate default release notes
-    type: boolean
-
 outputs:
   name:
     description: release name
@@ -16,12 +11,6 @@ outputs:
   version:
     description: release version
     value: ${{ steps.check.outputs.version }}
-  last_version:
-    description: last release version
-    value: ${{ steps.check.outputs.latest_release_version }}
-  create:
-    description: whether there is a need to create a new release
-    value: ${{ steps.check.outputs.create_release }}
 
 runs:
   using: composite
@@ -30,8 +19,6 @@ runs:
       shell: sh
       id: check
       run: |
-        create_release=true
-
         latest_gh_release=$(
           gh release view --json tagName --jq .tagName --repo "${{ github.repository }}"
         )
@@ -43,28 +30,23 @@ runs:
         )
 
         if [ "${latest_gh_release}" = "${latest_tag}" ]; then
-          create_release=false
+          echo "Release ${latest_gh_release} already exists"
+          exit 1
         fi
 
-        {
-          echo "create_release=${create_release}"
-          echo "latest_release_version=${latest_gh_release}"
-          echo "version=${latest_tag}"
-        } >>"${GITHUB_OUTPUT}"
+        echo "version=${latest_tag}" >>"${GITHUB_OUTPUT}"
 
     - name: Generate release notes
       id: notes
-      if: inputs.generate && steps.check.outputs.create_release == 'true'
+      if: steps.check.outputs.create_release == 'true'
       shell: sh
       run: |
-        tag='${{ steps.check.outputs.version }}'
-        previous_tag='${{ steps.check.outputs.latest_release_version }}'
+        tag=''
         gh api                                                      \
           --method POST                                             \
           -H "Accept: application/vnd.github+json"                  \
           "/repos/${{ github.repository }}/releases/generate-notes" \
-          -f tag_name="${tag}"                                      \
-          -f previous_tag_name="${previous_tag}"                    \
+          -f tag_name="${{ steps.check.outputs.version }}"          \
           >release_notes.json
 
         {
