@@ -34,8 +34,8 @@
       "chore"
   ],
   "template": "${{CHANGELOG}}\n\n**Full Changelog**: ${{RELEASE_DIFF}}",
-  "pr_template": "- ${{TITLE}} by @${{AUTHOR}} in [#${{NUMBER}}](${{URL}})",
-  "empty_template": "- no noteworthy changes",
+  "pr_template": "- ${{TITLE}} in [#${{NUMBER}}](${{URL}})",
+  "empty_template": "- no changes",
   "label_extractor": [
     {
       "pattern": "([^\\(]+)\\(.+\\): .+",
