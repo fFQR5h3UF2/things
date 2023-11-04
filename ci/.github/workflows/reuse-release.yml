@@ -55,6 +55,6 @@ jobs:
           body: |
             <!-- Automatically generated in ${{ env.JOB_URL }} -->
             
-            ${{ steps.changelog.outputs.changelog }}
+            ${{ steps.info.outputs.body }}
           files: ${{ inputs.files }}
           draft: ${{ inputs.draft }}
