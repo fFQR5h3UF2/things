@@ -19,13 +19,8 @@ on:
         description: path for artifacts
         type: string
         default: _artifacts
-      config_path:
-        description: changelog config path
-        type: string
-        default: .github/release.json
 
 env:
-  CONFIG_URL: https://raw.githubusercontent.com/shishifubing/ci-actions-common/main/.github/release.json
   JOB_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
 
 jobs:
@@ -37,10 +32,6 @@ jobs:
       - name: Checkout repo
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         
-      - name: Get changelog config
-        id: config
-        run: test -f "${{ inputs.config_path }}" || curl -sSLo "${{ inputs.config_path }}" "${CONFIG_URL}"
-    
       - name: Download artifacts
         uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a # v3.0.2
         if: inputs.download
@@ -53,20 +44,8 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
 
-      - name: Build changelog
-        id: changelog
-        if: steps.info.outputs.create == 'true'
-        uses: mikepenz/release-changelog-builder-action@6fd5cc6eaf7567dbd0f9666061215bb476f012fc # v4.0.1
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        with:
-          configuration: ${{ inputs.config_path }}
-          fromTag: ${{ steps.info.outputs.last_version }}
-          toTag: ${{ steps.info.outputs.version }}
-
       - name: Create release
         uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844 # v0.1.15
-        if: steps.changelog.outputs.categorized_prs != '0'
         with:
           # events triggered by GitHub Actions don't trigger GitHub Actions, so
           # you need to pass custom token to trigger changelog workflow
