@@ -1,3 +1,2 @@
 # https://gitversion.net/docs/reference/configuration#global-configuration
 mode: Mainline
-assembly-file-versioning-format: '{FullSemVer}+{ShortSha}'
