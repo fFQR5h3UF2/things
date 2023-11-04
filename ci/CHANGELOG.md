@@ -1,5 +1,8 @@
 # CHANGELOG
 
+## v1.9.19 - 2023-11-04
+
+<!-- Automatically generated in https://github.com/shishifubing/ci-actions-common/actions/runs/6756815192 -->
 ## v1.9.17 - 2023-11-04
 
 <!-- Automatically generated in https://github.com/shishifubing/ci-actions-common/actions/runs/6756778856 -->
