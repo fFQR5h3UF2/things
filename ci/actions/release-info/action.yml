@@ -10,15 +10,19 @@ outputs:
     value: ${{ steps.notes.outputs.body }}
   version:
     description: release version
-    value: ${{ steps.check.outputs.version }}
+    value: ${{ steps.info.outputs.current }}
+  create:
+    description: whether there is a need to create a new release
+    value: ${{ steps.info.outputs.create_release }}
 
 runs:
   using: composite
   steps:
     - name: Check latest release
       shell: sh
-      id: check
+      id: info
       run: |
+        create_release="true"
         latest_gh_release=$(
           gh release view --json tagName --jq .tagName --repo "${{ github.repository }}"
         )
@@ -31,22 +35,25 @@ runs:
 
         if [ "${latest_gh_release}" = "${latest_tag}" ]; then
           echo "Release ${latest_gh_release} already exists"
-          exit 1
+          create_release="false"
         fi
-
-        echo "version=${latest_tag}" >>"${GITHUB_OUTPUT}"
+        {
+          echo "previous=${latest_gh_release}"
+          echo "create_release=${create_release}"
+          echo "current=${latest_tag}"
+        } >> "${GITHUB_OUTPUT}"
 
     - name: Generate release notes
       id: notes
       if: steps.check.outputs.create_release == 'true'
       shell: sh
       run: |
-        tag=''
         gh api                                                      \
           --method POST                                             \
           -H "Accept: application/vnd.github+json"                  \
           "/repos/${{ github.repository }}/releases/generate-notes" \
-          -f tag_name="${{ steps.check.outputs.version }}"          \
+          -f tag_name="${{ steps.info.outputs.current }}"           \
+          -f previous_tag_name="${{ steps.info.outputs.previous }}" \
           >release_notes.json
 
         {
