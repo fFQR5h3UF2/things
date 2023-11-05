@@ -5,7 +5,7 @@ if [[ "${-}" != *i* ]]; then
     return
 fi
 
-export DOTFILES="${HOME}/repos/personal/misc-personal-dotfiles"
+export DOTFILES="${HOME}/repos/personal/misc-dotfiles"
 . "${DOTFILES}/scripts/functions.sh"
 if [[ -x /etc/profile.d/bash_completion.sh ]]; then
     . /etc/profile.d/bash_completion.sh
