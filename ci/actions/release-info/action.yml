@@ -41,7 +41,7 @@ runs:
           echo "previous=${latest_gh_release}"
           echo "create_release=${create_release}"
           echo "current=${latest_tag}"
-        } >> "${GITHUB_OUTPUT}"
+        } | tee -a "${GITHUB_OUTPUT}"
 
     - name: Generate release notes
       id: notes
@@ -61,4 +61,4 @@ runs:
           echo "body<<EOF"
           jq -r .body release_notes.json
           echo "EOF"
-        } >>"${GITHUB_OUTPUT}"
+        } | tee -a "${GITHUB_OUTPUT}"
