@@ -40,7 +40,7 @@ jobs:
 
       - name: Get release info
         id: info
-        uses: shishifubing/ci-actions-common/actions/release-info@main
+        uses: shishifubing/ci-actions-common/actions/release-info@dev/fix-release-workflows
         env:
           GH_TOKEN: ${{ github.token }}
 
