@@ -45,7 +45,7 @@ runs:
 
     - name: Generate release notes
       id: notes
-      if: steps.check.outputs.create_release == 'true'
+      if: steps.info.outputs.create_release == 'true'
       shell: sh
       run: |
         gh api                                                      \
