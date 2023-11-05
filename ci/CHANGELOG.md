@@ -1,5 +1,22 @@
 # CHANGELOG
 
+## v1.9.23 - 2023-11-05
+
+<!-- Automatically generated in https://github.com/shishifubing/ci-actions-common/actions/runs/6760217447 -->
+<!-- Release notes generated using configuration in .github/release.yml at v1.9.23 -->
+### What's Changed
+
+- chore(codeowners): update catch-all rule by @q1feq3qzi60u in https://github.com/shishifubing/ci-actions-common/pull/119
+- feat(workflows): change gitversion config by @q1feq3qzi60u in https://github.com/shishifubing/ci-actions-common/pull/143
+- feat(workflows): change tag version by @q1feq3qzi60u in https://github.com/shishifubing/ci-actions-common/pull/144
+- feat(workflows): change release config by @q1feq3qzi60u in https://github.com/shishifubing/ci-actions-common/pull/145
+- feat: switch back to default release notes by @q1feq3qzi60u in https://github.com/shishifubing/ci-actions-common/pull/147
+- fix: use proper output to generate the release by @q1feq3qzi60u in https://github.com/shishifubing/ci-actions-common/pull/149
+- feat: remove unneeded workflows by @q1feq3qzi60u in https://github.com/shishifubing/ci-actions-common/pull/152
+- fix: fix release workflows by @q1feq3qzi60u in https://github.com/shishifubing/ci-actions-common/pull/153
+
+**Full Changelog**: https://github.com/shishifubing/ci-actions-common/compare/v1.9.0...v1.9.23
+
 ## v1.9.19 - 2023-11-04
 
 <!-- Automatically generated in https://github.com/shishifubing/ci-actions-common/actions/runs/6756815192 -->
