@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.2.3 - 2023-11-06
+
+<!-- Automatically generated in https://github.com/shishifubing/misc-dotfiles/actions/runs/6777685082 -->
+<!-- Release notes generated using configuration in .github/release.yml at v0.2.3 -->
+### New Contributors
+
+- @shishifubing-bot made their first contribution in https://github.com/shishifubing/misc-dotfiles/pull/3
+
+**Full Changelog**: https://github.com/shishifubing/misc-dotfiles/compare/v0.2.2...v0.2.3
+
 ## v0.2.2 - 2023-11-06
 
 <!-- Automatically generated in https://github.com/shishifubing/misc-dotfiles/actions/runs/6771278763 -->
