@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## v1.16.0 - 2023-11-06
+
+<!-- Automatically generated in https://github.com/shishifubing/ci-actions-common/actions/runs/6777693739 -->
+<!-- Release notes generated using configuration in .github/release.yml at v1.16.0 -->
+### What's Changed
+
+- feat: add back conventional bump messages by @q1feq3qzi60u in https://github.com/shishifubing/ci-actions-common/pull/156
+
+**Full Changelog**: https://github.com/shishifubing/ci-actions-common/compare/v1.9.24...v1.16.0
+
 ## v1.9.24 - 2023-11-05
 
 <!-- Automatically generated in https://github.com/shishifubing/ci-actions-common/actions/runs/6764347541 -->
