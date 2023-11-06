@@ -1,5 +1,20 @@
 # Changelog
 
+## v0.2.2 - 2023-11-06
+
+<!-- Automatically generated in https://github.com/shishifubing/misc-dotfiles/actions/runs/6771278763 -->
+<!-- Release notes generated using configuration in .github/release.yml at v0.2.2 -->
+### What's Changed
+
+- feat: change dotfiles path by @q1feq3qzi60u in https://github.com/shishifubing/misc-dotfiles/pull/1
+- feat: move bash out of makefile by @q1feq3qzi60u in https://github.com/shishifubing/misc-dotfiles/pull/2
+
+### New Contributors
+
+- @q1feq3qzi60u made their first contribution in https://github.com/shishifubing/misc-dotfiles/pull/1
+
+**Full Changelog**: https://github.com/shishifubing/misc-dotfiles/compare/v0.2.0...v0.2.2
+
 ## v0.2.0 - 2023-03-18
 
 <!-- Automatically generated in https://github.com/shishifubing/misc-personal-dotfiles/actions/runs/4457739322 -->
