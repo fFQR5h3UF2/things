@@ -5,17 +5,13 @@ if [[ "${-}" != *i* ]]; then
     return
 fi
 
-export DOTFILES="${HOME}/repos/personal/misc-dotfiles"
+export DOTFILES="${HOME}/repos/shishifubing/misc-dotfiles"
 . "${DOTFILES}/scripts/functions.sh"
-if [[ -x /etc/profile.d/bash_completion.sh ]]; then
-    . /etc/profile.d/bash_completion.sh
-fi
-if [[ -x /usr/share/git-core/contrib/completion/git-prompt.sh ]]; then
-    . /usr/share/git-core/contrib/completion/git-prompt.sh
-fi
-if [[ -x /usr/share/fzf/shell/key-bindings.bash ]]; then
-    . /usr/share/fzf/shell/key-bindings.bash
-fi
+__source_scripts \
+	/etc/profile.d/bash_completion.sh \
+	/usr/share/git-core/contrib/completion/git-prompt.sh \
+	/usr/share/bash-completion/completions/git \
+	/usr/share/git-core/contrib/completion/git-prompt.sh
 
 # user-specific configuration files
 export XDG_CONFIG_HOME="${HOME}/.config"
@@ -29,6 +25,7 @@ export GIT_PS1_SHOWCOLORHINTS=true
 export GIT_PS1_SHOWCONFLICTSTATE=yes
 export GIT_PS1_SHOWUNTRACKEDFILES=true
 export force_color_prompt=yes
+export GPG_TTY=$(tty)
 ## all locales are overwritten
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
