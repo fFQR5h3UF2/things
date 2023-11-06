@@ -1,23 +1,14 @@
 all-links :: git home nvim firefox vscode
 
 git ::
-	stow --target="$${HOME}" git
-
+	./scripts/stow.sh git
 home ::
-	stow --target="$${HOME}" home
-
+	./scripts/stow.sh home
 nvim ::
-	stow --target="$${HOME}" nvim
-
+	./scripts/stow.sh nvim
 firefox ::
-	for profile in $(wildcard $${HOME}/.mozilla/firefox/*.default-release-*); do \
-		stow --target="$${profile}" firefox; \
-	done;
-
+	./scripts/stow.sh firefox
 vscode ::
-	for dir in "Code - OSS" "Code" "VSCodium"; do \
-		stow --target="$${HOME}/.config/$${dir}" vscode; \
-	done;
-
+	./scripts/stow.sh vscode
 setup ::
 	./scripts/setup_packages.sh
