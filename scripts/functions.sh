@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+__source_scripts() {
+    for script in "${@}"; do
+        if [ -f "${script}" ]; then
+	    . "${script}"    
+	fi
+    done
+}
+
 ## create a certificate
 __crypto_certificate_create() {
     local file_name domains
