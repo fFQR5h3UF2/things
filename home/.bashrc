@@ -10,22 +10,23 @@ export DOTFILES="${HOME}/repos/shishifubing/misc-dotfiles"
 __source_scripts \
 	/etc/profile.d/bash_completion.sh \
 	/usr/share/git-core/contrib/completion/git-prompt.sh \
-	/usr/share/bash-completion/completions/git \
-	/usr/share/git-core/contrib/completion/git-prompt.sh
+	/usr/share/bash-completion/completions/git 
 
+export force_color_prompt=yes
+export GPG_TTY=$(tty)
 # user-specific configuration files
 export XDG_CONFIG_HOME="${HOME}/.config"
 ## the main prompt variable
-export PS1='\[\e[35;1m\]\u\[\e[m\]@\[\e[35;1m\]\h\[\e[m\] [\[\e[36;1m\]\w\[\e[m\]] (\[\e[1m\]$(__git_ps1 "%s")\[\e[m\])\n\$ '
-export PROMPT_COMMAND='printf "%.s─" $(seq 1 $(tput cols)); echo'
+# https://stackoverflow.com/a/28938235
+export PS1='\n\[\e[35;1m\]\u\[\e[m\]@\[\e[35;1m\]\h\[\e[m\] [\[\e[36;1m\]\w\[\e[m\]] (\[\e[1m\]$(__git_ps1 "%s")\[\e[m\])\n\$ '
+# git prompt variables
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUPSTREAM=auto
 export GIT_PS1_STATESEPARATOR=" "
 export GIT_PS1_SHOWCOLORHINTS=true
 export GIT_PS1_SHOWCONFLICTSTATE=yes
 export GIT_PS1_SHOWUNTRACKEDFILES=true
-export force_color_prompt=yes
-export GPG_TTY=$(tty)
+
 ## all locales are overwritten
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
