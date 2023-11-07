@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.16.1 - 2023-11-07
+
+<!-- Automatically generated in https://github.com/shishifubing/ci-actions-common/actions/runs/6791464053 -->
+<!-- Release notes generated using configuration in .github/release.yml at v1.16.1 -->
+**Full Changelog**: https://github.com/shishifubing/ci-actions-common/compare/v1.16.0...v1.16.1
+
 ## v1.16.0 - 2023-11-06
 
 <!-- Automatically generated in https://github.com/shishifubing/ci-actions-common/actions/runs/6777693739 -->
