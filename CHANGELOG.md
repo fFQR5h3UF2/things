@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.5.0 - 2023-11-07
+
+<!-- Automatically generated in https://github.com/shishifubing/misc-dotfiles/actions/runs/6791454281 -->
+<!-- Release notes generated using configuration in .github/release.yml at v0.5.0 -->
+### What's Changed
+
+- feat: remove PROMPT_COMMAND by @q1feq3qzi60u in https://github.com/shishifubing/misc-dotfiles/pull/5
+
+**Full Changelog**: https://github.com/shishifubing/misc-dotfiles/compare/v0.2.3...v0.5.0
+
 ## v0.2.3 - 2023-11-06
 
 <!-- Automatically generated in https://github.com/shishifubing/misc-dotfiles/actions/runs/6777685082 -->
