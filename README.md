@@ -18,8 +18,8 @@ Miscellaneous things for personal use
 - [configs](./configs/) — random configuration files (not stowed)
 - [diagrams](./diagrams/) - random diagrams (not stowed)
 - [firefox](./firefox/) — firefox configuration files (`make firefox`)
-- [git](./git/) — git configs (`make git`)
-- [home](./home/) — home directory configs (`make home`)
+- [git](./git/) — .gitconfig (`make git`)
+- [home](./home/) — home directory configs (`make home` or `make`)
 - [nvim](./nvim/) — vim configuration files (`make nvim`)
 - [scripts](./scripts/) — shell scripts (not stowed)
 - [vscode](./vscode/) — vscode configs (`make vscode`)
@@ -27,7 +27,7 @@ Miscellaneous things for personal use
 ## Usage
 
 ```bash
-repo="shishifubing/misc-personal-dotfiles"
+repo="shishifubing/misc-dotfiles"
 url="https://raw.githubusercontent.com/${repo}/main/scripts/setup_packages.sh"
 target="${HOME}/repos/personal/misc-personal-dotfiles"
 
