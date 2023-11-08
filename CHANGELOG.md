@@ -1,5 +1,15 @@
 # Changelog
 
+## v0.6.0 - 2023-11-08
+
+<!-- Automatically generated in https://github.com/shishifubing/misc-dotfiles/actions/runs/6805127969 -->
+<!-- Release notes generated using configuration in .github/release.yml at v0.6.0 -->
+### What's Changed
+
+- feat(home): clean up the prompt by @q1feq3qzi60u in https://github.com/shishifubing/misc-dotfiles/pull/7
+
+**Full Changelog**: https://github.com/shishifubing/misc-dotfiles/compare/v0.5.0...v0.6.0
+
 ## v0.5.0 - 2023-11-07
 
 <!-- Automatically generated in https://github.com/shishifubing/misc-dotfiles/actions/runs/6791454281 -->
