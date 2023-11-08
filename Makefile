@@ -1,9 +1,7 @@
-all-links :: git home nvim firefox vscode
-
-git ::
-	./scripts/stow.sh git
 home ::
 	./scripts/stow.sh home
+git ::
+	./scripts/stow.sh git
 nvim ::
 	./scripts/stow.sh nvim
 firefox ::

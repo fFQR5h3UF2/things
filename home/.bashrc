@@ -18,7 +18,8 @@ export GPG_TTY=$(tty)
 export XDG_CONFIG_HOME="${HOME}/.config"
 ## the main prompt variable
 # https://stackoverflow.com/a/28938235
-export PS1='\n\[\e[35;1m\]\u\[\e[m\]@\[\e[35;1m\]\h\[\e[m\] [\[\e[36;1m\]\w\[\e[m\]] (\[\e[1m\]$(__git_ps1 "%s")\[\e[m\])\n\$ '
+export PS1='\[\e[35;1m\]\u\[\e[m\]@\[\e[35;1m\]\h\[\e[m\] \[\e[36;1m\]\w\[\e[m\] \[\e[1m\]$(__git_ps1 "%s")\[\e[m\]\n\$ '
+export PROMPT_COMMAND=
 # git prompt variables
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUPSTREAM=auto
