@@ -1,6 +1,6 @@
 <div align="center" markdown="1">
 
-# [`ci-actions-common`][url-repo]
+# [`ci`][url-repo]
 
 [![License][badge-license]][url-license]
 [![Version][badge-version]][url-version]
