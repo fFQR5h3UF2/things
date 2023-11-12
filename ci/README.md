@@ -39,7 +39,7 @@ on:
       - main
 jobs:
   tag:
-    uses: shishifubing/ci-actions-common/.github/workflows/tag.yml@main
+    uses: shishifubing/ci/.github/workflows/tag.yml@main
     secrets: inherit
 ```
 
@@ -57,7 +57,7 @@ on:
     types: [released]
 jobs:
   update:
-    uses: shishifubing/ci-actions-common/.github/workflows/changelog.yml@main
+    uses: shishifubing/ci/.github/workflows/changelog.yml@main
     secrets: inherit
 ```
 
@@ -75,7 +75,7 @@ on:
     - cron: 0 23 * * *
 jobs:
   update:
-    uses: shishifubing/ci-actions-common/.github/workflows/release.yml@main
+    uses: shishifubing/ci/.github/workflows/release.yml@main
     secrets: inherit
     with:
       download: true
@@ -102,7 +102,7 @@ jobs:
       image: hashicorp/terraform:1.3.7
     steps:
       - name: Run terraform
-        uses: shishifubing/ci-actions-common/actions/terraform@main
+        uses: shishifubing/ci/actions/terraform@main
         with:
           working_directory: cloud/yandex
         env:
@@ -141,7 +141,7 @@ jobs:
     steps:
       - name: Get release info
         id: info
-        uses: shishifubing/ci-actions-common/actions/release-info@main
+        uses: shishifubing/ci/actions/release-info@main
         env:
           GH_TOKEN: ${{ github.token }}
 
@@ -177,10 +177,10 @@ jobs:
 
 <!-- project links -->
 
-[url-license]: https://github.com/shishifubing/ci-actions-common/blob/main/LICENSE
-[url-repo]: https://github.com/shishifubing/ci-actions-common
-[url-release]: https://github.com/shishifubing/ci-actions-common/actions/workflows/release.yml
-[url-version]: https://github.com/shishifubing/ci-actions-common/releases/latest
+[url-license]: https://github.com/shishifubing/ci/blob/main/LICENSE
+[url-repo]: https://github.com/shishifubing/ci
+[url-release]: https://github.com/shishifubing/ci/actions/workflows/release.yml
+[url-version]: https://github.com/shishifubing/ci/releases/latest
 
 <!-- external links -->
 
@@ -195,6 +195,6 @@ jobs:
 
 <!-- project badge links -->
 
-[badge-license]: https://img.shields.io/github/license/shishifubing/ci-actions-common.svg
-[badge-release]: https://img.shields.io/github/actions/workflow/status/shishifubing/ci-actions-common/release.yml?branch=main&label=release&logo=github
-[badge-version]: https://img.shields.io/github/v/release/shishifubing/ci-actions-common?label=version
+[badge-license]: https://img.shields.io/github/license/shishifubing/ci.svg
+[badge-release]: https://img.shields.io/github/actions/workflow/status/shishifubing/ci/release.yml?branch=main&label=release&logo=github
+[badge-version]: https://img.shields.io/github/v/release/shishifubing/ci?label=version
