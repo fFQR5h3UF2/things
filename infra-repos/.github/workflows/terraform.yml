@@ -22,6 +22,7 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
+    if: false
     container:
       image: hashicorp/terraform:1.3.7
     env:
