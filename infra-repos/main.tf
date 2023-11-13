@@ -162,3 +162,94 @@ resource "gitlab_project" "repositories" {
   namespace_id     = data.gitlab_group.group.group_id
   visibility_level = "public"
 }
+
+/*
+resource "github_repository_ruleset" "branches_main" {
+  name        = "main"
+  target      = "branch"
+  enforcement = "active"
+
+
+  conditions {
+    ref_name {
+      include = ["~DEFAULT_BRANCH"]
+      exclude = []
+    }
+  }
+
+  rules {
+    creation                = true
+    update                  = true
+    deletion                = true
+    required_linear_history = true
+    required_signatures     = true
+  
+    pull_request {
+      
+    }
+
+    branch_name_pattern {
+      name     = "example"
+      negate   = false
+      operator = "starts_with"
+      pattern  = "ex"
+    }
+  }
+}
+
+resource "github_repository_ruleset" "branches_other" {
+  name        = "other"
+  target      = "branch"
+  enforcement = "active"
+
+  conditions {
+    ref_name {
+      include = ["~ALL"]
+      exclude = []
+    }
+  }
+
+  rules {
+    creation                = true
+    update                  = true
+    deletion                = true
+    required_linear_history = true
+    required_signatures     = true
+
+    branch_name_pattern {
+      name     = "example"
+      negate   = false
+      operator = "starts_with"
+      pattern  = "ex"
+    }
+  }
+}
+
+resource "github_organization_ruleset" "tags" {
+  name        = "tags"
+  target      = "tag"
+  enforcement = "active"
+
+  conditions {
+    ref_name {
+      include = ["~ALL"]
+      exclude = []
+    }
+  }
+
+  rules {
+    creation                = true
+    update                  = true
+    deletion                = true
+    required_linear_history = true
+    required_signatures     = true
+
+    branch_name_pattern {
+      name     = "example"
+      negate   = false
+      operator = "starts_with"
+      pattern  = "ex"
+    }
+  }
+}
+*/
