@@ -1,6 +1,6 @@
 <div align="center" markdown="1">
 
-# [`infra-repos-shishifubing`][url-repo]
+# [`infra-repos`][url-repo]
 
 [![License][badge-license]][url-license]
 [![Version][badge-version]][url-version]
@@ -12,7 +12,7 @@ Terraform module managing [shishifubing][url-owner] organization
 
 ## About The Project
 
-This terraform module's main purpose is making repositories uniform
+The purpose of this module is to make all repositories uniform
 
 ### Features
 
@@ -87,10 +87,10 @@ make
 
 <!-- project links -->
 
-[url-repo]: https://github.com/shishifubing/infra-repos-shishifubing
-[url-license]: https://github.com/shishifubing/infra-repos-shishifubing/blob/main/LICENSE
-[url-workflow-terraform]: https://github.com/shishifubing/infra-repos-shishifubing/actions/workflows/terraform.yml?branch=main
-[url-version]: https://github.com/shishifubing/infra-repos-shishifubing/releases/latest
+[url-repo]: https://github.com/shishifubing/infra-repos
+[url-license]: https://github.com/shishifubing/infra-repos/blob/main/LICENSE
+[url-workflow-terraform]: https://github.com/shishifubing/infra-repos/actions/workflows/terraform.yml?branch=main
+[url-version]: https://github.com/shishifubing/infra-repos/releases/latest
 
 <!-- external links -->
 
@@ -100,9 +100,9 @@ make
 
 <!-- badge links -->
 
-[badge-workflow-terraform]: https://img.shields.io/github/actions/workflow/status/shishifubing/infra-repos-shishifubing/terraform.yml?branch=main&label=terraform&logo=github
-[badge-license]: https://img.shields.io/github/license/shishifubing/infra-repos-shishifubing.svg
-[badge-version]: https://img.shields.io/github/v/release/shishifubing/infra-repos-shishifubing?label=version
+[badge-workflow-terraform]: https://img.shields.io/github/actions/workflow/status/shishifubing/infra-repos/terraform.yml?branch=main&label=terraform&logo=github
+[badge-license]: https://img.shields.io/github/license/shishifubing/infra-repos.svg
+[badge-version]: https://img.shields.io/github/v/release/shishifubing/infra-repos?label=version
 
 <!-- BEGIN_TF_DOCS -->
 
