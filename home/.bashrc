@@ -38,11 +38,8 @@ export GIT_EDITOR="nvim"
 
 # history file location
 export HISTFILE="${HOME}/.bash_history"
-# what commands to put in history
-# "ignoreboth:erasedups" -
-#   don't put duplicate lines or lines
-#   starting with space in the bash history.
-export HISTCONTROL="ignoreboth"
+# ignore commands starting with whitespace
+export HISTCONTROL="ignorespace"
 # bash history size (file size)
 export HISTFILESIZE=
 # bash history size (number of lines)
