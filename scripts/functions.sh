@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+function __info_ram {
+    sudo dmidecode --type memory
+}
+
 __source_scripts() {
     for script in "${@}"; do
         if [ -f "${script}" ]; then
