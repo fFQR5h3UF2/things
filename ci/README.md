@@ -25,7 +25,8 @@ Runs [bump_version](./scripts/bump_version) script
 name: On main
 
 on:
-  branches: main
+  push:
+    branches: main
 
 jobs:
   bump_version:

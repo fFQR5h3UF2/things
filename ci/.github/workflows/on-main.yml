@@ -1,7 +1,8 @@
 name: On main
 
 on:
-  branches: main
+  push:
+    branches: main
 
 jobs:
   bump_version:
