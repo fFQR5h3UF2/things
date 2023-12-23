@@ -1,4 +1,4 @@
-name: pr
+name: On pull request
 
 on:
   pull_request:
@@ -8,11 +8,9 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  Test:
+  test_makefile:
     runs-on: ubuntu-latest
-    container: ubuntu:24.04
+    container:
+      image: ubuntu@sha256:1395dff3ecc43bbc9c1fb2af3b9d8c0df89ef9ef5f11f7ac69c6e0875862ef08 # 24.04
     steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 #v4.1.1
-      - run: apt-get update
-      - run: apt-get install -y make git curl wget unzip stow
-      - run: make test_makefile
+      - uses: shishifubing/ci/actions/ci@822948414e9d5de65a5c2b098b45639dc50549bc # v1.17.0
