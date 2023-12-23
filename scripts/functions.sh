@@ -4,16 +4,16 @@ function __info_ram {
     sudo dmidecode --type memory
 }
 
-__source_scripts() {
+function __source_scripts {
     for script in "${@}"; do
-        if [ -f "${script}" ]; then
-	    . "${script}"    
+        if [[ -f "${script}" ]]; then
+	    . "${script}"
 	fi
     done
 }
 
 ## create a certificate
-__crypto_certificate_create() {
+function __crypto_certificate_create {
     local file_name domains
 
     file_name="${1}"
@@ -43,7 +43,7 @@ __crypto_certificate_create() {
         )
 }
 
-__add_to_path_back() {
+function __add_to_path_back {
     for argument in "${@}"; do
         if [[ "${PATH}" != *"${argument}"* ]]; then
             export PATH="${PATH}:${argument}"
@@ -52,7 +52,7 @@ __add_to_path_back() {
 }
 
 ## create a certificate secret
-__kubernetes_secret_create_sertificate() {
+function __kubernetes_secret_create_sertificate {
 
     local name key certificate namespace
 
@@ -69,14 +69,12 @@ __kubernetes_secret_create_sertificate() {
 }
 
 ## modify current context
-__kubernetes_context() {
-
+function __kubernetes_context {
     kubectl config set-context --current --namespace="${1}"
-
 }
 
 ## create a service account and everything needed
-__kubernetes_service_account_full() {
+function __kubernetes_service_account_full {
     local account namespace role yaml rolebinding
 
     namespace="${1}"
@@ -88,11 +86,9 @@ __kubernetes_service_account_full() {
     kubernetes_service_account "${namespace}" "${account}"
     kubernetes_rolebinding \
         "${namespace}" "${account}" "${role}" "${rolebinding}"
-
 }
 
-__kubernetes_rolebinding() {
-
+function __kubernetes_rolebinding {
     local account roletype apigroup namespace role yaml rolebinding
 
     namespace="${1}"
@@ -120,7 +116,7 @@ __kubernetes_rolebinding() {
     "
 }
 
-__kubernetes_service_account() {
+function __kubernetes_service_account {
 
     local account namespace
 

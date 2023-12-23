@@ -6,4 +6,4 @@
         gpgsign = true
 [push]
         default = current
-	    autoSetupRemote = true
+	autoSetupRemote = true

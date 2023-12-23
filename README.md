@@ -1,5 +1,3 @@
-<div align="center" markdown="1">
-
 # [`dotfiles`][url-repo]
 
 [![License][badge-license]][url-license]
@@ -7,8 +5,6 @@
 [![Release][badge-workflow-release]][url-workflow-release]
 
 Miscellaneous things for personal use
-
-</div>
 
 ## About The Project
 
@@ -24,19 +20,12 @@ Miscellaneous things for personal use
 - [scripts](./scripts/) — shell scripts (not stowed)
 - [vscode](./vscode/) — vscode configs (`make vscode`)
 
-## Usage
+# Usage
 
 ```bash
-repo="shishifubing/dotfiles"
-url="https://raw.githubusercontent.com/${repo}/main/scripts/setup_packages.sh"
-target="${HOME}/repos/personal/misc-personal-dotfiles"
-
-# directly execute the setup script
-curl -sSL "${url}" | bash
-# execute from the repo
-git clone git@github.com:${repo}.git "${target}"
-cd "${target}"
-make setup
+curl -sSL "https://raw.githubusercontent.com/shishifubing/dotfiles/main/scripts/setup_repo" | bash
+cd "${HOME}/repos/shishifubing/dotfiles"
+make setup_packages home git firefox
 ```
 
 <!-- relative links -->
