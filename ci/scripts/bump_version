@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+set -Eeuxo pipefail
+
+(
+    set +x
+    private_key="${CI_GPG_PRIVATE_KEY:?missing gpg private key}"
+    passphrase="${CI_GPG_PASSPHRASE:?missing gpg passphrase}"
+    echo "${passphrase}" |
+        gpg --batch --yes --import <(echo "${private_key}")
+)
+
+info=$(gpg --with-colons --batch --list-secret-keys | awk -F "::" '/uid/ { print $5 }')
+name="${info%%<*}"
+email="${info##*<}"
+email="${email::-1}"
+
+export GIT_AUTHOR_NAME="${name}"
+export GIT_AUTHOR_EMAIL="${email}"
+export GIT_COMMITTER_NAME="${name}"
+export GIT_COMMITTER_EMAIL="${email}"
+
+python3 -m venv .venv
+. .venv/bin/activate
+pip install commitizen=="3.13.0"
+git status
+cz bump --yes --changelog --version-scheme semver || {
+    code="${?}"
+    if [[ "${code}" -eq 21 ]]; then
+        echo "NonIncrementExit detected, exiting"
+        exit
+    else
+        exit "${code}"
+    fi
+}
+
+new_tag="v$(cz version -p)"
+git tag -v "${new_tag}"
+if [[ ! "${DRY_RUN:-}" ]]; then
+    git push origin HEAD
+    git push origin "${new_tag}"
+fi
