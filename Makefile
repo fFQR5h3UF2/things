@@ -8,7 +8,7 @@ firefox ::
 	./scripts/stow.sh firefox
 vscode ::
 	./scripts/stow.sh vscode
-test ::
+test_makefile ::
 	./scripts/test_makefile.sh
 update_readme ::
 	./scripts/update-readme.sh
