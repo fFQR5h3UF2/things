@@ -1,0 +1,12 @@
+name: Run CI
+description: Checkout the repo and run the CI script
+
+runs:
+  using: composite
+  steps:
+    - name: Checkout
+      uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+
+    - name: Run the CI script
+      run: "${GITHUB_ACTION_PATH}/run_ci.sh"
+      shell: sh
