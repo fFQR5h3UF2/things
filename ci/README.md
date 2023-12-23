@@ -6,174 +6,47 @@
 [![Version][badge-version]][url-version]
 [![Release][badge-release]][url-release]
 
-Github actions and reusable workflows for [shishifubing][url-owner] repositories
+CI stuff
 
 </div>
 
-## Required workflows
+## About the project
 
-### [actionlint]
+This repository contains [action](./action.yml) that launches
+several [scripts](./scripts) depending on the name of the job
 
-- Lint github workflows using [rhysd/actionlint][url-actionlint]
-  (only if something in .github folder was changed)
+## Usage
 
-### [labeler-pr-triage]
+### Example
 
-- Label PR using [actions/labeler][url-prlabeler]
-- Add a size label to PR using [CodelyTV/pr-size-labeler][url-prsizelabeler]
-
-## Reusable workflows
-
-### [tag]
-
-- Determine current version using [GitVersion][url-gitversion] and
-  [GitVersion action][url-gitversion-action] (GitVersion config - [.github/GitVersion.yml])
-- Create a signed tag
-- Push it
-
-```yml
-name: Create a tag
-on:
-  push:
-    branches:
-      - main
-jobs:
-  tag:
-    uses: shishifubing/ci/.github/workflows/tag.yml@main
-    secrets: inherit
-```
-
-### [changelog]
-
-- Get release notes from the latest release
-- Update CHANGELOG.md, sign the commit
-- Create a pull request
-- Merge it
-
-```yml
-name: changelog
-on:
-  release:
-    types: [released]
-jobs:
-  update:
-    uses: shishifubing/ci/.github/workflows/changelog.yml@main
-    secrets: inherit
-```
-
-### [release]
-
-- Download artifacts
-- Get release info
-- Publish a release (if there is an unreleased tag)
-
-```yml
-name: release
-on:
-  schedule:
-    # daily at 23:00 UTC
-    - cron: 0 23 * * *
-jobs:
-  update:
-    uses: shishifubing/ci/.github/workflows/release.yml@main
-    secrets: inherit
-    with:
-      download: true
-```
-
-## Actions
-
-### [terraform]
-
-- Run `terraform plan` on PR and leave a comment
-- Run `terraform apply` after merge
-
-```yml
-name: terraform
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-jobs:
-  call:
-    runs-on: ubuntu-latest
-    container:
-      image: hashicorp/terraform:1.3.7
-    steps:
-      - name: Run terraform
-        uses: shishifubing/ci/actions/terraform@main
-        with:
-          working_directory: cloud/yandex
-        env:
-          AWS_ACCESS_KEY_ID: ${{ secrets.TERRAFORM_BUCKET_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.TERRAFORM_BUCKET_KEY }}
-          TF_VAR_authorized_key: ${{ secrets.YC_MAIN_ADMIN_AUTHORIZED_KEY }}
-          TF_VAR_authorized_key_bucket: ${{ secrets.YC_BUCKET_ADMIN_AUTHORIZED_KEY }}
-          TF_VAR_static_key_id_bucket: ${{ secrets.YC_BUCKET_ADMIN_STATIC_KEY_ID }}
-          TF_VAR_static_key_bucket: ${{ secrets.YC_BUCKET_ADMIN_STATIC_KEY }}
-```
-
-### [release][action-release]
-
-- Check whether the last tag is released
-- Generate release notes
+Runs [bump_version](./scripts/bump_version) script
 
 ```yaml
-name: release
+name: On main
 
 on:
-  schedule:
-    # daily at 23:00 UTC
-    - cron: 0 23 * * *
-  workflow_dispatch:
+  branches: main
 
 jobs:
-  build:
-    uses: ./.github/workflows/build.yml
-    secrets: inherit
-
-  release:
-    name: Publish a release
+  bump_version:
     runs-on: ubuntu-latest
-    needs: build
-
+    container:
+      image: ubuntu@sha256:1395dff3ecc43bbc9c1fb2af3b9d8c0df89ef9ef5f11f7ac69c6e0875862ef08 # 24.04
     steps:
-      - name: Get release info
-        id: info
-        uses: shishifubing/ci/actions/release-info@main
-        env:
-          GH_TOKEN: ${{ github.token }}
-
-      - name: Download artifacts
-        uses: actions/download-artifact@9bc31d5ccc31df68ecc42ccf4149144866c47d8a # v3.0.2
+      - run: apt-get update && apt-get install git -y && git --version
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
-          path: _release
-
-      - name: Create a release
-        uses: softprops/action-gh-release@de2c0eb89ae2a093876385947365aca7b0e5f844 # v0.1.15
-        if: steps.info.outputs.create == 'true'
-        with:
-          # events triggered by GitHub Actions don't trigger GitHub Actions, so
-          # you need to pass a custom token to trigger changelog workflow
+          fetch-depth: 0
           token: ${{ secrets.CI_GITHUB_TOKEN }}
-          tag_name: ${{ steps.info.outputs.version }}
-          name: ${{ steps.info.outputs.name }}
-          body: ${{ steps.info.outputs.body }}
-          files: _release/**/*
+      - uses: ./.
+        env:
+          CI_GPG_PRIVATE_KEY: ${{ secrets.CI_GPG_PRIVATE_KEY }}
+          CI_GPG_PASSPHRASE: ${{ secrets.CI_GPG_PASSPHRASE }}
+
 ```
 
 <!-- relative links -->
 
-[terraform]: actions/terraform/action.yml
-[tag]: .github/workflows/tag.yml
-[actionlint]: .github/workflows/actionlint.yml
-[.github/gitversion.yml]: .github/GitVersion.yml
-[labeler-issue-triage]: .github/workflows/labeler-issue-triage.yml
-[labeler-pr-triage]: .github/workflows/labeler-pr-triage.yml
-[changelog]: .github/workflows/changelog.yml
-[release]: .github/workflows/release.yml
-[action-release]: actions/release-info/action.yml
 
 <!-- project links -->
 
