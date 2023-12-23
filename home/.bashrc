@@ -5,5 +5,5 @@ if [[ "${-}" != *i* ]]; then
     return
 fi
 
-export DOTFILES="${DOTFILES}:-"${HOME}/repos/shishifubing/dotfiles"}"
+export DOTFILES="${DOTFILES:-"${HOME}/repos/shishifubing/dotfiles"}"
 . "${DOTFILES}/scripts/bashrc.sh"
