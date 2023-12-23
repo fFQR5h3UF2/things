@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -Eeuxo pipefail
 
-dotfiles_dir="${DOTFILES:-"${HOME}/repos/shishifubing"}"
+dotfiles_dir="${DOTFILES:-"${HOME}/repos/shishifubing/dotfiles"}"
 dotfiles_url="https://github.com/shishifubing/dotfiles.git"
 
 mkdir -p "${dotfiles_dir}"
