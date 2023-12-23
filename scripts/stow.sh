@@ -17,7 +17,7 @@ elif [[ "${target}" == "vscode" ]]; then
 	mkdir -p "${dir}"
 	_stow vscode "${dir}"
     done
-elif [[ -f "./${target}" ]]; then
+elif [[ -d "./${target}" ]]; then
     _stow "${target}"
 else
     echo "invalid target: ${target}"

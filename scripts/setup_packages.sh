@@ -60,7 +60,7 @@ exit_code=0
 {
     echo "downloading"
     for url in "${urls[@]}"; do
-        wget "${url}"
+        wget --no-verbose "${url}"
     done
 
     echo "unzipping"
