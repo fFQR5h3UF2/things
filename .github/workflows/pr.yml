@@ -14,5 +14,5 @@ jobs:
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 #v4.1.1
       - run: apt-get update
-      - run: apt-get install -y make git curl
+      - run: apt-get install -y make git curl wget
       - run: make test_makefile
