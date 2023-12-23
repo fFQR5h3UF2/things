@@ -1,0 +1,17 @@
+name: pr
+
+on:
+  pull_request:
+
+concurrency:
+  group: ${{ github.workflow }}/${{ github.event.pull_request.head.label || github.head_ref || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  Test:
+    runs-on: ubuntu-latest
+    container:
+      image: debian@sha256:45287d89d96414e57c7705aa30cb8f9836ef30ae8897440dd8f06c4cff801eec # bookworm-20231218-slim
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 #v4.1.1
+      - run: scripts/test_makefile.sh

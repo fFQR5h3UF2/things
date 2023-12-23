@@ -5,12 +5,12 @@ if [[ "${-}" != *i* ]]; then
     return
 fi
 
-export DOTFILES="${HOME}/repos/shishifubing/misc-dotfiles"
+export DOTFILES="${HOME}/repos/shishifubing/dotfiles"
 . "${DOTFILES}/scripts/functions.sh"
 __source_scripts \
 	/etc/profile.d/bash_completion.sh \
 	/usr/share/git-core/contrib/completion/git-prompt.sh \
-	/usr/share/bash-completion/completions/git 
+	/usr/share/bash-completion/completions/git
 
 export force_color_prompt=yes
 export GPG_TTY=$(tty)

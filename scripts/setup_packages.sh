@@ -1,12 +1,9 @@
 #!/usr/bin/env bash
 set -Eeuxo pipefail
 
-export DOTFILES="${DOTFILES:-${HOME}/repos/personal/misc-personal-dotfiles}"
-
 hashicorp_url="https://hashicorp-releases.yandexcloud.net"
 github_url="https://github.com"
 gitversion_url="${github_url}/GitTools/GitVersion/releases/download"
-dotfiles_url="${github_url}/shishifubing-com/misc-personal-dotfiles.git"
 helm_url="https://get.helm.sh"
 yc_url="https://storage.yandexcloud.net/yandexcloud-yc"
 terraform_docs_url="${github_url}/terraform-docs/terraform-docs/releases/download"
@@ -54,36 +51,34 @@ binaries=(
     "terraform" "packer" "gitversion" "kubectl" "yc" "helm" "terraform-docs"
     "glab" "protoc"
 )
-directories_sensitive=(
-    "${HOME}/.ssh"
-    "${HOME}/.gnupg"
-)
 
 echo "prepare the work directory"
 temp=$(mktemp -d)
 cd "${temp}"
 
-echo "update dotfiles"
-git clone "${dotfiles_url}" "${DOTFILES}" || {
-    git --git-dir "${DOTFILES}/.git" pull
+exit_code=0
+{
+    echo "downloading"
+    for url in "${urls[@]}"; do
+        wget "${url}"
+    done
+
+    echo "unzipping"
+    for zip in "${zips[@]}"; do
+        unzip "${zip}"
+    done
+    for tar in "${tars[@]}"; do
+        tar -xvzf "${tar}"
+    done
+    mv ./*/helm ./bin/* ./
+
+    echo "installing binaries"
+    chmod +x "${binaries[@]}"
+    mkdir -p "${HOME}/.local/bin"
+    mv "${binaries[@]}" "${HOME}/.local/bin/"
+} || {
+    exit_code="${?}"
 }
 
-echo "downloading"
-for url in "${urls[@]}"; do wget "${url}"; done
-
-echo "unzipping"
-for zip in "${zips[@]}"; do unzip "${zip}"; done
-for tar in "${tars[@]}"; do tar -xvzf "${tar}"; done
-mv ./*/helm ./bin/* ./
-
-echo "installing binaries"
-chmod +x "${binaries[@]}"
-mv "${binaries[@]}" "${HOME}/.local/bin/"
-
-echo "removing work directory"
 rm -rf "${temp}"
-
-echo "rest of the setup"
-mkdir -pm 700 "${directories_sensitive[@]}"
-
-"${DOTFILES}/scripts/setup_links.sh"
+exit "${exit_code}"
