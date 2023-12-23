@@ -8,6 +8,7 @@ function _stow {
 }
 
 if [[ "${target}" == "firefox" ]]; then
+    shopt -s nullglob
     for profile in "${HOME}/.mozilla/firefox/"*".default-release-"*; do
         _stow firefox "${profile}"
     done
