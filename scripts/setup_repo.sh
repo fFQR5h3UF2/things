@@ -4,11 +4,11 @@ set -Eeuxo pipefail
 dotfiles_dir="${DOTFILES:-"${HOME}/repos/shishifubing"}"
 dotfiles_url="https://github.com/shishifubing/dotfiles.git"
 
-mkdir -p "${DOTFILES}"
+mkdir -p "${dotfiles_dir}"
 
-if [[ -d "${DOTFILES}/.git" ]]; then
-    git --git-dir "${DOTFILES}/.git" checkout main
-    git --git-dir "${DOTFILES}/.git" pull
+if [[ -d "${dotfiles_dir}/.git" ]]; then
+    git --git-dir "${dotfiles_dir}/.git" checkout main
+    git --git-dir "${dotfiles_dir}/.git" pull
 else
-    git clone "${dotfiles_url}" "${DOTFILES}"
+    git clone "${dotfiles_url}" "${dotfiles_dir}"
 fi
