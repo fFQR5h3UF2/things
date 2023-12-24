@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.20.0 (2023-12-24)
+
+### Feat
+
+- **bump_version**: add reusable workflow (#170)
+
 ## v1.19.0 (2023-12-24)
 
 ### Feat
