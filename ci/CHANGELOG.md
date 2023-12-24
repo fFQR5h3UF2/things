@@ -1,5 +1,43 @@
 # CHANGELOG
 
+## v1.19.0 (2023-12-24)
+
+### Feat
+
+- **bump_version**: always update changelog on bump (#169)
+
+## v1.18.0 (2023-12-24)
+
+### Feat
+
+- add unified CI action  (#166)
+
+### Fix
+
+- **bump_version**: cannot sign using CI gpg key (#168)
+
+## v1.17.0 (2023-12-23)
+
+### Feat
+
+- **actions**: add CI action (#165)
+
+## v1.16.6 (2023-11-12)
+
+## v1.16.5 (2023-11-12)
+
+### Fix
+
+- **release**: disable release creation
+
+## v1.16.4 (2023-11-09)
+
+### Fix
+
+- **workflows**: do not create releases with empty release notes
+
+## v1.16.3 (2023-11-08)
+
 ## v1.16.2 - 2023-11-08
 
 <!-- Automatically generated in https://github.com/shishifubing/ci-actions-common/actions/runs/6805138059 -->
