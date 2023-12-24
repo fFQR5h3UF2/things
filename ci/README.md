@@ -17,7 +17,22 @@ several [scripts](./scripts) depending on the name of the job
 
 ## Usage
 
-### Example
+### Reusable workflows
+
+- [reuse-bump-version](./.github/workflows/reuse-bump-version.yml)
+  ```yaml
+    name: On main
+    on:
+      push:
+        branches: main
+    jobs:
+      bump_version:
+        runs-on: ubuntu-latest
+        uses: ./.github/workflows/reuse-bump-version.yml
+        secrets: inherit
+  ```
+
+### Action
 
 Runs [bump_version](./scripts/bump_version) script
 
