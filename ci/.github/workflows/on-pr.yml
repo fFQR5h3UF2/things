@@ -1,8 +1,6 @@
 name: On pull request
-
 on:
   pull_request:
-
 jobs:
   test_bump_version:
     runs-on: ubuntu-latest
@@ -11,6 +9,8 @@ jobs:
     steps:
       - run: apt-get update && apt-get install git -y && git --version
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          fetch-depth: 0
       - uses: ./.
         env:
           CI_GPG_PRIVATE_KEY: ${{ secrets.CI_GPG_PRIVATE_KEY }}
