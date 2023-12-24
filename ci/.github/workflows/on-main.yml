@@ -4,6 +4,5 @@ on:
     branches: main
 jobs:
   bump_version:
-    runs-on: ubuntu-latest
     uses: ./.github/workflows/reuse-bump-version.yml
     secrets: inherit
