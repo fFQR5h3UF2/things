@@ -4,7 +4,7 @@ export DOTFILES="${HOME}/repos/shishifubing/dotfiles"
 . "${DOTFILES}/scripts/functions.sh"
 
 export force_color_prompt=yes
-export GPG_TTY="${TTY}"
+export GPG_TTY="$(tty)"
 # user-specific configuration files
 export XDG_CONFIG_HOME="${HOME}/.config"
 ## the main prompt variable
@@ -28,7 +28,7 @@ export OPEN_SOURCE_CONTRIBUTOR="true"
 export GIT_EDITOR="nvim"
 
 # history file location
-export HISTFILE="${HOME}/.bash_history"
+export HISTFILE=~/.bash_history
 # ignore commands starting with whitespace
 export HISTCONTROL="ignorespace"
 # bash history size (file size)
