@@ -5,7 +5,7 @@ usage_text="\`\`\`bash
 $(cat ./scripts/usage.sh | tail -n +4)
 \`\`\`"
 usage_pattern='
-/```/ { if (start) { end = 1 } else { print usage_text; start = 1 }; next }
+/<!--.*usage.*-->/ { if (start) { end = 1 } else { print usage_text; start = 1 }; next }
 !start || end { print }
 '
 awk -v usage_text="${usage_text}" "${usage_pattern}" README.md >README.new.md

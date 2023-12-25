@@ -23,9 +23,8 @@ Miscellaneous things for personal use
 # Usage
 
 ```bash
-curl -sSL "https://raw.githubusercontent.com/shishifubing/dotfiles/main/scripts/setup_repo" | bash
-cd "${HOME}/repos/shishifubing/dotfiles"
-make setup_packages home git firefox
+#!/usr/bin/env bash
+set -Eeuxo pipefail
 ```
 
 <!-- relative links -->

@@ -8,11 +8,9 @@ firefox ::
 	./scripts/stow.sh firefox
 vscode ::
 	./scripts/stow.sh vscode
-test_makefile ::
-	./scripts/test_makefile.sh
 update_readme ::
 	./scripts/update-readme.sh
-setup_packages ::
-	./scripts/setup_packages.sh
-setup_repo ::
-	./scripts/setup_repo.sh
+setup::
+	./scripts/setup.sh
+test_makefile ::
+	./scripts/test_makefile.sh

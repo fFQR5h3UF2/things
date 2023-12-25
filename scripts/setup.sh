@@ -1,6 +1,32 @@
 #!/usr/bin/env bash
 set -Eeuxo pipefail
 
+mkdir -p ~/.local/bin ~/repos
+mkdir -pm 700 ~/.ssh ~/.gpupg
+
+dotfiles_dir="${HOME}/repos/shishifubing/dotfiles"
+dotfiles_url="https://github.com/shishifubing/dotfiles.git"
+mkdir -p "${dotfiles_dir}"
+if [[ -d "${dotfiles_dir}/.git" ]]; then
+    git --git-dir "${dotfiles_dir}/.git" checkout main
+    git --git-dir "${dotfiles_dir}/.git" pull
+else
+    git clone "${dotfiles_url}" "${dotfiles_dir}"
+fi
+cd "${dotfiles_dir}"
+
+packages=(
+    make git curl wget unzip stow gpg python3 python3-pip python3-venv
+    gpg-agent
+)
+apt-get update
+apt-get install -y "${packages[@]}"
+
+python3 -m venv --symlinks --clear --upgrade-deps --prompt '~/(.venv)' ~/.venv
+. ~/.venv/bin/activate
+pip install commitizen=="3.13.0"
+cz version --project
+
 hashicorp_url="https://hashicorp-releases.yandexcloud.net"
 github_url="https://github.com"
 gitversion_url="${github_url}/GitTools/GitVersion/releases/download"
@@ -40,13 +66,6 @@ urls=(
     "${glab_url}/v${glab_version}/downloads/${glab_distrib}"
     "${protoc_url}/v${protoc_version}/${protoc_distrib}"
 )
-zips=(
-    "${terraform_distrib}" "${packer_distrib}" "${protoc_distrib}"
-)
-tars=(
-    "${helm_distrib}" "${terraform_docs_distrib}" "${gitversion_distrib}"
-    "${glab_distrib}"
-)
 binaries=(
     "terraform" "packer" "gitversion" "kubectl" "yc" "helm" "terraform-docs"
     "glab" "protoc"
@@ -54,29 +73,28 @@ binaries=(
 
 echo "prepare the work directory"
 temp=$(mktemp -d)
-cd "${temp}"
 
 exit_code=0
-{
+(
+    cd "${temp}"
     echo "downloading"
     for url in "${urls[@]}"; do
         wget --no-verbose "${url}"
     done
 
     echo "unzipping"
-    for zip in "${zips[@]}"; do
+    for zip in *.zip; do
         unzip "${zip}"
     done
-    for tar in "${tars[@]}"; do
+    for tar in *.tar.gz; do
         tar -xvzf "${tar}"
     done
     mv ./*/helm ./bin/* ./
 
     echo "installing binaries"
     chmod +x "${binaries[@]}"
-    mkdir -p "${HOME}/.local/bin"
-    mv "${binaries[@]}" "${HOME}/.local/bin/"
-} || {
+    mv "${binaries[@]}" ~/.local/bin/
+) || {
     exit_code="${?}"
 }
 

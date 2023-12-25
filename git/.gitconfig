@@ -4,6 +4,7 @@
         signingkey = EE6FABC311A20068
 [commit]
         gpgsign = true
+[tag]
+	gpgsign = true
 [push]
         default = current
-	autoSetupRemote = true
