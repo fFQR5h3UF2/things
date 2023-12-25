@@ -4,5 +4,5 @@ on:
     branches: main
 jobs:
   bump_version:
-    uses: ./.github/workflows/reuse-bump-version.yml@main
+    uses: shishifubing/ci/.github/workflows/reuse-bump-version.yml@main
     secrets: inherit
