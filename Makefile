@@ -12,7 +12,7 @@ test_makefile ::
 	./scripts/test_makefile.sh
 update_readme ::
 	./scripts/update-readme.sh
-setup_packages ::
-	./scripts/setup_packages.sh
+setup_general ::
+	./scripts/setup_general.sh
 setup_repo ::
 	./scripts/setup_repo.sh

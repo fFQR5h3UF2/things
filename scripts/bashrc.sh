@@ -2,13 +2,9 @@
 
 export DOTFILES="${HOME}/repos/shishifubing/dotfiles"
 . "${DOTFILES}/scripts/functions.sh"
-__source_scripts \
-	/etc/profile.d/bash_completion.sh \
-	/usr/share/git-core/contrib/completion/git-prompt.sh \
-	/usr/share/bash-completion/completions/git
 
 export force_color_prompt=yes
-export GPG_TTY=$(tty)
+export GPG_TTY="${TTY}"
 # user-specific configuration files
 export XDG_CONFIG_HOME="${HOME}/.config"
 ## the main prompt variable
@@ -46,7 +42,7 @@ export ANDROID_HOME="${HOME}/Android/Sdk"
 export GOPATH="${HOME}/.go"
 export JAVA_HOME="/usr/java/latest"
 ## actual path changes
-__add_to_path_back "${HOME}/.local/share/gem/ruby/3.0.0/bin" "${HOME}/.local/bin" \
+__add_to_path_back "${HOME}/.local/share/gem/ruby/"*"/bin" "${HOME}/.local/bin" \
     "/usr/bin" "${GOPATH}/bin" "${HOME}/yandex-cloud/bin" "${ANDROID_HOME}/tools" \
     "/usr/java/latest/bin" "/usr/mvn/latest/bin"
 
@@ -74,3 +70,9 @@ shopt -s histappend
 # attempt to save all lines of a multiple-line
 # command in the same history entry.
 shopt -s cmdhist
+
+__source_scripts \
+    /etc/profile.d/bash_completion.sh \
+    /usr/share/git-core/contrib/completion/git-prompt.sh \
+    /usr/share/bash-completion/completions/git \
+    "${HOME}/.venv/bin/activate"
