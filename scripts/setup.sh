@@ -25,6 +25,7 @@ apt-get install -y "${packages[@]}"
 python3 -m venv --symlinks --clear --upgrade-deps --prompt '~/(.venv)' ~/.venv
 . ~/.venv/bin/activate
 pip install commitizen=="3.13.0"
+cz version --project
 
 hashicorp_url="https://hashicorp-releases.yandexcloud.net"
 github_url="https://github.com"
