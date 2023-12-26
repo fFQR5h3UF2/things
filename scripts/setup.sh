@@ -22,9 +22,9 @@ packages=(
 apt-get update
 apt-get install -y "${packages[@]}"
 
-python3 -m venv --symlinks --clear --upgrade-deps --prompt '~/(.venv)' ~/.venv
+python3 -m venv --symlinks --clear --upgrade-deps --prompt '~/.venv' ~/.venv
 . ~/.venv/bin/activate
-pip install commitizen=="3.13.0"
+pip install commitizen=="3.13.0" pre-commit=="3.6.0"
 cz version --project
 
 hashicorp_url="https://hashicorp-releases.yandexcloud.net"
