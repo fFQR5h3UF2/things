@@ -4,5 +4,16 @@ on:
     branches: main
 jobs:
   bump_version:
-    uses: shishifubing/ci/.github/workflows/reuse-bump-version.yml@main
-    secrets: inherit
+    runs-on: ubuntu-latest
+    container:
+      image: ubuntu@sha256:1395dff3ecc43bbc9c1fb2af3b9d8c0df89ef9ef5f11f7ac69c6e0875862ef08 # 24.04
+    steps:
+      - run: apt-get update && apt-get install git -y && git --version
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.CI_GITHUB_TOKEN }}
+      - uses: shishifubin/ci@55753ec490b3f72f884e63e1bc0d13def9cd39ed # v1.20.0
+        env:
+          CI_GPG_PRIVATE_KEY: ${{ secrets.CI_GPG_PRIVATE_KEY }}
+          CI_GPG_PASSPHRASE: ${{ secrets.CI_GPG_PASSPHRASE }}
