@@ -13,4 +13,4 @@ jobs:
     container:
       image: ubuntu@sha256:1395dff3ecc43bbc9c1fb2af3b9d8c0df89ef9ef5f11f7ac69c6e0875862ef08 # 24.04
     steps:
-      - uses: shishifubing/ci/actions/ci@822948414e9d5de65a5c2b098b45639dc50549bc # v1.17.0
+      - uses: shishifubing/ci/actions/ci@55753ec490b3f72f884e63e1bc0d13def9cd39ed # v1.20.0
