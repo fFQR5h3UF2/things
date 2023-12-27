@@ -1,14 +1,8 @@
-<div align="center" markdown="1">
-
-# [`ci`][url-repo]
-
 [![License][badge-license]][url-license]
 [![Version][badge-version]][url-version]
 [![Release][badge-release]][url-release]
 
-CI stuff
-
-</div>
+# [`ci`][url-repo]
 
 ## About the project
 
@@ -17,48 +11,31 @@ several [scripts](./scripts) depending on the name of the job
 
 ## Usage
 
-### Reusable workflows
-
-- [reuse-bump-version](./.github/workflows/reuse-bump-version.yml)
-  ```yaml
-    name: On main
-    on:
-      push:
-        branches: main
-    jobs:
-      bump_version:
-        runs-on: ubuntu-latest
-        uses: ./.github/workflows/reuse-bump-version.yml
-        secrets: inherit
-  ```
-
 ### Action
+
+Runs tasks depending on the job name
+
+#### Example
 
 Runs [bump_version](./scripts/bump_version) script
 
 ```yaml
 name: On main
-
 on:
   push:
     branches: main
-
 jobs:
   bump_version:
     runs-on: ubuntu-latest
-    container:
-      image: ubuntu@sha256:1395dff3ecc43bbc9c1fb2af3b9d8c0df89ef9ef5f11f7ac69c6e0875862ef08 # 24.04
     steps:
-      - run: apt-get update && apt-get install git -y && git --version
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           fetch-depth: 0
           token: ${{ secrets.CI_GITHUB_TOKEN }}
-      - uses: ./.
+      - uses: shishifubing/ci@main
         env:
           CI_GPG_PRIVATE_KEY: ${{ secrets.CI_GPG_PRIVATE_KEY }}
           CI_GPG_PASSPHRASE: ${{ secrets.CI_GPG_PASSPHRASE }}
-
 ```
 
 <!-- relative links -->
