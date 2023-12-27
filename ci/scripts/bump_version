@@ -54,7 +54,7 @@ git config tag.gpgsign true
 python3 -m venv .venv
 . .venv/bin/activate
 pip install commitizen=="3.13.0"
-cz bump --yes --changelog --version-scheme semver || {
+cz bump --yes --version-scheme semver || {
     code="${?}"
     if [[ "${code}" -eq 21 ]]; then
         echo "NonIncrementExit detected, exiting"
