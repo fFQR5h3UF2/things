@@ -7,7 +7,7 @@ packages=(
 )
 
 job="${1:-"${GITHUB_JOB}"}"
-action_script="${GITHUB_ACTION_PATH}/scripts/${job}"
+action_script="/action/scripts/${job}"
 
 apt-get update
 apt-get install -y "${packages[@]}"
