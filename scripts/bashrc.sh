@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
+IS_INTERACTIVE=
+if [[ "${-}" == *i* ]]; then
+    IS_INTERACTIVE="1"
+fi
+
 export DOTFILES="${HOME}/repos/shishifubing/dotfiles"
 . "${DOTFILES}/scripts/functions.sh"
 
@@ -76,3 +81,11 @@ __source_scripts \
     /usr/share/git-core/contrib/completion/git-prompt.sh \
     /usr/share/bash-completion/completions/git \
     "${HOME}/.venv/bin/activate"
+
+if [[ "${IS_INTERACTIVE}" && "${TERM_PROGRAM}" != "tmux" ]]; then
+    if tmux has-session &>/dev/null; then
+        tmux attach-session
+    else
+        tmux
+    fi
+fi
