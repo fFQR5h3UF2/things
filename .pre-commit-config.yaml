@@ -17,7 +17,6 @@ repos:
     - id: mixed-line-ending
     - id: no-commit-to-branch
     - id: trailing-whitespace
-
 - repo: https://github.com/commitizen-tools/commitizen
   rev: v3.13.0
   hooks:
@@ -29,3 +28,10 @@ repos:
       entry: make update_readme
       language: system
       files: scripts/usage.sh|README.md
+      pass_filenames: false
+    - id: shellcheck
+      name: Run shellcheck
+      entry: shellcheck
+      language: system
+      types: [shell]
+      args: ["--severity=warning"]
