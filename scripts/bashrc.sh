@@ -76,3 +76,11 @@ __source_scripts \
     /usr/share/git-core/contrib/completion/git-prompt.sh \
     /usr/share/bash-completion/completions/git \
     "${HOME}/.venv/bin/activate"
+
+if [[ "${TERM_PROGRAM}" != "tmux" ]]; then
+    if tmux has-session &>/dev/null; then
+        tmux attach-session
+    else
+        tmux
+    fi
+fi
