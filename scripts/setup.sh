@@ -17,7 +17,7 @@ cd "${dotfiles_dir}"
 
 packages=(
 	make git curl wget unzip stow gpg python3 python3-pip python3-venv
-	gpg-agent shellcheck shfmt
+	gpg-agent shellcheck shfmt sudo
 )
 sudo apt-get update
 sudo apt-get install -y "${packages[@]}"
