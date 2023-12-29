@@ -19,7 +19,7 @@ packages=(
 	make git curl wget unzip stow gpg python3 python3-pip python3-venv
 	gpg-agent shellcheck shfmt sudo
 )
-if [[ ${USER} == "root" ]]; then
+if [[ "$(whoami)" == "root" ]]; then
 	apt-get update
 	apt-get install -y "${packages[@]}"
 else
