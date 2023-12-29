@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -Eeuxo pipefail
 
-mkdir -p ~/.local/bin ~/repos ~/.ssh ~/.gpupg
+mkdir -p ~/.local/bin ~/repos ~/.ssh ~/.gnupg
 chmod 0700 ~/.ssh ~/.gnupg
 
 dotfiles_dir="${HOME}/repos/shishifubing/dotfiles"
