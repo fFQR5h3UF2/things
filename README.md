@@ -22,10 +22,11 @@ Miscellaneous things for personal use
 
 # Usage
 
+<!-- start usage -->
 ```bash
-#!/usr/bin/env bash
-set -Eeuxo pipefail
+curl -sSL "https://raw.githubusercontent.com/shishifubing/dotfiles/main/scripts/setup.sh" | bash
 ```
+<!-- end usage -->
 
 <!-- relative links -->
 

@@ -1,9 +1,13 @@
 #!/usr/bin/env bash
 set -Eeuxo pipefail
 
-usage_text="\`\`\`bash
+usage_text="\
+<!-- start usage -->
+\`\`\`bash
 $(cat ./scripts/usage.sh | tail -n +4)
-\`\`\`"
+\`\`\`
+<!-- end usage -->\
+"
 usage_pattern='
 /<!--.*usage.*-->/ { if (start) { end = 1 } else { print usage_text; start = 1 }; next }
 !start || end { print }

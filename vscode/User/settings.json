@@ -1,10 +1,8 @@
 {
     "telemetry.telemetryLevel": "off",
-    // it is needed for the key remap to work
     "keyboard.dispatch": "code",
     "editor.inlayHints.enabled": "on",
     "window.openFilesInNewWindow": "off",
-    // editor
     "editor.bracketPairColorization.enabled": true,
     "editor.guides.bracketPairs": true,
     "editor.fontFamily": "Source Code Pro",
@@ -36,37 +34,26 @@
     "workbench.editor.labelFormat": "long",
     "workbench.editor.limit.value": 999,
     "workbench.panel.opensMaximized": "never",
-    // git
     "git.autofetch": true,
     "git.confirmSync": false,
-    // explorer
     "explorer.incrementalNaming": "smart",
     "explorer.openEditors.visible": 999,
-    // random stuff
     "files.trimTrailingWhitespace": true,
     "zenMode.centerLayout": false,
     "zenMode.silentNotifications": false,
     "json.maxItemsComputed": 999999,
     "shellcheck.exclude": [
-        // can't follow
         "SC1091",
-        // can't follow non-constant source
         "SC1090",
-        // (mkdir) When used with -p, -m only applies to the deepest directory
         "SC2174",
-        //"SC2155",
-        //"SC2120",
-        //"SC2119",
-        //"SC2016",
-        "SC2001", // use variable expansion instead of sed
-        "SC2028" // echo may not expand escape sequences, use printf
+        "SC2001",
+	"SC2028"
     ],
     "prettier.bracketSpacing": true,
     "prettier.useTabs": false,
     "prettier.enable": true,
     "prettier.printWidth": 79,
     "editor.tabCompletion": "on",
-    //"editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.dragAndDrop": false,
     "editor.detectIndentation": false,
     "editor.minimap.renderCharacters": true,
@@ -81,7 +68,6 @@
     "redhat.telemetry.enabled": false,
     "git.enableSmartCommit": true,
     "gopls": {
-        //https://github.com/golang/vscode-go/blob/master/docs/settings.md#settings-for-gopls
         "ui.semanticTokens": true,
         "formatting.gofumpt": true
     },
@@ -102,7 +88,6 @@
     "window.zoomLevel": -1,
     "git.pullBeforeCheckout": true,
     "githubPullRequests.pullBranch": "always",
-    // format settings
     "[python]": {
         "editor.defaultFormatter": "ms-python.python",
         "editor.codeActionsOnSave": {
