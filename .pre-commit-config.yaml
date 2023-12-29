@@ -35,3 +35,10 @@ repos:
       language: system
       types: [shell]
       args: ["--severity=warning"]
+    - id: shfmt
+      name: Run shfmt
+      language: system
+      entry: shfmt
+      types: [shell]
+      args: [-w, -s]
+      exclude_types: [csh, tcsh, zsh]
