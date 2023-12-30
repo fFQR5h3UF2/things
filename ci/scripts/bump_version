@@ -10,8 +10,8 @@ set -Eeuxo pipefail
 key=$(gpg --with-colons --batch --show-keys --with-fingerprint --keyid-format=long _key)
 user=$(awk -F ":" '/uid/ { print $10 }' <<<"${key}")
 key_id=$(awk -F ":" '/sec/ { print $5 }' <<<"${key}")
-fingerprint=$(awk -F ":" '/fpr/ { print $10; exit }' <<<"${key}")
-keygrip=$(awk -F ":" '/fpr/ { keygrip = $10 } END { print keygrip }' <<<"${key}")
+#fingerprint=$(awk -F ":" '/fpr/ { print $10; exit }' <<<"${key}")
+#keygrip=$(awk -F ":" '/fpr/ { keygrip = $10 } END { print keygrip }' <<<"${key}")
 
 echo '\
 #!/usr/bin/env bash
@@ -54,7 +54,7 @@ git config tag.gpgsign true
 python3 -m venv .venv
 . .venv/bin/activate
 pip install commitizen=="3.13.0"
-cz bump --yes --version-scheme semver || {
+cz bump --yes --changelog --version-scheme semver || {
     code="${?}"
     if [[ "${code}" -eq 21 ]]; then
         echo "NonIncrementExit detected, exiting"

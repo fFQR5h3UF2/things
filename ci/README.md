@@ -11,6 +11,21 @@ several [scripts](./scripts) depending on the name of the job
 
 ## Usage
 
+### Reusable workflows
+
+#### [reuse-bump-version](./.github/workflows/reuse-bump-version.yml)
+
+```yaml
+name: On main
+on:
+  push:
+    branches: main
+jobs:
+  bump_version:
+    uses: ./.github/workflows/reuse-bump-version.yml@main
+    secrets: inherit
+```
+
 ### Action
 
 Runs tasks depending on the job name
