@@ -10,7 +10,7 @@ _dotfiles_info_ram() {
 
 _dotfiles_source_scripts() {
 	for script in "${@}"; do
-		if [[ -x ${script} ]]; then
+		if [[ -f ${script} ]]; then
 			. "${script}"
 		fi
 	done
