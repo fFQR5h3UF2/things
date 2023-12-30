@@ -42,5 +42,8 @@ repos:
       language: system
       entry: shfmt
       types: [shell]
-      args: [-w, -s]
+      args:
+        - --write
+        - --indent=4
+        - --binary-next-line
       exclude_types: [csh, tcsh, zsh]

@@ -2,19 +2,14 @@
 
 IS_INTERACTIVE=
 if [[ ${-} == *i* ]]; then
-	IS_INTERACTIVE="1"
+    IS_INTERACTIVE="1"
 fi
 
 export DOTFILES="${HOME}/repos/shishifubing/dotfiles"
 . "${DOTFILES}/scripts/functions.sh"
 
-_dotfiles_source_scripts \
-	/etc/profile.d/bash_completion.sh \
-	/usr/share/git-core/contrib/completion/git-prompt.sh \
-	/usr/share/bash-completion/completions/git \
-	/usr/share/doc/fzf/examples/key-bindings.zsh \
-	/usr/share/doc/fzf/examples/completion.zsh \
-	~/.venv/bin/activate
+export FZF_DEFAULT_COMMAND="fd --type f"
+export FZF_COMPLETION_TRIGGER="**"
 
 export force_color_prompt=yes
 export GPG_TTY="${TTY:-}"
@@ -57,8 +52,8 @@ export GOPATH="${HOME}/.go"
 export JAVA_HOME="/usr/java/latest"
 
 _dotfiles_add_to_path_back "${HOME}/.local/share/gem/ruby/"*"/bin" "${HOME}/.local/bin" \
-	"/usr/bin" "${GOPATH}/bin" "${HOME}/yandex-cloud/bin" "${ANDROID_HOME}/tools" \
-	"/usr/java/latest/bin" "/usr/mvn/latest/bin"
+    "/usr/bin" "${GOPATH}/bin" "${HOME}/yandex-cloud/bin" "${ANDROID_HOME}/tools" \
+    "/usr/java/latest/bin" "/usr/mvn/latest/bin"
 
 # https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html
 # vim mode for the terminal
@@ -86,9 +81,16 @@ shopt -s histappend
 shopt -s cmdhist
 
 if [[ ${IS_INTERACTIVE} && ${TERM_PROGRAM} != "tmux" ]]; then
-	if tmux has-session &>/dev/null; then
-		tmux attach-session
-	else
-		tmux
-	fi
+    if tmux has-session &>/dev/null; then
+        tmux attach-session
+    else
+        tmux
+    fi
 fi
+
+_dotfiles_source_scripts \
+    /etc/profile.d/bash_completion.sh \
+    /usr/share/git-core/contrib/completion/git-prompt.sh \
+    /usr/share/bash-completion/completions/git \
+    /usr/share/fzf/shell/key-bindings.bash \
+    ~/.venv/bin/activate
