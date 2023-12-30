@@ -8,13 +8,8 @@ fi
 export DOTFILES="${HOME}/repos/shishifubing/dotfiles"
 . "${DOTFILES}/scripts/functions.sh"
 
-_dotfiles_source_scripts \
-	/etc/profile.d/bash_completion.sh \
-	/usr/share/git-core/contrib/completion/git-prompt.sh \
-	/usr/share/bash-completion/completions/git \
-	/usr/share/doc/fzf/examples/key-bindings.zsh \
-	/usr/share/doc/fzf/examples/completion.zsh \
-	~/.venv/bin/activate
+export FZF_DEFAULT_COMMAND="fd --type f"
+export FZF_COMPLETION_TRIGGER="**"
 
 export force_color_prompt=yes
 export GPG_TTY="${TTY:-}"
@@ -92,3 +87,10 @@ if [[ ${IS_INTERACTIVE} && ${TERM_PROGRAM} != "tmux" ]]; then
 		tmux
 	fi
 fi
+
+_dotfiles_source_scripts \
+	/etc/profile.d/bash_completion.sh \
+	/usr/share/git-core/contrib/completion/git-prompt.sh \
+	/usr/share/bash-completion/completions/git \
+	/usr/share/fzf/shell/key-bindings.bash \
+	~/.venv/bin/activate
