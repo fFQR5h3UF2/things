@@ -1,5 +1,18 @@
 # CHANGELOG
 
+## v1.22.0 (2023-12-30)
+
+### Feat
+
+- switch to composite action, add reusable workflow for bump_version (#174)
+- **action**: switch from composite to docker action (#173)
+
+## v1.21.0 (2023-12-27)
+
+### Feat
+
+- **bump_version**: do not update changelog by default (#172)
+
 ## v1.20.0 (2023-12-24)
 
 ### Feat
