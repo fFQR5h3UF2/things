@@ -1,21 +1,30 @@
 #!/usr/bin/env bash
 
 IS_INTERACTIVE=
-if [[ "${-}" == *i* ]]; then
-    IS_INTERACTIVE="1"
+if [[ ${-} == *i* ]]; then
+	IS_INTERACTIVE="1"
 fi
 
 export DOTFILES="${HOME}/repos/shishifubing/dotfiles"
 . "${DOTFILES}/scripts/functions.sh"
 
+_dotfiles_source_scripts \
+	/etc/profile.d/bash_completion.sh \
+	/usr/share/git-core/contrib/completion/git-prompt.sh \
+	/usr/share/bash-completion/completions/git \
+	/usr/share/doc/fzf/examples/key-bindings.zsh \
+	/usr/share/doc/fzf/examples/completion.zsh \
+	~/.venv/bin/activate
+
 export force_color_prompt=yes
-export GPG_TTY="$(tty)"
+export GPG_TTY="${TTY:-}"
+export EDITOR="nvim"
 # user-specific configuration files
 export XDG_CONFIG_HOME="${HOME}/.config"
 ## the main prompt variable
 # https://stackoverflow.com/a/28938235
 export PS1='\[\e[35;1m\]\u\[\e[m\]@\[\e[35;1m\]\h\[\e[m\] \[\e[36;1m\]\w\[\e[m\] \[\e[1m\]$(__git_ps1 "%s")\[\e[m\]\n\$ '
-export PROMPT_COMMAND=
+export PROMPT_COMMAND='_dotfiles_prompt_command'
 # git prompt variables
 export GIT_PS1_SHOWDIRTYSTATE=true
 export GIT_PS1_SHOWUPSTREAM=auto
@@ -46,10 +55,10 @@ export ANDROID_HOME="${HOME}/Android/Sdk"
 ### path edits
 export GOPATH="${HOME}/.go"
 export JAVA_HOME="/usr/java/latest"
-## actual path changes
-__add_to_path_back "${HOME}/.local/share/gem/ruby/"*"/bin" "${HOME}/.local/bin" \
-    "/usr/bin" "${GOPATH}/bin" "${HOME}/yandex-cloud/bin" "${ANDROID_HOME}/tools" \
-    "/usr/java/latest/bin" "/usr/mvn/latest/bin"
+
+_dotfiles_add_to_path_back "${HOME}/.local/share/gem/ruby/"*"/bin" "${HOME}/.local/bin" \
+	"/usr/bin" "${GOPATH}/bin" "${HOME}/yandex-cloud/bin" "${ANDROID_HOME}/tools" \
+	"/usr/java/latest/bin" "/usr/mvn/latest/bin"
 
 # https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html
 # vim mode for the terminal
@@ -76,16 +85,10 @@ shopt -s histappend
 # command in the same history entry.
 shopt -s cmdhist
 
-__source_scripts \
-    /etc/profile.d/bash_completion.sh \
-    /usr/share/git-core/contrib/completion/git-prompt.sh \
-    /usr/share/bash-completion/completions/git \
-    "${HOME}/.venv/bin/activate"
-
-if [[ "${IS_INTERACTIVE}" && "${TERM_PROGRAM}" != "tmux" ]]; then
-    if tmux has-session &>/dev/null; then
-        tmux attach-session
-    else
-        tmux
-    fi
+if [[ ${IS_INTERACTIVE} && ${TERM_PROGRAM} != "tmux" ]]; then
+	if tmux has-session &>/dev/null; then
+		tmux attach-session
+	else
+		tmux
+	fi
 fi

@@ -34,7 +34,9 @@ repos:
       entry: shellcheck
       language: system
       types: [shell]
-      args: ["--severity=warning"]
+      args:
+        - --severity=warning
+        - --exclude=SC1090
     - id: shfmt
       name: Run shfmt
       language: system
