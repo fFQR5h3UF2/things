@@ -4,13 +4,5 @@ on:
     branches: main
 jobs:
   bump_version:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-        with:
-          fetch-depth: 0
-          token: ${{ secrets.CI_GITHUB_TOKEN }}
-      - uses: shishifubing/ci@0bc28347d5f66bb33977a9f2d3ef13cf5c64b243 # v1.21.0
-        env:
-          CI_GPG_PRIVATE_KEY: ${{ secrets.CI_GPG_PRIVATE_KEY }}
-          CI_GPG_PASSPHRASE: ${{ secrets.CI_GPG_PASSPHRASE }}
+    uses: shishifubing/ci/.github/workflows/reuse-bump-version.yml@main
+    secrets: inherit
