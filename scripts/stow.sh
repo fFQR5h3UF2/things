@@ -4,7 +4,7 @@ set -Eeuxo pipefail
 target="${1:?missing target}"
 
 function _stow {
-    stow  --override='.*' --dir="${PWD}" --target="${2:-"${HOME}"}" "${1}"
+    stow --override='.*' --dir="${PWD}" --target="${2:-"${HOME}"}" "${1}"
 }
 
 if [[ "${target}" == "firefox" ]]; then
@@ -15,8 +15,8 @@ if [[ "${target}" == "firefox" ]]; then
 elif [[ "${target}" == "vscode" ]]; then
     for dir_name in "Code - OSS" "Code" "VSCodium"; do
         dir="${HOME}/.config/${dir_name}"
-	mkdir -p "${dir}"
-	_stow vscode "${dir}"
+        mkdir -p "${dir}"
+        _stow vscode "${dir}"
     done
 elif [[ -d "./${target}" ]]; then
     _stow "${target}"
