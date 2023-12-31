@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.22.2 (2023-12-31)
+
+### Fix
+
+- **ci**: invalid action script path (#176)
+
 ## v1.22.1 (2023-12-31)
 
 ### Fix

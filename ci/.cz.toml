@@ -1,5 +1,5 @@
 [tool.commitizen]
 tag_format = "v$version"
-version = "1.22.1"
+version = "1.22.2"
 bump_message = "bump: $current_version → $new_version [skip ci]"
 gpg_sign = true
