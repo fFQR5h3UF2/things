@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.22.1 (2023-12-31)
+
+### Fix
+
+- **bump-version**: do not use local action (#175)
+
 ## v1.22.0 (2023-12-30)
 
 ### Feat
