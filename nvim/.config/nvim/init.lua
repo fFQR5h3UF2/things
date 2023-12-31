@@ -133,9 +133,9 @@ vim.api.nvim_create_user_command("LiveGrepGitRoot", live_grep_git_root, {})
 -- See `:help telescope.builtin`
 vim.keymap.set(
     "n",
-    "<leader>?",
+    "<leader>sr",
     require("telescope.builtin").oldfiles,
-    { desc = "[?] Find recently opened files" }
+    { desc = "[S]earch [R]ecently opened files" }
 )
 vim.keymap.set(
     "n",
@@ -167,9 +167,9 @@ vim.keymap.set(
 )
 vim.keymap.set(
     "n",
-    "<leader>gf",
+    "<leader>?",
     require("telescope.builtin").git_files,
-    { desc = "Search [G]it [F]iles" }
+    { desc = "[?] Search Git Files" }
 )
 vim.keymap.set(
     "n",
@@ -209,7 +209,7 @@ vim.keymap.set(
 )
 vim.keymap.set(
     "n",
-    "<leader>sr",
+    "<leader>sR",
     require("telescope.builtin").resume,
     { desc = "[S]earch [R]esume" }
 )
