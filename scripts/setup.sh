@@ -30,7 +30,7 @@ fi
 python3 -m venv --symlinks --clear --upgrade-deps --prompt 'home' ~/.venv
 # shellcheck source=/dev/null
 . ~/.venv/bin/activate
-pip install commitizen=="3.13.0" pre-commit=="3.6.0"
+pip install commitizen=="3.13.0" pre-commit=="3.6.0" ruff=="0.1.9"
 cz version --project
 
 hashicorp_url="https://hashicorp-releases.yandexcloud.net"
