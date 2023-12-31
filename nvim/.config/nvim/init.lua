@@ -27,53 +27,7 @@ vim.opt.rtp:prepend(lazypath)
 --  You can also configure plugins after the setup call,
 --    as they will be available in your neovim runtime.
 require("lazy").setup({ { import = "shishifubing.plugins" } }, {})
-
--- [[ Setting options ]]
--- See `:help vim.o`
--- NOTE: You can change these options as you wish!
-
--- set a ruler
-vim.opt.colorcolumn = "80"
-
--- do not change cursor on insert
-vim.opt.guicursor = ""
-
--- Set highlight on search
-vim.o.hlsearch = false
-
--- Make line numbers default
-vim.wo.number = true
-
--- Enable mouse mode
-vim.o.mouse = "a"
-
--- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
-vim.o.clipboard = "unnamedplus"
-
--- Enable break indent
-vim.o.breakindent = true
-
--- Save undo history
-vim.o.undofile = true
-
--- Case-insensitive searching UNLESS \C or capital in search
-vim.o.ignorecase = true
-vim.o.smartcase = true
-
--- Keep signcolumn on by default
-vim.wo.signcolumn = "yes"
-
--- Decrease update time
-vim.o.updatetime = 250
-vim.o.timeoutlen = 300
-
--- Set completeopt to have a better completion experience
-vim.o.completeopt = "menuone,noselect"
-
--- NOTE: You should make sure your terminal supports this
-vim.o.termguicolors = true
+require("shishifubing.options")
 
 -- [[ Basic Keymaps ]]
 
@@ -133,19 +87,6 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     pattern = "*",
 })
 
--- [[ Configure Telescope ]]
--- See `:help telescope` and `:help telescope.setup()`
-require("telescope").setup({
-    defaults = {
-        mappings = {
-            i = {
-                ["<C-u>"] = false,
-                ["<C-d>"] = false,
-            },
-        },
-    },
-})
-
 -- Enable telescope fzf native, if installed
 pcall(require("telescope").load_extension, "fzf")
 
@@ -192,9 +133,9 @@ vim.api.nvim_create_user_command("LiveGrepGitRoot", live_grep_git_root, {})
 -- See `:help telescope.builtin`
 vim.keymap.set(
     "n",
-    "<leader>?",
+    "<leader>sr",
     require("telescope.builtin").oldfiles,
-    { desc = "[?] Find recently opened files" }
+    { desc = "[S]earch [R]ecently opened files" }
 )
 vim.keymap.set(
     "n",
@@ -226,9 +167,9 @@ vim.keymap.set(
 )
 vim.keymap.set(
     "n",
-    "<leader>gf",
+    "<leader>?",
     require("telescope.builtin").git_files,
-    { desc = "Search [G]it [F]iles" }
+    { desc = "[?] Search Git Files" }
 )
 vim.keymap.set(
     "n",
@@ -268,7 +209,7 @@ vim.keymap.set(
 )
 vim.keymap.set(
     "n",
-    "<leader>sr",
+    "<leader>sR",
     require("telescope.builtin").resume,
     { desc = "[S]earch [R]esume" }
 )
