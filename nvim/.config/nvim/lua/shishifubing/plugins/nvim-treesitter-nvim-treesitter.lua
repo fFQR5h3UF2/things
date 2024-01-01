@@ -27,6 +27,7 @@ return {
                 "bash",
                 "dockerfile",
                 "gomod",
+                "markdown",
                 "gowork",
                 "groovy",
                 "kotlin",

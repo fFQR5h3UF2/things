@@ -64,7 +64,8 @@ return {
             local lspconfig = require("lspconfig")
             local fidget = require("fidget")
             local neodev = require("neodev")
-            local on_attach = require("shishifubing.keymaps").on_buffer_attach
+            local on_attach =
+                require("shishifubing.keymaps").on_buffer_attach_lsp
 
             local capabilities = cmp_nvim_lsp.default_capabilities(
                 vim.lsp.protocol.make_client_capabilities()
