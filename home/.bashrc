@@ -6,3 +6,4 @@ if [[ "${-}" != *i* ]]; then
 fi
 
 . ~/repos/shishifubing/dotfiles/scripts/bashrc.sh
+_dotfiles_tmux_start
