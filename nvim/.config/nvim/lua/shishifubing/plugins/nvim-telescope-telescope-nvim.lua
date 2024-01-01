@@ -20,6 +20,7 @@ return {
         },
         config = function()
             pcall(require("telescope").load_extension, "fzf")
+            require("shishifubing.keymaps").telescope()
         end,
         opts = {
             defaults = {
