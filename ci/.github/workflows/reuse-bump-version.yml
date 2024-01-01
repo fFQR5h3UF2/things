@@ -15,7 +15,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.CI_GITHUB_TOKEN }}
-      - uses: shishifubing/ci@78657ea85a0079d1ce7e88d66b99af53568dc911 # v1.22.2
+      - uses: shishifubing/ci@ee290fb2d22852b2e5bfdc6993b29aec2300e952 # v1.22.2
         env:
           DRY_RUN: ${{ inputs.dry_run }}
           CI_GPG_PRIVATE_KEY: ${{ secrets.CI_GPG_PRIVATE_KEY }}
