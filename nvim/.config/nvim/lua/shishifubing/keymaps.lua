@@ -1,3 +1,5 @@
+local M = {}
+
 -- [[ Keymaps ]]
 
 -- Keymaps for better default experience
@@ -166,10 +168,9 @@ vim.keymap.set(
     require("telescope.builtin").resume,
     { desc = "[S]earch [R]esume" }
 )
-
 -- [[ Configure LSP ]]
 --  This function gets run when an LSP connects to a particular buffer.
-function LSP_on_buffer_attach(_, bufnr)
+function M.on_buffer_attach(_, bufnr)
     -- NOTE: Remember that lua is a real programming language, and as such it is possible
     -- to define small helper and utility functions so you don't have to repeat yourself
     -- many times.
@@ -243,3 +244,5 @@ function LSP_on_buffer_attach(_, bufnr)
         vim.lsp.buf.format()
     end, { desc = "Format current buffer with LSP" })
 end
+
+return M

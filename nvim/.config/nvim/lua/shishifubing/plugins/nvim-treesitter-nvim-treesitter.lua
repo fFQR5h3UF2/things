@@ -6,7 +6,6 @@ return {
         },
         build = ":TSUpdate",
         opts = {
-            -- Add languages to be installed here that you want installed for treesitter
             ensure_installed = {
                 "c",
                 "cpp",
@@ -25,6 +24,7 @@ return {
                 "json",
                 "toml",
                 "css",
+                "bash",
                 "dockerfile",
                 "gomod",
                 "gowork",
@@ -32,7 +32,6 @@ return {
                 "kotlin",
             },
 
-            -- Autoinstall languages that are not installed.
             auto_install = true,
 
             highlight = {
@@ -97,5 +96,8 @@ return {
                 },
             },
         },
+        config = function(_, opts)
+            require("nvim-treesitter.configs").setup(opts)
+        end,
     },
 }
