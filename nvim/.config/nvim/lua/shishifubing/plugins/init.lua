@@ -7,7 +7,27 @@ return {
     "tpope/vim-sleuth",
 
     -- Useful plugin to show you pending keybinds.
-    { "folke/which-key.nvim", opts = {} },
+    {
+        "folke/which-key.nvim",
+        opts = {},
+        config = function()
+            local which_key = require("which-key")
+            which_key.register({
+                ["<leader>c"] = { name = "[C]ode", _ = "which_key_ignore" },
+                ["<leader>d"] = { name = "[D]ocument", _ = "which_key_ignore" },
+                ["<leader>g"] = { name = "[G]it", _ = "which_key_ignore" },
+                ["<leader>h"] = { name = "Git [H]unk", _ = "which_key_ignore" },
+                ["<leader>r"] = { name = "[R]ename", _ = "which_key_ignore" },
+                ["<leader>s"] = { name = "[S]earch", _ = "which_key_ignore" },
+                ["<leader>t"] = { name = "[T]oggle", _ = "which_key_ignore" },
+                ["<leader>w"] = { name = "[W]orkspace", _ = "which_key_ignore" },
+            })
+            which_key.register({
+                ["<leader>"] = { name = "VISUAL <leader>" },
+                ["<leader>h"] = { "Git [H]unk" },
+            }, { mode = "v" })
+        end,
+    },
     {
         -- Theme inspired by Atom
         "navarasu/onedark.nvim",
@@ -62,6 +82,9 @@ return {
                 end,
             },
         },
+        config = function()
+            pcall(require("telescope").load_extension, "fzf")
+        end,
         opts = {
             defaults = {
                 mappings = {
