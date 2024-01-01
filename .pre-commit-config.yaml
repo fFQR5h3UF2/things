@@ -1,59 +1,58 @@
 repos:
-- repo: https://github.com/pre-commit/pre-commit-hooks
-  rev: v4.5.0
-  hooks:
-    - id: check-added-large-files
-    - id: check-case-conflict
-    - id: check-executables-have-shebangs
-    - id: check-json
-    - id: check-merge-conflict
-    - id: check-shebang-scripts-are-executable
-    - id: check-symlinks
-    - id: check-toml
-    - id: check-yaml
-    - id: detect-private-key
-    - id: end-of-file-fixer
-    - id: forbid-submodules
-    - id: mixed-line-ending
-    - id: no-commit-to-branch
-    - id: trailing-whitespace
-- repo: https://github.com/commitizen-tools/commitizen
-  rev: v3.13.0
-  hooks:
-    - id: commitizen
-- repo: https://github.com/JohnnyMorganz/StyLua
-  rev: v0.19.1
-  hooks:
-    - id: stylua-github
-- repo: https://github.com/python-jsonschema/check-jsonschema
-  rev: 0.27.3
-  hooks:
-    - id: check-github-workflows
-      args: ["--verbose"]
-    - id: check-dependabot
-- repo: local
-  hooks:
-    - id: update-readme
-      name: Update README
-      entry: make update_readme
-      language: system
-      files: scripts/usage.sh|README.md
-      pass_filenames: false
-    - id: shellcheck
-      name: Run shellcheck
-      entry: shellcheck
-      language: system
-      types: [shell]
-      args:
-        - --severity=warning
-        - --exclude=SC1090
-    - id: shfmt
-      name: Run shfmt
-      language: system
-      entry: shfmt
-      types: [shell]
-      args:
-        - --write
-        - --indent=4
-        - --binary-next-line
-      exclude_types: [csh, tcsh, zsh]
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-case-conflict
+      - id: check-executables-have-shebangs
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-shebang-scripts-are-executable
+      - id: check-symlinks
+      - id: check-toml
+      - id: check-yaml
+      - id: detect-private-key
+      - id: end-of-file-fixer
+      - id: forbid-submodules
+      - id: mixed-line-ending
+      - id: no-commit-to-branch
+      - id: trailing-whitespace
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v3.13.0
+    hooks:
+      - id: commitizen
+  - repo: https://github.com/JohnnyMorganz/StyLua
+    rev: v0.19.1
+    hooks:
+      - id: stylua-github
+  - repo: https://github.com/python-jsonschema/check-jsonschema
+    rev: 0.27.3
+    hooks:
+      - id: check-github-workflows
+        args: ["--verbose"]
+      - id: check-dependabot
+  - repo: local
+    hooks:
+      - id: update-readme
+        name: Update README
+        entry: make update_readme
+        language: system
+        files: scripts/usage.sh|README.md
+        pass_filenames: false
+      - id: shellcheck
+        name: Run shellcheck
+        entry: shellcheck
+        language: system
+        types: [shell]
+        args:
+          - --severity=warning
+          - --exclude=SC1090
+      - id: shfmt
+        name: Run shfmt
+        language: system
+        entry: shfmt
+        types: [shell]
+        args:
+          - --write
+          - --indent=4
+        exclude_types: [csh, tcsh, zsh]
