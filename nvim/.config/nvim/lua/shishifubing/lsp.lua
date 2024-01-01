@@ -1,14 +1,3 @@
--- Set <space> as the leader key
--- See `:help mapleader`
---  NOTE: Must happen before plugins are required (otherwise wrong leader will be used)
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
-
-require("shishifubing.lazy")
-require("shishifubing.options")
-require("shishifubing.keymaps")
-require("shishifubing.autocmd")
-
 -- Enable the following language servers
 --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
 --
@@ -18,13 +7,18 @@ require("shishifubing.autocmd")
 --  If you want to override the default filetypes that your language server will attach to you can
 --  define the property 'filetypes' to the map in question.
 local servers = {
-    -- clangd = {},
-    -- gopls = {},
-    -- pyright = {},
-    -- rust_analyzer = {},
-    -- tsserver = {},
-    -- html = { filetypes = { 'html', 'twig', 'hbs'} },
-
+    gopls = {},
+    pyright = {},
+    html = { filetypes = { "html", "twig", "hbs" } },
+    yamlls = {
+        settings = {
+            yaml = {
+                customTags = {
+                    "!reference sequence",
+                },
+            },
+        },
+    },
     lua_ls = {
         Lua = {
             workspace = { checkThirdParty = false },
