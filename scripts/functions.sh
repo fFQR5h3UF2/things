@@ -1,5 +1,16 @@
 #!/usr/bin/env bash
 
+_dotfiles_tmux_start() {
+    if [[ "${TERM_PROGRAM}" == "tmux" ]]; then
+        return
+    fi
+    if tmux has-session &>/dev/null; then
+        tmux attach-session
+    else
+        tmux
+    fi
+}
+
 _dotfiles_prompt_command() {
     history -a
 }

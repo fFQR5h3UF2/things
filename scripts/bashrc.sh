@@ -51,9 +51,15 @@ export ANDROID_HOME="${HOME}/Android/Sdk"
 export GOPATH="${HOME}/.go"
 export JAVA_HOME="/usr/java/latest"
 
-_dotfiles_add_to_path_back "${HOME}/.local/share/gem/ruby/"*"/bin" "${HOME}/.local/bin" \
-    "/usr/bin" "${GOPATH}/bin" "${HOME}/yandex-cloud/bin" "${ANDROID_HOME}/tools" \
-    "/usr/java/latest/bin" "/usr/mvn/latest/bin"
+_dotfiles_add_to_path_back \
+    ~/.local/share/gem/ruby/*/bin \
+    ~/.local/bin \
+    /usr/bin \
+    "${GOPATH}/bin" \
+    ~/yandex-cloud/bin \
+    "${ANDROID_HOME}/tools" \
+    /usr/java/latest/bin \
+    /usr/mvn/latest/bin
 
 # https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html
 # vim mode for the terminal

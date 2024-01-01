@@ -17,7 +17,7 @@ cd "${dotfiles_dir}"
 
 packages=(
     make git curl wget unzip stow gpg python3 python3-pip python3-venv
-    gpg-agent shellcheck shfmt sudo fzf unzip tar
+    gpg-agent shellcheck shfmt sudo fzf unzip tar fd-find
 )
 if [[ "$(whoami)" == "root" ]]; then
     apt-get update
