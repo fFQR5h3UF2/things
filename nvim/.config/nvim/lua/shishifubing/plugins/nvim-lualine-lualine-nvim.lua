@@ -5,8 +5,8 @@ return {
         -- See `:help lualine.txt`
         opts = {
             options = {
+                theme = "tokyonight",
                 icons_enabled = false,
-                --theme = "tokyonight",
                 component_separators = "|",
                 section_separators = "",
             },

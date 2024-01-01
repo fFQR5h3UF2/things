@@ -7,17 +7,14 @@ dotfiles_url=https://github.com/shishifubing/dotfiles.git
 mkdir -p "${dotfiles_dir}" ~/.local/bin ~/.ssh ~/.gnupg
 chmod 0700 ~/.ssh ~/.gnupg
 
-if [[ -d "${dotfiles_dir}/.git" ]]; then
-    git --git-dir "${dotfiles_dir}/.git" checkout main
-    git --git-dir "${dotfiles_dir}/.git" pull
-else
+if [[ ! -d "${dotfiles_dir}" ]]; then
     git clone "${dotfiles_url}" "${dotfiles_dir}"
 fi
 cd "${dotfiles_dir}"
 
 packages=(
     make git curl wget unzip stow gpg python3 python3-pip python3-venv
-    gpg-agent shellcheck shfmt sudo fzf unzip tar fd-find
+    gpg-agent shellcheck shfmt sudo fzf unzip tar fd-find cargo
 )
 if [[ "$(whoami)" == "root" ]]; then
     apt-get update

@@ -1,10 +1,5 @@
 #!/usr/bin/env bash
 
-IS_INTERACTIVE=
-if [[ ${-} == *i* ]]; then
-    IS_INTERACTIVE="1"
-fi
-
 export DOTFILES="${HOME}/repos/shishifubing/dotfiles"
 . "${DOTFILES}/scripts/functions.sh"
 
@@ -14,6 +9,7 @@ export FZF_COMPLETION_TRIGGER="**"
 export force_color_prompt=yes
 export GPG_TTY="${TTY:-}"
 export EDITOR="nvim"
+export TERM="screen-256color"
 # user-specific configuration files
 export XDG_CONFIG_HOME="${HOME}/.config"
 ## the main prompt variable
@@ -85,14 +81,6 @@ shopt -s histappend
 # attempt to save all lines of a multiple-line
 # command in the same history entry.
 shopt -s cmdhist
-
-if [[ ${IS_INTERACTIVE} && ${TERM_PROGRAM} != "tmux" ]]; then
-    if tmux has-session &>/dev/null; then
-        tmux attach-session
-    else
-        tmux
-    fi
-fi
 
 _dotfiles_source_scripts \
     /etc/profile.d/bash_completion.sh \
