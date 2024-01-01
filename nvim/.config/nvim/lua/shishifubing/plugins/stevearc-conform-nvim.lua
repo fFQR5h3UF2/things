@@ -6,6 +6,8 @@ return {
             "nvim-lua/plenary.nvim",
             "williamboman/mason.nvim",
         },
+        event = { "BufWritePre" },
+        cmd = { "ConformInfo" },
         opts = {
             formatters_by_ft = {
                 lua = { "stylua" },
@@ -25,8 +27,7 @@ return {
                 markdown = { { "prettierd", "prettier" } },
             },
             format_on_save = {
-                -- These options will be passed to conform.format()
-                timeout_ms = 500,
+                timeout_ms = 2000,
                 lsp_fallback = true,
             },
             formatters = {
