@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.11.0 (2024-01-02)
+
+### Feat
+
+- **nvim**: add bufferline (#47)
+
 ## v0.10.0 (2024-01-02)
 
 ### Feat
