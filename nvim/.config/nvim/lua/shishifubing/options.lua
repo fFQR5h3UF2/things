@@ -10,6 +10,7 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
+-- show invisible characters
 vim.opt.listchars = {
     tab = "→ ",
     eol = "↲",
@@ -19,6 +20,9 @@ vim.opt.listchars = {
     precedes = "⟨",
 }
 vim.opt.list = true
+
+-- auto reload files from disk
+vim.opt.autoread = true
 
 -- do not change cursor on insert
 vim.opt.guicursor = ""

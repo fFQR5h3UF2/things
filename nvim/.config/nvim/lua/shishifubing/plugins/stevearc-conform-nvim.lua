@@ -25,6 +25,7 @@ return {
                 json = { { "prettierd", "prettier" } },
                 jsonc = { { "prettierd", "prettier" } },
                 markdown = { { "prettierd", "prettier" } },
+                yaml = { { "prettierd", "prettier" } },
             },
             format_on_save = {
                 timeout_ms = 2000,
