@@ -1,8 +1,0 @@
-name: Run CI script
-description: Run CI script
-runs:
-  using: composite
-  steps:
-    - name: Run the CI script
-      run: ${GITHUB_ACTION_PATH}/scripts/ci
-      shell: sh
