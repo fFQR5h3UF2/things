@@ -7,7 +7,7 @@ return {
             "williamboman/mason.nvim",
             "williamboman/mason-lspconfig.nvim",
             -- Useful status updates for LSP
-            "j-hui/fidget.nvim",
+            { "j-hui/fidget.nvim", version = "*", opts = {} },
             -- Additional lua configuration, makes nvim stuff amazing!
             "folke/neodev.nvim",
         },
@@ -62,10 +62,9 @@ return {
             local mason = require("mason")
             local mason_lspconfig = require("mason-lspconfig")
             local lspconfig = require("lspconfig")
-            local fidget = require("fidget")
             local neodev = require("neodev")
-            local on_attach =
-                require("shishifubing.keymaps").on_buffer_attach_lsp
+            local keymaps = require("shishifubing.keymaps")
+            local on_attach = keymaps.on_buffer_attach_lsp
 
             local capabilities = cmp_nvim_lsp.default_capabilities(
                 vim.lsp.protocol.make_client_capabilities()
@@ -85,7 +84,6 @@ return {
                     })
                 end,
             })
-            fidget.setup()
             neodev.setup()
         end,
     },
