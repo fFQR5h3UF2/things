@@ -32,7 +32,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.CI_GITHUB_TOKEN }}
-      - uses: shishifubing/ci@main
+      - uses: shishifubing/actions/bump_version@main
         env:
           CI_GPG_PRIVATE_KEY: ${{ secrets.CI_GPG_PRIVATE_KEY }}
           CI_GPG_PASSPHRASE: ${{ secrets.CI_GPG_PASSPHRASE }}
