@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.23.0 (2024-01-02)
+
+### Feat
+
+- **bump_version**: switch to docker, make action standalone (#179)
+
 ## v1.22.2 (2023-12-31)
 
 ### Fix
