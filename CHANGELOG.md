@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.12.0 (2024-01-02)
+
+### Feat
+
+- **nvim**: add buffer keymaps, move cmp keymaps to keymaps.lua (#49)
+
 ## v0.11.1 (2024-01-02)
 
 ### Fix
