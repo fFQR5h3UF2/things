@@ -10,6 +10,16 @@ vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 vim.opt.smartindent = true
 
+vim.opt.listchars = {
+    tab = "→ ",
+    eol = "↲",
+    nbsp = "•",
+    trail = "•",
+    extends = "⟩",
+    precedes = "⟨",
+}
+vim.opt.list = true
+
 -- do not change cursor on insert
 vim.opt.guicursor = ""
 
