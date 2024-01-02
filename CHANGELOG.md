@@ -1,5 +1,84 @@
 # Changelog
 
+## v0.10.0 (2024-01-02)
+
+### Feat
+
+- **nvim**: use prettier for yaml formatting, enable autoread (#45)
+- **nvim**: add listchars (#44)
+- **tmux**: make main pane bigger (#42)
+- **setup**: install cargo (#40)
+- **tmux**: open nvim upon creating a window (#38)
+- **nvim**: swith theme to rose-pine (#37)
+- **nvim**: switch to conform from nullls (#32)
+- **tmux**: add a shortcut and a script to improve window creation (#31)
+- **tmux**: add a shortcut and a script to create windows
+- **setup**: install ruff (#28)
+- **nvim**: add null-ls plugin, fix plugin configs (#27)
+- **nvim**: change telescope keymaps, move options to another file (#26)
+- **nvim**: add ruler, add stylua hook, enable autorefactor (#25)
+- **bashrc**: source fzf keybindings (#24)
+- **bashrc**: if not running in tmux, either create a new session or attach (#21)
+- **setup**: install pre-commit to the venv (#18)
+
+### Fix
+
+- **nvim**: remove custom lsp autoformatting, use only conform (#43)
+- **nvim**: fix treesitter highlighting, rename plugins (#39)
+- output project version
+- use command instead of variable for tty
+
+### Refactor
+
+- **nvim**: move telescope keymaps to function (#41)
+- **nvim**: move everything out of the init file (#36)
+- **nvim**: split all plugins into separate files (#35)
+- **nvim**: split init file further (#34)
+- **nvim**: move keymaps to another file (#30)
+- **nvim**: move everything to lua/, remove unused files (#29)
+- **scripts**: refactor a bit (#23)
+- **scripts**: refactor scripts a bit
+
+## v0.9.2 (2023-12-23)
+
+## v0.9.1 (2023-12-23)
+
+### Fix
+
+- **home**: fix invalid path
+
+## v0.9.0 (2023-12-23)
+
+### Feat
+
+- move main .bashrc file to scripts
+
+### Fix
+
+- invalid dotfiles dir
+- use nullglob before stowing firefox
+- unbound variables in scripts
+
+## v0.8.0 (2023-12-17)
+
+### Feat
+
+- **scripts**: add __info_ram function
+
+## v0.7.0 (2023-12-12)
+
+### Feat
+
+- **home**: set HISTCONTROL to ignorespace
+
+## v0.6.2 (2023-11-12)
+
+### Refactor
+
+- **vscode**: remove unused workspace config
+
+## v0.6.1 (2023-11-08)
+
 ## v0.6.0 - 2023-11-08
 
 <!-- Automatically generated in https://github.com/shishifubing/misc-dotfiles/actions/runs/6805127969 -->
