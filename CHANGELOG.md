@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.11.1 (2024-01-02)
+
+### Fix
+
+- **nvim**: fix neodev setup, reformat keymaps a bit (#48)
+
 ## v0.11.0 (2024-01-02)
 
 ### Feat
