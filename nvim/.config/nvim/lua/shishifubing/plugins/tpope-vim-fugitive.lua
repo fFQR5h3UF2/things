@@ -4,5 +4,6 @@ return {
         dependencies = {
             "tpope/vim-rhubarb",
         },
+        config = function() end,
     },
 }

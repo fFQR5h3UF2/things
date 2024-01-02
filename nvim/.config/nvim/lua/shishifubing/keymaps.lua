@@ -1,7 +1,46 @@
+--[[ Keymaps ]]
 local M = {}
 local k = vim.keymap
 
---[[ Set up keymaps with no requirements ]]
+-- Telescope live_grep in git root
+-- Function to find the git root directory based on the current buffer's path
+local function find_git_root()
+    -- Use the current buffer's path as the starting point for the git search
+    local current_file = vim.api.nvim_buf_get_name(0)
+    local current_dir
+    local cwd = vim.fn.getcwd()
+    -- If the buffer is not associated with a file, return nil
+    if current_file == "" then
+        current_dir = cwd
+    else
+        -- Extract the directory from the current file's path
+        current_dir = vim.fn.fnamemodify(current_file, ":h")
+    end
+
+    -- Find the Git root directory from the current file's path
+    local git_root = vim.fn.systemlist(
+        "git -C "
+            .. vim.fn.escape(current_dir, " ")
+            .. " rev-parse --show-toplevel"
+    )[1]
+    if vim.v.shell_error ~= 0 then
+        print("Not a git repository. Searching on current working directory")
+        return cwd
+    end
+    return git_root
+end
+
+local function delete_all_buffers_except_current()
+    local bufs = vim.api.nvim_list_bufs()
+    local current_buf = vim.api.nvim_get_current_buf()
+    for _, i in ipairs(bufs) do
+        if i ~= current_buf then
+            vim.api.nvim_buf_delete(i, {})
+        end
+    end
+end
+
+--[[ Keymaps with no dependencies ]]
 function M.set_no_deps()
     k.set(
         { "n", "v" },
@@ -45,37 +84,23 @@ function M.set_no_deps()
         vim.diagnostic.setloclist,
         { desc = "Open diagnostics list" }
     )
+    k.set("n", "<leader>bn", "<cmd>bn<cr>", { desc = "Go to [B]uffer [N]ext" })
+    k.set(
+        "n",
+        "<leader>bp",
+        "<cmd>bp<cr>",
+        { desc = "Go to [B]uffer [P]revious" }
+    )
+    k.set("n", "<leader>bd", "<cmd>bd<cr>", { desc = "Delete the buffer" })
+    k.set(
+        "n",
+        "<leader>bD",
+        delete_all_buffers_except_current,
+        { desc = "Delete all buffers except the current" }
+    )
 end
 
--- Telescope live_grep in git root
--- Function to find the git root directory based on the current buffer's path
-local function find_git_root()
-    -- Use the current buffer's path as the starting point for the git search
-    local current_file = vim.api.nvim_buf_get_name(0)
-    local current_dir
-    local cwd = vim.fn.getcwd()
-    -- If the buffer is not associated with a file, return nil
-    if current_file == "" then
-        current_dir = cwd
-    else
-        -- Extract the directory from the current file's path
-        current_dir = vim.fn.fnamemodify(current_file, ":h")
-    end
-
-    -- Find the Git root directory from the current file's path
-    local git_root = vim.fn.systemlist(
-        "git -C "
-            .. vim.fn.escape(current_dir, " ")
-            .. " rev-parse --show-toplevel"
-    )[1]
-    if vim.v.shell_error ~= 0 then
-        print("Not a git repository. Searching on current working directory")
-        return cwd
-    end
-    return git_root
-end
-
--- [[ Set up keymaps requiring telescope ]]
+-- [[ Telescope keymaps ]]
 function M.set_telescope()
     local builtin = require("telescope.builtin")
     local themes = require("telescope.themes")
@@ -161,9 +186,9 @@ function M.set_telescope()
     k.set("n", "<leader>sR", builtin.resume, { desc = "[S]earch [R]esume" })
 end
 
---[[ Setup LSP keymaps on connecting to a buffer ]]
+--[[ LSP keymaps ]]
 --  This function gets run when an LSP connects to a particular buffer.
-function M.on_buffer_attach_lsp(_, bufnr)
+function M.set_lsp(_, bufnr)
     local function nmap(keys, func, desc)
         if desc then
             desc = "LSP: " .. desc
@@ -208,7 +233,43 @@ function M.on_buffer_attach_lsp(_, bufnr)
     })
 end
 
---[[ Configure git keymaps ]]
+--[[ CMP keymaps ]]
+function M.get_cmp()
+    local cmp = require("cmp")
+    local luasnip = require("luasnip")
+    local mapping = {
+        ["<C-n>"] = cmp.mapping.select_next_item(),
+        ["<C-p>"] = cmp.mapping.select_prev_item(),
+        ["<C-b>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-f>"] = cmp.mapping.scroll_docs(4),
+        ["<C-Space>"] = cmp.mapping.complete({}),
+        ["<CR>"] = cmp.mapping.confirm({
+            behavior = cmp.ConfirmBehavior.Replace,
+            select = true,
+        }),
+        ["<Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_next_item()
+            elseif luasnip.expand_or_locally_jumpable() then
+                luasnip.expand_or_jump()
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
+        ["<S-Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item()
+            elseif luasnip.locally_jumpable(-1) then
+                luasnip.jump(-1)
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
+    }
+    return cmp.mapping.preset.insert(mapping)
+end
+
+--[[ Gitsigns keymaps ]]
 function M.set_gitsigns(bufnr)
     local gs = package.loaded.gitsigns
 
@@ -289,6 +350,7 @@ function M.set_gitsigns(bufnr)
     )
 end
 
+--[[ Telescope keymaps ]]
 M.treesitter = {
     incremental_selection = {
         enable = true,

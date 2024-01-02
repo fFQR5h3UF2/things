@@ -6,6 +6,11 @@ return {
             "nvim-treesitter/nvim-treesitter",
         },
         main = "ibl",
-        opts = {},
+        opts = {
+            scope = {
+                show_start = false,
+                show_end = false,
+            },
+        },
     },
 }
