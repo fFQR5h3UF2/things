@@ -1,5 +1,5 @@
 require("shishifubing.mapleader")
 require("shishifubing.lazy")
 require("shishifubing.options")
-require("shishifubing.keymaps")
 require("shishifubing.autocmd")
+require("shishifubing.keymaps").set_no_deps()
