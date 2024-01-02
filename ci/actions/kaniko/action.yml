@@ -1,0 +1,9 @@
+name: Build a docker image
+description: Build a docker image using kaniko
+runs:
+  using: docker
+  image: gcr.io/kaniko-project/executor:v1.19.2
+  args:
+    - --context=
+    - --dockerfile=
+    - --destination=

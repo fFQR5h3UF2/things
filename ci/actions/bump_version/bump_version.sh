@@ -1,6 +1,12 @@
 #!/usr/bin/env bash
 set -Eeuxo pipefail
 
+git config --global --add safe.directory "${PWD}"
+gpg="$(dirname "${0}")/gpg.sh"
+python3 -m venv .venv
+. .venv/bin/activate
+pip install commitizen=="3.13.0"
+
 (
     set +x
     printf "%s" "${CI_GPG_PRIVATE_KEY:?missing gpg private key}" >_key
@@ -13,28 +19,14 @@ key_id=$(awk -F ":" '/sec/ { print $5 }' <<<"${key}")
 #fingerprint=$(awk -F ":" '/fpr/ { print $10; exit }' <<<"${key}")
 #keygrip=$(awk -F ":" '/fpr/ { keygrip = $10 } END { print keygrip }' <<<"${key}")
 
-echo '\
-#!/usr/bin/env bash
-set -Eeux
-gpg \
-    --batch \
-    -vv \
-    --yes \
-    --no-tty \
-    --passphrase-file _passphrase \
-    --pinentry-mode loopback \
-    "${@}"
-' >_gpg.sh
-chmod +x _gpg.sh
 echo "
 default-cache-ttl 21600
 max-cache-ttl 31536000
 allow-preset-passphrase
 allow-loopback-pinentry
-" >>"${HOME}/.gnupg/gpg-agent.conf"
+" >>~/.gnupg/gpg-agent.conf
 gpg-connect-agent reloadagent /bye
-./_gpg.sh --import _key
-
+"${gpg}" --import _key
 
 name="${user%%<*}"
 name="${name::-1}"
@@ -47,13 +39,10 @@ export GIT_COMMITTER_EMAIL="${email}"
 
 git status
 git config user.signingkey "${key_id}"
-git config gpg.program "${PWD}/_gpg.sh"
+git config gpg.program "${gpg}"
 git config commit.gpgsign true
 git config tag.gpgsign true
 
-python3 -m venv .venv
-. .venv/bin/activate
-pip install commitizen=="3.13.0"
 cz bump --yes --changelog --version-scheme semver || {
     code="${?}"
     if [[ "${code}" -eq 21 ]]; then

@@ -1,0 +1,5 @@
+name: Bump version
+description: Bump version and update changelog using cz
+runs:
+  using: docker
+  image: Dockerfile

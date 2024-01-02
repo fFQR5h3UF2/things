@@ -1,44 +1,29 @@
+# [ci][url-repo]
+
 [![License][badge-license]][url-license]
 [![Version][badge-version]][url-version]
 [![Release][badge-release]][url-release]
 
-# [`ci`][url-repo]
-
 ## About the project
 
-This repository contains [action](./action.yml) that launches
-several [scripts](./scripts) depending on the name of the job
+CI stuff:
+
+- [Github actions](./actions/)
 
 ## Usage
 
-### Reusable workflows
+### Actions
 
-#### [reuse-bump-version](./.github/workflows/reuse-bump-version.yml)
+#### bump_version
 
-```yaml
-name: On main
-on:
-  push:
-    branches: main
-jobs:
-  bump_version:
-    uses: ./.github/workflows/reuse-bump-version.yml@main
-    secrets: inherit
-```
-
-### Action
-
-Runs tasks depending on the job name
-
-#### Example
-
-Runs [bump_version](./scripts/bump_version) script
+Runs [bump_version](./actions/bump-version/bump_version.sh) script
 
 ```yaml
 name: On main
 on:
   push:
-    branches: main
+    branches:
+      - main
 jobs:
   bump_version:
     runs-on: ubuntu-latest
@@ -54,7 +39,6 @@ jobs:
 ```
 
 <!-- relative links -->
-
 
 <!-- project links -->
 

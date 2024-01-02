@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 set -Eeuxo pipefail
-
-export DRY_RUN=1
-git config user.email "sdfsadf"
-git config user.name "asdfsdfs"
+git config --global user.email "sdfsadf"
+git config --global user.name "asdfsdfs"
 git commit --allow-empty -m "feat: empty commit to force bump"
-make bump_version

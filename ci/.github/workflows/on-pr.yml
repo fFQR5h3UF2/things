@@ -4,20 +4,24 @@ on:
 jobs:
   test_bump_version:
     runs-on: ubuntu-latest
-    container: ubuntu@sha256:1395dff3ecc43bbc9c1fb2af3b9d8c0df89ef9ef5f11f7ac69c6e0875862ef08 # 24.04
     steps:
-      - run: apt-get update && apt-get install -y git
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           fetch-depth: 0
-          token: ${{ secrets.CI_GITHUB_TOKEN }}
-      - uses: ./.
+      - uses: ./actions/bump_version
         env:
           DRY_RUN: 1
           CI_GPG_PRIVATE_KEY: ${{ secrets.CI_GPG_PRIVATE_KEY }}
           CI_GPG_PASSPHRASE: ${{ secrets.CI_GPG_PASSPHRASE }}
-  test_reuse_bump_version:
-    uses: ./.github/workflows/reuse-bump-version.yml
-    secrets: inherit
-    with:
-      dry_run: 1
+  test_bump_version_with_commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          fetch-depth: 0
+      - run: ./actions/bump_version/test_bump_version_commit.sh
+      - uses: ./actions/bump_version
+        env:
+          DRY_RUN: 1
+          CI_GPG_PRIVATE_KEY: ${{ secrets.CI_GPG_PRIVATE_KEY }}
+          CI_GPG_PASSPHRASE: ${{ secrets.CI_GPG_PASSPHRASE }}
