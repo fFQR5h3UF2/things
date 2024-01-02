@@ -11,7 +11,7 @@ return {
                 topdelete = { text = "‾" },
                 changedelete = { text = "~" },
             },
-            on_attach = require("shishifubing.keymaps").on_buffer_attach_gitsigns,
+            on_attach = require("shishifubing.keymaps").set_gitsigns,
         },
     },
 }

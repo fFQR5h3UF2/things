@@ -70,6 +70,7 @@ return {
                 vim.lsp.protocol.make_client_capabilities()
             )
 
+            neodev.setup()
             mason.setup()
             mason_lspconfig.setup({
                 ensure_installed = vim.tbl_keys(servers),
@@ -84,7 +85,6 @@ return {
                     })
                 end,
             })
-            neodev.setup()
         end,
     },
 }
