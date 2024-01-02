@@ -2,3 +2,5 @@
 version = "0.9.2"
 tag_format = "v$version"
 version_scheme = "semver"
+bump_message = "bump: $current_version → $new_version [skip ci]"
+gpg_sign = true
