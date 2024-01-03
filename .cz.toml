@@ -2,5 +2,6 @@
 version = "0.14.0"
 tag_format = "v$version"
 version_scheme = "semver"
+annotated_tag = true
 bump_message = "bump: $current_version → $new_version [skip ci]"
 gpg_sign = true
