@@ -5,7 +5,7 @@ usage_text="\
 <!-- start usage -->
 
 \`\`\`bash
-tail -n +4 <./scripts/usage.sh
+$(tail -n +4 <./scripts/usage.sh)
 \`\`\`
 
 <!-- end usage -->\

@@ -27,7 +27,7 @@ Miscellaneous things for personal use
 <!-- start usage -->
 
 ```bash
-tail -n +4 <./scripts/usage.sh
+curl -sSL "https://raw.githubusercontent.com/shishifubing/dotfiles/main/scripts/setup.sh" | bash
 ```
 
 <!-- end usage -->
