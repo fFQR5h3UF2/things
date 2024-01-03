@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.20.1 (2024-01-03)
+
+### Refactor
+
+- **tmux**: rename new window script and use sh (#60)
+
 ## v0.20.0 (2024-01-03)
 
 ### Feat
