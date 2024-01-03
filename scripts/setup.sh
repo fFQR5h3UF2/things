@@ -21,7 +21,7 @@ dotfiles_url=https://github.com/shishifubing/dotfiles.git
 mkdir -p "${dotfiles_dir}" ~/.local/bin ~/.ssh ~/.gnupg
 chmod 0700 ~/.ssh ~/.gnupg
 
-if [[ "$(basename "${PWD}")" != "dotfiles" ]]; then
+if [[ "${PWD}" != "${DOTFILES:-}" ]]; then
     if ! which git; then
         _install_os git
     fi
@@ -31,6 +31,7 @@ if [[ "$(basename "${PWD}")" != "dotfiles" ]]; then
     cd "${dotfiles_dir}"
 fi
 
+. scripts/bashrc.sh
 mapfile -t packages_os <packages-os.txt
 _install_os "${packages_os[@]}"
 make home bin nvim setup_pipx setup_binaries #nvim_sync
