@@ -13,7 +13,6 @@ Miscellaneous things for personal use
 - [ansible](./ansible/) — ansible roles and playbooks
 - [configs](./configs/) — random configuration files
 - [diagrams](./diagrams/) — random diagrams
-- [images](./images/) — docker images
 - [scripts](./scripts/) — shell scripts
 - [packages](./packages/) — stow packages
   - [firefox](./firefox/) — firefox configuration files
