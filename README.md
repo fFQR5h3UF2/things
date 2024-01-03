@@ -10,15 +10,17 @@ Miscellaneous things for personal use
 
 ### Contents
 
-- [ansible](./ansible/) — ansible roles and playbooks (not stowed)
-- [configs](./configs/) — random configuration files (not stowed)
-- [diagrams](./diagrams/) - random diagrams (not stowed)
-- [firefox](./firefox/) — firefox configuration files (`make firefox`)
-- [git](./git/) — .gitconfig (`make git`)
-- [home](./home/) — home directory configs (`make home` or `make`)
-- [nvim](./nvim/) — vim configuration files (`make nvim`)
-- [scripts](./scripts/) — shell scripts (not stowed)
-- [vscode](./vscode/) — vscode configs (`make vscode`)
+- [ansible](./ansible/) — ansible roles and playbooks
+- [configs](./configs/) — random configuration files
+- [diagrams](./diagrams/) — random diagrams
+- [images](./images/) — docker images
+- [scripts](./scripts/) — shell scripts
+- [packages](./packages/) — stow packages
+  - [firefox](./firefox/) — firefox configuration files
+  - [git](./git/) — .gitconfig
+  - [home](./home/) — home directory configs
+  - [nvim](./nvim/) — neovim configuration files
+  - [vscode](./vscode/) — vscode configs
 
 # Usage
 
