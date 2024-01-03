@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.19.0 (2024-01-03)
+
+### Feat
+
+- **cloud**: move cloud infra to this repo (#58)
+
 ## v0.18.0 (2024-01-03)
 
 ### Feat
