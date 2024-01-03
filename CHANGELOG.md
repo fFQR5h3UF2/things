@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.16.0 (2024-01-03)
+
+### Feat
+
+- remove docker image (#55)
+
 ## v0.15.1 (2024-01-03)
 
 ### Fix
