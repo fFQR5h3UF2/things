@@ -14,9 +14,9 @@ key_id=$(echo "${key}" | awk -F ":" '/sec/ { print $5 }')
 #fingerprint=$(awk -F ":" '/fpr/ { print $10; exit }' <<<"${key}")
 #keygrip=$(awk -F ":" '/fpr/ { keygrip = $10 } END { print keygrip }' <<<"${key}")
 name="${user%%<*}"
-name=$(echo "${name}" | cut -c "${#name}")
+name=$(echo "${name}" | cut -c "-${#name}")
 email="${user##*<}"
-email=$(echo "${email}" | cut -c "${#email}")
+email=$(echo "${email}" | cut -c "-${#email}")
 
 # setup gpg
 gpg="$(dirname "${0}")/gpg.sh"
