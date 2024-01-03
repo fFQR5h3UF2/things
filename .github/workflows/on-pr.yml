@@ -10,3 +10,45 @@ jobs:
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       - run: make test_makefile
+  test_kaniko:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - uses: ./actions/kaniko
+        with:
+          context: dir://actions/kaniko
+          dockerfile: actions/kaniko/Dockerfile.test
+          destination: shishifubing/test_kaniko:latest
+          token: ${{ secrets.CI_DOCKERHUB_TOKEN }}
+  test_kaniko_dry_run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - uses: ./actions/kaniko
+        with:
+          dry_run: 1
+          context: dir://actions/kaniko
+          dockerfile: actions/kaniko/Dockerfile.test
+  test_bump_version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          fetch-depth: 0
+      - uses: ./actions/bump_version
+        with:
+          dry_run: 1
+          private_key: ${{ secrets.CI_GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.CI_GPG_PASSPHRASE }}
+  test_bump_version_with_commit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+        with:
+          fetch-depth: 0
+      - run: ./actions/bump_version/test_bump_version_commit.sh
+      - uses: ./actions/bump_version
+        with:
+          dry_run: 1
+          private_key: ${{ secrets.CI_GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.CI_GPG_PASSPHRASE }}
