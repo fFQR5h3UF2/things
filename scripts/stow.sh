@@ -18,6 +18,11 @@ elif [[ "${package}" == "vscode" ]]; then
     for dir_name in "Code - OSS" "Code" "VSCodium"; do
         _stow "${HOME}/.config/${dir_name}"
     done
+elif [[ "${package}" == "home" ]]; then
+    if [[ ! -L ~/.bashrc ]]; then
+        rm -f ~/.bashrc
+    fi
+    _stow
 elif [[ -d "./${package}" ]]; then
     _stow
 else
