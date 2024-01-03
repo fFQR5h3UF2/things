@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
-set -Eeuxo pipefail
+#!/usr/bin/env sh
+set -o errexit -o nounset -o xtrace
 
 if ! which fzf >/dev/null 2>&1; then
     exit
@@ -8,6 +8,7 @@ fi
 dir=$(
     {
         echo "${PWD}"
+        echo ~/repos
         find ~/repos/ -type d -name .git -exec dirname '{}' ';'
     } | fzf
 )
