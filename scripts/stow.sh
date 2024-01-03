@@ -6,7 +6,7 @@ package="${1:?missing package}"
 _stow() {
     local target="${1:-"${HOME}"}"
     mkdir -p "${target}"
-    stow --verbose --restow --override='.*' --dir="${PWD}" --target="${target}" "${package}"
+    stow --verbose --restow --override='.*' --dir="${PWD}/packages" --target="${target}" "${package}"
 }
 
 if [[ "${package}" == "firefox" ]]; then
@@ -23,9 +23,6 @@ elif [[ "${package}" == "home" ]]; then
         rm -f ~/.bashrc
     fi
     _stow
-elif [[ -d "./${package}" ]]; then
-    _stow
 else
-    echo "missing package ${package}"
-    exit 1
+    _stow
 fi

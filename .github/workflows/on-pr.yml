@@ -17,3 +17,4 @@ jobs:
       - uses: shishifubing/ci/actions/kaniko@main
         with:
           dry_run: 1
+          dockerfile: images/Dockerfile

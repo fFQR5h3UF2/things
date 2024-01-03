@@ -1,4 +1,4 @@
-# [`dotfiles`][url-repo]
+# [dotfiles][url-repo]
 
 [![License][badge-license]][url-license]
 [![Version][badge-version]][url-version]
@@ -23,26 +23,17 @@ Miscellaneous things for personal use
 # Usage
 
 <!-- start usage -->
+
 ```bash
-curl -sSL "https://raw.githubusercontent.com/shishifubing/dotfiles/main/scripts/setup.sh" | bash
+tail -n +4 <./scripts/usage.sh
 ```
+
 <!-- end usage -->
-
-<!-- relative links -->
-
-<!-- project links -->
 
 [url-repo]: https://github.com/shishifubing/dotfiles
 [url-license]: https://github.com/shishifubing/dotfiles/blob/main/LICENSE
 [url-workflow-release]: https://github.com/shishifubing/dotfiles/actions/workflows/release.yml
 [url-version]: https://github.com/shishifubing/dotfiles/releases/latest
-
-<!-- external links -->
-
-<!-- badge links -->
-
 [badge-license]: https://img.shields.io/github/license/shishifubing/dotfiles.svg
 [badge-workflow-release]: https://img.shields.io/github/actions/workflow/status/shishifubing/dotfiles/release.yml?branch=main&label=release&logo=github
 [badge-version]: https://img.shields.io/github/v/release/shishifubing/dotfiles?label=version
-
-<!-- other badge links -->

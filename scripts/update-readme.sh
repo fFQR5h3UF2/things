@@ -3,9 +3,11 @@ set -Eeuxo pipefail
 
 usage_text="\
 <!-- start usage -->
+
 \`\`\`bash
-$(cat ./scripts/usage.sh | tail -n +4)
+tail -n +4 <./scripts/usage.sh
 \`\`\`
+
 <!-- end usage -->\
 "
 usage_pattern='

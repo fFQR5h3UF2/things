@@ -1,7 +1,0 @@
-@-moz-document regexp("^(about:|chrome:|file:).*") {
-  /* stuff to hide */
-  #TabsToolbar,
-  #sidebar-header {
-    visibility: collapse !important;
-  }
-}
