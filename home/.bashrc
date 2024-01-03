@@ -5,5 +5,5 @@ if [[ "${-}" != *i* ]]; then
     return
 fi
 
-. ~/repos/shishifubing/dotfiles/scripts/bashrc.sh
+. "${DOTFILES:-${HOME}/repos/shishifubing/dotfiles}/scripts/bashrc.sh"
 _dotfiles_tmux_start

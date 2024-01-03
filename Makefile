@@ -12,7 +12,13 @@ vscode ::
 	./scripts/stow.sh vscode
 update_readme ::
 	./scripts/update-readme.sh
+nvim_sync ::
+	nvim --headless "+Lazy! sync" +qa
 setup ::
 	./scripts/setup.sh
+setup_pipx ::
+	./scripts/setup_pipx.sh
+setup_binaries ::
+	./scripts/setup_binaries.sh
 test_makefile ::
 	./scripts/test_makefile.sh

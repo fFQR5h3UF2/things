@@ -18,4 +18,4 @@ tmux send-keys "clear" Enter
 tmux send-keys "which nvim && nvim" Enter
 tmux split-window -h -c '#{pane_current_path}'
 tmux resize-pane -R 20
-tmux split-window -v -c '#{pane_current_path}'
+#tmux split-window -v -c '#{pane_current_path}'

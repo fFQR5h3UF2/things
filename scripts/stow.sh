@@ -1,26 +1,31 @@
 #!/usr/bin/env bash
 set -Eeuxo pipefail
 
-target="${1:?missing target}"
+package="${1:?missing package}"
 
-function _stow {
-    stow --override='.*' --dir="${PWD}" --target="${2:-"${HOME}"}" "${1}"
+_stow() {
+    local target="${1:-"${HOME}"}"
+    mkdir -p "${target}"
+    stow --verbose --restow --override='.*' --dir="${PWD}" --target="${target}" "${package}"
 }
 
-if [[ "${target}" == "firefox" ]]; then
+if [[ "${package}" == "firefox" ]]; then
     shopt -s nullglob
     for profile in "${HOME}/.mozilla/firefox/"*".default-release-"*; do
-        _stow firefox "${profile}"
+        _stow "${profile}"
     done
-elif [[ "${target}" == "vscode" ]]; then
+elif [[ "${package}" == "vscode" ]]; then
     for dir_name in "Code - OSS" "Code" "VSCodium"; do
-        dir="${HOME}/.config/${dir_name}"
-        mkdir -p "${dir}"
-        _stow vscode "${dir}"
+        _stow "${HOME}/.config/${dir_name}"
     done
-elif [[ -d "./${target}" ]]; then
-    _stow "${target}"
+elif [[ "${package}" == "home" ]]; then
+    if [[ ! -L ~/.bashrc ]]; then
+        rm -f ~/.bashrc
+    fi
+    _stow
+elif [[ -d "./${package}" ]]; then
+    _stow
 else
-    echo "invalid target: ${target}"
+    echo "missing package ${package}"
     exit 1
 fi
