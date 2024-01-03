@@ -1,5 +1,5 @@
 [tool.commitizen]
-version = "0.14.0"
+version = "0.15.0"
 tag_format = "v$version"
 version_scheme = "semver"
 annotated_tag = true
