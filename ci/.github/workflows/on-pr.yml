@@ -1,6 +1,9 @@
 name: On pull request
 on:
   pull_request:
+concurrency:
+  group: ${{ github.workflow }}/${{ github.event.pull_request.head.label || github.head_ref || github.ref }}
+  cancel-in-progress: true
 jobs:
   test_bump_version:
     runs-on: ubuntu-latest
@@ -9,10 +12,10 @@ jobs:
         with:
           fetch-depth: 0
       - uses: ./actions/bump_version
-        env:
-          DRY_RUN: 1
-          CI_GPG_PRIVATE_KEY: ${{ secrets.CI_GPG_PRIVATE_KEY }}
-          CI_GPG_PASSPHRASE: ${{ secrets.CI_GPG_PASSPHRASE }}
+        with:
+          dry_run: 1
+          private_key: ${{ secrets.CI_GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.CI_GPG_PASSPHRASE }}
   test_bump_version_with_commit:
     runs-on: ubuntu-latest
     steps:
@@ -21,7 +24,17 @@ jobs:
           fetch-depth: 0
       - run: ./actions/bump_version/test_bump_version_commit.sh
       - uses: ./actions/bump_version
-        env:
-          DRY_RUN: 1
-          CI_GPG_PRIVATE_KEY: ${{ secrets.CI_GPG_PRIVATE_KEY }}
-          CI_GPG_PASSPHRASE: ${{ secrets.CI_GPG_PASSPHRASE }}
+        with:
+          dry_run: 1
+          private_key: ${{ secrets.CI_GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.CI_GPG_PASSPHRASE }}
+  test_kaniko:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - uses: ./actions/kaniko
+        with:
+          context: dir://actions/kaniko
+          dockerfile: actions/kaniko/Dockerfile.test
+          destination: shishifubing/test_kaniko:latest
+          token: ${{ secrets.CI_DOCKERHUB_TOKEN }}

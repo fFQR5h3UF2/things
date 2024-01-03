@@ -3,14 +3,12 @@ set -Eeuxo pipefail
 
 git config --global --add safe.directory "${PWD}"
 gpg="$(dirname "${0}")/gpg.sh"
-python3 -m venv .venv
-. .venv/bin/activate
-pip install commitizen=="3.13.0"
+pipx install commitizen=="3.13.0"
 
 (
     set +x
-    printf "%s" "${CI_GPG_PRIVATE_KEY:?missing gpg private key}" >_key
-    printf "%s" "${CI_GPG_PASSPHRASE:?missing gpg passphrase}" >_passphrase
+    printf "%s" "${INPUT_PRIVATE_KEY:?missing gpg private key}" >_key
+    printf "%s" "${INPUT_PASSPHRASE:?missing gpg passphrase}" >_passphrase
 )
 
 key=$(gpg --with-colons --batch --show-keys --with-fingerprint --keyid-format=long _key)
@@ -43,7 +41,7 @@ git config gpg.program "${gpg}"
 git config commit.gpgsign true
 git config tag.gpgsign true
 
-cz bump --yes --changelog --version-scheme semver || {
+~/.local/bin/cz bump --yes --changelog --version-scheme semver || {
     code="${?}"
     if [[ "${code}" -eq 21 ]]; then
         echo "NonIncrementExit detected, exiting"
@@ -53,9 +51,9 @@ cz bump --yes --changelog --version-scheme semver || {
     fi
 }
 
-new_tag="v$(cz version -p)"
+new_tag="v$(~/.local/bin/cz version -p)"
 git tag -v "${new_tag}"
-if [[ -z "${DRY_RUN:-}" ]]; then
+if [[ -z "${INPUT_DRY_RUN}" ]]; then
     git push origin HEAD
     git push origin "${new_tag}"
 fi
