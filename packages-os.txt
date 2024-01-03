@@ -18,4 +18,5 @@ unzip
 tar
 fd-find
 cargo
-nvim
+neovim
+python3-neovim
