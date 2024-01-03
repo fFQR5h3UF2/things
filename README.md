@@ -1,17 +1,8 @@
 # [dotfiles](https://github.com/shishifubing/dotfiles)
 
-[
-![License]
-(https://img.shields.io/github/license/shishifubing/dotfiles.svg)
-](https://github.com/shishifubing/dotfiles/blob/main/LICENSE)
-[
-![Version]
-(https://img.shields.io/github/v/release/shishifubing/dotfiles?label=version)
-](https://github.com/shishifubing/dotfiles/releases/latest)
-[
-![Release]
-(https://img.shields.io/github/actions/workflow/status/shishifubing/dotfiles/release.yml?branch=main&label=release&logo=github)
-](https://github.com/shishifubing/dotfiles/actions/workflows/release.yml)
+[![License](https://img.shields.io/github/license/shishifubing/dotfiles.svg)](https://github.com/shishifubing/dotfiles/blob/main/LICENSE)
+[![Version](https://img.shields.io/github/v/release/shishifubing/dotfiles?label=version)](https://github.com/shishifubing/dotfiles/releases/latest)
+[![Release](https://img.shields.io/github/actions/workflow/status/shishifubing/dotfiles/release.yml?branch=main&label=release&logo=github)](https://github.com/shishifubing/dotfiles/actions/workflows/release.yml)
 
 Things for personal use
 
