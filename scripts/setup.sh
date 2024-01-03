@@ -35,8 +35,8 @@ if [[ ! -d "${dotfiles_dir}" ]]; then
 fi
 cd "${dotfiles_dir}"
 
-mapfile -t packages_os packages-os.txt
-mapfile -t packages_pipx packages-pipx.txt
+mapfile -t packages_os <packages-os.txt
+mapfile -t packages_pipx <packages-pipx.txt
 _install_os "${packages_os[@]}"
 _install_pipx "${packages_pipx[@]}"
 
