@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.26.0 (2024-01-03)
+
+### Feat
+
+- **kaniko**: add default context and dockerfile inputs (#184)
+
 ## v1.25.0 (2024-01-03)
 
 ### Feat
