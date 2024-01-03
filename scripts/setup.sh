@@ -13,7 +13,7 @@ fi
 cd "${dotfiles_dir}"
 
 packages=(
-    make git curl wget unzip stow gpg python3 python3-pip python3-venv
+    make git curl wget unzip stow gpg python3 python3-pip python3-venv pipx
     gpg-agent shellcheck shfmt sudo fzf unzip tar fd-find cargo
 )
 if [[ "$(whoami)" == "root" ]]; then
@@ -24,10 +24,7 @@ else
     sudo apt-get install -y "${packages[@]}"
 fi
 
-python3 -m venv --symlinks --clear --upgrade-deps --prompt 'home' ~/.venv
-# shellcheck source=/dev/null
-. ~/.venv/bin/activate
-pip install commitizen=="3.13.0" pre-commit=="3.6.0" ruff=="0.1.9"
+xargs pipx install <requirements.txt
 cz version --project
 
 hashicorp_url="https://hashicorp-releases.yandexcloud.net"

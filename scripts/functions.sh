@@ -1,5 +1,9 @@
 #!/usr/bin/env bash
 
+_dotfiles_docker_image_digest() {
+    docker inspect --format='{{index .RepoDigests 0}}' "${1:?missing image}"
+}
+
 _dotfiles_tmux_start() {
     if [[ "${TERM_PROGRAM}" == "tmux" ]]; then
         return

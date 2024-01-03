@@ -1,0 +1,4 @@
+# for pipx
+commitizen=="3.13.0"
+pre-commit=="3.6.0"
+ruff=="0.1.9"
