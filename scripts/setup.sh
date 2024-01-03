@@ -33,4 +33,4 @@ fi
 
 mapfile -t packages_os <packages-os.txt
 _install_os "${packages_os[@]}"
-make home bin nvim setup_pipx setup_binaries nvim_sync
+make home bin nvim setup_pipx setup_binaries #nvim_sync
