@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.20.0 (2024-01-03)
+
+### Feat
+
+- **repos**: move infra-repos to this repository (#59)
+
 ## v0.19.0 (2024-01-03)
 
 ### Feat
