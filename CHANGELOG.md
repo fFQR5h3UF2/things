@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.13.0 (2024-01-03)
+
+### Feat
+
+- build docker image (#50)
+
 ## v0.12.0 (2024-01-02)
 
 ### Feat
