@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.25.0 (2024-01-03)
+
+### Feat
+
+- **kaniko**: add dry_run option (#183)
+
 ## v1.24.0 (2024-01-03)
 
 ### Feat
