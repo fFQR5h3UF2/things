@@ -10,3 +10,22 @@ jobs:
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       - run: make test_makefile
+  test_kaniko:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - uses: ./actions/kaniko
+        with:
+          context: dir://actions/kaniko
+          dockerfile: actions/kaniko/Dockerfile.test
+          destination: shishifubing/test_kaniko:latest
+          token: ${{ secrets.CI_DOCKERHUB_TOKEN }}
+  test_kaniko_dry_run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - uses: ./actions/kaniko
+        with:
+          dry_run: 1
+          context: dir://actions/kaniko
+          dockerfile: actions/kaniko/Dockerfile.test

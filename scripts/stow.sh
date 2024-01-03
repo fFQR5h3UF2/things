@@ -6,7 +6,7 @@ package="${1:?missing package}"
 _stow() {
     local target="${1:-"${HOME}"}"
     mkdir -p "${target}"
-    stow --verbose --restow --override='.*' --dir="${PWD}/packages" --target="${target}" "${package}"
+    stow --restow --override='.*' --dir="${PWD}/stow" --target="${target}" "${package}"
 }
 
 if [[ "${package}" == "firefox" ]]; then
