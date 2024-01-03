@@ -1,22 +1,12 @@
 #!/usr/bin/env sh
 set -o errexit -o nounset -o xtrace
 
-# setup gpg
-gpg="$(dirname "${0}")/gpg.sh"
+# setup the key
 (
     set +x
     printf "%s" "${INPUT_PRIVATE_KEY:?missing gpg private key}" >_key
     printf "%s" "${INPUT_PASSPHRASE:?missing gpg passphrase}" >_passphrase
 )
-echo "
-default-cache-ttl 21600
-max-cache-ttl 31536000
-allow-preset-passphrase
-allow-loopback-pinentry
-" >>~/.gnupg/gpg-agent.conf
-gpg-connect-agent reloadagent /bye
-gpg --import _key
-
 # parse the key
 key=$(gpg --with-colons --batch --show-keys --with-fingerprint --keyid-format=long _key)
 user=$(echo "${key}" | awk -F ":" '/uid/ { print $10 }')
@@ -27,6 +17,17 @@ name="${user%%<*}"
 name=$(echo "${name}" | cut -c "${#name}")
 email="${user##*<}"
 email=$(echo "${email}" | cut -c "${#email}")
+
+# setup gpg
+gpg="$(dirname "${0}")/gpg.sh"
+echo "
+default-cache-ttl 21600
+max-cache-ttl 31536000
+allow-preset-passphrase
+allow-loopback-pinentry
+" >>~/.gnupg/gpg-agent.conf
+gpg-connect-agent reloadagent /bye
+gpg --import _key
 
 # setup git
 export GIT_AUTHOR_NAME="${name}"
