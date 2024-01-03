@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.17.0 (2024-01-03)
+
+### Feat
+
+- **nvim**: add ansible support (#56)
+
 ## v0.16.0 (2024-01-03)
 
 ### Feat
