@@ -1,31 +1,44 @@
 #!/usr/bin/env bash
 set -Eeuxo pipefail
 
+_install_os() {
+    command="apt-get"
+    if ! which "${command}"; then
+        command="yum"
+    fi
+    if [[ "$(whoami)" == "root" ]]; then
+        "${command}" update
+        "${command}" install -y "${@}"
+    else
+        sudo "${command}" update
+        sudo "${command}" install -y "${@}"
+    fi
+}
+
+_install_pipx() {
+    for package in "${@}"; do
+        pipx install "${package}"
+    done
+}
+
 dotfiles_dir=~/repos/shishifubing/dotfiles
 dotfiles_url=https://github.com/shishifubing/dotfiles.git
+mapfile -t packages_os packages-os.txt
+mapfile -t packages_pipx packages-pipx.txt
 
 mkdir -p "${dotfiles_dir}" ~/.local/bin ~/.ssh ~/.gnupg
 chmod 0700 ~/.ssh ~/.gnupg
 
+if ! which git; then
+    _install_os git
+fi
 if [[ ! -d "${dotfiles_dir}" ]]; then
     git clone "${dotfiles_url}" "${dotfiles_dir}"
 fi
 cd "${dotfiles_dir}"
 
-packages=(
-    make git curl wget unzip stow gpg python3 python3-pip python3-venv pipx
-    gpg-agent shellcheck shfmt sudo fzf unzip tar fd-find cargo
-)
-if [[ "$(whoami)" == "root" ]]; then
-    apt-get update
-    apt-get install -y "${packages[@]}"
-else
-    sudo apt-get update
-    sudo apt-get install -y "${packages[@]}"
-fi
-
-xargs pipx install <requirements.txt
-cz version --project
+_install_os "${packages_os[@]}"
+_install_pipx "${packages_pipx[@]}"
 
 hashicorp_url="https://hashicorp-releases.yandexcloud.net"
 github_url="https://github.com"
