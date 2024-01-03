@@ -1,6 +1,15 @@
 #!/usr/bin/env sh
 set -eux
 
+if [ "${INPUT_DRY_RUN}" ]; then
+    /kaniko/executor \
+        --context="${INPUT_CONTEXT}" \
+        --dockerfile="${INPUT_DOCKERFILE}" \
+        --reproducible \
+        --no-push
+    exit
+fi
+
 (
     set +x
     auth=$(printf "%s:%s" "${INPUT_USER}" "${INPUT_TOKEN}" | base64 -w 0)
