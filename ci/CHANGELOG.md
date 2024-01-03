@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## v1.24.0 (2024-01-03)
+
+### Feat
+
+- **kaniko**: add kaniko action (#182)
+
 ## v1.23.0 (2024-01-02)
 
 ### Feat
