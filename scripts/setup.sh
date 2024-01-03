@@ -23,8 +23,8 @@ _install_pipx() {
 
 dotfiles_dir=~/repos/shishifubing/dotfiles
 dotfiles_url=https://github.com/shishifubing/dotfiles.git
-mapfile -t packages_os packages-os.txt
-mapfile -t packages_pipx packages-pipx.txt
+mapfile -t packages_os <packages-os.txt
+mapfile -t packages_pipx <packages-pipx.txt
 
 mkdir -p "${dotfiles_dir}" ~/.local/bin ~/.ssh ~/.gnupg
 chmod 0700 ~/.ssh ~/.gnupg
