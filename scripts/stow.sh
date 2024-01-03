@@ -6,7 +6,7 @@ package="${1:?missing package}"
 _stow() {
     local target="${1:-"${HOME}"}"
     mkdir -p "${target}"
-    stow --override='.*' --dir="${PWD}" --target="${target}" "${package}"
+    stow --verbose --restow --override='.*' --dir="${PWD}" --target="${target}" "${package}"
 }
 
 if [[ "${package}" == "firefox" ]]; then
@@ -16,9 +16,7 @@ if [[ "${package}" == "firefox" ]]; then
     done
 elif [[ "${package}" == "vscode" ]]; then
     for dir_name in "Code - OSS" "Code" "VSCodium"; do
-        dir="${HOME}/.config/${dir_name}"
-        mkdir -p "${dir}"
-        _stow "${dir}"
+        _stow "${HOME}/.config/${dir_name}"
     done
 elif [[ -d "./${package}" ]]; then
     _stow
