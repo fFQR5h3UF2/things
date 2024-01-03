@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.18.0 (2024-01-03)
+
+### Feat
+
+- **actions**: move github actions to this repo (#57)
+
 ## v0.17.0 (2024-01-03)
 
 ### Feat
