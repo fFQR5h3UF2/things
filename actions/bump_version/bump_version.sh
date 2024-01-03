@@ -27,7 +27,7 @@ allow-preset-passphrase
 allow-loopback-pinentry
 " >>~/.gnupg/gpg-agent.conf
 gpg-connect-agent reloadagent /bye
-gpg --import _key
+"${gpg}" --import _key
 
 # setup git
 export GIT_AUTHOR_NAME="${name}"
