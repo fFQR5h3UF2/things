@@ -3,6 +3,9 @@ on:
   push:
     branches:
       - main
+concurrency:
+  group: ${{ github.workflow }}/${{ github.event.pull_request.head.label || github.head_ref || github.ref }}
+  cancel-in-progress: true
 jobs:
   bump_version:
     runs-on: ubuntu-latest
@@ -12,6 +15,6 @@ jobs:
           fetch-depth: 0
           token: ${{ secrets.CI_GITHUB_TOKEN }}
       - uses: ./actions/bump_version
-        env:
-          CI_GPG_PRIVATE_KEY: ${{ secrets.CI_GPG_PRIVATE_KEY }}
-          CI_GPG_PASSPHRASE: ${{ secrets.CI_GPG_PASSPHRASE }}
+        with:
+          private_key: ${{ secrets.CI_GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.CI_GPG_PASSPHRASE }}
