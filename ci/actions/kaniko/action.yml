@@ -2,10 +2,10 @@ name: Build a docker image
 description: Build a docker image using kaniko
 inputs:
   context:
-    required: true
+    default: dir://.
     description: context path
   dockerfile:
-    required: true
+    default: Dockerfile
     description: dockerfile path
   destination:
     description: destination
