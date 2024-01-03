@@ -20,3 +20,4 @@ fd-find
 cargo
 neovim
 python3-neovim
+npm
