@@ -13,6 +13,7 @@ return {
         },
         config = function()
             local servers = {
+                ansiblels = {},
                 gopls = {},
                 bashls = {},
                 clangd = {},
@@ -26,14 +27,10 @@ return {
                 taplo = {},
                 jsonls = {},
                 tflint = {},
-                html = { filetypes = { "html", "twig", "hbs" } },
+                html = {},
                 yamlls = {
                     settings = {
                         yaml = {
-                            format = {
-                                enable = true,
-                                printWidth = 80,
-                            },
                             completion = true,
                             hover = true,
                             validate = true,
