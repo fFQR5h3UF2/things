@@ -6,3 +6,15 @@ updates:
       interval: weekly
     commit-message:
       prefix: ci(deps)
+  - package-ecosystem: docker
+    directory: /images
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: build(images)
+  - package-ecosystem: docker
+    directory: /actions
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: build(actions)
