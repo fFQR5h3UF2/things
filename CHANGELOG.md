@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.21.0 (2024-01-04)
+
+### Feat
+
+- **images**: add commitizen image (#61)
+
 ## v0.20.1 (2024-01-03)
 
 ### Refactor
