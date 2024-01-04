@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.24.0 (2024-01-04)
+
+### Feat
+
+- **nvim**: move all configuration inside lua/shishifubing (#66)
+
 ## v0.23.0 (2024-01-04)
 
 ### Feat
