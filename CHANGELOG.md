@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.22.1 (2024-01-04)
+
+### Fix
+
+- specify image tags alongside digests (#63)
+
 ## v0.22.0 (2024-01-04)
 
 ### Feat
