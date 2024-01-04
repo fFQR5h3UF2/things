@@ -1,6 +1,4 @@
-# alpine:3.19
-FROM python@sha256:ae1f508f01ac1806e84c68b43ee0983b586426dfa39f5d21eced0dd7f5e230f4
-RUN apk add --no-cache gnupg git
-RUN pip install --no-cache-dir commitizen
+# v0.21.0
+FROM shishifubing/commitizen@sha256:5ddfd90d778025892285d59bba48611daebf739a9bd4502144b9e5833882bf17
 COPY . /action
 ENTRYPOINT [ "/action/bump_version.sh" ]
