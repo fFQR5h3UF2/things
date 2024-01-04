@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.23.0 (2024-01-04)
+
+### Feat
+
+- **nvim**: disable lualine separators (#65)
+
 ## v0.22.1 (2024-01-04)
 
 ### Fix
