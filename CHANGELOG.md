@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.22.0 (2024-01-04)
+
+### Feat
+
+- **bump_version**: use prebuilt image (#62)
+
 ## v0.21.0 (2024-01-04)
 
 ### Feat
