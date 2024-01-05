@@ -4,6 +4,10 @@
 -- set a ruler
 vim.opt.colorcolumn = "80"
 
+-- command line is hidden when not in use
+vim.opt.cmdheight = 0
+
+-- whitespace stuff
 vim.opt.tabstop = 4
 vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4

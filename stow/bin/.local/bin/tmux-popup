@@ -1,18 +1,41 @@
 #!/usr/bin/env sh
 set -o errexit -o nounset -o xtrace
 
-session_name=$(tmux display-message -p -F "#{session_name}")
+action="${1:-}"
 
-if [ "${session_name}" = "${session_name%*"[popup]"}" ]; then
-    window_number=$(tmux display-message -p '#I')
-    popup_session_name="${window_number}[popup]"
-    tmux popup \
-        -d '#{pane_current_path}' \
-        -x C \
-        -y C \
-        -w 80% \
-        -h 75% \
-        -E "tmux attach -t '${popup_session_name}' || tmux new -s '${popup_session_name}'"
-else
-    tmux detach-client
+session_name=$(tmux display-message -p '#{session_name}')
+popup_name=$(tmux display-message -p '#{session_name}#{window_id}[popup]')
+has_popup=
+is_popup=
+if [ "${session_name}" != "${session_name%*"[popup]"}" ]; then
+    is_popup=1
 fi
+if [ ! "${is_popup}" ] && tmux has-session -t "${popup_name}"; then
+    has_popup=1
+fi
+
+if [ "${action}" = "kill" ]; then
+    if [ "${has_popup}" ]; then
+        tmux kill-session -t "${popup_name}"
+    fi
+    tmux kill-window
+    exit
+fi
+
+if [ "${is_popup}" ]; then
+    tmux detach-client
+    exit
+fi
+
+if [ ! "${has_popup}" ]; then
+    tmux new-session -d -s "${popup_name}"
+    tmux set-option -t "${popup_name}" status off
+    tmux set-hook -t "${session_name}" session-closed "kill-session -t '${popup_name}'"
+fi
+tmux popup \
+    -d '#{pane_current_path}' \
+    -x C \
+    -y C \
+    -w 80% \
+    -h 75% \
+    -E "tmux attach-session -t '${popup_name}'"

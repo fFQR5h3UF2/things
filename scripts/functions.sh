@@ -8,14 +8,15 @@ _dotfiles_tmux_start() {
     if [[ "${TERM_PROGRAM}" == "tmux" ]]; then
         return
     fi
-    if tmux has-session &>/dev/null; then
-        tmux attach-session
-    else
-        tmux
+    if ! tmux has-session -t main &>/dev/null; then
+        tmux new-session -d -s main
+        tmux send-keys tmux-new-window Enter
     fi
+    tmux attach-session -t main
 }
 
 _dotfiles_prompt_command() {
+    # append history lines from this session to the history file
     history -a
 }
 
