@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.29.0 (2024-01-05)
+
+### Feat
+
+- **tmux**: autokill popups (#71)
+
 ## v0.28.0 (2024-01-05)
 
 ### Feat
