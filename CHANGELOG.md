@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.26.0 (2024-01-05)
+
+### Feat
+
+- **tmux**: switch theme to tokyonight (#68)
+
 ## v0.25.0 (2024-01-05)
 
 ### Feat
