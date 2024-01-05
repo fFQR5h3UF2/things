@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.25.0 (2024-01-05)
+
+### Feat
+
+- **nvim**: add snippets (#67)
+
 ## v0.24.0 (2024-01-04)
 
 ### Feat
