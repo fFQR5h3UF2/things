@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.27.0 (2024-01-05)
+
+### Feat
+
+- **nvim**: remove bufferline (#69)
+
 ## v0.26.0 (2024-01-05)
 
 ### Feat
