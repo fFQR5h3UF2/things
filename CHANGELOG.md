@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.28.0 (2024-01-05)
+
+### Feat
+
+- **tmux**: add floating terminal windows (#70)
+
 ## v0.27.0 (2024-01-05)
 
 ### Feat
