@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+set -o errexit -o nounset -o xtrace
+
+session_name=$(tmux display-message -p -F "#{session_name}")
+
+if [ "${session_name}" = "${session_name%*"[popup]"}" ]; then
+    window_number=$(tmux display-message -p '#I')
+    popup_session_name="${window_number}[popup]"
+    tmux popup \
+        -d '#{pane_current_path}' \
+        -x C \
+        -y C \
+        -w 80% \
+        -h 75% \
+        -E "tmux attach -t '${popup_session_name}' || tmux new -s '${popup_session_name}'"
+else
+    tmux detach-client
+fi

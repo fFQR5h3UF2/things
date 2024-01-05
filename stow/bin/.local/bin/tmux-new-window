@@ -2,6 +2,7 @@
 set -o errexit -o nounset -o xtrace
 
 if ! which fzf >/dev/null 2>&1; then
+    tmux new-window
     exit
 fi
 
@@ -9,14 +10,10 @@ dir=$(
     {
         echo "${PWD}"
         echo ~/repos
-        find ~/repos/ -type d -name .git -exec dirname '{}' ';'
+        echo ~
+        find ~/repos/ -type d -name .git -exec dirname '{}' ';' 2>/dev/null &
     } | fzf
 )
 cd "${dir}" || true
 tmux rename-window "$(basename "${dir}")"
-tmux send-keys "cd ${dir}" Enter
-tmux send-keys "clear" Enter
-tmux send-keys "which nvim && nvim" Enter
-tmux split-window -h -c '#{pane_current_path}'
-tmux resize-pane -R 20
-#tmux split-window -v -c '#{pane_current_path}'
+tmux send-keys "cd ${dir} && nvim" Enter
