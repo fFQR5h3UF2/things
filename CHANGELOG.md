@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.30.1 (2024-01-06)
+
+### Refactor
+
+- **stow**: rewrite from bash to sh (#73)
+
 ## v0.30.0 (2024-01-06)
 
 ### Feat
