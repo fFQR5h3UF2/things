@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.30.0 (2024-01-06)
+
+### Feat
+
+- **tmux**: improve popup handling (#72)
+
 ## v0.29.0 (2024-01-05)
 
 ### Feat
