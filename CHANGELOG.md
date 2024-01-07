@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.31.0 (2024-01-07)
+
+### Feat
+
+- **tmux**: pass only action type to the popup script (#74)
+
 ## v0.30.1 (2024-01-06)
 
 ### Refactor
