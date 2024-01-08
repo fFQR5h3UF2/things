@@ -84,14 +84,6 @@ function M.set_no_deps()
         vim.diagnostic.setloclist,
         { desc = "Open diagnostics list" }
     )
-    k.set("n", "<leader>bn", "<cmd>bn<cr>", { desc = "Go to [B]uffer [N]ext" })
-    k.set(
-        "n",
-        "<leader>bp",
-        "<cmd>bp<cr>",
-        { desc = "Go to [B]uffer [P]revious" }
-    )
-    k.set("n", "<leader>bd", "<cmd>bd<cr>", { desc = "Delete the buffer" })
     k.set(
         "n",
         "<leader>bD",
@@ -119,12 +111,6 @@ function M.set_telescope()
             prompt_title = "Live Grep in Open Files",
         })
     end
-    local function current_buffer_fzf()
-        builtin.current_buffer_fuzzy_find(themes.get_dropdown({
-            winblend = 10,
-            previewer = false,
-        }))
-    end
 
     k.set(
         "n",
@@ -132,18 +118,19 @@ function M.set_telescope()
         builtin.oldfiles,
         { desc = "[S]earch [R]ecently opened files" }
     )
-    k.set(
-        "n",
-        "<leader><space>",
-        builtin.buffers,
-        { desc = "[ ] Find existing buffers" }
-    )
-    k.set(
-        "n",
-        "<leader>/",
-        current_buffer_fzf,
-        { desc = "[/] Fuzzily search in current buffer" }
-    )
+    k.set("n", "<leader><space>", function()
+        builtin.buffers({
+            show_all_buffers = false,
+            sort_lastused = true,
+            sort_mru = true,
+        })
+    end, { desc = "[ ] Find existing buffers" })
+    k.set("n", "<leader>/", function()
+        builtin.current_buffer_fuzzy_find(themes.get_dropdown({
+            winblend = 10,
+            previewer = false,
+        }))
+    end, { desc = "[/] Fuzzily search in current buffer" })
     k.set(
         "n",
         "<leader>s/",
@@ -184,6 +171,7 @@ function M.set_telescope()
         { desc = "[S]earch [D]iagnostics" }
     )
     k.set("n", "<leader>sR", builtin.resume, { desc = "[S]earch [R]esume" })
+    --k.set("n", "<c-d>", actions.delete_buffer, { desc = "Delete current buffer" })
 end
 
 --[[ LSP keymaps ]]

@@ -5,14 +5,16 @@ _dotfiles_docker_image_digest() {
 }
 
 _dotfiles_tmux_start() {
+    local session_name="DEFAULT"
     if [[ "${TERM_PROGRAM}" == "tmux" ]]; then
         return
     fi
-    if ! tmux has-session -t main &>/dev/null; then
-        tmux new-session -d -s main
+
+    if ! tmux has-session -t "${session_name}" &>/dev/null; then
+        tmux new-session -d -s "${session_name}"
         tmux send-keys tmux-new-window Enter
     fi
-    tmux attach-session -t main
+    tmux attach-session -t "${session_name}"
 }
 
 _dotfiles_prompt_command() {

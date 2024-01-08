@@ -9,7 +9,9 @@ export FZF_COMPLETION_TRIGGER="**"
 export force_color_prompt=yes
 export GPG_TTY="${TTY:-}"
 export EDITOR="nvim"
+# color fixes
 export TERM="screen-256color"
+export COLORTERM="truecolor"
 # user-specific configuration files
 export XDG_CONFIG_HOME="${HOME}/.config"
 ## the main prompt variable

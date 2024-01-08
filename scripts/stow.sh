@@ -6,7 +6,7 @@ package="${1:?missing package}"
 _stow() {
     _target="${1:-"${HOME}"}"
     mkdir -p "${_target}"
-    stow --restow --override='.*' --dir="${PWD}/stow" --target="${_target}" "${package}"
+    stow --restow --override='.*' --dir="${PWD}" --target="${_target}" "${package}"
 }
 
 case "${package}" in
@@ -27,7 +27,11 @@ case "${package}" in
     fi
     _stow
     ;;
-*)
+"bin" | "git" | "nvim")
     _stow
+    ;;
+*)
+    echo "invalid package: ${package}"
+    exit 1
     ;;
 esac
