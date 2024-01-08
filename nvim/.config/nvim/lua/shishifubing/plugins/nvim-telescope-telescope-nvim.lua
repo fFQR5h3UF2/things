@@ -18,7 +18,7 @@ return {
         },
         config = function()
             pcall(require("telescope").load_extension, "fzf")
-            require("shishifubing.keymaps").set_telescope()
+            require("shishifubing.keymaps").setup_telescope()
         end,
         opts = {
             defaults = {

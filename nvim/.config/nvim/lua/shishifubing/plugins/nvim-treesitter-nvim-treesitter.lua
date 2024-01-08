@@ -42,7 +42,7 @@ return {
             },
         },
         config = function(_, opts)
-            local keymaps = require("shishifubing.keymaps").treesitter
+            local keymaps = require("shishifubing.keymaps").config_treesitter
             opts["incremental_selection"] = keymaps.incremental_selection
             opts["textobjects"] = keymaps.textobjects
             require("nvim-treesitter.configs").setup(opts)

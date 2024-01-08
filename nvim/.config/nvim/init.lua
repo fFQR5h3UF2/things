@@ -1,1 +1,1 @@
-require("shishifubing")
+require("shishifubing").setup()
