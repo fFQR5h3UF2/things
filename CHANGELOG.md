@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.32.0 (2024-01-08)
+
+### Feat
+
+- move stow to root, add a script to kill tmux popup sessions (#75)
+- move stow to root, kill tmux popup sessions
+
 ## v0.31.0 (2024-01-07)
 
 ### Feat
