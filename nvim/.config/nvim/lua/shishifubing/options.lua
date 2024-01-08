@@ -1,69 +1,74 @@
--- [[ Setting options ]]
--- See `:help vim.o`
+local M = {}
 
--- set a ruler
-vim.opt.colorcolumn = "80"
+function M.setup()
+    -- NOTE: You should make sure your terminal supports this
+    vim.o.termguicolors = true
 
--- command line is hidden when not in use
-vim.opt.cmdheight = 0
+    -- set a ruler
+    vim.opt.colorcolumn = "80"
 
--- whitespace stuff
-vim.opt.tabstop = 4
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.expandtab = true
-vim.opt.smartindent = true
+    vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#595F6F" })
 
--- show invisible characters
-vim.opt.listchars = {
-    tab = "→ ",
-    eol = "↲",
-    nbsp = "•",
-    trail = "•",
-    extends = "⟩",
-    precedes = "⟨",
-}
-vim.opt.list = true
+    -- command line overlaps with lualine
+    vim.opt.cmdheight = 0
 
--- auto reload files from disk
-vim.opt.autoread = true
+    -- whitespace stuff
+    vim.opt.tabstop = 4
+    vim.opt.softtabstop = 4
+    vim.opt.shiftwidth = 4
+    vim.opt.expandtab = true
+    vim.opt.smartindent = true
 
--- do not change cursor on insert
-vim.opt.guicursor = ""
+    -- show invisible characters
+    vim.opt.listchars = {
+        tab = "→ ",
+        eol = "↲",
+        nbsp = "•",
+        trail = "•",
+        extends = "⟩",
+        precedes = "⟨",
+    }
+    vim.opt.list = true
 
--- Set highlight on search
-vim.o.hlsearch = false
+    -- auto reload files from disk
+    vim.opt.autoread = true
 
--- Make line numbers default
-vim.wo.number = true
+    -- do not change cursor on insert
+    vim.opt.guicursor = ""
 
--- Enable mouse mode
-vim.o.mouse = "a"
+    -- Set highlight on search
+    vim.o.hlsearch = false
 
--- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
-vim.o.clipboard = "unnamedplus"
+    -- Make line numbers default
+    vim.wo.number = true
 
--- Enable break indent
-vim.o.breakindent = true
+    -- Enable mouse mode
+    vim.o.mouse = "a"
 
--- Save undo history
-vim.o.undofile = true
+    -- Sync clipboard between OS and Neovim.
+    --  Remove this option if you want your OS clipboard to remain independent.
+    --  See `:help 'clipboard'`
+    vim.o.clipboard = "unnamedplus"
 
--- Case-insensitive searching UNLESS \C or capital in search
-vim.o.ignorecase = true
-vim.o.smartcase = true
+    -- Enable break indent
+    vim.o.breakindent = true
 
--- Keep signcolumn on by default
-vim.wo.signcolumn = "yes"
+    -- Save undo history
+    vim.o.undofile = true
 
--- Decrease update time
-vim.o.updatetime = 250
-vim.o.timeoutlen = 300
+    -- Case-insensitive searching UNLESS \C or capital in search
+    vim.o.ignorecase = true
+    vim.o.smartcase = true
 
--- Set completeopt to have a better completion experience
-vim.o.completeopt = "menu,menuone,noselect"
+    -- Keep signcolumn on by default
+    vim.wo.signcolumn = "yes"
 
--- NOTE: You should make sure your terminal supports this
-vim.o.termguicolors = true
+    -- Decrease update time
+    vim.o.updatetime = 250
+    vim.o.timeoutlen = 300
+
+    -- Set completeopt to have a better completion experience
+    vim.o.completeopt = "menu,menuone,noselect"
+end
+
+return M

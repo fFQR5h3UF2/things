@@ -41,7 +41,7 @@ local function delete_all_buffers_except_current()
 end
 
 --[[ Keymaps with no dependencies ]]
-function M.set_no_deps()
+function M.setup_no_deps()
     k.set(
         { "n", "v" },
         "<Space>",
@@ -93,7 +93,7 @@ function M.set_no_deps()
 end
 
 -- [[ Telescope keymaps ]]
-function M.set_telescope()
+function M.setup_telescope()
     local builtin = require("telescope.builtin")
     local themes = require("telescope.themes")
 
@@ -176,7 +176,7 @@ end
 
 --[[ LSP keymaps ]]
 --  This function gets run when an LSP connects to a particular buffer.
-function M.set_lsp(_, bufnr)
+function M.setup_lsp(_, bufnr)
     local function nmap(keys, func, desc)
         if desc then
             desc = "LSP: " .. desc
@@ -258,7 +258,8 @@ function M.get_cmp()
 end
 
 --[[ Gitsigns keymaps ]]
-function M.set_gitsigns(bufnr)
+---@param bufnr number
+function M.setup_gitsigns(bufnr)
     local gs = package.loaded.gitsigns
 
     local function map(mode, l, r, opts)
@@ -339,7 +340,7 @@ function M.set_gitsigns(bufnr)
 end
 
 --[[ Telescope keymaps ]]
-M.treesitter = {
+M.config_treesitter = {
     incremental_selection = {
         enable = true,
         keymaps = {
