@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.33.0 (2024-01-08)
+
+### Feat
+
+- **nvim**: switch to sonokai theme (#76)
+
 ## v0.32.0 (2024-01-08)
 
 ### Feat
