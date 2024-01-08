@@ -15,4 +15,4 @@ dir=$(
 )
 cd "${dir}" || true
 tmux rename-window "$(basename "${dir}")"
-tmux send-keys "cd ${dir} && nvim" Enter
+tmux send-keys "cd ${dir} && nvim --cmd vsplit" Enter

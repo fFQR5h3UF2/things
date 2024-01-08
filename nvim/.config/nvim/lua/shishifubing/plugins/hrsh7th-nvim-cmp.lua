@@ -28,9 +28,6 @@ return {
                         luasnip.lsp_expand(args.body)
                     end,
                 },
-                completion = {
-                    completeopt = "menu,menuone,noinsert",
-                },
                 mapping = require("shishifubing.keymaps").get_cmp(),
                 sources = {
                     { name = "nvim_lsp" },

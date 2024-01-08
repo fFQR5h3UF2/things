@@ -19,27 +19,30 @@ Things for personal use
 - [actions](./actions/): github actions
   - [bump_version](./actions/bump_version/): bump version and update changelog using commitizen
   - [kaniko](./actions/kaniko/): wrapper for kaniko
-- [stow](./stow/): stow packages
-  - [firefox](./stow/firefox/): firefox configuration files
-  - [bin](./stow/bin/): scripts that have to be on PATH
-    - [tmux-new-window](./stow/bin/.local/bin/tmux-new-window):
-      script to select a directory and then open a new tmux window in it
-  - [git](./stow/git/): .gitconfig
-  - [home](./stow/home/): home directory configs
-    - [.bashrc](./stow/home/.bashrc): .bashrc file
-    - [.terraformrc.hcl](./stow/home/.terraformrc.hcl): terraform config
-    - [.tmux.conf](./stow/home/.tmux.confi): tmux config
-  - [nvim](./stow/nvim/): neovim configuration files
-    - [init.lua](./stow/nvim/.config/nvim/init.lua): bootstraps config
-    - [lazy-lock.json](./stow/nvim/.config/nvim/lazy-lock.json): lock file for nvim packages
-    - [lua/shishifubing](./stow/nvim/.config/nvim/lua/shishifubing/): actual configuration files
-      - [mapleader](./stow/nvim/.config/nvim/lua/shishifubing/mapleader.lua): set mapleader
-      - [lazy](./stow/nvim/.config/nvim/lua/shishifubing/lazy.lua): package manager setup
-      - [options](./stow/nvim/.config/nvim/lua/shishifubing/options.lua): set vim options
-      - [autocmd](./stow/nvim/.config/nvim/lua/shishifubing/autocmd.lua): autocommands
-      - [filetypes](./stow/nvim/.config/nvim/lua/shishifubing/filetypes.lua): filetypes
-      - [keymaps](./stow/nvim/.config/nvim/lua/shishifubing/keymaps.lua): keymaps
-  - [vscode](./stow/vscode/): vscode configs
+- [firefox](./firefox/): firefox configuration files (`make firefox`)
+- [bin](./bin/): scripts that have to be on PATH (`make bin`)
+  - [tmux-new-window](./bin/.local/bin/tmux-new-window):
+    select a directory using fzf in the new tmux window
+  - [tmux-popup](./bin/.local/bin/tmux-popup):
+    toggle a tmux popup
+  - [tmux-kill-popups](./bin/.local/bin/tmux-kill-popups):
+    kill popups assotiated with a session
+- [git](./git/): .gitconfig (`make git`)
+- [home](./home/): home directory configs (`make home`)
+  - [.bashrc](./home/.bashrc): .bashrc file
+  - [.terraformrc.hcl](./home/.terraformrc.hcl): terraform config
+  - [.tmux.conf](./home/.tmux.confi): tmux config
+- [nvim](./nvim/): neovim configuration files (`make nvim`)
+  - [init.lua](./nvim/.config/nvim/init.lua): just loads [lua/shishifubing](./nvim/.config/nvim/lua/shishifubing/)
+  - [lazy-lock.json](./nvim/.config/nvim/lazy-lock.json): lock file for nvim packages
+  - [lua/shishifubing](./nvim/.config/nvim/lua/shishifubing/): actual configuration files
+    - [mapleader](./nvim/.config/nvim/lua/shishifubing/mapleader.lua): set mapleader
+    - [lazy](./nvim/.config/nvim/lua/shishifubing/lazy.lua): package manager setup
+    - [options](./nvim/.config/nvim/lua/shishifubing/options.lua): vim options
+    - [autocmd](./nvim/.config/nvim/lua/shishifubing/autocmd.lua): autocommands
+    - [filetypes](./nvim/.config/nvim/lua/shishifubing/filetypes.lua): filetypes
+    - [keymaps](./nvim/.config/nvim/lua/shishifubing/keymaps.lua): keymaps
+- [vscode](./vscode/): vscode configs (`make vscode`)
 
 ## Usage
 
