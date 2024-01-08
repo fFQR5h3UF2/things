@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.34.0 (2024-01-08)
+
+### Feat
+
+- **nvim**: set colorcolumn color, refactor config structure (#77)
+
 ## v0.33.0 (2024-01-08)
 
 ### Feat
