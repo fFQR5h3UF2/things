@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.35.0 (2024-01-09)
+
+### Feat
+
+- simplify tmux, simplify lualine, disable json schemastore (#78)
+
 ## v0.34.0 (2024-01-08)
 
 ### Feat
