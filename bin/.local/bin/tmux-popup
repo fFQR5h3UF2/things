@@ -24,5 +24,4 @@ tmux display-popup \
     -y C \
     -w 90% \
     -h 75% \
-    -b none \
     -E "tmux attach-session -t '${popup_name}'"
