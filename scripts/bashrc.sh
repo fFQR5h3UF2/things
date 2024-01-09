@@ -7,7 +7,7 @@ export FZF_DEFAULT_COMMAND="fd --type f"
 export FZF_COMPLETION_TRIGGER="**"
 
 export force_color_prompt=yes
-GPG_TTY=$(tty)
+GPG_TTY=$(tty || true)
 export GPG_TTY
 export EDITOR="nvim"
 # color fixes
