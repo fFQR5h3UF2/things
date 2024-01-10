@@ -1,8 +1,6 @@
 #!/usr/bin/env sh
-set -o errexit -o nounset -o xtrace
 
 if ! which fzf >/dev/null 2>&1; then
-    tmux new-window
     exit
 fi
 
@@ -10,9 +8,20 @@ dir=$(
     {
         echo "${PWD}"
         echo ~/repos
-        find ~/repos/ -type d -name .git -exec dirname '{}' ';' 2>/dev/null &
+        find ~/repos/ -type d -name .git -exec dirname '{}' ';' 2>/dev/null
     } | fzf
 )
-cd "${dir}" || true
+venv_script=$(
+    cat - <<'EOF'
+        if [ -f poetry.lock ]; then
+            . "$(poetry env info -p)/bin/activate"
+        elif [ -f ./.venv/bin/activate ]; then
+            . "./.venv/bin/activate"
+        elif [ -f ./venv/bin/activate ]; then
+            . "./venv/bin/activate"
+        fi
+EOF
+)
+
 tmux rename-window "$(basename "${dir}")"
-tmux send-keys "cd ${dir} && nvim --cmd vsplit" Enter
+tmux send-keys "cd '${dir}' && ${venv_script} && clear" Enter

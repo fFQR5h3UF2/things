@@ -33,7 +33,7 @@ return {
             },
             formatters = {
                 shfmt = {
-                    prepend_args = { "--indent=4" },
+                    prepend_args = { "-i", "4" },
                 },
             },
         },
