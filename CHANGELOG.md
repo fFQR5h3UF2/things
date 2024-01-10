@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.36.0 (2024-01-10)
+
+### Feat
+
+- activate venv in new tmux windows, strip trailing whitespace (#79)
+
 ## v0.35.0 (2024-01-09)
 
 ### Feat
