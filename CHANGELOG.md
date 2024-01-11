@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.37.0 (2024-01-11)
+
+### Feat
+
+- sign git push if asked, add hostname to tmux statusline (#80)
+
 ## v0.36.0 (2024-01-10)
 
 ### Feat
