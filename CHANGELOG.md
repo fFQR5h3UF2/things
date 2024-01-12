@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.38.0 (2024-01-12)
+
+### Feat
+
+- remove _ from function names, source nvim in the proper bashrc file (#81)
+
 ## v0.37.0 (2024-01-11)
 
 ### Feat
