@@ -1,15 +1,17 @@
 #!/usr/bin/env bash
 
-_dotfiles_docker_image_digest() {
-    docker inspect --format='{{index .RepoDigests 0}}' "${1:?missing image}"
+dotfiles_docker_image_with_digest() {
+    local image="${1:?missing image}"
+    local digest
+    digest=$(docker inspect --format='{{index .RepoDigests 0}}' "${image}")
+    echo "${image}@${digest##*@}"
 }
 
-_dotfiles_tmux_start() {
+dotfiles_tmux_start() {
     local session_name="DEFAULT"
     if [[ "${TERM_PROGRAM}" == "tmux" ]]; then
         return
     fi
-
     if ! tmux has-session -t "${session_name}" &>/dev/null; then
         tmux new-session -d -s "${session_name}"
         tmux send-keys tmux-new-window Enter
@@ -17,25 +19,25 @@ _dotfiles_tmux_start() {
     tmux attach-session -t "${session_name}"
 }
 
-_dotfiles_prompt_command() {
+dotfiles_prompt_command() {
     # append history lines from this session to the history file
     history -a
 }
 
-_dotfiles_info_ram() {
+dotfiles_info_ram() {
     sudo dmidecode --type memory
 }
 
-_dotfiles_source_scripts() {
+dotfiles_source_scripts() {
     for script in "${@}"; do
-        if [[ -f "${script}" ]]; then
+        if [ -s "${script}" ]; then
             . "${script}"
         fi
     done
 }
 
 ## create a certificate
-_dotfiles_crypto_certificate_create() {
+dotfiles_crypto_certificate_create() {
     local file_name domains
 
     file_name="${1}"
@@ -65,7 +67,7 @@ _dotfiles_crypto_certificate_create() {
         )
 }
 
-_dotfiles_add_to_path_back() {
+dotfiles_add_to_path_back() {
     for argument in "${@}"; do
         if [[ ${PATH} != *"${argument}"* ]]; then
             export PATH="${PATH}:${argument}"
@@ -74,7 +76,7 @@ _dotfiles_add_to_path_back() {
 }
 
 ## create a certificate secret
-_dotfiles_kubernetes_secret_create_sertificate() {
+dotfiles_kubernetes_secret_create_sertificate() {
 
     local name key certificate namespace
 
@@ -91,12 +93,12 @@ _dotfiles_kubernetes_secret_create_sertificate() {
 }
 
 ## modify current context
-_dotfiles_kubernetes_context() {
+dotfiles_kubernetes_context() {
     kubectl config set-context --current --namespace="${1}"
 }
 
 ## create a service account and everything needed
-_dotfiles_kubernetes_service_account_full() {
+dotfiles_kubernetes_service_account_full() {
     local account namespace role rolebinding
     namespace="${1}"
     account="${2}"
@@ -109,7 +111,7 @@ _dotfiles_kubernetes_service_account_full() {
         "${namespace}" "${account}" "${role}" "${rolebinding}"
 }
 
-_dotfiles_kubernetes_rolebinding() {
+dotfiles_kubernetes_rolebinding() {
     local account roletype apigroup namespace role rolebinding
 
     namespace="${1}"
@@ -122,7 +124,7 @@ _dotfiles_kubernetes_rolebinding() {
         apigroup="cluster.${apigroup}"
     fi
 
-    _dotfiles_kubernetes_apply "
+    dotfiles_kubernetes_apply "
         apiVersion: rbac.authorization.k8s.io/v1
         kind: RoleBinding
         metadata:
@@ -139,11 +141,11 @@ _dotfiles_kubernetes_rolebinding() {
     "
 }
 
-_dotfiles_kubernetes_service_account() {
+dotfiles_kubernetes_service_account() {
     local account namespace
     namespace="${1}"
     account="${2}"
-    _dotfiles_kubernetes_apply "
+    dotfiles_kubernetes_apply "
         apiVersion: v1
         kind: ServiceAccount
         metadata:
@@ -152,30 +154,30 @@ _dotfiles_kubernetes_service_account() {
     "
 }
 
-_dotfiles_kubernetes_apply() {
+dotfiles_kubernetes_apply() {
     kubectl apply -f - <<<"${1:?missing yaml}"
 }
 
 # get api url
-_dotfiles_kubernetes_api() {
+dotfiles_kubernetes_api() {
     kubectl cluster-info | grep 'Kubernetes master' | awk '/http/ { print $NF }'
 }
 
 ## check open ports
-_dotfiles_net_ports_list() {
+dotfiles_net_ports_list() {
     sudo ss -tulpn | grep LISTEN
 }
 
-_dotfiles_net_connections_list() {
+dotfiles_net_connections_list() {
     sudo netstat -nputw
 }
 
-_dotfiles_net_check_dns() {
+dotfiles_net_check_dns() {
     dig "${@}" +nostats +nocomments +nocmd
 }
 
 # add windows 10 uefi entry to grub
-_dotfiles_setup_grub_add_windows_10_uefi() {
+dotfiles_setup_grub_add_windows_10_uefi() {
     local fs_uuid
     # exec tail -n +4 $0
     # this line needs to be in the file, without it
