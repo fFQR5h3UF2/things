@@ -15,17 +15,19 @@ export TERM="screen-256color"
 export COLORTERM="truecolor"
 # user-specific configuration files
 export XDG_CONFIG_HOME="${HOME}/.config"
+# nvim config dir
+export NVM_DIR="${XDG_CONFIG_HOME}/nvm"
 ## the main prompt variable
 # https://stackoverflow.com/a/28938235
 export PS1='\[\e[35;1m\]\u\[\e[m\]@\[\e[35;1m\]\h\[\e[m\] \[\e[36;1m\]\w\[\e[m\] \[\e[1m\]$(__git_ps1 "%s")\[\e[m\]\n\$ '
-export PROMPT_COMMAND='_dotfiles_prompt_command'
+export PROMPT_COMMAND="dotfiles_prompt_command"
 # git prompt variables
-export GIT_PS1_SHOWDIRTYSTATE=true
-export GIT_PS1_SHOWUPSTREAM=auto
+export GIT_PS1_SHOWDIRTYSTATE="true"
+export GIT_PS1_SHOWUPSTREAM="auto"
 export GIT_PS1_STATESEPARATOR=" "
-export GIT_PS1_SHOWCOLORHINTS=true
-export GIT_PS1_SHOWCONFLICTSTATE=yes
-export GIT_PS1_SHOWUNTRACKEDFILES=true
+export GIT_PS1_SHOWCOLORHINTS="true"
+export GIT_PS1_SHOWCONFLICTSTATE="yes"
+export GIT_PS1_SHOWUNTRACKEDFILES="true"
 
 ## all locales are overwritten
 export LC_ALL="en_US.UTF-8"
@@ -49,16 +51,6 @@ export ANDROID_HOME="${HOME}/Android/Sdk"
 ### path edits
 export GOPATH="${HOME}/.go"
 export JAVA_HOME="/usr/java/latest"
-
-_dotfiles_add_to_path_back \
-    ~/.local/share/gem/ruby/*/bin \
-    ~/.local/bin \
-    /usr/bin \
-    "${GOPATH}/bin" \
-    ~/yandex-cloud/bin \
-    "${ANDROID_HOME}/tools" \
-    /usr/java/latest/bin \
-    /usr/mvn/latest/bin
 
 # https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html
 # vim mode for the terminal
@@ -85,9 +77,21 @@ shopt -s histappend
 # command in the same history entry.
 shopt -s cmdhist
 
-_dotfiles_source_scripts \
+dotfiles_add_to_path_back \
+    ~/.local/share/gem/ruby/*/bin \
+    ~/.local/bin \
+    /usr/bin \
+    "${GOPATH}/bin" \
+    ~/yandex-cloud/bin \
+    "${ANDROID_HOME}/tools" \
+    /usr/java/latest/bin \
+    /usr/mvn/latest/bin
+
+dotfiles_source_scripts \
     /etc/profile.d/bash_completion.sh \
     /usr/share/git-core/contrib/completion/git-prompt.sh \
     /usr/share/bash-completion/completions/git \
     /usr/share/fzf/shell/key-bindings.bash \
+    "${NVM_DIR}/nvm.sh" \
+    "${NVM_DIR}/bash_completion" \
     ~/.venv/bin/activate
