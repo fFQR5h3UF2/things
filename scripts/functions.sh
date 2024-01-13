@@ -1,18 +1,17 @@
-#!/usr/bin/env bash
+#!/usr/bin/env sh
 
 dotfiles_docker_image_with_digest() {
-    local image="${1:?missing image}"
-    local digest
+    image="${1:?missing image}"
     digest=$(docker inspect --format='{{index .RepoDigests 0}}' "${image}")
     echo "${image}@${digest##*@}"
 }
 
 dotfiles_tmux_start() {
-    local session_name="DEFAULT"
-    if [[ "${TERM_PROGRAM}" == "tmux" ]]; then
+    session_name="DEFAULT"
+    if [ "${TERM_PROGRAM}" = "tmux" ]; then
         return
     fi
-    if ! tmux has-session -t "${session_name}" &>/dev/null; then
+    if ! tmux has-session -t "${session_name}"; then
         tmux new-session -d -s "${session_name}"
         tmux send-keys tmux-new-window Enter
     fi
@@ -36,51 +35,17 @@ dotfiles_source_scripts() {
     done
 }
 
-## create a certificate
-dotfiles_crypto_certificate_create() {
-    local file_name domains
-
-    file_name="${1}"
-    shift
-    read -ra domains <<<"${@}"
-    domains_string="DNS.1:localhost"
-
-    for ((i = 0; i < "${#}"; i++)); do
-        domains_string+=",DNS.$((i + 2)):${domains[${i}]}"
-    done
-
-    openssl req \
-        -x509 \
-        -newkey rsa:4096 \
-        -sha256 \
-        -days 3560 \
-        -nodes \
-        -keyout "${file_name}.key" \
-        -out "${file_name}.crt" \
-        -subj "/CN=${file_name}" \
-        -extensions san \
-        -config <(
-            echo "[req]"
-            echo "distinguished_name=req"
-            echo "[san]"
-            echo "subjectAltName=${domains_string}"
-        )
-}
-
 dotfiles_add_to_path_back() {
-    for argument in "${@}"; do
-        if [[ ${PATH} != *"${argument}"* ]]; then
-            export PATH="${PATH}:${argument}"
+    for path in "${@}"; do
+        if [ "${PATH#*"${path}"}" != "${PATH}" ]; then
+            export PATH="${PATH}:${path}"
         fi
     done
 }
 
 ## create a certificate secret
 dotfiles_kubernetes_secret_create_sertificate() {
-
-    local name key certificate namespace
-
-    name="${1}"
+    name="${1:?missing name}"
     namespace="${2:-default}"
     key="${3:-${name}.key}"
     certificate="${4:-${name}.crt}"
@@ -94,12 +59,12 @@ dotfiles_kubernetes_secret_create_sertificate() {
 
 ## modify current context
 dotfiles_kubernetes_context() {
-    kubectl config set-context --current --namespace="${1}"
+    ns=$(kubectl get ns | fzf)
+    kubectl config set-context --current --namespace="${ns}"
 }
 
 ## create a service account and everything needed
 dotfiles_kubernetes_service_account_full() {
-    local account namespace role rolebinding
     namespace="${1}"
     account="${2}"
     role="${3}"
@@ -107,20 +72,17 @@ dotfiles_kubernetes_service_account_full() {
     roletype="${5:-Role}"
 
     kubernetes_service_account "${namespace}" "${account}"
-    kubernetes_rolebinding \
-        "${namespace}" "${account}" "${role}" "${rolebinding}"
+    kubernetes_rolebinding "${namespace}" "${account}" "${role}" "${rolebinding}"
 }
 
 dotfiles_kubernetes_rolebinding() {
-    local account roletype apigroup namespace role rolebinding
-
     namespace="${1}"
     account="${2}"
     role="${3}"
     rolebinding="${4:-${role}-rolebinding}"
     roletype="${5:-Role}"
     apigroup="${6:-rbac.authorization.k8s.io}"
-    if [[ ${roletype} == "ClusterRole" ]]; then
+    if [ "${roletype}" = "ClusterRole" ]; then
         apigroup="cluster.${apigroup}"
     fi
 
@@ -142,7 +104,6 @@ dotfiles_kubernetes_rolebinding() {
 }
 
 dotfiles_kubernetes_service_account() {
-    local account namespace
     namespace="${1}"
     account="${2}"
     dotfiles_kubernetes_apply "
@@ -155,7 +116,7 @@ dotfiles_kubernetes_service_account() {
 }
 
 dotfiles_kubernetes_apply() {
-    kubectl apply -f - <<<"${1:?missing yaml}"
+    echo "${1:?missing yaml}" | kubectl apply -f -
 }
 
 # get api url
@@ -178,7 +139,6 @@ dotfiles_net_check_dns() {
 
 # add windows 10 uefi entry to grub
 dotfiles_setup_grub_add_windows_10_uefi() {
-    local fs_uuid
     # exec tail -n +4 $0
     # this line needs to be in the file, without it
     # commands will not be recognized
@@ -205,7 +165,7 @@ EOF
     echo
     echo "is that okay?"
     read -r answer
-    if [[ ${answer} != "n" && ${answer} != "N" ]]; then
+    if [ "${answer}" != "n" ] && [ "${answer}" != "N" ]; then
         echo "${entry}" | sudo tee -a "/etc/grub.d/40_custom"
         source_grub
     else
