@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.40.0 (2024-01-13)
+
+### Feat
+
+- **nvim**: add neogen plugin (#83)
+
 ## v0.39.0 (2024-01-13)
 
 ### Feat
