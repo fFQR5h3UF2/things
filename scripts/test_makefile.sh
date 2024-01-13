@@ -1,5 +1,5 @@
-#!/usr/bin/env sh
-set -o errexit -o nounset -o xtrace
+#!/usr/bin/env bash
+set -Eeuxo pipefail
 
 export DOTFILES="${PWD}"
 make setup git firefox vscode update_readme
