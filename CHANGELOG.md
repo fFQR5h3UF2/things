@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.41.0 (2024-01-13)
+
+### Feat
+
+- **tmux**: set focus-events on (#84)
+
 ## v0.40.0 (2024-01-13)
 
 ### Feat
