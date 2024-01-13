@@ -40,7 +40,7 @@ local function delete_all_buffers_except_current()
     end
 end
 
---[[ Keymaps with no dependencies ]]
+--- [Setup keymaps that require no dependencies]
 function M.setup_no_deps()
     k.set(
         { "n", "v" },
@@ -90,6 +90,12 @@ function M.setup_no_deps()
         delete_all_buffers_except_current,
         { desc = "Delete all buffers except the current" }
     )
+end
+
+function M.setup_neogen()
+    local opts = { noremap = true, silent = true }
+    local neogen = require("neogen")
+    k.set("n", "<leader>ng", neogen.generate, opts)
 end
 
 -- [[ Telescope keymaps ]]
