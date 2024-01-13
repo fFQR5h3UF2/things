@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.39.0 (2024-01-13)
+
+### Feat
+
+- **functions**: switch to sh from bash (#82)
+
 ## v0.38.0 (2024-01-12)
 
 ### Feat
