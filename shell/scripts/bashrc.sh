@@ -75,7 +75,7 @@ shopt -s histappend
 # command in the same history entry.
 shopt -s cmdhist
 
-dotfiles_add_to_path_back \
+dotfiles_add_to_path_front \
     ~/.local/share/gem/ruby/*/bin \
     ~/.local/bin \
     /usr/bin \

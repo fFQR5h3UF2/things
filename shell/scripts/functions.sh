@@ -35,11 +35,12 @@ dotfiles_source_scripts() {
     done
 }
 
-dotfiles_add_to_path_back() {
+dotfiles_add_to_path_front() {
     for path in "${@}"; do
-        if [ "${PATH#*"${path}"}" != "${PATH}" ]; then
-            export PATH="${PATH}:${path}"
-        fi
+        case ":${PATH:=${path}}:" in
+        *":${path}:"*) ;;
+        *) PATH="${path}:${PATH}" ;;
+        esac
     done
 }
 
