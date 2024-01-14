@@ -33,12 +33,6 @@ repos:
       - id: check-dependabot
   - repo: local
     hooks:
-      - id: update-readme
-        name: Update README
-        entry: make update_readme
-        language: system
-        files: scripts/usage.sh|README.md
-        pass_filenames: false
       - id: shellcheck
         name: Run shellcheck
         entry: shellcheck
