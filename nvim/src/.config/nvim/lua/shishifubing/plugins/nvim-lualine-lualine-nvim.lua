@@ -16,16 +16,14 @@ local theme = {
 }
 
 return {
-    {
-        "nvim-lualine/lualine.nvim",
-        opts = {
-            options = {
-                globalstatus = true,
-                theme = theme,
-                icons_enabled = false,
-                component_separators = "|",
-                section_separators = "",
-            },
+    "nvim-lualine/lualine.nvim",
+    opts = {
+        options = {
+            globalstatus = true,
+            theme = theme,
+            icons_enabled = false,
+            component_separators = "|",
+            section_separators = "",
         },
     },
 }

@@ -1,9 +1,7 @@
 return {
-    {
-        "tpope/vim-fugitive",
-        dependencies = {
-            "tpope/vim-rhubarb",
-        },
-        config = function() end,
+    "tpope/vim-fugitive",
+    dependencies = {
+        "tpope/vim-rhubarb",
     },
+    config = function() end,
 }
