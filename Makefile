@@ -1,14 +1,23 @@
-shell ::
+shell::
 	$(MAKE) -C shell
 
-bin ::
+bin::
 	$(MAKE) -C bin
 
-nvim_sync ::
+nvim::
+	$(MAKE) -C nvim
+
+firefox::
+	$(MAKE) -C firefox
+
+tmux::
+	$(MAKE) -C tmux
+
+nvim_sync::
 	nvim --headless "+Lazy! sync" +qa
 
-setup ::
+setup::
 	./scripts/setup.sh
 
-test_makefile ::
+test_makefile::
 	./scripts/test_makefile.sh
