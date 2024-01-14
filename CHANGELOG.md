@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.43.0 (2024-01-14)
+
+### Feat
+
+- move firefox and nvim to the new strucure, add readme-tree sript (#86)
+
 ## v0.42.0 (2024-01-14)
 
 ### Feat
