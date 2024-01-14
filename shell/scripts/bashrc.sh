@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 
-export DOTFILES="${DOTFILES:-${HOME}/repos/shishifubing/dotfiles}"
-. "${DOTFILES}/scripts/functions.sh"
+export DOTFILES="${DOTFILES:-"${HOME}/repos/shishifubing/dotfiles"}"
+. "${DOTFILES}/shell/scripts/functions.sh"
 
 export FZF_DEFAULT_COMMAND="fd --type f"
 export FZF_COMPLETION_TRIGGER="**"
 
-export force_color_prompt=yes
+export force_color_prompt="yes"
 GPG_TTY=$(tty || true)
 export GPG_TTY
 export EDITOR="nvim"
@@ -38,7 +38,7 @@ export OPEN_SOURCE_CONTRIBUTOR="true"
 export GIT_EDITOR="nvim"
 
 # history file location
-export HISTFILE=~/.bash_history
+export HISTFILE="${HOME}/.bash_history"
 # ignore commands starting with whitespace
 export HISTCONTROL="ignorespace"
 # bash history size (file size)
@@ -55,8 +55,6 @@ export JAVA_HOME="/usr/java/latest"
 # https://www.gnu.org/software/bash/manual/html_node/The-Shopt-Builtin.html
 # vim mode for the terminal
 set -o vi
-# emacs mode for the terminal
-#set -o emacs
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -82,6 +80,7 @@ dotfiles_add_to_path_back \
     ~/.local/bin \
     /usr/bin \
     "${GOPATH}/bin" \
+    ~/.cargo/bin \
     ~/yandex-cloud/bin \
     "${ANDROID_HOME}/tools" \
     /usr/java/latest/bin \
