@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.43.1 (2024-01-14)
+
+### Fix
+
+- **tmux**: change config filename (#87)
+
 ## v0.43.0 (2024-01-14)
 
 ### Feat
