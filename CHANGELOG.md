@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.42.0 (2024-01-14)
+
+### Feat
+
+- move shell and tmux into separate packages (#85)
+
 ## v0.41.0 (2024-01-13)
 
 ### Feat
