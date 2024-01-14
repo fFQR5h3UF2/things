@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.45.0 (2024-01-14)
+
+### Feat
+
+- **nvim**: add nvim-tree (disabled), remove extra {} from pluginis (#89)
+
 ## v0.44.0 (2024-01-14)
 
 ### Feat
