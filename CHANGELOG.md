@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.44.0 (2024-01-14)
+
+### Feat
+
+- **shell**: add to path function adds to front intead of back (#88)
+
 ## v0.43.1 (2024-01-14)
 
 ### Fix
