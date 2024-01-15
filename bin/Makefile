@@ -1,2 +1,2 @@
 install ::
-	stow --restow --override='.*' --target="${HOME}" src
+	stow --restow --no-folding --target="${HOME}" src
