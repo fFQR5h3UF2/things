@@ -1,5 +1,5 @@
 [tool.commitizen]
-version = "0.45.0"
+version = "0.46.0"
 tag_format = "v$version"
 version_scheme = "semver"
 bump_message = "bump: $current_version → $new_version"

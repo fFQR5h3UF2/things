@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.46.0 (2024-01-15)
+
+### Feat
+
+- remove stow script, add --no-folding to all stow commands (#90)
+
 ## v0.45.0 (2024-01-14)
 
 ### Feat
