@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.47.0 (2024-01-16)
+
+### Feat
+
+- **tmux**: improve tabs, fix reload (#91)
+
 ## v0.46.0 (2024-01-15)
 
 ### Feat
