@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.48.0 (2024-01-17)
+
+### Feat
+
+- add dependencies to Makefile, update README (#92)
+
 ## v0.47.0 (2024-01-16)
 
 ### Feat
