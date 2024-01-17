@@ -1,23 +1,17 @@
-shell::
-	$(MAKE) -C shell
+PACKAGES = setup shell bin nvim firefox tmux vscode
 
-bin::
-	$(MAKE) -C bin
+.PHONY: $(PACKAGES)
 
-nvim::
-	$(MAKE) -C nvim
+min: bin nvim tmux
 
-firefox::
-	$(MAKE) -C firefox
+bin: shell
 
-tmux::
-	$(MAKE) -C tmux
+nvim: shell
 
-nvim_sync::
-	nvim --headless "+Lazy! sync" +qa
+tmux: shell
 
-setup::
-	./scripts/setup.sh
+$(PACKAGES):
+	$(MAKE) -C $@ install
 
 test_makefile::
 	./scripts/test_makefile.sh
