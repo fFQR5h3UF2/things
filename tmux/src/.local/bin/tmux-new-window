@@ -1,27 +1,34 @@
 #!/usr/bin/env sh
+set -o errexit -o nounset -o xtrace
 
 if ! which fzf >/dev/null 2>&1; then
     exit
 fi
 
-dir=$(
+choice=$(
     {
-        echo "${PWD}"
-        echo ~/repos
-        find ~/repos/ -type d -name .git -exec dirname '{}' ';' 2>/dev/null
+        echo "ssh"
+        echo ~
+        find ~/repos -type d -maxdepth 20 2>/dev/null
     } | fzf
 )
-venv_script=$(
-    cat - <<'EOF'
-        if [ -f poetry.lock ]; then
-            . "$(poetry env info -p)/bin/activate"
-        elif [ -f ./.venv/bin/activate ]; then
-            . "./.venv/bin/activate"
-        elif [ -f ./venv/bin/activate ]; then
-            . "./venv/bin/activate"
-        fi
-EOF
-)
+dir=
+server=
 
-tmux rename-window "$(basename "${dir}")"
-tmux send-keys "cd '${dir}' && ${venv_script} && clear" Enter
+case "${choice}" in
+ssh)
+    server=$(awk '/^Host/ { print $2 }' <"${HOME}/.ssh/config" | fzf)
+    dir=$(
+        ssh "${server}" -- echo "\${HOME}" "&&" find "\${HOME}/repos" -type d -maxdepth 20 |
+            fzf
+    )
+    tmux send-keys "ssh '${server}'" Enter
+    ;;
+*)
+    dir="${choice}"
+    server=$(hostname)
+    ;;
+esac
+
+tmux rename-window "${server}//$(basename "${dir}")"
+tmux send-keys "cd '${dir}'" Enter

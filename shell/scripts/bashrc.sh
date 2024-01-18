@@ -94,3 +94,5 @@ dotfiles_source_scripts \
     "${NVM_DIR}/nvm.sh" \
     "${NVM_DIR}/bash_completion" \
     ~/.venv/bin/activate
+
+alias cd="dotfiles_cd"

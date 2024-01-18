@@ -1,5 +1,28 @@
 #!/usr/bin/env sh
 
+dotfiles_cd() {
+    cd "${@}" || return
+    dotfiles_venv
+}
+
+dotfiles_venv() {
+    _venv=
+    if [ -s ./poetry.lock ]; then
+        _venv=$(poetry env info -p)
+    elif [ -d ./.venv ]; then
+        _venv="./.venv"
+    elif [ -d ./venv ]; then
+        _venv="./venv"
+    elif [ -d ~/venv ]; then
+        _venv="${HOME}/venv"
+    elif [ -d ~/.venv ]; then
+        _venv="${HOME}/.venv"
+    fi
+    if [ -s "${_venv}/bin/activate" ]; then
+        . "${_venv}/bin/activate"
+    fi
+}
+
 dotfiles_docker_image_with_digest() {
     image="${1:?missing image}"
     digest=$(docker inspect --format='{{index .RepoDigests 0}}' "${image}")
