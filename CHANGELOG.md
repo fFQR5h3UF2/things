@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.49.0 (2024-01-18)
+
+### Feat
+
+- add ssh support to tmux-new-window, move venv logic to shell (#93)
+- move venv logic to functions
+
 ## v0.48.0 (2024-01-17)
 
 ### Feat
