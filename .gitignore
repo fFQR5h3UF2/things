@@ -1,3 +1,6 @@
+# stow dirs
+*/stow/
+
 # Compiled Lua sources
 luac.out
 
