@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.50.0 (2024-01-19)
+
+### Feat
+
+- **bin**: improve makefile (#94)
+
 ## v0.49.0 (2024-01-18)
 
 ### Feat
