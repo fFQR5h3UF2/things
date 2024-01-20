@@ -1,6 +1,7 @@
 return {
     -- LSP Configuration & Plugins
     "neovim/nvim-lspconfig",
+    branch = "master",
     dependencies = {
         -- Automatically install LSPs to stdpath for neovim
         "williamboman/mason.nvim",
@@ -22,6 +23,7 @@ return {
             gradle_ls = {},
             helm_ls = {},
             kotlin_language_server = {},
+            bzl = {},
             marksman = {},
             taplo = {},
             jsonls = {},
