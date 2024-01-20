@@ -2,5 +2,9 @@ include ../common.mk
 
 .PHONY: sync
 
-sync:
+install: install-stow
+build: build-stow
+test: test-stow
+update: sync
+sync: install
 	nvim --headless "+Lazy! sync" +qa
