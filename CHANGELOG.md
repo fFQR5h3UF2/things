@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.51.0 (2024-01-20)
+
+### Feat
+
+- improve build system, delete old firefox configs (#95)
+
 ## v0.50.0 (2024-01-19)
 
 ### Feat
