@@ -4,3 +4,4 @@ tag_format = "v$version"
 version_scheme = "semver"
 bump_message = "bump: $current_version → $new_version"
 gpg_sign = true
+bump_map = { " " = "PATCH" }
