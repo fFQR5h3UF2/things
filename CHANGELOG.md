@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.51.1 (2024-01-20)
+
+### Refactor
+
+- add bump map to cz config (#97)
+
 ## v0.51.0 (2024-01-20)
 
 ### Feat
