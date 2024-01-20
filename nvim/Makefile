@@ -1,7 +1,6 @@
-.PHONY: install sync
+include ../common.mk
 
-install:
-	stow --restow --no-folding --target="${HOME}" src
+.PHONY: sync
 
 sync:
 	nvim --headless "+Lazy! sync" +qa

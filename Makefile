@@ -1,17 +1,13 @@
-PACKAGES = setup shell bin nvim firefox tmux vscode
+PACKAGES = setup shell bin nvim git firefox tmux vscode
 
-.PHONY: $(PACKAGES)
+.PHONY: $(PACKAGES) test
 
 min: bin nvim tmux
-
 bin: shell
-
 nvim: shell
-
+firefox: shell
 tmux: shell
+vscode: shell
 
 $(PACKAGES):
-	$(MAKE) -C $@ install
-
-test_makefile::
-	./scripts/test_makefile.sh
+	$(MAKE) -C "${@}" install
