@@ -19,6 +19,6 @@ vscode:
 $(PACKAGES):
 	$(MAKE) -C "${@}" install
 $(PACKAGES_TEST):
-	$(MAKE) -C "$(removesuffix test-,"${@}")" test
+	$(MAKE) -C "${@:test-%=%}" test
 $(PACKAGES_CLEAN):
-	$(MAKE) -C "$(removesuffix clean-,"${@}")" clean
+	$(MAKE) -C "${@:clean-%=%}" clean
