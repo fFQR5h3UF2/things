@@ -9,7 +9,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-      - run: make test_makefile
+      - run: sudo apt-get update && sudo apt-get install -y stow
+      - run: make --debug=b all
+      - run: make --debug=b test
   build_image_commitizen:
     runs-on: ubuntu-latest
     steps:
@@ -25,7 +27,7 @@ jobs:
       - uses: ./kaniko
         with:
           context: dir://kaniko
-          dockerfile: actions/kaniko/Dockerfile.test
+          dockerfile: kaniko/Dockerfile.test
           destination: shishifubing/test_kaniko:latest
           token: ${{ secrets.CI_DOCKERHUB_TOKEN }}
   test_kaniko_dry_run:
@@ -36,7 +38,7 @@ jobs:
         with:
           dry_run: 1
           context: dir://kaniko
-          dockerfile: actions/kaniko/Dockerfile.test
+          dockerfile: kaniko/Dockerfile.test
   test_bump_version:
     runs-on: ubuntu-latest
     steps:

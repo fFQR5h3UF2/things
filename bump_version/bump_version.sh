@@ -17,6 +17,10 @@ while [ "${#}" -gt 0 ]; do
         dry_run="${2}"
         shift 2
         ;;
+    *)
+        echo "invalid argument: ${1}"
+        exit 1
+        ;;
     esac
 done
 set -x

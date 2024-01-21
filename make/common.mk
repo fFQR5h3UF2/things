@@ -13,11 +13,16 @@ define tracker
 	${TRACKER_DIR}/${1}
 endef
 
+define ensure_installed
+	which "${1}" >/dev/null
+endef
+
 .PHONY: install install-stow
 .PHONY: clean clean-out clean-stow
 .PHONY: build build-stow
 .PHONY: test test-stow
 .PHONY: update
+.PHONY: setup setup-stow setup-ensure-installed
 
 install: build
 setup: | $(OUT_DIRS)
@@ -35,6 +40,9 @@ $(OUT_DIR):
 ${OUT_DIR}/%:
 	mkdir -p "${@}"
 
+setup-ensure-installed:
+	$(call ensure_installed,stow)
+
 build-stow: $(call tracker,build-stow)
 $(call tracker,build-stow): $(call tracker,setup) $(STOW_FILES)
 	$(STOW_BUILD) --stow "${STOW_PACKAGE}"
@@ -47,7 +55,7 @@ test-stow: build
 	$(STOW_INSTALL) --simulate "${STOW_PACKAGE}"
 
 clean-stow:
-	$(STOW_INSTALL) --delete "${STOW_PACKAGE}"
+	if [ -d "${STOW_OUT_DIR}" ]; then $(STOW_INSTALL) --delete "${STOW_PACKAGE}"; fi
 
 clean-out: clean-stow
 	rm -r ./out

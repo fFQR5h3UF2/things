@@ -1,4 +1,4 @@
-include ../common.mk
+include ../make/common.mk
 
 MOZILLA_DIR = .mozilla/firefox
 PROFILES = $(notdir $(wildcard ${HOME}/${MOZILLA_DIR}/*.default-release-*))

@@ -8,7 +8,7 @@ while [ "${#}" -gt 0 ]; do
         CONTEXT="${2}"
         shift 2
         ;;
-    --dockefile)
+    --dockerfile)
         DOCKERFILE="${2}"
         shift 2
         ;;
@@ -31,6 +31,10 @@ while [ "${#}" -gt 0 ]; do
     --dry_run)
         DRY_RUN="${2}"
         shift 2
+        ;;
+    *)
+        echo "invalid argument: ${1}"
+        exit 1
         ;;
     esac
 done
