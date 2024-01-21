@@ -51,7 +51,7 @@ test-stow: build
 	$(STOW_INSTALL) --simulate "${STOW_PACKAGE}"
 
 clean-stow:
-	$(STOW_INSTALL) --delete "${STOW_PACKAGE}"
+	if [ -d "${STOW_OUT_DIR}" ]; then $(STOW_INSTALL) --delete "${STOW_PACKAGE}"; fi
 
 clean-out: clean-stow
 	rm -r ./out
