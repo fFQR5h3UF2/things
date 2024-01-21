@@ -36,7 +36,7 @@ while [ "${#}" -gt 0 ]; do
 done
 set -x
 
-if [ "${DRY_RUN:-}" ]; then
+if [ -n "${DRY_RUN:-}" ]; then
     /kaniko/executor \
         --context="${CONTEXT}" \
         --dockerfile="${DOCKERFILE}" \
