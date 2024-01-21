@@ -6,6 +6,6 @@ install: install-stow
 build: build-stow
 test: test-stow
 
-install-stow: remove-bashrc-file
+install-stow: | remove-bashrc-file
 remove-bashrc-file:
 	if [ -f "${HOME}/.bashrc" ]; then rm "${HOME}/.bashrc"; fi
