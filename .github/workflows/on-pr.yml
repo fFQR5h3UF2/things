@@ -25,7 +25,7 @@ jobs:
       - uses: ./kaniko
         with:
           context: dir://kaniko
-          dockerfile: actions/kaniko/Dockerfile.test
+          dockerfile: kaniko/Dockerfile.test
           destination: shishifubing/test_kaniko:latest
           token: ${{ secrets.CI_DOCKERHUB_TOKEN }}
   test_kaniko_dry_run:
@@ -36,7 +36,7 @@ jobs:
         with:
           dry_run: 1
           context: dir://kaniko
-          dockerfile: actions/kaniko/Dockerfile.test
+          dockerfile: kaniko/Dockerfile.test
   test_bump_version:
     runs-on: ubuntu-latest
     steps:
