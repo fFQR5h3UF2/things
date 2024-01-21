@@ -1,3 +1,10 @@
+# kaniko
+
+Kaniko wrapper
+
+## Usage
+
+```yaml
 name: On tag
 on:
   push:
@@ -13,3 +20,4 @@ jobs:
           dockerfile: images/commitizen.Dockerfile
           destination: shishifubing/commitizen:${{ github.ref_name }}
           token: ${{ secrets.CI_DOCKERHUB_TOKEN }}
+```

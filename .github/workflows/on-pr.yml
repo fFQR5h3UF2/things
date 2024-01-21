@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-      - uses: ./actions/kaniko
+      - uses: ./kaniko
         with:
           dry_run: 1
           dockerfile: images/commitizen.Dockerfile
@@ -22,9 +22,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-      - uses: ./actions/kaniko
+      - uses: ./kaniko
         with:
-          context: dir://actions/kaniko
+          context: dir://kaniko
           dockerfile: actions/kaniko/Dockerfile.test
           destination: shishifubing/test_kaniko:latest
           token: ${{ secrets.CI_DOCKERHUB_TOKEN }}
@@ -32,10 +32,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-      - uses: ./actions/kaniko
+      - uses: ./kaniko
         with:
           dry_run: 1
-          context: dir://actions/kaniko
+          context: dir://kaniko
           dockerfile: actions/kaniko/Dockerfile.test
   test_bump_version:
     runs-on: ubuntu-latest
@@ -43,7 +43,7 @@ jobs:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           fetch-depth: 0
-      - uses: ./actions/bump_version
+      - uses: ./bump_version
         with:
           dry_run: 1
           private_key: ${{ secrets.CI_GPG_PRIVATE_KEY }}
@@ -54,8 +54,8 @@ jobs:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           fetch-depth: 0
-      - run: ./actions/bump_version/test_bump_version_commit.sh
-      - uses: ./actions/bump_version
+      - run: ./bump_version/test_bump_version_commit.sh
+      - uses: ./bump_version
         with:
           dry_run: 1
           private_key: ${{ secrets.CI_GPG_PRIVATE_KEY }}
