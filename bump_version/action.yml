@@ -14,8 +14,8 @@ runs:
   image: Dockerfile
   args:
     - --private_key
-    - ${{args.private_key}}
+    - ${{inputs.private_key}}
     - --passphrase
-    - ${{args.passphrase}}
+    - ${{inputs.passphrase}}
     - --dry_run
-    - ${{args.dry_run}}
+    - ${{inputs.dry_run}}
