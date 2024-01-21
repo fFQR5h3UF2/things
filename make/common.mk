@@ -36,10 +36,10 @@ $(OUT_DIR):
 ${OUT_DIR}/%:
 	mkdir -p "${@}"
 
-setup-stow: | $(OUT_DIR)
-	if ! which stow >/dev/null 2>&1; then sudo apt-get update && sudo apt-get install -y stow; fi
+setup-ensure-installed-stow:
+	which stow >/dev/null
 
-build-stow: $(call tracker,build-stow) | setup-stow
+build-stow: $(call tracker,build-stow) | setup-ensure-installed-stow
 $(call tracker,build-stow): $(call tracker,setup)  $(STOW_FILES)
 	$(STOW_BUILD) --stow "${STOW_PACKAGE}"
 	touch "${@}"

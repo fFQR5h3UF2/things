@@ -1,7 +1,11 @@
+include ../make/common.mk
+
 apply ::
 	terraform apply
 
-clean ::
+clean: clean-tf
+
+clean-tf:
 	mapfile -t args < <(terraform state list); \
 	terraform state rm "$${args[@]}"
 

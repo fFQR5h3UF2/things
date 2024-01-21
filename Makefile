@@ -1,24 +1,25 @@
 PACKAGES = setup shell bin nvim git firefox tmux vscode
 PACKAGES_TEST = $(addprefix test-, $(PACKAGES))
 PACKAGES_CLEAN = $(addprefix clean-, $(PACKAGES))
+PACKAGES_BUILD = $(addprefix build-, $(PACKAGES))
 
-.PHONY: min all test clean
+.PHONY: min all test clean build
 .PHONY: $(PACKAGES) $(PACKAGES_TEST) $(PACKAGES_CLEAN)
 
 min: shell bin nvim tmux
 all: $(PACKAGES)
 test: $(PACKAGES_TEST)
 clean: $(PACKAGES_CLEAN)
-
-bin: shell
-nvim:
-firefox:
-tmux: shell
-vscode:
+build: $(PACKAGES_BUILD)
 
 $(PACKAGES):
-	$(MAKE) -C "${@}" install
+	$(MAKE) --directory "${@}" install
+
+$(PACKAGES_BUILD):
+	$(MAKE) --directory "${@:build-%=%}" build
+
 $(PACKAGES_TEST):
-	$(MAKE) -C "${@:test-%=%}" test
+	$(MAKE) --directory "${@:test-%=%}" test
+
 $(PACKAGES_CLEAN):
-	$(MAKE) -C "${@:clean-%=%}" clean
+	$(MAKE) --directory "${@:clean-%=%}" clean
