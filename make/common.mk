@@ -13,6 +13,10 @@ define tracker
 	${TRACKER_DIR}/${1}
 endef
 
+define ensure_installed
+	which "${1}" >/dev/null
+endef
+
 .PHONY: install install-stow
 .PHONY: clean clean-out clean-stow
 .PHONY: build build-stow
@@ -21,7 +25,7 @@ endef
 .PHONY: setup setup-stow setup-ensure-installed
 
 install: build
-setup: setup-ensure-installed | $(OUT_DIRS)
+setup: | $(OUT_DIRS)
 build: setup
 test: build
 update:
@@ -37,7 +41,7 @@ ${OUT_DIR}/%:
 	mkdir -p "${@}"
 
 setup-ensure-installed:
-	which stow
+	$(call ensure_installed,stow)
 
 build-stow: $(call tracker,build-stow)
 $(call tracker,build-stow): $(call tracker,setup) $(STOW_FILES)
