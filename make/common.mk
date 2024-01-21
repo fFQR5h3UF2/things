@@ -18,10 +18,10 @@ endef
 .PHONY: build build-stow
 .PHONY: test test-stow
 .PHONY: update
-.PHONY: setup setup-stow
+.PHONY: setup setup-stow setup-ensure-installed
 
 install: build
-setup: | $(OUT_DIRS)
+setup: setup-ensure-installed | $(OUT_DIRS)
 build: setup
 test: build
 update:
@@ -36,11 +36,11 @@ $(OUT_DIR):
 ${OUT_DIR}/%:
 	mkdir -p "${@}"
 
-setup-ensure-installed-stow:
-	which stow >/dev/null
+setup-ensure-installed:
+	which stow
 
-build-stow: $(call tracker,build-stow) | setup-ensure-installed-stow
-$(call tracker,build-stow): $(call tracker,setup)  $(STOW_FILES)
+build-stow: $(call tracker,build-stow)
+$(call tracker,build-stow): $(call tracker,setup) $(STOW_FILES)
 	$(STOW_BUILD) --stow "${STOW_PACKAGE}"
 	touch "${@}"
 
