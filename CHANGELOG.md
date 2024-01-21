@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.52.1 (2024-01-21)
+
+### Fix
+
+- github action script arguments (#99)
+
 ## v0.52.0 (2024-01-21)
 
 ### Feat
