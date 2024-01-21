@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.52.0 (2024-01-21)
+
+### Feat
+
+- move actions to base directory, refactor their arguments, refactor makefiles a bit (#98)
+
 ## v0.51.1 (2024-01-20)
 
 ### Refactor
