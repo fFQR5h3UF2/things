@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-      - run: sudo apt-get update && apt-get install -y stow
+      - run: sudo apt-get update && sudo apt-get install -y stow
       - run: make --debug=b install
       - run: make --debug=b test
   build_image_commitizen:
