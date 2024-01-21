@@ -8,7 +8,7 @@ while [ "${#}" -gt 0 ]; do
         CONTEXT="${2}"
         shift 2
         ;;
-    --dockefile)
+    --dockerfile)
         DOCKERFILE="${2}"
         shift 2
         ;;
