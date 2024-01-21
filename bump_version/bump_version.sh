@@ -1,12 +1,26 @@
 #!/usr/bin/env sh
 set -o errexit -o nounset -o xtrace
 
-# setup the key
-(
-    set +x
-    printf "%s" "${INPUT_PRIVATE_KEY:?missing gpg private key}" >_key
-    printf "%s" "${INPUT_PASSPHRASE:?missing gpg passphrase}" >_passphrase
-)
+set +x
+dry_run=
+while [ "${#}" -gt 0 ]; do
+    case "${1}" in
+    --private_key)
+        printf "%s" "${2}" >_key
+        shift 2
+        ;;
+    --passphrase)
+        printf "%s" "${2}" >_passphrase
+        shift 2
+        ;;
+    --dry_run)
+        dry_run="${2}"
+        shift 2
+        ;;
+    esac
+done
+set -x
+
 # parse the key
 key=$(gpg --with-colons --batch --show-keys --with-fingerprint --keyid-format=long _key)
 user=$(echo "${key}" | awk -F ":" '/uid/ { print $10 }')
@@ -57,7 +71,7 @@ new_tag="v$(cz version -p)"
 git tag -v "${new_tag}"
 
 # push the tag and the commit
-if [ -z "${INPUT_DRY_RUN}" ]; then
+if [ -z "${dry_run}" ]; then
     git push origin HEAD
     git push origin "${new_tag}"
 fi

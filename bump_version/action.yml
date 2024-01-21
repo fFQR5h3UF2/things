@@ -12,3 +12,10 @@ inputs:
 runs:
   using: docker
   image: Dockerfile
+  args:
+    - --private_key
+    - ${{args.private_key}}
+    - --passphrase
+    - ${{args.passphrase}}
+    - --dry_run
+    - ${{args.dry_run}}

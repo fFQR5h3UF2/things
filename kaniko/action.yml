@@ -23,3 +23,18 @@ inputs:
 runs:
   using: docker
   image: Dockerfile
+  args:
+    - --context
+    - ${{inputs.context}}
+    - --dockerfile
+    - ${{inputs.dockerfile}}
+    - --destination
+    - ${{inputs.destination}}
+    - --token
+    - ${{inputs.token}}
+    - --user
+    - ${{inputs.user}}
+    - --auth_target
+    - ${{inputs.auth_target}}
+    - --dry_run
+    - ${{inputs.dry_run}}
