@@ -37,5 +37,5 @@ curl -sSL "https://raw.githubusercontent.com/shishifubing/dotfiles/main/scripts/
 
 ### Commands
 
-- `make` or `make min` - install shell, bin nvim, tmux
-- for other commands see [Makefile](./Makefile)
+- `make`, `make min`: install shell, bin nvim, tmux
+- other: see [Makefile](./Makefile)

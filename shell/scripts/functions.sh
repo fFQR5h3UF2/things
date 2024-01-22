@@ -1,10 +1,30 @@
 #!/usr/bin/env sh
 
+#######################################
+# Check if you are running in a container
+# Returns:
+#   0 if you are in a container, 1 otherwise
+#######################################
+dotfiles_is_container() {
+    grep container_t </proc/1/attr/current
+}
+
+#######################################
+# Alias for cd
+# cd to a directory and activate venv
+# Args:
+#   Arguments to cd
+#######################################
 dotfiles_cd() {
     cd "${@}" || return
     dotfiles_venv
 }
 
+#########################################
+# Check for an available venv and activate it
+# Args:
+#   None
+#######################################
 dotfiles_venv() {
     _venv=
     if [ -s ./poetry.lock ]; then
@@ -23,12 +43,25 @@ dotfiles_venv() {
     fi
 }
 
+#######################################
+# Get a docker image with digest
+# Args:
+#   1: image tag
+# Outputs:
+#   image with digest
+#######################################
 dotfiles_docker_image_with_digest() {
     image="${1:?missing image}"
     digest=$(docker inspect --format='{{index .RepoDigests 0}}' "${image}")
     echo "${image}@${digest##*@}"
 }
 
+#######################################
+# Start a tmux session
+# If it doesn't exist, start one
+# Globals:
+#   TERM_PROGRAM - used to check if running inside tmux
+#######################################
 dotfiles_tmux_start() {
     session_name="DEFAULT"
     if [ "${TERM_PROGRAM}" = "tmux" ]; then
@@ -41,15 +74,28 @@ dotfiles_tmux_start() {
     tmux attach-session -t "${session_name}"
 }
 
+#######################################
+# PROMPT_COMMAND, run before every prompt
+#######################################
 dotfiles_prompt_command() {
     # append history lines from this session to the history file
     history -a
 }
 
+#######################################
+# Show RAM info
+# Outputs:
+#   RAM info
+#######################################
 dotfiles_info_ram() {
     sudo dmidecode --type memory
 }
 
+#######################################
+# Source scripts
+# Args:
+#   Script paths
+#######################################
 dotfiles_source_scripts() {
     for script in "${@}"; do
         if [ -s "${script}" ]; then
@@ -58,6 +104,13 @@ dotfiles_source_scripts() {
     done
 }
 
+#######################################
+# Add a path to the front of PATH
+# Globals:
+#   PATH
+# Args:
+#   paths that will be added to PATH
+#######################################
 dotfiles_add_to_path_front() {
     for path in "${@}"; do
         case ":${PATH:=${path}}:" in

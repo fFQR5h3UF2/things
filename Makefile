@@ -1,10 +1,10 @@
-PACKAGES = setup shell bin nvim git firefox tmux vscode
+PACKAGES = setup shell bin nvim git udev firefox tmux vscode
 PACKAGES_TEST = $(addprefix test-, $(PACKAGES))
 PACKAGES_CLEAN = $(addprefix clean-, $(PACKAGES))
 PACKAGES_BUILD = $(addprefix build-, $(PACKAGES))
 
 .PHONY: min all test clean build
-.PHONY: $(PACKAGES) $(PACKAGES_TEST) $(PACKAGES_CLEAN)
+.PHONY: $(PACKAGES) $(PACKAGES_TEST) $(PACKAGES_BUILD) $(PACKAGES_CLEAN)
 
 min: shell bin nvim tmux
 all: $(PACKAGES)

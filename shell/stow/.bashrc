@@ -96,3 +96,5 @@ dotfiles_source_scripts \
     ~/.venv/bin/activate
 
 alias cd="dotfiles_cd"
+
+tmux-start

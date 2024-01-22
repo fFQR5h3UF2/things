@@ -1,0 +1,2 @@
+# ergohaven K:02e
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="feed", ATTRS{idProduct}=="9918", MODE="0660", GROUP="${USER}", TAG+="uaccess", TAG+="udev-acl"
