@@ -9,20 +9,12 @@ STOW_BUILD = $(STOW_CMD) --target "${STOW_OUT_DIR}"
 STOW_INSTALL = $(STOW_CMD) --target "${STOW_INSTALL_TARGET}" --dir "${OUT_DIR}"
 OUT_DIRS = ${OUT_DIR} ${TRACKER_DIR} ${STOW_OUT_DIR}
 
-define tracker
-	${TRACKER_DIR}/${1}
-endef
-
-define ensure_installed
-	which "${1}" >/dev/null
-endef
-
 .PHONY: install install-stow
 .PHONY: clean clean-out clean-stow
 .PHONY: build build-stow
 .PHONY: test test-stow
 .PHONY: update
-.PHONY: setup setup-stow setup-ensure-installed
+.PHONY: setup
 
 install: build
 setup: | $(OUT_DIRS)
@@ -40,11 +32,8 @@ $(OUT_DIR):
 ${OUT_DIR}/%:
 	mkdir -p "${@}"
 
-setup-ensure-installed:
-	$(call ensure_installed,stow)
-
-build-stow: $(call tracker,build-stow)
-$(call tracker,build-stow): $(call tracker,setup) $(STOW_FILES)
+build-stow: ${TRACKER_DIR}/build-stow | setup
+${TRACKER_DIR}/build-stow: $(STOW_FILES)
 	$(STOW_BUILD) --stow "${STOW_PACKAGE}"
 	touch "${@}"
 
@@ -58,4 +47,4 @@ clean-stow:
 	if [ -d "${STOW_OUT_DIR}" ]; then $(STOW_INSTALL) --delete "${STOW_PACKAGE}"; fi
 
 clean-out: clean-stow
-	rm -r ./out
+	if [ -e "${OUT_DIR}" ]; then rm -r "${OUT_DIR}"; fi
