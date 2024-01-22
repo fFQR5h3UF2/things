@@ -1,8 +1,8 @@
 include ../make/common.mk
 
 STOW_INSTALL_TARGET = /etc/udev
-TARGET_DIR = ${STOW_OUT_DIR}
-TARGET = ${TARGET_DIR}/rules.d/99-rules.rules
+TARGET_DIR = ${STOW_OUT_DIR}/rules.d
+TARGET = ${TARGET_DIR}/99-rules.rules
 STOW_INSTALL := sudo $(STOW_INSTALL)
 
 .PHONY: trigger reload
