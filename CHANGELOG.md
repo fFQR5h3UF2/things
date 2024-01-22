@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.53.0 (2024-01-22)
+
+### Feat
+
+- remake configs into udev package, add docs to shell (#101)
+
 ## v0.52.1 (2024-01-21)
 
 ### Fix
