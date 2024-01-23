@@ -13,8 +13,11 @@ export EDITOR="nvim"
 # color fixes
 export TERM="screen-256color"
 export COLORTERM="truecolor"
-# user-specific configuration files
+# XDG variables
 export XDG_CONFIG_HOME="${HOME}/.config"
+export XDG_CACHE_HOME="${HOME}/.cache"
+export XDG_DATA_HOME="${HOME}/.local/share"
+export XDG_STATE_HOME="${HOME}/.local/state"
 # nvim config dir
 export NVM_DIR="${XDG_CONFIG_HOME}/nvm"
 ## the main prompt variable
