@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.54.0 (2024-01-23)
+
+### Feat
+
+- **ssh**: move ssh setup to a separate package (#102)
+
 ## v0.53.0 (2024-01-22)
 
 ### Feat
