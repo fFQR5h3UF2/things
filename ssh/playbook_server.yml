@@ -1,0 +1,14 @@
+- name: Harden ssh
+  hosts: 127.0.0.1
+  connection: local
+  pre_tasks:
+    - name: Install ssh
+      become: true
+      ansible.builtin.package:
+        name: openssh-server
+        state: present
+  roles:
+    - name: Harden ssh
+      role: devsec.hardening.ssh_hardening
+      vars:
+        ssh_server_enabled: false

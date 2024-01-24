@@ -8,28 +8,29 @@ STOW_CMD = stow --no-folding --verbose
 STOW_BUILD = $(STOW_CMD) --target "${STOW_OUT_DIR}"
 STOW_INSTALL = $(STOW_CMD) --target "${STOW_INSTALL_TARGET}" --dir "${OUT_DIR}"
 OUT_DIRS = ${OUT_DIR} ${TRACKER_DIR} ${STOW_OUT_DIR}
+ANSIBLE_CMD = poetry run ansible-playbook --ask-become-pass -i "127.0.0.1,"
 
 define clean
 	if [ -e "${1}" ]; then rm -rf "${1}"; fi
 endef
 
-install: build
 .PHONY: install
+install: build
 
-setup: | $(OUT_DIRS)
 .PHONY: setup
+setup: | $(OUT_DIRS)
 
-build: setup
 .PHONY: build
+build: setup
 
-test: build
 .PHONY: test
+test: build
 
-update:
 .PHONY: update
+update:
 
-clean: clean-out clean-venv
 .PHONY: clean
+clean: clean-out clean-venv
 
 ${TRACKER_DIR}/%:
 	touch "${@}"
@@ -40,42 +41,42 @@ $(OUT_DIR):
 ${OUT_DIR}/%:
 	mkdir -p "${@}"
 
+.PHONY: setup-poetry-env
 setup-poetry-env:
 	poetry env use python3
-.PHONY: setup-poetry-env
 
+.PHONY: setup-poetry
 setup-poetry: setup-poetry-env
 	poetry install
-.PHONY: setup-poetry
 
+.PHONY: setup-poetry-no-root
 setup-poetry-no-root: setup-poetry-env
 	poetry install --no-root
-.PHONY: setup-poetry-no-root
 
-setup-ansible-galaxy: setup-poetry-no-root
-	poetry run ansible-galaxy install -r requirements.yml
 .PHONY: setup-ansible-galaxy
+setup-ansible-galaxy: setup-poetry-no-root
+	poetry run ansible-galaxy install -r galaxy-requirements.yml
 
+.PHONY: build-stow
 build-stow: setup
 	$(STOW_BUILD) --stow "${STOW_PACKAGE}"
-.PHONY: build-stow
 
+.PHONY: install-stow
 install-stow: build
 	$(STOW_INSTALL) --stow "${STOW_PACKAGE}"
-.PHONY: install-stow
 
+.PHONY: test-stow
 test-stow: build
 	$(STOW_INSTALL) --simulate "${STOW_PACKAGE}"
-.PHONY: test-stow
 
+.PHONY: clean-stow
 clean-stow:
 	if [ -d "${STOW_OUT_DIR}" ]; then $(STOW_INSTALL) --delete "${STOW_PACKAGE}"; fi
-.PHONY: clean-stow
 
+.PHONY: clean-out
 clean-out: clean-stow
 	$(call clean,${OUT_DIR})
-.PHONY: clean-out
 
-clean-venv:
+.PHONY: clean-poetry-venv
+clean-poetry-venv:
 	poetry env remove --all
-.PHONY: clean-venv
