@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.55.0 (2024-01-24)
+
+### Feat
+
+- move os out of ansible, remove ansible, do not link .gitconfig directly, use one env, add gpg config (#103)
+
 ## v0.54.0 (2024-01-23)
 
 ### Feat
