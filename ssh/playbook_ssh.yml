@@ -1,7 +1,0 @@
-- name: harden ssh
-  hosts: 127.0.0.1
-  connection: local
-  roles:
-    - name: devsec.hardening.ssh_hardening
-      vars:
-        ssh_server_enabled: false

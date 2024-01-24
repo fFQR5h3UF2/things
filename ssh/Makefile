@@ -1,7 +1,11 @@
 include ../make/common.mk
 
-install: run-playbook
-setup: setup-ansible-galaxy
+install: run-playbook-personal
 
-run-playbook: setup
-	poetry run ansible-playbook --ask-become-pass -i "127.0.0.1," ./playbook_ssh.yml
+.PHONY: run-playbook-personal
+run-playbook-personal: setup
+	$(ANSIBLE_CMD) ./playbook_personal.yml
+
+.PHONY: run-playbook-server
+run-playbook-server: setup
+	$(ANSIBLE_CMD)./playbook_server.yml
