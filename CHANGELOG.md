@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.56.0 (2024-01-24)
+
+### Feat
+
+- add gpg package, update gpg key, improve os (#104)
+
 ## v0.55.0 (2024-01-24)
 
 ### Feat
