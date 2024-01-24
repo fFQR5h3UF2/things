@@ -1,4 +1,7 @@
 include ../make/common.mk
 
 install:
-	$(ANSIBLE_CMD) ./playbook_os.yml
+	$(ANSIBLE_CMD) ./playbook_personal.yml
+
+install-server:
+	$(ANSIBLE_CMD) ./playbook_server.yml

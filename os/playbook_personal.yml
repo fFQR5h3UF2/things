@@ -1,0 +1,11 @@
+- hosts: 127.0.0.1
+  connection: local
+  roles:
+    - role: devsec.hardening.os_hardening
+      become: true
+      vars:
+        os_desktop_enable: true
+        sysctl_overwrite:
+          # enable IPv4 traffic forwarding
+          # docker fix
+          net.ipv4.ip_forward: 1
