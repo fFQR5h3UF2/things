@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.57.0 (2024-01-25)
+
+### Feat
+
+- **make**: add trackers to targets (#105)
+
 ## v0.56.0 (2024-01-24)
 
 ### Feat
