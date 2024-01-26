@@ -4,8 +4,6 @@ local autocmd = vim.api.nvim_create_autocmd
 local augroup = vim.api.nvim_create_augroup
 
 function M.setup()
-    local group = augroup("shishifubing", { clear = true })
-
     -- highlight on yank
     autocmd({ "TextYankPost" }, {
         callback = function()
@@ -14,11 +12,10 @@ function M.setup()
         group = augroup("YankHighlight", { clear = true }),
         pattern = "*",
     })
-    -- remove trailing spaces
+    -- remove trailing whitespace
     autocmd({ "BufWritePre" }, {
-        group = group,
-        pattern = "*",
-        command = "%s/\\s\\+$//e",
+        pattern = { "*" },
+        command = [[%s/\s\+$//e]],
     })
 end
 

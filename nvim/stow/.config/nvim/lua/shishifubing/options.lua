@@ -7,6 +7,28 @@ function M.setup()
     -- set a ruler
     vim.opt.colorcolumn = "80"
 
+    vim.g.netrw_browse_split = 0
+    -- Netrw banner
+    -- 0 : Disable banner
+    -- 1 : Enable banner
+    vim.g.netrw_banner = 0
+    -- Netew winsize
+    -- @default = 20
+    vim.g.netrw_winsize = 25
+    -- Keep the current directory and the browsing directory synced.
+    -- This helps you avoid the move files error.
+    vim.g.netrw_keepdir = 0
+    -- Show directories first (sorting)
+    vim.g.netrw_sort_sequence = [[[\/]$,*]]
+    -- Human-readable files sizes
+    vim.g.netrw_sizestyle = "H"
+    -- Netrw list style
+    -- 0 : thin listing (one file per line)
+    -- 1 : long listing (one file per line with timestamp information and file size)
+    -- 2 : wide listing (multiple files in columns)
+    -- 3 : tree style listing
+    vim.g.netrw_liststyle = 3
+
     vim.api.nvim_set_hl(0, "ColorColumn", { bg = "#595F6F" })
 
     -- command line overlaps with lualine
