@@ -46,19 +46,19 @@ function M.setup_no_deps()
         { "n", "v" },
         "<Space>",
         "<Nop>",
-        { silent = true, desc = "Disable space" }
+        { desc = "Disable space", silent = true }
     )
     k.set(
         "n",
         "k",
         "v:count == 0 ? 'gk' : 'k'",
-        { expr = true, silent = true, desc = "Fix word wrap (k)" }
+        { desc = "Fix word wrap (k)", expr = true, silent = true }
     )
     k.set(
         "n",
         "j",
         "v:count == 0 ? 'gj' : 'j'",
-        { expr = true, silent = true, desc = "Fix word wrap (j)" }
+        { desc = "Fix word wrap (j)", expr = true, silent = true }
     )
     k.set(
         "n",
@@ -89,6 +89,12 @@ function M.setup_no_deps()
         "<leader>bD",
         delete_all_buffers_except_current,
         { desc = "Delete all buffers except the current" }
+    )
+    k.set(
+        "n",
+        "<leader>n",
+        "<cmd>Explore<cr><cr>",
+        { desc = "Open netrw", silent = true }
     )
 end
 
