@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.58.0 (2024-01-26)
+
+### Feat
+
+- **nvim**: update plugins, update netrw config, refactor lsp config a bit (#106)
+
 ## v0.57.0 (2024-01-25)
 
 ### Feat
