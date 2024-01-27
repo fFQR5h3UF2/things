@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.59.0 (2024-01-27)
+
+### Feat
+
+- improve tmux, shell and make (#107)
+
 ## v0.58.0 (2024-01-26)
 
 ### Feat
