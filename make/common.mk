@@ -1,11 +1,11 @@
 OUT_DIR = ./out
+PROJECT_DIR = $(shell git rev-parse --show-toplevel)
 TRACKER_DIR = ${OUT_DIR}/tracker
 STOW_PACKAGE = stow
 STOW_OUT_DIR = ${OUT_DIR}/${STOW_PACKAGE}
 STOW_INSTALL_DIR = ${HOME}
 STOW_PACKAGE_FILES = $(shell find "./${STOW_PACKAGE}" 2>/dev/null)
 STOW_OUT_FILES = $(shell find "${STOW_OUT_DIR}" 2>/dev/null)
-STOW_INSTALL_FILES = $(STOW_OUT_FILES:${STOW_OUT_DIR}/%=${STOW_INSTALL_DIR}/%)
 STOW_CMD = stow --no-folding --verbose
 STOW_INSTALL = $(STOW_CMD) --target "${STOW_INSTALL_DIR}" --dir "${OUT_DIR}"
 OUT_DIRS = ${OUT_DIR} ${TRACKER_DIR} ${STOW_OUT_DIR}
@@ -15,15 +15,13 @@ define clean
 	if [ -e "${1}" ]; then rm -rf "${1}"; fi
 endef
 define ansible-install
-.PHONY: ansible-install-${1}
-ansible-install-${1}:
-	poetry run ansible  \
+	which "${1}" || poetry run ansible  \
 		--connection local \
-		--become
+		--become \
 		--ask-become-pass \
 		"127.0.0.1," \
-		-m ansible.builtin.package
-		-a "name=${1} state=present"
+		-m ansible.builtin.package \
+		-a "name=${2} state=present"
 endef
 
 .PHONY: install
@@ -46,13 +44,13 @@ ${TRACKER_DIR}/test: ${TRACKER_DIR}/build
 update: ${TRACKER_DIR}/update
 
 .PHONY: clean
-clean: clean-out clean-venv
+clean: clean-out
 
-${TRACKER_DIR}/%:
-	touch "${@}"
+${TRACKER_DIR}/%::
+	@touch "${@}"
 
 $(OUT_DIRS):
-	mkdir -p "${@}"
+	@mkdir -p "${@}"
 
 .PHONY: setup-poetry-env
 setup-poetry-env:
@@ -63,37 +61,31 @@ setup-poetry: setup-poetry-env
 	poetry install
 
 .PHONY: setup-poetry-no-root
-setup-poetry-no-root: setup-poetry-env
+setup-poetry-no-root:
 	poetry install --no-root
 
 .PHONY: setup-ansible-galaxy
 setup-ansible-galaxy: setup-poetry-no-root
-	poetry run ansible-galaxy install -r galaxy-requirements.yml
+	poetry run ansible-galaxy install -r "${PROJECT_DIR}/galaxy-requirements.yml"
 
 .PHONY: build-stow
-build-stow: $(STOW_OUT_FILES)
-$(STOW_OUT_FILES): ${TRACKER_DIR}/build-stow
-${TRACKER_DIR}/build-stow: ${TRACKER_DIR}/setup $(STOW_PACKAGE_FILES)
+build-stow-package: setup
 	$(STOW_CMD) --target "${STOW_OUT_DIR}" --stow "${STOW_PACKAGE}"
-	touch "${@}"
 
 .PHONY: install-stow
-install-stow: $(STOW_INSTALL_FILES)
-$(STOW_INSTALL_FILES): ${TRACKER_DIR}/install-stow
-${TRACKER_DIR}/install-stow: ${TRACKER_DIR}/build
+install-stow-package: build build-stow-package
 	$(STOW_INSTALL) --stow "${STOW_PACKAGE}"
-	touch "${@}"
 
-.PHONY: test-stow
-test-stow: build
+.PHONY: test-stow-package
+test-stow-package: build build-stow-package
 	$(STOW_INSTALL) --simulate "${STOW_PACKAGE}"
 
-.PHONY: clean-stow
-clean-stow:
+.PHONY: clean-stow-package
+clean-stow-package:
 	if [ -d "${STOW_OUT_DIR}" ]; then $(STOW_INSTALL) --delete "${STOW_PACKAGE}"; fi
 
 .PHONY: clean-out
-clean-out: clean-stow
+clean-out: clean-stow-package
 	$(call clean,${OUT_DIR})
 
 .PHONY: clean-poetry-venv

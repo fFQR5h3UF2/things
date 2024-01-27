@@ -1,23 +1,23 @@
 #!/usr/bin/env sh
 
 #######################################
+# Run make in parallel
+# Arguments:
+#   Additional arguments for make
+#######################################
+d_make() {
+    NUMCPUS="$(grep -c '^processor' /proc/cpuinfo)"
+    export NUMCPUS
+    time nice make "-j${NUMCPUS}" "--load-average=${NUMCPUS}" "${@}"
+}
+
+#######################################
 # Check if you are running in a container
 # Returns:
 #   0 if you are in a container, 1 otherwise
 #######################################
-dotfiles_is_container() {
+d_is_container() {
     grep container_t </proc/1/attr/current
-}
-
-#######################################
-# Alias for cd
-# cd to a directory and activate venv
-# Args:
-#   Arguments to cd
-#######################################
-dotfiles_cd() {
-    cd "${@}" || return
-    dotfiles_venv
 }
 
 #########################################
@@ -25,22 +25,14 @@ dotfiles_cd() {
 # Args:
 #   None
 #######################################
-dotfiles_venv() {
-    _venv=
-    if [ -s ./poetry.lock ]; then
-        _venv=$(poetry env info -p)
-    elif [ -d ./.venv ]; then
-        _venv="./.venv"
-    elif [ -d ./venv ]; then
-        _venv="./venv"
-    elif [ -d ~/venv ]; then
-        _venv="${HOME}/venv"
-    elif [ -d ~/.venv ]; then
-        _venv="${HOME}/.venv"
-    fi
-    if [ -s "${_venv}/bin/activate" ]; then
-        . "${_venv}/bin/activate"
-    fi
+d_venv() {
+    poetry_venv=$(poetry env info -p 2>/dev/null || true)
+    for venv in "${poetry_venv}" ./.venv ./venv ~/.venv ~/venv; do
+        if [ -s "${venv}/bin/activate" ]; then
+            . "${venv}/bin/activate"
+            break
+        fi
+    done
 }
 
 #######################################
@@ -50,7 +42,7 @@ dotfiles_venv() {
 # Outputs:
 #   image with digest
 #######################################
-dotfiles_docker_image_with_digest() {
+d_docker_image_with_digest() {
     image="${1:?missing image}"
     digest=$(docker inspect --format='{{index .RepoDigests 0}}' "${image}")
     echo "${image}@${digest##*@}"
@@ -62,7 +54,7 @@ dotfiles_docker_image_with_digest() {
 # Globals:
 #   TERM_PROGRAM - used to check if running inside tmux
 #######################################
-dotfiles_tmux_start() {
+d_tmux_start() {
     session_name="DEFAULT"
     if [ "${TERM_PROGRAM}" = "tmux" ]; then
         return
@@ -77,7 +69,7 @@ dotfiles_tmux_start() {
 #######################################
 # PROMPT_COMMAND, run before every prompt
 #######################################
-dotfiles_prompt_command() {
+d_prompt_command() {
     # append history lines from this session to the history file
     history -a
 }
@@ -87,7 +79,7 @@ dotfiles_prompt_command() {
 # Outputs:
 #   RAM info
 #######################################
-dotfiles_info_ram() {
+d_info_ram() {
     sudo dmidecode --type memory
 }
 
@@ -96,7 +88,7 @@ dotfiles_info_ram() {
 # Args:
 #   Script paths
 #######################################
-dotfiles_source_scripts() {
+d_source_scripts() {
     for script in "${@}"; do
         if [ -s "${script}" ]; then
             . "${script}"
@@ -111,7 +103,7 @@ dotfiles_source_scripts() {
 # Args:
 #   paths that will be added to PATH
 #######################################
-dotfiles_add_to_path_front() {
+d_add_to_path_front() {
     for path in "${@}"; do
         case ":${PATH:=${path}}:" in
         *":${path}:"*) ;;
@@ -121,7 +113,7 @@ dotfiles_add_to_path_front() {
 }
 
 ## create a certificate secret
-dotfiles_kubernetes_secret_create_sertificate() {
+d_kubernetes_secret_create_sertificate() {
     name="${1:?missing name}"
     namespace="${2:-default}"
     key="${3:-${name}.key}"
@@ -135,13 +127,13 @@ dotfiles_kubernetes_secret_create_sertificate() {
 }
 
 ## modify current context
-dotfiles_kubernetes_context() {
+d_kubernetes_context() {
     ns=$(kubectl get ns | fzf)
     kubectl config set-context --current --namespace="${ns}"
 }
 
 ## create a service account and everything needed
-dotfiles_kubernetes_service_account_full() {
+d_kubernetes_service_account_full() {
     namespace="${1}"
     account="${2}"
     role="${3}"
@@ -152,7 +144,7 @@ dotfiles_kubernetes_service_account_full() {
     kubernetes_rolebinding "${namespace}" "${account}" "${role}" "${rolebinding}"
 }
 
-dotfiles_kubernetes_rolebinding() {
+d_kubernetes_rolebinding() {
     namespace="${1}"
     account="${2}"
     role="${3}"
@@ -180,7 +172,7 @@ dotfiles_kubernetes_rolebinding() {
     "
 }
 
-dotfiles_kubernetes_service_account() {
+d_kubernetes_service_account() {
     namespace="${1}"
     account="${2}"
     dotfiles_kubernetes_apply "
@@ -192,30 +184,30 @@ dotfiles_kubernetes_service_account() {
     "
 }
 
-dotfiles_kubernetes_apply() {
+d_kubernetes_apply() {
     echo "${1:?missing yaml}" | kubectl apply -f -
 }
 
 # get api url
-dotfiles_kubernetes_api() {
+d_kubernetes_api() {
     kubectl cluster-info | grep 'Kubernetes master' | awk '/http/ { print $NF }'
 }
 
 ## check open ports
-dotfiles_net_ports_list() {
+d_net_ports_list() {
     sudo ss -tulpn | grep LISTEN
 }
 
-dotfiles_net_connections_list() {
+d_net_connections_list() {
     sudo netstat -nputw
 }
 
-dotfiles_net_check_dns() {
+d_net_check_dns() {
     dig "${@}" +nostats +nocomments +nocmd
 }
 
 # add windows 10 uefi entry to grub
-dotfiles_setup_grub_add_windows_10_uefi() {
+d_setup_grub_add_windows_10_uefi() {
     # exec tail -n +4 $0
     # this line needs to be in the file, without it
     # commands will not be recognized
