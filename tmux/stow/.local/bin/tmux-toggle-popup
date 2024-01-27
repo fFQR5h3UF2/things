@@ -19,9 +19,5 @@ if ! tmux has-session -t "${popup_name}"; then
         -s "${popup_name}"
     tmux set-option -t "${popup_name}" status off
 fi
-tmux display-popup \
-    -x C \
-    -y C \
-    -w 90% \
-    -h 75% \
-    -E "tmux attach-session -t '${popup_name}'"
+
+tmux-display-popup -E "tmux attach-session -t '${popup_name}'"

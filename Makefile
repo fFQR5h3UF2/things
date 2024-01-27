@@ -1,15 +1,21 @@
 include make/common.mk
 
-PACKAGES = shell os ssh gpg bin nvim git udev firefox tmux vscode
+PACKAGES = $(shell ./make/scripts/get_packages.sh)
+PACKAGES_CHANGED = $(shell ./make/scripts/get_packages.sh changed)
 PACKAGES_TEST = $(addprefix test-, $(PACKAGES))
+PACKAGES_TEST_CHANGED = $(addprefix test-changed-, $(PACKAGES_CHANGED))
 PACKAGES_CLEAN = $(addprefix clean-, $(PACKAGES))
 PACKAGES_BUILD = $(addprefix build-, $(PACKAGES))
 
-install: $(PACKAGES_INSTALL)
+install: $(PACKAGES)
 test: $(PACKAGES_TEST)
 clean: $(PACKAGES_CLEAN) clean-poetry-venv
 build: $(PACKAGES_BUILD)
 setup: setup-ansible-galaxy
+
+.PHONY: air
+air:
+	go run github.com/cosmtrek/air@latest
 
 .PHONY: $(PACKAGES)
 $(PACKAGES): setup
@@ -22,6 +28,13 @@ $(PACKAGES_BUILD): setup
 .PHONY: $(PACKAGES_TEST)
 $(PACKAGES_TEST): setup
 	$(MAKE) --directory "${@:test-%=%}" test
+
+.PHONY: test-changed
+test-changed: $(PACKAGES_TEST_CHANGED)
+
+.PHONY: $(PACKAGES_TEST_CHANGED)
+$(PACKAGES_TEST_CHANGED):
+	$(MAKE) --directory "${@:test-changed-%=%}" test
 
 .PHONY: $(PACKAGES_CLEAN)
 $(PACKAGES_CLEAN):

@@ -6,7 +6,6 @@ export DOTFILES="${DOTFILES:-"${HOME}/repos/shishifubing/dotfiles"}"
 export FZF_DEFAULT_COMMAND="fd --type f"
 export FZF_COMPLETION_TRIGGER="**"
 
-export force_color_prompt="yes"
 GPG_TTY=$(tty || true)
 export GPG_TTY
 export EDITOR="nvim"
@@ -19,11 +18,11 @@ export XDG_CACHE_HOME="${HOME}/.cache"
 export XDG_DATA_HOME="${HOME}/.local/share"
 export XDG_STATE_HOME="${HOME}/.local/state"
 # nvim config dir
-export NVM_DIR="${XDG_CONFIG_HOME}/nvm"
+export NVM_DIR="${XDG_CONFIG_HOME}/.nvm"
 ## the main prompt variable
 # https://stackoverflow.com/a/28938235
 export PS1='\[\e[35;1m\]\u\[\e[m\]@\[\e[35;1m\]\h\[\e[m\] \[\e[36;1m\]\w\[\e[m\] \[\e[1m\]$(__git_ps1 "%s")\[\e[m\]\n\$ '
-export PROMPT_COMMAND="dotfiles_prompt_command"
+export PROMPT_COMMAND="d_prompt_command"
 # git prompt variables
 export GIT_PS1_SHOWDIRTYSTATE="true"
 export GIT_PS1_SHOWUPSTREAM="auto"
@@ -78,7 +77,7 @@ shopt -s histappend
 # command in the same history entry.
 shopt -s cmdhist
 
-dotfiles_add_to_path_front \
+d_add_to_path_front \
     ~/.local/share/gem/ruby/*/bin \
     ~/.local/bin \
     /usr/bin \
@@ -89,15 +88,14 @@ dotfiles_add_to_path_front \
     /usr/java/latest/bin \
     /usr/mvn/latest/bin
 
-dotfiles_source_scripts \
+d_source_scripts \
     /etc/profile.d/bash_completion.sh \
     /usr/share/git-core/contrib/completion/git-prompt.sh \
     /usr/share/bash-completion/completions/git \
     /usr/share/fzf/shell/key-bindings.bash \
     "${NVM_DIR}/nvm.sh" \
-    "${NVM_DIR}/bash_completion" \
-    ~/.venv/bin/activate
+    "${NVM_DIR}/bash_completion"
 
-alias cd="dotfiles_cd"
+d_venv
 
 tmux-start
