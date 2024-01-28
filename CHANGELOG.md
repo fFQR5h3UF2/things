@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.60.0 (2024-01-28)
+
+### Feat
+
+- add init package (#108)
+
 ## v0.59.0 (2024-01-27)
 
 ### Feat
