@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.61.0 (2024-01-29)
+
+### Feat
+
+- rewrite build to use nonrecursive makefiles (#110)
+
 ## v0.60.0 (2024-01-28)
 
 ### Feat
