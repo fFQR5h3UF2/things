@@ -1,9 +1,8 @@
-include ../make/common.mk
+tmux/install: tmux/install-stow tmux/install-tmux
+tmux/build: tmux/build-stow
+tmux/test: tmux/test-stow
+tmux/clean: tmux/clean-stow
 
-install: install-stow-package install-tmux
-build: build-stow-package
-test: test-stow-package
-
-install-tmux: setup-poetry-no-root
+.PHONY: tmux/install-tmux
+tmux/install-tmux: init/ansible-galaxy
 	$(call ansible-install,tmux,tmux)
-.PHONY: install-tmux

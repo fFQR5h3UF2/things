@@ -1,12 +1,10 @@
-include ../make/common.mk
+shell/build: shell/build-stow
+shell/install: shell/install-stow
+shell/clean: shell/clean-stow
+shell/test: shell/test-stow
 
-.PHONY: remove-bashrc
+shell/install-stow: shell/remove-bashrc
 
-install: install-stow-package
-build: build-stow-package
-test: test-stow-package
-
-install-stow-package: remove-bashrc-file
-
-remove-bashrc-file:
-	if [ -f "${HOME}/.bashrc" ]; then rm "${HOME}/.bashrc"; fi
+.PHONY: shell/remove-bashrc
+shell/remove-bashrc:
+	if [ -f ~/.bashrc ] && [ ! -L ~/.bashrc ]; then mv ~/.bashrc ~/.bashrc.disabled; fi

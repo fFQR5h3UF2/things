@@ -1,22 +1,24 @@
-include ../make/common.mk
-
-apply ::
+.PHONY: repos/apply
+repos/apply:
 	terraform apply
 
-clean: clean-tf
-
-clean-tf:
+.PHONY: repos/clean-tf
+repos/clean-tf:
 	mapfile -t args < <(terraform state list); \
 	terraform state rm "$${args[@]}"
 
-docs ::
+.PHONY: repos/docs
+repos/docs:
 	terraform-docs markdown table --recursive --output-file README.md .
 
-import ::
+.PHONY: repos/import
+repos/import:
 	./scripts/import.sh
 
-init ::
+.PHONY: repos/init
+repos/init:
 	terraform init -reconfigure -backend-config="main.s3.tfbackend"
 
-list ::
+.PHONY: repos/list
+repos/list:
 	terraform state list

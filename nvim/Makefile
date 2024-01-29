@@ -1,10 +1,8 @@
-include ../make/common.mk
+nvim/install: nvim/install-stow
+nvim/build: nvim/build-stow
+nvim/test: nvim/test-stow
+nvim/clean: nvim/clean-stow
 
-.PHONY: sync
-
-install: install-stow
-build: build-stow
-test: test-stow
-update: sync
-sync: install
+.PHONY: nvim/sync
+nvim/sync:
 	nvim --headless "+Lazy! sync" +qa
