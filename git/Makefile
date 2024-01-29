@@ -1,5 +1,4 @@
-include ../make/common.mk
-
-install: install-stow
-build: build-stow
-test: test-stow
+git/build: git/build-stow
+git/install: git/install-stow
+git/clean: git/clean-stow
+git/test: git/test-stow

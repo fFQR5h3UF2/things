@@ -1,7 +1,7 @@
-include ../make/common.mk
+.PHONY: os/personal
+os/personal: setup
+	$(ANSIBLE_CMD) "./${PACKAGE}/playbook_personal.yml"
 
-install:
-	$(ANSIBLE_CMD) ./playbook_personal.yml
-
-install-server:
-	$(ANSIBLE_CMD) ./playbook_server.yml
+.PHONY: os/server
+os/server:
+	$(ANSIBLE_CMD) "./${PACKAGE}/playbook_server.yml"

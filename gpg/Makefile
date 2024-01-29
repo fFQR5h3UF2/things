@@ -1,5 +1,4 @@
-include ../make/common.mk
-
-install: install-stow
-build: build-stow
-test: test-stow
+gpg/install: gpg/install-stow
+gpg/build: gpg/build-stow
+gpg/clean: gpg/test-stow
+gpg/test: gpg/test-stow

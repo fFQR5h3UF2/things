@@ -1,14 +1,14 @@
-include ../make/common.mk
+firefox_dir = .mozilla/firefox
+firefox_profiles = $(notdir $(wildcard ${HOME}/${firefox_dir}/*.default-release-*))
+firefox_targets = $(addprefix firefox/build-, $(firefox_profiles))
 
-MOZILLA_DIR = .mozilla/firefox
-PROFILES = $(notdir $(wildcard ${HOME}/${MOZILLA_DIR}/*.default-release-*))
-PROFILES_OUT_DIRS = $(addprefix ${STOW_OUT_DIR}/${MOZILLA_DIR}/, $(PROFILES))
+firefox/install: firefox/install-stow
+firefox/build: firefox/build-stow
+firefox/test: firefox/test-stow
+firefox/clean: firefox/clean-stow
 
-install: install-stow
-build: $(PROFILES_OUT_DIRS)
-test: test-stow
+firefox/build-stow: $(firefox_targets) ;
 
-$(PROFILES_OUT_DIRS): $(STOW_FILES)
-	mkdir -p "${@}"
-	$(STOW_CMD) --stow --target "${@}" "${STOW_PACKAGE}"
-	touch "${@}"
+.PHONY: $(firefox_targets)
+$(firefox_targets): firefox/build-%: ${OUT_DIR}/firefox/${STOW_PACKAGE}/${firefox_dir}/%
+	$(STOW_CMD) --target "${<}" --dir "firefox" --stow "${STOW_PACKAGE}"
