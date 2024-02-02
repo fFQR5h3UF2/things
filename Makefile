@@ -1,43 +1,48 @@
-PACKAGES = $(shell ./make/scripts/get_packages.sh)
-PACKAGES_CHANGED = $(shell ./make/scripts/get_packages.sh changed)
+.POSIX:
+
+PACKAGES = $(shell ./make/scripts/get_packages)
+PACKAGES_CHANGED = $(shell ./make/scripts/get_packages changed)
 
 OUT_DIR = ./out
-OUT_DIRS = $(addprefix $(OUT_DIR)/, $(PACKAGES))
-PROJECT_DIR = $(shell git rev-parse --show-toplevel)
+OUT_PACKAGE_DIR = ${OUT_DIR}/package
+OUT_TRACKER_DIR = ${OUT_DIR}/tracker
 STOW_PACKAGE = stow
+OUT_STOW_DIR = ${OUT_DIR}/${STOW_PACKAGE}
+OUT_DIRS = $(PACKAGES:%=$(OUT_DIR)/%) $(PACKAGES:%=${OUT_TRACKER_DIR}/%) \
+		   $(PACKAGES:%=${OUT_STOW_DIR}/%)
+PROJECT_DIR = $(shell git rev-parse --show-toplevel)
 STOW_INSTALL_DIR = ${HOME}
 STOW_CMD = stow --no-folding --verbose
 
-install_targets = $(addsuffix /install, $(PACKAGES))
+install_targets = $(PACKAGES:%=%/install)
 .PHONY: install $(install_targets)
 install: $(install_targets)
 $(install_targets): %/install: %/build
 
-build_targets = $(addsuffix /build, $(PACKAGES))
+build_targets = $(PACKAGES:%=%/build)
 .PHONY: build $(build_targets)
 build: $(build_targets)
 $(build_targets): %/build: %/setup
 
-setup_targets = $(addsuffix /setup, $(PACKAGES))
+setup_targets = $(PACKAGES:%=%/setup)
 .PHONY: setup $(setup_targets)
 setup: $(setup_targets)
-$(setup_targets): init/init $(OUT_DIRS)
+$(setup_targets): init
+init: | $(OUT_DIRS)
 
-test_targets = $(addsuffix /test, $(PACKAGES))
+test_targets = $(PACKAGES:%=%/test)
 .PHONY: test $(test_targets)
 test: $(test_targets)
 $(test_targets): %/test: %/build
 
-clean_targets = $(addsuffix /clean, $(PACKAGES))
-.PHONY: clean $(clean_targets)
+clean_targets = $(PACKAGES:%=%/clean)
+.PHONY: clean clean-out $(clean_targets) $(clean_tracker_targets)
 clean: clean-out
 clean-out: $(clean_targets)
+	-rm -rf "${OUT_DIR}"
 $(clean_targets): %/clean:
-	-rm -rf "${OUT_DIR}/${*}"
-
-define include_package
-include ${PACKAGE}/Makefile
-endef
+$(PACKAGES:%=%/clean-out):
+	-rm -rf "${OUT_PACKAGE_DIR}/${*}"
 
 define define ansible-install
 which "${1}" || \
@@ -50,36 +55,37 @@ which "${1}" || \
 		-a "name=${2} state=present"
 endef
 
-build_stow_targets = $(addsuffix /build-stow, $(PACKAGES))
+build_stow_targets = $(PACKAGES:%=%/build-stow)
 .PHONY: $(build_stow_targets)
-$(build_stow_targets): %/build-stow: ${OUT_DIR}/%/${STOW_PACKAGE} setup
-	$(STOW_CMD) --target "${<}" --dir "${*}" --stow "${STOW_PACKAGE}"
+$(build_stow_targets): %/build-stow: %/setup
+	$(STOW_CMD) --target "${OUT_STOW_DIR}/${*}" --dir "${*}" --stow "${STOW_PACKAGE}"
 
-install_stow_targets = $(addsuffix /install-stow, $(PACKAGES))
+install_stow_targets = $(PACKAGES:%=%/install-stow)
 .PHONY: $(install_stow_targets)
-$(install_stow_targets): %/install-stow: ${OUT_DIR}/% build %/build-stow
-	$(STOW_CMD) --target "${STOW_INSTALL_DIR}" --dir "${<}" --stow "${STOW_PACKAGE}"
+$(install_stow_targets): %/install-stow: %/build %/build-stow
+	$(STOW_CMD) --target "${STOW_INSTALL_DIR}" --dir "${OUT_STOW_DIR}" --stow "${*}"
 
-test_stow_targets = $(addsuffix /test-stow, $(PACKAGES))
+test_stow_targets = $(PACKAGES:%=%/test-stow)
 .PHONY: $(test_stow_targets)
-$(test_stow_targets): %/test-stow: ${OUT_DIR}/% build %/build-stow
-	$(STOW_CMD) --target "${STOW_INSTALL_DIR}" --dir "${<}" --simulate "${STOW_PACKAGE}"
+$(test_stow_targets): %/test-stow: %/build %/build-stow
+	$(STOW_CMD) --target "${STOW_INSTALL_DIR}" --dir "${OUT_STOW_DIR}" --simulate "${*}"
 
-clean_stow_targets = $(addsuffix /clean-stow, $(PACKAGES))
+clean_stow_targets = $(PACKAGES:%=%/clean-stow)
 .PHONY: $(clean_stow_targets)
 $(clean_stow_targets): %/clean-stow:
-	-$(STOW_CMD) --target "${STOW_INSTALL_DIR}" --dir "${OUT_DIR}/${*}" --delete "${STOW_PACKAGE}"
-	-rm -rf "${OUT_DIR}/${*}/stow"
+	-$(STOW_CMD) --target "${STOW_INSTALL_DIR}" --dir "${OUT_STOW_DIR}" --delete "${*}"
+	-rm -rf "${OUT_STOW_DIR}/${*}"
 
 .PHONY: air
 air:
 	go run github.com/cosmtrek/air@latest
 
-${OUT_DIR}/%:
+$(OUT_DIRS):
 	@mkdir -p "${@}"
 
-.PHONY: clean-out
-clean-out:
-	-rm -rf "${OUT_DIR}"
+${TRACKER_DIR}/%:
+	@mkdir -p "${@D}"
+	@touch "${@}"
 
-$(foreach PACKAGE, $(PACKAGES), $(eval $(include_package)))
+
+$(foreach package, $(PACKAGES), $(eval include ${package}/Makefile))

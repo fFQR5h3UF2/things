@@ -1,3 +1,5 @@
+repos: repos/apply
+
 .PHONY: repos/apply
 repos/apply:
 	terraform apply

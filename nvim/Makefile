@@ -1,3 +1,4 @@
+nvim: nvim/install
 nvim/install: nvim/install-stow
 nvim/build: nvim/build-stow
 nvim/test: nvim/test-stow

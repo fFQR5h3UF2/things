@@ -4,7 +4,7 @@ set -o errexit -o nounset #-o xtrace
 changed="${1:-}"
 dir="$(git rev-parse --show-toplevel)"
 cd "${dir}"
-find . -maxdepth 1 -type d |
+find . -maxdepth 10 -type d |
     while read -r path; do
         if [ "${path}" = "." ] || [ ! -f "${path}/Makefile" ]; then
             continue
@@ -12,5 +12,5 @@ find . -maxdepth 1 -type d |
         if [ -n "${changed}" ] && [ -z "$(git diff --name-only "${path}")" ]; then
             continue
         fi
-        echo "${path##*/}"
+        echo "${path#./}"
     done

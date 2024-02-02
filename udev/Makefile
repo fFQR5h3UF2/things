@@ -13,6 +13,8 @@
 
 #test: test-stow
 
+udev: udev/trigger-after-install
+
 .PHONY: uddev/trigger-after-install
 udev/trigger-after-install: udev/install-stow
 	sudo sh -c "udevadm control --reload-rules && udevadm trigger"
