@@ -1,3 +1,4 @@
+tmux: tmux/install
 tmux/install: tmux/install-stow tmux/install-tmux
 tmux/build: tmux/build-stow
 tmux/test: tmux/test-stow

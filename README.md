@@ -11,7 +11,7 @@ Things for personal use
 ### Contents
 
 - [bin](./bin)
-- [bump_version](./bump_version)
+- [bump-version](./bump-version)
 - [check-pr-changes](./check-pr-changes)
 - [cloud](./cloud)
 - [diagrams](./diagrams)
@@ -36,16 +36,26 @@ Things for personal use
 
 ## Usage
 
-### Setup
+### Requirements
 
-Requires git, make, python3, python3-venv
-
-```bash
-url="https://raw.githubusercontent.com/shishifubing/dotfiles/main/init/scripts/init.sh"
-curl -sSL "${url}" | bash
-```
+git, make, python3, python3-venv
 
 ### Commands
 
 - `make`, `make install` - install
 - other: see [Makefile](./Makefile)
+
+### Clone
+
+```bash
+git clone https://github.com/shishifubing/dotfiles.git ~/repos/shishifubing/dotfiles
+cd ~/repos/shishifubing/dotfiles
+make
+```
+
+### Init script
+
+```bash
+url="https://raw.githubusercontent.com/shishifubing/dotfiles/main/init/scripts/init"
+curl -sSL "${url}" | bash
+```

@@ -1,3 +1,5 @@
+os: os/personal
+
 .PHONY: os/personal
 os/personal: setup
 	$(ANSIBLE_CMD) "./${PACKAGE}/playbook_personal.yml"

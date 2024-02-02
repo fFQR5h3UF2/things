@@ -1,5 +1,6 @@
-shell/build: shell/build-stow
+shell: shell/install
 shell/install: shell/install-stow
+shell/build: shell/build-stow
 shell/clean: shell/clean-stow
 shell/test: shell/test-stow
 

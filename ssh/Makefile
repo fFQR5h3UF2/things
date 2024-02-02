@@ -1,3 +1,5 @@
+ssh: ssh/personal
+
 .PHONY: ssh/personal
 ssh/personal: setup
 	$(ANSIBLE_CMD) ./playbook_personal.yml
