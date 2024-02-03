@@ -1,5 +1,5 @@
-vscode: vscode/install
-vscode/install: vscode/install-stow
-vscode/build: vscode/build-stow
-vscode/clean: vscode/clean-stow
-vscode/test: vscode/test-stow
+vscode: vscode/install ## Run vscode/install
+vscode/install: vscode/install-stow ## Install stow package
+vscode/build: vscode/build-stow ## Build stow package
+vscode/clean: vscode/clean-stow ## Clean stow package
+vscode/test: vscode/test-stow ## Test stow package
