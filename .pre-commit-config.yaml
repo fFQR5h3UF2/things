@@ -33,6 +33,13 @@ repos:
       - id: check-dependabot
   - repo: local
     hooks:
+      - id: update-package-list
+        name: Update package list in Makefile
+        entry: make
+        language: system
+        pass_filenames: false
+        args:
+          - make/update-package-list
       - id: shellcheck
         name: Run shellcheck
         entry: shellcheck
