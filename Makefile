@@ -1,6 +1,6 @@
 # Makefile for dotfiles
 
-PACKAGES = $(shell ./make/scripts/get_packages)
+PACKAGES = bin repos vscode ssh cloud/cloud/yandex shell init udev gpg tmux os make nvim firefox git
 OUT_DIR = ./out
 OUT_PACKAGE_DIR = ${OUT_DIR}/package
 OUT_TRACKER_DIR = ${OUT_DIR}/tracker
@@ -8,7 +8,6 @@ STOW_PACKAGE = stow
 OUT_STOW_DIR = ${OUT_DIR}/${STOW_PACKAGE}
 OUT_DIRS = $(PACKAGES:%=$(OUT_DIR)/package/%) $(PACKAGES:%=${OUT_TRACKER_DIR}/%) \
 		   $(PACKAGES:%=${OUT_STOW_DIR}/%)
-PROJECT_DIR = $(shell git rev-parse --show-toplevel)
 STOW_INSTALL_DIR = ${HOME}
 STOW_CMD = stow --no-folding --verbose
 HELP_UPDATE_CMD = @printf "  %-20s %s\n" >"${*}/help.txt"
@@ -23,7 +22,7 @@ help: ## Display help
 		-e '/^[a-zA-Z0-9_\/\-]*:.*##/!d' \
 		-e 's/:.*##\s*/:/' \
 		-e 's/^\(.\+\):\(.*\)/  $(shell tput setaf 6)\1$(shell tput sgr0):\2/' \
-		$(MAKEFILE_LIST) \
+		$(PACKAGES:%=%/Makefile) \
 		| column -c2 -t -s ":"
 
 # generate install targets for all packages
@@ -96,5 +95,7 @@ which "${1}" || \
 		-a "name=${2} state=present"
 endef
 
-# include package makefiles
-$(foreach package, $(PACKAGES), $(eval include ${package}/Makefile))
+# include package makefiles if help target is not specified
+ifeq (,$(filter help,$(MAKECMDGOALS)))
+$(foreach package,$(PACKAGES),$(eval include ${package}/Makefile))
+endif
