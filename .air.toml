@@ -5,7 +5,7 @@ tmp_dir = "./out/"
 [build]
 args_bin = []
 bin = "/usr/bin/true"
-cmd = "make test-changed"
+cmd = "make air/cmd"
 delay = 1000
 exclude_dir = ["assets", "tmp", "vendor", "testdata"]
 exclude_file = []

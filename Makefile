@@ -1,14 +1,12 @@
 .POSIX:
 
 PACKAGES = $(shell ./make/scripts/get_packages)
-PACKAGES_CHANGED = $(shell ./make/scripts/get_packages changed)
-
 OUT_DIR = ./out
 OUT_PACKAGE_DIR = ${OUT_DIR}/package
 OUT_TRACKER_DIR = ${OUT_DIR}/tracker
 STOW_PACKAGE = stow
 OUT_STOW_DIR = ${OUT_DIR}/${STOW_PACKAGE}
-OUT_DIRS = $(PACKAGES:%=$(OUT_DIR)/%) $(PACKAGES:%=${OUT_TRACKER_DIR}/%) \
+OUT_DIRS = $(PACKAGES:%=$(OUT_DIR)/package/%) $(PACKAGES:%=${OUT_TRACKER_DIR}/%) \
 		   $(PACKAGES:%=${OUT_STOW_DIR}/%)
 PROJECT_DIR = $(shell git rev-parse --show-toplevel)
 STOW_INSTALL_DIR = ${HOME}
@@ -29,6 +27,8 @@ setup_targets = $(PACKAGES:%=%/setup)
 setup: $(setup_targets)
 $(setup_targets): init
 init: | $(OUT_DIRS)
+$(OUT_DIRS):
+	@mkdir -p "${@}"
 
 test_targets = $(PACKAGES:%=%/test)
 .PHONY: test $(test_targets)
@@ -36,13 +36,26 @@ test: $(test_targets)
 $(test_targets): %/test: %/build
 
 clean_targets = $(PACKAGES:%=%/clean)
-.PHONY: clean clean-out $(clean_targets) $(clean_tracker_targets)
+.PHONY: clean clean-out $(clean_targets)
 clean: clean-out
 clean-out: $(clean_targets)
 	-rm -rf "${OUT_DIR}"
-$(clean_targets): %/clean:
-$(PACKAGES:%=%/clean-out):
+$(clean_targets): %/clean: %/clean-out %/clean-tracker
+$(PACKAGES:%=%/clean-out): %/clean-out:
 	-rm -rf "${OUT_PACKAGE_DIR}/${*}"
+$(PACKAGES:%=%/clean-tracker): %/clean-tracker:
+	-rm -rf "${OUT_TRACKER_DIR}/${*}"
+
+.PHONY: air
+air: air/start
+
+.PHONY: air-start
+air/start:
+	go run github.com/cosmtrek/air@latest
+
+.PHONY: air-cmd
+air/cmd:
+	$(MAKE) $(./make/scripts/get_packages changed)
 
 define define ansible-install
 which "${1}" || \
@@ -75,17 +88,5 @@ clean_stow_targets = $(PACKAGES:%=%/clean-stow)
 $(clean_stow_targets): %/clean-stow:
 	-$(STOW_CMD) --target "${STOW_INSTALL_DIR}" --dir "${OUT_STOW_DIR}" --delete "${*}"
 	-rm -rf "${OUT_STOW_DIR}/${*}"
-
-.PHONY: air
-air:
-	go run github.com/cosmtrek/air@latest
-
-$(OUT_DIRS):
-	@mkdir -p "${@}"
-
-${TRACKER_DIR}/%:
-	@mkdir -p "${@D}"
-	@touch "${@}"
-
 
 $(foreach package, $(PACKAGES), $(eval include ${package}/Makefile))
