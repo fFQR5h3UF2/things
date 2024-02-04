@@ -1,5 +1,7 @@
-# Submission for 'Implement Stack using Queues'
-# Submission url: https://leetcode.com/submissions/detail/1095927384/
+// Submission for Implement Stack using Queues
+// Submission url: https://leetcode.com/submissions/detail/1095927384/
+
+
 
 class MyStack {
 public:

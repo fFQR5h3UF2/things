@@ -1,5 +1,6 @@
-# Submission for 'Ransom Note'
+# Submission for Ransom Note
 # Submission url: https://leetcode.com/submissions/detail/995216343/
+
 
 class Solution:
     def canConstruct(self, ransomNote: str, magazine: str) -> bool:
@@ -15,10 +16,9 @@ class Solution:
         symbols = [0 for _ in range(26)]
 
         for symbol in magazine:
-            symbols[ord(symbol)-97] += 1
+            symbols[ord(symbol) - 97] += 1
 
         for symbol in ransomNote:
-            symbols[ord(symbol)-97] -= 1
-
+            symbols[ord(symbol) - 97] -= 1
 
         return not any((count < 0 for count in symbols))

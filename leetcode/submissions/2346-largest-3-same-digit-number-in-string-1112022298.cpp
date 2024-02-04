@@ -1,5 +1,7 @@
-# Submission for 'Largest 3-Same-Digit Number in String'
-# Submission url: https://leetcode.com/submissions/detail/1112022298/
+// Submission for Largest 3-Same-Digit Number in String
+// Submission url: https://leetcode.com/submissions/detail/1112022298/
+
+
 
 class Solution {
 public:

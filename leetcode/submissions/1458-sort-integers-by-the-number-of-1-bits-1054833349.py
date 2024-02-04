@@ -1,5 +1,6 @@
-# Submission for 'Sort Integers by The Number of 1 Bits'
+# Submission for Sort Integers by The Number of 1 Bits
 # Submission url: https://leetcode.com/submissions/detail/1054833349/
+
 
 class Solution:
     def sortByBits(self, arr: List[int]) -> List[int]:

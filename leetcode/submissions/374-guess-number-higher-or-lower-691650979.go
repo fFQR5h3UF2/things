@@ -1,5 +1,7 @@
-# Submission for 'Guess Number Higher or Lower'
-# Submission url: https://leetcode.com/submissions/detail/691650979/
+// Submission for Guess Number Higher or Lower
+// Submission url: https://leetcode.com/submissions/detail/691650979/
+
+package submissions
 
 
 func guessNumber(n int) int {

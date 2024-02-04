@@ -1,5 +1,7 @@
-# Submission for 'Find the Winner of an Array Game'
-# Submission url: https://leetcode.com/submissions/detail/1091924184/
+// Submission for Find the Winner of an Array Game
+// Submission url: https://leetcode.com/submissions/detail/1091924184/
+
+package submissions
 
 func getWinner(arr []int, k int) int {
     if k == 1 {

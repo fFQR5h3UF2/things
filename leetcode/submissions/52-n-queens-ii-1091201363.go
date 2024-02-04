@@ -1,5 +1,7 @@
-# Submission for 'N-Queens II'
-# Submission url: https://leetcode.com/submissions/detail/1091201363/
+// Submission for N-Queens II
+// Submission url: https://leetcode.com/submissions/detail/1091201363/
+
+package submissions
 
 func totalNQueens(n int) int {
     sCol:=make([]bool,n)

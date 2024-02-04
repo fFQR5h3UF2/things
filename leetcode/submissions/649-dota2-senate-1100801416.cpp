@@ -1,5 +1,7 @@
-# Submission for 'Dota2 Senate'
-# Submission url: https://leetcode.com/submissions/detail/1100801416/
+// Submission for Dota2 Senate
+// Submission url: https://leetcode.com/submissions/detail/1100801416/
+
+
 
 class Solution {
 public:

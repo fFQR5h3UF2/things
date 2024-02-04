@@ -1,5 +1,6 @@
-# Submission for 'Edit Distance'
+# Submission for Edit Distance
 # Submission url: https://leetcode.com/submissions/detail/1015953562/
+
 
 class Solution:
     def minDistance(self, word1: str, word2: str) -> int:
@@ -16,13 +17,15 @@ class Solution:
             if word1[i1] == word2[i2]:
                 return dp(i1 + 1, i2 + 1)
 
-            return 1 + min((
-                # replace or insert
-                dp(i1 + 1, i2 + 1),
-                # remove from i1
-                dp(i1 + 1, i2),
-                # remove from i2
-                dp(i1, i2 + 1)
-            ))
+            return 1 + min(
+                (
+                    # replace or insert
+                    dp(i1 + 1, i2 + 1),
+                    # remove from i1
+                    dp(i1 + 1, i2),
+                    # remove from i2
+                    dp(i1, i2 + 1),
+                )
+            )
 
         return dp(0, 0) + 1

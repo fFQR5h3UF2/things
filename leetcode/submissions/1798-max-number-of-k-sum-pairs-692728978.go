@@ -1,5 +1,7 @@
-# Submission for 'Max Number of K-Sum Pairs'
-# Submission url: https://leetcode.com/submissions/detail/692728978/
+// Submission for Max Number of K-Sum Pairs
+// Submission url: https://leetcode.com/submissions/detail/692728978/
+
+package submissions
 
 
 func maxOperations(numbers []int, sum int) int {

@@ -1,5 +1,7 @@
-# Submission for 'Add to Array-Form of Integer'
-# Submission url: https://leetcode.com/submissions/detail/690941182/
+// Submission for Add to Array-Form of Integer
+// Submission url: https://leetcode.com/submissions/detail/690941182/
+
+package submissions
 
 func addToArrayForm(number1 []int, add int) []int {
 	if add == 0 {

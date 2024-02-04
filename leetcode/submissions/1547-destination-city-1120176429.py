@@ -1,5 +1,6 @@
-# Submission for 'Destination City'
+# Submission for Destination City
 # Submission url: https://leetcode.com/submissions/detail/1120176429/
+
 
 class Solution:
     def destCity(self, paths: List[List[str]]) -> str:

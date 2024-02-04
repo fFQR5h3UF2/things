@@ -1,5 +1,7 @@
-# Submission for 'Minimum Window Substring'
-# Submission url: https://leetcode.com/submissions/detail/1091199352/
+// Submission for Minimum Window Substring
+// Submission url: https://leetcode.com/submissions/detail/1091199352/
+
+package submissions
 
 func minWindow(s string, t string) string {
     m := len(s)

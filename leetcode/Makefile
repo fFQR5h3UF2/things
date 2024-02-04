@@ -14,3 +14,14 @@ leetcode/download-custom: ## Download ${LEETCODE_COUNT} submissions from ${LEETC
 .PHONY: leetcode/parse
 leetcode/parse: ## Parse submissions.json and create files in submissions/
 	./leetcode/scripts/parse "${leetcode_base_url}" "${leetcode_submissions_file}"
+
+.PHONY: leetcode/format
+leetcode/format: leetcode/format-black leetcode/format-gofmt ## Format submissions using black and gofmt
+
+.PHONY: leetcode/format-black
+leetcode/format-black: leetcode/parse ## Format submissions using black
+	poetry run black leetcode/submissions
+
+.PHONY: leetcode/format-gofmt
+leetcode/format-gofmt: leetcode/parse ## Format submissions using gofmt
+	gofmt -w leetcode/submissions

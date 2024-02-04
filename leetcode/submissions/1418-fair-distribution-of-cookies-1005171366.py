@@ -1,5 +1,6 @@
-# Submission for 'Fair Distribution of Cookies'
+# Submission for Fair Distribution of Cookies
 # Submission url: https://leetcode.com/submissions/detail/1005171366/
+
 
 class Solution:
     def distributeCookies(self, cookies: List[int], k: int) -> int:
@@ -10,7 +11,7 @@ class Solution:
             # If there are not enough cookies remaining, return `float('inf')`
             # as it leads to an invalid distribution.
             if n - i < zero_count:
-                return float('inf')
+                return float("inf")
 
             # After distributing all cookies, return the unfairness of this
             # distribution.
@@ -19,7 +20,7 @@ class Solution:
 
             # Try to distribute the i-th cookie to each child, and update answer
             # as the minimum unfairness in these distributions.
-            answer = float('inf')
+            answer = float("inf")
             for j in range(k):
                 zero_count -= int(cur[j] == 0)
                 cur[j] += cookies[i]

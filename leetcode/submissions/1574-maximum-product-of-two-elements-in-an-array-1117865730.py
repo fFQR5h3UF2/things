@@ -1,5 +1,6 @@
-# Submission for 'Maximum Product of Two Elements in an Array'
+# Submission for Maximum Product of Two Elements in an Array
 # Submission url: https://leetcode.com/submissions/detail/1117865730/
+
 
 class Solution:
     def maxProduct(self, nums: List[int]) -> int:

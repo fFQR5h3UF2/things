@@ -1,5 +1,7 @@
-# Submission for 'Intersection of Two Arrays II'
-# Submission url: https://leetcode.com/submissions/detail/692914276/
+// Submission for Intersection of Two Arrays II
+// Submission url: https://leetcode.com/submissions/detail/692914276/
+
+package submissions
 
 
 func intersect(numbers_1 []int, numbers_2 []int) []int {

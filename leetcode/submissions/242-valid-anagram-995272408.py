@@ -1,5 +1,6 @@
-# Submission for 'Valid Anagram'
+# Submission for Valid Anagram
 # Submission url: https://leetcode.com/submissions/detail/995272408/
+
 
 class Solution:
     def isAnagram(self, s: str, t: str) -> bool:

@@ -1,5 +1,6 @@
-# Submission for 'Smallest Number in Infinite Set'
+# Submission for Smallest Number in Infinite Set
 # Submission url: https://leetcode.com/submissions/detail/1052580166/
+
 
 class SmallestInfiniteSet:
 

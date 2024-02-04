@@ -1,5 +1,7 @@
-# Submission for 'IPO'
-# Submission url: https://leetcode.com/submissions/detail/1091201914/
+// Submission for IPO
+// Submission url: https://leetcode.com/submissions/detail/1091201914/
+
+package submissions
 
 type Project struct {
     profit, capital int

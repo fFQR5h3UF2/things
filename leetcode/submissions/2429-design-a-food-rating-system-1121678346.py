@@ -1,5 +1,6 @@
-# Submission for 'Design a Food Rating System'
+# Submission for Design a Food Rating System
 # Submission url: https://leetcode.com/submissions/detail/1121678346/
+
 
 class Food:
     def __init__(self, food_rating, food_name):
@@ -16,6 +17,7 @@ class Food:
         # Sort based on food rating (bigger rating food will be on top).
         return self.food_rating > other.food_rating
 
+
 class FoodRatings:
     def __init__(self, foods: List[str], cuisines: List[str], ratings: List[int]):
         # Map food with its rating.
@@ -31,7 +33,9 @@ class FoodRatings:
             self.food_rating_map[foods[i]] = ratings[i]
             self.food_cuisine_map[foods[i]] = cuisines[i]
             # Insert the '(rating, name)' element into the current cuisine's priority queue.
-            heapq.heappush(self.cuisine_food_map[cuisines[i]], Food(ratings[i], foods[i]))
+            heapq.heappush(
+                self.cuisine_food_map[cuisines[i]], Food(ratings[i], foods[i])
+            )
 
     def changeRating(self, food: str, newRating: int) -> None:
         # Update food's rating in 'food_rating' map.
@@ -46,7 +50,9 @@ class FoodRatings:
 
         # If the latest rating of 'food' doesn't match with the 'rating' on which it was sorted in the priority queue,
         # then we discard this element from the priority queue.
-        while self.food_rating_map[highest_rated.food_name] != highest_rated.food_rating:
+        while (
+            self.food_rating_map[highest_rated.food_name] != highest_rated.food_rating
+        ):
             heapq.heappop(self.cuisine_food_map[cuisine])
             highest_rated = self.cuisine_food_map[cuisine][0]
 

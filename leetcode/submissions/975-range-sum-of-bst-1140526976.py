@@ -1,5 +1,6 @@
-# Submission for 'Range Sum of BST'
+# Submission for Range Sum of BST
 # Submission url: https://leetcode.com/submissions/detail/1140526976/
+
 
 class Solution:
     def rangeSumBST(self, root: Optional[TreeNode], low: int, high: int) -> int:

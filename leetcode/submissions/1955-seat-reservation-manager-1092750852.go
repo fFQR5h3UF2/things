@@ -1,5 +1,7 @@
-# Submission for 'Seat Reservation Manager'
-# Submission url: https://leetcode.com/submissions/detail/1092750852/
+// Submission for Seat Reservation Manager
+// Submission url: https://leetcode.com/submissions/detail/1092750852/
+
+package submissions
 
 type SeatManager struct {
     seats []bool

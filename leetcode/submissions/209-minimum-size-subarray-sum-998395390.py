@@ -1,11 +1,12 @@
-# Submission for 'Minimum Size Subarray Sum'
+# Submission for Minimum Size Subarray Sum
 # Submission url: https://leetcode.com/submissions/detail/998395390/
+
 
 class Solution:
     def minSubArrayLen(self, target: int, nums: List[int]) -> int:
         left = 0
         sum_of_subarray = 0
-        min_length = float('inf')
+        min_length = float("inf")
 
         for right in range(len(nums)):
             sum_of_subarray += nums[right]
@@ -15,7 +16,7 @@ class Solution:
                 sum_of_subarray -= nums[left]
                 left += 1
 
-        if min_length == float('inf'):
+        if min_length == float("inf"):
             return 0
 
         return min_length

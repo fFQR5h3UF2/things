@@ -1,8 +1,11 @@
-# Submission for 'Intersection of Two Linked Lists'
+# Submission for Intersection of Two Linked Lists
 # Submission url: https://leetcode.com/submissions/detail/1046677697/
 
+
 class Solution:
-    def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
+    def getIntersectionNode(
+        self, headA: ListNode, headB: ListNode
+    ) -> Optional[ListNode]:
         if not headA or not headB:
             return None
 

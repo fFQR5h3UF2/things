@@ -1,5 +1,7 @@
-# Submission for 'Find Pivot Index'
-# Submission url: https://leetcode.com/submissions/detail/1100031754/
+// Submission for Find Pivot Index
+// Submission url: https://leetcode.com/submissions/detail/1100031754/
+
+
 
 class Solution {
 public:

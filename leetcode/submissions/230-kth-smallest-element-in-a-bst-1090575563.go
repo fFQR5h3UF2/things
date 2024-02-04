@@ -1,5 +1,7 @@
-# Submission for 'Kth Smallest Element in a BST'
-# Submission url: https://leetcode.com/submissions/detail/1090575563/
+// Submission for Kth Smallest Element in a BST
+// Submission url: https://leetcode.com/submissions/detail/1090575563/
+
+package submissions
 
 /**
  * Definition for a binary tree node.

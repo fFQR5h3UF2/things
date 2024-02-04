@@ -1,5 +1,7 @@
-# Submission for 'Letter Combinations of a Phone Number'
-# Submission url: https://leetcode.com/submissions/detail/698479659/
+// Submission for Letter Combinations of a Phone Number
+// Submission url: https://leetcode.com/submissions/detail/698479659/
+
+com.shishifubing.dotfiles.submissions
 
 class Solution {
     public List<String> letterCombinations(String digits) {

@@ -1,5 +1,6 @@
-# Submission for 'Encode and Decode TinyURL'
+# Submission for Encode and Decode TinyURL
 # Submission url: https://leetcode.com/submissions/detail/1051790057/
+
 
 class Codec:
 
@@ -7,15 +8,12 @@ class Codec:
         self.urls = []
 
     def encode(self, longUrl: str) -> str:
-        """Encodes a URL to a shortened URL.
-        """
+        """Encodes a URL to a shortened URL."""
         self.urls.append(longUrl)
         return str(len(self.urls) - 1)
 
-
     def decode(self, shortUrl: str) -> str:
-        """Decodes a shortened URL to its original URL.
-        """
+        """Decodes a shortened URL to its original URL."""
         return self.urls[int(shortUrl)]
 
 

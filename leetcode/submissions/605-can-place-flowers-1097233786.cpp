@@ -1,5 +1,7 @@
-# Submission for 'Can Place Flowers'
-# Submission url: https://leetcode.com/submissions/detail/1097233786/
+// Submission for Can Place Flowers
+// Submission url: https://leetcode.com/submissions/detail/1097233786/
+
+
 
 class Solution {
 public:

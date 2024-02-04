@@ -1,5 +1,6 @@
-# Submission for 'Find the Index of the First Occurrence in a String'
+# Submission for Find the Index of the First Occurrence in a String
 # Submission url: https://leetcode.com/submissions/detail/990971046/
+
 
 class Solution:
     # check edge cases:

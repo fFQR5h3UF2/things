@@ -1,5 +1,6 @@
-# Submission for 'Group Anagrams'
+# Submission for Group Anagrams
 # Submission url: https://leetcode.com/submissions/detail/997525401/
+
 
 class Solution:
     def groupAnagrams(self, strs: List[str]) -> List[List[str]]:

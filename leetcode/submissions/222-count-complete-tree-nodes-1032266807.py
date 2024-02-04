@@ -1,5 +1,6 @@
-# Submission for 'Count Complete Tree Nodes'
+# Submission for Count Complete Tree Nodes
 # Submission url: https://leetcode.com/submissions/detail/1032266807/
+
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -16,7 +17,7 @@ class Solution:
             return 0 if not root else 1 + left_height(root.left)
 
         def right_height(root: TreeNode) -> int:
-            return 0 if not root else 1+ right_height(root.right)
+            return 0 if not root else 1 + right_height(root.right)
 
         left, right = left_height(root), right_height(root)
         if left > right:

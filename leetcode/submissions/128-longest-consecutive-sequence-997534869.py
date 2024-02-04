@@ -1,7 +1,9 @@
-# Submission for 'Longest Consecutive Sequence'
+# Submission for Longest Consecutive Sequence
 # Submission url: https://leetcode.com/submissions/detail/997534869/
 
+
 from sortedcontainers import SortedSet
+
 
 class Solution:
     def longestConsecutive(self, nums: List[int]) -> int:

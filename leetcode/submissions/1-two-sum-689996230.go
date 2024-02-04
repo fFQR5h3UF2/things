@@ -1,5 +1,7 @@
-# Submission for 'Two Sum'
-# Submission url: https://leetcode.com/submissions/detail/689996230/
+// Submission for Two Sum
+// Submission url: https://leetcode.com/submissions/detail/689996230/
+
+package submissions
 
 func twoSum(numbers []int, target int) []int {
 	numbers_len := len(numbers)

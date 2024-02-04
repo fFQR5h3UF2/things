@@ -1,5 +1,7 @@
-# Submission for 'Substring with Concatenation of All Words'
-# Submission url: https://leetcode.com/submissions/detail/1091199226/
+// Submission for Substring with Concatenation of All Words
+// Submission url: https://leetcode.com/submissions/detail/1091199226/
+
+package submissions
 
 func findSubstring(s string, words []string) []int {
 

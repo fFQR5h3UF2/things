@@ -1,5 +1,7 @@
-# Submission for 'Find the Winner of an Array Game'
-# Submission url: https://leetcode.com/submissions/detail/1091922545/
+// Submission for Find the Winner of an Array Game
+// Submission url: https://leetcode.com/submissions/detail/1091922545/
+
+package submissions
 
 func getWinner(arr []int, k int) int {
     curMax, winCount := arr[0], 0

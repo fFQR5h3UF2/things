@@ -1,5 +1,6 @@
-# Submission for 'Maximize the Confusion of an Exam'
+# Submission for Maximize the Confusion of an Exam
 # Submission url: https://leetcode.com/submissions/detail/1010336801/
+
 
 class Solution:
     def maxConsecutiveAnswers(self, answerKey: str, k: int) -> int:

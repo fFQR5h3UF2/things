@@ -1,5 +1,6 @@
-# Submission for 'Minimum Difficulty of a Job Schedule'
+# Submission for Minimum Difficulty of a Job Schedule
 # Submission url: https://leetcode.com/submissions/detail/1131184930/
+
 
 class Solution:
     def minDifficulty(self, jobDifficulty, days):
@@ -7,7 +8,7 @@ class Solution:
         if days > length:
             return -1
 
-        min_difficulties = [[float('inf')] * length for _ in range(days)]
+        min_difficulties = [[float("inf")] * length for _ in range(days)]
 
         max_diff = 0
         i = 0
@@ -21,11 +22,16 @@ class Solution:
             to = current_day
             while to <= length - days + current_day:
                 current_job_difficulty = jobDifficulty[to]
-                result = float('inf')
+                result = float("inf")
                 j = to - 1
                 while j >= current_day - 1:
-                    result = min(result, min_difficulties[current_day - 1][j] + current_job_difficulty)
-                    current_job_difficulty = max(current_job_difficulty, jobDifficulty[j])
+                    result = min(
+                        result,
+                        min_difficulties[current_day - 1][j] + current_job_difficulty,
+                    )
+                    current_job_difficulty = max(
+                        current_job_difficulty, jobDifficulty[j]
+                    )
                     j -= 1
                 min_difficulties[current_day][to] = result
                 to += 1

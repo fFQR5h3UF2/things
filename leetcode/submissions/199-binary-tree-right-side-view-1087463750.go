@@ -1,5 +1,7 @@
-# Submission for 'Binary Tree Right Side View'
-# Submission url: https://leetcode.com/submissions/detail/1087463750/
+// Submission for Binary Tree Right Side View
+// Submission url: https://leetcode.com/submissions/detail/1087463750/
+
+package submissions
 
 /**
  * Definition for a binary tree node.

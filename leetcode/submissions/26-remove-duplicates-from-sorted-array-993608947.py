@@ -1,5 +1,6 @@
-# Submission for 'Remove Duplicates from Sorted Array'
+# Submission for Remove Duplicates from Sorted Array
 # Submission url: https://leetcode.com/submissions/detail/993608947/
+
 
 class Solution:
     # non-decreasing order, so to remove the duplicates we just need to remove all

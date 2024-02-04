@@ -1,5 +1,6 @@
-# Submission for 'Contains Duplicate II'
+# Submission for Contains Duplicate II
 # Submission url: https://leetcode.com/submissions/detail/995750994/
+
 
 class Solution:
     def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:

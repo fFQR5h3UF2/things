@@ -1,5 +1,6 @@
-# Submission for 'Max Points on a Line'
+# Submission for Max Points on a Line
 # Submission url: https://leetcode.com/submissions/detail/1057824838/
+
 
 class Solution:
     def maxPoints(self, points: List[List[int]]) -> int:

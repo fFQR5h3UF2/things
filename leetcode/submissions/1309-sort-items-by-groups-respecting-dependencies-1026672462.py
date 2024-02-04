@@ -1,5 +1,6 @@
-# Submission for 'Sort Items by Groups Respecting Dependencies'
+# Submission for Sort Items by Groups Respecting Dependencies
 # Submission url: https://leetcode.com/submissions/detail/1026672462/
+
 
 class Solution:
     def sortItems(self, n, m, group, beforeItems):

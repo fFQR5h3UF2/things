@@ -1,5 +1,6 @@
-# Submission for 'Find Minimum in Rotated Sorted Array'
+# Submission for Find Minimum in Rotated Sorted Array
 # Submission url: https://leetcode.com/submissions/detail/1058493656/
+
 
 class Solution:
     def findMin(self, nums: List[int]) -> int:

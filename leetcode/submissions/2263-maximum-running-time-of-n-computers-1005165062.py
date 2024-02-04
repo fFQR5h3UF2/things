@@ -1,5 +1,6 @@
-# Submission for 'Maximum Running Time of N Computers'
+# Submission for Maximum Running Time of N Computers
 # Submission url: https://leetcode.com/submissions/detail/1005165062/
+
 
 class Solution:
     # n = 2, batteries = [3,3,3], Output: 4
@@ -16,7 +17,6 @@ class Solution:
         batteries.sort()
         extra = sum(batteries[:-n])
         live = batteries[-n:]
-
 
         # We increase the total running time using 'extra' by increasing
         # the running time of the computer with the smallest battery.

@@ -1,5 +1,6 @@
-# Submission for 'Arithmetic Slices II - Subsequence'
+# Submission for Arithmetic Slices II - Subsequence
 # Submission url: https://leetcode.com/submissions/detail/1139388730/
+
 
 class Solution:
     def numberOfArithmeticSlices(self, nums: List[int]) -> int:

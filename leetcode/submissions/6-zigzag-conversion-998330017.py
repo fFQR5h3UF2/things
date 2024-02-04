@@ -1,5 +1,6 @@
-# Submission for 'Zigzag Conversion'
+# Submission for Zigzag Conversion
 # Submission url: https://leetcode.com/submissions/detail/998330017/
+
 
 class Solution:
     def convert(self, s: str, numRows: int) -> str:
@@ -25,6 +26,5 @@ class Solution:
             else:
                 is_ascending = True
                 row = 1
-
 
         return "".join("".join(row) for row in result)

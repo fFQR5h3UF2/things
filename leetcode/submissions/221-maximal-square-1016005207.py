@@ -1,5 +1,6 @@
-# Submission for 'Maximal Square'
+# Submission for Maximal Square
 # Submission url: https://leetcode.com/submissions/detail/1016005207/
+
 
 class Solution:
     def maximalSquare(self, matrix: List[List[str]]) -> int:
@@ -25,7 +26,14 @@ class Solution:
                 if matrix[row][column] == "0":
                     continue
 
-                value = min(dp[row-1][column], dp[row][column-1], dp[row-1][column-1]) + 1
+                value = (
+                    min(
+                        dp[row - 1][column],
+                        dp[row][column - 1],
+                        dp[row - 1][column - 1],
+                    )
+                    + 1
+                )
                 dp[row][column] = value
                 max_size = max(max_size, value)
 

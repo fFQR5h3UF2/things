@@ -1,5 +1,7 @@
-# Submission for 'Merge Strings Alternately'
-# Submission url: https://leetcode.com/submissions/detail/1093844607/
+// Submission for Merge Strings Alternately
+// Submission url: https://leetcode.com/submissions/detail/1093844607/
+
+package submissions
 
 func mergeAlternately(word1 string, word2 string) string {
     var sb strings.Builder

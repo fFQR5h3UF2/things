@@ -1,5 +1,7 @@
-# Submission for 'Binary Tree Maximum Path Sum'
-# Submission url: https://leetcode.com/submissions/detail/1091200483/
+// Submission for Binary Tree Maximum Path Sum
+// Submission url: https://leetcode.com/submissions/detail/1091200483/
+
+package submissions
 
 /**
  * Definition for a binary tree node.

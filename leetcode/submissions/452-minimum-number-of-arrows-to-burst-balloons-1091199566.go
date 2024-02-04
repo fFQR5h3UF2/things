@@ -1,5 +1,7 @@
-# Submission for 'Minimum Number of Arrows to Burst Balloons'
-# Submission url: https://leetcode.com/submissions/detail/1091199566/
+// Submission for Minimum Number of Arrows to Burst Balloons
+// Submission url: https://leetcode.com/submissions/detail/1091199566/
+
+package submissions
 
 func findMinArrowShots(points [][]int) int {
 	// greedy solution

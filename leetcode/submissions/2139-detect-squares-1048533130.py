@@ -1,5 +1,6 @@
-# Submission for 'Detect Squares'
+# Submission for Detect Squares
 # Submission url: https://leetcode.com/submissions/detail/1048533130/
+
 
 class DetectSquares:
 
@@ -23,6 +24,7 @@ class DetectSquares:
                 ways_count += col2_count * point3_count * point4_count
 
         return ways_count
+
 
 # Your DetectSquares object will be instantiated and called as such:
 # obj = DetectSquares()

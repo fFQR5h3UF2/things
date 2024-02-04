@@ -1,5 +1,7 @@
-# Submission for 'Word Search II'
-# Submission url: https://leetcode.com/submissions/detail/1091201217/
+// Submission for Word Search II
+// Submission url: https://leetcode.com/submissions/detail/1091201217/
+
+package submissions
 
 type Node struct {
 	children [26]*Node

@@ -1,5 +1,7 @@
-# Submission for 'Count Sorted Vowel Strings'
-# Submission url: https://leetcode.com/submissions/detail/697487494/
+// Submission for Count Sorted Vowel Strings
+// Submission url: https://leetcode.com/submissions/detail/697487494/
+
+com.shishifubing.dotfiles.submissions
 
 class Solution {
     public int countVowelStrings(int n) {

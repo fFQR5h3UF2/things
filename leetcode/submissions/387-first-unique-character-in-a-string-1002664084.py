@@ -1,5 +1,6 @@
-# Submission for 'First Unique Character in a String'
+# Submission for First Unique Character in a String
 # Submission url: https://leetcode.com/submissions/detail/1002664084/
+
 
 class Solution:
     def firstUniqChar(self, s: str) -> int:

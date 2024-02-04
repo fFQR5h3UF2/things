@@ -1,5 +1,7 @@
-# Submission for 'Subrectangle Queries'
-# Submission url: https://leetcode.com/submissions/detail/1096014225/
+// Submission for Subrectangle Queries
+// Submission url: https://leetcode.com/submissions/detail/1096014225/
+
+
 
 class SubrectangleQueries {
 public:

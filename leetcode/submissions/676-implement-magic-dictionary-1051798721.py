@@ -1,5 +1,6 @@
-# Submission for 'Implement Magic Dictionary'
+# Submission for Implement Magic Dictionary
 # Submission url: https://leetcode.com/submissions/detail/1051798721/
+
 
 class MagicDictionary:
 
@@ -26,6 +27,7 @@ class MagicDictionary:
                 return True
 
         return False
+
 
 # Your MagicDictionary object will be instantiated and called as such:
 # obj = MagicDictionary()

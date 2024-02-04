@@ -1,5 +1,7 @@
-# Submission for 'Determine if a Cell Is Reachable at a Given Time'
-# Submission url: https://leetcode.com/submissions/detail/1094276079/
+// Submission for Determine if a Cell Is Reachable at a Given Time
+// Submission url: https://leetcode.com/submissions/detail/1094276079/
+
+package submissions
 
 func isReachableAtTime(sx int, sy int, fx int, fy int, t int) bool {
     vert := abs(sy, fy)

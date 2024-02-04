@@ -1,11 +1,20 @@
-# Submission for 'Knight Probability in Chessboard'
+# Submission for Knight Probability in Chessboard
 # Submission url: https://leetcode.com/submissions/detail/1000968338/
+
 
 class Solution:
     def knightProbability(self, n: int, k: int, row: int, column: int) -> float:
         # Define possible directions for the knight's moves
-        directions = [(1, 2), (1, -2), (-1, 2), (-1, -2),
-                      (2, 1), (2, -1), (-2, 1), (-2, -1)]
+        directions = [
+            (1, 2),
+            (1, -2),
+            (-1, 2),
+            (-1, -2),
+            (2, 1),
+            (2, -1),
+            (-2, 1),
+            (-2, -1),
+        ]
 
         # Initialize the dynamic programming table
         dp = [[[0] * n for _ in range(n)] for _ in range(k + 1)]
@@ -27,9 +36,5 @@ class Solution:
                     dp[moves][i][j] /= 8
 
         # Calculate total probability by summing probabilities for all cells
-        total_probability = sum(
-            dp[k][i][j]
-            for i in range(n)
-            for j in range(n)
-        )
+        total_probability = sum(dp[k][i][j] for i in range(n) for j in range(n))
         return total_probability

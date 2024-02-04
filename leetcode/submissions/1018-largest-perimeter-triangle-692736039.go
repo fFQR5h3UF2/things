@@ -1,5 +1,7 @@
-# Submission for 'Largest Perimeter Triangle'
-# Submission url: https://leetcode.com/submissions/detail/692736039/
+// Submission for Largest Perimeter Triangle
+// Submission url: https://leetcode.com/submissions/detail/692736039/
+
+package submissions
 
 
 func largestPerimeter(numbers []int) int {

@@ -1,5 +1,6 @@
-# Submission for 'Is Subsequence'
+# Submission for Is Subsequence
 # Submission url: https://leetcode.com/submissions/detail/993708456/
+
 
 class Solution:
     # create two pointers, original and sub, both are zero

@@ -1,5 +1,6 @@
-# Submission for 'Range Sum Query - Immutable'
+# Submission for Range Sum Query - Immutable
 # Submission url: https://leetcode.com/submissions/detail/1047384950/
+
 
 class NumArray:
 
@@ -7,7 +8,7 @@ class NumArray:
         self._nums = nums
 
     def sumRange(self, left: int, right: int) -> int:
-        return sum(self._nums[left:right+1])
+        return sum(self._nums[left : right + 1])
 
 
 # Your NumArray object will be instantiated and called as such:

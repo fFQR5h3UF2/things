@@ -1,5 +1,7 @@
-# Submission for 'Validate Binary Search Tree'
-# Submission url: https://leetcode.com/submissions/detail/1088457217/
+// Submission for Validate Binary Search Tree
+// Submission url: https://leetcode.com/submissions/detail/1088457217/
+
+package submissions
 
 /**
  * Definition for a binary tree node.

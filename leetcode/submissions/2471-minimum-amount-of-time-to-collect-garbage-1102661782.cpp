@@ -1,5 +1,7 @@
-# Submission for 'Minimum Amount of Time to Collect Garbage'
-# Submission url: https://leetcode.com/submissions/detail/1102661782/
+// Submission for Minimum Amount of Time to Collect Garbage
+// Submission url: https://leetcode.com/submissions/detail/1102661782/
+
+
 
 class Solution {
 public:

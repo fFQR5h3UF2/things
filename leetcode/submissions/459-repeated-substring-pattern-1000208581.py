@@ -1,5 +1,6 @@
-# Submission for 'Repeated Substring Pattern'
+# Submission for Repeated Substring Pattern
 # Submission url: https://leetcode.com/submissions/detail/1000208581/
+
 
 class Solution:
     def repeatedSubstringPattern(self, s: str) -> bool:

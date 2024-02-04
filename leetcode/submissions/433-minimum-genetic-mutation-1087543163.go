@@ -1,5 +1,7 @@
-# Submission for 'Minimum Genetic Mutation'
-# Submission url: https://leetcode.com/submissions/detail/1087543163/
+// Submission for Minimum Genetic Mutation
+// Submission url: https://leetcode.com/submissions/detail/1087543163/
+
+package submissions
 
 func minMutation(startGene string, endGene string, bank []string) int {
     if startGene == endGene {

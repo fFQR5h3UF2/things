@@ -1,5 +1,7 @@
-# Submission for 'Count of Matches in Tournament'
-# Submission url: https://leetcode.com/submissions/detail/1112898278/
+// Submission for Count of Matches in Tournament
+// Submission url: https://leetcode.com/submissions/detail/1112898278/
+
+
 
 class Solution {
 public:

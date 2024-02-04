@@ -1,5 +1,7 @@
-# Submission for 'Count Odd Numbers in an Interval Range'
-# Submission url: https://leetcode.com/submissions/detail/691609936/
+// Submission for Count Odd Numbers in an Interval Range
+// Submission url: https://leetcode.com/submissions/detail/691609936/
+
+package submissions
 
 
 func countOdds(low int, high int) int {

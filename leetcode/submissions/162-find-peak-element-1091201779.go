@@ -1,5 +1,7 @@
-# Submission for 'Find Peak Element'
-# Submission url: https://leetcode.com/submissions/detail/1091201779/
+// Submission for Find Peak Element
+// Submission url: https://leetcode.com/submissions/detail/1091201779/
+
+package submissions
 
 func findPeakElement(nums []int) int {
     left := 0

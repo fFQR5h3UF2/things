@@ -1,5 +1,6 @@
-# Submission for 'Single Number'
+# Submission for Single Number
 # Submission url: https://leetcode.com/submissions/detail/1046647036/
+
 
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
@@ -12,7 +13,7 @@ class Solution:
             if i + 1 == nums_count:
                 return nums[i]
 
-            cur_num, next_num = nums[i], nums[i+1]
+            cur_num, next_num = nums[i], nums[i + 1]
             if cur_num == next_num:
                 continue
 

@@ -1,5 +1,7 @@
-# Submission for 'Maximum Number of Coins You Can Get'
-# Submission url: https://leetcode.com/submissions/detail/1105338028/
+// Submission for Maximum Number of Coins You Can Get
+// Submission url: https://leetcode.com/submissions/detail/1105338028/
+
+
 
 class Solution {
 public:

@@ -1,5 +1,6 @@
-# Submission for 'Valid Parentheses'
+# Submission for Valid Parentheses
 # Submission url: https://leetcode.com/submissions/detail/995762703/
+
 
 class Solution:
     def isValid(self, s: str) -> bool:
@@ -7,11 +8,7 @@ class Solution:
         if length < 2:
             return False
 
-        brackets_open = {
-            "{": "}",
-            "(": ")",
-            "[": "]"
-        }
+        brackets_open = {"{": "}", "(": ")", "[": "]"}
         brackets_close = brackets_open.values()
         stack = [s[0]]
 

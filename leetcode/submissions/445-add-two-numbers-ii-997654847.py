@@ -1,5 +1,6 @@
-# Submission for 'Add Two Numbers II'
+# Submission for Add Two Numbers II
 # Submission url: https://leetcode.com/submissions/detail/997654847/
+
 
 # Definition for singly-linked list.
 # class ListNode:
@@ -14,7 +15,9 @@ class Solution:
             previous, head = head, next
         return previous
 
-    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+    def addTwoNumbers(
+        self, l1: Optional[ListNode], l2: Optional[ListNode]
+    ) -> Optional[ListNode]:
         l1, l2 = self.reverse(l1), self.reverse(l2)
         head, tail, carry = l1, l1, 0
 

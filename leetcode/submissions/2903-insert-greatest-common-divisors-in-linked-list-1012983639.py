@@ -1,5 +1,6 @@
-# Submission for 'Insert Greatest Common Divisors in Linked List'
+# Submission for Insert Greatest Common Divisors in Linked List
 # Submission url: https://leetcode.com/submissions/detail/1012983639/
+
 
 # Definition for singly-linked list.
 # class ListNode:
@@ -7,7 +8,9 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    def insertGreatestCommonDivisors(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    def insertGreatestCommonDivisors(
+        self, head: Optional[ListNode]
+    ) -> Optional[ListNode]:
         root = head
 
         while head and head.next:

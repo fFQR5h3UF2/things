@@ -1,5 +1,7 @@
-# Submission for 'Count Number of Homogenous Substrings'
-# Submission url: https://leetcode.com/submissions/detail/1095037372/
+// Submission for Count Number of Homogenous Substrings
+// Submission url: https://leetcode.com/submissions/detail/1095037372/
+
+package submissions
 
 func countHomogenous(s string) int {
     var (

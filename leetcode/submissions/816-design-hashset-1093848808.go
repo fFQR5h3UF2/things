@@ -1,5 +1,7 @@
-# Submission for 'Design HashSet'
-# Submission url: https://leetcode.com/submissions/detail/1093848808/
+// Submission for Design HashSet
+// Submission url: https://leetcode.com/submissions/detail/1093848808/
+
+package submissions
 
 type MyHashSet struct {
     m map[int]struct{}

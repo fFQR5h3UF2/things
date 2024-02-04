@@ -1,5 +1,7 @@
-# Submission for 'Flatten Binary Tree to Linked List'
-# Submission url: https://leetcode.com/submissions/detail/1090504012/
+// Submission for Flatten Binary Tree to Linked List
+// Submission url: https://leetcode.com/submissions/detail/1090504012/
+
+package submissions
 
 /**
  * Definition for a binary tree node.

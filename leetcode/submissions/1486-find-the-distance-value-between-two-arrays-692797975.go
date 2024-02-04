@@ -1,5 +1,7 @@
-# Submission for 'Find the Distance Value Between Two Arrays'
-# Submission url: https://leetcode.com/submissions/detail/692797975/
+// Submission for Find the Distance Value Between Two Arrays
+// Submission url: https://leetcode.com/submissions/detail/692797975/
+
+package submissions
 
 
 func findTheDistanceValue(array_1 []int, array_2 []int, target int) int {

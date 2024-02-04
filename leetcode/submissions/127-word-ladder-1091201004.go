@@ -1,5 +1,7 @@
-# Submission for 'Word Ladder'
-# Submission url: https://leetcode.com/submissions/detail/1091201004/
+// Submission for Word Ladder
+// Submission url: https://leetcode.com/submissions/detail/1091201004/
+
+package submissions
 
 func ladderLength(beginWord string, endWord string, wordList []string) int {
 

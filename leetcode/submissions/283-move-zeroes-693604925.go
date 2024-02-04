@@ -1,5 +1,7 @@
-# Submission for 'Move Zeroes'
-# Submission url: https://leetcode.com/submissions/detail/693604925/
+// Submission for Move Zeroes
+// Submission url: https://leetcode.com/submissions/detail/693604925/
+
+package submissions
 
 func moveZeroes(nums []int)  {
     	if len(nums) < 2 {

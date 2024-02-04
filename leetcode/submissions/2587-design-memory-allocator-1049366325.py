@@ -1,13 +1,14 @@
-# Submission for 'Design Memory Allocator'
+# Submission for Design Memory Allocator
 # Submission url: https://leetcode.com/submissions/detail/1049366325/
+
 
 class Allocator:
 
     def __init__(self, n: int):
-      self._units = [1] * n
-      self._units[0] = n
-      self._id_units = defaultdict(list)
-      self._units_count = n
+        self._units = [1] * n
+        self._units[0] = n
+        self._id_units = defaultdict(list)
+        self._units_count = n
 
     def find_avail_units(self, start: int, size: int) -> Tuple[int, int]:
         i = start
@@ -20,7 +21,6 @@ class Allocator:
             count += units_avail
 
         return i, count
-
 
     def allocate(self, size: int, mID: int) -> int:
         i = 0

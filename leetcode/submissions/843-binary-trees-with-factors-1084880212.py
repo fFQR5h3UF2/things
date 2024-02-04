@@ -1,7 +1,9 @@
-# Submission for 'Binary Trees With Factors'
+# Submission for Binary Trees With Factors
 # Submission url: https://leetcode.com/submissions/detail/1084880212/
 
+
 MOD = 10**9 + 7
+
 
 class Solution:
     def numFactoredBinaryTrees(self, arr: List[int]) -> int:

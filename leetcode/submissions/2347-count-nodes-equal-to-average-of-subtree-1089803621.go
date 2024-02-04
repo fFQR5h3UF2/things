@@ -1,5 +1,7 @@
-# Submission for 'Count Nodes Equal to Average of Subtree'
-# Submission url: https://leetcode.com/submissions/detail/1089803621/
+// Submission for Count Nodes Equal to Average of Subtree
+// Submission url: https://leetcode.com/submissions/detail/1089803621/
+
+package submissions
 
 /**
  * Definition for a binary tree node.

@@ -1,5 +1,6 @@
-# Submission for 'Number of Music Playlists'
+# Submission for Number of Music Playlists
 # Submission url: https://leetcode.com/submissions/detail/1013901677/
+
 
 class Solution:
     def numMusicPlaylists(self, n: int, goal: int, k: int) -> int:

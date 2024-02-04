@@ -1,5 +1,6 @@
-# Submission for 'Sort Array By Parity'
+# Submission for Sort Array By Parity
 # Submission url: https://leetcode.com/submissions/detail/1061185383/
+
 
 class Solution:
     def sortArrayByParity(self, nums: List[int]) -> List[int]:

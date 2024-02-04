@@ -1,5 +1,7 @@
-# Submission for 'Reverse Vowels of a String'
-# Submission url: https://leetcode.com/submissions/detail/1098055331/
+// Submission for Reverse Vowels of a String
+// Submission url: https://leetcode.com/submissions/detail/1098055331/
+
+
 
 class Solution {
 public:

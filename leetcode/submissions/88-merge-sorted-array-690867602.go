@@ -1,5 +1,7 @@
-# Submission for 'Merge Sorted Array'
-# Submission url: https://leetcode.com/submissions/detail/690867602/
+// Submission for Merge Sorted Array
+// Submission url: https://leetcode.com/submissions/detail/690867602/
+
+package submissions
 
 
 func merge(array1 []int, length1 int, array2 []int, length2 int) {

@@ -1,41 +1,50 @@
-#!/usr/bin/env sh
-set -o errexit -o nounset #-o xtrace
+#!/usr/bin/env python3
 
-base="${1:?missing base url}"
-submissions_file="${2:?missing submissins file}"
+import json
+import sys
+from pathlib import Path
+from typing import Any
 
-save_submission() {
-    data="${1:?missing data}"
-    question_id=$(echo "${data}" | jq -r .question_id)
-    title_slug=$(echo "${data}" | jq -r .title_slug)
-    status_display=$(echo "${data}" | jq -r .status_display)
-    id=$(echo "${data}" | jq -r .id)
-    language=$(echo "${data}" | jq -r .lang)
-    code=$(echo "${data}" | jq -r .code)
-    url=$(echo "${data}" | jq -r .url)
-    title=$(echo "${data}" | jq -r .title)
-    extension=
-    case "${language}" in
-    python3) extension="py" ;;
-    golang) extension="go" ;;
-    cpp) extension="cpp" ;;
-    java) extension="java" ;;
-    *) echo "unsupported language" && exit 1 ;;
-    esac
-    if [ "${status_display}" != "Accepted" ]; then
-        return
-    fi
-    filepath="leetcode/submissions/${question_id}-${title_slug}-${id}.${extension}"
-    cat - >"${filepath}" <<EOF
-# Submission for '${title}'
-# Submission url: ${base}${url}
-
-${code}
-EOF
-    echo "saved ${filepath}"
+extensions = {"python3": "py", "golang": "go", "cpp": "cpp", "java": "java"}
+comments = {"python3": "#", "golang": "//", "cpp": "//", "java": "//"}
+headers = {
+    "python3": "",
+    "golang": "package submissions",
+    "cpp": "",
+    "java": "com.shishifubing.dotfiles.submissions",
 }
 
-jq -rc "to_entries | map(.value) | .[]" "${submissions_file}" |
-    while read -r data; do
-        save_submission "${data}"
-    done
+
+def main() -> None:
+    base = sys.argv[1]
+    submissions_file = sys.argv[2]
+    submissions: dict[str, dict[str, Any]] = {}
+    with open(submissions_file, "r") as file:
+        submissions = json.loads(file.read())
+    for _, submission in submissions.items():
+        extension = extensions[submission["lang"]]
+        comment = comments[submission["lang"]]
+        header = headers[submission["lang"]]
+        file_name = "-".join(
+            (
+                str(submission["question_id"]),
+                submission["title_slug"],
+                str(submission["id"]),
+            )
+        )
+        path = Path("leetcode") / "submissions" / f"{file_name}.{extension}"
+        content = f"""\
+{comment} Submission for {submission["title"]}
+{comment} Submission url: {base}{submission["url"]}
+
+{header}
+
+{submission["code"]}\
+"""
+        with open(path, "w") as file:
+            file.write(content)
+    print(f"wrote {len(submissions)} files")
+
+
+if __name__ == "__main__":
+    main()

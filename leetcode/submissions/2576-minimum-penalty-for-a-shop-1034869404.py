@@ -1,5 +1,6 @@
-# Submission for 'Minimum Penalty for a Shop'
+# Submission for Minimum Penalty for a Shop
 # Submission url: https://leetcode.com/submissions/detail/1034869404/
+
 
 class Solution:
     def bestClosingTime(self, customers: str) -> int:

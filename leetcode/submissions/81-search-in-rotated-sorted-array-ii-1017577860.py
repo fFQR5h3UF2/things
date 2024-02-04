@@ -1,5 +1,6 @@
-# Submission for 'Search in Rotated Sorted Array II'
+# Submission for Search in Rotated Sorted Array II
 # Submission url: https://leetcode.com/submissions/detail/1017577860/
+
 
 class Solution:
     def search(self, nums: List[int], target: int) -> bool:

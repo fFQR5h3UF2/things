@@ -1,5 +1,6 @@
-# Submission for 'Ransom Note'
+# Submission for Ransom Note
 # Submission url: https://leetcode.com/submissions/detail/995209217/
+
 
 class Solution:
     # two indexes: ransom_i, magazine_i

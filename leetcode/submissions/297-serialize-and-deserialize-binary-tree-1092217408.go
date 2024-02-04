@@ -1,5 +1,7 @@
-# Submission for 'Serialize and Deserialize Binary Tree'
-# Submission url: https://leetcode.com/submissions/detail/1092217408/
+// Submission for Serialize and Deserialize Binary Tree
+// Submission url: https://leetcode.com/submissions/detail/1092217408/
+
+package submissions
 
 /**
  * Definition for a binary tree node.

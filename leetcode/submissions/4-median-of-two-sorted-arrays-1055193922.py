@@ -1,5 +1,6 @@
-# Submission for 'Median of Two Sorted Arrays'
+# Submission for Median of Two Sorted Arrays
 # Submission url: https://leetcode.com/submissions/detail/1055193922/
+
 
 class Solution:
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:

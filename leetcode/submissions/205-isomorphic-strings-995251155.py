@@ -1,5 +1,6 @@
-# Submission for 'Isomorphic Strings'
+# Submission for Isomorphic Strings
 # Submission url: https://leetcode.com/submissions/detail/995251155/
+
 
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:

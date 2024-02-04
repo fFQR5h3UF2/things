@@ -1,5 +1,6 @@
-# Submission for 'Maximum Number of Events That Can Be Attended II'
+# Submission for Maximum Number of Events That Can Be Attended II
 # Submission url: https://leetcode.com/submissions/detail/1013917016/
+
 
 class Solution:
     def maxValue(self, events: List[List[int]], k: int) -> int:
@@ -17,7 +18,10 @@ class Solution:
             # Find the nearest available event after attending event 0.
 
             next_index = bisect_right(starts, events[cur_index][1])
-            dp[count][cur_index] = max(dfs(cur_index + 1, count), events[cur_index][2] + dfs(next_index, count - 1))
+            dp[count][cur_index] = max(
+                dfs(cur_index + 1, count),
+                events[cur_index][2] + dfs(next_index, count - 1),
+            )
             return dp[count][cur_index]
 
         return dfs(0, k)

@@ -1,10 +1,12 @@
-# Submission for 'Design Add and Search Words Data Structure'
+# Submission for Design Add and Search Words Data Structure
 # Submission url: https://leetcode.com/submissions/detail/1083730897/
+
 
 class TrieNode:
     def __init__(self):
         self.children = {}
         self.is_word = False
+
 
 class WordDictionary:
 
@@ -36,8 +38,6 @@ class WordDictionary:
             cur, nxt = nxt, cur
 
         return any(node.is_word for node in cur)
-
-
 
 
 # Your WordDictionary object will be instantiated and called as such:

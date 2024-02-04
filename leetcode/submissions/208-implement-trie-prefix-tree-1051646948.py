@@ -1,9 +1,11 @@
-# Submission for 'Implement Trie (Prefix Tree)'
+# Submission for Implement Trie (Prefix Tree)
 # Submission url: https://leetcode.com/submissions/detail/1051646948/
+
 
 class Node:
     def __init__(self):
         self.ch, self.is_word = [None] * 128, False
+
 
 class Trie:
 

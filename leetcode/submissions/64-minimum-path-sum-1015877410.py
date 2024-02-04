@@ -1,5 +1,6 @@
-# Submission for 'Minimum Path Sum'
+# Submission for Minimum Path Sum
 # Submission url: https://leetcode.com/submissions/detail/1015877410/
+
 
 class Solution:
     def minPathSum(self, grid: List[List[int]]) -> int:
@@ -19,7 +20,7 @@ class Solution:
 
             for column in range(1, column_count):
                 dp[row][column] = grid[row][column] + min(
-                    dp[row - 1][column], dp[row][column-1]
+                    dp[row - 1][column], dp[row][column - 1]
                 )
 
         # @cache
@@ -27,6 +28,6 @@ class Solution:
         #     if row == row_count or column == column_count:
         #         return 0
         #     return grid[row][column] + min(dp(row + 1, column), dp(row, column + 1))
-        #return dp(0, 0)
+        # return dp(0, 0)
 
         return dp[-1][-1]

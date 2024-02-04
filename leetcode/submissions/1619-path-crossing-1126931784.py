@@ -1,14 +1,10 @@
-# Submission for 'Path Crossing'
+# Submission for Path Crossing
 # Submission url: https://leetcode.com/submissions/detail/1126931784/
+
 
 class Solution:
     def isPathCrossing(self, path: str) -> bool:
-        moves = {
-            "N": (0, 1),
-            "S": (0, -1),
-            "W": (-1, 0),
-            "E": (1, 0)
-        }
+        moves = {"N": (0, 1), "S": (0, -1), "W": (-1, 0), "E": (1, 0)}
 
         visited = {(0, 0)}
         x = 0

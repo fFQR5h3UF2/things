@@ -1,5 +1,7 @@
-# Submission for 'Find Median from Data Stream'
-# Submission url: https://leetcode.com/submissions/detail/1091202059/
+// Submission for Find Median from Data Stream
+// Submission url: https://leetcode.com/submissions/detail/1091202059/
+
+package submissions
 
 type MaxHeap []int
 func (m MaxHeap) Len() int { return len(m) }

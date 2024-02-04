@@ -1,5 +1,7 @@
-# Submission for 'Average of Levels in Binary Tree'
-# Submission url: https://leetcode.com/submissions/detail/1087472492/
+// Submission for Average of Levels in Binary Tree
+// Submission url: https://leetcode.com/submissions/detail/1087472492/
+
+package submissions
 
 /**
  * Definition for a binary tree node.

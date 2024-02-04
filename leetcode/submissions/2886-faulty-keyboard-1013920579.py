@@ -1,5 +1,6 @@
-# Submission for 'Faulty Keyboard'
+# Submission for Faulty Keyboard
 # Submission url: https://leetcode.com/submissions/detail/1013920579/
+
 
 class Solution:
     def finalString(self, s: str) -> str:

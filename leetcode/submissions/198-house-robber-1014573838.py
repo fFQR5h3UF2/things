@@ -1,5 +1,6 @@
-# Submission for 'House Robber'
+# Submission for House Robber
 # Submission url: https://leetcode.com/submissions/detail/1014573838/
+
 
 class Solution:
     def rob(self, nums: List[int]) -> int:
@@ -9,6 +10,6 @@ class Solution:
         dp[1] = nums[0]
 
         for house in range(1, house_count):
-            dp[house+1] = max(dp[house-1] + nums[house], dp[house])
+            dp[house + 1] = max(dp[house - 1] + nums[house], dp[house])
 
         return dp[-1]

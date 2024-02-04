@@ -1,5 +1,7 @@
-# Submission for 'Binary Tree Paths'
-# Submission url: https://leetcode.com/submissions/detail/1103355276/
+// Submission for Binary Tree Paths
+// Submission url: https://leetcode.com/submissions/detail/1103355276/
+
+
 
 /**
  * Definition for a binary tree node.

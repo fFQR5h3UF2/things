@@ -1,5 +1,7 @@
-# Submission for 'Binary Search'
-# Submission url: https://leetcode.com/submissions/detail/691642817/
+// Submission for Binary Search
+// Submission url: https://leetcode.com/submissions/detail/691642817/
+
+package submissions
 
 /* https://leetcode.com/problems/binary-search/
 

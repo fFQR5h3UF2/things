@@ -1,5 +1,6 @@
-# Submission for 'Balanced Binary Tree'
+# Submission for Balanced Binary Tree
 # Submission url: https://leetcode.com/submissions/detail/1047278821/
+
 
 # Definition for a binary tree node.
 # class TreeNode:

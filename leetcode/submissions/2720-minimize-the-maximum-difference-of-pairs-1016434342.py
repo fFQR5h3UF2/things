@@ -1,5 +1,6 @@
-# Submission for 'Minimize the Maximum Difference of Pairs'
+# Submission for Minimize the Maximum Difference of Pairs
 # Submission url: https://leetcode.com/submissions/detail/1016434342/
+
 
 class Solution:
     def minimizeMax(self, nums: List[int], p: int) -> int:

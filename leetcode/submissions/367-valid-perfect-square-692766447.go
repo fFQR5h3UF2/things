@@ -1,5 +1,7 @@
-# Submission for 'Valid Perfect Square'
-# Submission url: https://leetcode.com/submissions/detail/692766447/
+// Submission for Valid Perfect Square
+// Submission url: https://leetcode.com/submissions/detail/692766447/
+
+package submissions
 
 
 func isPerfectSquare(number int) bool {

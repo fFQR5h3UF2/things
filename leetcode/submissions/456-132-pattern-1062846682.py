@@ -1,5 +1,6 @@
-# Submission for '132 Pattern'
+# Submission for 132 Pattern
 # Submission url: https://leetcode.com/submissions/detail/1062846682/
+
 
 class Solution:
     def find132pattern(self, nums: List[int]) -> bool:

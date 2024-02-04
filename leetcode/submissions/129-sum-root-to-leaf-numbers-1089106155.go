@@ -1,5 +1,7 @@
-# Submission for 'Sum Root to Leaf Numbers'
-# Submission url: https://leetcode.com/submissions/detail/1089106155/
+// Submission for Sum Root to Leaf Numbers
+// Submission url: https://leetcode.com/submissions/detail/1089106155/
+
+package submissions
 
 /**
  * Definition for a binary tree node.

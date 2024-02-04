@@ -1,5 +1,6 @@
-# Submission for 'Maximum Length of a Concatenated String with Unique Characters'
+# Submission for Maximum Length of a Concatenated String with Unique Characters
 # Submission url: https://leetcode.com/submissions/detail/1154381353/
+
 
 class Solution:
     def maxLength(self, arr: List[str]) -> int:

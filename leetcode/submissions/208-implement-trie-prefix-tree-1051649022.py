@@ -1,5 +1,6 @@
-# Submission for 'Implement Trie (Prefix Tree)'
+# Submission for Implement Trie (Prefix Tree)
 # Submission url: https://leetcode.com/submissions/detail/1051649022/
+
 
 class Trie:
 

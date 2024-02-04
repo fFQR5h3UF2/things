@@ -1,5 +1,6 @@
-# Submission for 'Minimum Operations to Reduce X to Zero'
+# Submission for Minimum Operations to Reduce X to Zero
 # Submission url: https://leetcode.com/submissions/detail/1054343833/
+
 
 class Solution:
     def minOperations(self, nums: List[int], x: int) -> int:

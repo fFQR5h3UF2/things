@@ -1,5 +1,6 @@
-# Submission for 'Is Subsequence'
+# Submission for Is Subsequence
 # Submission url: https://leetcode.com/submissions/detail/1056031768/
+
 
 class Solution:
     def isSubsequence(self, s: str, t: str) -> bool:

@@ -1,5 +1,7 @@
-# Submission for 'Check If Two String Arrays are Equivalent'
-# Submission url: https://leetcode.com/submissions/detail/1110086928/
+// Submission for Check If Two String Arrays are Equivalent
+// Submission url: https://leetcode.com/submissions/detail/1110086928/
+
+
 
 class Solution {
 public:

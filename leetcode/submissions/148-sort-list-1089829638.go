@@ -1,5 +1,7 @@
-# Submission for 'Sort List'
-# Submission url: https://leetcode.com/submissions/detail/1089829638/
+// Submission for Sort List
+// Submission url: https://leetcode.com/submissions/detail/1089829638/
+
+package submissions
 
 
 func sortList(head *ListNode) *ListNode {

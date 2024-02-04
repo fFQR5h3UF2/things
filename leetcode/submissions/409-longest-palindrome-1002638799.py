@@ -1,5 +1,6 @@
-# Submission for 'Longest Palindrome'
+# Submission for Longest Palindrome
 # Submission url: https://leetcode.com/submissions/detail/1002638799/
+
 
 class Solution:
     def longestPalindrome(self, s: str) -> int:

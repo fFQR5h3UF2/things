@@ -1,5 +1,7 @@
-# Submission for 'Populating Next Right Pointers in Each Node II'
-# Submission url: https://leetcode.com/submissions/detail/698478947/
+// Submission for Populating Next Right Pointers in Each Node II
+// Submission url: https://leetcode.com/submissions/detail/698478947/
+
+com.shishifubing.dotfiles.submissions
 
 class Solution {
     public Node connect(Node root) {

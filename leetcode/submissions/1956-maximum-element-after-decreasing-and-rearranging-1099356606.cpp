@@ -1,5 +1,7 @@
-# Submission for 'Maximum Element After Decreasing and Rearranging'
-# Submission url: https://leetcode.com/submissions/detail/1099356606/
+// Submission for Maximum Element After Decreasing and Rearranging
+// Submission url: https://leetcode.com/submissions/detail/1099356606/
+
+
 
 class Solution {
 public:

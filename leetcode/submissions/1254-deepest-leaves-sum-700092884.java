@@ -1,5 +1,7 @@
-# Submission for 'Deepest Leaves Sum'
-# Submission url: https://leetcode.com/submissions/detail/700092884/
+// Submission for Deepest Leaves Sum
+// Submission url: https://leetcode.com/submissions/detail/700092884/
+
+com.shishifubing.dotfiles.submissions
 
 /**
  * Definition for a binary tree node.

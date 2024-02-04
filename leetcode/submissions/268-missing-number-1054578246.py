@@ -1,5 +1,6 @@
-# Submission for 'Missing Number'
+# Submission for Missing Number
 # Submission url: https://leetcode.com/submissions/detail/1054578246/
+
 
 class Solution:
     def missingNumber(self, nums: List[int]) -> int:

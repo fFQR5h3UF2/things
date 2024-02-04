@@ -1,5 +1,6 @@
-# Submission for 'Rotate List'
+# Submission for Rotate List
 # Submission url: https://leetcode.com/submissions/detail/1057148257/
+
 
 # Definition for singly-linked list.
 # class ListNode:

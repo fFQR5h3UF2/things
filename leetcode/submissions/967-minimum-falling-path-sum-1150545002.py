@@ -1,5 +1,6 @@
-# Submission for 'Minimum Falling Path Sum'
+# Submission for Minimum Falling Path Sum
 # Submission url: https://leetcode.com/submissions/detail/1150545002/
+
 
 class Solution:
     def minFallingPathSum(self, matrix: List[List[int]]) -> int:

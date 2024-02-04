@@ -1,5 +1,7 @@
-# Submission for 'Reverse String'
-# Submission url: https://leetcode.com/submissions/detail/693609237/
+// Submission for Reverse String
+// Submission url: https://leetcode.com/submissions/detail/693609237/
+
+package submissions
 
 func reverseString(characters []byte) {
 	length := len(characters)

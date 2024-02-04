@@ -1,5 +1,6 @@
-# Submission for 'Redistribute Characters to Make All Strings Equal'
+# Submission for Redistribute Characters to Make All Strings Equal
 # Submission url: https://leetcode.com/submissions/detail/1132146164/
+
 
 class Solution:
     def makeEqual(self, words: List[str]) -> bool:

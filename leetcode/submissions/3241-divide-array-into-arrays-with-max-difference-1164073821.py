@@ -1,5 +1,6 @@
-# Submission for 'Divide Array Into Arrays With Max Difference'
+# Submission for Divide Array Into Arrays With Max Difference
 # Submission url: https://leetcode.com/submissions/detail/1164073821/
+
 
 class Solution:
     def divideArray(self, nums, k):

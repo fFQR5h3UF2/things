@@ -1,5 +1,6 @@
-# Submission for 'Design HashMap'
+# Submission for Design HashMap
 # Submission url: https://leetcode.com/submissions/detail/1066538268/
+
 
 class MyHashMap:
     def __init__(self):
@@ -14,7 +15,6 @@ class MyHashMap:
 
     def remove(self, key: int) -> None:
         self.data[key] = None
-
 
 
 # Your MyHashMap object will be instantiated and called as such:

@@ -1,5 +1,6 @@
-# Submission for 'Simple Bank System'
+# Submission for Simple Bank System
 # Submission url: https://leetcode.com/submissions/detail/1050716326/
+
 
 class Bank:
 
@@ -8,24 +9,26 @@ class Bank:
         self.size = len(balance)
 
     def transfer(self, account1: int, account2: int, money: int) -> bool:
-        if not 0 < account1 <= self.size or not 0 < account2 <= self.size or (
-            self.balance[account1-1] < money
+        if (
+            not 0 < account1 <= self.size
+            or not 0 < account2 <= self.size
+            or (self.balance[account1 - 1] < money)
         ):
             return False
-        self.balance[account2-1] += money
-        self.balance[account1-1] -= money
+        self.balance[account2 - 1] += money
+        self.balance[account1 - 1] -= money
         return True
 
     def deposit(self, account: int, money: int) -> bool:
         if not 0 < account <= self.size:
             return False
-        self.balance[account-1] += money
+        self.balance[account - 1] += money
         return True
 
     def withdraw(self, account: int, money: int) -> bool:
-        if not 0 < account <= self.size or self.balance[account-1] < money:
+        if not 0 < account <= self.size or self.balance[account - 1] < money:
             return False
-        self.balance[account-1] -= money
+        self.balance[account - 1] -= money
         return True
 
 

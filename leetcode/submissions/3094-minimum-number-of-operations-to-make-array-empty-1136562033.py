@@ -1,5 +1,6 @@
-# Submission for 'Minimum Number of Operations to Make Array Empty'
+# Submission for Minimum Number of Operations to Make Array Empty
 # Submission url: https://leetcode.com/submissions/detail/1136562033/
+
 
 class Solution:
     def minOperations(self, nums: List[int]) -> int:

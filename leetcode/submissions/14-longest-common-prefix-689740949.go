@@ -1,5 +1,7 @@
-# Submission for 'Longest Common Prefix'
-# Submission url: https://leetcode.com/submissions/detail/689740949/
+// Submission for Longest Common Prefix
+// Submission url: https://leetcode.com/submissions/detail/689740949/
+
+package submissions
 
 
 func substrings(input string) map[string]bool {

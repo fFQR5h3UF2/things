@@ -1,5 +1,6 @@
-# Submission for 'Reorganize String'
+# Submission for Reorganize String
 # Submission url: https://leetcode.com/submissions/detail/1029418158/
+
 
 class Solution:
     def reorganizeString(self, s: str) -> str:

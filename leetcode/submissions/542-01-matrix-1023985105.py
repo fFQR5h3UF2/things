@@ -1,5 +1,6 @@
-# Submission for '01 Matrix'
+# Submission for 01 Matrix
 # Submission url: https://leetcode.com/submissions/detail/1023985105/
+
 
 class Solution:
     def updateMatrix(self, mat: List[List[int]]) -> List[List[int]]:
@@ -25,7 +26,10 @@ class Solution:
             distance_from_center = mat[center_row][center_column] + 1
 
             for delta_row, delta_column in directions:
-                new_row, new_column = center_row + delta_row, center_column + delta_column
+                new_row, new_column = (
+                    center_row + delta_row,
+                    center_column + delta_column,
+                )
                 if not 0 <= new_row < row_count or not 0 <= new_column < column_count:
                     continue
 

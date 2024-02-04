@@ -1,5 +1,6 @@
-# Submission for 'Amount of Time for Binary Tree to Be Infected'
+# Submission for Amount of Time for Binary Tree to Be Infected
 # Submission url: https://leetcode.com/submissions/detail/1142229574/
+
 
 class Solution:
     def amountOfTime(self, root: Optional[TreeNode], start: int) -> int:

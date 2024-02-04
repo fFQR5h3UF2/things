@@ -1,8 +1,11 @@
-# Submission for 'Find K Pairs with Smallest Sums'
+# Submission for Find K Pairs with Smallest Sums
 # Submission url: https://leetcode.com/submissions/detail/1030523976/
 
+
 class Solution:
-    def kSmallestPairs(self, nums1: List[int], nums2: List[int], k: int) -> List[List[int]]:
+    def kSmallestPairs(
+        self, nums1: List[int], nums2: List[int], k: int
+    ) -> List[List[int]]:
         nums1_count, nums2_count = len(nums1), len(nums2)
         result = []
         visited = set(((0, 0)))

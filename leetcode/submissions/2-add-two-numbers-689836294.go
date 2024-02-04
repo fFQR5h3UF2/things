@@ -1,5 +1,7 @@
-# Submission for 'Add Two Numbers'
-# Submission url: https://leetcode.com/submissions/detail/689836294/
+// Submission for Add Two Numbers
+// Submission url: https://leetcode.com/submissions/detail/689836294/
+
+package submissions
 
 
 func addTwoNumbers(list_1 *ListNode, list_2 *ListNode) *ListNode {

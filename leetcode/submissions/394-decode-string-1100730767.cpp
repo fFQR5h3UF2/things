@@ -1,5 +1,7 @@
-# Submission for 'Decode String'
-# Submission url: https://leetcode.com/submissions/detail/1100730767/
+// Submission for Decode String
+// Submission url: https://leetcode.com/submissions/detail/1100730767/
+
+
 
 class Solution {
 public:

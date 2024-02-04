@@ -1,5 +1,6 @@
-# Submission for 'Roman to Integer'
+# Submission for Roman to Integer
 # Submission url: https://leetcode.com/submissions/detail/956314499/
+
 
 class Solution:
     def romanToInt(self, s: str) -> int:
@@ -12,7 +13,7 @@ class Solution:
 
             next = ""
             if i < len(s) - 1:
-                next = s[i+1]
+                next = s[i + 1]
 
             if symbol == "I" and next == "V":
                 result += 4

@@ -1,5 +1,6 @@
-# Submission for 'Design Twitter'
+# Submission for Design Twitter
 # Submission url: https://leetcode.com/submissions/detail/1051787417/
+
 
 class Twitter:
 
@@ -26,6 +27,7 @@ class Twitter:
 
     def unfollow(self, followerId: int, followeeId: int) -> None:
         self.following[followerId].discard(followeeId)
+
 
 # Your Twitter object will be instantiated and called as such:
 # obj = Twitter()

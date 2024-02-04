@@ -1,5 +1,7 @@
-# Submission for 'Two Sum IV - Input is a BST'
-# Submission url: https://leetcode.com/submissions/detail/690047944/
+// Submission for Two Sum IV - Input is a BST
+// Submission url: https://leetcode.com/submissions/detail/690047944/
+
+package submissions
 
 import "sort"
 

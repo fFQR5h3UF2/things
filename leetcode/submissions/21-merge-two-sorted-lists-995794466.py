@@ -1,5 +1,6 @@
-# Submission for 'Merge Two Sorted Lists'
+# Submission for Merge Two Sorted Lists
 # Submission url: https://leetcode.com/submissions/detail/995794466/
+
 
 # Definition for singly-linked list.
 # class ListNode:
@@ -7,8 +8,11 @@
 #         self.val = val
 #         self.next = next
 
+
 class Solution:
-    def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
+    def mergeTwoLists(
+        self, list1: Optional[ListNode], list2: Optional[ListNode]
+    ) -> Optional[ListNode]:
         if not list1:
             return list2
 

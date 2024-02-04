@@ -1,5 +1,7 @@
-# Submission for 'Find Smallest Letter Greater Than Target'
-# Submission url: https://leetcode.com/submissions/detail/693729962/
+// Submission for Find Smallest Letter Greater Than Target
+// Submission url: https://leetcode.com/submissions/detail/693729962/
+
+package submissions
 
 
 

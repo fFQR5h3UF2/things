@@ -1,5 +1,6 @@
-# Submission for 'Game of Life'
+# Submission for Game of Life
 # Submission url: https://leetcode.com/submissions/detail/1039615645/
+
 
 class Solution:
     def gameOfLife(self, board: List[List[int]]) -> None:

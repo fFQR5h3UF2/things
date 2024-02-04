@@ -1,5 +1,7 @@
-# Submission for 'Construct String from Binary Tree'
-# Submission url: https://leetcode.com/submissions/detail/1115239284/
+// Submission for Construct String from Binary Tree
+// Submission url: https://leetcode.com/submissions/detail/1115239284/
+
+
 
 class Solution {
 public:

@@ -1,5 +1,6 @@
-# Submission for 'Extra Characters in a String'
+# Submission for Extra Characters in a String
 # Submission url: https://leetcode.com/submissions/detail/1038261354/
+
 
 class Solution:
     def minExtraChar(self, s: str, dictionary: List[str]) -> int:
@@ -16,7 +17,7 @@ class Solution:
             for word in dictionary:
                 word_length = len(word)
 
-                if word_length > chars_left or s[i:i+word_length] != word:
+                if word_length > chars_left or s[i : i + word_length] != word:
                     continue
 
                 if word_length == chars_left:

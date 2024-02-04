@@ -1,5 +1,7 @@
-# Submission for 'Insert Interval'
-# Submission url: https://leetcode.com/submissions/detail/1091198577/
+// Submission for Insert Interval
+// Submission url: https://leetcode.com/submissions/detail/1091198577/
+
+package submissions
 
 func insert(intervals [][]int, new []int) [][]int {
     n := len(intervals)

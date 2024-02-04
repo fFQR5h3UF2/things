@@ -1,5 +1,6 @@
-# Submission for 'Element Appearing More Than 25% In Sorted Array'
+# Submission for Element Appearing More Than 25% In Sorted Array
 # Submission url: https://leetcode.com/submissions/detail/1117030857/
+
 
 class Solution:
     def findSpecialInteger(self, arr: List[int]) -> int:

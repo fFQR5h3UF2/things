@@ -1,5 +1,6 @@
-# Submission for 'The K Weakest Rows in a Matrix'
+# Submission for The K Weakest Rows in a Matrix
 # Submission url: https://leetcode.com/submissions/detail/1052396767/
+
 
 class Solution:
     def kWeakestRows(self, mat: List[List[int]], k: int) -> List[int]:

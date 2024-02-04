@@ -1,5 +1,6 @@
-# Submission for 'Maximum Depth of Binary Tree'
+# Submission for Maximum Depth of Binary Tree
 # Submission url: https://leetcode.com/submissions/detail/995847615/
+
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -15,4 +16,6 @@ class Solution:
         if not root.left and not root.right:
             return count + 1
 
-        return max(self.maxDepth(root.left, count + 1), self.maxDepth(root.right, count + 1))
+        return max(
+            self.maxDepth(root.left, count + 1), self.maxDepth(root.right, count + 1)
+        )

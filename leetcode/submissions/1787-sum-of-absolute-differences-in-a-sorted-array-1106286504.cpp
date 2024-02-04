@@ -1,5 +1,7 @@
-# Submission for 'Sum of Absolute Differences in a Sorted Array'
-# Submission url: https://leetcode.com/submissions/detail/1106286504/
+// Submission for Sum of Absolute Differences in a Sorted Array
+// Submission url: https://leetcode.com/submissions/detail/1106286504/
+
+
 
 class Solution {
 public:

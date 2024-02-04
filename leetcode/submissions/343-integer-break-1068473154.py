@@ -1,5 +1,6 @@
-# Submission for 'Integer Break'
+# Submission for Integer Break
 # Submission url: https://leetcode.com/submissions/detail/1068473154/
+
 
 class Solution:
     def integerBreak(self, n: int) -> int:

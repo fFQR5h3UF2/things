@@ -1,5 +1,7 @@
-# Submission for 'Average Salary Excluding the Minimum and Maximum Salary'
-# Submission url: https://leetcode.com/submissions/detail/691613273/
+// Submission for Average Salary Excluding the Minimum and Maximum Salary
+// Submission url: https://leetcode.com/submissions/detail/691613273/
+
+package submissions
 
 
 func average(salary []int) float64 {

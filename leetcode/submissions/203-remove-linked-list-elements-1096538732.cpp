@@ -1,5 +1,7 @@
-# Submission for 'Remove Linked List Elements'
-# Submission url: https://leetcode.com/submissions/detail/1096538732/
+// Submission for Remove Linked List Elements
+// Submission url: https://leetcode.com/submissions/detail/1096538732/
+
+
 
 /**
  * Definition for singly-linked list.

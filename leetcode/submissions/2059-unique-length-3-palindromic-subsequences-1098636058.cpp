@@ -1,5 +1,7 @@
-# Submission for 'Unique Length-3 Palindromic Subsequences'
-# Submission url: https://leetcode.com/submissions/detail/1098636058/
+// Submission for Unique Length-3 Palindromic Subsequences
+// Submission url: https://leetcode.com/submissions/detail/1098636058/
+
+
 
 class Solution {
 public:

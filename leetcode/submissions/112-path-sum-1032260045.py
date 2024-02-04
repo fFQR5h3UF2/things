@@ -1,5 +1,6 @@
-# Submission for 'Path Sum'
+# Submission for Path Sum
 # Submission url: https://leetcode.com/submissions/detail/1032260045/
+
 
 # Definition for a binary tree node.
 # class TreeNode:

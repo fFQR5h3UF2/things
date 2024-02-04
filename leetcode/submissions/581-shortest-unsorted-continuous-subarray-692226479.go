@@ -1,5 +1,7 @@
-# Submission for 'Shortest Unsorted Continuous Subarray'
-# Submission url: https://leetcode.com/submissions/detail/692226479/
+// Submission for Shortest Unsorted Continuous Subarray
+// Submission url: https://leetcode.com/submissions/detail/692226479/
+
+package submissions
 
 
 func findUnsortedSubarray(numbers []int) int {

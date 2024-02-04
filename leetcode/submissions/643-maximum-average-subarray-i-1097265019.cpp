@@ -1,5 +1,7 @@
-# Submission for 'Maximum Average Subarray I'
-# Submission url: https://leetcode.com/submissions/detail/1097265019/
+// Submission for Maximum Average Subarray I
+// Submission url: https://leetcode.com/submissions/detail/1097265019/
+
+
 
 class Solution {
 public:

@@ -1,5 +1,6 @@
-# Submission for 'Word Pattern'
+# Submission for Word Pattern
 # Submission url: https://leetcode.com/submissions/detail/995264601/
+
 
 class Solution:
     def wordPattern(self, pattern: str, s: str) -> bool:

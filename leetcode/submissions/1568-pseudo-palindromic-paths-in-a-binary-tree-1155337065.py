@@ -1,5 +1,6 @@
-# Submission for 'Pseudo-Palindromic Paths in a Binary Tree'
+# Submission for Pseudo-Palindromic Paths in a Binary Tree
 # Submission url: https://leetcode.com/submissions/detail/1155337065/
+
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -8,7 +9,7 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def pseudoPalindromicPaths (self, root: Optional[TreeNode]) -> int:
+    def pseudoPalindromicPaths(self, root: Optional[TreeNode]) -> int:
         if not root:
             return 0
 

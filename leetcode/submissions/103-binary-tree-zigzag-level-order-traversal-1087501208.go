@@ -1,5 +1,7 @@
-# Submission for 'Binary Tree Zigzag Level Order Traversal'
-# Submission url: https://leetcode.com/submissions/detail/1087501208/
+// Submission for Binary Tree Zigzag Level Order Traversal
+// Submission url: https://leetcode.com/submissions/detail/1087501208/
+
+package submissions
 
 /**
  * Definition for a binary tree node.

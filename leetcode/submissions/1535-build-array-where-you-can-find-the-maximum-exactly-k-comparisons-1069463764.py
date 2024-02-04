@@ -1,5 +1,6 @@
-# Submission for 'Build Array Where You Can Find The Maximum Exactly K Comparisons'
+# Submission for Build Array Where You Can Find The Maximum Exactly K Comparisons
 # Submission url: https://leetcode.com/submissions/detail/1069463764/
+
 
 class Solution:
     def numOfArrays(self, n: int, m: int, k: int) -> int:
@@ -17,5 +18,5 @@ class Solution:
 
             return ans
 
-        MOD = 10 ** 9 + 7
+        MOD = 10**9 + 7
         return dp(0, 0, k)

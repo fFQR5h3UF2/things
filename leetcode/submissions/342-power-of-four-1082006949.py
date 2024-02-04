@@ -1,5 +1,6 @@
-# Submission for 'Power of Four'
+# Submission for Power of Four
 # Submission url: https://leetcode.com/submissions/detail/1082006949/
+
 
 class Solution:
     def isPowerOfFour(self, n: int) -> bool:

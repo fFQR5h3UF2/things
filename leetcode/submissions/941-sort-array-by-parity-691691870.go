@@ -1,5 +1,7 @@
-# Submission for 'Sort Array By Parity'
-# Submission url: https://leetcode.com/submissions/detail/691691870/
+// Submission for Sort Array By Parity
+// Submission url: https://leetcode.com/submissions/detail/691691870/
+
+package submissions
 
 
 func sortArrayByParity(numbers []int) []int {

@@ -1,5 +1,6 @@
-# Submission for 'Backspace String Compare'
+# Submission for Backspace String Compare
 # Submission url: https://leetcode.com/submissions/detail/1079211036/
+
 
 class Solution:
     def backspaceCompare(self, s: str, t: str) -> bool:

@@ -1,5 +1,7 @@
-# Submission for 'Increasing Triplet Subsequence'
-# Submission url: https://leetcode.com/submissions/detail/1099380129/
+// Submission for Increasing Triplet Subsequence
+// Submission url: https://leetcode.com/submissions/detail/1099380129/
+
+
 
 class Solution {
 public:

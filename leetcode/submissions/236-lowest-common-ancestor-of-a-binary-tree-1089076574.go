@@ -1,5 +1,7 @@
-# Submission for 'Lowest Common Ancestor of a Binary Tree'
-# Submission url: https://leetcode.com/submissions/detail/1089076574/
+// Submission for Lowest Common Ancestor of a Binary Tree
+// Submission url: https://leetcode.com/submissions/detail/1089076574/
+
+package submissions
 
 /**
  * Definition for a binary tree node.

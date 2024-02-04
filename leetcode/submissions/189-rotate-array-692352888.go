@@ -1,5 +1,7 @@
-# Submission for 'Rotate Array'
-# Submission url: https://leetcode.com/submissions/detail/692352888/
+// Submission for Rotate Array
+// Submission url: https://leetcode.com/submissions/detail/692352888/
+
+package submissions
 
 
 func rotate(numbers []int, steps int) {

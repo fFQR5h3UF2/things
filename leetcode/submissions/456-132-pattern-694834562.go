@@ -1,5 +1,7 @@
-# Submission for '132 Pattern'
-# Submission url: https://leetcode.com/submissions/detail/694834562/
+// Submission for 132 Pattern
+// Submission url: https://leetcode.com/submissions/detail/694834562/
+
+package submissions
 
 
 func find132pattern(numbers []int) bool {

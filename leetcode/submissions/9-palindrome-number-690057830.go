@@ -1,5 +1,7 @@
-# Submission for 'Palindrome Number'
-# Submission url: https://leetcode.com/submissions/detail/690057830/
+// Submission for Palindrome Number
+// Submission url: https://leetcode.com/submissions/detail/690057830/
+
+package submissions
 
 
 func isPalindrome(number int) (result bool) {

@@ -1,5 +1,7 @@
-# Submission for 'Find a Corresponding Node of a Binary Tree in a Clone of That Tree'
-# Submission url: https://leetcode.com/submissions/detail/701177667/
+// Submission for Find a Corresponding Node of a Binary Tree in a Clone of That Tree
+// Submission url: https://leetcode.com/submissions/detail/701177667/
+
+com.shishifubing.dotfiles.submissions
 
 class Solution {
 TreeNode ans;

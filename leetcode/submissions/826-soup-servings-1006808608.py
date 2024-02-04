@@ -1,5 +1,6 @@
-# Submission for 'Soup Servings'
+# Submission for Soup Servings
 # Submission url: https://leetcode.com/submissions/detail/1006808608/
+
 
 class Solution:
     def soupServings(self, n: int) -> float:
@@ -19,7 +20,10 @@ class Solution:
             if soup_a in states and soup_b in states[soup_a]:
                 return states[soup_a][soup_b]
 
-            state = sum(calculate(soup_a + move[0], soup_b + move[1]) for move in moves) / 4.0
+            state = (
+                sum(calculate(soup_a + move[0], soup_b + move[1]) for move in moves)
+                / 4.0
+            )
             states[soup_a][soup_b] = state
 
             return state

@@ -1,5 +1,7 @@
-# Submission for 'Binary Tree Level Order Traversal'
-# Submission url: https://leetcode.com/submissions/detail/1087485265/
+// Submission for Binary Tree Level Order Traversal
+// Submission url: https://leetcode.com/submissions/detail/1087485265/
+
+package submissions
 
 /**
  * Definition for a binary tree node.

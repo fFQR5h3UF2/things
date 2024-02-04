@@ -1,5 +1,6 @@
-# Submission for 'Minimum Number of Operations to Make Array Continuous'
+# Submission for Minimum Number of Operations to Make Array Continuous
 # Submission url: https://leetcode.com/submissions/detail/1071538174/
+
 
 class Solution:
     def minOperations(self, nums: List[int]) -> int:

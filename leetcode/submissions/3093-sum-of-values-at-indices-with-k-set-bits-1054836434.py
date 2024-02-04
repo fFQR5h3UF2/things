@@ -1,5 +1,6 @@
-# Submission for 'Sum of Values at Indices With K Set Bits'
+# Submission for Sum of Values at Indices With K Set Bits
 # Submission url: https://leetcode.com/submissions/detail/1054836434/
+
 
 class Solution:
     def sumIndicesWithKSetBits(self, nums: List[int], k: int) -> int:

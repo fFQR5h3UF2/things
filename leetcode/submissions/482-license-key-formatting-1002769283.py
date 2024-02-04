@@ -1,5 +1,6 @@
-# Submission for 'License Key Formatting'
+# Submission for License Key Formatting
 # Submission url: https://leetcode.com/submissions/detail/1002769283/
+
 
 class Solution:
     # "5F3Z-2e-9-w" -> "5F3Z2E9W" -> "5F3Z2E9W"

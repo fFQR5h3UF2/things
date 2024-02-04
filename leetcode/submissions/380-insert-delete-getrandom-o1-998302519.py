@@ -1,5 +1,6 @@
-# Submission for 'Insert Delete GetRandom O(1)'
+# Submission for Insert Delete GetRandom O(1)
 # Submission url: https://leetcode.com/submissions/detail/998302519/
+
 
 class RandomizedSet:
 
@@ -7,7 +8,6 @@ class RandomizedSet:
         self._set = set()
         self._items = []
         self._indexes = {}
-
 
     def insert(self, val: int) -> bool:
         is_in = val in self._set

@@ -1,5 +1,6 @@
-# Submission for 'Remove Duplicates from Sorted Array II'
+# Submission for Remove Duplicates from Sorted Array II
 # Submission url: https://leetcode.com/submissions/detail/996008020/
+
 
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:

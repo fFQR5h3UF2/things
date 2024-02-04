@@ -1,5 +1,6 @@
-# Submission for 'Add Two Numbers'
+# Submission for Add Two Numbers
 # Submission url: https://leetcode.com/submissions/detail/997697463/
+
 
 # Definition for singly-linked list.
 # class ListNode:
@@ -18,8 +19,9 @@ class Solution:
     #    another list
     # 7. move list pointers
     # 8. if we have a carry left, add a node to the result list
-    def addTwoNumbers(self, l1: Optional[ListNode],
-                            l2: Optional[ListNode]) -> Optional[ListNode]:
+    def addTwoNumbers(
+        self, l1: Optional[ListNode], l2: Optional[ListNode]
+    ) -> Optional[ListNode]:
         carry = 0
         result, result_root = l1, l1
 

@@ -1,5 +1,7 @@
-# Submission for 'Restore the Array From Adjacent Pairs'
-# Submission url: https://leetcode.com/submissions/detail/1095854733/
+// Submission for Restore the Array From Adjacent Pairs
+// Submission url: https://leetcode.com/submissions/detail/1095854733/
+
+package submissions
 
 func restoreArray(adjacentPairs [][]int) []int {
     // [[2,1],[3,4],[3,2]]

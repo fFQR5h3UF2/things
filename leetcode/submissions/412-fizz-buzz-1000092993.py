@@ -1,5 +1,6 @@
-# Submission for 'Fizz Buzz'
+# Submission for Fizz Buzz
 # Submission url: https://leetcode.com/submissions/detail/1000092993/
+
 
 class Solution:
     def fizzBuzz(self, n: int) -> List[str]:

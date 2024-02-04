@@ -1,5 +1,6 @@
-# Submission for 'Number of Longest Increasing Subsequence'
+# Submission for Number of Longest Increasing Subsequence
 # Submission url: https://leetcode.com/submissions/detail/1000080729/
+
 
 class Solution:
     def findNumberOfLIS(self, nums: List[int]) -> int:
@@ -20,4 +21,6 @@ class Solution:
                         counts[i] += counts[j]
 
         max_length = max(lengths)
-        return sum(count for length, count in zip(lengths, counts) if length == max_length)
+        return sum(
+            count for length, count in zip(lengths, counts) if length == max_length
+        )

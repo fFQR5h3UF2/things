@@ -1,8 +1,11 @@
-# Submission for 'Split Linked List in Parts'
+# Submission for Split Linked List in Parts
 # Submission url: https://leetcode.com/submissions/detail/1042088778/
 
+
 class Solution:
-    def splitListToParts(self, head: Optional[ListNode], k: int) -> List[Optional[ListNode]]:
+    def splitListToParts(
+        self, head: Optional[ListNode], k: int
+    ) -> List[Optional[ListNode]]:
         nodes_count = 0
         tail = head
         while tail:

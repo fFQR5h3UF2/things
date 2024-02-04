@@ -1,5 +1,6 @@
-# Submission for 'Text Justification'
+# Submission for Text Justification
 # Submission url: https://leetcode.com/submissions/detail/1030404988/
+
 
 class Solution:
     def fullJustify(self, words: List[str], maxWidth: int) -> List[str]:

@@ -1,5 +1,6 @@
-# Submission for 'Best Time to Buy and Sell Stock'
+# Submission for Best Time to Buy and Sell Stock
 # Submission url: https://leetcode.com/submissions/detail/993675107/
+
 
 class Solution:
     # Input: prices = [7,1,5,3,6,4]

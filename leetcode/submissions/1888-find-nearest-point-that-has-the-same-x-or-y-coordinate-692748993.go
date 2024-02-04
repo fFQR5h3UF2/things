@@ -1,5 +1,7 @@
-# Submission for 'Find Nearest Point That Has the Same X or Y Coordinate'
-# Submission url: https://leetcode.com/submissions/detail/692748993/
+// Submission for Find Nearest Point That Has the Same X or Y Coordinate
+// Submission url: https://leetcode.com/submissions/detail/692748993/
+
+package submissions
 
 func nearestValidPoint(x int, y int, points [][]int) int {
 	point_target, smallest_distance, smallest_index := []int{x, y}, math.MaxInt, -1

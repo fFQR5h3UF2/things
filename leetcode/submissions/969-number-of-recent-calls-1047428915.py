@@ -1,5 +1,6 @@
-# Submission for 'Number of Recent Calls'
+# Submission for Number of Recent Calls
 # Submission url: https://leetcode.com/submissions/detail/1047428915/
+
 
 class RecentCounter:
 

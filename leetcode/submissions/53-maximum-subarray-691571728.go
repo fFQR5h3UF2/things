@@ -1,5 +1,7 @@
-# Submission for 'Maximum Subarray'
-# Submission url: https://leetcode.com/submissions/detail/691571728/
+// Submission for Maximum Subarray
+// Submission url: https://leetcode.com/submissions/detail/691571728/
+
+package submissions
 
 
 func maxSubArray(numbers []int) int {

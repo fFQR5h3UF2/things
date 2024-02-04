@@ -1,5 +1,6 @@
-# Submission for 'Out of Boundary Paths'
+# Submission for Out of Boundary Paths
 # Submission url: https://leetcode.com/submissions/detail/1157205765/
+
 
 class Solution:
 
@@ -13,13 +14,9 @@ class Solution:
 
         count = 0
 
-
-
         for moves in range(1, N + 1):
 
             temp = [[0] * n for _ in range(m)]
-
-
 
             for i in range(m):
 
@@ -42,17 +39,18 @@ class Solution:
                         count = (count + dp[i][j]) % M
 
                     temp[i][j] = (
-
-                        ((dp[i - 1][j] if i > 0 else 0) + (dp[i + 1][j] if i < m - 1 else 0)) % M +
-
-                        ((dp[i][j - 1] if j > 0 else 0) + (dp[i][j + 1] if j < n - 1 else 0)) % M
-
+                        (
+                            (dp[i - 1][j] if i > 0 else 0)
+                            + (dp[i + 1][j] if i < m - 1 else 0)
+                        )
+                        % M
+                        + (
+                            (dp[i][j - 1] if j > 0 else 0)
+                            + (dp[i][j + 1] if j < n - 1 else 0)
+                        )
+                        % M
                     ) % M
 
-
-
             dp = temp
-
-
 
         return count

@@ -1,5 +1,7 @@
-# Submission for 'Longest Common Prefix'
-# Submission url: https://leetcode.com/submissions/detail/689722001/
+// Submission for Longest Common Prefix
+// Submission url: https://leetcode.com/submissions/detail/689722001/
+
+package submissions
 
 
 import "fmt"

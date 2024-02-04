@@ -1,5 +1,6 @@
-# Submission for 'Generate Parentheses'
+# Submission for Generate Parentheses
 # Submission url: https://leetcode.com/submissions/detail/1010069020/
+
 
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
@@ -7,7 +8,6 @@ class Solution:
         current = []
         current_max = n * 2
         chars = "()"
-
 
         def backtrack(open: int, closed: int) -> Generator[None, None, List[str]]:
             if len(current) == current_max:

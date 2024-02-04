@@ -1,5 +1,7 @@
-# Submission for 'Course Schedule II'
-# Submission url: https://leetcode.com/submissions/detail/1091200613/
+// Submission for Course Schedule II
+// Submission url: https://leetcode.com/submissions/detail/1091200613/
+
+package submissions
 
 func findOrder(numCourses int, prerequisites [][]int) []int {
     //build the graph

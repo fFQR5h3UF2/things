@@ -1,5 +1,6 @@
-# Submission for 'Prime Number of Set Bits in Binary Representation'
+# Submission for Prime Number of Set Bits in Binary Representation
 # Submission url: https://leetcode.com/submissions/detail/1056027873/
+
 
 class Solution:
     def countPrimeSetBits(self, left: int, right: int) -> int:

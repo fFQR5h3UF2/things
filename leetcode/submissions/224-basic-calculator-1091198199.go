@@ -1,5 +1,7 @@
-# Submission for 'Basic Calculator'
-# Submission url: https://leetcode.com/submissions/detail/1091198199/
+// Submission for Basic Calculator
+// Submission url: https://leetcode.com/submissions/detail/1091198199/
+
+package submissions
 
 func calculate(s string) int {
 	result, _ := calculateFrom(s, 0)

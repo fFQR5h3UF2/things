@@ -1,5 +1,6 @@
-# Submission for 'Snapshot Array'
+# Submission for Snapshot Array
 # Submission url: https://leetcode.com/submissions/detail/1047476950/
+
 
 class SnapshotArray:
 
@@ -24,7 +25,6 @@ class SnapshotArray:
             return val
 
         return -1
-
 
 
 # Your SnapshotArray object will be instantiated and called as such:

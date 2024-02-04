@@ -1,5 +1,7 @@
-# Submission for 'Seat Reservation Manager'
-# Submission url: https://leetcode.com/submissions/detail/1092754707/
+// Submission for Seat Reservation Manager
+// Submission url: https://leetcode.com/submissions/detail/1092754707/
+
+package submissions
 
 type SeatManager struct {
     heap *binaryheap.Heap

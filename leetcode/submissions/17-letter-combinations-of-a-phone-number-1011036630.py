@@ -1,5 +1,6 @@
-# Submission for 'Letter Combinations of a Phone Number'
+# Submission for Letter Combinations of a Phone Number
 # Submission url: https://leetcode.com/submissions/detail/1011036630/
+
 
 class Solution:
     def letterCombinations(self, digits: str) -> List[str]:
@@ -17,7 +18,7 @@ class Solution:
             "7": ["p", "q", "r", "s"],
             "8": ["t", "u", "v"],
             "9": ["w", "x", "y", "z"],
-            "0": [" "]
+            "0": [" "],
         }
 
         current = []

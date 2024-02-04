@@ -1,5 +1,6 @@
-# Submission for 'Remove Element'
+# Submission for Remove Element
 # Submission url: https://leetcode.com/submissions/detail/993596529/
+
 
 class Solution:
     # create two indexes, current and replace

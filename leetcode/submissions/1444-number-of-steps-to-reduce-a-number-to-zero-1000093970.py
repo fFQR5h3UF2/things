@@ -1,5 +1,6 @@
-# Submission for 'Number of Steps to Reduce a Number to Zero'
+# Submission for Number of Steps to Reduce a Number to Zero
 # Submission url: https://leetcode.com/submissions/detail/1000093970/
+
 
 class Solution:
     def numberOfSteps(self, num: int) -> int:

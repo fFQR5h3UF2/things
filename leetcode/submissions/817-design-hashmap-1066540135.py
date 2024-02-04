@@ -1,11 +1,13 @@
-# Submission for 'Design HashMap'
+# Submission for Design HashMap
 # Submission url: https://leetcode.com/submissions/detail/1066540135/
+
 
 class ListNode:
     def __init__(self, key, value):
         self.key = key
         self.value = value
         self.next = None
+
 
 class MyHashMap:
 

@@ -1,5 +1,6 @@
-# Submission for 'Unique Paths II'
+# Submission for Unique Paths II
 # Submission url: https://leetcode.com/submissions/detail/1015907950/
+
 
 class Solution:
     def uniquePathsWithObstacles(self, obstacleGrid: List[List[int]]) -> int:
@@ -16,16 +17,16 @@ class Solution:
             if obstacleGrid[0][column] == 1:
                 break
 
-            dp[0][column] = dp[0][column-1]
+            dp[0][column] = dp[0][column - 1]
 
         for row in range(1, row_count):
             if obstacleGrid[row][0] == 0:
-                dp[row][0] = dp[row-1][0]
+                dp[row][0] = dp[row - 1][0]
 
             for column in range(1, column_count):
                 if obstacleGrid[row][column] == 1:
                     continue
 
-                dp[row][column] = dp[row-1][column] + dp[row][column-1]
+                dp[row][column] = dp[row - 1][column] + dp[row][column - 1]
 
         return dp[-1][-1]

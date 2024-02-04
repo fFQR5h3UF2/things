@@ -1,5 +1,6 @@
-# Submission for 'Jump Game'
+# Submission for Jump Game
 # Submission url: https://leetcode.com/submissions/detail/998293324/
+
 
 class Solution:
     def canJump(self, nums: List[int]) -> bool:

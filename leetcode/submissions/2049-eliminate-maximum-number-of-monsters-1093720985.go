@@ -1,5 +1,7 @@
-# Submission for 'Eliminate Maximum Number of Monsters'
-# Submission url: https://leetcode.com/submissions/detail/1093720985/
+// Submission for Eliminate Maximum Number of Monsters
+// Submission url: https://leetcode.com/submissions/detail/1093720985/
+
+package submissions
 
 func eliminateMaximum(dist []int, speed []int) int {
     arrival := []float32{}

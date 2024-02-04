@@ -1,5 +1,6 @@
-# Submission for 'Design Browser History'
+# Submission for Design Browser History
 # Submission url: https://leetcode.com/submissions/detail/1050234332/
+
 
 class BrowserHistory:
 
@@ -8,7 +9,7 @@ class BrowserHistory:
         self._cur = 0
 
     def visit(self, url: str) -> None:
-        self._history[self._cur+1:] = (url, )
+        self._history[self._cur + 1 :] = (url,)
         self._cur += 1
 
     def back(self, steps: int) -> str:

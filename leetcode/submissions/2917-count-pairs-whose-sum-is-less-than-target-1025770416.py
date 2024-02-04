@@ -1,5 +1,6 @@
-# Submission for 'Count Pairs Whose Sum is Less than Target'
+# Submission for Count Pairs Whose Sum is Less than Target
 # Submission url: https://leetcode.com/submissions/detail/1025770416/
+
 
 class Solution:
     def countPairs(self, nums: List[int], target: int) -> int:

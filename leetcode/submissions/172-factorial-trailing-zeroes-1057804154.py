@@ -1,5 +1,6 @@
-# Submission for 'Factorial Trailing Zeroes'
+# Submission for Factorial Trailing Zeroes
 # Submission url: https://leetcode.com/submissions/detail/1057804154/
+
 
 class Solution:
     def trailingZeroes(self, n: int) -> int:

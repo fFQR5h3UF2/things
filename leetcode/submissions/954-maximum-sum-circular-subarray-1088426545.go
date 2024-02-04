@@ -1,5 +1,7 @@
-# Submission for 'Maximum Sum Circular Subarray'
-# Submission url: https://leetcode.com/submissions/detail/1088426545/
+// Submission for Maximum Sum Circular Subarray
+// Submission url: https://leetcode.com/submissions/detail/1088426545/
+
+package submissions
 
 func max(a, b int) int {
     if a > b {

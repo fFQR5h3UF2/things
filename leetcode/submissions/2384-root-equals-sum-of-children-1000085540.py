@@ -1,5 +1,6 @@
-# Submission for 'Root Equals Sum of Children'
+# Submission for Root Equals Sum of Children
 # Submission url: https://leetcode.com/submissions/detail/1000085540/
+
 
 # Definition for a binary tree node.
 # class TreeNode:

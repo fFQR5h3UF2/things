@@ -1,5 +1,7 @@
-# Submission for 'Roman to Integer'
-# Submission url: https://leetcode.com/submissions/detail/688942766/
+// Submission for Roman to Integer
+// Submission url: https://leetcode.com/submissions/detail/688942766/
+
+package submissions
 
 
 func in(character rune, targets string) bool {

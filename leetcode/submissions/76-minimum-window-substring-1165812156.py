@@ -1,5 +1,6 @@
-# Submission for 'Minimum Window Substring'
+# Submission for Minimum Window Substring
 # Submission url: https://leetcode.com/submissions/detail/1165812156/
+
 
 class Solution:
     def minWindow(self, s: str, t: str) -> str:
@@ -40,4 +41,4 @@ class Solution:
 
             r += 1
 
-        return "" if ans[0] == -1 else s[ans[1]:ans[2] + 1]
+        return "" if ans[0] == -1 else s[ans[1] : ans[2] + 1]

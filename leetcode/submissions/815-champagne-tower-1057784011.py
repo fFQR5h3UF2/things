@@ -1,5 +1,6 @@
-# Submission for 'Champagne Tower'
+# Submission for Champagne Tower
 # Submission url: https://leetcode.com/submissions/detail/1057784011/
+
 
 class Solution:
     def champagneTower(self, poured: int, query_row: int, query_glass: int) -> float:

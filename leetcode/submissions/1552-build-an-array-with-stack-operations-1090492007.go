@@ -1,5 +1,7 @@
-# Submission for 'Build an Array With Stack Operations'
-# Submission url: https://leetcode.com/submissions/detail/1090492007/
+// Submission for Build an Array With Stack Operations
+// Submission url: https://leetcode.com/submissions/detail/1090492007/
+
+package submissions
 
 func buildArray(target []int, n int) []string {
     ops := []string{}

@@ -1,12 +1,12 @@
-# Submission for 'Add Strings'
+# Submission for Add Strings
 # Submission url: https://leetcode.com/submissions/detail/1002512700/
+
 
 class Solution:
     def addStrings(self, num1: str, num2: str) -> str:
         result = []
         length_1, length_2 = len(num1), len(num2)
         index_1, index_2 = length_1 - 1, length_2 - 1
-
 
         carry = 0
         while index_1 >= 0 or index_2 >= 0 or carry:

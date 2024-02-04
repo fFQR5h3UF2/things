@@ -1,5 +1,7 @@
-# Submission for 'Reverse Linked List'
-# Submission url: https://leetcode.com/submissions/detail/1096520085/
+// Submission for Reverse Linked List
+// Submission url: https://leetcode.com/submissions/detail/1096520085/
+
+
 
 
 class Solution {

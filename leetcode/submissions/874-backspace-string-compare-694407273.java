@@ -1,5 +1,7 @@
-# Submission for 'Backspace String Compare'
-# Submission url: https://leetcode.com/submissions/detail/694407273/
+// Submission for Backspace String Compare
+// Submission url: https://leetcode.com/submissions/detail/694407273/
+
+com.shishifubing.dotfiles.submissions
 
 class Solution {
     public boolean backspaceCompare(String S, String T) {

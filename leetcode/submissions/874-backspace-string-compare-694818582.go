@@ -1,5 +1,7 @@
-# Submission for 'Backspace String Compare'
-# Submission url: https://leetcode.com/submissions/detail/694818582/
+// Submission for Backspace String Compare
+// Submission url: https://leetcode.com/submissions/detail/694818582/
+
+package submissions
 
 
 func backspaceCompare(string_1 string, string_2 string) bool {

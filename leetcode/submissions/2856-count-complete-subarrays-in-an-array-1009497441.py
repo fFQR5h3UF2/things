@@ -1,5 +1,6 @@
-# Submission for 'Count Complete Subarrays in an Array'
+# Submission for Count Complete Subarrays in an Array
 # Submission url: https://leetcode.com/submissions/detail/1009497441/
+
 
 class Solution:
     def countCompleteSubarrays(self, nums: List[int]) -> int:

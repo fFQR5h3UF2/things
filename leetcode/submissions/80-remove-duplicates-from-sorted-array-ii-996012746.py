@@ -1,5 +1,6 @@
-# Submission for 'Remove Duplicates from Sorted Array II'
+# Submission for Remove Duplicates from Sorted Array II
 # Submission url: https://leetcode.com/submissions/detail/996012746/
+
 
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
@@ -11,7 +12,7 @@ class Solution:
         current_index = 2
 
         for number in nums[2:]:
-            if number == nums[current_index-2]:
+            if number == nums[current_index - 2]:
                 continue
 
             nums[current_index] = number

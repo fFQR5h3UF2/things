@@ -1,5 +1,7 @@
-# Submission for 'Two Sum II - Input Array Is Sorted'
-# Submission url: https://leetcode.com/submissions/detail/690000287/
+// Submission for Two Sum II - Input Array Is Sorted
+// Submission url: https://leetcode.com/submissions/detail/690000287/
+
+package submissions
 
 func twoSum(numbers []int, target int) []int {
 	numbers_len := len(numbers)

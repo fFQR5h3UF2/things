@@ -1,5 +1,7 @@
-# Submission for 'Odd Even Linked List'
-# Submission url: https://leetcode.com/submissions/detail/1100824123/
+// Submission for Odd Even Linked List
+// Submission url: https://leetcode.com/submissions/detail/1100824123/
+
+
 
 /**
  * Definition for singly-linked list.

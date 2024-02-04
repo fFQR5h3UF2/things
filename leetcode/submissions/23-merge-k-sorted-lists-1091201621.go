@@ -1,5 +1,7 @@
-# Submission for 'Merge k Sorted Lists'
-# Submission url: https://leetcode.com/submissions/detail/1091201621/
+// Submission for Merge k Sorted Lists
+// Submission url: https://leetcode.com/submissions/detail/1091201621/
+
+package submissions
 
 /**
  * Definition for singly-linked list.

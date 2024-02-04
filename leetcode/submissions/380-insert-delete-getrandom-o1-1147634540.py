@@ -1,14 +1,15 @@
-# Submission for 'Insert Delete GetRandom O(1)'
+# Submission for Insert Delete GetRandom O(1)
 # Submission url: https://leetcode.com/submissions/detail/1147634540/
 
+
 import random
+
 
 class RandomizedSet:
 
     def __init__(self):
         self._nums_map = {}
         self._nums = []
-
 
     def insert(self, val: int) -> bool:
         if val in self._nums_map:

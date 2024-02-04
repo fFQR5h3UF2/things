@@ -1,5 +1,7 @@
-# Submission for 'Design Circular Deque'
-# Submission url: https://leetcode.com/submissions/detail/1092890108/
+// Submission for Design Circular Deque
+// Submission url: https://leetcode.com/submissions/detail/1092890108/
+
+package submissions
 
 type MyCircularDeque struct {
     list []int

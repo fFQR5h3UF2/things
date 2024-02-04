@@ -1,5 +1,6 @@
-# Submission for 'Third Maximum Number'
+# Submission for Third Maximum Number
 # Submission url: https://leetcode.com/submissions/detail/1002518030/
+
 
 class Solution:
     def thirdMax(self, nums: List[int]) -> int:
@@ -8,7 +9,7 @@ class Solution:
         count = 1
         for i in range(1, len(nums)):
             number = nums[i]
-            if number == nums[i-1]:
+            if number == nums[i - 1]:
                 continue
 
             count += 1

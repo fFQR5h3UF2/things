@@ -1,5 +1,6 @@
-# Submission for 'Merge Intervals'
+# Submission for Merge Intervals
 # Submission url: https://leetcode.com/submissions/detail/1062853417/
+
 
 class Solution:
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
@@ -13,8 +14,8 @@ class Solution:
             if not merged or merged[-1][1] < start:
                 merged.append([start, end])
             else:
-            # otherwise, there is overlap, so we merge the current and previous
-            # intervals.
+                # otherwise, there is overlap, so we merge the current and previous
+                # intervals.
                 merged[-1][1] = max(merged[-1][1], end)
 
         return merged

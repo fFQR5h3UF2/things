@@ -1,5 +1,6 @@
-# Submission for 'Count Complete Tree Nodes'
+# Submission for Count Complete Tree Nodes
 # Submission url: https://leetcode.com/submissions/detail/1032267446/
+
 
 # Definition for a binary tree node.
 # class TreeNode:

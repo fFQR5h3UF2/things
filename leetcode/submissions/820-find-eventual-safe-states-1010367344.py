@@ -1,5 +1,6 @@
-# Submission for 'Find Eventual Safe States'
+# Submission for Find Eventual Safe States
 # Submission url: https://leetcode.com/submissions/detail/1010367344/
+
 
 class Solution:
     def eventualSafeNodes(self, graph: List[List[int]]) -> List[int]:

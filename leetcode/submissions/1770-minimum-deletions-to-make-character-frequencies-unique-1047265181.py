@@ -1,5 +1,6 @@
-# Submission for 'Minimum Deletions to Make Character Frequencies Unique'
+# Submission for Minimum Deletions to Make Character Frequencies Unique
 # Submission url: https://leetcode.com/submissions/detail/1047265181/
+
 
 class Solution:
     def minDeletions(self, s: str) -> int:

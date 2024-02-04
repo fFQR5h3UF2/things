@@ -1,5 +1,6 @@
-# Submission for 'Copy List with Random Pointer'
+# Submission for Copy List with Random Pointer
 # Submission url: https://leetcode.com/submissions/detail/1041053709/
+
 
 """
 # Definition for a Node.
@@ -10,8 +11,9 @@ class Node:
         self.random = random
 """
 
+
 class Solution:
-    def copyRandomList(self, head: 'Optional[Node]') -> 'Optional[Node]':
+    def copyRandomList(self, head: "Optional[Node]") -> "Optional[Node]":
 
         copied = {None: None}
 

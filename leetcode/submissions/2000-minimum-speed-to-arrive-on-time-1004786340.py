@@ -1,5 +1,6 @@
-# Submission for 'Minimum Speed to Arrive on Time'
+# Submission for Minimum Speed to Arrive on Time
 # Submission url: https://leetcode.com/submissions/detail/1004786340/
+
 
 class Solution:
     def minSpeedOnTime(self, dist: List[int], hour: float) -> int:
@@ -11,16 +12,13 @@ class Solution:
             return -1
 
         time_remaining = hour - length + 1
-        max_speed = int(max(
-            max(dist), dist[-1] // time_remaining + 1
-        ))
+        max_speed = int(max(max(dist), dist[-1] // time_remaining + 1))
         min_speed = 1
         result = -1
         while min_speed < max_speed:
             speed = min_speed + (max_speed - min_speed) // 2
             time = dist[-1] / speed + sum(
-                (distance + speed - 1) // speed
-                for distance in dist[:-1]
+                (distance + speed - 1) // speed for distance in dist[:-1]
             )
 
             if time > hour:

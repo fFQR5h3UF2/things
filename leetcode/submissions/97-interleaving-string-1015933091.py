@@ -1,5 +1,6 @@
-# Submission for 'Interleaving String'
+# Submission for Interleaving String
 # Submission url: https://leetcode.com/submissions/detail/1015933091/
+
 
 class Solution:
     def isInterleave(self, s1: str, s2: str, s3: str) -> bool:
@@ -15,8 +16,6 @@ class Solution:
             target = s3[i_3]
             return (
                 i_1 != length_1 and s1[i_1] == target and dp(i_1 + 1, i_2, i_3 + 1)
-            ) or (
-                i_2 != length_2 and s2[i_2] == target and dp(i_1, i_2 + 1, i_3 + 1)
-            )
+            ) or (i_2 != length_2 and s2[i_2] == target and dp(i_1, i_2 + 1, i_3 + 1))
 
         return dp(0, 0, 0)

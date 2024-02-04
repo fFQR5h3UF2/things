@@ -1,5 +1,7 @@
-# Submission for 'Find Mode in Binary Search Tree'
-# Submission url: https://leetcode.com/submissions/detail/1089001471/
+// Submission for Find Mode in Binary Search Tree
+// Submission url: https://leetcode.com/submissions/detail/1089001471/
+
+package submissions
 
 /**
  * Definition for a binary tree node.

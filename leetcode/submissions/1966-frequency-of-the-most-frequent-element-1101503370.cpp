@@ -1,5 +1,7 @@
-# Submission for 'Frequency of the Most Frequent Element'
-# Submission url: https://leetcode.com/submissions/detail/1101503370/
+// Submission for Frequency of the Most Frequent Element
+// Submission url: https://leetcode.com/submissions/detail/1101503370/
+
+
 
 class Solution {
 public:
