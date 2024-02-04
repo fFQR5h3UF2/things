@@ -3,8 +3,8 @@
 
 package submissions
 
-func moveZeroes(nums []int)  {
-    	if len(nums) < 2 {
+func moveZeroes(nums []int) {
+	if len(nums) < 2 {
 		return
 	}
 
@@ -14,7 +14,7 @@ func moveZeroes(nums []int)  {
 				nums[z], nums[p] = nums[p], nums[z]
 				z++
 			}
-			p = z+1
+			p = z + 1
 		} else {
 			if nums[z] != 0 {
 				z++

@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func mySqrt(number int) int {
 	left, right := 0, number
 	for right >= left {

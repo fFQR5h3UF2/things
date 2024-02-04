@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func moveZeroes(numbers []int) {
 	// ensure there are at least two numbers
 	length := len(numbers)

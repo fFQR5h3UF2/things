@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func containsDuplicate(numbers []int) bool {
 	if len(numbers) == 0 || len(numbers) == 1 {
 		return false

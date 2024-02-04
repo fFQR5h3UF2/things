@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func substrings(input string) map[string]bool {
 	results := make(map[string]bool)
 	for index := range input {

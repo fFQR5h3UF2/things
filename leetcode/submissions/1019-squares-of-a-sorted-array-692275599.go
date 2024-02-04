@@ -18,7 +18,7 @@ func sortedSquares(numbers []int) []int {
 	if negativesIndex == 0 || negativesIndex == -1 {
 		return square(numbers, negativesIndex == -1)
 	}
-//	fmt.Println("negativesIndex", negativesIndex)
+	//	fmt.Println("negativesIndex", negativesIndex)
 	result, resultIndex, negativesIndex := make([]int, length), 0, negativesIndex-1
 	for positivesIndex := negativesIndex + 1; resultIndex < length; positivesIndex++ {
 		positiveOverflow := positivesIndex >= length
@@ -31,11 +31,11 @@ func sortedSquares(numbers []int) []int {
 			}
 			result[resultIndex] = numbers[negativesIndex]
 			resultIndex++
-//			fmt.Println("negative", negativesIndex, resultIndex, numbers[negativesIndex], result, numbers)
+			//			fmt.Println("negative", negativesIndex, resultIndex, numbers[negativesIndex], result, numbers)
 			negativesIndex--
 		}
 		if resultIndex < length && !positiveOverflow {
-//			fmt.Println("positivesIndex", positivesIndex, resultIndex, numbers[positivesIndex], result, numbers)
+			//			fmt.Println("positivesIndex", positivesIndex, resultIndex, numbers[positivesIndex], result, numbers)
 			result[resultIndex] = numbers[positivesIndex]
 			resultIndex++
 		}

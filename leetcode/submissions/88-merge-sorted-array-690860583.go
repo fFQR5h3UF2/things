@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func merge(array1 []int, length1 int, array2 []int, length2 int) {
 	index1, index2, array1Copy := 0, 0, make([]int, length1)
 	copy(array1Copy, array1)

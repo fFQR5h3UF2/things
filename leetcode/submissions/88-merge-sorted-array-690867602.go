@@ -3,12 +3,11 @@
 
 package submissions
 
-
 func merge(array1 []int, length1 int, array2 []int, length2 int) {
 	if length2 == 0 {
 		return
 	}
-    if length1 == 0 {
+	if length1 == 0 {
 		for index, number := range array2 {
 			array1[index] = number
 		}

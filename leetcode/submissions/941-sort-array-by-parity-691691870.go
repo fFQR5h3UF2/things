@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func sortArrayByParity(numbers []int) []int {
 	length := len(numbers)
 	if length == 1 {

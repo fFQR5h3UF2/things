@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func isValid(inputString string) bool {
 	if len(inputString) == 0 || (len(inputString)&1) != 0 {
 		return false

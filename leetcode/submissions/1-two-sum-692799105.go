@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func twoSum(numbers []int, target int) []int {
 	numbers_len := len(numbers)
 	for index, number := range numbers {

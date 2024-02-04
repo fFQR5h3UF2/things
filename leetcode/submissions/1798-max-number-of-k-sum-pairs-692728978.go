@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func maxOperations(numbers []int, sum int) int {
 	count, previous := 0, make(map[int]int, len(numbers))
 	for _, current := range numbers {

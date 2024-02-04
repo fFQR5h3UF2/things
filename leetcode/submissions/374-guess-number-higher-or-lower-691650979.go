@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func guessNumber(n int) int {
 	// checking edge cases
 	if guess(1) == 0 {

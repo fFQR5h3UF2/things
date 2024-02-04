@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func in(character rune, targets string) bool {
 	for _, target := range targets {
 		if character == target {
@@ -21,9 +20,10 @@ func romanToInt(roman string) int {
 	}
 	for index, character := range roman {
 		result += types[character]
-        if index < 1 {
-            continue}
-        switch {
+		if index < 1 {
+			continue
+		}
+		switch {
 		case roman[index-1] == 'I' && in(character, "VX"):
 			fallthrough
 		case roman[index-1] == 'X' && in(character, "LC"):

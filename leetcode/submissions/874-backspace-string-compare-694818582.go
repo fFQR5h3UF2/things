@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func backspaceCompare(string_1 string, string_2 string) bool {
 	length_1, length_2 := len(string_1), len(string_2)
 	list_1, list_2, length_biggest := list.List{}, list.List{}, length_1

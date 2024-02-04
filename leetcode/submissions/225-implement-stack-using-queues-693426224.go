@@ -3,7 +3,6 @@
 
 package submissions
 
-
 type MyStack struct{ queue *list.List }
 
 func Constructor() MyStack           { return MyStack{&list.List{}} }

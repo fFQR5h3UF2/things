@@ -20,7 +20,7 @@ func addToArrayForm(number1 []int, add int) []int {
 	index1, index2, indexResult := length1-1, 0, hightest-1
 	for {
 		index1Valid, index2Valid := index1 >= 0, index2 < length2
-		if !index1Valid && !index2Valid && carry==0 {
+		if !index1Valid && !index2Valid && carry == 0 {
 			break
 		}
 		digit1, digit2 := 0, 0
@@ -42,7 +42,7 @@ func addToArrayForm(number1 []int, add int) []int {
 		if indexResult == -1 {
 			result = append(result, 0)
 			copy(result[1:], result[0:hightest])
-            indexResult=0
+			indexResult = 0
 		}
 		result[indexResult] = digitResult
 		indexResult--

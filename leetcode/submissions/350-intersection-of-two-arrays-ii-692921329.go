@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func intersect(numbers_1 []int, numbers_2 []int) (result []int) {
 	// 0 <= nums1[i], nums2[i] <= 1000
 	count := make([]int, 1001)

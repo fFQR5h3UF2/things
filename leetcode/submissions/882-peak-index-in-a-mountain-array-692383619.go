@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func peakIndexInMountainArray(array []int) int {
 	left, right := 0, len(array)-1
 	for right > left {

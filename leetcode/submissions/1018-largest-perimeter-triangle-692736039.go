@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func largestPerimeter(numbers []int) int {
 	sort.Ints(numbers)
 	for index := len(numbers) - 1; index > 1; index-- {

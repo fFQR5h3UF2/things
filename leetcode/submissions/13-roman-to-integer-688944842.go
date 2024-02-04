@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func in(character rune, targets string) bool {
 	for _, target := range targets {
 		if character == target {

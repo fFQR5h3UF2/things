@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func firstBadVersion(n int) int {
 	// checking edge cases
 	if isBadVersion(1) {

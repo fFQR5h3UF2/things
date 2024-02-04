@@ -3,9 +3,7 @@
 
 package submissions
 
-
 import "fmt"
-
 
 func substrings(input string) map[string]bool {
 	results := make(map[string]bool)

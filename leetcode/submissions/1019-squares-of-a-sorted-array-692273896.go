@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func sortedSquares(numbers []int) []int {
 	length := len(numbers)
 	switch length {

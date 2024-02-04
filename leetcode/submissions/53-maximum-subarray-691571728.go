@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func maxSubArray(numbers []int) int {
 	length := len(numbers)
 	switch length {

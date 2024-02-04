@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func rotate(numbers []int, steps int) {
 	length := len(numbers)
 	// removing unnecessary steps

@@ -3,8 +3,6 @@
 
 package submissions
 
-
-
 func nextGreatestLetter(letters []byte, target byte) byte {
 	length := len(letters)
 	left, right := 0, length-1

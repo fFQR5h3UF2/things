@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func findTheDistanceValue(array_1 []int, array_2 []int, target int) int {
 	// sorting it to use binary search
 	sort.Ints(array_2)

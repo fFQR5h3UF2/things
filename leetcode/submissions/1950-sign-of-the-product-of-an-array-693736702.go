@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func arraySign(numbers []int) int {
 	negative_count := 0
 	for _, number := range numbers {

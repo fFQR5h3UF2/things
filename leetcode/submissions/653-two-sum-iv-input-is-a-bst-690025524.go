@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func construct(root *TreeNode, results map[int]int) {
 	if root == nil {
 		return

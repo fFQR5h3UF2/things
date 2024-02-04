@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func moveZeroes(numbers []int) {
 	index_zero := -1
 	// sliding window algorithm

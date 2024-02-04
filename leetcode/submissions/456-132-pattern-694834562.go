@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func find132pattern(numbers []int) bool {
 	length := len(numbers)
 	if length < 3 {

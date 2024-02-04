@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func addTwoNumbers(list_1 *ListNode, list_2 *ListNode) *ListNode {
 	current_1, current_2, result := list_1, list_2, &ListNode{}
 	var carry int

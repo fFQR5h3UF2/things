@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func average(salary []int) float64 {
 	length := len(salary)
 	highest, lowest := math.MinInt, math.MaxInt

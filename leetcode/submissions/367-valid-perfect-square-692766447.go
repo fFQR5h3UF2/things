@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func isPerfectSquare(number int) bool {
 	left, right := 1, number
 	for right >= left {

@@ -14,7 +14,7 @@ func reverse(list *ListNode) *ListNode {
 			return result
 		}
 		result = &ListNode{current.Val, result}
-        current = current.Next
+		current = current.Next
 	}
 }
 

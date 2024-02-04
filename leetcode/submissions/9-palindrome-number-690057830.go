@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func isPalindrome(number int) (result bool) {
 	if number < 0 {
 		return false

@@ -3,7 +3,6 @@
 
 package submissions
 
-
 func maxProfit(prices []int) int {
 	profit, index_buy := 0, 0
 	for index, price := range prices {

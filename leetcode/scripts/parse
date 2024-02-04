@@ -22,6 +22,11 @@ def main() -> None:
     with open(submissions_file, "r") as file:
         submissions = json.loads(file.read())
     for _, submission in submissions.items():
+        id = submission["id"]
+        status = submission["status_display"]
+        if status != "Accepted":
+            print(f"Ignoring {id}: {status}")
+            continue
         extension = extensions[submission["lang"]]
         comment = comments[submission["lang"]]
         header = headers[submission["lang"]]
