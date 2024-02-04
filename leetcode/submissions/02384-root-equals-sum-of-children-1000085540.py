@@ -1,5 +1,6 @@
-# Submission for Root Equals Sum of Children
-# Submission url: https://leetcode.com/submissions/detail/1000085540/
+# Submission title: for Root Equals Sum of Children
+# Submission url  : https://leetcode.com/submissions/detail/1000085540/
+# Submission json : {"id": 1000085540, "status_display": "Accepted", "lang": "python3", "question_id": 2384, "title_slug": "root-equals-sum-of-children", "code": "# Definition for a binary tree node.\n# class TreeNode:\n#     def __init__(self, val=0, left=None, right=None):\n#         self.val = val\n#         self.left = left\n#         self.right = right\nclass Solution:\n    def checkTree(self, root: Optional[TreeNode]) -> bool:\n        return root.val == (root.left.val + root.right.val)", "title": "Root Equals Sum of Children", "url": "/submissions/detail/1000085540/", "lang_name": "Python3", "time": "6\u00a0months, 2\u00a0weeks", "timestamp": 1689934794, "status": 10, "runtime": "45 ms", "is_pending": "Not Pending", "memory": "16.1 MB", "compare_result": "111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111", "has_notes": false, "flag_type": 1}
 
 
 # Definition for a binary tree node.
