@@ -1,0 +1,41 @@
+#!/usr/bin/env sh
+set -o errexit -o nounset #-o xtrace
+
+base="${1:?missing base url}"
+submissions_file="${2:?missing submissins file}"
+
+save_submission() {
+    data="${1:?missing data}"
+    question_id=$(echo "${data}" | jq -r .question_id)
+    title_slug=$(echo "${data}" | jq -r .title_slug)
+    status_display=$(echo "${data}" | jq -r .status_display)
+    id=$(echo "${data}" | jq -r .id)
+    language=$(echo "${data}" | jq -r .lang)
+    code=$(echo "${data}" | jq -r .code)
+    url=$(echo "${data}" | jq -r .url)
+    title=$(echo "${data}" | jq -r .title)
+    extension=
+    case "${language}" in
+    python3) extension="py" ;;
+    golang) extension="go" ;;
+    cpp) extension="cpp" ;;
+    java) extension="java" ;;
+    *) echo "unsupported language" && exit 1 ;;
+    esac
+    if [ "${status_display}" != "Accepted" ]; then
+        return
+    fi
+    filepath="leetcode/submissions/${question_id}-${title_slug}-${id}.${extension}"
+    cat - >"${filepath}" <<EOF
+# Submission for '${title}'
+# Submission url: ${base}${url}
+
+${code}
+EOF
+    echo "saved ${filepath}"
+}
+
+jq -rc "to_entries | map(.value) | .[]" "${submissions_file}" |
+    while read -r data; do
+        save_submission "${data}"
+    done

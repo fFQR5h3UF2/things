@@ -1,0 +1,58 @@
+#!/usr/bin/env sh
+set -o errexit -o nounset #-o xtrace
+
+base="${1:?missing base url}"
+submissions_file="${2:?missing submissions file}"
+submissions_count="${3:-20}"
+submissions_offset="${4:-0}"
+session="${LEETCODE_SESSION:-}"
+if [ -z "${session}" ]; then
+    echo "Input LEETCODE_SESSION cookie value"
+    session=$(read -r)
+fi
+
+get_submissions() {
+    _offset="${1:?missing offset}"
+    _limit="${2:?missing limit}"
+    _url="${base}/api/submissions/?offset=${_offset}&limit=${_limit}&lastkey="
+    (
+        set +x
+        echo "Downloading ${_offset}-$((_offset + _limit))" >&2
+        _response=$(
+            curl \
+                --silent \
+                --header "content-type: application/json" \
+                --header "origin: ${base}" \
+                --header "referer: ${base}" \
+                --header "user-agent: Mozilla/5.0 LeetCode API" \
+                --header "cookie: LEETCODE_SESSION=${session}" \
+                "${_url}"
+        )
+        _result=$(echo "${_response}" | jq -c ".submissions_dump | map({ (.id|tostring): .}) | add") || {
+            _code="${?}"
+            echo "Failed to download ${_offset}-$((_offset + _limit))" >&2
+            echo "${_response}" >&2
+            return "${_code}"
+        }
+        echo "${_result}"
+    )
+}
+
+offset="${submissions_offset}"
+while [ "${submissions_count}" -gt 0 ]; do
+    new_submissions=$(mktemp)
+    updated_submissions=$(mktemp)
+    cur_limit=$((submissions_count > 20 ? 20 : submissions_count))
+
+    get_submissions "${offset}" "${cur_limit}" >"${new_submissions}"
+    if [ -s "${new_submissions}" ]; then
+        echo "Reached the end"
+        break
+    fi
+    jq -sc '.[0] * .[1]' "${new_submissions}" "${submissions_file}" >"${updated_submissions}"
+    jq empty "${updated_submissions}" >/dev/null
+    cp -f "${updated_submissions}" "${submissions_file}"
+
+    submissions_count=$((submissions_count - cur_limit))
+    offset=$((offset + cur_limit))
+done
