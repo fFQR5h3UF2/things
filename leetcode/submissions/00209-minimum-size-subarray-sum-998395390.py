@@ -1,5 +1,6 @@
-# Submission for Minimum Size Subarray Sum
-# Submission url: https://leetcode.com/submissions/detail/998395390/
+# Submission title: for Minimum Size Subarray Sum
+# Submission url  : https://leetcode.com/submissions/detail/998395390/
+# Submission json : {"id": 998395390, "status_display": "Accepted", "lang": "python3", "question_id": 209, "title_slug": "minimum-size-subarray-sum", "code": "class Solution:\n    def minSubArrayLen(self, target: int, nums: List[int]) -> int:\n        left = 0\n        sum_of_subarray = 0\n        min_length = float('inf')\n        \n        for right in range(len(nums)):\n            sum_of_subarray += nums[right]\n            \n            while sum_of_subarray >= target:\n                min_length = min(min_length, right - left + 1)\n                sum_of_subarray -= nums[left]\n                left += 1\n\n        if min_length == float('inf'):\n            return 0\n\n        return min_length", "title": "Minimum Size Subarray Sum", "url": "/submissions/detail/998395390/", "lang_name": "Python3", "time": "6\u00a0months, 2\u00a0weeks", "timestamp": 1689765566, "status": 10, "runtime": "274 ms", "is_pending": "Not Pending", "memory": "29.5 MB", "compare_result": "111111111111111111111", "has_notes": false, "flag_type": 1}
 
 
 class Solution:

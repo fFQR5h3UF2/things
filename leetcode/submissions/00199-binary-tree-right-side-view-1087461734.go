@@ -1,5 +1,6 @@
-// Submission for Binary Tree Right Side View
-// Submission url: https://leetcode.com/submissions/detail/1087461734/
+// Submission title: for Binary Tree Right Side View
+// Submission url  : https://leetcode.com/submissions/detail/1087461734/
+// Submission json : {"id": 1087461734, "status_display": "Accepted", "lang": "golang", "question_id": 199, "title_slug": "binary-tree-right-side-view", "code": "/**\n * Definition for a binary tree node.\n * type TreeNode struct {\n *     Val int\n *     Left *TreeNode\n *     Right *TreeNode\n * }\n */\nfunc rightSideView(root *TreeNode) []int {\n    if root == nil {\n        return []int{}\n    }\n\n    q_cur, q_next, answer := []*TreeNode{root}, []*TreeNode{}, []int{}\n\n    for length := len(q_cur); length > 0; length = len(q_cur) {\n        for _, node := range q_cur {\n            if left := node.Left; left != nil {\n                q_next = append(q_next, left)\n            }\n            if right := node.Right; right != nil {\n                q_next = append(q_next, right)\n            }\n        }\n\n        answer = append(answer, q_cur[length - 1].Val)\n        q_cur = q_cur[:0]\n        q_cur, q_next = q_next, q_cur\n    }\n\n    return answer\n} ", "title": "Binary Tree Right Side View", "url": "/submissions/detail/1087461734/", "lang_name": "Go", "time": "3\u00a0months, 1\u00a0week", "timestamp": 1698660780, "status": 10, "runtime": "0 ms", "is_pending": "Not Pending", "memory": "2.3 MB", "compare_result": "111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111111", "has_notes": false, "flag_type": 1}
 
 package submissions
 
