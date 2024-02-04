@@ -32,7 +32,7 @@ def main() -> None:
         header = headers[submission["lang"]]
         file_name = "-".join(
             (
-                str(submission["question_id"]),
+                str(submission["question_id"]).rjust(5, "0"),
                 submission["title_slug"],
                 str(submission["id"]),
             )
