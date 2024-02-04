@@ -1,6 +1,6 @@
 # Makefile for dotfiles
 
-PACKAGES = bin repos vscode ssh cloud/cloud/yandex shell init udev gpg tmux os make nvim firefox git
+PACKAGES = bin repos vscode ssh cloud/cloud/yandex shell init udev gpg tmux os make nvim firefox leetcode git
 OUT_DIR = ./out
 OUT_PACKAGE_DIR = ${OUT_DIR}/package
 OUT_TRACKER_DIR = ${OUT_DIR}/tracker
