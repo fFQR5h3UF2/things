@@ -1,5 +1,6 @@
-# Submission for 'Apply Discount Every n Orders'
+# Submission for Apply Discount Every n Orders
 # Submission url: https://leetcode.com/submissions/detail/1051157804/
+
 
 class Cashier:
 
@@ -15,7 +16,6 @@ class Cashier:
             return total
         self.cur = 0
         return total * self.discount
-
 
 
 # Your Cashier object will be instantiated and called as such:

@@ -1,5 +1,6 @@
-# Submission for 'Buddy Strings'
+# Submission for Buddy Strings
 # Submission url: https://leetcode.com/submissions/detail/1010081666/
+
 
 class Solution:
     def buddyStrings(self, s: str, goal: str) -> bool:
@@ -30,6 +31,5 @@ class Solution:
                 swap_2 = i
             else:
                 return False
-
 
         return swap_2 != -1 and s[swap_1] == goal[swap_2] and s[swap_2] == goal[swap_1]

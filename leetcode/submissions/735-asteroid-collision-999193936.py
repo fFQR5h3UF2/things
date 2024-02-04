@@ -1,5 +1,6 @@
-# Submission for 'Asteroid Collision'
+# Submission for Asteroid Collision
 # Submission url: https://leetcode.com/submissions/detail/999193936/
+
 
 class Solution:
     def asteroidCollision(self, asteroids: List[int]) -> List[int]:

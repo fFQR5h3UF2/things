@@ -1,8 +1,11 @@
-# Submission for 'Number of Flowers in Full Bloom'
+# Submission for Number of Flowers in Full Bloom
 # Submission url: https://leetcode.com/submissions/detail/1072633767/
 
+
 class Solution:
-    def fullBloomFlowers(self, flowers: List[List[int]], people: List[int]) -> List[int]:
+    def fullBloomFlowers(
+        self, flowers: List[List[int]], people: List[int]
+    ) -> List[int]:
         flowers.sort()
         sorted_people = sorted(people)
         dic = {}

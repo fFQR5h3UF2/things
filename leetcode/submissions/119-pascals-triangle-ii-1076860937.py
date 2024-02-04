@@ -1,5 +1,6 @@
-# Submission for 'Pascal's Triangle II'
+# Submission for Pascal's Triangle II
 # Submission url: https://leetcode.com/submissions/detail/1076860937/
+
 
 class Solution:
     def getRow(self, rowIndex: int) -> List[int]:
@@ -9,7 +10,7 @@ class Solution:
         while row < rowIndex:
             cur.append(1)
             for i in range(1, len(prev)):
-                cur.append(prev[i] + prev[i-1])
+                cur.append(prev[i] + prev[i - 1])
             cur.append(1)
             prev.clear()
             cur, prev = prev, cur

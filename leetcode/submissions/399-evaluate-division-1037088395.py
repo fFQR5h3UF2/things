@@ -1,8 +1,11 @@
-# Submission for 'Evaluate Division'
+# Submission for Evaluate Division
 # Submission url: https://leetcode.com/submissions/detail/1037088395/
 
+
 class Solution:
-    def calcEquation(self, equations: List[List[str]], values: List[float], queries: List[List[str]]) -> List[float]:
+    def calcEquation(
+        self, equations: List[List[str]], values: List[float], queries: List[List[str]]
+    ) -> List[float]:
         equations_count = len(equations)
         queries_count = len(queries)
         edges = defaultdict(dict)

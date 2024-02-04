@@ -1,5 +1,6 @@
-# Submission for 'Design Parking System'
+# Submission for Design Parking System
 # Submission url: https://leetcode.com/submissions/detail/1047430740/
+
 
 class ParkingSystem:
 
@@ -7,9 +8,9 @@ class ParkingSystem:
         self._slots = [big, medium, small]
 
     def addCar(self, carType: int) -> bool:
-        if self._slots[carType-1] == 0:
+        if self._slots[carType - 1] == 0:
             return False
-        self._slots[carType-1] -= 1
+        self._slots[carType - 1] -= 1
         return True
 
 

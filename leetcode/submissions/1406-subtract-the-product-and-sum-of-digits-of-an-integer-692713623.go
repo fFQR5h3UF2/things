@@ -1,5 +1,7 @@
-# Submission for 'Subtract the Product and Sum of Digits of an Integer'
-# Submission url: https://leetcode.com/submissions/detail/692713623/
+// Submission for Subtract the Product and Sum of Digits of an Integer
+// Submission url: https://leetcode.com/submissions/detail/692713623/
+
+package submissions
 
 func subtractProductAndSum(number int) int {
 	fist_digit := number % 10

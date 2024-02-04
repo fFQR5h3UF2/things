@@ -1,5 +1,6 @@
-# Submission for 'Reverse Linked List II'
+# Submission for Reverse Linked List II
 # Submission url: https://leetcode.com/submissions/detail/1043078135/
+
 
 # Definition for singly-linked list.
 # class ListNode:
@@ -7,7 +8,9 @@
 #         self.val = val
 #         self.next = next
 class Solution:
-    def reverseBetween(self, head: Optional[ListNode], left: int, right: int) -> Optional[ListNode]:
+    def reverseBetween(
+        self, head: Optional[ListNode], left: int, right: int
+    ) -> Optional[ListNode]:
         cur_node = 1
         left_head, left_tail = head if left > 1 else None, None
 

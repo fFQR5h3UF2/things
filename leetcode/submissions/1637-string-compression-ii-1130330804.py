@@ -1,5 +1,6 @@
-# Submission for 'String Compression II'
+# Submission for String Compression II
 # Submission url: https://leetcode.com/submissions/detail/1130330804/
+
 
 class Solution:
     def getLengthOfOptimalCompression(self, s: str, k: int) -> int:
@@ -17,7 +18,16 @@ class Solution:
                         del_ += 1
 
                     if j - del_ >= 0:
-                        dp[i][j] = min(dp[i][j], dp[l - 1][j - del_] + 1 + (3 if cnt >= 100 else 2 if cnt >= 10 else 1 if cnt >= 2 else 0))
+                        dp[i][j] = min(
+                            dp[i][j],
+                            dp[l - 1][j - del_]
+                            + 1
+                            + (
+                                3
+                                if cnt >= 100
+                                else 2 if cnt >= 10 else 1 if cnt >= 2 else 0
+                            ),
+                        )
 
                 if j > 0:
                     dp[i][j] = min(dp[i][j], dp[i - 1][j - 1])

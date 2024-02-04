@@ -1,5 +1,6 @@
-# Submission for 'Image Smoother'
+# Submission for Image Smoother
 # Submission url: https://leetcode.com/submissions/detail/1123253523/
+
 
 class Solution:
     def imageSmoother(self, img: List[List[int]]) -> List[List[int]]:

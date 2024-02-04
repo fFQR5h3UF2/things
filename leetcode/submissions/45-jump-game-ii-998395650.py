@@ -1,5 +1,6 @@
-# Submission for 'Jump Game II'
+# Submission for Jump Game II
 # Submission url: https://leetcode.com/submissions/detail/998395650/
+
 
 class Solution:
     def jump(self, nums: List[int]) -> int:
@@ -21,6 +22,5 @@ class Solution:
             if i == end:
                 result += 1
                 end = farthest
-
 
         return result

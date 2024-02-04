@@ -1,6 +1,7 @@
-# Submission for 'Sign of the Product of an Array'
-# Submission url: https://leetcode.com/submissions/detail/693736702/
+// Submission for Sign of the Product of an Array
+// Submission url: https://leetcode.com/submissions/detail/693736702/
 
+package submissions
 
 func arraySign(numbers []int) int {
 	negative_count := 0

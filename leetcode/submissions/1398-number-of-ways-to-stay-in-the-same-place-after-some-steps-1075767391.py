@@ -1,5 +1,6 @@
-# Submission for 'Number of Ways to Stay in the Same Place After Some Steps'
+# Submission for Number of Ways to Stay in the Same Place After Some Steps
 # Submission url: https://leetcode.com/submissions/detail/1075767391/
+
 
 class Solution:
     def numWays(self, steps: int, arrLen: int) -> int:
@@ -20,5 +21,5 @@ class Solution:
 
             return ans
 
-        MOD = 10 ** 9 + 7
+        MOD = 10**9 + 7
         return dp(0, steps)

@@ -1,5 +1,6 @@
-# Submission for 'Asteroid Collision'
+# Submission for Asteroid Collision
 # Submission url: https://leetcode.com/submissions/detail/999173927/
+
 
 class Solution:
     def asteroidCollision(self, asteroids: List[int]) -> List[int]:
@@ -14,9 +15,7 @@ class Solution:
             asteroid_last = stack[-1] if stack else 0
             stack.append(asteroid)
 
-            if asteroid > 0 or (
-                asteroid < 0 and asteroid_last < 0
-            ):
+            if asteroid > 0 or (asteroid < 0 and asteroid_last < 0):
                 continue
 
             while len(stack) >= 2 and stack[-1] < 0 and stack[-2] > 0:

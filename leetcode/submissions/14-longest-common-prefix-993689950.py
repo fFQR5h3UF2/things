@@ -1,5 +1,6 @@
-# Submission for 'Longest Common Prefix'
+# Submission for Longest Common Prefix
 # Submission url: https://leetcode.com/submissions/detail/993689950/
+
 
 class Solution:
 
@@ -9,9 +10,9 @@ class Solution:
 
         min_length = min([len(string) for string in strs])
         for i in range(min_length, -1, -1):
-            current = strs[0][0:i+1]
+            current = strs[0][0 : i + 1]
             for string in strs[1:]:
-                if string[0:i+1] != current:
+                if string[0 : i + 1] != current:
                     break
             else:
                 return current

@@ -1,5 +1,6 @@
-# Submission for 'Find Players With Zero or One Losses'
+# Submission for Find Players With Zero or One Losses
 # Submission url: https://leetcode.com/submissions/detail/1146709676/
+
 
 class Solution:
     def findWinners(self, matches):

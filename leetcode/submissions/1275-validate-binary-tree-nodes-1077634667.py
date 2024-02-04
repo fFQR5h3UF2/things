@@ -1,8 +1,11 @@
-# Submission for 'Validate Binary Tree Nodes'
+# Submission for Validate Binary Tree Nodes
 # Submission url: https://leetcode.com/submissions/detail/1077634667/
 
+
 class Solution:
-    def validateBinaryTreeNodes(self, n: int, leftChild: List[int], rightChild: List[int]) -> bool:
+    def validateBinaryTreeNodes(
+        self, n: int, leftChild: List[int], rightChild: List[int]
+    ) -> bool:
         parents = [-1] * n
 
         for i in range(n):

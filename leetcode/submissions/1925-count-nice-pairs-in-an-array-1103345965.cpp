@@ -1,5 +1,7 @@
-# Submission for 'Count Nice Pairs in an Array'
-# Submission url: https://leetcode.com/submissions/detail/1103345965/
+// Submission for Count Nice Pairs in an Array
+// Submission url: https://leetcode.com/submissions/detail/1103345965/
+
+
 
 class Solution {
 public:

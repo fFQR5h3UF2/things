@@ -1,30 +1,28 @@
-# Submission for 'Seat Reservation Manager'
-# Submission url: https://leetcode.com/submissions/detail/1092754707/
+// Submission for Seat Reservation Manager
+// Submission url: https://leetcode.com/submissions/detail/1092754707/
+
+package submissions
 
 type SeatManager struct {
-    heap *binaryheap.Heap
+	heap *binaryheap.Heap
 }
-
 
 func Constructor(n int) SeatManager {
-    heap := binaryheap.NewWithIntComparator()
-    for i := 1; i <= n; i++ {
-        heap.Push(i)
-    }
-    return SeatManager{heap}
+	heap := binaryheap.NewWithIntComparator()
+	for i := 1; i <= n; i++ {
+		heap.Push(i)
+	}
+	return SeatManager{heap}
 }
-
 
 func (this *SeatManager) Reserve() int {
-    val, _ := this.heap.Pop()
-    return val.(int)
+	val, _ := this.heap.Pop()
+	return val.(int)
 }
 
-
-func (this *SeatManager) Unreserve(seatNumber int)  {
-    this.heap.Push(seatNumber)
+func (this *SeatManager) Unreserve(seatNumber int) {
+	this.heap.Push(seatNumber)
 }
-
 
 /**
  * Your SeatManager object will be instantiated and called as such:

@@ -1,5 +1,6 @@
-# Submission for 'Binary Tree Right Side View'
+# Submission for Binary Tree Right Side View
 # Submission url: https://leetcode.com/submissions/detail/1087430539/
+
 
 # Definition for a binary tree node.
 # class TreeNode:

@@ -1,5 +1,6 @@
-# Submission for 'Valid Palindrome'
+# Submission for Valid Palindrome
 # Submission url: https://leetcode.com/submissions/detail/991896861/
+
 
 class Solution:
     def isPalindrome(self, s: str) -> bool:
@@ -11,9 +12,9 @@ class Solution:
 
         i, j = 0, length - 1
         # iterate from start and from end:
-    # - if the symbol is not alphanumeric, skip
-    # - if the symbol is alphanumeric, compare
-    # - if indexes are equal or reversed, return
+        # - if the symbol is not alphanumeric, skip
+        # - if the symbol is alphanumeric, compare
+        # - if indexes are equal or reversed, return
         while i < j:
             symbol_start, symbol_end = s[i].lower(), s[j].lower()
             if not symbol_start.isalnum():

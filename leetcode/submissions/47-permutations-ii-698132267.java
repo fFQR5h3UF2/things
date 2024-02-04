@@ -1,5 +1,7 @@
-# Submission for 'Permutations II'
-# Submission url: https://leetcode.com/submissions/detail/698132267/
+// Submission for Permutations II
+// Submission url: https://leetcode.com/submissions/detail/698132267/
+
+com.shishifubing.dotfiles.submissions
 
 class Solution {
 public List<List<Integer>> permuteUnique(int[] nums) {

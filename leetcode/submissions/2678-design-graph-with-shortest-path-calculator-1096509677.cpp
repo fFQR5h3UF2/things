@@ -1,5 +1,7 @@
-# Submission for 'Design Graph With Shortest Path Calculator'
-# Submission url: https://leetcode.com/submissions/detail/1096509677/
+// Submission for Design Graph With Shortest Path Calculator
+// Submission url: https://leetcode.com/submissions/detail/1096509677/
+
+
 
 class Graph {
 public:

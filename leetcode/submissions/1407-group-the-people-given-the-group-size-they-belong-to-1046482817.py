@@ -1,5 +1,6 @@
-# Submission for 'Group the People Given the Group Size They Belong To'
+# Submission for Group the People Given the Group Size They Belong To
 # Submission url: https://leetcode.com/submissions/detail/1046482817/
+
 
 class Solution:
     def groupThePeople(self, groupSizes: List[int]) -> List[List[int]]:

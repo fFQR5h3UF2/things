@@ -1,12 +1,11 @@
-# Submission for 'Integer to Roman'
+# Submission for Integer to Roman
 # Submission url: https://leetcode.com/submissions/detail/997593623/
+
 
 class Solution:
     def intToRoman(self, num: int) -> str:
         result: List[str] = []
-        stack: List[int] = deque([
-            1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000
-        ])
+        stack: List[int] = deque([1, 4, 5, 9, 10, 40, 50, 90, 100, 400, 500, 900, 1000])
         values = {
             1000: "M",
             900: "CM",
@@ -20,7 +19,7 @@ class Solution:
             9: "IX",
             5: "V",
             4: "IV",
-            1: "I"
+            1: "I",
         }
 
         while num:

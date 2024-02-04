@@ -1,5 +1,6 @@
-# Submission for 'Number of Islands'
+# Submission for Number of Islands
 # Submission url: https://leetcode.com/submissions/detail/1035182855/
+
 
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
@@ -9,7 +10,11 @@ class Solution:
 
         @cache
         def dfs(row: int, col: int) -> None:
-            if not 0 <= row < row_count or not 0 <= col < col_count or grid[row][col] == "0":
+            if (
+                not 0 <= row < row_count
+                or not 0 <= col < col_count
+                or grid[row][col] == "0"
+            ):
                 return
 
             grid[row][col] = "0"

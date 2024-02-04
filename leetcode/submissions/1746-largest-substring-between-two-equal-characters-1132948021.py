@@ -1,5 +1,6 @@
-# Submission for 'Largest Substring Between Two Equal Characters'
+# Submission for Largest Substring Between Two Equal Characters
 # Submission url: https://leetcode.com/submissions/detail/1132948021/
+
 
 class Solution:
     def maxLengthBetweenEqualCharacters(self, s: str) -> int:

@@ -1,5 +1,7 @@
-# Submission for 'Removing Stars From a String'
-# Submission url: https://leetcode.com/submissions/detail/1100709128/
+// Submission for Removing Stars From a String
+// Submission url: https://leetcode.com/submissions/detail/1100709128/
+
+
 
 class Solution {
 public:

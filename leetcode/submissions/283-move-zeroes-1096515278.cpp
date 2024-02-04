@@ -1,5 +1,7 @@
-# Submission for 'Move Zeroes'
-# Submission url: https://leetcode.com/submissions/detail/1096515278/
+// Submission for Move Zeroes
+// Submission url: https://leetcode.com/submissions/detail/1096515278/
+
+
 
 class Solution {
 public:

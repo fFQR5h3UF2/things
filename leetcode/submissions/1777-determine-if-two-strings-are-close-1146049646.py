@@ -1,4 +1,4 @@
-# Submission for 'Determine if Two Strings Are Close'
+# Submission for Determine if Two Strings Are Close
 # Submission url: https://leetcode.com/submissions/detail/1146049646/
 
 
@@ -8,10 +8,10 @@ class Solution:
         freq2 = [0] * 26
 
         for ch in word1:
-            freq1[ord(ch) - ord('a')] += 1
+            freq1[ord(ch) - ord("a")] += 1
 
         for ch in word2:
-            freq2[ord(ch) - ord('a')] += 1
+            freq2[ord(ch) - ord("a")] += 1
 
         for i in range(26):
             if (freq1[i] == 0 and freq2[i] != 0) or (freq1[i] != 0 and freq2[i] == 0):

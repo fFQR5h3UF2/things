@@ -1,5 +1,7 @@
-# Submission for 'Longest Common Prefix'
-# Submission url: https://leetcode.com/submissions/detail/689769078/
+// Submission for Longest Common Prefix
+// Submission url: https://leetcode.com/submissions/detail/689769078/
+
+package submissions
 
 func longestCommonPrefix(strings []string) string {
 	switch len(strings) {
@@ -9,7 +11,7 @@ func longestCommonPrefix(strings []string) string {
 		return strings[0]
 	}
 	result := strings[0]
-for index := 1; index < len(strings); index++ {
+	for index := 1; index < len(strings); index++ {
 		current := strings[index]
 		previous := strings[index-1]
 		current_max := len(current)
@@ -32,5 +34,5 @@ for index := 1; index < len(strings); index++ {
 			}
 		}
 	}
-    return result
+	return result
 }

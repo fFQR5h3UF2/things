@@ -1,5 +1,6 @@
-# Submission for 'Find Critical and Pseudo-Critical Edges in Minimum Spanning Tree'
+# Submission for Find Critical and Pseudo-Critical Edges in Minimum Spanning Tree
 # Submission url: https://leetcode.com/submissions/detail/1025739989/
+
 
 class Solution:
 
@@ -46,11 +47,11 @@ class Solution:
         # Check each edge for critical and pseudo-critical
         critical = []
         pseudo_critical = []
-        for (u, v, w, i) in new_edges:
+        for u, v, w, i in new_edges:
             # Ignore this edge and calculate MST weight
             uf_ignore = self.UnionFind(n)
             ignore_weight = 0
-            for (x, y, w_ignore, j) in new_edges:
+            for x, y, w_ignore, j in new_edges:
                 if i != j and uf_ignore.union(x, y):
                     ignore_weight += w_ignore
             # If the graph is disconnected or the total weight is greater,
@@ -63,7 +64,7 @@ class Solution:
             uf_force = self.UnionFind(n)
             force_weight = w
             uf_force.union(u, v)
-            for (x, y, w_force, j) in new_edges:
+            for x, y, w_force, j in new_edges:
                 if i != j and uf_force.union(x, y):
                     force_weight += w_force
             # If total weight is the same, the edge is pseudo-critical

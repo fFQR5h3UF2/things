@@ -1,10 +1,11 @@
-# Submission for 'Buy Two Chocolates'
+# Submission for Buy Two Chocolates
 # Submission url: https://leetcode.com/submissions/detail/1124175757/
+
 
 class Solution:
     def buyChoco(self, prices: List[int], money: int) -> int:
         # Assume the Minimum Cost to be Infinity
-        min_cost = float('inf')
+        min_cost = float("inf")
 
         # Number of Chocolates
         n = len(prices)

@@ -1,5 +1,7 @@
-# Submission for 'Merge Two Sorted Lists'
-# Submission url: https://leetcode.com/submissions/detail/690739883/
+// Submission for Merge Two Sorted Lists
+// Submission url: https://leetcode.com/submissions/detail/690739883/
+
+package submissions
 
 func mergeTwoLists(list1 *ListNode, list2 *ListNode) *ListNode {
 	// ensure both lists are valid

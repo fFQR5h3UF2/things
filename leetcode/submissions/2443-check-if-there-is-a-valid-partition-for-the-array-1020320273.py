@@ -1,5 +1,6 @@
-# Submission for 'Check if There is a Valid Partition For The Array'
+# Submission for Check if There is a Valid Partition For The Array
 # Submission url: https://leetcode.com/submissions/detail/1020320273/
+
 
 class Solution:
     def validPartition(self, nums: List[int]) -> bool:

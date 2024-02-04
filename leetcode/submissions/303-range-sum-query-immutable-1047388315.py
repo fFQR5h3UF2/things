@@ -1,5 +1,6 @@
-# Submission for 'Range Sum Query - Immutable'
+# Submission for Range Sum Query - Immutable
 # Submission url: https://leetcode.com/submissions/detail/1047388315/
+
 
 class NumArray:
 

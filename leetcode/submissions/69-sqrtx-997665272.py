@@ -1,5 +1,6 @@
-# Submission for 'Sqrt(x)'
+# Submission for Sqrt(x)
 # Submission url: https://leetcode.com/submissions/detail/997665272/
+
 
 class Solution:
     def mySqrt(self, x: int) -> int:

@@ -1,11 +1,12 @@
-# Submission for 'Flatten Nested List Iterator'
+# Submission for Flatten Nested List Iterator
 # Submission url: https://leetcode.com/submissions/detail/1079920783/
+
 
 # """
 # This is the interface that allows for creating nested lists.
 # You should not implement it, or speculate about its implementation
 # """
-#class NestedInteger:
+# class NestedInteger:
 #    def isInteger(self) -> bool:
 #        """
 #        @return True if this NestedInteger holds a single integer, rather than a nested list.
@@ -23,12 +24,15 @@
 #        Return None if this NestedInteger holds a single integer
 #        """
 
+
 class NestedIterator:
     def __init__(self, nestedList: [NestedInteger]):
         self.get_next = self.get_next_gen(nestedList)
         self.next_val = next(self.get_next, None)
 
-    def get_next_gen(self, nestedList: List[NestedInteger]) -> Generator[None, None, int]:
+    def get_next_gen(
+        self, nestedList: List[NestedInteger]
+    ) -> Generator[None, None, int]:
         for ni in nestedList:
             if ni.isInteger():
                 yield ni.getInteger()
@@ -41,6 +45,7 @@ class NestedIterator:
 
     def hasNext(self) -> bool:
         return self.next_val is not None
+
 
 # Your NestedIterator object will be instantiated and called as such:
 # i, v = NestedIterator(nestedList), []

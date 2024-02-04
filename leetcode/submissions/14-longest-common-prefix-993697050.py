@@ -1,5 +1,6 @@
-# Submission for 'Longest Common Prefix'
+# Submission for Longest Common Prefix
 # Submission url: https://leetcode.com/submissions/detail/993697050/
+
 
 class Solution:
 

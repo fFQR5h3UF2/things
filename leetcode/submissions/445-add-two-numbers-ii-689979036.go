@@ -1,5 +1,7 @@
-# Submission for 'Add Two Numbers II'
-# Submission url: https://leetcode.com/submissions/detail/689979036/
+// Submission for Add Two Numbers II
+// Submission url: https://leetcode.com/submissions/detail/689979036/
+
+package submissions
 
 func reverse(list *ListNode) *ListNode {
 	if list == nil || list.Next == nil {
@@ -12,7 +14,7 @@ func reverse(list *ListNode) *ListNode {
 			return result
 		}
 		result = &ListNode{current.Val, result}
-        current = current.Next
+		current = current.Next
 	}
 }
 

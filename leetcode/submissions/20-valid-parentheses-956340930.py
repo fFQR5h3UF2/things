@@ -1,15 +1,12 @@
-# Submission for 'Valid Parentheses'
+# Submission for Valid Parentheses
 # Submission url: https://leetcode.com/submissions/detail/956340930/
+
 
 class Solution:
     def isValid(self, s: str) -> bool:
         brackets = []
 
-        symbols = {
-            "{": "}",
-            "(": ")",
-            "[": "]"
-        }
+        symbols = {"{": "}", "(": ")", "[": "]"}
 
         open = symbols.keys()
         closed = symbols.values()

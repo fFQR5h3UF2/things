@@ -1,5 +1,6 @@
-# Submission for 'Minimum Depth of Binary Tree'
+# Submission for Minimum Depth of Binary Tree
 # Submission url: https://leetcode.com/submissions/detail/1046639098/
+
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -14,7 +15,9 @@ class Solution:
             if not node:
                 return 0
 
-            return 1 + min((depth for depth in (dfs(node.left), dfs(node.right)) if depth > 0),
-                           default=0)
+            return 1 + min(
+                (depth for depth in (dfs(node.left), dfs(node.right)) if depth > 0),
+                default=0,
+            )
 
         return dfs(root)

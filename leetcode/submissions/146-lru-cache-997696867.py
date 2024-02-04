@@ -1,5 +1,6 @@
-# Submission for 'LRU Cache'
+# Submission for LRU Cache
 # Submission url: https://leetcode.com/submissions/detail/997696867/
+
 
 class LRUCache:
     class Node:
@@ -41,7 +42,6 @@ class LRUCache:
         self.cache[key] = self.head.next
         return result
 
-
     def put(self, key: int, value: int) -> None:
         if key in self.cache:
             current = self.cache[key]
@@ -54,6 +54,7 @@ class LRUCache:
 
         self.add_node(self.Node(key, value))
         self.cache[key] = self.head.next
+
 
 # Your LRUCache object will be instantiated and called as such:
 # obj = LRUCache(capacity)

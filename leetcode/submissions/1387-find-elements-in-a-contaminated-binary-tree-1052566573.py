@@ -1,5 +1,6 @@
-# Submission for 'Find Elements in a Contaminated Binary Tree'
+# Submission for Find Elements in a Contaminated Binary Tree
 # Submission url: https://leetcode.com/submissions/detail/1052566573/
+
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -12,7 +13,7 @@ class FindElements:
     def __init__(self, root: Optional[TreeNode]):
         root.val = 0
         nodes = [root]
-        self.values = set((0, ))
+        self.values = set((0,))
         while nodes:
             node = nodes.pop()
             if node.left:
@@ -28,6 +29,7 @@ class FindElements:
 
     def find(self, target: int) -> bool:
         return target in self.values
+
 
 # Your FindElements object will be instantiated and called as such:
 # obj = FindElements(root)

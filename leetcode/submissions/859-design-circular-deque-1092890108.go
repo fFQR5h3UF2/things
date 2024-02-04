@@ -1,78 +1,70 @@
-# Submission for 'Design Circular Deque'
-# Submission url: https://leetcode.com/submissions/detail/1092890108/
+// Submission for Design Circular Deque
+// Submission url: https://leetcode.com/submissions/detail/1092890108/
+
+package submissions
 
 type MyCircularDeque struct {
-    list []int
-    size int
+	list []int
+	size int
 }
-
 
 func Constructor(k int) MyCircularDeque {
-    return MyCircularDeque{[]int{}, k}
+	return MyCircularDeque{[]int{}, k}
 }
-
 
 func (this *MyCircularDeque) InsertFront(value int) bool {
-    if this.IsFull() {
-        return false
-    }
-    this.list = append([]int{value}, this.list...)
-    return true
+	if this.IsFull() {
+		return false
+	}
+	this.list = append([]int{value}, this.list...)
+	return true
 }
-
 
 func (this *MyCircularDeque) InsertLast(value int) bool {
-    if this.IsFull() {
-        return false
-    }
-    this.list = append(this.list, value)
-    return true
+	if this.IsFull() {
+		return false
+	}
+	this.list = append(this.list, value)
+	return true
 }
-
 
 func (this *MyCircularDeque) DeleteFront() bool {
-    if this.IsEmpty() {
-        return false
-    }
-    this.list = this.list[1:]
-    return true
+	if this.IsEmpty() {
+		return false
+	}
+	this.list = this.list[1:]
+	return true
 }
-
 
 func (this *MyCircularDeque) DeleteLast() bool {
-    if this.IsEmpty() {
-        return false
-    }
-    this.list = this.list[:len(this.list) - 1]
-    return true
+	if this.IsEmpty() {
+		return false
+	}
+	this.list = this.list[:len(this.list)-1]
+	return true
 }
-
 
 func (this *MyCircularDeque) GetFront() int {
-    if this.IsEmpty() {
-        return -1
-    }
-    return this.list[0]
+	if this.IsEmpty() {
+		return -1
+	}
+	return this.list[0]
 }
-
 
 func (this *MyCircularDeque) GetRear() int {
-    if this.IsEmpty() {
-        return -1
-    }
-    return this.list[len(this.list) - 1]
+	if this.IsEmpty() {
+		return -1
+	}
+	return this.list[len(this.list)-1]
 }
-
 
 func (this *MyCircularDeque) IsEmpty() bool {
-    return len(this.list) == 0
+	return len(this.list) == 0
 }
-
 
 func (this *MyCircularDeque) IsFull() bool {
-    return len(this.list) == this.size
+	return len(this.list) == this.size
 }
-
 
 /**
  * Your MyCircularDeque object will be instantiated and called as such:

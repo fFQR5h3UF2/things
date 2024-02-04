@@ -1,6 +1,7 @@
-# Submission for 'Intersection of Two Arrays II'
-# Submission url: https://leetcode.com/submissions/detail/692921329/
+// Submission for Intersection of Two Arrays II
+// Submission url: https://leetcode.com/submissions/detail/692921329/
 
+package submissions
 
 func intersect(numbers_1 []int, numbers_2 []int) (result []int) {
 	// 0 <= nums1[i], nums2[i] <= 1000

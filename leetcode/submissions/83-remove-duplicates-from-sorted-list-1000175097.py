@@ -1,5 +1,6 @@
-# Submission for 'Remove Duplicates from Sorted List'
+# Submission for Remove Duplicates from Sorted List
 # Submission url: https://leetcode.com/submissions/detail/1000175097/
+
 
 # Definition for singly-linked list.
 # class ListNode:

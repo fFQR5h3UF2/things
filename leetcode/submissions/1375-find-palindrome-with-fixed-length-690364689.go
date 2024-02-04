@@ -1,5 +1,7 @@
-# Submission for 'Find Palindrome With Fixed Length'
-# Submission url: https://leetcode.com/submissions/detail/690364689/
+// Submission for Find Palindrome With Fixed Length
+// Submission url: https://leetcode.com/submissions/detail/690364689/
+
+package submissions
 
 func kthPalindrome(queries []int, intLength int) (answer []int64) {
 	for _, query := range queries {

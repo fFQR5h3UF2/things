@@ -1,5 +1,6 @@
-# Submission for 'Path With Minimum Effort'
+# Submission for Path With Minimum Effort
 # Submission url: https://leetcode.com/submissions/detail/1050711409/
+
 
 class Solution:
 

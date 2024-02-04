@@ -1,10 +1,12 @@
-# Submission for 'Best Time to Buy and Sell Stock IV'
+# Submission for Best Time to Buy and Sell Stock IV
 # Submission url: https://leetcode.com/submissions/detail/1016554386/
+
 
 class Solution:
     def maxProfit(self, k: int, prices: List[int]) -> int:
         # no transaction, no profit
-        if k == 0: return 0
+        if k == 0:
+            return 0
         # dp[k][0] = min cost you need to spend at most k transactions
         # dp[k][1] = max profit you can achieve at most k transactions
         dp = [[1000, 0] for _ in range(k + 1)]
@@ -18,5 +20,5 @@ class Solution:
                 # we want to maximize it
                 dp[i][1] = max(dp[i][1], price - dp[i][0])
         # return max profit at most k transactions
-		# or you can write `return dp[-1][1]`
+        # or you can write `return dp[-1][1]`
         return dp[k][1]

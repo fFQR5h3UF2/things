@@ -1,5 +1,6 @@
-# Submission for 'Gas Station'
+# Submission for Gas Station
 # Submission url: https://leetcode.com/submissions/detail/998399818/
+
 
 class Solution:
     def canCompleteCircuit(self, gas: List[int], cost: List[int]) -> int:
@@ -10,5 +11,5 @@ class Solution:
         for i in range(len(gas)):
             tank += gas[i] - cost[i]
             if tank < 0:
-                tank, idx = 0, i+1
+                tank, idx = 0, i + 1
         return idx

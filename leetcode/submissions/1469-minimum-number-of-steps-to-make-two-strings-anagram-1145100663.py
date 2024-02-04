@@ -1,5 +1,6 @@
-# Submission for 'Minimum Number of Steps to Make Two Strings Anagram'
+# Submission for Minimum Number of Steps to Make Two Strings Anagram
 # Submission url: https://leetcode.com/submissions/detail/1145100663/
+
 
 class Solution:
     def minSteps(self, s: str, t: str) -> int:
@@ -7,10 +8,10 @@ class Solution:
         count_t = [0] * 26
 
         for char in s:
-            count_s[ord(char) - ord('a')] += 1
+            count_s[ord(char) - ord("a")] += 1
 
         for char in t:
-            count_t[ord(char) - ord('a')] += 1
+            count_t[ord(char) - ord("a")] += 1
 
         steps = 0
         for i in range(26):

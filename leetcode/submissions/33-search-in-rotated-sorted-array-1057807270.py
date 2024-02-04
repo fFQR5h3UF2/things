@@ -1,5 +1,6 @@
-# Submission for 'Search in Rotated Sorted Array'
+# Submission for Search in Rotated Sorted Array
 # Submission url: https://leetcode.com/submissions/detail/1057807270/
+
 
 class Solution:
     def search(self, nums: List[int], target: int) -> int:

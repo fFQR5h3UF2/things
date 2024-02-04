@@ -1,5 +1,6 @@
-# Submission for 'Find the Index of the First Occurrence in a String'
+# Submission for Find the Index of the First Occurrence in a String
 # Submission url: https://leetcode.com/submissions/detail/990972145/
+
 
 class Solution:
     # check edge cases:
@@ -26,7 +27,7 @@ class Solution:
             return 0
 
         for i, _ in enumerate(haystack):
-            current_needle = haystack[i:i+length_needle]
+            current_needle = haystack[i : i + length_needle]
             if current_needle == needle:
                 return i
         return -1

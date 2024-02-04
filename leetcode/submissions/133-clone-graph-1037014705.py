@@ -1,5 +1,6 @@
-# Submission for 'Clone Graph'
+# Submission for Clone Graph
 # Submission url: https://leetcode.com/submissions/detail/1037014705/
+
 
 """
 # Definition for a Node.
@@ -9,8 +10,9 @@ class Node:
         self.neighbors = neighbors if neighbors is not None else []
 """
 
+
 class Solution:
-    def cloneGraph(self, node: 'Node') -> 'Node':
+    def cloneGraph(self, node: "Node") -> "Node":
         old_to_new = {}
 
         def clone(node: Node) -> Node:

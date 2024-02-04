@@ -1,6 +1,7 @@
-# Submission for 'Squares of a Sorted Array'
-# Submission url: https://leetcode.com/submissions/detail/690922740/
+// Submission for Squares of a Sorted Array
+// Submission url: https://leetcode.com/submissions/detail/690922740/
 
+package submissions
 
 func sortedSquares(numbers []int) []int {
 	length := len(numbers)
@@ -32,10 +33,10 @@ func sortedSquares(numbers []int) []int {
 			result[resultIndex] = numbers[negativesIndex]
 			resultIndex++
 			//fmt.Println("negative", negativesIndex, resultIndex, numbers[negativesIndex], result, numbers)
-            negativesIndex--
+			negativesIndex--
 		}
 		if resultIndex < length && !positiveOverflow {
-	//		fmt.Println("positivesIndex", positivesIndex, resultIndex, numbers[positivesIndex], result, numbers)
+			//		fmt.Println("positivesIndex", positivesIndex, resultIndex, numbers[positivesIndex], result, numbers)
 			result[resultIndex] = numbers[positivesIndex]
 			resultIndex++
 		}

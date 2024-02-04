@@ -1,5 +1,6 @@
-# Submission for 'Word Break'
+# Submission for Word Break
 # Submission url: https://leetcode.com/submissions/detail/1012217749/
+
 
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:
@@ -11,7 +12,7 @@ class Solution:
 
             for word in wordDict:
                 length = len(word)
-                if s[i-length+1:i+1] == word and calculate(i-length):
+                if s[i - length + 1 : i + 1] == word and calculate(i - length):
                     return True
 
             return False

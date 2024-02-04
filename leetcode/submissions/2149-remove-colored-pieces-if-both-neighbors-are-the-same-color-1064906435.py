@@ -1,5 +1,6 @@
-# Submission for 'Remove Colored Pieces if Both Neighbors are the Same Color'
+# Submission for Remove Colored Pieces if Both Neighbors are the Same Color
 # Submission url: https://leetcode.com/submissions/detail/1064906435/
+
 
 class Solution:
     def winnerOfGame(self, colors: str) -> bool:

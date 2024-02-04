@@ -1,5 +1,7 @@
-# Submission for 'String Compression'
-# Submission url: https://leetcode.com/submissions/detail/1097244070/
+// Submission for String Compression
+// Submission url: https://leetcode.com/submissions/detail/1097244070/
+
+
 
 class Solution {
 public:

@@ -1,6 +1,7 @@
-# Submission for 'Implement Stack using Queues'
-# Submission url: https://leetcode.com/submissions/detail/693426224/
+// Submission for Implement Stack using Queues
+// Submission url: https://leetcode.com/submissions/detail/693426224/
 
+package submissions
 
 type MyStack struct{ queue *list.List }
 

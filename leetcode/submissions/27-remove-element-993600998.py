@@ -1,5 +1,6 @@
-# Submission for 'Remove Element'
+# Submission for Remove Element
 # Submission url: https://leetcode.com/submissions/detail/993600998/
+
 
 class Solution:
     # create replace index

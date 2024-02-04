@@ -1,5 +1,7 @@
-# Submission for 'Construct Binary Tree from Preorder and Inorder Traversal'
-# Submission url: https://leetcode.com/submissions/detail/1091200227/
+// Submission for Construct Binary Tree from Preorder and Inorder Traversal
+// Submission url: https://leetcode.com/submissions/detail/1091200227/
+
+package submissions
 
 func buildTree(preorder []int, inorder []int) *TreeNode {
 	n := len(inorder)

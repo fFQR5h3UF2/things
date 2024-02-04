@@ -1,6 +1,7 @@
-# Submission for 'Best Time to Buy and Sell Stock'
-# Submission url: https://leetcode.com/submissions/detail/692928951/
+// Submission for Best Time to Buy and Sell Stock
+// Submission url: https://leetcode.com/submissions/detail/692928951/
 
+package submissions
 
 func maxProfit(prices []int) int {
 	profit, index_buy := 0, 0

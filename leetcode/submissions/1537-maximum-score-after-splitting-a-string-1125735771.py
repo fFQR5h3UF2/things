@@ -1,5 +1,6 @@
-# Submission for 'Maximum Score After Splitting a String'
+# Submission for Maximum Score After Splitting a String
 # Submission url: https://leetcode.com/submissions/detail/1125735771/
+
 
 class Solution:
     def maxScore(self, s: str) -> int:

@@ -1,5 +1,6 @@
-# Submission for 'Remove Nth Node From End of List'
+# Submission for Remove Nth Node From End of List
 # Submission url: https://leetcode.com/submissions/detail/1057313158/
+
 
 # Definition for singly-linked list.
 # class ListNode:

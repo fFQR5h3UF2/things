@@ -1,7 +1,9 @@
-# Submission for 'Sliding Window Maximum'
+# Submission for Sliding Window Maximum
 # Submission url: https://leetcode.com/submissions/detail/1022947511/
 
+
 import sortedcontainers
+
 
 class Solution:
     def maxSlidingWindow(self, nums: List[int], k: int) -> List[int]:
@@ -20,7 +22,7 @@ class Solution:
 
         for i in range(k, nums_count):
             new_num = nums[i]
-            remove_num = nums[i-k]
+            remove_num = nums[i - k]
 
             counter[new_num] += 1
             elems.add(new_num)

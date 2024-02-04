@@ -1,5 +1,6 @@
-# Submission for 'Difference Between Ones and Zeros in Row and Column'
+# Submission for Difference Between Ones and Zeros in Row and Column
 # Submission url: https://leetcode.com/submissions/detail/1119489878/
+
 
 class Solution:
     def onesMinusZeros(self, grid: List[List[int]]) -> List[List[int]]:

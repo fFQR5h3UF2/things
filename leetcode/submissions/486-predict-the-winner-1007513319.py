@@ -1,5 +1,6 @@
-# Submission for 'Predict the Winner'
+# Submission for Predict the Winner
 # Submission url: https://leetcode.com/submissions/detail/1007513319/
+
 
 class Solution:
     def PredictTheWinner(self, nums: List[int]) -> bool:

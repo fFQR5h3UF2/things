@@ -1,5 +1,7 @@
-# Submission for 'Roman to Integer'
-# Submission url: https://leetcode.com/submissions/detail/688947098/
+// Submission for Roman to Integer
+// Submission url: https://leetcode.com/submissions/detail/688947098/
+
+package submissions
 
 func romanToInt(input string) int {
 	var result int

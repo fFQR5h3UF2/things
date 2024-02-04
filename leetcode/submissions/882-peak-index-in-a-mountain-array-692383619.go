@@ -1,6 +1,7 @@
-# Submission for 'Peak Index in a Mountain Array'
-# Submission url: https://leetcode.com/submissions/detail/692383619/
+// Submission for Peak Index in a Mountain Array
+// Submission url: https://leetcode.com/submissions/detail/692383619/
 
+package submissions
 
 func peakIndexInMountainArray(array []int) int {
 	left, right := 0, len(array)-1

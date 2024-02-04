@@ -1,5 +1,6 @@
-# Submission for 'Word Break'
+# Submission for Word Break
 # Submission url: https://leetcode.com/submissions/detail/1014586880/
+
 
 class Solution:
     def wordBreak(self, s: str, wordDict: List[str]) -> bool:

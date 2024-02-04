@@ -1,5 +1,7 @@
-# Submission for 'Two Sum'
-# Submission url: https://leetcode.com/submissions/detail/1096529439/
+// Submission for Two Sum
+// Submission url: https://leetcode.com/submissions/detail/1096529439/
+
+
 
 class Solution {
 public:

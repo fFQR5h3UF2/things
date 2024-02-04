@@ -1,5 +1,6 @@
-# Submission for 'Design an Ordered Stream'
+# Submission for Design an Ordered Stream
 # Submission url: https://leetcode.com/submissions/detail/1051124372/
+
 
 class OrderedStream:
 
@@ -14,11 +15,10 @@ class OrderedStream:
             if self.values[i] is not None:
                 continue
 
-            self.cur, answer = i, self.values[self.cur:i]
+            self.cur, answer = i, self.values[self.cur : i]
             return answer
 
-        return self.values[self.cur:]
-
+        return self.values[self.cur :]
 
 
 # Your OrderedStream object will be instantiated and called as such:

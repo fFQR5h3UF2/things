@@ -1,5 +1,6 @@
-# Submission for 'Maximum Product Difference Between Two Pairs'
+# Submission for Maximum Product Difference Between Two Pairs
 # Submission url: https://leetcode.com/submissions/detail/1122499093/
+
 
 class Solution:
     def maxProductDifference(self, nums: List[int]) -> int:

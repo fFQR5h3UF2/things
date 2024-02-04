@@ -1,5 +1,7 @@
-# Submission for 'Reduction Operations to Make the Array Elements Equal'
-# Submission url: https://leetcode.com/submissions/detail/1101990098/
+// Submission for Reduction Operations to Make the Array Elements Equal
+// Submission url: https://leetcode.com/submissions/detail/1101990098/
+
+
 
 class Solution {
 public:

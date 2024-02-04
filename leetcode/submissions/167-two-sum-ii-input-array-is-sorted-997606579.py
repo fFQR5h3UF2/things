@@ -1,5 +1,6 @@
-# Submission for 'Two Sum II - Input Array Is Sorted'
+# Submission for Two Sum II - Input Array Is Sorted
 # Submission url: https://leetcode.com/submissions/detail/997606579/
+
 
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:

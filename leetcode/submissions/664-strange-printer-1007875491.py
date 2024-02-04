@@ -1,5 +1,6 @@
-# Submission for 'Strange Printer'
+# Submission for Strange Printer
 # Submission url: https://leetcode.com/submissions/detail/1007875491/
+
 
 class Solution:
     def strangePrinter(self, s: str) -> int:
@@ -13,7 +14,9 @@ class Solution:
                     if s[i] != s[right] and j == -1:
                         j = i
                     if j != -1:
-                        dp[left][right] = min(dp[left][right], 1 + dp[j][i] + dp[i + 1][right])
+                        dp[left][right] = min(
+                            dp[left][right], 1 + dp[j][i] + dp[i + 1][right]
+                        )
 
                 if j == -1:
                     dp[left][right] = 0

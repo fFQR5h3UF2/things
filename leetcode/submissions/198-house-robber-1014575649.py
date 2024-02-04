@@ -1,5 +1,6 @@
-# Submission for 'House Robber'
+# Submission for House Robber
 # Submission url: https://leetcode.com/submissions/detail/1014575649/
+
 
 class Solution:
     def rob(self, nums: List[int]) -> int:

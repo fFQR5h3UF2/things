@@ -1,5 +1,7 @@
-# Submission for 'Sum Root to Leaf Numbers'
-# Submission url: https://leetcode.com/submissions/detail/1089101627/
+// Submission for Sum Root to Leaf Numbers
+// Submission url: https://leetcode.com/submissions/detail/1089101627/
+
+package submissions
 
 /**
  * Definition for a binary tree node.
@@ -10,16 +12,16 @@
  * }
  */
 func sumNumbers(root *TreeNode) int {
-    return getSum(root, 0)
+	return getSum(root, 0)
 }
 
 func getSum(root *TreeNode, parentVal int) int {
-    if root == nil {
-        return 0
-    }
-    newVal := root.Val + parentVal * 10
-    if root.Left == nil && root.Right == nil {
-        return newVal
-    }
-    return getSum(root.Left, newVal) + getSum(root.Right, newVal)
+	if root == nil {
+		return 0
+	}
+	newVal := root.Val + parentVal*10
+	if root.Left == nil && root.Right == nil {
+		return newVal
+	}
+	return getSum(root.Left, newVal) + getSum(root.Right, newVal)
 }

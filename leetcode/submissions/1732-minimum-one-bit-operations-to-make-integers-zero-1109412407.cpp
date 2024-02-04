@@ -1,5 +1,7 @@
-# Submission for 'Minimum One Bit Operations to Make Integers Zero'
-# Submission url: https://leetcode.com/submissions/detail/1109412407/
+// Submission for Minimum One Bit Operations to Make Integers Zero
+// Submission url: https://leetcode.com/submissions/detail/1109412407/
+
+
 
 class Solution {
 public:

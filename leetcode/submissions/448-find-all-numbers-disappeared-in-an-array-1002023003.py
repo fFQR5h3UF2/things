@@ -1,5 +1,6 @@
-# Submission for 'Find All Numbers Disappeared in an Array'
+# Submission for Find All Numbers Disappeared in an Array
 # Submission url: https://leetcode.com/submissions/detail/1002023003/
+
 
 class Solution:
     # [1,1,3,4], [1,2,3,4] -> [2]
@@ -8,6 +9,4 @@ class Solution:
             index = abs(number) - 1
             nums[index] = -1 * abs(nums[index])
 
-        return [number
-                for number in range(1, len(nums) + 1)
-                if nums[number-1] > 0]
+        return [number for number in range(1, len(nums) + 1) if nums[number - 1] > 0]

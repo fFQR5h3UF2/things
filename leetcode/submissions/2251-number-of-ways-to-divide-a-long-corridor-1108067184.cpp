@@ -1,5 +1,7 @@
-# Submission for 'Number of Ways to Divide a Long Corridor'
-# Submission url: https://leetcode.com/submissions/detail/1108067184/
+// Submission for Number of Ways to Divide a Long Corridor
+// Submission url: https://leetcode.com/submissions/detail/1108067184/
+
+
 
 class Solution {
 public:

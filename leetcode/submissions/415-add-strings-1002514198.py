@@ -1,11 +1,11 @@
-# Submission for 'Add Strings'
+# Submission for Add Strings
 # Submission url: https://leetcode.com/submissions/detail/1002514198/
+
 
 class Solution:
     def addStrings(self, num1: str, num2: str) -> str:
         result = []
         index_1, index_2 = len(num1) - 1, len(num2) - 1
-
 
         carry = 0
         while index_1 >= 0 or index_2 >= 0 or carry:

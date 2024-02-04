@@ -1,5 +1,6 @@
-# Submission for 'Add Binary'
+# Submission for Add Binary
 # Submission url: https://leetcode.com/submissions/detail/1057805990/
+
 
 class Solution:
     def addBinary(self, a: str, b: str) -> str:

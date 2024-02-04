@@ -1,5 +1,7 @@
-# Submission for 'Number of 1 Bits'
-# Submission url: https://leetcode.com/submissions/detail/1108769382/
+// Submission for Number of 1 Bits
+// Submission url: https://leetcode.com/submissions/detail/1108769382/
+
+
 
 class Solution {
 public:

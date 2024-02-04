@@ -1,5 +1,6 @@
-# Submission for 'Maximum Difference Between Node and Ancestor'
+# Submission for Maximum Difference Between Node and Ancestor
 # Submission url: https://leetcode.com/submissions/detail/1143178340/
+
 
 # Definition for a binary tree node.
 # class TreeNode(object):
@@ -18,7 +19,9 @@ class Solution(object):
     def helper(self, root, min_val, max_val):
         if not root:
             return
-        self.diff = max(self.diff, max(abs(min_val - root.val), abs(max_val - root.val)))
+        self.diff = max(
+            self.diff, max(abs(min_val - root.val), abs(max_val - root.val))
+        )
         min_val = min(min_val, root.val)
         max_val = max(max_val, root.val)
         self.helper(root.left, min_val, max_val)

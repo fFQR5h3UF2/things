@@ -1,5 +1,6 @@
-# Submission for 'Symmetric Tree'
+# Submission for Symmetric Tree
 # Submission url: https://leetcode.com/submissions/detail/1032242433/
+
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -18,6 +19,8 @@ class Solution:
             if not left or not right or left.val != right.val:
                 return False
 
-            comparison_stack.extend(((left.left, right.right), (left.right, right.left)))
+            comparison_stack.extend(
+                ((left.left, right.right), (left.right, right.left))
+            )
 
         return True

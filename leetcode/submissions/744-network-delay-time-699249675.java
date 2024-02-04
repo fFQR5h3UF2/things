@@ -1,5 +1,7 @@
-# Submission for 'Network Delay Time'
-# Submission url: https://leetcode.com/submissions/detail/699249675/
+// Submission for Network Delay Time
+// Submission url: https://leetcode.com/submissions/detail/699249675/
+
+com.shishifubing.dotfiles.submissions
 
 class Solution {
    private final Map<Integer, List<Node>> connected = new HashMap<>();

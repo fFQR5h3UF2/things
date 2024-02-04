@@ -1,5 +1,7 @@
-# Submission for 'Kth Largest Element in an Array'
-# Submission url: https://leetcode.com/submissions/detail/1100039261/
+// Submission for Kth Largest Element in an Array
+// Submission url: https://leetcode.com/submissions/detail/1100039261/
+
+
 
 class Solution {
 public:

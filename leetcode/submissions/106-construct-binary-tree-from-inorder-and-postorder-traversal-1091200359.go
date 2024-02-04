@@ -1,5 +1,7 @@
-# Submission for 'Construct Binary Tree from Inorder and Postorder Traversal'
-# Submission url: https://leetcode.com/submissions/detail/1091200359/
+// Submission for Construct Binary Tree from Inorder and Postorder Traversal
+// Submission url: https://leetcode.com/submissions/detail/1091200359/
+
+package submissions
 
 func buildTree(inorder []int, postorder []int) *TreeNode {
 	n := len(postorder)

@@ -1,31 +1,29 @@
-# Submission for 'Seat Reservation Manager'
-# Submission url: https://leetcode.com/submissions/detail/1092750852/
+// Submission for Seat Reservation Manager
+// Submission url: https://leetcode.com/submissions/detail/1092750852/
+
+package submissions
 
 type SeatManager struct {
-    seats []bool
+	seats []bool
 }
-
 
 func Constructor(n int) SeatManager {
-    return SeatManager{make([]bool, n)}
+	return SeatManager{make([]bool, n)}
 }
-
 
 func (this *SeatManager) Reserve() int {
-    for i, num := range this.seats {
-        if !num {
-            this.seats[i] = true
-            return i + 1
-        }
-    }
-    return -1
+	for i, num := range this.seats {
+		if !num {
+			this.seats[i] = true
+			return i + 1
+		}
+	}
+	return -1
 }
 
-
-func (this *SeatManager) Unreserve(seatNumber int)  {
-    this.seats[seatNumber-1] = false
+func (this *SeatManager) Unreserve(seatNumber int) {
+	this.seats[seatNumber-1] = false
 }
-
 
 /**
  * Your SeatManager object will be instantiated and called as such:

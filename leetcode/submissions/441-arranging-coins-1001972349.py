@@ -1,5 +1,6 @@
-# Submission for 'Arranging Coins'
+# Submission for Arranging Coins
 # Submission url: https://leetcode.com/submissions/detail/1001972349/
+
 
 class Solution:
     def arrangeCoins(self, n: int) -> int:

@@ -1,5 +1,7 @@
-# Submission for 'Find Palindrome With Fixed Length'
-# Submission url: https://leetcode.com/submissions/detail/690301112/
+// Submission for Find Palindrome With Fixed Length
+// Submission url: https://leetcode.com/submissions/detail/690301112/
+
+com.shishifubing.dotfiles.submissions
 
 class Solution {
     public long[] kthPalindrome(int[] queries, int intLength) {

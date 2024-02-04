@@ -1,11 +1,12 @@
-# Submission for 'Number of Laser Beams in a Bank'
+# Submission for Number of Laser Beams in a Bank
 # Submission url: https://leetcode.com/submissions/detail/1135579756/
+
 
 class Solution:
     def numberOfBeams(self, bank):
         ans, temp = 0, 0
         for s in bank:
-            n = s.count('1')
+            n = s.count("1")
             if n == 0:
                 continue
             ans += temp * n

@@ -1,5 +1,7 @@
-# Submission for 'Search Insert Position'
-# Submission url: https://leetcode.com/submissions/detail/691682236/
+// Submission for Search Insert Position
+// Submission url: https://leetcode.com/submissions/detail/691682236/
+
+package submissions
 
 func searchInsert(numbers []int, target int) int {
 	// checking edge cases

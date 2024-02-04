@@ -1,5 +1,6 @@
-# Submission for 'Design Authentication Manager'
+# Submission for Design Authentication Manager
 # Submission url: https://leetcode.com/submissions/detail/1050849923/
+
 
 class AuthenticationManager:
 

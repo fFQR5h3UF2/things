@@ -1,5 +1,6 @@
-# Submission for 'Special Positions in a Binary Matrix'
+# Submission for Special Positions in a Binary Matrix
 # Submission url: https://leetcode.com/submissions/detail/1118673519/
+
 
 class Solution:
     def numSpecial(self, mat: List[List[int]]) -> int:

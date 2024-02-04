@@ -1,6 +1,7 @@
-# Submission for 'Valid Parentheses'
-# Submission url: https://leetcode.com/submissions/detail/690416642/
+// Submission for Valid Parentheses
+// Submission url: https://leetcode.com/submissions/detail/690416642/
 
+package submissions
 
 func isValid(inputString string) bool {
 	if len(inputString) == 0 || (len(inputString)&1) != 0 {

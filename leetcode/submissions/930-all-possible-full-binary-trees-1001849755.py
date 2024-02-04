@@ -1,5 +1,6 @@
-# Submission for 'All Possible Full Binary Trees'
+# Submission for All Possible Full Binary Trees
 # Submission url: https://leetcode.com/submissions/detail/1001849755/
+
 
 # Definition for a binary tree node.
 # class TreeNode:

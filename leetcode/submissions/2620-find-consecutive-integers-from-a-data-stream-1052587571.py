@@ -1,5 +1,6 @@
-# Submission for 'Find Consecutive Integers from a Data Stream'
+# Submission for Find Consecutive Integers from a Data Stream
 # Submission url: https://leetcode.com/submissions/detail/1052587571/
+
 
 class DataStream:
 

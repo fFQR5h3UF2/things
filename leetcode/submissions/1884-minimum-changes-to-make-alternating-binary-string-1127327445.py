@@ -1,5 +1,6 @@
-# Submission for 'Minimum Changes To Make Alternating Binary String'
+# Submission for Minimum Changes To Make Alternating Binary String
 # Submission url: https://leetcode.com/submissions/detail/1127327445/
+
 
 class Solution:
     def minOperations(self, s: str) -> int:

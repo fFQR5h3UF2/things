@@ -1,6 +1,7 @@
-# Submission for 'First Bad Version'
-# Submission url: https://leetcode.com/submissions/detail/691657897/
+// Submission for First Bad Version
+// Submission url: https://leetcode.com/submissions/detail/691657897/
 
+package submissions
 
 func firstBadVersion(n int) int {
 	// checking edge cases

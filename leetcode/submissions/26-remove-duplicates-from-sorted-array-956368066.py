@@ -1,5 +1,6 @@
-# Submission for 'Remove Duplicates from Sorted Array'
+# Submission for Remove Duplicates from Sorted Array
 # Submission url: https://leetcode.com/submissions/detail/956368066/
+
 
 class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
@@ -18,6 +19,6 @@ class Solution:
             last_unique_index += 1
             nums[last_unique_index] = number
 
-        nums = nums[:last_unique_index+1]
+        nums = nums[: last_unique_index + 1]
 
         return unique_count

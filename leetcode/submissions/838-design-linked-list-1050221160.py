@@ -1,9 +1,13 @@
-# Submission for 'Design Linked List'
+# Submission for Design Linked List
 # Submission url: https://leetcode.com/submissions/detail/1050221160/
 
+
 class Node:
-    def __init__(self, val: int = 0, prev_node: 'Node' = None, next_node: 'Node' = None):
+    def __init__(
+        self, val: int = 0, prev_node: "Node" = None, next_node: "Node" = None
+    ):
         self.val, self.prev, self.next = val, prev_node, next_node
+
 
 class MyLinkedList:
 
@@ -67,6 +71,7 @@ class MyLinkedList:
         old_prev, old_next = target_node.prev, target_node.next
         old_prev.next, old_next.prev = old_next, old_prev
         self._length -= 1
+
 
 # Your MyLinkedList object will be instantiated and called as such:
 # obj = MyLinkedList()

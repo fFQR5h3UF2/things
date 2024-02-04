@@ -1,14 +1,15 @@
-# Submission for 'Min Stack'
+# Submission for Min Stack
 # Submission url: https://leetcode.com/submissions/detail/997558323/
+
 
 from sortedcontainers import sortedset
 
+
 class MinStack:
     class Node:
-        def __init__(self, val: int, prev: 'Node'):
+        def __init__(self, val: int, prev: "Node"):
             self.val = val
             self.prev = prev
-
 
     def __init__(self):
         self.stack: List[Node] = []

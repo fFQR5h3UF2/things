@@ -1,6 +1,7 @@
-# Submission for 'Intersection of Two Arrays II'
-# Submission url: https://leetcode.com/submissions/detail/692914276/
+// Submission for Intersection of Two Arrays II
+// Submission url: https://leetcode.com/submissions/detail/692914276/
 
+package submissions
 
 func intersect(numbers_1 []int, numbers_2 []int) []int {
 	length_1, length_2 := len(numbers_1), len(numbers_2)
@@ -29,7 +30,7 @@ func intersect(numbers_1 []int, numbers_2 []int) []int {
 			index++
 		}
 	}
-    return result[0 : index]
+	return result[0:index]
 }
 func add_to_occurences(number int, index int, occurences map[int][]int) {
 	if _, occured := occurences[number]; !occured {

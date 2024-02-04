@@ -1,5 +1,6 @@
-# Submission for 'Bitwise AND of Numbers Range'
+# Submission for Bitwise AND of Numbers Range
 # Submission url: https://leetcode.com/submissions/detail/1057863045/
+
 
 class Solution:
     def rangeBitwiseAnd(self, left: int, right: int) -> int:

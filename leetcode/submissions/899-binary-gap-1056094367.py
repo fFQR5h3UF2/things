@@ -1,5 +1,6 @@
-# Submission for 'Binary Gap'
+# Submission for Binary Gap
 # Submission url: https://leetcode.com/submissions/detail/1056094367/
+
 
 class Solution:
     def binaryGap(self, n: int) -> int:

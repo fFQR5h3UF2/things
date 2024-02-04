@@ -1,5 +1,6 @@
-# Submission for 'Combinations'
+# Submission for Combinations
 # Submission url: https://leetcode.com/submissions/detail/1009431912/
+
 
 class Solution:
     def combine(self, n: int, k: int) -> List[List[int]]:
@@ -20,7 +21,10 @@ class Solution:
                     return
 
                 curr_indices[idx] += 1
-                for j in range(idx+1, num):
-                    curr_indices[j] = curr_indices[j-1] + 1
+                for j in range(idx + 1, num):
+                    curr_indices[j] = curr_indices[j - 1] + 1
 
-        return [combination for combination in generate_combinations(tuple(range(1, n+1)), k)]
+        return [
+            combination
+            for combination in generate_combinations(tuple(range(1, n + 1)), k)
+        ]

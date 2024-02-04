@@ -1,5 +1,6 @@
-# Submission for 'Longest Palindromic Substring'
+# Submission for Longest Palindromic Substring
 # Submission url: https://leetcode.com/submissions/detail/1016005646/
+
 
 class Solution:
     def longestPalindrome(self, s: str) -> str:
@@ -23,4 +24,4 @@ class Solution:
                     ans = [i, j]
 
         i, j = ans
-        return s[i:j + 1]
+        return s[i : j + 1]

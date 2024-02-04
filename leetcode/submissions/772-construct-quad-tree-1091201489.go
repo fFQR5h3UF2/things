@@ -1,5 +1,7 @@
-# Submission for 'Construct Quad Tree'
-# Submission url: https://leetcode.com/submissions/detail/1091201489/
+// Submission for Construct Quad Tree
+// Submission url: https://leetcode.com/submissions/detail/1091201489/
+
+package submissions
 
 /**
  * Definition for a QuadTree node.

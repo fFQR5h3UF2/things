@@ -1,5 +1,6 @@
-# Submission for 'Surrounded Regions'
+# Submission for Surrounded Regions
 # Submission url: https://leetcode.com/submissions/detail/1037005476/
+
 
 class Solution:
     def solve(self, board: List[List[str]]) -> None:
@@ -25,7 +26,7 @@ class Solution:
             ((0, col) for col in range(col_count)),
             ((row_count - 1, col) for col in range(col_count)),
             ((row, 0) for row in range(row_count)),
-            ((row, col_count - 1) for row in range(row_count))
+            ((row, col_count - 1) for row in range(row_count)),
         ):
             bfs(row, col)
 

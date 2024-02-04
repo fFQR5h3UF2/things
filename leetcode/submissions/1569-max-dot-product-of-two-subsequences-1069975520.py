@@ -1,5 +1,6 @@
-# Submission for 'Max Dot Product of Two Subsequences'
+# Submission for Max Dot Product of Two Subsequences
 # Submission url: https://leetcode.com/submissions/detail/1069975520/
+
 
 class Solution:
     def maxDotProduct(self, nums1: List[int], nums2: List[int]) -> int:

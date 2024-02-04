@@ -1,11 +1,14 @@
-# Submission for 'Set Mismatch'
+# Submission for Set Mismatch
 # Submission url: https://leetcode.com/submissions/detail/1055572388/
+
 
 class Solution:
     def findErrorNums(self, nums: List[int]) -> List[int]:
         length = len(nums)
         # dupl_xor_miss = duplicate ^ missing
-        dupl_xor_miss = reduce(lambda total, i: total ^ i ^ nums[i - 1], range(length + 1))
+        dupl_xor_miss = reduce(
+            lambda total, i: total ^ i ^ nums[i - 1], range(length + 1)
+        )
         rightmost_set_bit = dupl_xor_miss & -dupl_xor_miss
         xor_group1 = xor_group2 = 0
         for i in range(1, length + 1):

@@ -1,5 +1,6 @@
-# Submission for 'Decoded String at Index'
+# Submission for Decoded String at Index
 # Submission url: https://leetcode.com/submissions/detail/1060597351/
+
 
 class Solution:
     def decodeAtIndex(self, s: str, k: int) -> str:
@@ -13,7 +14,7 @@ class Solution:
                 length += 1
             i += 1
 
-        for j in range(i-1, -1, -1):
+        for j in range(i - 1, -1, -1):
             char = s[j]
             if char.isdigit():
                 length //= int(char)

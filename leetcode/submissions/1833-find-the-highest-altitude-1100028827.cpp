@@ -1,5 +1,7 @@
-# Submission for 'Find the Highest Altitude'
-# Submission url: https://leetcode.com/submissions/detail/1100028827/
+// Submission for Find the Highest Altitude
+// Submission url: https://leetcode.com/submissions/detail/1100028827/
+
+
 
 class Solution {
 public:

@@ -1,5 +1,6 @@
-# Submission for 'Sequential Digits'
+# Submission for Sequential Digits
 # Submission url: https://leetcode.com/submissions/detail/1164072112/
+
 
 class Solution:
     def sequentialDigits(self, low, high):

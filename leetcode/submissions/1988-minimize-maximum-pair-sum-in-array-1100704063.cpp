@@ -1,5 +1,7 @@
-# Submission for 'Minimize Maximum Pair Sum in Array'
-# Submission url: https://leetcode.com/submissions/detail/1100704063/
+// Submission for Minimize Maximum Pair Sum in Array
+// Submission url: https://leetcode.com/submissions/detail/1100704063/
+
+
 
 class Solution {
 public:

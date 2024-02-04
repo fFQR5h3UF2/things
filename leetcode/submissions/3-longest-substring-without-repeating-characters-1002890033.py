@@ -1,5 +1,6 @@
-# Submission for 'Longest Substring Without Repeating Characters'
+# Submission for Longest Substring Without Repeating Characters
 # Submission url: https://leetcode.com/submissions/detail/1002890033/
+
 
 class Solution:
     def lengthOfLongestSubstring(self, s: str) -> int:

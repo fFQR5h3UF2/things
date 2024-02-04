@@ -1,5 +1,7 @@
-# Submission for 'Remove Duplicates from Sorted Array'
-# Submission url: https://leetcode.com/submissions/detail/694400494/
+// Submission for Remove Duplicates from Sorted Array
+// Submission url: https://leetcode.com/submissions/detail/694400494/
+
+package submissions
 
 func removeDuplicates(numbers []int) int {
 	// ensure there are at least two numbers

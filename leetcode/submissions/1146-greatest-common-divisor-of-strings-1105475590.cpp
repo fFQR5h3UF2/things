@@ -1,5 +1,7 @@
-# Submission for 'Greatest Common Divisor of Strings'
-# Submission url: https://leetcode.com/submissions/detail/1105475590/
+// Submission for Greatest Common Divisor of Strings
+// Submission url: https://leetcode.com/submissions/detail/1105475590/
+
+
 
 class Solution {
 public:

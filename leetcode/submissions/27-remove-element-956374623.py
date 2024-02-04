@@ -1,5 +1,6 @@
-# Submission for 'Remove Element'
+# Submission for Remove Element
 # Submission url: https://leetcode.com/submissions/detail/956374623/
+
 
 class Solution:
     def removeElement(self, nums: List[int], val: int) -> int:

@@ -1,5 +1,6 @@
-# Submission for 'Evaluate Reverse Polish Notation'
+# Submission for Evaluate Reverse Polish Notation
 # Submission url: https://leetcode.com/submissions/detail/997655777/
+
 
 class Solution:
     def evalRPN(self, tokens: List[str]) -> int:
@@ -8,7 +9,7 @@ class Solution:
             "+": lambda first, second: first + second,
             "-": lambda first, second: first - second,
             "*": lambda first, second: first * second,
-            "/": lambda first, second: int(first / second)
+            "/": lambda first, second: int(first / second),
         }
         for token in tokens:
             if token not in operations:

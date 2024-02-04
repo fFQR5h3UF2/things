@@ -1,5 +1,7 @@
-# Submission for 'Binary Tree Level Order Traversal'
-# Submission url: https://leetcode.com/submissions/detail/1087481177/
+// Submission for Binary Tree Level Order Traversal
+// Submission url: https://leetcode.com/submissions/detail/1087481177/
+
+package submissions
 
 /**
  * Definition for a binary tree node.
@@ -10,27 +12,27 @@
  * }
  */
 func levelOrder(root *TreeNode) [][]int {
-    if root == nil {
-        return [][]int{}
-    }
+	if root == nil {
+		return [][]int{}
+	}
 
-    stack, answer := []*TreeNode{root}, [][]int{}
+	stack, answer := []*TreeNode{root}, [][]int{}
 
-    for length := len(stack); length != 0; length = len(stack) {
-        answerRow := []int{}
-        for i := 0; i < length; i++ {
-            node := stack[0]
-            answerRow = append(answerRow, node.Val)
-            stack = stack[1:]
-            if left := node.Left; left != nil {
-                stack = append(stack, node.Left)
-            }
-            if right := node.Right; right != nil {
-                stack = append(stack, node.Right)
-            }
-        }
-        answer = append(answer, answerRow)
-    }
+	for length := len(stack); length != 0; length = len(stack) {
+		answerRow := []int{}
+		for i := 0; i < length; i++ {
+			node := stack[0]
+			answerRow = append(answerRow, node.Val)
+			stack = stack[1:]
+			if left := node.Left; left != nil {
+				stack = append(stack, node.Left)
+			}
+			if right := node.Right; right != nil {
+				stack = append(stack, node.Right)
+			}
+		}
+		answer = append(answer, answerRow)
+	}
 
-    return answer
+	return answer
 }

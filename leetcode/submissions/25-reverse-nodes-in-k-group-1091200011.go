@@ -1,5 +1,7 @@
-# Submission for 'Reverse Nodes in k-Group'
-# Submission url: https://leetcode.com/submissions/detail/1091200011/
+// Submission for Reverse Nodes in k-Group
+// Submission url: https://leetcode.com/submissions/detail/1091200011/
+
+package submissions
 
 func reverseKGroup(head *ListNode, k int) *ListNode {
 	node, cnt := head, 0

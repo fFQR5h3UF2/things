@@ -1,5 +1,6 @@
-# Submission for 'Maximal Network Rank'
+# Submission for Maximal Network Rank
 # Submission url: https://leetcode.com/submissions/detail/1024664738/
+
 
 class Solution:
     def maximalNetworkRank(self, n: int, roads: List[List[int]]) -> int:

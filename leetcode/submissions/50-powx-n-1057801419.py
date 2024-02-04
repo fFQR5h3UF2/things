@@ -1,5 +1,6 @@
-# Submission for 'Pow(x, n)'
+# Submission for Pow(x, n)
 # Submission url: https://leetcode.com/submissions/detail/1057801419/
+
 
 class Solution:
     def myPow(self, x: float, n: int) -> float:

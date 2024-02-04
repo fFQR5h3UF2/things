@@ -1,5 +1,6 @@
-# Submission for 'Length of Last Word'
+# Submission for Length of Last Word
 # Submission url: https://leetcode.com/submissions/detail/989415156/
+
 
 class Solution:
     # we need to iterate over the string searching for words

@@ -1,5 +1,6 @@
-# Submission for 'Maximum Subarray'
+# Submission for Maximum Subarray
 # Submission url: https://leetcode.com/submissions/detail/1057808298/
+
 
 class Solution:
     def maxSubArray(self, nums: List[int]) -> int:

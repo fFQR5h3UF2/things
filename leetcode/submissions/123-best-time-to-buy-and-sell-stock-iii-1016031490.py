@@ -1,5 +1,6 @@
-# Submission for 'Best Time to Buy and Sell Stock III'
+# Submission for Best Time to Buy and Sell Stock III
 # Submission url: https://leetcode.com/submissions/detail/1016031490/
+
 
 class Solution:
     def maxProfit(self, prices: List[int]) -> int:
@@ -7,7 +8,7 @@ class Solution:
             return 0
 
         # initialize variables for first buy, first sell, second buy, and second sell
-        buy1, buy2 = float('inf'), float('inf')
+        buy1, buy2 = float("inf"), float("inf")
         sell1, sell2 = 0, 0
 
         # iterate over prices to update buy and sell values

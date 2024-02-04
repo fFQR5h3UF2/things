@@ -1,5 +1,7 @@
-# Submission for 'Minimum Time Visiting All Points'
-# Submission url: https://leetcode.com/submissions/detail/1111540482/
+// Submission for Minimum Time Visiting All Points
+// Submission url: https://leetcode.com/submissions/detail/1111540482/
+
+
 
 class Solution {
 public:

@@ -1,5 +1,6 @@
-# Submission for 'Range Sum Query - Immutable'
+# Submission for Range Sum Query - Immutable
 # Submission url: https://leetcode.com/submissions/detail/1047394948/
+
 
 class NumArray:
 
@@ -12,7 +13,7 @@ class NumArray:
         if left == 0:
             return self._sums[right]
 
-        return self._sums[right] - self._sums[left-1]
+        return self._sums[right] - self._sums[left - 1]
 
 
 # Your NumArray object will be instantiated and called as such:

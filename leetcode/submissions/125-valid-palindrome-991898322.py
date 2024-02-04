@@ -1,5 +1,6 @@
-# Submission for 'Valid Palindrome'
+# Submission for Valid Palindrome
 # Submission url: https://leetcode.com/submissions/detail/991898322/
+
 
 class Solution:
     def isPalindrome(self, s: str) -> bool:

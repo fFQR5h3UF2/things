@@ -1,5 +1,6 @@
-# Submission for 'Palindrome Number'
+# Submission for Palindrome Number
 # Submission url: https://leetcode.com/submissions/detail/956331143/
+
 
 class Solution:
     def isPalindrome(self, x: int) -> bool:
@@ -17,7 +18,6 @@ class Solution:
             number.append(remainder)
             if not x:
                 break
-
 
         number.reverse()
         print(number)

@@ -1,5 +1,6 @@
-# Submission for 'Range Frequency Queries'
+# Submission for Range Frequency Queries
 # Submission url: https://leetcode.com/submissions/detail/1052541293/
+
 
 class RangeFreqQuery:
     def __init__(self, arr: List[int]):
@@ -9,6 +10,7 @@ class RangeFreqQuery:
 
     def query(self, left: int, right: int, v: int) -> int:
         return bisect_right(self.l[v], right) - bisect_left(self.l[v], left)
+
 
 # Your RangeFreqQuery object will be instantiated and called as such:
 # obj = RangeFreqQuery(arr)

@@ -1,6 +1,7 @@
-# Submission for 'Shortest Unsorted Continuous Subarray'
-# Submission url: https://leetcode.com/submissions/detail/692226479/
+// Submission for Shortest Unsorted Continuous Subarray
+// Submission url: https://leetcode.com/submissions/detail/692226479/
 
+package submissions
 
 func findUnsortedSubarray(numbers []int) int {
 	length := len(numbers)
@@ -16,7 +17,7 @@ func findUnsortedSubarray(numbers []int) int {
 	index_sort_start, index_sort_end := length, length
 	result[0] = numbers[0]
 	for index := 1; index < length; index++ {
-//		fmt.Println(result, index_sort_start, "->", index_sort_end)
+		//		fmt.Println(result, index_sort_start, "->", index_sort_end)
 		// current is not sorted -> from numbers
 		// previous is sorted -> from result
 		current, previous := numbers[index], result[index-1]
@@ -51,7 +52,7 @@ func findUnsortedSubarray(numbers []int) int {
 			index_sort_start = index - 1
 		}
 	}
-//	fmt.Println(result, index_sort_start, "->", index_sort_end)
+	//	fmt.Println(result, index_sort_start, "->", index_sort_end)
 	// return length of the sorted subarray
 	return index_sort_end - index_sort_start
 }
@@ -65,7 +66,7 @@ func insert_smaller(numbers []int, target int, index_start int, index_end int) i
 			break
 		}
 	}
-//	fmt.Println("index for", target, "-", index_result)
+	//	fmt.Println("index for", target, "-", index_result)
 	// target should be placed after index_result, so move everything after
 	// it to the right and insert the current number
 	// if index_result is the last item, then just push it

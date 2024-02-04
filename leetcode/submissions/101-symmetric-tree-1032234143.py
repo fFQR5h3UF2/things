@@ -1,5 +1,6 @@
-# Submission for 'Symmetric Tree'
+# Submission for Symmetric Tree
 # Submission url: https://leetcode.com/submissions/detail/1032234143/
+
 
 # Definition for a binary tree node.
 # class TreeNode:

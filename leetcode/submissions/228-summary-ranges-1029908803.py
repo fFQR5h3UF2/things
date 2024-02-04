@@ -1,5 +1,6 @@
-# Submission for 'Summary Ranges'
+# Submission for Summary Ranges
 # Submission url: https://leetcode.com/submissions/detail/1029908803/
+
 
 class Solution:
     def summaryRanges(self, nums: List[int]) -> List[str]:
@@ -16,4 +17,6 @@ class Solution:
             else:
                 ranges.append([num, num])
 
-        return [f"{start}->{end}" if start != end else str(start) for start, end in ranges]
+        return [
+            f"{start}->{end}" if start != end else str(start) for start, end in ranges
+        ]

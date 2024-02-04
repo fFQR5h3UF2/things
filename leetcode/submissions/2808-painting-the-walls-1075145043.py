@@ -1,5 +1,6 @@
-# Submission for 'Painting the Walls'
+# Submission for Painting the Walls
 # Submission url: https://leetcode.com/submissions/detail/1075145043/
+
 
 class Solution:
     def paintWalls(self, cost: List[int], time: List[int]) -> int:

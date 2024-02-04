@@ -1,5 +1,6 @@
-# Submission for 'Minimum ASCII Delete Sum for Two Strings'
+# Submission for Minimum ASCII Delete Sum for Two Strings
 # Submission url: https://leetcode.com/submissions/detail/1008445470/
+
 
 class Solution:
     def minimumDeleteSum(self, s1: str, s2: str) -> int:
@@ -20,8 +21,7 @@ class Solution:
                 return calculate(i + 1, j + 1)
 
             return min(
-                ord(s1[i]) + calculate(i + 1, j),
-                ord(s2[j]) + calculate(i, j + 1)
+                ord(s1[i]) + calculate(i + 1, j), ord(s2[j]) + calculate(i, j + 1)
             )
 
         return calculate(0, 0)

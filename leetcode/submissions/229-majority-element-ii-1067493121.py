@@ -1,5 +1,6 @@
-# Submission for 'Majority Element II'
+# Submission for Majority Element II
 # Submission url: https://leetcode.com/submissions/detail/1067493121/
+
 
 class Solution:
     def majorityElement(self, nums: List[int]) -> List[int]:

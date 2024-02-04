@@ -1,8 +1,11 @@
-# Submission for 'Smallest Sufficient Team'
+# Submission for Smallest Sufficient Team
 # Submission url: https://leetcode.com/submissions/detail/1013887989/
 
+
 class Solution:
-    def smallestSufficientTeam(self, req_skills: List[str], people: List[List[str]]) -> List[int]:
+    def smallestSufficientTeam(
+        self, req_skills: List[str], people: List[List[str]]
+    ) -> List[int]:
         req_skills_count = len(req_skills)
         skill_to_people = defaultdict(set)
         for i, person in enumerate(people):

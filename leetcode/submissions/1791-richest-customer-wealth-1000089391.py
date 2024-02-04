@@ -1,5 +1,6 @@
-# Submission for 'Richest Customer Wealth'
+# Submission for Richest Customer Wealth
 # Submission url: https://leetcode.com/submissions/detail/1000089391/
+
 
 class Solution:
     def maximumWealth(self, accounts: List[List[int]]) -> int:

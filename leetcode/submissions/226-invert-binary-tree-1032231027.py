@@ -1,5 +1,6 @@
-# Submission for 'Invert Binary Tree'
+# Submission for Invert Binary Tree
 # Submission url: https://leetcode.com/submissions/detail/1032231027/
+
 
 # Definition for a binary tree node.
 # class TreeNode:

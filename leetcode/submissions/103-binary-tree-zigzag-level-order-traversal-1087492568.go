@@ -1,5 +1,7 @@
-# Submission for 'Binary Tree Zigzag Level Order Traversal'
-# Submission url: https://leetcode.com/submissions/detail/1087492568/
+// Submission for Binary Tree Zigzag Level Order Traversal
+// Submission url: https://leetcode.com/submissions/detail/1087492568/
+
+package submissions
 
 /**
  * Definition for a binary tree node.
@@ -10,34 +12,34 @@
  * }
  */
 func zigzagLevelOrder(root *TreeNode) [][]int {
-    if root == nil {
-        return [][]int{}
-    }
+	if root == nil {
+		return [][]int{}
+	}
 
-    queue, answer := []*TreeNode{root}, [][]int{}
-    leftToRight := true
+	queue, answer := []*TreeNode{root}, [][]int{}
+	leftToRight := true
 
-    for length := len(queue); length != 0; length = len(queue) {
-        answerRow := []int{}
+	for length := len(queue); length != 0; length = len(queue) {
+		answerRow := []int{}
 
-        for i := 0; i < length; i++ {
-            node := queue[0]
-            queue = queue[1:]
+		for i := 0; i < length; i++ {
+			node := queue[0]
+			queue = queue[1:]
 
-            answerRow = append(answerRow, node.Val)
-            if left := node.Left; left != nil {
-                queue = append(queue, left)
-            }
-            if right := node.Right; right != nil {
-                queue = append(queue, right)
-            }
-        }
-        if !leftToRight {
-            slices.Reverse(answerRow)
-        }
-        leftToRight = !leftToRight
-        answer = append(answer, answerRow)
-    }
+			answerRow = append(answerRow, node.Val)
+			if left := node.Left; left != nil {
+				queue = append(queue, left)
+			}
+			if right := node.Right; right != nil {
+				queue = append(queue, right)
+			}
+		}
+		if !leftToRight {
+			slices.Reverse(answerRow)
+		}
+		leftToRight = !leftToRight
+		answer = append(answer, answerRow)
+	}
 
-    return answer
+	return answer
 }

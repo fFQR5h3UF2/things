@@ -1,5 +1,6 @@
-# Submission for 'Partition Array for Maximum Sum'
+# Submission for Partition Array for Maximum Sum
 # Submission url: https://leetcode.com/submissions/detail/1165825513/
+
 
 class Solution:
     def maxSumAfterPartitioning(self, arr: List[int], k: int) -> int:

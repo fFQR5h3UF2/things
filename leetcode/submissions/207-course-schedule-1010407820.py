@@ -1,5 +1,6 @@
-# Submission for 'Course Schedule'
+# Submission for Course Schedule
 # Submission url: https://leetcode.com/submissions/detail/1010407820/
+
 
 class Solution:
     def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:

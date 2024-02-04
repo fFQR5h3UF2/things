@@ -1,5 +1,6 @@
-# Submission for 'Minimum Absolute Difference in BST'
+# Submission for Minimum Absolute Difference in BST
 # Submission url: https://leetcode.com/submissions/detail/1033280927/
+
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -10,6 +11,7 @@
 class Solution:
     def getMinimumDifference(self, root: Optional[TreeNode]) -> int:
         values = []
+
         def fall(node: TreeNode) -> None:
             if not node:
                 return
@@ -23,6 +25,6 @@ class Solution:
         values.sort()
         min_diff = abs(values[1] - values[0])
         for i in range(1, len(values) - 1):
-            min_diff = min(min_diff, abs(values[i] - values[i+1]))
+            min_diff = min(min_diff, abs(values[i] - values[i + 1]))
 
         return min_diff

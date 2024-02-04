@@ -1,5 +1,6 @@
-# Submission for 'Minimum Absolute Difference in BST'
+# Submission for Minimum Absolute Difference in BST
 # Submission url: https://leetcode.com/submissions/detail/1033285385/
+
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -14,7 +15,9 @@ class Solution:
             if not node:
                 return high - low
 
-            return min(min_node_diff(node.left, low, node.val),
-                       min_node_diff(node.right, node.val, high))
+            return min(
+                min_node_diff(node.left, low, node.val),
+                min_node_diff(node.right, node.val, high),
+            )
 
         return min_node_diff(root, -maxsize, maxsize)

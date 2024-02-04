@@ -1,5 +1,6 @@
-# Submission for 'Maximum Length of Pair Chain'
+# Submission for Maximum Length of Pair Chain
 # Submission url: https://leetcode.com/submissions/detail/1032115733/
+
 
 class Solution:
     def findLongestChain(self, pairs: List[List[int]]) -> int:

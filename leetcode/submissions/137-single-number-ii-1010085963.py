@@ -1,5 +1,6 @@
-# Submission for 'Single Number II'
+# Submission for Single Number II
 # Submission url: https://leetcode.com/submissions/detail/1010085963/
+
 
 class Solution:
     def singleNumber(self, nums: List[int]) -> int:
@@ -9,7 +10,7 @@ class Solution:
             if i == length - 1:
                 return nums[i]
 
-            num_1, num_2, num_3 = nums[i], nums[i+1], nums[i+2]
+            num_1, num_2, num_3 = nums[i], nums[i + 1], nums[i + 2]
 
             if num_1 == num_2 == num_3:
                 continue

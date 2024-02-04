@@ -1,5 +1,6 @@
-# Submission for 'Remove Duplicate Letters'
+# Submission for Remove Duplicate Letters
 # Submission url: https://leetcode.com/submissions/detail/1059570814/
+
 
 class Solution:
     def removeDuplicateLetters(self, s: str) -> str:
@@ -16,4 +17,4 @@ class Solution:
             seen.add(char)
             stack.append(char)
 
-        return ''.join(stack)
+        return "".join(stack)

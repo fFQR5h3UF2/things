@@ -1,6 +1,7 @@
-# Submission for 'Squares of a Sorted Array'
-# Submission url: https://leetcode.com/submissions/detail/692273896/
+// Submission for Squares of a Sorted Array
+// Submission url: https://leetcode.com/submissions/detail/692273896/
 
+package submissions
 
 func sortedSquares(numbers []int) []int {
 	length := len(numbers)

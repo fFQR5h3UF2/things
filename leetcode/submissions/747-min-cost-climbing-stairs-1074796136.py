@@ -1,5 +1,6 @@
-# Submission for 'Min Cost Climbing Stairs'
+# Submission for Min Cost Climbing Stairs
 # Submission url: https://leetcode.com/submissions/detail/1074796136/
+
 
 class Solution:
     def minCostClimbingStairs(self, cost):
@@ -9,6 +10,6 @@ class Solution:
         dp[1] = cost[1]
 
         for i in range(2, n):
-            dp[i] = cost[i] + min(dp[i-1], dp[i-2])
+            dp[i] = cost[i] + min(dp[i - 1], dp[i - 2])
 
-        return min(dp[n-1], dp[n-2])
+        return min(dp[n - 1], dp[n - 2])

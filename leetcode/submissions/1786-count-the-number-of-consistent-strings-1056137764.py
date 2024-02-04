@@ -1,5 +1,6 @@
-# Submission for 'Count the Number of Consistent Strings'
+# Submission for Count the Number of Consistent Strings
 # Submission url: https://leetcode.com/submissions/detail/1056137764/
+
 
 class Solution:
     def countConsistentStrings(self, allowed: str, words: List[str]) -> int:

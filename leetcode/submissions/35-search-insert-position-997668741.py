@@ -1,5 +1,6 @@
-# Submission for 'Search Insert Position'
+# Submission for Search Insert Position
 # Submission url: https://leetcode.com/submissions/detail/997668741/
+
 
 class Solution:
     def searchInsert(self, nums: List[int], target: int) -> int:

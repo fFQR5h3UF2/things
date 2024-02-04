@@ -1,5 +1,6 @@
-# Submission for 'Minimum Bit Flips to Convert Number'
+# Submission for Minimum Bit Flips to Convert Number
 # Submission url: https://leetcode.com/submissions/detail/1056400663/
+
 
 class Solution:
     def minBitFlips(self, start: int, goal: int) -> int:

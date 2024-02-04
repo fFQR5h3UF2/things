@@ -1,5 +1,6 @@
-# Submission for 'Island Perimeter'
+# Submission for Island Perimeter
 # Submission url: https://leetcode.com/submissions/detail/1002756779/
+
 
 class Solution:
     def islandPerimeter(self, grid: List[List[int]]) -> int:
@@ -11,16 +12,16 @@ class Solution:
                 if cell == 0:
                     continue
 
-                if j == 0 or row[j-1] == 0:
+                if j == 0 or row[j - 1] == 0:
                     perimeter += 1
 
-                if j == last_cell or row[j+1] == 0:
+                if j == last_cell or row[j + 1] == 0:
                     perimeter += 1
 
-                if i == 0 or grid[i-1][j] == 0:
+                if i == 0 or grid[i - 1][j] == 0:
                     perimeter += 1
 
-                if i == last_row or grid[i+1][j] == 0:
+                if i == last_row or grid[i + 1][j] == 0:
                     perimeter += 1
 
         return perimeter

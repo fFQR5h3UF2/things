@@ -1,6 +1,7 @@
-# Submission for 'Contains Duplicate'
-# Submission url: https://leetcode.com/submissions/detail/691371448/
+// Submission for Contains Duplicate
+// Submission url: https://leetcode.com/submissions/detail/691371448/
 
+package submissions
 
 func containsDuplicate(numbers []int) bool {
 	if len(numbers) == 0 || len(numbers) == 1 {

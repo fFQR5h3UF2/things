@@ -1,5 +1,6 @@
-# Submission for 'Peeking Iterator'
+# Submission for Peeking Iterator
 # Submission url: https://leetcode.com/submissions/detail/1050013916/
+
 
 # Below is the interface for Iterator, which is already defined for you.
 #
@@ -22,6 +23,7 @@
 #         :rtype: int
 #         """
 
+
 class PeekingIterator:
     def __init__(self, iterator):
         """
@@ -31,14 +33,12 @@ class PeekingIterator:
         self._iter = iterator
         self._next = iterator.next()
 
-
     def peek(self):
         """
         Returns the next element in the iteration without advancing the iterator.
         :rtype: int
         """
         return self._next
-
 
     def next(self):
         """
@@ -47,7 +47,6 @@ class PeekingIterator:
         cur_next = self._next
         self._next = self._iter.next() if self._iter.hasNext() else None
         return cur_next
-
 
     def hasNext(self):
         """

@@ -1,5 +1,7 @@
-# Submission for 'Subrectangle Queries'
-# Submission url: https://leetcode.com/submissions/detail/1096023462/
+// Submission for Subrectangle Queries
+// Submission url: https://leetcode.com/submissions/detail/1096023462/
+
+
 
 class SubrectangleQueries {
     vector<vector<int>> res;

@@ -1,5 +1,6 @@
-# Submission for 'Merge Sorted Array'
+# Submission for Merge Sorted Array
 # Submission url: https://leetcode.com/submissions/detail/992867297/
+
 
 class Solution:
     # have three indexes: nums1 (end of array 1), nums2 (from the end),
@@ -15,7 +16,7 @@ class Solution:
 
         nums1_i, nums2_i = m - 1, n - 1
         for i in range(m + n - 1, -1, -1):
-            nums1_number  = nums1[nums1_i] if nums1_i >= 0 else nums2[0] - 1
+            nums1_number = nums1[nums1_i] if nums1_i >= 0 else nums2[0] - 1
             nums2_number = nums2[nums2_i] if nums2_i >= 0 else nums1[0] - 1
             if nums1_number >= nums2_number:
                 nums1[i] = nums1_number

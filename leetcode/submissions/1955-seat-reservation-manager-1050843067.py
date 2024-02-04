@@ -1,5 +1,6 @@
-# Submission for 'Seat Reservation Manager'
+# Submission for Seat Reservation Manager
 # Submission url: https://leetcode.com/submissions/detail/1050843067/
+
 
 class SeatManager:
 

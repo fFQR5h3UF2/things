@@ -1,5 +1,6 @@
-# Submission for 'Longest Nice Substring'
+# Submission for Longest Nice Substring
 # Submission url: https://leetcode.com/submissions/detail/1056159909/
+
 
 class Solution:
     def longestNiceSubstring(self, s: str) -> str:
@@ -7,7 +8,7 @@ class Solution:
         for i in range(len(s)):
             if s[i].lower() not in sSet or s[i].upper() not in sSet:
                 lns1 = self.longestNiceSubstring(s[:i])
-                lns2 = self.longestNiceSubstring(s[i+1:])
+                lns2 = self.longestNiceSubstring(s[i + 1 :])
 
                 return max(lns1, lns2, key=len)
 

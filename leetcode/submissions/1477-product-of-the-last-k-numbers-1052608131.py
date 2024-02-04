@@ -1,5 +1,6 @@
-# Submission for 'Product of the Last K Numbers'
+# Submission for Product of the Last K Numbers
 # Submission url: https://leetcode.com/submissions/detail/1052608131/
+
 
 class ProductOfNumbers:
 

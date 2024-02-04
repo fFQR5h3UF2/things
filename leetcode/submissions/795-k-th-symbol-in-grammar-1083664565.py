@@ -1,5 +1,6 @@
-# Submission for 'K-th Symbol in Grammar'
+# Submission for K-th Symbol in Grammar
 # Submission url: https://leetcode.com/submissions/detail/1083664565/
+
 
 class Solution:
     def kthGrammar(self, n: int, k: int) -> int:

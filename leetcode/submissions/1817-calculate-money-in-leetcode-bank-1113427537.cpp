@@ -1,5 +1,7 @@
-# Submission for 'Calculate Money in Leetcode Bank'
-# Submission url: https://leetcode.com/submissions/detail/1113427537/
+// Submission for Calculate Money in Leetcode Bank
+// Submission url: https://leetcode.com/submissions/detail/1113427537/
+
+
 
 class Solution {
 public:

@@ -1,5 +1,6 @@
-# Submission for 'Remove Duplicates from Sorted Array'
+# Submission for Remove Duplicates from Sorted Array
 # Submission url: https://leetcode.com/submissions/detail/993616487/
+
 
 class Solution:
     # non-decreasing order, so to remove the duplicates we just need to remove all
@@ -15,7 +16,7 @@ class Solution:
     def removeDuplicates(self, nums: List[int]) -> int:
         replace = 1
         for i, number in enumerate(nums[1:], 1):
-            if number == nums[i-1]:
+            if number == nums[i - 1]:
                 continue
             nums[replace] = number
             replace += 1

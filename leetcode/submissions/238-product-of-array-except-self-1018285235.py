@@ -1,5 +1,6 @@
-# Submission for 'Product of Array Except Self'
+# Submission for Product of Array Except Self
 # Submission url: https://leetcode.com/submissions/detail/1018285235/
+
 
 class Solution:
     def productExceptSelf(self, nums: List[int]) -> List[int]:
@@ -10,7 +11,7 @@ class Solution:
         for i in range(nums_count):
             result[i] *= prefix
             prefix *= nums[i]
-            result[nums_count-i-1] *= postfix
-            postfix *= nums[nums_count-i-1]
+            result[nums_count - i - 1] *= postfix
+            postfix *= nums[nums_count - i - 1]
 
         return result

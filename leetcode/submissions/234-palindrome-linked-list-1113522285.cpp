@@ -1,5 +1,7 @@
-# Submission for 'Palindrome Linked List'
-# Submission url: https://leetcode.com/submissions/detail/1113522285/
+// Submission for Palindrome Linked List
+// Submission url: https://leetcode.com/submissions/detail/1113522285/
+
+
 
 class Solution {
 public:

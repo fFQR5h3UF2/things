@@ -1,8 +1,9 @@
-# Submission for 'Find in Mountain Array'
+# Submission for Find in Mountain Array
 # Submission url: https://leetcode.com/submissions/detail/1073327223/
 
+
 class Solution:
-    def findInMountainArray(self, target: int, mountain_arr: 'MountainArray') -> int:
+    def findInMountainArray(self, target: int, mountain_arr: "MountainArray") -> int:
         # Save the length of the mountain array
         length = mountain_arr.length()
 

@@ -1,10 +1,10 @@
-# Submission for 'Search a 2D Matrix'
+# Submission for Search a 2D Matrix
 # Submission url: https://leetcode.com/submissions/detail/997676878/
+
 
 class Solution:
     def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
         length_vertical, length_horizontal = len(matrix), len(matrix[0])
-
 
         left, right = 0, length_vertical - 1
         while left <= right:

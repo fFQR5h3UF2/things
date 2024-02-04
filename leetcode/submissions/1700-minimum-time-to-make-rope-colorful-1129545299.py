@@ -1,5 +1,6 @@
-# Submission for 'Minimum Time to Make Rope Colorful'
+# Submission for Minimum Time to Make Rope Colorful
 # Submission url: https://leetcode.com/submissions/detail/1129545299/
+
 
 class Solution:
     def minCost(self, colors: str, neededTime: List[int]) -> int:

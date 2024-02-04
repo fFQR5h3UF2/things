@@ -1,5 +1,6 @@
-# Submission for 'Sum of Left Leaves'
+# Submission for Sum of Left Leaves
 # Submission url: https://leetcode.com/submissions/detail/1002649580/
+
 
 # Definition for a binary tree node.
 # class TreeNode:

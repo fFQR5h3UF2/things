@@ -1,5 +1,7 @@
-# Submission for 'Reverse Words in a String III'
-# Submission url: https://leetcode.com/submissions/detail/693639118/
+// Submission for Reverse Words in a String III
+// Submission url: https://leetcode.com/submissions/detail/693639118/
+
+package submissions
 
 func reverseWords(_string string) string {
 	index_word_start, length, result := 0, len(_string), []rune(_string)

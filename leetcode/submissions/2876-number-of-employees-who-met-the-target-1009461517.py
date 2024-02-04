@@ -1,5 +1,6 @@
-# Submission for 'Number of Employees Who Met the Target'
+# Submission for Number of Employees Who Met the Target
 # Submission url: https://leetcode.com/submissions/detail/1009461517/
+
 
 class Solution:
     def numberOfEmployeesWhoMetTarget(self, hours: List[int], target: int) -> int:

@@ -1,5 +1,6 @@
-# Submission for 'Make String a Subsequence Using Cyclic Increments'
+# Submission for Make String a Subsequence Using Cyclic Increments
 # Submission url: https://leetcode.com/submissions/detail/1025840714/
+
 
 class Solution:
     def canMakeSubsequence(self, str1: str, str2: str) -> bool:
@@ -16,6 +17,5 @@ class Solution:
 
                 if idx2 == length2:
                     return True
-
 
         return False

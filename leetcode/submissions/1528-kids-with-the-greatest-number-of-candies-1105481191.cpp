@@ -1,5 +1,7 @@
-# Submission for 'Kids With the Greatest Number of Candies'
-# Submission url: https://leetcode.com/submissions/detail/1105481191/
+// Submission for Kids With the Greatest Number of Candies
+// Submission url: https://leetcode.com/submissions/detail/1105481191/
+
+
 
 class Solution {
 public:

@@ -1,5 +1,6 @@
-# Submission for 'Invert Binary Tree'
+# Submission for Invert Binary Tree
 # Submission url: https://leetcode.com/submissions/detail/1032231368/
+
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -10,5 +11,7 @@
 class Solution:
     def invertTree(self, root: Optional[TreeNode]) -> Optional[TreeNode]:
         if root:
-            root.left, root.right = self.invertTree(root.right), self.invertTree(root.left)
+            root.left, root.right = self.invertTree(root.right), self.invertTree(
+                root.left
+            )
         return root

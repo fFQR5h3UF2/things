@@ -1,5 +1,6 @@
-# Submission for 'Daily Temperatures'
+# Submission for Daily Temperatures
 # Submission url: https://leetcode.com/submissions/detail/1161819645/
+
 
 class Solution:
     def dailyTemperatures(self, temperatures: List[int]) -> List[int]:

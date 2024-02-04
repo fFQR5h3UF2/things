@@ -1,5 +1,6 @@
-# Submission for 'Binary Number with Alternating Bits'
+# Submission for Binary Number with Alternating Bits
 # Submission url: https://leetcode.com/submissions/detail/1054695718/
+
 
 class Solution:
     def hasAlternatingBits(self, n: int) -> bool:

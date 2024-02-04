@@ -1,7 +1,10 @@
-# Submission for 'Two Sum IV - Input is a BST'
-# Submission url: https://leetcode.com/submissions/detail/690048286/
+// Submission for Two Sum IV - Input is a BST
+// Submission url: https://leetcode.com/submissions/detail/690048286/
+
+package submissions
 
 import "sort"
+
 func construct(root *TreeNode, results map[int]int) {
 	if root == nil {
 		return

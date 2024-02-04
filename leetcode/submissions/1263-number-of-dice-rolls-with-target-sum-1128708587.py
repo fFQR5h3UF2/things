@@ -1,8 +1,9 @@
-# Submission for 'Number of Dice Rolls With Target Sum'
+# Submission for Number of Dice Rolls With Target Sum
 # Submission url: https://leetcode.com/submissions/detail/1128708587/
 
+
 class Solution:
-    mod = 10 ** 9 + 7
+    mod = 10**9 + 7
 
     def numRollsToTarget(self, n: int, k: int, target: int) -> int:
         dp = [[-1] * (target + 1) for _ in range(n + 1)]

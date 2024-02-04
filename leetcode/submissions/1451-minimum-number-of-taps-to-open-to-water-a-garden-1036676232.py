@@ -1,5 +1,6 @@
-# Submission for 'Minimum Number of Taps to Open to Water a Garden'
+# Submission for Minimum Number of Taps to Open to Water a Garden
 # Submission url: https://leetcode.com/submissions/detail/1036676232/
+
 
 class Solution:
     def minTaps(self, n: int, ranges: List[int]) -> int:

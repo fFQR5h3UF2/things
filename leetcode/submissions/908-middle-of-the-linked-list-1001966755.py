@@ -1,5 +1,6 @@
-# Submission for 'Middle of the Linked List'
+# Submission for Middle of the Linked List
 # Submission url: https://leetcode.com/submissions/detail/1001966755/
+
 
 # Definition for singly-linked list.
 # class ListNode:

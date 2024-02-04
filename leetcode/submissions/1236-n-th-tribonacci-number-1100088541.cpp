@@ -1,5 +1,7 @@
-# Submission for 'N-th Tribonacci Number'
-# Submission url: https://leetcode.com/submissions/detail/1100088541/
+// Submission for N-th Tribonacci Number
+// Submission url: https://leetcode.com/submissions/detail/1100088541/
+
+
 
 class Solution {
 public:

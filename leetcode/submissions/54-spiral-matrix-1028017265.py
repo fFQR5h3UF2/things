@@ -1,5 +1,6 @@
-# Submission for 'Spiral Matrix'
+# Submission for Spiral Matrix
 # Submission url: https://leetcode.com/submissions/detail/1028017265/
+
 
 class Solution:
     def spiralOrder(self, matrix: List[List[int]]) -> List[int]:
@@ -8,7 +9,6 @@ class Solution:
             return matrix[0]
         if col_count == 1:
             return [row[0] for row in matrix]
-
 
         result = []
         top, bot, left, right = 0, row_count - 1, 0, col_count - 1

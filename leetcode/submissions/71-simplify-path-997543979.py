@@ -1,5 +1,6 @@
-# Submission for 'Simplify Path'
+# Submission for Simplify Path
 # Submission url: https://leetcode.com/submissions/detail/997543979/
+
 
 class Solution:
     def simplifyPath(self, path: str) -> str:

@@ -1,6 +1,7 @@
-# Submission for 'Sqrt(x)'
-# Submission url: https://leetcode.com/submissions/detail/693649416/
+// Submission for Sqrt(x)
+// Submission url: https://leetcode.com/submissions/detail/693649416/
 
+package submissions
 
 func mySqrt(number int) int {
 	left, right := 0, number

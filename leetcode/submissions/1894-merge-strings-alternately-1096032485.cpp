@@ -1,5 +1,7 @@
-# Submission for 'Merge Strings Alternately'
-# Submission url: https://leetcode.com/submissions/detail/1096032485/
+// Submission for Merge Strings Alternately
+// Submission url: https://leetcode.com/submissions/detail/1096032485/
+
+
 
 class Solution {
 public:

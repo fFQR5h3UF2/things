@@ -1,15 +1,18 @@
-# Submission for 'Number of Islands'
+# Submission for Number of Islands
 # Submission url: https://leetcode.com/submissions/detail/1035172243/
+
 
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
         row_count, col_count = len(grid), len(grid[0])
         island_count = 0
         moves = ((0, 1), (0, -1), (1, 0), (-1, 0))
-        queue = set((row, col)
-                    for row in range(row_count)
-                    for col in range(col_count)
-                    if grid[row][col] == "1")
+        queue = set(
+            (row, col)
+            for row in range(row_count)
+            for col in range(col_count)
+            if grid[row][col] == "1"
+        )
 
         @cache
         def remove_island(row: int, col: int) -> None:

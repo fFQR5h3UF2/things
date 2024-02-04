@@ -1,5 +1,6 @@
-# Submission for 'License Key Formatting'
+# Submission for License Key Formatting
 # Submission url: https://leetcode.com/submissions/detail/1002796928/
+
 
 class Solution:
     def licenseKeyFormatting(self, s: str, k: int) -> str:

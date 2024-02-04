@@ -6,6 +6,7 @@ submissions_file="${2:?missing submissions file}"
 submissions_count="${3:-20}"
 submissions_offset="${4:-0}"
 session="${LEETCODE_SESSION:-}"
+debug="${LEETCODE_DEBUG:-}"
 if [ -z "${session}" ]; then
     echo "Input LEETCODE_SESSION cookie value"
     session=$(read -r)
@@ -16,7 +17,11 @@ get_submissions() {
     _limit="${2:?missing limit}"
     _url="${base}/api/submissions/?offset=${_offset}&limit=${_limit}&lastkey="
     (
-        set +x
+        if [ -z "${debug}" ]; then
+            set +x
+        else
+            set -x
+        fi
         echo "Downloading ${_offset}-$((_offset + _limit))" >&2
         _response=$(
             curl \
@@ -45,7 +50,7 @@ while [ "${submissions_count}" -gt 0 ]; do
     cur_limit=$((submissions_count > 20 ? 20 : submissions_count))
 
     get_submissions "${offset}" "${cur_limit}" >"${new_submissions}"
-    if [ -s "${new_submissions}" ]; then
+    if [ "$(cat "${new_submissions}")" = "null" ]; then
         echo "Reached the end"
         break
     fi

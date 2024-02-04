@@ -1,5 +1,7 @@
-# Submission for 'Find the Difference of Two Arrays'
-# Submission url: https://leetcode.com/submissions/detail/1099400651/
+// Submission for Find the Difference of Two Arrays
+// Submission url: https://leetcode.com/submissions/detail/1099400651/
+
+
 
 class Solution {
 public:

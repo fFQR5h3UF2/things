@@ -1,5 +1,6 @@
-# Submission for 'Rotate Image'
+# Submission for Rotate Image
 # Submission url: https://leetcode.com/submissions/detail/1038443511/
+
 
 class Solution:
     def rotate(self, matrix: List[List[int]]) -> None:
@@ -9,7 +10,7 @@ class Solution:
         side_length = len(matrix)
 
         for row in range(side_length // 2):
-            matrix[row], matrix[-row-1] = matrix[-row-1], matrix[row]
+            matrix[row], matrix[-row - 1] = matrix[-row - 1], matrix[row]
 
         for i in range(side_length):
             for j in range(i):
