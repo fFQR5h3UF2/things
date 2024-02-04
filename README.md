@@ -91,9 +91,10 @@ Targets:
   firefox/build             Build stow package
   firefox/test              Test stow package
   firefox/clean             Clean stow package
+  leetcode                  Run leetcode/parse
   leetcode/download         Download last 20 submissions to ./leetcode/submissions.json
   leetcode/parse            Generate files in ./leetcode/submissions/ from ./leetcode/submissions.json
-  leetcode/format           Format submissions using black and gofmt
+  leetcode/format           Run leetcode/format-black and leetcode/format-gofmt
   leetcode/format-black     Format submissions using black
   leetcode/format-gofmt     Format submissions using gofmt
   git                       Run git/install
