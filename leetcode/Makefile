@@ -20,7 +20,7 @@ leetcode/generate: leetcode/download ## Generate files in ./leetcode/submissions
 
 .PHONY: leetcode/update
 leetcode/update: ## Download new submissions, create MR for them, merge the MR
-	#git checkout -b "${leetcode_branch}"
+	git checkout -B "${leetcode_branch}"
 	$(MAKE) leetcode/generate leetcode/format
 	git add "${leetcode_submissions_file}" ./leetcode/submissions/
 	git commit -m "${leetcode_commit}"
