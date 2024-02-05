@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.63.0 (2024-02-05)
+
+### Feat
+
+- add autoscroll
+
 ## v0.62.0 (2024-02-05)
 
 ### Feat
