@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.63.1 (2024-02-05)
+
+### Fix
+
+- **leetcode**: check if line starts with 'package' only on go packages (#129)
+
 ## v0.63.0 (2024-02-05)
 
 ### Feat
