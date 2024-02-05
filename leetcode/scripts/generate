@@ -66,7 +66,7 @@ def submission_content(submission: Submission, base_url: str) -> str:
             line.rstrip()
             for line in submission.code.split("\n")
             # gofmt fix for 691642817 and 691652127
-            if not line.startswith("package ")
+            if submission.lang != "golang" or not line.startswith("package ")
         ),
     ]
     length = len(lines)
