@@ -71,9 +71,12 @@ def submission_content(submission: Submission, base_url: str) -> str:
     ]
     length = len(lines)
     for i in reversed(range(length)):
-        if not lines[i].isspace():
+        line = lines[i]
+        if line and not line.isspace():
             break
         lines.pop()
+    if lines[-1][-1] != "\n":
+        lines[-1] += "\n"
     return "\n".join(lines)
 
 
