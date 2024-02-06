@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.65.0 (2024-02-06)
+
+### Feat
+
+- add old readme template (#131)
+
 ## v0.64.0 (2024-02-06)
 
 ### Feat
