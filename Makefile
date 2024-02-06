@@ -1,14 +1,16 @@
 # Makefile for dotfiles
 
-PACKAGES = bin repos vscode ssh cloud/cloud/yandex shell init udev gpg packages/leetcode tmux os make nvim firefox git
+PACKAGES = repos cloud/yandex dotfiles dotfiles/bin dotfiles/vscode dotfiles/ssh dotfiles/shell dotfiles/init dotfiles/udev dotfiles/gpg dotfiles/tmux dotfiles/os dotfiles/nvim dotfiles/firefox dotfiles/git leetcode ./scripts
 OUT_DIR = ./out
-OUT_PACKAGE_DIR = ${OUT_DIR}/package
+OUT_PACKAGE_DIR = ${OUT_DIR}/packages
 OUT_TRACKER_DIR = ${OUT_DIR}/tracker
 STOW_PACKAGE = stow
 OUT_STOW_DIR = ${OUT_DIR}/${STOW_PACKAGE}
 OUT_DIRS = $(PACKAGES:%=$(OUT_DIR)/package/%) $(PACKAGES:%=${OUT_TRACKER_DIR}/%) \
 		   $(PACKAGES:%=${OUT_STOW_DIR}/%)
 PROJECT_DIR = $(shell git rev-parse --show-toplevel)
+PACKAGE_DIR = ${PROJECT_DIR}/packages
+SCRIPT_DIR = ${PROJECT_DIR}/scripts
 STOW_INSTALL_DIR = ${HOME}
 STOW_CMD = stow --no-folding --verbose
 HELP_UPDATE_CMD = @printf "  %-20s %s\n" >"${*}/help.txt"
@@ -23,7 +25,7 @@ help: ## Display help
 		-e '/^[a-zA-Z0-9_\/\-]*:.*##/!d' \
 		-e 's/:.*##\s*/:/' \
 		-e 's/^\(.\+\):\(.*\)/  $(shell tput setaf 6)\1$(shell tput sgr0):\2/' \
-		$(PACKAGES:%=%/Makefile) \
+		$(PACKAGES:%=${PACKAGE_DIR}/%/Makefile) \
 		| column -c2 -t -s ":"
 
 # generate install targets for all packages
@@ -33,7 +35,7 @@ install_stow_targets = $(PACKAGES:%=%/install-stow)
 install: $(install_targets) ## Install packages
 $(install_targets): %/install: %/build
 $(install_stow_targets): %/install-stow: %/build
-	$(STOW_CMD) --target "${STOW_INSTALL_DIR}" --dir "${OUT_STOW_DIR}" --stow "${*}"
+	$(STOW_CMD) --target "${STOW_INSTALL_DIR}" --dir "${OUT_STOW_DIR}/dotfiles" --stow "$(shell basename "${*}")"
 
 # generate build targets for all packages
 build_targets = $(PACKAGES:%=%/build)
@@ -42,7 +44,7 @@ build_stow_targets = $(PACKAGES:%=%/build-stow)
 build: $(build_targets) ## Build packages
 $(build_targets): %/build: %/setup
 $(build_stow_targets): %/build-stow: %/setup
-	$(STOW_CMD) --target "${OUT_STOW_DIR}/${*}" --dir "${*}" --stow "${STOW_PACKAGE}"
+	$(STOW_CMD) --target "${OUT_STOW_DIR}/${*}" --dir "./packages/${*}" --stow "${STOW_PACKAGE}"
 
 # generate setup targets for all packages
 setup_targets = $(PACKAGES:%=%/setup)
@@ -98,5 +100,6 @@ endef
 
 # include package makefiles if help target is not specified
 ifeq (,$(filter help,$(MAKECMDGOALS)))
-$(foreach package,$(PACKAGES),$(eval -include ${package}/Makefile))
+$(foreach package,$(PACKAGES),$(eval -include ${PACKAGE_DIR}/${package}/Makefile))
+include ${SCRIPT_DIR}/Makefile
 endif

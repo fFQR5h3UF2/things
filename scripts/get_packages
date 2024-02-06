@@ -12,5 +12,6 @@ find . -maxdepth 10 -type d |
         if [ -n "${changed}" ] && [ -z "$(git diff --name-only "${path}")" ]; then
             continue
         fi
-        echo "${path#./}"
+
+        echo "${path#./packages/}"
     done
