@@ -1,5 +1,53 @@
 # Changelog
 
+## v0.66.0 (2024-02-06)
+
+### Feat
+
+- **leetcode**: move leetcode to packages directory (#132)
+
+## v0.65.0 (2024-02-06)
+
+### Feat
+
+- add old readme template (#131)
+
+## v0.64.0 (2024-02-06)
+
+### Feat
+
+- **leetcode**: add 24-02-06 submissions (#130)
+
+## v0.63.1 (2024-02-05)
+
+### Fix
+
+- **leetcode**: check if line starts with 'package' only on go packages (#129)
+
+## v0.63.0 (2024-02-05)
+
+### Feat
+
+- add autoscroll
+
+## v0.62.0 (2024-02-05)
+
+### Feat
+
+- add ci commits
+- add old telegram bot (#125)
+- add old firefox plugin (#124)
+- remove bootstrap, improve leetcode Makefile (#122)
+- **leetcode**: add 24-02-05 submissions (#120)
+- **leetcode**: improve parse function, fix trailing whitespaces in generated files, fix end-of-file newlines, delete nonapproved submissions (#118)
+- **leetcode**: add leading zeros to the question id (#117)
+- **leetcode**: rewrite parse script in python, format submissions (#116)
+- add leetcode package, add leetcode submissions (#115)
+- improve startup time by hardcoding PACKAGES and including makefiles only if actual targets are specified (#114)
+- add help messages (#113)
+- **bin**: add installation of pipx packages and npm (#112)
+- make init targets nonphony, change stow layout, improve clean targets, add default targets to packages (#111)
+
 ## v0.61.0 (2024-01-29)
 
 ### Feat
@@ -161,7 +209,7 @@
 
 ### Feat
 
-- remove _ from function names, source nvim in the proper bashrc file (#81)
+- remove \_ from function names, source nvim in the proper bashrc file (#81)
 
 ## v0.37.0 (2024-01-11)
 
@@ -419,7 +467,7 @@
 
 ### Feat
 
-- **scripts**: add __info_ram function
+- **scripts**: add \_\_info_ram function
 
 ## v0.7.0 (2023-12-12)
 
@@ -439,6 +487,7 @@
 
 <!-- Automatically generated in https://github.com/shishifubing/misc-dotfiles/actions/runs/6805127969 -->
 <!-- Release notes generated using configuration in .github/release.yml at v0.6.0 -->
+
 ### What's Changed
 
 - feat(home): clean up the prompt by @q1feq3qzi60u in https://github.com/shishifubing/misc-dotfiles/pull/7
@@ -449,6 +498,7 @@
 
 <!-- Automatically generated in https://github.com/shishifubing/misc-dotfiles/actions/runs/6791454281 -->
 <!-- Release notes generated using configuration in .github/release.yml at v0.5.0 -->
+
 ### What's Changed
 
 - feat: remove PROMPT_COMMAND by @q1feq3qzi60u in https://github.com/shishifubing/misc-dotfiles/pull/5
@@ -459,6 +509,7 @@
 
 <!-- Automatically generated in https://github.com/shishifubing/misc-dotfiles/actions/runs/6777685082 -->
 <!-- Release notes generated using configuration in .github/release.yml at v0.2.3 -->
+
 ### New Contributors
 
 - @shishifubing-bot made their first contribution in https://github.com/shishifubing/misc-dotfiles/pull/3
@@ -469,6 +520,7 @@
 
 <!-- Automatically generated in https://github.com/shishifubing/misc-dotfiles/actions/runs/6771278763 -->
 <!-- Release notes generated using configuration in .github/release.yml at v0.2.2 -->
+
 ### What's Changed
 
 - feat: change dotfiles path by @q1feq3qzi60u in https://github.com/shishifubing/misc-dotfiles/pull/1
@@ -483,6 +535,7 @@
 ## v0.2.0 - 2023-03-18
 
 <!-- Automatically generated in https://github.com/shishifubing/misc-personal-dotfiles/actions/runs/4457739322 -->
+
 ### Features
 
 - **export**: add JAVA_HOME, add mvn to PATH by @tiandaoburen in [#28](https://github.com/shishifubing/misc-personal-dotfiles/pull/28)
@@ -492,11 +545,13 @@
 ## v0.1.296 - 2023-03-14
 
 <!-- Automatically generated in https://github.com/shishifubing/misc-personal-dotfiles/actions/runs/4421006453 -->
+
 **Full Changelog**: https://github.com/shishifubing/misc-personal-dotfiles/compare/v0.1.295...v0.1.296
 
 ## v0.1.295 - 2023-03-13
 
 <!-- Automatically generated in https://github.com/shishifubing/misc-personal-dotfiles/actions/runs/4410366739 -->
+
 ### Documentation changes
 
 - **readme**: add version and release badges by @tiandaoburen in [#25](https://github.com/shishifubing/misc-personal-dotfiles/pull/25)

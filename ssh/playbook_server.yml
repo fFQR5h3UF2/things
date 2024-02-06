@@ -11,4 +11,4 @@
     - name: Harden ssh
       role: devsec.hardening.ssh_hardening
       vars:
-        ssh_server_enabled: false
+        ssh_server_enabled: true

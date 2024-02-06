@@ -3,6 +3,7 @@ repos:
     rev: v4.5.0
     hooks:
       - id: check-added-large-files
+        args: ["--maxkb=3072"]
       - id: check-case-conflict
       - id: check-executables-have-shebangs
       - id: check-json
@@ -11,6 +12,8 @@ repos:
       - id: check-symlinks
       - id: check-toml
       - id: check-yaml
+        args:
+          - --unsafe
       - id: detect-private-key
       - id: end-of-file-fixer
       - id: forbid-submodules
@@ -33,6 +36,13 @@ repos:
       - id: check-dependabot
   - repo: local
     hooks:
+      - id: update-package-list
+        name: Update package list in Makefile
+        entry: make
+        language: system
+        pass_filenames: false
+        args:
+          - make/update-package-list
       - id: shellcheck
         name: Run shellcheck
         entry: shellcheck

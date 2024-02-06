@@ -1,43 +1,89 @@
-PACKAGES = $(shell ./make/scripts/get_packages.sh)
-PACKAGES_CHANGED = $(shell ./make/scripts/get_packages.sh changed)
+# Makefile for dotfiles
 
+PACKAGES = bin repos vscode ssh cloud/cloud/yandex shell init udev gpg packages/leetcode tmux os make nvim firefox git
 OUT_DIR = ./out
-OUT_DIRS = $(addprefix $(OUT_DIR)/, $(PACKAGES))
-PROJECT_DIR = $(shell git rev-parse --show-toplevel)
+OUT_PACKAGE_DIR = ${OUT_DIR}/package
+OUT_TRACKER_DIR = ${OUT_DIR}/tracker
 STOW_PACKAGE = stow
+OUT_STOW_DIR = ${OUT_DIR}/${STOW_PACKAGE}
+OUT_DIRS = $(PACKAGES:%=$(OUT_DIR)/package/%) $(PACKAGES:%=${OUT_TRACKER_DIR}/%) \
+		   $(PACKAGES:%=${OUT_STOW_DIR}/%)
+PROJECT_DIR = $(shell git rev-parse --show-toplevel)
 STOW_INSTALL_DIR = ${HOME}
 STOW_CMD = stow --no-folding --verbose
+HELP_UPDATE_CMD = @printf "  %-20s %s\n" >"${*}/help.txt"
 
-install_targets = $(addsuffix /install, $(PACKAGES))
-.PHONY: install $(install_targets)
-install: $(install_targets)
+.POSIX:
+
+.PNONY: help
+help: ## Display help
+	@echo "Usage: make [options] [target] ..."
+	@echo "Targets:"
+	@sed \
+		-e '/^[a-zA-Z0-9_\/\-]*:.*##/!d' \
+		-e 's/:.*##\s*/:/' \
+		-e 's/^\(.\+\):\(.*\)/  $(shell tput setaf 6)\1$(shell tput sgr0):\2/' \
+		$(PACKAGES:%=%/Makefile) \
+		| column -c2 -t -s ":"
+
+# generate install targets for all packages
+install_targets = $(PACKAGES:%=%/install)
+install_stow_targets = $(PACKAGES:%=%/install-stow)
+.PHONY: install $(install_targets) $(install_stow_targets)
+install: $(install_targets) ## Install packages
 $(install_targets): %/install: %/build
+$(install_stow_targets): %/install-stow: %/build
+	$(STOW_CMD) --target "${STOW_INSTALL_DIR}" --dir "${OUT_STOW_DIR}" --stow "${*}"
 
-build_targets = $(addsuffix /build, $(PACKAGES))
-.PHONY: build $(build_targets)
-build: $(build_targets)
+# generate build targets for all packages
+build_targets = $(PACKAGES:%=%/build)
+build_stow_targets = $(PACKAGES:%=%/build-stow)
+.PHONY: build $(build_targets) $(build_stow_targets)
+build: $(build_targets) ## Build packages
 $(build_targets): %/build: %/setup
+$(build_stow_targets): %/build-stow: %/setup
+	$(STOW_CMD) --target "${OUT_STOW_DIR}/${*}" --dir "${*}" --stow "${STOW_PACKAGE}"
 
-setup_targets = $(addsuffix /setup, $(PACKAGES))
+# generate setup targets for all packages
+setup_targets = $(PACKAGES:%=%/setup)
 .PHONY: setup $(setup_targets)
-setup: $(setup_targets)
-$(setup_targets): init/init $(OUT_DIRS)
+setup: $(setup_targets) ## Setup packages
+$(setup_targets): init
+init: | $(OUT_DIRS)
+$(OUT_DIRS):
+	@mkdir -p "${@}"
 
-test_targets = $(addsuffix /test, $(PACKAGES))
-.PHONY: test $(test_targets)
-test: $(test_targets)
+# generate test targets for all packages
+test_targets = $(PACKAGES:%=%/test)
+test_stow_targets = $(PACKAGES:%=%/test-stow)
+.PHONY: test $(test_targets) $(test_stow_targets)
+test: $(test_targets) ## Test packages
 $(test_targets): %/test: %/build
+$(test_stow_targets): %/test-stow: %/build
+	$(STOW_CMD) --target "${STOW_INSTALL_DIR}" --dir "${OUT_STOW_DIR}" --simulate "${*}"
 
-clean_targets = $(addsuffix /clean, $(PACKAGES))
-.PHONY: clean $(clean_targets)
-clean: clean-out
-clean-out: $(clean_targets)
-$(clean_targets): %/clean:
-	-rm -rf "${OUT_DIR}/${*}"
+# generate clean targets for all packages
+clean_targets = $(PACKAGES:%=%/clean)
+clean_stow_targets = $(PACKAGES:%=%/clean-stow)
+.PHONY: clean clean-out $(clean_targets) $(clean_stow_targets)
+clean: clean-out ## Clean packages
+clean-out: $(clean_targets) ## Clean ${OUT_DIR}
+	-rm -rf "${OUT_DIR}"
+$(clean_targets): %/clean: %/clean-out %/clean-tracker
+$(PACKAGES:%=%/clean-out): %/clean-out:
+	-rm -rf "${OUT_PACKAGE_DIR}/${*}"
+$(PACKAGES:%=%/clean-tracker): %/clean-tracker:
+	-rm -rf "${OUT_TRACKER_DIR}/${*}"
+$(clean_stow_targets): %/clean-stow:
+	-$(STOW_CMD) --target "${STOW_INSTALL_DIR}" --dir "${OUT_STOW_DIR}" --delete "${*}"
+	-rm -rf "${OUT_STOW_DIR}/${*}"
 
-define include_package
-include ${PACKAGE}/Makefile
-endef
+.PHONY: air air-start air-cmd
+air: air-start ## Run air-start
+air-start: ## Run air using air-cmd
+	go run github.com/cosmtrek/air@latest
+air-cmd: ## Run tests on changed packages
+	$(MAKE) $(addsuffix /test $(shell ./make/scripts/get_packages changed))
 
 define define ansible-install
 which "${1}" || \
@@ -50,36 +96,7 @@ which "${1}" || \
 		-a "name=${2} state=present"
 endef
 
-build_stow_targets = $(addsuffix /build-stow, $(PACKAGES))
-.PHONY: $(build_stow_targets)
-$(build_stow_targets): %/build-stow: ${OUT_DIR}/%/${STOW_PACKAGE} setup
-	$(STOW_CMD) --target "${<}" --dir "${*}" --stow "${STOW_PACKAGE}"
-
-install_stow_targets = $(addsuffix /install-stow, $(PACKAGES))
-.PHONY: $(install_stow_targets)
-$(install_stow_targets): %/install-stow: ${OUT_DIR}/% build %/build-stow
-	$(STOW_CMD) --target "${STOW_INSTALL_DIR}" --dir "${<}" --stow "${STOW_PACKAGE}"
-
-test_stow_targets = $(addsuffix /test-stow, $(PACKAGES))
-.PHONY: $(test_stow_targets)
-$(test_stow_targets): %/test-stow: ${OUT_DIR}/% build %/build-stow
-	$(STOW_CMD) --target "${STOW_INSTALL_DIR}" --dir "${<}" --simulate "${STOW_PACKAGE}"
-
-clean_stow_targets = $(addsuffix /clean-stow, $(PACKAGES))
-.PHONY: $(clean_stow_targets)
-$(clean_stow_targets): %/clean-stow:
-	-$(STOW_CMD) --target "${STOW_INSTALL_DIR}" --dir "${OUT_DIR}/${*}" --delete "${STOW_PACKAGE}"
-	-rm -rf "${OUT_DIR}/${*}/stow"
-
-.PHONY: air
-air:
-	go run github.com/cosmtrek/air@latest
-
-${OUT_DIR}/%:
-	@mkdir -p "${@}"
-
-.PHONY: clean-out
-clean-out:
-	-rm -rf "${OUT_DIR}"
-
-$(foreach PACKAGE, $(PACKAGES), $(eval $(include_package)))
+# include package makefiles if help target is not specified
+ifeq (,$(filter help,$(MAKECMDGOALS)))
+$(foreach package,$(PACKAGES),$(eval -include ${package}/Makefile))
+endif
