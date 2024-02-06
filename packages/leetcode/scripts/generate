@@ -40,7 +40,7 @@ class Submission:
     flag_type: str
 
 
-def submission_path(submission: Submission) -> Path:
+def submission_path(submission: Submission, submissions_dir: str) -> Path:
     extension = extensions[submission.lang]
     file_name = "-".join(
         (
@@ -49,7 +49,7 @@ def submission_path(submission: Submission) -> Path:
             str(submission.id),
         )
     )
-    return Path("leetcode") / "submissions" / f"{file_name}.{extension}"
+    return Path(submissions_dir) / f"{file_name}.{extension}"
 
 
 def submission_content(submission: Submission, base_url: str) -> str:
@@ -84,6 +84,7 @@ def main() -> None:
     logging.basicConfig(level=logging.INFO)
     base = sys.argv[1]
     submissions_file = sys.argv[2]
+    submissions_dir = sys.argv[3]
     submissions: dict[str, dict[str, Any]] = {}
     with open(submissions_file, "r") as file:
         submissions = json.loads(file.read())
@@ -91,7 +92,7 @@ def main() -> None:
         submission = Submission(**submission_dict)
         if submission.status_display != "Accepted":
             continue
-        with open(submission_path(submission), "w") as file:
+        with open(submission_path(submission, submissions_dir), "w") as file:
             file.write(submission_content(submission, base_url=base))
     logging.info(f"Generated submission files")
 
