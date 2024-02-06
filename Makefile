@@ -1,6 +1,6 @@
 # Makefile for dotfiles
 
-PACKAGES = bin repos vscode ssh cloud/cloud/yandex shell init udev gpg tmux os make nvim firefox leetcode git
+PACKAGES = bin repos vscode ssh cloud/cloud/yandex shell init udev gpg packages/leetcode tmux os make nvim firefox git
 OUT_DIR = ./out
 OUT_PACKAGE_DIR = ${OUT_DIR}/package
 OUT_TRACKER_DIR = ${OUT_DIR}/tracker
@@ -8,6 +8,7 @@ STOW_PACKAGE = stow
 OUT_STOW_DIR = ${OUT_DIR}/${STOW_PACKAGE}
 OUT_DIRS = $(PACKAGES:%=$(OUT_DIR)/package/%) $(PACKAGES:%=${OUT_TRACKER_DIR}/%) \
 		   $(PACKAGES:%=${OUT_STOW_DIR}/%)
+PROJECT_DIR = $(shell git rev-parse --show-toplevel)
 STOW_INSTALL_DIR = ${HOME}
 STOW_CMD = stow --no-folding --verbose
 HELP_UPDATE_CMD = @printf "  %-20s %s\n" >"${*}/help.txt"
@@ -97,5 +98,5 @@ endef
 
 # include package makefiles if help target is not specified
 ifeq (,$(filter help,$(MAKECMDGOALS)))
-$(foreach package,$(PACKAGES),$(eval include ${package}/Makefile))
+$(foreach package,$(PACKAGES),$(eval -include ${package}/Makefile))
 endif
