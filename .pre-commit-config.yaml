@@ -42,7 +42,7 @@ repos:
         language: system
         pass_filenames: false
         args:
-          - make/update-package-list
+          - update-package-list
       - id: shellcheck
         name: Run shellcheck
         entry: shellcheck
