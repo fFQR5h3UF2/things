@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.66.0 (2024-02-06)
+
+### Feat
+
+- **leetcode**: move leetcode to packages directory (#132)
+
 ## v0.65.0 (2024-02-06)
 
 ### Feat
