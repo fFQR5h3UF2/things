@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
-export DOTFILES="${DOTFILES:-"${HOME}/repos/shishifubing/dotfiles"}"
-. "${DOTFILES}/shell/scripts/functions.sh"
+. "${HOME}/.config/shell/functions.sh"
 
 export FZF_DEFAULT_COMMAND="fd --type f"
 export FZF_COMPLETION_TRIGGER="**"
