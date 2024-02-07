@@ -21,11 +21,11 @@ jobs:
         with:
           dry_run: 1
           context: dir://packages/kaniko
-          dockerfile: ./Dockerfile.test
+          dockerfile: ./packages/kaniko/Dockerfile.test
       - uses: ./packages/kaniko
         with:
           context: dir://packages/kaniko
-          dockerfile: ./Dockerfile.test
+          dockerfile: ./packages/kaniko/Dockerfile.test
           destination: shishifubing/test_kaniko:latest
           token: ${{ secrets.CI_DOCKERHUB_TOKEN }}
   test_bump_version:
