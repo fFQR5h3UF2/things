@@ -19,19 +19,15 @@ jobs:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       - uses: ./packages/kaniko
         with:
-          context: dir://./packages/kaniko
+          dry_run: 1
+          context: dir://packages/kaniko
+          dockerfile: ./Dockerfile.test
+      - uses: ./packages/kaniko
+        with:
+          context: dir://packages/kaniko
           dockerfile: ./Dockerfile.test
           destination: shishifubing/test_kaniko:latest
           token: ${{ secrets.CI_DOCKERHUB_TOKEN }}
-  test_kaniko_dry_run:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-      - uses: ./packages/kaniko
-        with:
-          dry_run: 1
-          context: dir://./packages/kaniko
-          dockerfile: ./Dockerfile.test
   test_bump_version:
     runs-on: ubuntu-latest
     steps:
