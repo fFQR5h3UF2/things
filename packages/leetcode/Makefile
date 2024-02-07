@@ -5,7 +5,7 @@ LEETCODE_SUBMISSIONS_DIR = ${LEETCODE_DIR}/submissions/
 LEETCODE_DATE = $(shell date '+%y-%m-%d')
 LEETCODE_DOWNLOAD = ${OUT_TRACKER_DIR}/leetcode-download-${LEETCODE_DATE}
 LEETCODE_BRANCH = dev/leetcode-update-${LEETCODE_DATE}
-LEETCODE_COMMIT = feat(leetcode): add ${LEETCDOE_DATE} submissions
+LEETCODE_COMMIT = feat(leetcode): add ${LEETCODE_DATE} submissions
 
 .PHONY: leetcode
 leetcode: leetcode/generate ## Run leetcode/parse
@@ -37,7 +37,7 @@ leetcode/format: leetcode/format-black leetcode/format-gofmt ## Run leetcode/for
 
 .PHONY: leetcode/format-black
 leetcode/format-black: leetcode/generate ## Format submissions using black
-	poetry run black --quiet "${LEETCODE_SUBMISSIONS_DIR}"
+	poetry -C "${DOTFILES_DIR}" run black --quiet "${LEETCODE_SUBMISSIONS_DIR}"
 
 .PHONY: leetcode/format-gofmt
 leetcode/format-gofmt: leetcode/generate ## Format submissions using gofmt
