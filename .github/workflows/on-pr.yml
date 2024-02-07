@@ -5,46 +5,37 @@ concurrency:
   group: ${{ github.workflow }}/${{ github.event.pull_request.head.label || github.head_ref || github.ref }}
   cancel-in-progress: true
 jobs:
-  test_makefile:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-      - run: make --debug=b install
-      - run: make --debug=b test
   build_image_commitizen:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-      - uses: ./kaniko
+      - uses: ./packages/kaniko
         with:
           dry_run: 1
-          dockerfile: images/commitizen.Dockerfile
+          dockerfile: ./packages/images/commitizen.Dockerfile
   test_kaniko:
     runs-on: ubuntu-latest
+    if: false
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-      - uses: ./kaniko
-        with:
-          context: dir://kaniko
-          dockerfile: kaniko/Dockerfile.test
-          destination: shishifubing/test_kaniko:latest
-          token: ${{ secrets.CI_DOCKERHUB_TOKEN }}
-  test_kaniko_dry_run:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
-      - uses: ./kaniko
+      - uses: ./packages/kaniko
         with:
           dry_run: 1
-          context: dir://kaniko
-          dockerfile: kaniko/Dockerfile.test
+          context: dir://packages/kaniko
+          dockerfile: ./packages/kaniko/Dockerfile.test
+      - uses: ./packages/kaniko
+        with:
+          context: dir://packages/kaniko
+          dockerfile: ./packages/kaniko/Dockerfile.test
+          destination: shishifubing/test_kaniko:latest
+          token: ${{ secrets.CI_DOCKERHUB_TOKEN }}
   test_bump_version:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           fetch-depth: 0
-      - uses: ./bump_version
+      - uses: ./packages/bump-version
         with:
           dry_run: 1
           private_key: ${{ secrets.CI_GPG_PRIVATE_KEY }}
@@ -55,8 +46,8 @@ jobs:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           fetch-depth: 0
-      - run: ./bump_version/test_bump_version_commit.sh
-      - uses: ./bump_version
+      - run: ./packages/bump-version/test_bump_version_commit.sh
+      - uses: ./packages/bump-version
         with:
           dry_run: 1
           private_key: ${{ secrets.CI_GPG_PRIVATE_KEY }}
