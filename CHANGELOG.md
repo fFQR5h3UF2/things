@@ -1,5 +1,16 @@
 # Changelog
 
+## v0.67.0 (2024-02-07)
+
+### Feat
+
+- **leetcode**: add  submissions (#136)
+- move all packages to packages/ (#134)
+
+### Fix
+
+- **leetcode**: black command, commit name (#137)
+
 ## v0.66.0 (2024-02-06)
 
 ### Feat
