@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.68.0 (2024-02-07)
+
+### Feat
+
+- **dotfiles**: build and install one stow package instead of separate ones (#139)
+
 ## v0.67.0 (2024-02-07)
 
 ### Feat
