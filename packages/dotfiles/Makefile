@@ -17,6 +17,7 @@ dotfiles: dotfiles/install ## Run dotfiles/install
 dotfiles/install: dotfiles/install-stow-package  ## Run dotfiles/install-stow-package
 dotfiles/build: dotfiles/build-stow-package ## Run dotfiles/build-stow-packages
 dotfiles/setup: dotfiles/init ## Run dotfiles/init
+dotfiles/clean: dotfiles/clean-stow-package ## Run dotfiles/clean-stow-package
 
 .PHONY: dotfiles/install-stow-package
 dotfiles/install-stow-package: dotfiles/build-stow-package ## Install stow package

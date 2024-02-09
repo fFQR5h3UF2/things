@@ -5,13 +5,13 @@ INIT_VENV_DIR = ${HOME}/.venv
 INIT_VENV_CMD = . "${INIT_VENV_DIR}/bin/activate"
 
 .PHONY: dotfiles/init
-init: ${INIT_TRACKER_DIR}/init ## Prepare environment
+dotfiles/init: ${INIT_TRACKER_DIR}/init ## Prepare environment
 ${INIT_TRACKER_DIR}/init: ${INIT_TRACKER_DIR}/ansible-galaxy \
 						  ${INIT_TRACKER_DIR}/stow \
 						  ${INIT_TRACKER_DIR}/poetry
 
 .PHONY: dotfiles/init/clean
-dotfiles/init/clean: init/clean-poetry-venv init/clean-venv ## Remove poetry venv and root venv
+dotfiles/init/clean: dotfiles/init/clean-poetry-venv dotfiles/init/clean-venv ## Remove poetry venv and root venv
 
 .PHONY: dotfiles/init/poetry-bin
 dotfiles/init/poetry-bin: ${INIT_TRACKER_DIR}/poetry-bin ## Install poetry via pix
