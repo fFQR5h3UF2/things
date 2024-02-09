@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.71.0 (2024-02-09)
+
+### Feat
+
+- **dotfiles**: add git-select script, move git-add-commits to git (#143)
+
 ## v0.70.1 (2024-02-09)
 
 ### Fix
