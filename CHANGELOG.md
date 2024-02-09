@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.71.1 (2024-02-09)
+
+### Fix
+
+- **dotfiles**: invalid bashrc paths (#144)
+
 ## v0.71.0 (2024-02-09)
 
 ### Feat
