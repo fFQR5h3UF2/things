@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.70.1 (2024-02-09)
+
+### Fix
+
+- **dotfiles**: add missing git config, fix init and trackers (#142)
+
 ## v0.70.0 (2024-02-09)
 
 ### Feat
