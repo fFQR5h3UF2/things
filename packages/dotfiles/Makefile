@@ -13,8 +13,10 @@ DOTFILES_FIREFOX_PROFILES = $(notdir $(wildcard ${HOME}/${DOTFILES_FIREFOX_DIR}/
 DOTFILES_FIREFOX_TARGETS = $(DOTFILES_FIREFOX_PROFILES:%=dotfiles/build-stow-package-firefox-%)
 DOTFILES_FIREFOX_OUT_DIRS = $(DOTFILES_FIREFOX_PROFILES:%=${DOTFILES_OUT_FIREFOX_DIR}/%)
 
-.PHONY: dotfiles/install
+dotfiles: dotfiles/install ## Run dotfiles/install
 dotfiles/install: dotfiles/install-stow-package  ## Run dotfiles/install-stow-package
+dotfiles/build: dotfiles/build-stow-package ## Run dotfiles/build-stow-packages
+dotfiles/setup: dotfiles/init ## Run dotfiles/init
 
 .PHONY: dotfiles/install-stow-package
 dotfiles/install-stow-package: dotfiles/build-stow-package ## Install stow package
@@ -32,11 +34,11 @@ dotfiles/clean-stow-package: dotfiles/uninstall-stow-package ## Uninstall stow p
 dotfiles/build-stow-package: $(DOTFILES_STOW_PACKAGES_STATIC_TARGETS) dotfiles/build-stow-package-firefox ## Build stow package
 
 .PHONY: $(DOTFILES_STOW_PACKAGES_STATIC_TARGETS)
-$(DOTFILES_STOW_PACKAGES_STATIC_TARGETS): dotfiles/build-stow-package-%: ${DOTFILES_OUT_STOW_DIR}
+$(DOTFILES_STOW_PACKAGES_STATIC_TARGETS): dotfiles/build-stow-package-%: ${DOTFILES_OUT_STOW_DIR} dotfiles/setup
 	rsync -a "${DOTFILES_DIR}/${*}/" "${DOTFILES_OUT_STOW_DIR}/"
 
 .PHONY: dotfiles/build-stow-package-firefox
-dotfiles/build-stow-package-firefox: $(DOTFILES_FIREFOX_TARGETS)
+dotfiles/build-stow-package-firefox: $(DOTFILES_FIREFOX_TARGETS) dotfiles/setup
 
 .PHONY: $(DOTFILES_FIREFOX_TARGETS)
 $(DOTFILES_FIREFOX_TARGETS): dotfiles/build-stow-package-firefox-%: $(DOTFILES_FIREFOX_OUT_DIRS)

@@ -1,10 +1,11 @@
 LEETCODE_DIR = ${PACKAGE_DIR}/leetcode
+LEETCODE_OUT_DIR = ${OUT_PACKAGE_DIR}/leetcode
 LEETCODE_BASE_URL = https://leetcode.com
 LEETCODE_SUBMISSIONS_FILE = ${LEETCODE_DIR}/submissions.json
 LEETCODE_SUBMISSIONS_DIR = ${LEETCODE_DIR}/submissions/
 LEETCODE_DATE = $(shell date '+%y-%m-%d')
-LEETCODE_DOWNLOAD = ${OUT_TRACKER_DIR}/leetcode-download-${LEETCODE_DATE}
-LEETCODE_BRANCH = dev/leetcode-update-${LEETCODE_DATE}
+LEETCODE_DOWNLOAD = ${LEETCODE_OUT_DIR}/trackers/leetcode-download-${LEETCODE_DATE}
+LEETCODE_BRANCH = dev/add-${LEETCODE_DATE}-leetcode-submissions
 LEETCODE_COMMIT = feat(leetcode): add ${LEETCODE_DATE} submissions
 
 .PHONY: leetcode
@@ -14,7 +15,8 @@ leetcode: leetcode/generate ## Run leetcode/parse
 leetcode/download: ${LEETCODE_DOWNLOAD} ## Download last 20 submissions to ./leetcode/submissions.json
 ${LEETCODE_DOWNLOAD}:
 	"${LEETCODE_DIR}/scripts/download" "${LEETCODE_BASE_URL}" "${LEETCODE_SUBMISSIONS_FILE}" 20
-	touch "${@}"
+	@mkdir -p "${@D}"
+	@touch "${@}"
 
 .PHONY: leetcode/generate
 leetcode/generate: leetcode/download ## Generate files in ./leetcode/submissions/ from ./leetcode/submissions.json

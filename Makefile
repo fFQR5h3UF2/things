@@ -4,8 +4,8 @@ PACKAGES = repos cloud/yandex dotfiles dotfiles/vscode dotfiles/ssh dotfiles/ini
 PROJECT_DIR = $(shell git rev-parse --show-toplevel)
 OUT_DIR = ${PROJECT_DIR}/out
 OUT_PACKAGE_DIR = ${OUT_DIR}/packages
-OUT_TRACKER_DIR = ${OUT_DIR}/tracker
-OUT_DIRS = $(PACKAGES:%=$(OUT_DIR)/package/%) $(PACKAGES:%=${OUT_TRACKER_DIR}/%)
+OUT_PACKAGE_DIRS = $(PACKAGES:%=$(OUT_PACKAGE_DIR)/%)
+OUT_DIRS = $(OUT_PACKAGE_DIRS) $(OUT_PACKAGE_DIRS:%=%/trackers)
 PACKAGE_DIR = ${PROJECT_DIR}/packages
 SCRIPT_DIR = ${PROJECT_DIR}/scripts
 
@@ -21,6 +21,9 @@ help: ## Display help
 		-e 's/^\(.\+\):\(.*\)/  $(shell tput setaf 6)\1$(shell tput sgr0):\2/' \
 		$(PACKAGES:%=${PACKAGE_DIR}/%/Makefile) \
 		| column -c2 -t -s ":"
+
+# generate phony targets for all packages
+.PHONY: $(PACKAGES)
 
 # generate install targets for all packages
 install_targets = $(PACKAGES:%=%/install)
@@ -38,8 +41,7 @@ $(build_targets): %/build: %/setup
 setup_targets = $(PACKAGES:%=%/setup)
 .PHONY: setup $(setup_targets)
 setup: $(setup_targets) ## Setup packages
-$(setup_targets): init
-init: | $(OUT_DIRS)
+$(setup_targets): $(OUT_DIRS)
 $(OUT_DIRS):
 	@mkdir -p "${@}"
 

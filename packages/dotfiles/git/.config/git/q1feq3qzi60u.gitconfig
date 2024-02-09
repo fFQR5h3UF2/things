@@ -9,3 +9,7 @@
 [push]
         default = current
         gpgsign = if-asked
+[init]
+	defaultBranch = main
+[include]
+	path = ~/.config/git/work.gitconfig
