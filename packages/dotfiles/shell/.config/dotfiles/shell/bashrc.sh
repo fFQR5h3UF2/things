@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-. "${HOME}/.config/shell/functions.sh"
+. "${HOME}/.config/dotfiles/shell/functions.sh"
 
 export FZF_DEFAULT_COMMAND="fd --type f"
 export FZF_COMPLETION_TRIGGER="**"

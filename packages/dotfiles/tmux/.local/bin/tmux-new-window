@@ -6,15 +6,18 @@ if [ -n "${TMUX_IS_POPUP:-}" ]; then
     exit
 fi
 
-if ! which fzf >/dev/null 2>&1; then
+if ! which fzf >/dev/null; then
     exit
 fi
 
-choice=$({
-    echo ssh
-    echo ~
-    find ~/repos -maxdepth 10 -type d 2>/dev/null
-} | fzf)
+choice=$(
+    {
+        echo ssh
+        echo ~
+        # shellcheck disable=SC2016
+        find ~/repos -maxdepth 6 -type d -name .git -exec dirname "{}" ";" 2>/dev/null
+    } | fzf
+)
 
 window_name=
 window_command=
@@ -25,7 +28,7 @@ ssh)
     dirs=$(
         ssh "${server}" -- \
             echo "\${HOME}" "&&" \
-            find /etc/ /opt/ /var/ "\${HOME}/repos" -maxdepth 10 -type d 2>/dev/null
+            find /etc/ /opt/ /var/ "\${HOME}/repos" -maxdepth 6 -type d 2>/dev/null
     )
     dir=$(echo "${dirs}" | fzf --prompt "ssh dir")
     window_name="${server}//$(basename "${dir}")"
