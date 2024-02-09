@@ -57,11 +57,11 @@ clean_targets = $(PACKAGES:%=%/clean)
 clean: clean-out ## Clean packages
 clean-out: $(clean_targets) ## Clean ${OUT_DIR}
 	-rm -rf "${OUT_DIR}"
-$(clean_targets): %/clean: %/clean-out %/clean-tracker
+$(clean_targets): %/clean: %/clean-out
 $(PACKAGES:%=%/clean-out): %/clean-out:
 	-rm -rf "${OUT_PACKAGE_DIR}/${*}"
-$(PACKAGES:%=%/clean-tracker): %/clean-tracker:
-	-rm -rf "${OUT_TRACKER_DIR}/${*}"
+$(PACKAGES:%=%/clean-trackers): %/clean-trackers:
+	-rm -rf "${OUT_PACKAGE_DIR}/trackers/${*}"
 
 .PHONY: air air-start air-cmd
 air: air-start ## Run air-start
