@@ -9,8 +9,25 @@ action="${2:?missing action}"
 target="${3:-${HOME}}"
 stow_dir="${HOME}/.config/dotfiles/stow"
 temp_dir=$(mktemp -d)
+dir="$(dirname "${stow_dir}")"
+package="$(basename "${stow_dir}")"
 
-mkdir -p "${stow_dir}"
-tar -C "${temp_dir}" --strip-components=1 -xzf "${archive}"
-rsync -a --delete "${temp_dir}/" "${stow_dir}/"
-stow --verbose --no-folding --target "${target}" --dir "$(dirname "${stow_dir}")" "${action}" "$(basename "${stow_dir}")"
+case "${action}" in
+--delete) ;;
+--stow)
+    tar -C "${temp_dir}" --strip-components=1 -xzf "${archive}"
+    mkdir -p "${stow_dir}"
+    rsync -a --delete "${temp_dir}/" "${stow_dir}/"
+    ;;
+--simulate)
+    tar -C "${temp_dir}" --strip-components=1 -xzf "${archive}"
+    dir=$(dirname "${temp_dir}")
+    package=$(basename "${temp_dir}")
+    ;;
+*)
+    echo "invalid action '${action}'"
+    exit 1
+    ;;
+esac
+
+stow --verbose --no-folding --target "${target}" --dir "${dir}" "${action}" "${package}"
