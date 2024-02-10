@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.73.0 (2024-02-10)
+
+### Feat
+
+- **dotfiles**: use bazel to build and install dotfiles (#146)
+
 ## v0.72.0 (2024-02-10)
 
 ### Feat
