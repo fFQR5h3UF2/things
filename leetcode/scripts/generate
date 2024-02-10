@@ -1,0 +1,102 @@
+#!/usr/bin/env python3
+
+import dataclasses
+import json
+import logging
+import sys
+from pathlib import Path
+from typing import Any
+
+logger = logging.getLogger(__name__)
+extensions = {"python3": "py", "golang": "go", "cpp": "cpp", "java": "java"}
+comments = {"python3": "#", "golang": "//", "cpp": "//", "java": "//"}
+headers = {
+    "python3": "",
+    "golang": "package submissions",
+    "cpp": "",
+    "java": "com.shishifubing.dotfiles.submissions",
+}
+
+
+@dataclasses.dataclass
+class Submission:
+    id: int
+    status_display: str
+    lang: str
+    question_id: int
+    title_slug: str
+    code: str
+    title: str
+    url: str
+    lang_name: str
+    time: str
+    timestamp: str
+    status: str
+    runtime: str
+    is_pending: str
+    memory: str
+    compare_result: str
+    has_notes: str
+    flag_type: str
+
+
+def submission_path(submission: Submission, submissions_dir: str) -> Path:
+    extension = extensions[submission.lang]
+    file_name = "-".join(
+        (
+            str(submission.question_id).rjust(5, "0"),
+            submission.title_slug,
+            str(submission.id),
+        )
+    )
+    return Path(submissions_dir) / f"{file_name}.{extension}"
+
+
+def submission_content(submission: Submission, base_url: str) -> str:
+    comment = comments[submission.lang]
+    header = headers[submission.lang]
+    lines = [
+        f"{comment} Submission title: {submission.title}",
+        f"{comment} Submission url  : {base_url}/problems/{submission.title_slug}/description/",
+        f"{comment} Submission url  : {base_url}{submission.url}",
+        f"{comment} Submission json : {json.dumps(dataclasses.asdict(submission))}",
+        "",
+        header,
+        "",
+        *(
+            line.rstrip()
+            for line in submission.code.split("\n")
+            # gofmt fix for 691642817 and 691652127
+            if submission.lang != "golang" or not line.startswith("package ")
+        ),
+    ]
+    length = len(lines)
+    for i in reversed(range(length)):
+        line = lines[i]
+        if line and not line.isspace():
+            break
+        lines.pop()
+    if lines[-1][-1] != "\n":
+        lines[-1] += "\n"
+    return "\n".join(lines)
+
+
+def main() -> None:
+    logging.basicConfig(level=logging.INFO)
+    base = sys.argv[1]
+    submissions_file = sys.argv[2]
+    submissions_dir = sys.argv[3]
+    submissions: dict[str, dict[str, Any]] = {}
+    with open(submissions_file, "r") as file:
+        submissions = json.loads(file.read())
+    for submission_dict in submissions.values():
+        submission = Submission(**submission_dict)
+        if submission.status_display != "Accepted":
+            continue
+        with open(submission_path(submission, submissions_dir), "w") as file:
+            file.write(submission_content(submission, base_url=base))
+    logging.info(f"Generated submission files")
+
+
+if __name__ == "__main__":
+    main()
