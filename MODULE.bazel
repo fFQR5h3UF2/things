@@ -1,0 +1,15 @@
+###############################################################################
+# Bazel now uses Bzlmod by default to manage external dependencies.
+# Please consider migrating your external dependencies from WORKSPACE to MODULE.bazel.
+#
+# For more details, please check https://github.com/bazelbuild/bazel/issues/18958
+###############################################################################
+
+module(
+    name = "stuff",
+    repo_name = "stuff",
+    version = "0.72.0",
+)
+
+bazel_dep(name = "rules_pkg", version = "0.9.1")  # 0.10.1
+bazel_dep(name = "rules_license", version = "0.0.8")

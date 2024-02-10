@@ -1,6 +1,6 @@
 # Makefile for dotfiles
 
-PACKAGES = repos cloud/yandex dotfiles dotfiles/vscode dotfiles/ssh dotfiles/init dotfiles/udev dotfiles/os dotfiles/scripts leetcode ./scripts
+PACKAGES = ./dotfiles ./dotfiles/vscode ./dotfiles/ssh ./dotfiles/init ./dotfiles/udev ./dotfiles/os ./dotfiles/scripts repos cloud/yandex leetcode
 PROJECT_DIR = $(shell git rev-parse --show-toplevel)
 OUT_DIR = ${PROJECT_DIR}/out
 OUT_PACKAGE_DIR = ${OUT_DIR}/packages

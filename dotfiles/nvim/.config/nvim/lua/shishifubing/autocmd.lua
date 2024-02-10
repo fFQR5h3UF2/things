@@ -13,10 +13,10 @@ function M.setup()
         pattern = "*",
     })
     -- remove trailing whitespace
-    autocmd({ "BufWritePre" }, {
-        pattern = { "*" },
-        command = [[%s/\s\+$//e]],
-    })
+    --autocmd({ "BufWritePre" }, {
+    --    pattern = { "*" },
+    --    command = [[%s/\s\+$//e]],
+    --})
 end
 
 return M

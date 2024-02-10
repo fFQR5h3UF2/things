@@ -10,6 +10,7 @@ return {
     opts = {
         formatters_by_ft = {
             lua = { "stylua" },
+            bzl = { "buildifier" },
             python = { "isort", "black" },
             bash = { "shfmt", "shellcheck" },
             sh = { "shfmt", "shellcheck" },
@@ -25,6 +26,7 @@ return {
             jsonc = { { "prettierd", "prettier" } },
             markdown = { { "prettierd", "prettier" } },
             yaml = { { "prettierd", "prettier" } },
+            ["*"] = { "trim_whitespace", "trim_newlines" },
         },
         format_on_save = {
             timeout_ms = 2000,

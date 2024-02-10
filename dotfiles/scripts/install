@@ -1,0 +1,16 @@
+#!/usr/bin/env sh
+#
+# Install dotfiles using stow
+
+set -o errexit -o nounset -o xtrace
+
+archive="${1:?missing archive location}"
+action="${2:?missing action}"
+target="${3:-${HOME}}"
+stow_dir="${HOME}/.config/dotfiles/stow"
+temp_dir=$(mktemp -d)
+
+mkdir -p "${stow_dir}"
+tar -C "${temp_dir}" --strip-components=1 -xzf "${archive}"
+rsync -a --delete "${temp_dir}/" "${stow_dir}/"
+stow --verbose --no-folding --target "${target}" --dir "$(dirname "${stow_dir}")" "${action}" "$(basename "${stow_dir}")"

@@ -1,0 +1,38 @@
+load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
+load(":scripts/defs.bzl", "install")
+
+filegroup(
+    name = "packages",
+    srcs = glob([
+        "shell/**",
+        "tmux/**",
+        "terraform/**",
+        "bin/**",
+        "nvim/**",
+        "gpg/**",
+        "git/**",
+        "firefox/**",
+    ]),
+)
+
+pkg_tar(
+    name = "pack",
+    extension = "tar.gz",
+    strip_prefix = ".",  # If ommited, pkg_tar flattens paths
+    srcs = [":packages"],
+)
+
+install(
+    name = "simulate",
+    args = ["--simulate"],
+)
+
+install(
+    name = "install",
+    args = ["--stow"],
+)
+
+install(
+    name = "delete",
+    args = ["--delete"],
+)

@@ -13,9 +13,9 @@
 
 #test: test-stow
 
-udev: udev/install ## Run udev/install
-udev/install: #udev/trigger-after-install udev/install-stow ## Install stow package and reload udev rules
+dotfiles/udev: dotfiles/udev/install ## Run dotfiles/udev/install
+dotfiles/udev/install: #udev/trigger-after-install udev/install-stow ## Install stow package and reload udev rules
 
-.PHONY: uddev/trigger-after-install
-udev/trigger-after-install: udev/install-stow # Reload udev rules
+.PHONY: dotfiles/uddev/trigger-after-install
+dotfiles/udev/trigger-after-install: dotfiles/udev/install-stow # Reload udev rules
 	sudo sh -c "udevadm control --reload-rules && udevadm trigger"
