@@ -6,7 +6,7 @@ dir="$(git rev-parse --show-toplevel)"
 cd "${dir}"
 find . -maxdepth 10 -type d |
     while read -r path; do
-        if [ "${path}" = "." ] || [ ! -f "${path}/Makefile" ]; then
+        if [ "${path}" = "." ] || [ ! -f "${path}/Makefile" ] || [ "${path}" = "./scripts" ]; then
             continue
         fi
         if [ -n "${changed}" ] && [ -z "$(git diff --name-only "${path}")" ]; then
