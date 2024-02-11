@@ -18,7 +18,7 @@ filegroup(
 pkg_tar(
     name = "pack",
     extension = "tar.gz",
-    strip_prefix = ".",  # If ommited, pkg_tar flattens paths
+    strip_prefix = ".",  # if ommited, pkg_tar flattens paths
     srcs = [":packages"],
 )
 

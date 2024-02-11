@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "leetcode"
+packages = [{ include = "shishifubing" }]
+version = "0.1.0"
+description = "Leetcode package"
+authors = ["q1feq3qzi60u <97828377+q1feq3qzi60u@users.noreply.github.com>"]
+license = "AGPL-3.0"
+readme = "README.md"
+
+[tool.poetry.scripts]
+leetcode = "shishifubing.leetcode.main:cli"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.31.0"
+pydantic = "^2.6.1"
+
+[tool.poetry.group.dev.dependencies]
+isort = "^5.13.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
