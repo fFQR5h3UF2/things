@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.76.0 (2024-02-11)
+
+### Feat
+
+- **leetcode**: rewrite shell scripts to a python cli app (#149)
+
 ## v0.75.0 (2024-02-11)
 
 ### Feat
