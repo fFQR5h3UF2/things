@@ -9,9 +9,9 @@ branch="dev/add-${date}-leetcode-submissions"
 commit="feat(leetcode): add ${date} submissions"
 
 git checkout -B "${branch}"
-"${bazel}" run leetcode:download
-"${bazel}" run leetcode:generate
-"${bazel}" run leetcode:format
+"${bazel}" run leetcode:download_submissions
+"${bazel}" run leetcode:generate_submissions
+"${bazel}" run leetcode:format_submissions
 git add "${submissions_file}" "${submissions_dir}"
 git commit -m "${commit}"
 git push origin "${branch}"
