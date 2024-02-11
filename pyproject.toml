@@ -1,0 +1,30 @@
+[tool.poetry]
+name = "stuff"
+version = "0.1.0"
+description = "Stuff"
+authors = ["q1feq3qzi60u <97828377+q1feq3qzi60u@users.noreply.github.com>"]
+license = "AGPL-3.0"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+requests = "^2.31.0"
+
+[tool.poetry.group.dev.dependencies]
+isort = "^5.13.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.black]
+line-length = 80
+target-version = ["py38"]
+
+[tool.isort]
+profile = "black"
+known_first_party = ["shishifubing"]
+
+[tools.pyright]
+reportMissingTypeArgument = true # Report generic classes used without type arguments
+strictListInference = true
