@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.77.0 (2024-02-12)
+
+### Feat
+
+- **leetcode**: switch submissions.json to new format, fix several bugs, move update script to scripts (#150)
+
 ## v0.76.0 (2024-02-11)
 
 ### Feat
