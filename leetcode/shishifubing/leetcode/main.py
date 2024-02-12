@@ -24,25 +24,19 @@ def main(args: list[str], env: dict[str, str] | os._Environ) -> None:
     match config.action:
         case Action.download:
             print(downloader.download(config.offset, config.limit).model_dump_json())
-        case Action.update:
-            _update(downloader, repo, config)
         case Action.generate:
-            generator.generate_submissions(repo.read_submission_file())
+            generator.generate_submissions(repo.submissions())
+        case Action.update:
+            offset = config.offset
+            limit = config.limit
+            while limit > 0:
+                count = min(limit, 20)
+                submissions = downloader.download(offset, count)
+                repo.update_submissions(submissions)
+                offset += count
+                limit -= count
         case _:
             raise LeetcodeException(f"invalid action: {config.action}")
-
-
-def _update(
-    downloader: SubmissionsDownloader, repo: SubmissionsRepo, config: Config
-) -> None:
-    offset = config.offset
-    limit = config.limit
-    while limit > 0:
-        count = min(limit, 20)
-        submissions = downloader.download(offset, count)
-        repo.update_submissions_file(submissions)
-        offset += count
-        limit -= count
 
 
 def _parse_args(args: list[str], env: dict[str, str] | os._Environ) -> Config:

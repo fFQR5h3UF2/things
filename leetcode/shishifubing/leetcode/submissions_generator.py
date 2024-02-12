@@ -1,4 +1,3 @@
-import dataclasses
 import json
 import logging
 from pathlib import Path
@@ -38,10 +37,8 @@ class SubmissionsGenerator:
             f"{comment} Submission title: {submission.title}",
             f"{comment} Submission url  : {self.config.base_url}/problems/{submission.title_slug}/description/",
             f"{comment} Submission url  : {self.config.base_url}{submission.url}",
-            f"{comment} Submission json : {json.dumps(dataclasses.asdict(submission))}",
-            "",
+            f"{comment} Submission json : {submission.model_dump_json()}",
             header,
-            "",
             *(
                 line.rstrip()
                 for line in submission.code.split("\n")

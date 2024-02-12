@@ -1,6 +1,0 @@
-#!/usr/bin/env sh
-set -o errexit -o nounset -o xtrace
-
-dir="${1:?missing dir}"
-poetry run -C "${dir}" run black --quiet "${dir}"
-gofmt -w "${dir}"

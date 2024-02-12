@@ -1,35 +1,6 @@
-base_url = "https://leetcode.com"
-submissions_file = "submissions.json"
-submissions_dir = "submissions"
+load("@rules_python//python:defs.bzl", "py_binary")
 
 sh_binary(
-    name = "generate_submissions",
-    srcs = ["scripts/generate"],
-    args = [
-        base_url,
-        "$(location %s)" % submissions_file,
-        "$(location %s)" % submissions_dir,
-    ],
-    data = [submissions_file, submissions_dir],
-)
-
-sh_binary(
-    name = "download_submissions",
-    srcs = ["scripts/download"],
-    args = [base_url, "$(location %s)" % submissions_file, "20"],
-    data = [submissions_file],
-)
-
-sh_binary(
-    name = "format_submissions",
-    srcs = ["scripts/format"],
-    args = ["$(location %s)" % submissions_file],
-    data = [submissions_file],
-)
-
-sh_binary(
-    name = "update_submissions",
+    name = "update",
     srcs = ["scripts/update"],
-    args = ["$(location %s)" % submissions_file],
-    data = [submissions_file],
 )
