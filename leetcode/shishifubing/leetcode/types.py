@@ -1,5 +1,6 @@
 import enum
 import pathlib
+from typing import Optional
 
 import pydantic
 
@@ -38,14 +39,14 @@ class Submission(pydantic.BaseModel):
     url: str
     lang_name: str
     time: str
-    timestamp: str
-    status: str
+    timestamp: int
+    status: int
     runtime: str
     is_pending: str
     memory: str
-    compare_result: str
-    has_notes: str
-    flag_type: str
+    compare_result: Optional[str]
+    has_notes: bool
+    flag_type: int
 
 
 class SubmissionFile(pydantic.BaseModel):

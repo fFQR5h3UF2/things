@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+set -o errexit -o nounset -o xtrace
+
+project_dir=$(git rev-parse --show-toplevel)
+leetcode_dir="${project_dir}/leetcode"
+submissions_file="${leetcode_dir}/submissions.json"
+submissions_dir="${leetcode_dir}/submissions"
+date=$(date '+%y-%m-%d')
+branch="dev/add-${date}-leetcode-submissions"
+commit="feat(leetcode): add ${date} submissions"
+
+git checkout -B "${branch}"
+poetry -C "${leetcode_dir}" install
+poetry -C "${leetcode_dir}" run shishifubing-leetcode -f "${submissions_file}" -d "${submissions_dir}" update
+poetry -C "${leetcode_dir}" run black --quiet "${submissions_dir}"
+gofmt -w "${submissions_dir}"
+git add "${submissions_file}" "${submissions_dir}"
+git commit -m "${commit}"
+git push origin "${branch}"
+gh pr create --fill
+gh pr merge --admin --squash --delete-branch
+git checkout main
+git pull
