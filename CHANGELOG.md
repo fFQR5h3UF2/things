@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.78.0 (2024-02-13)
+
+### Feat
+
+- **leetcode**: add 24-02-13 submissions (#151)
+
 ## v0.77.0 (2024-02-12)
 
 ### Feat
