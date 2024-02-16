@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.82.0 (2024-02-16)
+
+### Feat
+
+- **leetcode**: rewrite repo and downloader using go (#155)
+
 ## v0.81.0 (2024-02-16)
 
 ### Feat
