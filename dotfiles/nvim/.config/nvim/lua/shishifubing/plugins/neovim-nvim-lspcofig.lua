@@ -14,7 +14,19 @@ return {
     config = function()
         local servers = {
             ansiblels = {},
-            gopls = {},
+            gopls = {
+                gopls = {
+                    -- fix for generated golang files
+                    -- https://github.com/bazelbuild/rules_go/wiki/Editor-setup
+                    -- env = { GOPACKAGESDRIVER = "./tools/gopackagesdriver" },
+                    directoryFilters = {
+                        "-bazel-bin",
+                        "-bazel-out",
+                        "-bazel-testlogs",
+                        "-bazel-mypkg",
+                    },
+                },
+            },
             bashls = {},
             clangd = {},
             pyright = {},

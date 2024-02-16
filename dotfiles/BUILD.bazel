@@ -17,9 +17,9 @@ filegroup(
 
 pkg_tar(
     name = "pack",
+    srcs = [":packages"],
     extension = "tar.gz",
     strip_prefix = ".",  # if ommited, pkg_tar flattens paths
-    srcs = [":packages"],
 )
 
 install(
@@ -29,6 +29,11 @@ install(
 
 install(
     name = "install",
+    args = ["--stow"],
+)
+
+install(
+    name = "dotfiles",
     args = ["--stow"],
 )
 

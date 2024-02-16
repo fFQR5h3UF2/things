@@ -1,6 +1,24 @@
-load("@rules_python//python:defs.bzl", "py_binary")
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+load("@bazel_gazelle//:def.bzl", "gazelle")
+
+# gazelle:prefix shishifubing.com/leetcode
+gazelle(name = "gazelle")
 
 sh_binary(
     name = "update",
     srcs = ["scripts/update"],
+)
+
+go_library(
+    name = "leetcode_lib",
+    srcs = ["main.go"],
+    importpath = "shishifubing.com/leetcode",
+    visibility = ["//visibility:private"],
+    deps = ["//leetcode/cmd"],
+)
+
+go_binary(
+    name = "leetcode",
+    embed = [":leetcode_lib"],
+    visibility = ["//visibility:public"],
 )

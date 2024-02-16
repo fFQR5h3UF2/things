@@ -1,0 +1,7 @@
+#!/usr/bin/env sh
+#
+# fix for generated files golang files not available to IDEs
+#   https://github.com/bazelbuild/rules_go/wiki/Editor-setup
+set -o errexit -o nounset -o xtrace
+bazel="$(git rev-parse --show-toplevel)/tools/bazel"
+exec "${bazel}" run -- @io_bazel_rules_go//go/tools/gopackagesdriver "${@}"

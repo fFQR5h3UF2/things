@@ -1,5 +1,4 @@
 load("@rules_license//rules:license.bzl", "license")
-#load("@io_bazel_skydoc//skylark:skylark.bzl", "skylark_doc")
 
 package(
     default_applicable_licenses = [":license"],
