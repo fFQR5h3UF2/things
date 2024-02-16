@@ -1,0 +1,12 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "core",
+    srcs = [
+        "submissions_downloader.go",
+        "submissions_repo.go",
+    ],
+    importpath = "shishifubing.com/leetcode/core",
+    visibility = ["//visibility:public"],
+    deps = ["//leetcode/model"],
+)
