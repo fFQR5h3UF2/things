@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.86.0 (2024-02-17)
+
+### Feat
+
+- **dotfiles**: embed dotfiles archive into install script (#160)
+
 ## v0.85.0 (2024-02-17)
 
 ### Feat
