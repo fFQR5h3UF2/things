@@ -22,18 +22,22 @@ func Run(
 	stdin io.Reader,
 	stdout, stderr io.Writer,
 ) error {
-	logger := slog.New(slog.NewTextHandler(stderr, &slog.HandlerOptions{AddSource: true}))
+	logger := slog.New(slog.NewTextHandler(stderr, &slog.HandlerOptions{}))
 	ctx, cancel := signal.NotifyContext(ctx, os.Interrupt)
 	defer cancel()
 	config, err := parseArgs(args, getenv)
 	if err != nil {
 		return err
 	}
-	_, err = core.NewSubmissionsRepo(config, ctx, logger)
+	repo := core.NewRepo(config, ctx, logger)
 	if err != nil {
 		return err
 	}
-	downloader, err := core.NewSubmissionsDownloader(config, ctx, logger)
+	downloader, err := core.NewDownloader(config, ctx, logger)
+	if err != nil {
+		return err
+	}
+	generator, err := core.NewGenerator(config, ctx, logger)
 	if err != nil {
 		return err
 	}
@@ -48,21 +52,46 @@ func Run(
 			return err
 		}
 		stdout.Write(text)
+	case model.CliAction_UPDATE:
+		submissions, err := downloader.GetSubmissions(config.Offset, config.Limit)
+		if err != nil {
+			return err
+		}
+		return repo.AddSubmissions(submissions)
+	case model.CliAction_GENERATE:
+		submissions, err := repo.Submissions()
+		if err != nil {
+			return err
+		}
+		err = generator.Generate(submissions)
+		if err != nil {
+			return err
+		}
+	default:
+		return fmt.Errorf("unsupported action: %s", config.Action)
 	}
-	return err
+	return nil
 }
 
 func parseArgs(args []string, getenv func(string) string) (*model.Config, error) {
-	config := &model.Config{}
+	configDefault, err := model.DefaultConfig()
+	if err != nil {
+		return nil, err
+	}
+	config := &model.Config{
+		Extensions: configDefault.Extensions,
+		Headers:    configDefault.Headers,
+		Comments:   configDefault.Comments,
+	}
 	const sessionReplace = "${LEETCODE_SESSION}"
 	flagset := flag.NewFlagSet("flags", flag.ContinueOnError)
-	flagset.StringVar(&config.BaseUrl, "base_url", model.ConfigDefault.BaseUrl, "")
+	flagset.StringVar(&config.BaseUrl, "base_url", configDefault.BaseUrl, "")
 	flagset.StringVar(&config.Session, "session", sessionReplace, "")
-	flagset.StringVar(&config.SubmissionsFile, "submissions-file", model.ConfigDefault.SubmissionsFile, "")
-	flagset.StringVar(&config.SubmissionsFile, "submissions-dir", model.ConfigDefault.SubmissionsDir, "")
-	flagset.Uint64Var(&config.Offset, "offset", model.ConfigDefault.Offset, "")
-	flagset.Uint64Var(&config.Limit, "limit", model.ConfigDefault.Limit, "")
-	err := flagset.Parse(args)
+	flagset.StringVar(&config.SubmissionsFile, "submissions-file", configDefault.SubmissionsFile, "")
+	flagset.StringVar(&config.SubmissionsDir, "submissions-dir", configDefault.SubmissionsDir, "")
+	flagset.Uint64Var(&config.Offset, "offset", configDefault.Offset, "")
+	flagset.Uint64Var(&config.Limit, "limit", configDefault.Limit, "")
+	err = flagset.Parse(args)
 	if err != nil {
 		return nil, err
 	}

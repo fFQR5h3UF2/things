@@ -17,11 +17,14 @@ go_proto_library(
 
 go_library(
     name = "model",
-    srcs = ["defaults.go"],
+    srcs = ["model.go"],
     embed = [":model_go_proto"],
+    embedsrcs = [
+        "config.json",
+        "submission.txt.tmpl",
+    ],
     importpath = "shishifubing.com/leetcode/model",
     visibility = ["//visibility:public"],
-    deps = [":proto_go_proto"],
 )
 
 go_proto_library(

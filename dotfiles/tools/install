@@ -7,20 +7,21 @@ set -o errexit -o nounset -o xtrace
 archive="${1:?missing archive location}"
 action="${2:?missing action}"
 target="${3:-${HOME}}"
-stow_dir="${HOME}/.config/dotfiles/stow"
+stow_dir="${XDG_DATA_HOME:-${HOME}/.local/share}/dotfiles/stow"
 temp_dir=$(mktemp -d)
 dir="$(dirname "${stow_dir}")"
 package="$(basename "${stow_dir}")"
 
+mkdir -p "${stow_dir}"
+trap 'rm -rf "${temp_dir}"' EXIT
+tar -C "${temp_dir}" --strip-components=1 -xzf "${archive}"
+
 case "${action}" in
 --delete) ;;
 --stow)
-    tar -C "${temp_dir}" --strip-components=1 -xzf "${archive}"
-    mkdir -p "${stow_dir}"
     rsync -a --delete "${temp_dir}/" "${stow_dir}/"
     ;;
 --simulate)
-    tar -C "${temp_dir}" --strip-components=1 -xzf "${archive}"
     dir=$(dirname "${temp_dir}")
     package=$(basename "${temp_dir}")
     ;;

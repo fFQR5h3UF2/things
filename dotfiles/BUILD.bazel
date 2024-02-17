@@ -1,5 +1,5 @@
 load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
-load(":scripts/defs.bzl", "install")
+load(":tools/defs.bzl", "install")
 
 filegroup(
     name = "packages",

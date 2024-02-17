@@ -1,4 +1,7 @@
 load("@rules_license//rules:license.bzl", "license")
+load("@bazel_gazelle//:def.bzl", "gazelle")
+
+gazelle(name = "gazelle")
 
 package(
     default_applicable_licenses = [":license"],
