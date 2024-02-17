@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+set -o errexit -o nounset -o xtrace
+
+path="${1:?missing path}"
+archive="${2:?missing tar location}"
+install="${3:?missing install script location}"
+archive_base64=$(base64 -w 0 <"${archive}")
+install_base64=$(base64 -w 0 <"${install}")
+cat - >"${path}" <<EOF
+#!/usr/bin/env sh
+set -o errexit -o nounset -o xtrace
+install=\$(mktemp)
+archive=\$(mktemp)
+trap "rm -rf '\${install}'" EXIT
+trap "rm -rf '\${archive}'" EXIT
+chmod u+x "\${install}"
+base64 -d >"\${install}" <<<'${install_base64}'
+base64 -d >"\${archive}" <<<'${archive_base64}'
+"\${install}" "\${archive}" "\${@}"
+EOF
