@@ -1,0 +1,29 @@
+#!/usr/bin/env sh
+set -o errexit -o nounset -o xtrace
+
+project_dir=$(git -C "${BUILD_WORKING_DIRECTORY}" rev-parse --show-toplevel)
+submissions_file="${project_dir}/leetcode/submissions.json"
+submissions_dir="${project_dir}/leetcode/submissions"
+date=$(date '+%y-%m-%d')
+branch="dev/add-${date}-leetcode-submissions"
+commit="feat(leetcode): add ${date} submissions"
+
+cd "${project_dir}"
+git checkout -B "${branch}"
+bazel run leetcode -- \
+    --submissions-file "${submissions_file}" \
+    --submissions-dir "${submissions_dir}" \
+    update
+bazel run leetcode -- \
+    --submissions-file "${submissions_file}" \
+    --submissions-dir "${submissions_dir}" \
+    generate
+poetry run black --quiet "${submissions_dir}"
+gofmt -w "${submissions_dir}"
+git add "${submissions_file}" "${submissions_dir}"
+git commit -m "${commit}"
+git push origin "${branch}"
+gh pr create --fill
+gh pr merge --admin --squash --delete-branch
+git checkout main
+git pull

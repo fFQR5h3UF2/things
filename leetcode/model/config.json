@@ -1,0 +1,27 @@
+{
+  "base_url": "https://leetcode.com",
+  "sessions_dir": "submissions",
+  "submissions_file": "submissions.json",
+  "offset": 0,
+  "limit": 20,
+  "action": 0,
+  "session": "${LEETCODE_SESSION}",
+  "extensions": {
+    "python3": "py",
+    "golang": "go",
+    "cpp": "cpp",
+    "java": "java"
+  },
+  "comments": {
+    "python3": "#",
+    "golang": "//",
+    "cpp": "//",
+    "java": "//"
+  },
+  "headers": {
+    "python3": "",
+    "golang": "package submissions",
+    "cpp": "",
+    "java": "com.shishifubing.dotfiles.submissions"
+  }
+}

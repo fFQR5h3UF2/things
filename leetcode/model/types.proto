@@ -16,6 +16,9 @@ message Config {
   CliAction action = 5;
   uint64 offset = 6;
   uint64 limit = 7;
+  map<string, string> extensions = 8;
+  map<string, string> comments = 9;
+  map<string, string> headers = 10;
 }
 
 message Submission {
@@ -40,4 +43,4 @@ message Submission {
 }
 
 message SubmissonsResponse { repeated Submission submissions_dump = 1; }
-message SubmissonsStorage { map<uint64, Submission> submissions = 1; }
+message SubmissonsStorage { repeated Submission submissions = 1; }
