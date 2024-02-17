@@ -15,12 +15,21 @@ return {
             end,
         },
     },
-    config = function()
+
+    config = function(_, opts)
         pcall(require("telescope").load_extension, "fzf")
+        require("telescope").setup(opts)
         require("shishifubing.keymaps").setup_telescope()
     end,
     opts = {
         defaults = {
+            layout_strategy = "vertical",
+            layout_config = {
+                width = 0.9,
+                height = 0.9,
+                preview_cutoff = 1,
+                mirror = true,
+            },
             mappings = {
                 i = {
                     ["<C-u>"] = false,
