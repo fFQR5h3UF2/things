@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.85.0 (2024-02-17)
+
+### Feat
+
+- finish rewriting leetcode using go, fix dotfiles install, add black to root pyproject (#159)
+
 ## v0.84.0 (2024-02-17)
 
 ### Feat
