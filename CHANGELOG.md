@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.87.0 (2024-02-17)
+
+### Feat
+
+- **dotfiles**: update nvim lockfile, enable nvim-tree (#161)
+
 ## v0.86.0 (2024-02-17)
 
 ### Feat
