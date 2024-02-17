@@ -1,0 +1,33 @@
+// Submission title: Count Nodes Equal to Average of Subtree
+// Submission url  : https://leetcode.com/problems/count-nodes-equal-to-average-of-subtree/description/"
+// Submission url  : https://leetcode.com/submissions/detail/1089803621/"
+package submissions
+
+/**
+ * Definition for a binary tree node.
+ * type TreeNode struct {
+ *     Val int
+ *     Left *TreeNode
+ *     Right *TreeNode
+ * }
+ */
+func averageOfSubtree(root *TreeNode) int {
+	_, _, answer := getAverage(root)
+	return answer
+}
+
+func getAverage(root *TreeNode) (int, int, int) {
+	if root == nil {
+		return 0, 0, 0
+	}
+	sum, count, validNodes := root.Val, 1, 0
+	leftSum, leftCount, leftValidNodes := getAverage(root.Left)
+	rightSum, rightCount, rightValidNodes := getAverage(root.Right)
+	validNodes += leftValidNodes + rightValidNodes
+	sum += leftSum + rightSum
+	count += leftCount + rightCount
+	if sum/count == root.Val {
+		validNodes += 1
+	}
+	return sum, count, validNodes
+}
