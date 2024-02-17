@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.83.0 (2024-02-17)
+
+### Feat
+
+- **dotfiles**: make telescope horizontal (#157)
+
 ## v0.82.0 (2024-02-16)
 
 ### Feat
