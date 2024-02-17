@@ -9,11 +9,11 @@ action="${2:?missing action}"
 target="${3:-${HOME}}"
 stow_dir="${XDG_DATA_HOME:-${HOME}/.local/share}/dotfiles/stow"
 temp_dir=$(mktemp -d)
+trap 'rm -rf "${temp_dir}"' EXIT
 dir="$(dirname "${stow_dir}")"
 package="$(basename "${stow_dir}")"
 
 mkdir -p "${stow_dir}"
-trap 'rm -rf "${temp_dir}"' EXIT
 tar -C "${temp_dir}" --strip-components=1 -xzf "${archive}"
 
 case "${action}" in

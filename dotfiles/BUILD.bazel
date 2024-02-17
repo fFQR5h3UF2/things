@@ -1,5 +1,4 @@
 load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
-load(":tools/defs.bzl", "install")
 
 filegroup(
     name = "packages",
@@ -22,22 +21,31 @@ pkg_tar(
     strip_prefix = ".",  # if ommited, pkg_tar flattens paths
 )
 
-install(
+sh_library(name = "lib_embed", srcs = ["tools/embed"])
+sh_library(name = "lib_install", srcs = ["tools/install"])
+
+genrule(
+    name = "gen_install_script",
+    tools = [":pack", ":lib_install"],
+    srcs = [":lib_embed"],
+    outs = ["install_script"],
+    cmd = "'$(<)' '$(@)' '$(location :pack)' '$(location :lib_install)'",
+)
+
+sh_binary(
+    name = "install",
+    srcs = [":install_script"],
+    args = ["--stow"],
+)
+
+sh_binary(
     name = "simulate",
+    srcs = [":install_script"],
     args = ["--simulate"],
 )
 
-install(
-    name = "install",
-    args = ["--stow"],
-)
-
-install(
-    name = "dotfiles",
-    args = ["--stow"],
-)
-
-install(
+sh_binary(
     name = "delete",
+    srcs = [":install_script"],
     args = ["--delete"],
 )
