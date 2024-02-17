@@ -23,6 +23,7 @@ return {
     end,
     opts = {
         defaults = {
+            disable_devicons = true,
             layout_strategy = "vertical",
             layout_config = {
                 width = 0.9,
