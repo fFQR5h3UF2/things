@@ -21,8 +21,16 @@ pkg_tar(
     strip_prefix = ".",  # if ommited, pkg_tar flattens paths
 )
 
-sh_library(name = "lib_embed", srcs = ["tools/embed"])
-sh_library(name = "lib_install", srcs = ["tools/install"])
+sh_library(
+    name = "lib_embed",
+    srcs = ["tools/embed"],
+)
+
+sh_library(
+    name = "lib_install",
+    srcs = ["tools/install"],
+    visibility = ["//visibility:public"],
+)
 
 genrule(
     name = "gen_install_script",
@@ -30,22 +38,24 @@ genrule(
     srcs = [":lib_embed"],
     outs = ["install_script"],
     cmd = "'$(<)' '$(@)' '$(location :pack)' '$(location :lib_install)'",
+    visibility = ["//visibility:public"],
 )
 
 sh_binary(
     name = "install",
     srcs = [":install_script"],
     args = ["--stow"],
+    visibility = ["//visibility:public"],
 )
-
 sh_binary(
     name = "simulate",
     srcs = [":install_script"],
     args = ["--simulate"],
+    visibility = ["//visibility:public"],
 )
-
 sh_binary(
     name = "delete",
     srcs = [":install_script"],
     args = ["--delete"],
+    visibility = ["//visibility:public"],
 )
