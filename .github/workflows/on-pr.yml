@@ -1,4 +1,3 @@
-name: On pull request
 on:
   pull_request:
 concurrency:
@@ -35,7 +34,7 @@ jobs:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           fetch-depth: 0
-      - uses: ./bump_version
+      - uses: ./versioning/bump
         with:
           dry_run: 1
           private_key: ${{ secrets.CI_GPG_PRIVATE_KEY }}
@@ -46,8 +45,8 @@ jobs:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           fetch-depth: 0
-      - run: ./bump_version/test_bump_version_commit.sh
-      - uses: ./bump_version
+      - run: ./versioning/bump/test_bump_version_commit.sh
+      - uses: ./versioning/bump
         with:
           dry_run: 1
           private_key: ${{ secrets.CI_GPG_PRIVATE_KEY }}
