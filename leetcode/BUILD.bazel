@@ -1,9 +1,14 @@
 load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
 load("@bazel_skylib//lib:paths.bzl", "paths")
 
-# gazelle:prefix shishifubing.com/leetcode
+# gazelle:prefix        shishifubing.com/leetcode
+# gazelle:go_visibility //leetcode:__pkg__,//leetcode:__subpackages__
 
-sh_binary(name = "update", srcs = ["tools/update"])
+sh_binary(
+    name = "update",
+    srcs = ["tools/update"],
+    visibility = ["//visibility:public"],
+)
 
 go_library(
     name = "leetcode_lib",
@@ -15,11 +20,6 @@ go_library(
 
 go_binary(
     name = "leetcode",
-    args = [
-        "--submissions-file",
-        "$(location submissions.json)",
-    ],
-    data = ["submissions.json"],
     embed = [":leetcode_lib"],
     visibility = ["//visibility:public"],
 )
