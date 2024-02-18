@@ -45,7 +45,7 @@ jobs:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           fetch-depth: 0
-      - run: ./versioning/test_bump_version_commit.sh
+      - run: ./versioning/bump/test_bump_version_commit.sh
       - uses: ./versioning/bump
         with:
           dry_run: 1
