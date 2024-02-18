@@ -1,5 +1,10 @@
 # Changelog
 
+## v0.89.0 (2024-02-18)
+
+
+- feat: move everything ouf of ./packages (#164)
+
 ## v0.88.0 (2024-02-18)
 
 ### Feat
