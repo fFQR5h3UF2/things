@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.90.1 (2024-02-18)
+
+### Fix
+
+- **release**: generate changelog correctly (#168)
+
 ## v0.90.0 (2024-02-18)
 
 
