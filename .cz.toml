@@ -9,4 +9,5 @@ name = "cz_customize"
 
 [tool.commitizen.customize]
 bump_pattern = "^(build|ci|docs|feat|fix|perf|refactor|style|test|chore|revert|bump)"
-bump_map = { "break" = "MAJOR", "new" = "MINOR", " " = "PATCH" }
+changelog_pattern = "^(build|ci|docs|feat|fix|perf|refactor|style|test|chore|revert)"
+bump_map = { "break" = "MAJOR", "new" = "MINOR", "feat" = "MINOR", " " = "PATCH" }
