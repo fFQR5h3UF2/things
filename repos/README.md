@@ -1,14 +1,6 @@
-<div align="center" markdown="1">
-
-# [`infra-repos`][url-repo]
-
-[![License][badge-license]][url-license]
-[![Version][badge-version]][url-version]
-[![Terraform][badge-workflow-terraform]][url-workflow-terraform]
+# repos
 
 Terraform module managing [shishifubing][url-owner] organization
-
-</div>
 
 ## About The Project
 

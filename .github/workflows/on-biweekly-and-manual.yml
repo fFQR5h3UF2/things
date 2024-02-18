@@ -13,7 +13,7 @@ jobs:
         with:
           fetch-depth: 0
           token: ${{ secrets.CI_GITHUB_TOKEN }}
-      - uses: ./versioning/bump
+      - uses: ./bump_version
         with:
           private_key: ${{ secrets.CI_GPG_PRIVATE_KEY }}
           passphrase: ${{ secrets.CI_GPG_PASSPHRASE }}

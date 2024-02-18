@@ -1,0 +1,4 @@
+sh_binary(
+    name = "bump",
+    srcs = ["bump_version"],
+)

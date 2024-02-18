@@ -1,13 +1,6 @@
-<div align="center" markdown="1">
-
-# [`plugin-firefox-new-tab-bookmarks`][url-repo]
-
-[![License][shield-license]][url-license]
-[![Status][shield-status-abandoned]][url-repo]
+# firefox_new_tab_bookmarks
 
 A simple plugin for Firefox
-
-</div>
 
 ## About The Project
 
@@ -23,7 +16,6 @@ Plugin for Firefox I started making and then lost interest
 
 [url-repo]: https://github.com/shishifubing/plugin-firefox-new-tab-bookmarks
 [url-license]: https://github.com/shishifubing/plugin-firefox-new-tab-bookmarks/blob/main/LICENSE
-
 
 <!-- external links -->
 
