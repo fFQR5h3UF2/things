@@ -1,5 +1,12 @@
 # Changelog
 
+## v0.90.0 (2024-02-18)
+
+
+- feat: add release (#167)
+- ci(on-tag): fix invalid action path (#166)
+- ci(on-tag): fix invalid action path (#165)
+
 ## v0.89.0 (2024-02-18)
 
 
