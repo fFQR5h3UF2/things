@@ -1,5 +1,4 @@
 #!/usr/bin/env sh
-set -o errexit -o nounset -o xtrace
 
 nvim_lazy_sync() {
     nvim --headless "+Lazy! sync" +qa
@@ -14,5 +13,6 @@ nvim_lazy_update_lockfile() {
 }
 
 if [ "${#}" -gt 0 ]; then
+    set -o errexit -o nounset -o xtrace
     "${@}"
 fi
