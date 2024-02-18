@@ -34,7 +34,7 @@ jobs:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           fetch-depth: 0
-      - uses: ./versioning/bump
+      - uses: ./bump_version
         with:
           dry_run: 1
           private_key: ${{ secrets.CI_GPG_PRIVATE_KEY }}
@@ -45,8 +45,8 @@ jobs:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
         with:
           fetch-depth: 0
-      - run: ./versioning/bump/test_bump_version_commit.sh
-      - uses: ./versioning/bump
+      - run: ./bump_version/test_bump_version_commit.sh
+      - uses: ./bump_version
         with:
           dry_run: 1
           private_key: ${{ secrets.CI_GPG_PRIVATE_KEY }}

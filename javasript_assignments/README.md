@@ -1,13 +1,6 @@
-<div align="center" markdown="1">
-
-# [`snippets-javascript-assignments`][url-repo]
-
-[![License][badge-license]][url-license]
-[![Status][badge-status-finished]][url-repo]
+# javascript_assignments
 
 Javascript assignments for a course
-
-</div>
 
 ## About The Project
 

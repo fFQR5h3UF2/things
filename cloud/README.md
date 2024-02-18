@@ -1,16 +1,4 @@
-<div align="center" markdown="1">
-
-# [`infra-cloud-shishifubing.com`][url-repo]
-
-[![License][badge-license]][url-license]
-[![Terraform][badge-workflow-terraform]][url-workflow-terraform]
-[![Version][badge-version]][url-version]
-[![Release][badge-workflow-release]][url-workflow-release]
-[![Conventional Commits][badge-conventionalcommits]][url-conventionalcommits]
-
-Terraform module managing infrastructure for [shishifubing.com][url-site]
-
-</div>
+# cloud
 
 ## About The Project
 

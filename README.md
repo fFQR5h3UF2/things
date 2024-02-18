@@ -1,26 +1,27 @@
-# [stuff](https://github.com/shishifubing/stuff)
+# [things](https://github.com/shishifubing/things)
 
 [![License](https://img.shields.io/github/license/shishifubing/dotfiles.svg?style=for-the-badge)](https://github.com/shishifubing/dotfiles/blob/main/LICENSE)
 [![Version](https://img.shields.io/github/v/release/shishifubing/dotfiles?label=version&style=for-the-badge)](https://github.com/shishifubing/dotfiles/releases/latest)
-[![Release](https://img.shields.io/github/actions/workflow/status/shishifubing/dotfiles/release.yml?branch=main&label=release&logo=github&style=for-the-badge)](https://github.com/shishifubing/dotfiles/actions/workflows/release.yml)
 
-Stuff
+Things
 
-## Usage
-
-### Requirements
-
-git, golang, make, python3, python3-venv
-
-### Targets
+## Contents
 
 ```
-//dotfiles:delete
-//dotfiles:install
-//dotfiles:pack
-//dotfiles:packages
-//dotfiles:simulate
-//leetcode:download_submissions
-//leetcode:format_submissions
-//leetcode:generate_submissions
+- [autoscroll](./autoscroll)
+- [bump_version](./bump_version)
+- [check_pr_changes](./check_pr_changes)
+- [cloud](./cloud)
+- [diagrams](./diagrams)
+- [dotfiles](./dotfiles)
+- [firefox_new_tab_bookmarks](./firefox_new_tab_bookmarks)
+- [images](./images)
+- [javasript_assignments](./javasript_assignments)
+- [kaniko](./kaniko)
+- [leetcode](./leetcode)
+- [readme_template](./readme_template)
+- [release](./release)
+- [repos](./repos)
+- [telegram_currency_converter](./telegram_currency_converter)
+- [tools](./tools)
 ```

@@ -1,15 +1,6 @@
-<div align="center" markdown="1">
-
-# [`app-cli-autoscroll`][url-repo]
-
-[![License][badge-license]][url-license]
-[![Status][badge-status-finished]][url-repo]
-[![Version][badge-version]][url-version]
-[![Release][badge-workflow-release]][url-workflow-release]
+# autoscroll
 
 CLI app for autoscroll
-
-</div>
 
 ## About The Project
 
@@ -180,7 +171,6 @@ debug:
 [url-license]: https://github.com/shishifubing/app-cli-autoscroll/blob/main/LICENSE
 [url-workflow-release]: https://github.com/shishifubing/app-cli-autoscroll/actions/workflows/release.yml
 [url-version]: https://github.com/shishifubing/app-cli-autoscroll/releases/latest
-
 
 <!-- external links -->
 
