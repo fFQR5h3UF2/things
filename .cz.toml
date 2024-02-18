@@ -5,9 +5,6 @@ version_scheme = "semver"
 bump_message = "bump: $current_version → $new_version"
 major_version_zero = true
 gpg_sign = true
-name = "cz_customize"
-
-[tool.commitizen.customize]
 bump_pattern = "^(build|ci|docs|feat|fix|perf|refactor|style|test|chore|revert|bump)"
-changelog_pattern = "^(build|ci|docs|feat|fix|perf|refactor|style|test|chore|revert)"
-bump_map = { "break" = "MAJOR", "new" = "MINOR", "feat" = "MINOR", " " = "PATCH" }
+bump_map = { "break" = "MAJOR", "new" = "MINOR", "feat" = "MINOR", "" = "PATCH" }
+changelog_pattern = "^(build|ci|docs|feat|fix|perf|refactor|style|test|revert)?(!)?"
