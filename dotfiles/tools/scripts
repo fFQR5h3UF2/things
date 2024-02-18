@@ -1,0 +1,18 @@
+#!/usr/bin/env sh
+set -o errexit -o nounset -o xtrace
+
+nvim_lazy_sync() {
+    nvim --headless "+Lazy! sync" +qa
+    nvim_lazy_update_lockfile
+}
+
+nvim_lazy_update_lockfile() {
+    _lock_path=".config/nvim/lazy-lock.json"
+    _lockfile_source="${HOME}/.local/share/dotfiles/stow/${_lock_path}"
+    _lockfile_target="$(git rev-parse --show-toplevel)/dotfiles/nvim/${_lock_path}"
+    cp -f "${_lockfile_source}" "${_lockfile_target}"
+}
+
+if [ "${#}" -gt 0 ]; then
+    "${@}"
+fi

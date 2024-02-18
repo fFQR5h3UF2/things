@@ -18,6 +18,7 @@ pkg_tar(
     name = "pack",
     srcs = [":packages"],
     extension = "tar.gz",
+    mode = "0640",
     strip_prefix = ".",  # if ommited, pkg_tar flattens paths
 )
 
@@ -27,18 +28,41 @@ sh_library(
 )
 
 sh_library(
+    name = "lib_scripts",
+    srcs = ["tools/scripts"],
+)
+
+sh_library(
     name = "lib_install",
     srcs = ["tools/install"],
-    visibility = ["//visibility:public"],
 )
 
 genrule(
     name = "gen_install_script",
-    tools = [":pack", ":lib_install"],
     srcs = [":lib_embed"],
     outs = ["install_script"],
     cmd = "'$(<)' '$(@)' '$(location :pack)' '$(location :lib_install)'",
+    tools = [
+        ":lib_install",
+        ":pack",
+    ],
     visibility = ["//visibility:public"],
+)
+
+sh_binary(
+    name = "nvim-lazy-sync",
+    srcs = [":lib_scripts"],
+    data = [":install"],
+    visibility = ["//visibility:public"],
+    args = ["nvim_lazy_sync"],
+)
+
+sh_binary(
+    name = "nvim-lazy-update-lockfile",
+    srcs = [":lib_scripts"],
+    data = [":install"],
+    visibility = ["//visibility:public"],
+    args = ["nvim_lazy_update_lockfile"],
 )
 
 sh_binary(
@@ -47,12 +71,14 @@ sh_binary(
     args = ["--stow"],
     visibility = ["//visibility:public"],
 )
+
 sh_binary(
     name = "simulate",
     srcs = [":install_script"],
     args = ["--simulate"],
     visibility = ["//visibility:public"],
 )
+
 sh_binary(
     name = "delete",
     srcs = [":install_script"],
