@@ -12,7 +12,6 @@ go_proto_library(
     name = "proto_go_proto",
     importpath = "shishifubing.com/leetcode/proto",
     proto = ":proto_proto",
-    visibility = ["//visibility:public"],
 )
 
 go_library(
