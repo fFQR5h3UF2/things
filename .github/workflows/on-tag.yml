@@ -3,6 +3,8 @@ on:
   push:
     tags:
       - "v*"
+concurrency:
+  group: ${{ github.workflow_ref }}
 jobs:
   publish_image:
     runs-on: ubuntu-latest
