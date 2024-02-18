@@ -17,7 +17,7 @@
   "neogen": { "branch": "main", "commit": "70127baaff25611deaf1a29d801fc054ad9d2dc1" },
   "nvim-cmp": { "branch": "main", "commit": "04e0ca376d6abdbfc8b52180f8ea236cbfddf782" },
   "nvim-lspconfig": { "branch": "master", "commit": "d1bab4cf4b69e49d6058028fd933d8ef5e74e680" },
-  "nvim-treesitter": { "branch": "master", "commit": "17d68ac13c902f55253b7facb47df4c0ae532575" },
+  "nvim-treesitter": { "branch": "master", "commit": "42acc3f6e778dd6eb6e0e92690c7d56eab859b6a" },
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "7f00d94543f1fd37cab2afa2e9a6cd54e1c6b9ef" },
   "plenary.nvim": { "branch": "master", "commit": "4f71c0c4a196ceb656c824a70792f3df3ce6bb6d" },
   "sonokai": { "branch": "master", "commit": "a62656a798043f3c6b603efa98d4de2da89c72b2" },
