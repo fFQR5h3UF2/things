@@ -1,5 +1,11 @@
 # Changelog
 
+## v0.87.1 (2024-02-18)
+
+### Fix
+
+- **dotfiles**: set correct install permissions, add nvim targets (#162)
+
 ## v0.87.0 (2024-02-17)
 
 ### Feat
