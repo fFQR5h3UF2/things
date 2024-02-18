@@ -1,0 +1,6 @@
+sh_binary(
+    name = "release",
+    srcs = ["create_release"],
+    args = ["$(location template.md.j2)"],
+    data = ["template.md.j2"],
+)

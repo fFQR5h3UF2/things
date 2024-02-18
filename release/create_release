@@ -1,0 +1,20 @@
+#!/usr/bin/env sh
+set -o errexit -o nounset -o xtrace
+
+which gh >/dev/null
+
+release_tag=$(gh release view --json tagName --template "{{.tagName}}")
+last_ref=$(git describe --tags --abbrev=0)
+template="${1:?missing template path}"
+
+if [ "${release_tag}" = "${last_ref}" ]; then
+    echo "release for '${release_tag}' exists"
+    exit
+fi
+
+changelog=$(mktemp "tmp.XXX.md")
+trap 'rm -f "${changelog}"' EXIT
+cz changelog --file-name "${changelog}" --template "${template}" --start-rev "${release_tag}"
+cat "${changelog}"
+exit
+gh release create "${last_ref}" --notes-file "${changelog}" --verify-tag
