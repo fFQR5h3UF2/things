@@ -1,0 +1,14 @@
+name: build
+
+on:
+  pull_request:
+    paths:
+      - GUI
+      - .github/**/*
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: reuse-build
+    uses: ./.github/workflows/reuse-build.yml
+    secrets: inherit
