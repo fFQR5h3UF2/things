@@ -1,0 +1,35 @@
+stages:
+    - trigger
+    - release
+    - deploy
+
+trigger:
+    stage: trigger
+    tags: [trigger]
+    only: [triggers]
+    script: [date]
+
+release:
+    stage: release
+    tags: [trigger]
+    variables: { tag: "kongrentian/tianyi:${CI_COMMIT_REF_NAME}" }
+    script:
+        - docker build . -t "${tag}"
+        - docker push "${tag}"
+
+deploy:
+    stage: deploy
+    tags: [trigger]
+    variables:
+        APP_DIR: /var/tianyi
+    rules:
+        - if: $CI_DEFAULT_BRANCH == $CI_COMMIT_REF_NAME
+          when: manual
+        - if: $CI_COMMIT_TAG
+    script:
+        - export PATH="${PATH}:/usr/libexec/docker/cli-plugins"
+        - test -d "${APP_DIR}" || exit 1
+        - cp *.yml *.conf infrastructure/lifecycle/*.sql "${APP_DIR}/"
+        - cd "${APP_DIR}"
+        - docker-compose up -d
+        - docker-compose restart
