@@ -1,5 +1,5 @@
 # Submission title: Apply Discount Every n Orders
-# Submission url  : https://leetcode.com/problems/apply-discount-every-n-orders/description/"
+# Submission url  : https://leetcode.com/problems/apply-discount-every-n-orders/description/
 # Submission url  : https://leetcode.com/submissions/detail/1051155745/"
 
 

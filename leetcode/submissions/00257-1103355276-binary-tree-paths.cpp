@@ -1,5 +1,5 @@
 // Submission title: Binary Tree Paths
-// Submission url  : https://leetcode.com/problems/binary-tree-paths/description/"
+// Submission url  : https://leetcode.com/problems/binary-tree-paths/description/
 // Submission url  : https://leetcode.com/submissions/detail/1103355276/"
 
 /**

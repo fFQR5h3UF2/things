@@ -1,5 +1,5 @@
 # Submission title: Sequential Digits
-# Submission url  : https://leetcode.com/problems/sequential-digits/description/"
+# Submission url  : https://leetcode.com/problems/sequential-digits/description/
 # Submission url  : https://leetcode.com/submissions/detail/1164072112/"
 
 

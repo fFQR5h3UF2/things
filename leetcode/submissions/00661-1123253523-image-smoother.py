@@ -1,5 +1,5 @@
 # Submission title: Image Smoother
-# Submission url  : https://leetcode.com/problems/image-smoother/description/"
+# Submission url  : https://leetcode.com/problems/image-smoother/description/
 # Submission url  : https://leetcode.com/submissions/detail/1123253523/"
 
 

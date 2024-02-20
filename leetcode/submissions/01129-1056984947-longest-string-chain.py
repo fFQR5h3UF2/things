@@ -1,5 +1,5 @@
 # Submission title: Longest String Chain
-# Submission url  : https://leetcode.com/problems/longest-string-chain/description/"
+# Submission url  : https://leetcode.com/problems/longest-string-chain/description/
 # Submission url  : https://leetcode.com/submissions/detail/1056984947/"
 
 

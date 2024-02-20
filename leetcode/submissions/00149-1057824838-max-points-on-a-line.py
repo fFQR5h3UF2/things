@@ -1,5 +1,5 @@
 # Submission title: Max Points on a Line
-# Submission url  : https://leetcode.com/problems/max-points-on-a-line/description/"
+# Submission url  : https://leetcode.com/problems/max-points-on-a-line/description/
 # Submission url  : https://leetcode.com/submissions/detail/1057824838/"
 
 

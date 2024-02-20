@@ -1,5 +1,5 @@
 # Submission title: Number of Steps to Reduce a Number to Zero
-# Submission url  : https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/description/"
+# Submission url  : https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/description/
 # Submission url  : https://leetcode.com/submissions/detail/1000093970/"
 
 

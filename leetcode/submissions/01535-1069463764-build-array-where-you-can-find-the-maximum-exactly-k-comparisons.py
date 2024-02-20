@@ -1,5 +1,5 @@
 # Submission title: Build Array Where You Can Find The Maximum Exactly K Comparisons
-# Submission url  : https://leetcode.com/problems/build-array-where-you-can-find-the-maximum-exactly-k-comparisons/description/"
+# Submission url  : https://leetcode.com/problems/build-array-where-you-can-find-the-maximum-exactly-k-comparisons/description/
 # Submission url  : https://leetcode.com/submissions/detail/1069463764/"
 
 

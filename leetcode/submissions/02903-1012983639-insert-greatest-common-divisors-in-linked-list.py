@@ -1,5 +1,5 @@
 # Submission title: Insert Greatest Common Divisors in Linked List
-# Submission url  : https://leetcode.com/problems/insert-greatest-common-divisors-in-linked-list/description/"
+# Submission url  : https://leetcode.com/problems/insert-greatest-common-divisors-in-linked-list/description/
 # Submission url  : https://leetcode.com/submissions/detail/1012983639/"
 
 

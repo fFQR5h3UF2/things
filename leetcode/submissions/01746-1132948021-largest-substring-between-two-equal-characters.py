@@ -1,5 +1,5 @@
 # Submission title: Largest Substring Between Two Equal Characters
-# Submission url  : https://leetcode.com/problems/largest-substring-between-two-equal-characters/description/"
+# Submission url  : https://leetcode.com/problems/largest-substring-between-two-equal-characters/description/
 # Submission url  : https://leetcode.com/submissions/detail/1132948021/"
 
 

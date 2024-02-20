@@ -1,5 +1,5 @@
 // Submission title: Trapping Rain Water
-// Submission url  : https://leetcode.com/problems/trapping-rain-water/description/"
+// Submission url  : https://leetcode.com/problems/trapping-rain-water/description/
 // Submission url  : https://leetcode.com/submissions/detail/1087560136/"
 package submissions
 

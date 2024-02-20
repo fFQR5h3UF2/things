@@ -1,5 +1,5 @@
 # Submission title: Reverse Bits
-# Submission url  : https://leetcode.com/problems/reverse-bits/description/"
+# Submission url  : https://leetcode.com/problems/reverse-bits/description/
 # Submission url  : https://leetcode.com/submissions/detail/1054561079/"
 
 

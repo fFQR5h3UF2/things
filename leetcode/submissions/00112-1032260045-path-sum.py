@@ -1,5 +1,5 @@
 # Submission title: Path Sum
-# Submission url  : https://leetcode.com/problems/path-sum/description/"
+# Submission url  : https://leetcode.com/problems/path-sum/description/
 # Submission url  : https://leetcode.com/submissions/detail/1032260045/"
 
 

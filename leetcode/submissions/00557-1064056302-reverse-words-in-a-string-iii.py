@@ -1,5 +1,5 @@
 # Submission title: Reverse Words in a String III
-# Submission url  : https://leetcode.com/problems/reverse-words-in-a-string-iii/description/"
+# Submission url  : https://leetcode.com/problems/reverse-words-in-a-string-iii/description/
 # Submission url  : https://leetcode.com/submissions/detail/1064056302/"
 
 

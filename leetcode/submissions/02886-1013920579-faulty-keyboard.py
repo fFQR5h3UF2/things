@@ -1,5 +1,5 @@
 # Submission title: Faulty Keyboard
-# Submission url  : https://leetcode.com/problems/faulty-keyboard/description/"
+# Submission url  : https://leetcode.com/problems/faulty-keyboard/description/
 # Submission url  : https://leetcode.com/submissions/detail/1013920579/"
 
 

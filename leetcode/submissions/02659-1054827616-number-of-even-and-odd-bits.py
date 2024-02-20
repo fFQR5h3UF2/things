@@ -1,5 +1,5 @@
 # Submission title: Number of Even and Odd Bits
-# Submission url  : https://leetcode.com/problems/number-of-even-and-odd-bits/description/"
+# Submission url  : https://leetcode.com/problems/number-of-even-and-odd-bits/description/
 # Submission url  : https://leetcode.com/submissions/detail/1054827616/"
 
 

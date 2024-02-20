@@ -1,5 +1,5 @@
 // Submission title: Squares of a Sorted Array
-// Submission url  : https://leetcode.com/problems/squares-of-a-sorted-array/description/"
+// Submission url  : https://leetcode.com/problems/squares-of-a-sorted-array/description/
 // Submission url  : https://leetcode.com/submissions/detail/690922740/"
 package submissions
 

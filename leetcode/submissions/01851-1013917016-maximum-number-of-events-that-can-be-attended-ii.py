@@ -1,5 +1,5 @@
 # Submission title: Maximum Number of Events That Can Be Attended II
-# Submission url  : https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended-ii/description/"
+# Submission url  : https://leetcode.com/problems/maximum-number-of-events-that-can-be-attended-ii/description/
 # Submission url  : https://leetcode.com/submissions/detail/1013917016/"
 
 

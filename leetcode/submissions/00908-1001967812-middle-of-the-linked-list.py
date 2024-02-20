@@ -1,5 +1,5 @@
 # Submission title: Middle of the Linked List
-# Submission url  : https://leetcode.com/problems/middle-of-the-linked-list/description/"
+# Submission url  : https://leetcode.com/problems/middle-of-the-linked-list/description/
 # Submission url  : https://leetcode.com/submissions/detail/1001967812/"
 
 

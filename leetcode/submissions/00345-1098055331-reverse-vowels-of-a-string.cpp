@@ -1,5 +1,5 @@
 // Submission title: Reverse Vowels of a String
-// Submission url  : https://leetcode.com/problems/reverse-vowels-of-a-string/description/"
+// Submission url  : https://leetcode.com/problems/reverse-vowels-of-a-string/description/
 // Submission url  : https://leetcode.com/submissions/detail/1098055331/"
 
 class Solution {

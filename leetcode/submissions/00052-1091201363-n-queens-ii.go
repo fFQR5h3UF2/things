@@ -1,5 +1,5 @@
 // Submission title: N-Queens II
-// Submission url  : https://leetcode.com/problems/n-queens-ii/description/"
+// Submission url  : https://leetcode.com/problems/n-queens-ii/description/
 // Submission url  : https://leetcode.com/submissions/detail/1091201363/"
 package submissions
 

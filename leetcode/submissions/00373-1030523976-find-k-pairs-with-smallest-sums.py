@@ -1,5 +1,5 @@
 # Submission title: Find K Pairs with Smallest Sums
-# Submission url  : https://leetcode.com/problems/find-k-pairs-with-smallest-sums/description/"
+# Submission url  : https://leetcode.com/problems/find-k-pairs-with-smallest-sums/description/
 # Submission url  : https://leetcode.com/submissions/detail/1030523976/"
 
 

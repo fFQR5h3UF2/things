@@ -1,5 +1,5 @@
 # Submission title: Constrained Subsequence Sum
-# Submission url  : https://leetcode.com/problems/constrained-subsequence-sum/description/"
+# Submission url  : https://leetcode.com/problems/constrained-subsequence-sum/description/
 # Submission url  : https://leetcode.com/submissions/detail/1080534787/"
 
 import heapq

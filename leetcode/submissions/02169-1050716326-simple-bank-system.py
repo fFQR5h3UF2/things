@@ -1,5 +1,5 @@
 # Submission title: Simple Bank System
-# Submission url  : https://leetcode.com/problems/simple-bank-system/description/"
+# Submission url  : https://leetcode.com/problems/simple-bank-system/description/
 # Submission url  : https://leetcode.com/submissions/detail/1050716326/"
 
 

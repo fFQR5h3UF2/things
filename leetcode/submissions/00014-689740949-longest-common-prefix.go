@@ -1,5 +1,5 @@
 // Submission title: Longest Common Prefix
-// Submission url  : https://leetcode.com/problems/longest-common-prefix/description/"
+// Submission url  : https://leetcode.com/problems/longest-common-prefix/description/
 // Submission url  : https://leetcode.com/submissions/detail/689740949/"
 package submissions
 

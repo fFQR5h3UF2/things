@@ -1,5 +1,5 @@
 // Submission title: Find The Original Array of Prefix Xor
-// Submission url  : https://leetcode.com/problems/find-the-original-array-of-prefix-xor/description/"
+// Submission url  : https://leetcode.com/problems/find-the-original-array-of-prefix-xor/description/
 // Submission url  : https://leetcode.com/submissions/detail/1088205030/"
 package submissions
 

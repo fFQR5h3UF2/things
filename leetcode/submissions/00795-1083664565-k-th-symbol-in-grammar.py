@@ -1,5 +1,5 @@
 # Submission title: K-th Symbol in Grammar
-# Submission url  : https://leetcode.com/problems/k-th-symbol-in-grammar/description/"
+# Submission url  : https://leetcode.com/problems/k-th-symbol-in-grammar/description/
 # Submission url  : https://leetcode.com/submissions/detail/1083664565/"
 
 

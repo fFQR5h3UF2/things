@@ -1,5 +1,5 @@
 # Submission title: Zigzag Conversion
-# Submission url  : https://leetcode.com/problems/zigzag-conversion/description/"
+# Submission url  : https://leetcode.com/problems/zigzag-conversion/description/
 # Submission url  : https://leetcode.com/submissions/detail/998330017/"
 
 

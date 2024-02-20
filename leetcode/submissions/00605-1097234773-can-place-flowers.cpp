@@ -1,5 +1,5 @@
 // Submission title: Can Place Flowers
-// Submission url  : https://leetcode.com/problems/can-place-flowers/description/"
+// Submission url  : https://leetcode.com/problems/can-place-flowers/description/
 // Submission url  : https://leetcode.com/submissions/detail/1097234773/"
 
 class Solution {

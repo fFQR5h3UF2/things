@@ -1,5 +1,5 @@
 # Submission title: Maximum Number of Achievable Transfer Requests
-# Submission url  : https://leetcode.com/problems/maximum-number-of-achievable-transfer-requests/description/"
+# Submission url  : https://leetcode.com/problems/maximum-number-of-achievable-transfer-requests/description/
 # Submission url  : https://leetcode.com/submissions/detail/1012219575/"
 
 

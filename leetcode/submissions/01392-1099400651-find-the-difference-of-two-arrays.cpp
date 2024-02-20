@@ -1,5 +1,5 @@
 // Submission title: Find the Difference of Two Arrays
-// Submission url  : https://leetcode.com/problems/find-the-difference-of-two-arrays/description/"
+// Submission url  : https://leetcode.com/problems/find-the-difference-of-two-arrays/description/
 // Submission url  : https://leetcode.com/submissions/detail/1099400651/"
 
 class Solution {

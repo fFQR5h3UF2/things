@@ -1,5 +1,5 @@
 // Submission title: Maximum Average Subarray I
-// Submission url  : https://leetcode.com/problems/maximum-average-subarray-i/description/"
+// Submission url  : https://leetcode.com/problems/maximum-average-subarray-i/description/
 // Submission url  : https://leetcode.com/submissions/detail/1097265019/"
 
 class Solution {

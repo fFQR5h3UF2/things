@@ -1,5 +1,5 @@
 // Submission title: Add to Array-Form of Integer
-// Submission url  : https://leetcode.com/problems/add-to-array-form-of-integer/description/"
+// Submission url  : https://leetcode.com/problems/add-to-array-form-of-integer/description/
 // Submission url  : https://leetcode.com/submissions/detail/690941182/"
 package submissions
 

@@ -1,5 +1,5 @@
 // Submission title: Serialize and Deserialize Binary Tree
-// Submission url  : https://leetcode.com/problems/serialize-and-deserialize-binary-tree/description/"
+// Submission url  : https://leetcode.com/problems/serialize-and-deserialize-binary-tree/description/
 // Submission url  : https://leetcode.com/submissions/detail/1092217408/"
 package submissions
 

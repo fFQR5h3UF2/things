@@ -1,5 +1,5 @@
 # Submission title: Product of the Last K Numbers
-# Submission url  : https://leetcode.com/problems/product-of-the-last-k-numbers/description/"
+# Submission url  : https://leetcode.com/problems/product-of-the-last-k-numbers/description/
 # Submission url  : https://leetcode.com/submissions/detail/1052607905/"
 
 

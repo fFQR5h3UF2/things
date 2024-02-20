@@ -1,5 +1,5 @@
 # Submission title: Missing Number
-# Submission url  : https://leetcode.com/problems/missing-number/description/"
+# Submission url  : https://leetcode.com/problems/missing-number/description/
 # Submission url  : https://leetcode.com/submissions/detail/1054578246/"
 
 

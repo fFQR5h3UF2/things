@@ -1,5 +1,5 @@
 // Submission title: Maximum Number of Coins You Can Get
-// Submission url  : https://leetcode.com/problems/maximum-number-of-coins-you-can-get/description/"
+// Submission url  : https://leetcode.com/problems/maximum-number-of-coins-you-can-get/description/
 // Submission url  : https://leetcode.com/submissions/detail/1105338028/"
 
 class Solution {

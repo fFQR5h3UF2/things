@@ -1,5 +1,5 @@
 # Submission title: K Inverse Pairs Array
-# Submission url  : https://leetcode.com/problems/k-inverse-pairs-array/description/"
+# Submission url  : https://leetcode.com/problems/k-inverse-pairs-array/description/
 # Submission url  : https://leetcode.com/submissions/detail/1158038607/"
 
 

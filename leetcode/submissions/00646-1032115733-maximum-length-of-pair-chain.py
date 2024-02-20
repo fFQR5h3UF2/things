@@ -1,5 +1,5 @@
 # Submission title: Maximum Length of Pair Chain
-# Submission url  : https://leetcode.com/problems/maximum-length-of-pair-chain/description/"
+# Submission url  : https://leetcode.com/problems/maximum-length-of-pair-chain/description/
 # Submission url  : https://leetcode.com/submissions/detail/1032115733/"
 
 

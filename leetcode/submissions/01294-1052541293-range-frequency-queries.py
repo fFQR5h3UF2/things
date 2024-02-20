@@ -1,5 +1,5 @@
 # Submission title: Range Frequency Queries
-# Submission url  : https://leetcode.com/problems/range-frequency-queries/description/"
+# Submission url  : https://leetcode.com/problems/range-frequency-queries/description/
 # Submission url  : https://leetcode.com/submissions/detail/1052541293/"
 
 

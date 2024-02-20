@@ -1,5 +1,5 @@
 # Submission title: Minimum Number of Steps to Make Two Strings Anagram
-# Submission url  : https://leetcode.com/problems/minimum-number-of-steps-to-make-two-strings-anagram/description/"
+# Submission url  : https://leetcode.com/problems/minimum-number-of-steps-to-make-two-strings-anagram/description/
 # Submission url  : https://leetcode.com/submissions/detail/1145100663/"
 
 

@@ -1,5 +1,5 @@
 # Submission title: Merge Sorted Array
-# Submission url  : https://leetcode.com/problems/merge-sorted-array/description/"
+# Submission url  : https://leetcode.com/problems/merge-sorted-array/description/
 # Submission url  : https://leetcode.com/submissions/detail/992867297/"
 
 

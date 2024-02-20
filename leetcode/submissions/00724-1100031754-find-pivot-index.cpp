@@ -1,5 +1,5 @@
 // Submission title: Find Pivot Index
-// Submission url  : https://leetcode.com/problems/find-pivot-index/description/"
+// Submission url  : https://leetcode.com/problems/find-pivot-index/description/
 // Submission url  : https://leetcode.com/submissions/detail/1100031754/"
 
 class Solution {

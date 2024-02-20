@@ -1,5 +1,5 @@
 # Submission title: Find the Index of the First Occurrence in a String
-# Submission url  : https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/"
+# Submission url  : https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/description/
 # Submission url  : https://leetcode.com/submissions/detail/990972145/"
 
 

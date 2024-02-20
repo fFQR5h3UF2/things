@@ -1,5 +1,5 @@
 // Submission title: Find Palindrome With Fixed Length
-// Submission url  : https://leetcode.com/problems/find-palindrome-with-fixed-length/description/"
+// Submission url  : https://leetcode.com/problems/find-palindrome-with-fixed-length/description/
 // Submission url  : https://leetcode.com/submissions/detail/690364689/"
 package submissions
 

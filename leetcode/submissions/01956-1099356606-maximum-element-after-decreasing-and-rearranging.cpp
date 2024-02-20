@@ -1,5 +1,5 @@
 // Submission title: Maximum Element After Decreasing and Rearranging
-// Submission url  : https://leetcode.com/problems/maximum-element-after-decreasing-and-rearranging/description/"
+// Submission url  : https://leetcode.com/problems/maximum-element-after-decreasing-and-rearranging/description/
 // Submission url  : https://leetcode.com/submissions/detail/1099356606/"
 
 class Solution {

@@ -1,5 +1,5 @@
 # Submission title: Find All Numbers Disappeared in an Array
-# Submission url  : https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/description/"
+# Submission url  : https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/description/
 # Submission url  : https://leetcode.com/submissions/detail/1002010205/"
 
 

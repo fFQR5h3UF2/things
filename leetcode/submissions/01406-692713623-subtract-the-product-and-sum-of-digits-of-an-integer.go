@@ -1,5 +1,5 @@
 // Submission title: Subtract the Product and Sum of Digits of an Integer
-// Submission url  : https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/description/"
+// Submission url  : https://leetcode.com/problems/subtract-the-product-and-sum-of-digits-of-an-integer/description/
 // Submission url  : https://leetcode.com/submissions/detail/692713623/"
 package submissions
 

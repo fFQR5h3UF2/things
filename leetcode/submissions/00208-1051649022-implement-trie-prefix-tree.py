@@ -1,5 +1,5 @@
 # Submission title: Implement Trie (Prefix Tree)
-# Submission url  : https://leetcode.com/problems/implement-trie-prefix-tree/description/"
+# Submission url  : https://leetcode.com/problems/implement-trie-prefix-tree/description/
 # Submission url  : https://leetcode.com/submissions/detail/1051649022/"
 
 

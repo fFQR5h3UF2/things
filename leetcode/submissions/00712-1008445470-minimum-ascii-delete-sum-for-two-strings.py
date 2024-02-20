@@ -1,5 +1,5 @@
 # Submission title: Minimum ASCII Delete Sum for Two Strings
-# Submission url  : https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/description/"
+# Submission url  : https://leetcode.com/problems/minimum-ascii-delete-sum-for-two-strings/description/
 # Submission url  : https://leetcode.com/submissions/detail/1008445470/"
 
 

@@ -1,5 +1,5 @@
 # Submission title: Finding Pairs With a Certain Sum
-# Submission url  : https://leetcode.com/problems/finding-pairs-with-a-certain-sum/description/"
+# Submission url  : https://leetcode.com/problems/finding-pairs-with-a-certain-sum/description/
 # Submission url  : https://leetcode.com/submissions/detail/1050249342/"
 
 

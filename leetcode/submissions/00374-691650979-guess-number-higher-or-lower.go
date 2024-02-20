@@ -1,5 +1,5 @@
 // Submission title: Guess Number Higher or Lower
-// Submission url  : https://leetcode.com/problems/guess-number-higher-or-lower/description/"
+// Submission url  : https://leetcode.com/problems/guess-number-higher-or-lower/description/
 // Submission url  : https://leetcode.com/submissions/detail/691650979/"
 package submissions
 

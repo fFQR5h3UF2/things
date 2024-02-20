@@ -1,5 +1,5 @@
 # Submission title: Valid Anagram
-# Submission url  : https://leetcode.com/problems/valid-anagram/description/"
+# Submission url  : https://leetcode.com/problems/valid-anagram/description/
 # Submission url  : https://leetcode.com/submissions/detail/1120948856/"
 
 

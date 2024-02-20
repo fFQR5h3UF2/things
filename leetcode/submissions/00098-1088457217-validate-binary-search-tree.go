@@ -1,5 +1,5 @@
 // Submission title: Validate Binary Search Tree
-// Submission url  : https://leetcode.com/problems/validate-binary-search-tree/description/"
+// Submission url  : https://leetcode.com/problems/validate-binary-search-tree/description/
 // Submission url  : https://leetcode.com/submissions/detail/1088457217/"
 package submissions
 

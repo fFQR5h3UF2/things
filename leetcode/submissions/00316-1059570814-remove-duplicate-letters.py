@@ -1,5 +1,5 @@
 # Submission title: Remove Duplicate Letters
-# Submission url  : https://leetcode.com/problems/remove-duplicate-letters/description/"
+# Submission url  : https://leetcode.com/problems/remove-duplicate-letters/description/
 # Submission url  : https://leetcode.com/submissions/detail/1059570814/"
 
 

@@ -1,5 +1,5 @@
 // Submission title: Minimum One Bit Operations to Make Integers Zero
-// Submission url  : https://leetcode.com/problems/minimum-one-bit-operations-to-make-integers-zero/description/"
+// Submission url  : https://leetcode.com/problems/minimum-one-bit-operations-to-make-integers-zero/description/
 // Submission url  : https://leetcode.com/submissions/detail/1109412407/"
 
 class Solution {

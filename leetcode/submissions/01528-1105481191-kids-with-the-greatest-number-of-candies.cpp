@@ -1,5 +1,5 @@
 // Submission title: Kids With the Greatest Number of Candies
-// Submission url  : https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/description/"
+// Submission url  : https://leetcode.com/problems/kids-with-the-greatest-number-of-candies/description/
 // Submission url  : https://leetcode.com/submissions/detail/1105481191/"
 
 class Solution {

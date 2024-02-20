@@ -1,5 +1,5 @@
 # Submission title: Knight Probability in Chessboard
-# Submission url  : https://leetcode.com/problems/knight-probability-in-chessboard/description/"
+# Submission url  : https://leetcode.com/problems/knight-probability-in-chessboard/description/
 # Submission url  : https://leetcode.com/submissions/detail/1001107966/"
 
 

@@ -1,5 +1,5 @@
 // Submission title: Reverse Nodes in k-Group
-// Submission url  : https://leetcode.com/problems/reverse-nodes-in-k-group/description/"
+// Submission url  : https://leetcode.com/problems/reverse-nodes-in-k-group/description/
 // Submission url  : https://leetcode.com/submissions/detail/1091200011/"
 package submissions
 

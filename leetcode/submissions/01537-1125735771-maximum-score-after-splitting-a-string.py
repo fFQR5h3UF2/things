@@ -1,5 +1,5 @@
 # Submission title: Maximum Score After Splitting a String
-# Submission url  : https://leetcode.com/problems/maximum-score-after-splitting-a-string/description/"
+# Submission url  : https://leetcode.com/problems/maximum-score-after-splitting-a-string/description/
 # Submission url  : https://leetcode.com/submissions/detail/1125735771/"
 
 

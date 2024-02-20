@@ -1,5 +1,5 @@
 // Submission title: Subrectangle Queries
-// Submission url  : https://leetcode.com/problems/subrectangle-queries/description/"
+// Submission url  : https://leetcode.com/problems/subrectangle-queries/description/
 // Submission url  : https://leetcode.com/submissions/detail/1096023462/"
 
 class SubrectangleQueries {

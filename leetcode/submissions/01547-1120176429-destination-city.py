@@ -1,5 +1,5 @@
 # Submission title: Destination City
-# Submission url  : https://leetcode.com/problems/destination-city/description/"
+# Submission url  : https://leetcode.com/problems/destination-city/description/
 # Submission url  : https://leetcode.com/submissions/detail/1120176429/"
 
 

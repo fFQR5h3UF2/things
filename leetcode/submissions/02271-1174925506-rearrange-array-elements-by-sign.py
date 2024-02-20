@@ -1,5 +1,5 @@
 # Submission title: Rearrange Array Elements by Sign
-# Submission url  : https://leetcode.com/problems/rearrange-array-elements-by-sign/description/"
+# Submission url  : https://leetcode.com/problems/rearrange-array-elements-by-sign/description/
 # Submission url  : https://leetcode.com/submissions/detail/1174925506/"
 
 

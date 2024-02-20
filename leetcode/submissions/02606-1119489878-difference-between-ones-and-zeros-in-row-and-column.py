@@ -1,5 +1,5 @@
 # Submission title: Difference Between Ones and Zeros in Row and Column
-# Submission url  : https://leetcode.com/problems/difference-between-ones-and-zeros-in-row-and-column/description/"
+# Submission url  : https://leetcode.com/problems/difference-between-ones-and-zeros-in-row-and-column/description/
 # Submission url  : https://leetcode.com/submissions/detail/1119489878/"
 
 

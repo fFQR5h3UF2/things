@@ -1,5 +1,5 @@
 # Submission title: Tweet Counts Per Frequency
-# Submission url  : https://leetcode.com/problems/tweet-counts-per-frequency/description/"
+# Submission url  : https://leetcode.com/problems/tweet-counts-per-frequency/description/
 # Submission url  : https://leetcode.com/submissions/detail/1047631211/"
 
 

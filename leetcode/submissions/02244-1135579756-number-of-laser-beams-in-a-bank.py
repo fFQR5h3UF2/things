@@ -1,5 +1,5 @@
 # Submission title: Number of Laser Beams in a Bank
-# Submission url  : https://leetcode.com/problems/number-of-laser-beams-in-a-bank/description/"
+# Submission url  : https://leetcode.com/problems/number-of-laser-beams-in-a-bank/description/
 # Submission url  : https://leetcode.com/submissions/detail/1135579756/"
 
 

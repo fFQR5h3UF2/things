@@ -1,5 +1,5 @@
 # Submission title: Minimum Deletions to Make Character Frequencies Unique
-# Submission url  : https://leetcode.com/problems/minimum-deletions-to-make-character-frequencies-unique/description/"
+# Submission url  : https://leetcode.com/problems/minimum-deletions-to-make-character-frequencies-unique/description/
 # Submission url  : https://leetcode.com/submissions/detail/1047265181/"
 
 

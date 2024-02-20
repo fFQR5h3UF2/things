@@ -1,5 +1,5 @@
 # Submission title: Number of Recent Calls
-# Submission url  : https://leetcode.com/problems/number-of-recent-calls/description/"
+# Submission url  : https://leetcode.com/problems/number-of-recent-calls/description/
 # Submission url  : https://leetcode.com/submissions/detail/1047428915/"
 
 

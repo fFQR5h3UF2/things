@@ -1,5 +1,5 @@
 # Submission title: Daily Temperatures
-# Submission url  : https://leetcode.com/problems/daily-temperatures/description/"
+# Submission url  : https://leetcode.com/problems/daily-temperatures/description/
 # Submission url  : https://leetcode.com/submissions/detail/1161819645/"
 
 

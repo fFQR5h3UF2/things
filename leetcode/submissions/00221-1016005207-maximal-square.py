@@ -1,5 +1,5 @@
 # Submission title: Maximal Square
-# Submission url  : https://leetcode.com/problems/maximal-square/description/"
+# Submission url  : https://leetcode.com/problems/maximal-square/description/
 # Submission url  : https://leetcode.com/submissions/detail/1016005207/"
 
 

@@ -1,5 +1,5 @@
 # Submission title: Course Schedule
-# Submission url  : https://leetcode.com/problems/course-schedule/description/"
+# Submission url  : https://leetcode.com/problems/course-schedule/description/
 # Submission url  : https://leetcode.com/submissions/detail/1037758248/"
 
 

@@ -1,5 +1,5 @@
 // Submission title: Number of Ways to Divide a Long Corridor
-// Submission url  : https://leetcode.com/problems/number-of-ways-to-divide-a-long-corridor/description/"
+// Submission url  : https://leetcode.com/problems/number-of-ways-to-divide-a-long-corridor/description/
 // Submission url  : https://leetcode.com/submissions/detail/1108067184/"
 
 class Solution {

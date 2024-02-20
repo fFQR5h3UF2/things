@@ -1,5 +1,5 @@
 # Submission title: Maximum Profit in Job Scheduling
-# Submission url  : https://leetcode.com/problems/maximum-profit-in-job-scheduling/description/"
+# Submission url  : https://leetcode.com/problems/maximum-profit-in-job-scheduling/description/
 # Submission url  : https://leetcode.com/submissions/detail/1139390559/"
 
 

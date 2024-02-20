@@ -1,5 +1,5 @@
 // Submission title: Minimum Time Visiting All Points
-// Submission url  : https://leetcode.com/problems/minimum-time-visiting-all-points/description/"
+// Submission url  : https://leetcode.com/problems/minimum-time-visiting-all-points/description/
 // Submission url  : https://leetcode.com/submissions/detail/1111540482/"
 
 class Solution {

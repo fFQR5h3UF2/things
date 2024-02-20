@@ -1,5 +1,5 @@
 # Submission title: Arranging Coins
-# Submission url  : https://leetcode.com/problems/arranging-coins/description/"
+# Submission url  : https://leetcode.com/problems/arranging-coins/description/
 # Submission url  : https://leetcode.com/submissions/detail/1001982716/"
 
 

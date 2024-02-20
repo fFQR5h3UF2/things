@@ -1,5 +1,5 @@
 # Submission title: Decode Ways
-# Submission url  : https://leetcode.com/problems/decode-ways/description/"
+# Submission url  : https://leetcode.com/problems/decode-ways/description/
 # Submission url  : https://leetcode.com/submissions/detail/1044894614/"
 
 

@@ -1,5 +1,5 @@
 # Submission title: Product of Array Except Self
-# Submission url  : https://leetcode.com/problems/product-of-array-except-self/description/"
+# Submission url  : https://leetcode.com/problems/product-of-array-except-self/description/
 # Submission url  : https://leetcode.com/submissions/detail/1018287507/"
 
 

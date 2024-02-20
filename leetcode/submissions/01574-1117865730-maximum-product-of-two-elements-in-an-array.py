@@ -1,5 +1,5 @@
 # Submission title: Maximum Product of Two Elements in an Array
-# Submission url  : https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/description/"
+# Submission url  : https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/description/
 # Submission url  : https://leetcode.com/submissions/detail/1117865730/"
 
 

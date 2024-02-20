@@ -1,5 +1,5 @@
 // Submission title: Maximum Sum Circular Subarray
-// Submission url  : https://leetcode.com/problems/maximum-sum-circular-subarray/description/"
+// Submission url  : https://leetcode.com/problems/maximum-sum-circular-subarray/description/
 // Submission url  : https://leetcode.com/submissions/detail/1088427588/"
 package submissions
 

@@ -1,5 +1,5 @@
 # Submission title: Find Players With Zero or One Losses
-# Submission url  : https://leetcode.com/problems/find-players-with-zero-or-one-losses/description/"
+# Submission url  : https://leetcode.com/problems/find-players-with-zero-or-one-losses/description/
 # Submission url  : https://leetcode.com/submissions/detail/1146709676/"
 
 

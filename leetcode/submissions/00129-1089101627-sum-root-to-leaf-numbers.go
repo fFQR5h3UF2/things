@@ -1,5 +1,5 @@
 // Submission title: Sum Root to Leaf Numbers
-// Submission url  : https://leetcode.com/problems/sum-root-to-leaf-numbers/description/"
+// Submission url  : https://leetcode.com/problems/sum-root-to-leaf-numbers/description/
 // Submission url  : https://leetcode.com/submissions/detail/1089101627/"
 package submissions
 

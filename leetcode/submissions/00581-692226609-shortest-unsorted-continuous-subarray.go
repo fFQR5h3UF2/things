@@ -1,5 +1,5 @@
 // Submission title: Shortest Unsorted Continuous Subarray
-// Submission url  : https://leetcode.com/problems/shortest-unsorted-continuous-subarray/description/"
+// Submission url  : https://leetcode.com/problems/shortest-unsorted-continuous-subarray/description/
 // Submission url  : https://leetcode.com/submissions/detail/692226609/"
 package submissions
 

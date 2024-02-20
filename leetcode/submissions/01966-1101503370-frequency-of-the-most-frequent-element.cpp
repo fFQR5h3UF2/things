@@ -1,5 +1,5 @@
 // Submission title: Frequency of the Most Frequent Element
-// Submission url  : https://leetcode.com/problems/frequency-of-the-most-frequent-element/description/"
+// Submission url  : https://leetcode.com/problems/frequency-of-the-most-frequent-element/description/
 // Submission url  : https://leetcode.com/submissions/detail/1101503370/"
 
 class Solution {

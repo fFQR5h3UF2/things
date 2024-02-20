@@ -1,5 +1,5 @@
 # Submission title: Sort Items by Groups Respecting Dependencies
-# Submission url  : https://leetcode.com/problems/sort-items-by-groups-respecting-dependencies/description/"
+# Submission url  : https://leetcode.com/problems/sort-items-by-groups-respecting-dependencies/description/
 # Submission url  : https://leetcode.com/submissions/detail/1026672462/"
 
 

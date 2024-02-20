@@ -1,5 +1,5 @@
 # Submission title: Peeking Iterator
-# Submission url  : https://leetcode.com/problems/peeking-iterator/description/"
+# Submission url  : https://leetcode.com/problems/peeking-iterator/description/
 # Submission url  : https://leetcode.com/submissions/detail/1050013916/"
 
 # Below is the interface for Iterator, which is already defined for you.

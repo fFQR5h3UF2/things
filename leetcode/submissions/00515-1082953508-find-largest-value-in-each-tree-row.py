@@ -1,5 +1,5 @@
 # Submission title: Find Largest Value in Each Tree Row
-# Submission url  : https://leetcode.com/problems/find-largest-value-in-each-tree-row/description/"
+# Submission url  : https://leetcode.com/problems/find-largest-value-in-each-tree-row/description/
 # Submission url  : https://leetcode.com/submissions/detail/1082953508/"
 
 

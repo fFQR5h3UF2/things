@@ -1,5 +1,5 @@
 # Submission title: Minimum Replacements to Sort the Array
-# Submission url  : https://leetcode.com/problems/minimum-replacements-to-sort-the-array/description/"
+# Submission url  : https://leetcode.com/problems/minimum-replacements-to-sort-the-array/description/
 # Submission url  : https://leetcode.com/submissions/detail/1036091559/"
 
 

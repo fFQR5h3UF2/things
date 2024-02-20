@@ -1,5 +1,5 @@
 # Submission title: Binary Tree Inorder Traversal
-# Submission url  : https://leetcode.com/problems/binary-tree-inorder-traversal/description/"
+# Submission url  : https://leetcode.com/problems/binary-tree-inorder-traversal/description/
 # Submission url  : https://leetcode.com/submissions/detail/1046627083/"
 
 

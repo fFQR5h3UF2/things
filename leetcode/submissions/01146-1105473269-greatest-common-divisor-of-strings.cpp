@@ -1,5 +1,5 @@
 // Submission title: Greatest Common Divisor of Strings
-// Submission url  : https://leetcode.com/problems/greatest-common-divisor-of-strings/description/"
+// Submission url  : https://leetcode.com/problems/greatest-common-divisor-of-strings/description/
 // Submission url  : https://leetcode.com/submissions/detail/1105473269/"
 
 class Solution {

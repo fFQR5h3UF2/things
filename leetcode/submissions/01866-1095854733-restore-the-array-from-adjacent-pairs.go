@@ -1,5 +1,5 @@
 // Submission title: Restore the Array From Adjacent Pairs
-// Submission url  : https://leetcode.com/problems/restore-the-array-from-adjacent-pairs/description/"
+// Submission url  : https://leetcode.com/problems/restore-the-array-from-adjacent-pairs/description/
 // Submission url  : https://leetcode.com/submissions/detail/1095854733/"
 package submissions
 

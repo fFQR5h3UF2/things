@@ -1,5 +1,5 @@
 // Submission title: Bus Routes
-// Submission url  : https://leetcode.com/problems/bus-routes/description/"
+// Submission url  : https://leetcode.com/problems/bus-routes/description/
 // Submission url  : https://leetcode.com/submissions/detail/1097144778/"
 
 class Solution {

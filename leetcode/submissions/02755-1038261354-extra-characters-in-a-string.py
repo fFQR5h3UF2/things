@@ -1,5 +1,5 @@
 # Submission title: Extra Characters in a String
-# Submission url  : https://leetcode.com/problems/extra-characters-in-a-string/description/"
+# Submission url  : https://leetcode.com/problems/extra-characters-in-a-string/description/
 # Submission url  : https://leetcode.com/submissions/detail/1038261354/"
 
 

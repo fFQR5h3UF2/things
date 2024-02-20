@@ -1,5 +1,5 @@
 // Submission title: Minimum Genetic Mutation
-// Submission url  : https://leetcode.com/problems/minimum-genetic-mutation/description/"
+// Submission url  : https://leetcode.com/problems/minimum-genetic-mutation/description/
 // Submission url  : https://leetcode.com/submissions/detail/1087543163/"
 package submissions
 

@@ -1,5 +1,5 @@
 // Submission title: Build an Array With Stack Operations
-// Submission url  : https://leetcode.com/problems/build-an-array-with-stack-operations/description/"
+// Submission url  : https://leetcode.com/problems/build-an-array-with-stack-operations/description/
 // Submission url  : https://leetcode.com/submissions/detail/1090492801/"
 package submissions
 

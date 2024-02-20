@@ -1,5 +1,5 @@
 # Submission title: Pow(x, n)
-# Submission url  : https://leetcode.com/problems/powx-n/description/"
+# Submission url  : https://leetcode.com/problems/powx-n/description/
 # Submission url  : https://leetcode.com/submissions/detail/1002448132/"
 
 

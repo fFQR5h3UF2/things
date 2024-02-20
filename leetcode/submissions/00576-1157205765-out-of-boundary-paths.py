@@ -1,5 +1,5 @@
 # Submission title: Out of Boundary Paths
-# Submission url  : https://leetcode.com/problems/out-of-boundary-paths/description/"
+# Submission url  : https://leetcode.com/problems/out-of-boundary-paths/description/
 # Submission url  : https://leetcode.com/submissions/detail/1157205765/"
 
 

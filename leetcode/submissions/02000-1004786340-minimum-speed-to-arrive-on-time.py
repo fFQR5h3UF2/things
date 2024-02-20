@@ -1,5 +1,5 @@
 # Submission title: Minimum Speed to Arrive on Time
-# Submission url  : https://leetcode.com/problems/minimum-speed-to-arrive-on-time/description/"
+# Submission url  : https://leetcode.com/problems/minimum-speed-to-arrive-on-time/description/
 # Submission url  : https://leetcode.com/submissions/detail/1004786340/"
 
 

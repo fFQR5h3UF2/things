@@ -1,5 +1,5 @@
 # Submission title: Third Maximum Number
-# Submission url  : https://leetcode.com/problems/third-maximum-number/description/"
+# Submission url  : https://leetcode.com/problems/third-maximum-number/description/
 # Submission url  : https://leetcode.com/submissions/detail/1002517384/"
 
 

@@ -1,5 +1,5 @@
 // Submission title: Merge k Sorted Lists
-// Submission url  : https://leetcode.com/problems/merge-k-sorted-lists/description/"
+// Submission url  : https://leetcode.com/problems/merge-k-sorted-lists/description/
 // Submission url  : https://leetcode.com/submissions/detail/1091201621/"
 package submissions
 

@@ -1,5 +1,5 @@
 // Submission title: Sqrt(x)
-// Submission url  : https://leetcode.com/problems/sqrtx/description/"
+// Submission url  : https://leetcode.com/problems/sqrtx/description/
 // Submission url  : https://leetcode.com/submissions/detail/693649416/"
 package submissions
 

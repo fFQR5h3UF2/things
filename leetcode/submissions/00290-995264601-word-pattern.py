@@ -1,5 +1,5 @@
 # Submission title: Word Pattern
-# Submission url  : https://leetcode.com/problems/word-pattern/description/"
+# Submission url  : https://leetcode.com/problems/word-pattern/description/
 # Submission url  : https://leetcode.com/submissions/detail/995264601/"
 
 

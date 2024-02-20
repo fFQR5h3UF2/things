@@ -1,5 +1,5 @@
 # Submission title: Add Digits
-# Submission url  : https://leetcode.com/problems/add-digits/description/"
+# Submission url  : https://leetcode.com/problems/add-digits/description/
 # Submission url  : https://leetcode.com/submissions/detail/1000199091/"
 
 

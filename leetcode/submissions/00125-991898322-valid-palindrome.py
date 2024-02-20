@@ -1,5 +1,5 @@
 # Submission title: Valid Palindrome
-# Submission url  : https://leetcode.com/problems/valid-palindrome/description/"
+# Submission url  : https://leetcode.com/problems/valid-palindrome/description/
 # Submission url  : https://leetcode.com/submissions/detail/991898322/"
 
 

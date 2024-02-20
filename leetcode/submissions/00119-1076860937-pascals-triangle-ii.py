@@ -1,5 +1,5 @@
 # Submission title: Pascal's Triangle II
-# Submission url  : https://leetcode.com/problems/pascals-triangle-ii/description/"
+# Submission url  : https://leetcode.com/problems/pascals-triangle-ii/description/
 # Submission url  : https://leetcode.com/submissions/detail/1076860937/"
 
 

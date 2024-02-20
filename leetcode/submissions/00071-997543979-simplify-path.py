@@ -1,5 +1,5 @@
 # Submission title: Simplify Path
-# Submission url  : https://leetcode.com/problems/simplify-path/description/"
+# Submission url  : https://leetcode.com/problems/simplify-path/description/
 # Submission url  : https://leetcode.com/submissions/detail/997543979/"
 
 

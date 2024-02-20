@@ -1,5 +1,5 @@
 // Submission title: Binary Tree Zigzag Level Order Traversal
-// Submission url  : https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/description/"
+// Submission url  : https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/description/
 // Submission url  : https://leetcode.com/submissions/detail/1087501208/"
 package submissions
 

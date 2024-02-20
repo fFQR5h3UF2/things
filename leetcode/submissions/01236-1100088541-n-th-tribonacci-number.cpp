@@ -1,5 +1,5 @@
 // Submission title: N-th Tribonacci Number
-// Submission url  : https://leetcode.com/problems/n-th-tribonacci-number/description/"
+// Submission url  : https://leetcode.com/problems/n-th-tribonacci-number/description/
 // Submission url  : https://leetcode.com/submissions/detail/1100088541/"
 
 class Solution {

@@ -1,5 +1,5 @@
 # Submission title: The K Weakest Rows in a Matrix
-# Submission url  : https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/description/"
+# Submission url  : https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/description/
 # Submission url  : https://leetcode.com/submissions/detail/1052396767/"
 
 

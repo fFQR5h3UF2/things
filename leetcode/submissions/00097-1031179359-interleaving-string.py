@@ -1,5 +1,5 @@
 # Submission title: Interleaving String
-# Submission url  : https://leetcode.com/problems/interleaving-string/description/"
+# Submission url  : https://leetcode.com/problems/interleaving-string/description/
 # Submission url  : https://leetcode.com/submissions/detail/1031179359/"
 
 

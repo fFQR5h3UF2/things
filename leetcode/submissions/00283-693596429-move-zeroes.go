@@ -1,5 +1,5 @@
 // Submission title: Move Zeroes
-// Submission url  : https://leetcode.com/problems/move-zeroes/description/"
+// Submission url  : https://leetcode.com/problems/move-zeroes/description/
 // Submission url  : https://leetcode.com/submissions/detail/693596429/"
 package submissions
 

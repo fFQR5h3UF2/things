@@ -1,5 +1,5 @@
 # Submission title: Asteroid Collision
-# Submission url  : https://leetcode.com/problems/asteroid-collision/description/"
+# Submission url  : https://leetcode.com/problems/asteroid-collision/description/
 # Submission url  : https://leetcode.com/submissions/detail/999193936/"
 
 

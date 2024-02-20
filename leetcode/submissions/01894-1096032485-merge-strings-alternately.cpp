@@ -1,5 +1,5 @@
 // Submission title: Merge Strings Alternately
-// Submission url  : https://leetcode.com/problems/merge-strings-alternately/description/"
+// Submission url  : https://leetcode.com/problems/merge-strings-alternately/description/
 // Submission url  : https://leetcode.com/submissions/detail/1096032485/"
 
 class Solution {

@@ -1,5 +1,5 @@
 # Submission title: Soup Servings
-# Submission url  : https://leetcode.com/problems/soup-servings/description/"
+# Submission url  : https://leetcode.com/problems/soup-servings/description/
 # Submission url  : https://leetcode.com/submissions/detail/1006808608/"
 
 

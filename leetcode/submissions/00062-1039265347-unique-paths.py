@@ -1,5 +1,5 @@
 # Submission title: Unique Paths
-# Submission url  : https://leetcode.com/problems/unique-paths/description/"
+# Submission url  : https://leetcode.com/problems/unique-paths/description/
 # Submission url  : https://leetcode.com/submissions/detail/1039265347/"
 
 

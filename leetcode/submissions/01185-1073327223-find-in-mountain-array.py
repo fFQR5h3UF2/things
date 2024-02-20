@@ -1,5 +1,5 @@
 # Submission title: Find in Mountain Array
-# Submission url  : https://leetcode.com/problems/find-in-mountain-array/description/"
+# Submission url  : https://leetcode.com/problems/find-in-mountain-array/description/
 # Submission url  : https://leetcode.com/submissions/detail/1073327223/"
 
 

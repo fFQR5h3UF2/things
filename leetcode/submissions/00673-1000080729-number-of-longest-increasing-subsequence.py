@@ -1,5 +1,5 @@
 # Submission title: Number of Longest Increasing Subsequence
-# Submission url  : https://leetcode.com/problems/number-of-longest-increasing-subsequence/description/"
+# Submission url  : https://leetcode.com/problems/number-of-longest-increasing-subsequence/description/
 # Submission url  : https://leetcode.com/submissions/detail/1000080729/"
 
 

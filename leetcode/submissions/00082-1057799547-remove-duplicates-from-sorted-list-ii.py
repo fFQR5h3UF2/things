@@ -1,5 +1,5 @@
 # Submission title: Remove Duplicates from Sorted List II
-# Submission url  : https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/"
+# Submission url  : https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/description/
 # Submission url  : https://leetcode.com/submissions/detail/1057799547/"
 
 

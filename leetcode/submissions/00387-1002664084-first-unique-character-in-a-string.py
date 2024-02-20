@@ -1,5 +1,5 @@
 # Submission title: First Unique Character in a String
-# Submission url  : https://leetcode.com/problems/first-unique-character-in-a-string/description/"
+# Submission url  : https://leetcode.com/problems/first-unique-character-in-a-string/description/
 # Submission url  : https://leetcode.com/submissions/detail/1002664084/"
 
 

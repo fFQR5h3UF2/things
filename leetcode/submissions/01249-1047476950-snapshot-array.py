@@ -1,5 +1,5 @@
 # Submission title: Snapshot Array
-# Submission url  : https://leetcode.com/problems/snapshot-array/description/"
+# Submission url  : https://leetcode.com/problems/snapshot-array/description/
 # Submission url  : https://leetcode.com/submissions/detail/1047476950/"
 
 

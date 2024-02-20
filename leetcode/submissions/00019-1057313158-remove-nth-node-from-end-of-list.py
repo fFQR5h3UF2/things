@@ -1,5 +1,5 @@
 # Submission title: Remove Nth Node From End of List
-# Submission url  : https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/"
+# Submission url  : https://leetcode.com/problems/remove-nth-node-from-end-of-list/description/
 # Submission url  : https://leetcode.com/submissions/detail/1057313158/"
 
 

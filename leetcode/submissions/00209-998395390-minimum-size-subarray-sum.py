@@ -1,5 +1,5 @@
 # Submission title: Minimum Size Subarray Sum
-# Submission url  : https://leetcode.com/problems/minimum-size-subarray-sum/description/"
+# Submission url  : https://leetcode.com/problems/minimum-size-subarray-sum/description/
 # Submission url  : https://leetcode.com/submissions/detail/998395390/"
 
 

@@ -1,5 +1,5 @@
 # Submission title: Longest Nice Substring
-# Submission url  : https://leetcode.com/problems/longest-nice-substring/description/"
+# Submission url  : https://leetcode.com/problems/longest-nice-substring/description/
 # Submission url  : https://leetcode.com/submissions/detail/1056159909/"
 
 

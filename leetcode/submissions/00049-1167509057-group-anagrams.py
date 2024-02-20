@@ -1,5 +1,5 @@
 # Submission title: Group Anagrams
-# Submission url  : https://leetcode.com/problems/group-anagrams/description/"
+# Submission url  : https://leetcode.com/problems/group-anagrams/description/
 # Submission url  : https://leetcode.com/submissions/detail/1167509057/"
 
 

@@ -1,5 +1,5 @@
 # Submission title: Design a Stack With Increment Operation
-# Submission url  : https://leetcode.com/problems/design-a-stack-with-increment-operation/description/"
+# Submission url  : https://leetcode.com/problems/design-a-stack-with-increment-operation/description/
 # Submission url  : https://leetcode.com/submissions/detail/1050229425/"
 
 

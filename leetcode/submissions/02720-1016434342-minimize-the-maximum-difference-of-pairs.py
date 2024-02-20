@@ -1,5 +1,5 @@
 # Submission title: Minimize the Maximum Difference of Pairs
-# Submission url  : https://leetcode.com/problems/minimize-the-maximum-difference-of-pairs/description/"
+# Submission url  : https://leetcode.com/problems/minimize-the-maximum-difference-of-pairs/description/
 # Submission url  : https://leetcode.com/submissions/detail/1016434342/"
 
 

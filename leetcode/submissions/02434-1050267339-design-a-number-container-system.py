@@ -1,5 +1,5 @@
 # Submission title: Design a Number Container System
-# Submission url  : https://leetcode.com/problems/design-a-number-container-system/description/"
+# Submission url  : https://leetcode.com/problems/design-a-number-container-system/description/
 # Submission url  : https://leetcode.com/submissions/detail/1050267339/"
 
 

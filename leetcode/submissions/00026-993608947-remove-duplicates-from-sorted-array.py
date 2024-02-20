@@ -1,5 +1,5 @@
 # Submission title: Remove Duplicates from Sorted Array
-# Submission url  : https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/"
+# Submission url  : https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/
 # Submission url  : https://leetcode.com/submissions/detail/993608947/"
 
 

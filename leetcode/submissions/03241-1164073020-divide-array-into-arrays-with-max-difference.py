@@ -1,5 +1,5 @@
 # Submission title: Divide Array Into Arrays With Max Difference
-# Submission url  : https://leetcode.com/problems/divide-array-into-arrays-with-max-difference/description/"
+# Submission url  : https://leetcode.com/problems/divide-array-into-arrays-with-max-difference/description/
 # Submission url  : https://leetcode.com/submissions/detail/1164073020/"
 
 

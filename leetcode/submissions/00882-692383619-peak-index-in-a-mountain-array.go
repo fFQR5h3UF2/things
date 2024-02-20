@@ -1,5 +1,5 @@
 // Submission title: Peak Index in a Mountain Array
-// Submission url  : https://leetcode.com/problems/peak-index-in-a-mountain-array/description/"
+// Submission url  : https://leetcode.com/problems/peak-index-in-a-mountain-array/description/
 // Submission url  : https://leetcode.com/submissions/detail/692383619/"
 package submissions
 

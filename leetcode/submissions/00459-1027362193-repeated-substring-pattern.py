@@ -1,5 +1,5 @@
 # Submission title: Repeated Substring Pattern
-# Submission url  : https://leetcode.com/problems/repeated-substring-pattern/description/"
+# Submission url  : https://leetcode.com/problems/repeated-substring-pattern/description/
 # Submission url  : https://leetcode.com/submissions/detail/1027362193/"
 
 

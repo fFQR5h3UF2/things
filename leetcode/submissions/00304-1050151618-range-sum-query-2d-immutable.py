@@ -1,5 +1,5 @@
 # Submission title: Range Sum Query 2D - Immutable
-# Submission url  : https://leetcode.com/problems/range-sum-query-2d-immutable/description/"
+# Submission url  : https://leetcode.com/problems/range-sum-query-2d-immutable/description/
 # Submission url  : https://leetcode.com/submissions/detail/1050151618/"
 
 

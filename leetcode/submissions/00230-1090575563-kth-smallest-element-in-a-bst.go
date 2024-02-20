@@ -1,5 +1,5 @@
 // Submission title: Kth Smallest Element in a BST
-// Submission url  : https://leetcode.com/problems/kth-smallest-element-in-a-bst/description/"
+// Submission url  : https://leetcode.com/problems/kth-smallest-element-in-a-bst/description/
 // Submission url  : https://leetcode.com/submissions/detail/1090575563/"
 package submissions
 

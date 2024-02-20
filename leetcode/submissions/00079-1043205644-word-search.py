@@ -1,5 +1,5 @@
 # Submission title: Word Search
-# Submission url  : https://leetcode.com/problems/word-search/description/"
+# Submission url  : https://leetcode.com/problems/word-search/description/
 # Submission url  : https://leetcode.com/submissions/detail/1043205644/"
 
 

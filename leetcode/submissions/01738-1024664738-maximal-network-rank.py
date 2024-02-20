@@ -1,5 +1,5 @@
 # Submission title: Maximal Network Rank
-# Submission url  : https://leetcode.com/problems/maximal-network-rank/description/"
+# Submission url  : https://leetcode.com/problems/maximal-network-rank/description/
 # Submission url  : https://leetcode.com/submissions/detail/1024664738/"
 
 

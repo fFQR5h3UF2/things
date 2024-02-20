@@ -1,5 +1,5 @@
 # Submission title: Palindromic Substrings
-# Submission url  : https://leetcode.com/problems/palindromic-substrings/description/"
+# Submission url  : https://leetcode.com/problems/palindromic-substrings/description/
 # Submission url  : https://leetcode.com/submissions/detail/1171379827/"
 
 

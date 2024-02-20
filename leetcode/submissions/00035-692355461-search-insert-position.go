@@ -1,5 +1,5 @@
 // Submission title: Search Insert Position
-// Submission url  : https://leetcode.com/problems/search-insert-position/description/"
+// Submission url  : https://leetcode.com/problems/search-insert-position/description/
 // Submission url  : https://leetcode.com/submissions/detail/692355461/"
 package submissions
 

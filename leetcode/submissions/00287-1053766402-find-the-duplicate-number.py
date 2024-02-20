@@ -1,5 +1,5 @@
 # Submission title: Find the Duplicate Number
-# Submission url  : https://leetcode.com/problems/find-the-duplicate-number/description/"
+# Submission url  : https://leetcode.com/problems/find-the-duplicate-number/description/
 # Submission url  : https://leetcode.com/submissions/detail/1053766402/"
 
 

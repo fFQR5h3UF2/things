@@ -1,5 +1,5 @@
 # Submission title: Minimum Number of Operations to Make Array Continuous
-# Submission url  : https://leetcode.com/problems/minimum-number-of-operations-to-make-array-continuous/description/"
+# Submission url  : https://leetcode.com/problems/minimum-number-of-operations-to-make-array-continuous/description/
 # Submission url  : https://leetcode.com/submissions/detail/1071538174/"
 
 

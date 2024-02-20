@@ -1,5 +1,5 @@
 // Submission title: 132 Pattern
-// Submission url  : https://leetcode.com/problems/132-pattern/description/"
+// Submission url  : https://leetcode.com/problems/132-pattern/description/
 // Submission url  : https://leetcode.com/submissions/detail/694834562/"
 package submissions
 

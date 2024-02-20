@@ -1,5 +1,5 @@
 # Submission title: Factorial Trailing Zeroes
-# Submission url  : https://leetcode.com/problems/factorial-trailing-zeroes/description/"
+# Submission url  : https://leetcode.com/problems/factorial-trailing-zeroes/description/
 # Submission url  : https://leetcode.com/submissions/detail/1057804154/"
 
 

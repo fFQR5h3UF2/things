@@ -1,5 +1,5 @@
 # Submission title: Balanced Binary Tree
-# Submission url  : https://leetcode.com/problems/balanced-binary-tree/description/"
+# Submission url  : https://leetcode.com/problems/balanced-binary-tree/description/
 # Submission url  : https://leetcode.com/submissions/detail/1047278821/"
 
 

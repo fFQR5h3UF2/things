@@ -1,5 +1,5 @@
 # Submission title: Binary Trees With Factors
-# Submission url  : https://leetcode.com/problems/binary-trees-with-factors/description/"
+# Submission url  : https://leetcode.com/problems/binary-trees-with-factors/description/
 # Submission url  : https://leetcode.com/submissions/detail/1084880212/"
 
 MOD = 10**9 + 7

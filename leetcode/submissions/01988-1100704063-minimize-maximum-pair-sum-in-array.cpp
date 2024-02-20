@@ -1,5 +1,5 @@
 // Submission title: Minimize Maximum Pair Sum in Array
-// Submission url  : https://leetcode.com/problems/minimize-maximum-pair-sum-in-array/description/"
+// Submission url  : https://leetcode.com/problems/minimize-maximum-pair-sum-in-array/description/
 // Submission url  : https://leetcode.com/submissions/detail/1100704063/"
 
 class Solution {

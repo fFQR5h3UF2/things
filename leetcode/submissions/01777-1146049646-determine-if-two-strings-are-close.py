@@ -1,5 +1,5 @@
 # Submission title: Determine if Two Strings Are Close
-# Submission url  : https://leetcode.com/problems/determine-if-two-strings-are-close/description/"
+# Submission url  : https://leetcode.com/problems/determine-if-two-strings-are-close/description/
 # Submission url  : https://leetcode.com/submissions/detail/1146049646/"
 
 

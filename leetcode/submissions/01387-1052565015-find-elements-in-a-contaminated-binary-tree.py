@@ -1,5 +1,5 @@
 # Submission title: Find Elements in a Contaminated Binary Tree
-# Submission url  : https://leetcode.com/problems/find-elements-in-a-contaminated-binary-tree/description/"
+# Submission url  : https://leetcode.com/problems/find-elements-in-a-contaminated-binary-tree/description/
 # Submission url  : https://leetcode.com/submissions/detail/1052565015/"
 
 

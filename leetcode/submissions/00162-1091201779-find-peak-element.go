@@ -1,5 +1,5 @@
 // Submission title: Find Peak Element
-// Submission url  : https://leetcode.com/problems/find-peak-element/description/"
+// Submission url  : https://leetcode.com/problems/find-peak-element/description/
 // Submission url  : https://leetcode.com/submissions/detail/1091201779/"
 package submissions
 

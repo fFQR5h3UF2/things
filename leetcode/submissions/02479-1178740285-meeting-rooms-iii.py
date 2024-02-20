@@ -1,5 +1,5 @@
 # Submission title: Meeting Rooms III
-# Submission url  : https://leetcode.com/problems/meeting-rooms-iii/description/"
+# Submission url  : https://leetcode.com/problems/meeting-rooms-iii/description/
 # Submission url  : https://leetcode.com/submissions/detail/1178740285/"
 
 

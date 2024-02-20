@@ -1,5 +1,5 @@
 # Submission title: Implement Magic Dictionary
-# Submission url  : https://leetcode.com/problems/implement-magic-dictionary/description/"
+# Submission url  : https://leetcode.com/problems/implement-magic-dictionary/description/
 # Submission url  : https://leetcode.com/submissions/detail/1051798721/"
 
 

@@ -1,5 +1,5 @@
 # Submission title: Edit Distance
-# Submission url  : https://leetcode.com/problems/edit-distance/description/"
+# Submission url  : https://leetcode.com/problems/edit-distance/description/
 # Submission url  : https://leetcode.com/submissions/detail/1015953562/"
 
 

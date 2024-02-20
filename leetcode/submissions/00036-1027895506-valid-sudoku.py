@@ -1,5 +1,5 @@
 # Submission title: Valid Sudoku
-# Submission url  : https://leetcode.com/problems/valid-sudoku/description/"
+# Submission url  : https://leetcode.com/problems/valid-sudoku/description/
 # Submission url  : https://leetcode.com/submissions/detail/1027895506/"
 
 

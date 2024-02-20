@@ -1,5 +1,5 @@
 # Submission title: Maximum Score of a Good Subarray
-# Submission url  : https://leetcode.com/problems/maximum-score-of-a-good-subarray/description/"
+# Submission url  : https://leetcode.com/problems/maximum-score-of-a-good-subarray/description/
 # Submission url  : https://leetcode.com/submissions/detail/1081281295/"
 
 

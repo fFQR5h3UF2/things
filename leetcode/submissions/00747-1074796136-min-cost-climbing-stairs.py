@@ -1,5 +1,5 @@
 # Submission title: Min Cost Climbing Stairs
-# Submission url  : https://leetcode.com/problems/min-cost-climbing-stairs/description/"
+# Submission url  : https://leetcode.com/problems/min-cost-climbing-stairs/description/
 # Submission url  : https://leetcode.com/submissions/detail/1074796136/"
 
 

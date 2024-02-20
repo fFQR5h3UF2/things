@@ -1,5 +1,5 @@
 # Submission title: Majority Element
-# Submission url  : https://leetcode.com/problems/majority-element/description/"
+# Submission url  : https://leetcode.com/problems/majority-element/description/
 # Submission url  : https://leetcode.com/submissions/detail/993676626/"
 
 

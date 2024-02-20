@@ -1,5 +1,5 @@
 // Submission title: Minimum Amount of Time to Collect Garbage
-// Submission url  : https://leetcode.com/problems/minimum-amount-of-time-to-collect-garbage/description/"
+// Submission url  : https://leetcode.com/problems/minimum-amount-of-time-to-collect-garbage/description/
 // Submission url  : https://leetcode.com/submissions/detail/1102661782/"
 
 class Solution {

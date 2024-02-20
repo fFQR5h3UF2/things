@@ -1,5 +1,5 @@
 # Submission title: Add Two Numbers
-# Submission url  : https://leetcode.com/problems/add-two-numbers/description/"
+# Submission url  : https://leetcode.com/problems/add-two-numbers/description/
 # Submission url  : https://leetcode.com/submissions/detail/997697463/"
 
 

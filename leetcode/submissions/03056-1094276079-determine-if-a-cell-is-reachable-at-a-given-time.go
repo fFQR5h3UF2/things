@@ -1,5 +1,5 @@
 // Submission title: Determine if a Cell Is Reachable at a Given Time
-// Submission url  : https://leetcode.com/problems/determine-if-a-cell-is-reachable-at-a-given-time/description/"
+// Submission url  : https://leetcode.com/problems/determine-if-a-cell-is-reachable-at-a-given-time/description/
 // Submission url  : https://leetcode.com/submissions/detail/1094276079/"
 package submissions
 

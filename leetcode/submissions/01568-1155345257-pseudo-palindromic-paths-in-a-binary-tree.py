@@ -1,5 +1,5 @@
 # Submission title: Pseudo-Palindromic Paths in a Binary Tree
-# Submission url  : https://leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree/description/"
+# Submission url  : https://leetcode.com/problems/pseudo-palindromic-paths-in-a-binary-tree/description/
 # Submission url  : https://leetcode.com/submissions/detail/1155345257/"
 
 

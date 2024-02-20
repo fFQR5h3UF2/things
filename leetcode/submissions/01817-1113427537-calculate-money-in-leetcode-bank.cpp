@@ -1,5 +1,5 @@
 // Submission title: Calculate Money in Leetcode Bank
-// Submission url  : https://leetcode.com/problems/calculate-money-in-leetcode-bank/description/"
+// Submission url  : https://leetcode.com/problems/calculate-money-in-leetcode-bank/description/
 // Submission url  : https://leetcode.com/submissions/detail/1113427537/"
 
 class Solution {

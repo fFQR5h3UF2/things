@@ -1,5 +1,5 @@
 // Submission title: Transpose Matrix
-// Submission url  : https://leetcode.com/problems/transpose-matrix/description/"
+// Submission url  : https://leetcode.com/problems/transpose-matrix/description/
 // Submission url  : https://leetcode.com/submissions/detail/1116406430/"
 
 class Solution {

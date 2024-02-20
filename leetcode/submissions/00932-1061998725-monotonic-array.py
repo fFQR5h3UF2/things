@@ -1,5 +1,5 @@
 # Submission title: Monotonic Array
-# Submission url  : https://leetcode.com/problems/monotonic-array/description/"
+# Submission url  : https://leetcode.com/problems/monotonic-array/description/
 # Submission url  : https://leetcode.com/submissions/detail/1061998725/"
 
 

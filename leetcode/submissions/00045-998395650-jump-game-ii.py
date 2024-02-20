@@ -1,5 +1,5 @@
 # Submission title: Jump Game II
-# Submission url  : https://leetcode.com/problems/jump-game-ii/description/"
+# Submission url  : https://leetcode.com/problems/jump-game-ii/description/
 # Submission url  : https://leetcode.com/submissions/detail/998395650/"
 
 

@@ -1,5 +1,5 @@
 // Submission title: Reduction Operations to Make the Array Elements Equal
-// Submission url  : https://leetcode.com/problems/reduction-operations-to-make-the-array-elements-equal/description/"
+// Submission url  : https://leetcode.com/problems/reduction-operations-to-make-the-array-elements-equal/description/
 // Submission url  : https://leetcode.com/submissions/detail/1101990098/"
 
 class Solution {

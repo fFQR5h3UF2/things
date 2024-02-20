@@ -1,5 +1,5 @@
 # Submission title: Sum of Values at Indices With K Set Bits
-# Submission url  : https://leetcode.com/problems/sum-of-values-at-indices-with-k-set-bits/description/"
+# Submission url  : https://leetcode.com/problems/sum-of-values-at-indices-with-k-set-bits/description/
 # Submission url  : https://leetcode.com/submissions/detail/1054836434/"
 
 

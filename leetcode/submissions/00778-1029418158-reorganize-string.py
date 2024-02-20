@@ -1,5 +1,5 @@
 # Submission title: Reorganize String
-# Submission url  : https://leetcode.com/problems/reorganize-string/description/"
+# Submission url  : https://leetcode.com/problems/reorganize-string/description/
 # Submission url  : https://leetcode.com/submissions/detail/1029418158/"
 
 

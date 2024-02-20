@@ -1,5 +1,5 @@
 # Submission title: Min Stack
-# Submission url  : https://leetcode.com/problems/min-stack/description/"
+# Submission url  : https://leetcode.com/problems/min-stack/description/
 # Submission url  : https://leetcode.com/submissions/detail/997558323/"
 
 from sortedcontainers import sortedset

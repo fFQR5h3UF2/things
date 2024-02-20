@@ -1,5 +1,5 @@
 # Submission title: Make String a Subsequence Using Cyclic Increments
-# Submission url  : https://leetcode.com/problems/make-string-a-subsequence-using-cyclic-increments/description/"
+# Submission url  : https://leetcode.com/problems/make-string-a-subsequence-using-cyclic-increments/description/
 # Submission url  : https://leetcode.com/submissions/detail/1025840714/"
 
 

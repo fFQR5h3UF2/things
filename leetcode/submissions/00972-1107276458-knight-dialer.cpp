@@ -1,5 +1,5 @@
 // Submission title: Knight Dialer
-// Submission url  : https://leetcode.com/problems/knight-dialer/description/"
+// Submission url  : https://leetcode.com/problems/knight-dialer/description/
 // Submission url  : https://leetcode.com/submissions/detail/1107276458/"
 
 class Solution {

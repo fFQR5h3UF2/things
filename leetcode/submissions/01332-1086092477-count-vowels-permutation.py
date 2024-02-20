@@ -1,5 +1,5 @@
 # Submission title: Count Vowels Permutation
-# Submission url  : https://leetcode.com/problems/count-vowels-permutation/description/"
+# Submission url  : https://leetcode.com/problems/count-vowels-permutation/description/
 # Submission url  : https://leetcode.com/submissions/detail/1086092477/"
 
 

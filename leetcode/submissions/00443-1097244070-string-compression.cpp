@@ -1,5 +1,5 @@
 // Submission title: String Compression
-// Submission url  : https://leetcode.com/problems/string-compression/description/"
+// Submission url  : https://leetcode.com/problems/string-compression/description/
 // Submission url  : https://leetcode.com/submissions/detail/1097244070/"
 
 class Solution {

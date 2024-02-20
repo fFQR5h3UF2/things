@@ -1,5 +1,5 @@
 // Submission title: Substring with Concatenation of All Words
-// Submission url  : https://leetcode.com/problems/substring-with-concatenation-of-all-words/description/"
+// Submission url  : https://leetcode.com/problems/substring-with-concatenation-of-all-words/description/
 // Submission url  : https://leetcode.com/submissions/detail/1091199226/"
 package submissions
 

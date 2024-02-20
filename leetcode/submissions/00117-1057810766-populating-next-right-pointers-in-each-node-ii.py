@@ -1,5 +1,5 @@
 # Submission title: Populating Next Right Pointers in Each Node II
-# Submission url  : https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/description/"
+# Submission url  : https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/description/
 # Submission url  : https://leetcode.com/submissions/detail/1057810766/"
 
 from collections import deque

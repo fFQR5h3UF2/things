@@ -1,5 +1,5 @@
 // Submission title: Binary Tree Preorder Traversal
-// Submission url  : https://leetcode.com/problems/binary-tree-preorder-traversal/description/"
+// Submission url  : https://leetcode.com/problems/binary-tree-preorder-traversal/description/
 // Submission url  : https://leetcode.com/submissions/detail/1102668286/"
 
 /**

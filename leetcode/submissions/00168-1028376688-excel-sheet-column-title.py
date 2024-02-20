@@ -1,5 +1,5 @@
 # Submission title: Excel Sheet Column Title
-# Submission url  : https://leetcode.com/problems/excel-sheet-column-title/description/"
+# Submission url  : https://leetcode.com/problems/excel-sheet-column-title/description/
 # Submission url  : https://leetcode.com/submissions/detail/1028376688/"
 
 

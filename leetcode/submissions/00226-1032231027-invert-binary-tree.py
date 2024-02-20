@@ -1,5 +1,5 @@
 # Submission title: Invert Binary Tree
-# Submission url  : https://leetcode.com/problems/invert-binary-tree/description/"
+# Submission url  : https://leetcode.com/problems/invert-binary-tree/description/
 # Submission url  : https://leetcode.com/submissions/detail/1032231027/"
 
 

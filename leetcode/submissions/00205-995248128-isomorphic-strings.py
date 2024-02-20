@@ -1,5 +1,5 @@
 # Submission title: Isomorphic Strings
-# Submission url  : https://leetcode.com/problems/isomorphic-strings/description/"
+# Submission url  : https://leetcode.com/problems/isomorphic-strings/description/
 # Submission url  : https://leetcode.com/submissions/detail/995248128/"
 
 

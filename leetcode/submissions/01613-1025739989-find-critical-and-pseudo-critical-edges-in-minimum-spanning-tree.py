@@ -1,5 +1,5 @@
 # Submission title: Find Critical and Pseudo-Critical Edges in Minimum Spanning Tree
-# Submission url  : https://leetcode.com/problems/find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree/description/"
+# Submission url  : https://leetcode.com/problems/find-critical-and-pseudo-critical-edges-in-minimum-spanning-tree/description/
 # Submission url  : https://leetcode.com/submissions/detail/1025739989/"
 
 

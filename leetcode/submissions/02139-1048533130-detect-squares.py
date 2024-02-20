@@ -1,5 +1,5 @@
 # Submission title: Detect Squares
-# Submission url  : https://leetcode.com/problems/detect-squares/description/"
+# Submission url  : https://leetcode.com/problems/detect-squares/description/
 # Submission url  : https://leetcode.com/submissions/detail/1048533130/"
 
 

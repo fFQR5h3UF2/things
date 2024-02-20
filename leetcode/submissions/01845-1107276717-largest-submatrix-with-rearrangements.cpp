@@ -1,5 +1,5 @@
 // Submission title: Largest Submatrix With Rearrangements
-// Submission url  : https://leetcode.com/problems/largest-submatrix-with-rearrangements/description/"
+// Submission url  : https://leetcode.com/problems/largest-submatrix-with-rearrangements/description/
 // Submission url  : https://leetcode.com/submissions/detail/1107276717/"
 
 class Solution {

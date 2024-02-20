@@ -1,5 +1,5 @@
 # Submission title: Generate Parentheses
-# Submission url  : https://leetcode.com/problems/generate-parentheses/description/"
+# Submission url  : https://leetcode.com/problems/generate-parentheses/description/
 # Submission url  : https://leetcode.com/submissions/detail/1010069020/"
 
 

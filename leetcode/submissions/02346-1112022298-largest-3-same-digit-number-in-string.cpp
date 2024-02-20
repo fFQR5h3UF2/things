@@ -1,5 +1,5 @@
 // Submission title: Largest 3-Same-Digit Number in String
-// Submission url  : https://leetcode.com/problems/largest-3-same-digit-number-in-string/description/"
+// Submission url  : https://leetcode.com/problems/largest-3-same-digit-number-in-string/description/
 // Submission url  : https://leetcode.com/submissions/detail/1112022298/"
 
 class Solution {

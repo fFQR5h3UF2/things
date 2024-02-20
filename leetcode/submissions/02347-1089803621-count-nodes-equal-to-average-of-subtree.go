@@ -1,5 +1,5 @@
 // Submission title: Count Nodes Equal to Average of Subtree
-// Submission url  : https://leetcode.com/problems/count-nodes-equal-to-average-of-subtree/description/"
+// Submission url  : https://leetcode.com/problems/count-nodes-equal-to-average-of-subtree/description/
 // Submission url  : https://leetcode.com/submissions/detail/1089803621/"
 package submissions
 

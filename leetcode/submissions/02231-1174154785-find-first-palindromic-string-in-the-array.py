@@ -1,5 +1,5 @@
 # Submission title: Find First Palindromic String in the Array
-# Submission url  : https://leetcode.com/problems/find-first-palindromic-string-in-the-array/description/"
+# Submission url  : https://leetcode.com/problems/find-first-palindromic-string-in-the-array/description/
 # Submission url  : https://leetcode.com/submissions/detail/1174154785/"
 
 

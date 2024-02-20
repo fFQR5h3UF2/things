@@ -1,5 +1,5 @@
 # Submission title: Number of Islands
-# Submission url  : https://leetcode.com/problems/number-of-islands/description/"
+# Submission url  : https://leetcode.com/problems/number-of-islands/description/
 # Submission url  : https://leetcode.com/submissions/detail/1035169027/"
 
 

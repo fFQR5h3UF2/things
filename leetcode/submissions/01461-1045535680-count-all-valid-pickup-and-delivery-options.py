@@ -1,5 +1,5 @@
 # Submission title: Count All Valid Pickup and Delivery Options
-# Submission url  : https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/description/"
+# Submission url  : https://leetcode.com/problems/count-all-valid-pickup-and-delivery-options/description/
 # Submission url  : https://leetcode.com/submissions/detail/1045535680/"
 
 

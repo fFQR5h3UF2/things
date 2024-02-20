@@ -1,5 +1,5 @@
 # Submission title: Insert Delete GetRandom O(1)
-# Submission url  : https://leetcode.com/problems/insert-delete-getrandom-o1/description/"
+# Submission url  : https://leetcode.com/problems/insert-delete-getrandom-o1/description/
 # Submission url  : https://leetcode.com/submissions/detail/998302519/"
 
 

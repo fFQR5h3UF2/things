@@ -1,5 +1,5 @@
 // Submission title: Reverse String
-// Submission url  : https://leetcode.com/problems/reverse-string/description/"
+// Submission url  : https://leetcode.com/problems/reverse-string/description/
 // Submission url  : https://leetcode.com/submissions/detail/693609237/"
 package submissions
 

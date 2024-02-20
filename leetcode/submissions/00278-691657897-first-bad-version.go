@@ -1,5 +1,5 @@
 // Submission title: First Bad Version
-// Submission url  : https://leetcode.com/problems/first-bad-version/description/"
+// Submission url  : https://leetcode.com/problems/first-bad-version/description/
 // Submission url  : https://leetcode.com/submissions/detail/691657897/"
 package submissions
 

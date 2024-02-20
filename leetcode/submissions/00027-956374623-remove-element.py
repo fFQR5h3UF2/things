@@ -1,5 +1,5 @@
 # Submission title: Remove Element
-# Submission url  : https://leetcode.com/problems/remove-element/description/"
+# Submission url  : https://leetcode.com/problems/remove-element/description/
 # Submission url  : https://leetcode.com/submissions/detail/956374623/"
 
 

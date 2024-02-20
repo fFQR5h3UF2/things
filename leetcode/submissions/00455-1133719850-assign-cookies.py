@@ -1,5 +1,5 @@
 # Submission title: Assign Cookies
-# Submission url  : https://leetcode.com/problems/assign-cookies/description/"
+# Submission url  : https://leetcode.com/problems/assign-cookies/description/
 # Submission url  : https://leetcode.com/submissions/detail/1133719850/"
 
 

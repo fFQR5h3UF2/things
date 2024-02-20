@@ -1,5 +1,5 @@
 // Submission title: Lowest Common Ancestor of a Binary Tree
-// Submission url  : https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/"
+// Submission url  : https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/description/
 // Submission url  : https://leetcode.com/submissions/detail/1089075769/"
 package submissions
 

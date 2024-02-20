@@ -1,5 +1,5 @@
 # Submission title: Parallel Courses III
-# Submission url  : https://leetcode.com/problems/parallel-courses-iii/description/"
+# Submission url  : https://leetcode.com/problems/parallel-courses-iii/description/
 # Submission url  : https://leetcode.com/submissions/detail/1078498046/"
 
 

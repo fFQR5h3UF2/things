@@ -1,5 +1,5 @@
 # Submission title: Max Dot Product of Two Subsequences
-# Submission url  : https://leetcode.com/problems/max-dot-product-of-two-subsequences/description/"
+# Submission url  : https://leetcode.com/problems/max-dot-product-of-two-subsequences/description/
 # Submission url  : https://leetcode.com/submissions/detail/1069975520/"
 
 

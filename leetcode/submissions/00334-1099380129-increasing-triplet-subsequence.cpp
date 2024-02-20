@@ -1,5 +1,5 @@
 // Submission title: Increasing Triplet Subsequence
-// Submission url  : https://leetcode.com/problems/increasing-triplet-subsequence/description/"
+// Submission url  : https://leetcode.com/problems/increasing-triplet-subsequence/description/
 // Submission url  : https://leetcode.com/submissions/detail/1099380129/"
 
 class Solution {

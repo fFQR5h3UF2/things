@@ -1,5 +1,5 @@
 # Submission title: Longest Substring Without Repeating Characters
-# Submission url  : https://leetcode.com/problems/longest-substring-without-repeating-characters/description/"
+# Submission url  : https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
 # Submission url  : https://leetcode.com/submissions/detail/1002878172/"
 
 

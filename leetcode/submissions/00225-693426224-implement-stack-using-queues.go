@@ -1,5 +1,5 @@
 // Submission title: Implement Stack using Queues
-// Submission url  : https://leetcode.com/problems/implement-stack-using-queues/description/"
+// Submission url  : https://leetcode.com/problems/implement-stack-using-queues/description/
 // Submission url  : https://leetcode.com/submissions/detail/693426224/"
 package submissions
 

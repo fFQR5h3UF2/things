@@ -1,5 +1,5 @@
 # Submission title: Encode and Decode TinyURL
-# Submission url  : https://leetcode.com/problems/encode-and-decode-tinyurl/description/"
+# Submission url  : https://leetcode.com/problems/encode-and-decode-tinyurl/description/
 # Submission url  : https://leetcode.com/submissions/detail/1051791289/"
 
 

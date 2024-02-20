@@ -1,5 +1,5 @@
 // Submission title: Removing Stars From a String
-// Submission url  : https://leetcode.com/problems/removing-stars-from-a-string/description/"
+// Submission url  : https://leetcode.com/problems/removing-stars-from-a-string/description/
 // Submission url  : https://leetcode.com/submissions/detail/1100708721/"
 
 class Solution {

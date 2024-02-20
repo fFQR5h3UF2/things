@@ -1,5 +1,5 @@
 # Submission title: Design a Food Rating System
-# Submission url  : https://leetcode.com/problems/design-a-food-rating-system/description/"
+# Submission url  : https://leetcode.com/problems/design-a-food-rating-system/description/
 # Submission url  : https://leetcode.com/submissions/detail/1121678346/"
 
 

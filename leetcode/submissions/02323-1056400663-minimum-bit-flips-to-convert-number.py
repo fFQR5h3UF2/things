@@ -1,5 +1,5 @@
 # Submission title: Minimum Bit Flips to Convert Number
-# Submission url  : https://leetcode.com/problems/minimum-bit-flips-to-convert-number/description/"
+# Submission url  : https://leetcode.com/problems/minimum-bit-flips-to-convert-number/description/
 # Submission url  : https://leetcode.com/submissions/detail/1056400663/"
 
 

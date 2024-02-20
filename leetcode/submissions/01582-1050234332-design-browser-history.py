@@ -1,5 +1,5 @@
 # Submission title: Design Browser History
-# Submission url  : https://leetcode.com/problems/design-browser-history/description/"
+# Submission url  : https://leetcode.com/problems/design-browser-history/description/
 # Submission url  : https://leetcode.com/submissions/detail/1050234332/"
 
 

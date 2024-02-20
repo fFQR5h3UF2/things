@@ -1,5 +1,5 @@
 # Submission title: Design Linked List
-# Submission url  : https://leetcode.com/problems/design-linked-list/description/"
+# Submission url  : https://leetcode.com/problems/design-linked-list/description/
 # Submission url  : https://leetcode.com/submissions/detail/1050221160/"
 
 

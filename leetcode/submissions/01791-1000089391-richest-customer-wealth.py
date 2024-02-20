@@ -1,5 +1,5 @@
 # Submission title: Richest Customer Wealth
-# Submission url  : https://leetcode.com/problems/richest-customer-wealth/description/"
+# Submission url  : https://leetcode.com/problems/richest-customer-wealth/description/
 # Submission url  : https://leetcode.com/submissions/detail/1000089391/"
 
 

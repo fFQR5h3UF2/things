@@ -1,5 +1,5 @@
 # Submission title: Number of Flowers in Full Bloom
-# Submission url  : https://leetcode.com/problems/number-of-flowers-in-full-bloom/description/"
+# Submission url  : https://leetcode.com/problems/number-of-flowers-in-full-bloom/description/
 # Submission url  : https://leetcode.com/submissions/detail/1072633767/"
 
 

@@ -1,5 +1,5 @@
 # Submission title: Shortest Path Visiting All Nodes
-# Submission url  : https://leetcode.com/problems/shortest-path-visiting-all-nodes/description/"
+# Submission url  : https://leetcode.com/problems/shortest-path-visiting-all-nodes/description/
 # Submission url  : https://leetcode.com/submissions/detail/1051649878/"
 
 from collections import deque, namedtuple

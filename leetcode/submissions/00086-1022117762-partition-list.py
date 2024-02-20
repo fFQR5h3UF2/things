@@ -1,5 +1,5 @@
 # Submission title: Partition List
-# Submission url  : https://leetcode.com/problems/partition-list/description/"
+# Submission url  : https://leetcode.com/problems/partition-list/description/
 # Submission url  : https://leetcode.com/submissions/detail/1022117762/"
 
 

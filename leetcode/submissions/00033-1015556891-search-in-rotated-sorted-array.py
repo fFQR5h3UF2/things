@@ -1,5 +1,5 @@
 # Submission title: Search in Rotated Sorted Array
-# Submission url  : https://leetcode.com/problems/search-in-rotated-sorted-array/description/"
+# Submission url  : https://leetcode.com/problems/search-in-rotated-sorted-array/description/
 # Submission url  : https://leetcode.com/submissions/detail/1015556891/"
 
 

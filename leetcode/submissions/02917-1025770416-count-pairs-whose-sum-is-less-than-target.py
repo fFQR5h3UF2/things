@@ -1,5 +1,5 @@
 # Submission title: Count Pairs Whose Sum is Less than Target
-# Submission url  : https://leetcode.com/problems/count-pairs-whose-sum-is-less-than-target/description/"
+# Submission url  : https://leetcode.com/problems/count-pairs-whose-sum-is-less-than-target/description/
 # Submission url  : https://leetcode.com/submissions/detail/1025770416/"
 
 

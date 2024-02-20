@@ -1,5 +1,5 @@
 // Submission title: Valid Parentheses
-// Submission url  : https://leetcode.com/problems/valid-parentheses/description/"
+// Submission url  : https://leetcode.com/problems/valid-parentheses/description/
 // Submission url  : https://leetcode.com/submissions/detail/690416642/"
 package submissions
 

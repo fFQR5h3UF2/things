@@ -1,5 +1,5 @@
 // Submission title: Sign of the Product of an Array
-// Submission url  : https://leetcode.com/problems/sign-of-the-product-of-an-array/description/"
+// Submission url  : https://leetcode.com/problems/sign-of-the-product-of-an-array/description/
 // Submission url  : https://leetcode.com/submissions/detail/693736702/"
 package submissions
 

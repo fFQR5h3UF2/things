@@ -1,5 +1,5 @@
 // Submission title: Average of Levels in Binary Tree
-// Submission url  : https://leetcode.com/problems/average-of-levels-in-binary-tree/description/"
+// Submission url  : https://leetcode.com/problems/average-of-levels-in-binary-tree/description/
 // Submission url  : https://leetcode.com/submissions/detail/1087469134/"
 package submissions
 

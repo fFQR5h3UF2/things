@@ -1,5 +1,5 @@
 # Submission title: Min Cost to Connect All Points
-# Submission url  : https://leetcode.com/problems/min-cost-to-connect-all-points/description/"
+# Submission url  : https://leetcode.com/problems/min-cost-to-connect-all-points/description/
 # Submission url  : https://leetcode.com/submissions/detail/1049921218/"
 
 

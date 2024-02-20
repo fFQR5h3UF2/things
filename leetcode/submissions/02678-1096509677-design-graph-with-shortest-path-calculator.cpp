@@ -1,5 +1,5 @@
 // Submission title: Design Graph With Shortest Path Calculator
-// Submission url  : https://leetcode.com/problems/design-graph-with-shortest-path-calculator/description/"
+// Submission url  : https://leetcode.com/problems/design-graph-with-shortest-path-calculator/description/
 // Submission url  : https://leetcode.com/submissions/detail/1096509677/"
 
 class Graph {

@@ -1,5 +1,5 @@
 # Submission title: Minimum Window Substring
-# Submission url  : https://leetcode.com/problems/minimum-window-substring/description/"
+# Submission url  : https://leetcode.com/problems/minimum-window-substring/description/
 # Submission url  : https://leetcode.com/submissions/detail/1165812156/"
 
 

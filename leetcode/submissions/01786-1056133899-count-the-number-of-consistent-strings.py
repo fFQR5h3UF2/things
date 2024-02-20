@@ -1,5 +1,5 @@
 # Submission title: Count the Number of Consistent Strings
-# Submission url  : https://leetcode.com/problems/count-the-number-of-consistent-strings/description/"
+# Submission url  : https://leetcode.com/problems/count-the-number-of-consistent-strings/description/
 # Submission url  : https://leetcode.com/submissions/detail/1056133899/"
 
 
