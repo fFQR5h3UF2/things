@@ -1,0 +1,17 @@
+name: build
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    paths:
+      - src/**
+      - .github/**/*
+      - pom.xml
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: reuse-build
+    uses: ./.github/workflows/reuse-build.yml

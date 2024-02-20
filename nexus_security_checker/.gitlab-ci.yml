@@ -1,0 +1,50 @@
+stages:
+  - test
+
+build:
+  tags:
+    - linux
+  stage: test
+  variables:
+    NEXUS_URL: http://kongrentian.com:8081
+    NEXUS_VERSION: 3.37.3
+    DIRECTORY_DEPLOY: /var/nexus/deploy
+    DIRECTORY_DATA: /var/nexus/data
+  rules:
+    - changes:
+        - src/**/*
+        - .gitlab-ci.yml
+        - docker-compose.yml
+        - pom.xml
+  artifacts:
+    paths:
+      - target/*.kar
+    when: always
+  script:
+    - ./mvnw -P buildKar clean verify --show-version --batch-mode --errors
+    - chmod 777 target/*.kar
+    - rm -f "${DIRECTORY_DEPLOY}"/*.kar
+    - cp target/*.kar "${DIRECTORY_DEPLOY}/"
+    - /usr/libexec/docker/cli-plugins/docker-compose
+      up
+      --detach
+      --remove-orphans
+    - docker restart nexus
+    - start=$(date +%s)
+    - until $(curl
+      --fail
+      --silent
+      --output /dev/null
+      "${NEXUS_URL}/service/rest/v1/status/writable"
+      ); do
+      sleep 10;
+      [ "$(($(date +%s)-start))" -gt 120 ] && exit 1;
+      done
+    - curl
+      --fail
+      --user "${NEXUS_LOGIN}:${NEXUS_PASSWORD}"
+      "${NEXUS_URL}/repository/pypi/packages/pip/21.3.1/pip-21.3.1-py3-none-any.whl"
+      > /dev/null
+      || fail_flag=True
+    - tail -n 300 "${DIRECTORY_DATA}/log/nexus.log"
+    - test "${fail_flag}" && exit 1
