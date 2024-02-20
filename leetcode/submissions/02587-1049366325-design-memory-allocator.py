@@ -1,5 +1,5 @@
 # Submission title: Design Memory Allocator
-# Submission url  : https://leetcode.com/problems/design-memory-allocator/description/"
+# Submission url  : https://leetcode.com/problems/design-memory-allocator/description/
 # Submission url  : https://leetcode.com/submissions/detail/1049366325/"
 
 

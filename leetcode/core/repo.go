@@ -66,10 +66,11 @@ func (r *Repo) readStorageFile() (*model.SubmissonsStorage, error) {
 }
 
 func (r *Repo) writeStorageFile(storage *model.SubmissonsStorage) error {
-	text, err := json.Marshal(storage)
+	text, err := json.MarshalIndent(storage, "", "  ")
 	if err != nil {
 		return fmt.Errorf("could not write '%s': %w", r.config.SubmissionsFile, err)
 	}
+	text = append(text, '\n')
 	err = os.WriteFile(r.config.SubmissionsFile, text, 0644)
 	if err != nil {
 		return fmt.Errorf("could not write '%s': %w", r.config.SubmissionsFile, err)

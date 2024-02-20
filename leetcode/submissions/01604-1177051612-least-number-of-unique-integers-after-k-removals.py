@@ -1,5 +1,5 @@
 # Submission title: Least Number of Unique Integers after K Removals
-# Submission url  : https://leetcode.com/problems/least-number-of-unique-integers-after-k-removals/description/"
+# Submission url  : https://leetcode.com/problems/least-number-of-unique-integers-after-k-removals/description/
 # Submission url  : https://leetcode.com/submissions/detail/1177051612/"
 
 

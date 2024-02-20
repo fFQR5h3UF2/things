@@ -1,5 +1,5 @@
 # Submission title: Find Minimum in Rotated Sorted Array
-# Submission url  : https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/"
+# Submission url  : https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/description/
 # Submission url  : https://leetcode.com/submissions/detail/1058493656/"
 
 

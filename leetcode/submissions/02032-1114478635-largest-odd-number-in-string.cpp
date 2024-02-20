@@ -1,5 +1,5 @@
 // Submission title: Largest Odd Number in String
-// Submission url  : https://leetcode.com/problems/largest-odd-number-in-string/description/"
+// Submission url  : https://leetcode.com/problems/largest-odd-number-in-string/description/
 // Submission url  : https://leetcode.com/submissions/detail/1114478635/"
 
 class Solution {

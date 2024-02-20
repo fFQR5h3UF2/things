@@ -1,5 +1,5 @@
 # Submission title: 3Sum
-# Submission url  : https://leetcode.com/problems/3sum/description/"
+# Submission url  : https://leetcode.com/problems/3sum/description/
 # Submission url  : https://leetcode.com/submissions/detail/1018504399/"
 
 

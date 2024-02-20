@@ -1,5 +1,5 @@
 // Submission title: Arithmetic Subarrays
-// Submission url  : https://leetcode.com/problems/arithmetic-subarrays/description/"
+// Submission url  : https://leetcode.com/problems/arithmetic-subarrays/description/
 // Submission url  : https://leetcode.com/submissions/detail/1104778363/"
 
 class Solution {

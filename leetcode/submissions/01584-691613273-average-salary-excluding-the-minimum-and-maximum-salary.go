@@ -1,5 +1,5 @@
 // Submission title: Average Salary Excluding the Minimum and Maximum Salary
-// Submission url  : https://leetcode.com/problems/average-salary-excluding-the-minimum-and-maximum-salary/description/"
+// Submission url  : https://leetcode.com/problems/average-salary-excluding-the-minimum-and-maximum-salary/description/
 // Submission url  : https://leetcode.com/submissions/detail/691613273/"
 package submissions
 

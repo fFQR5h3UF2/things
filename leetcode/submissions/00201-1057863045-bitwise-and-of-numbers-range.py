@@ -1,5 +1,5 @@
 # Submission title: Bitwise AND of Numbers Range
-# Submission url  : https://leetcode.com/problems/bitwise-and-of-numbers-range/description/"
+# Submission url  : https://leetcode.com/problems/bitwise-and-of-numbers-range/description/
 # Submission url  : https://leetcode.com/submissions/detail/1057863045/"
 
 

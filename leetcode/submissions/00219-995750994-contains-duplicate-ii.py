@@ -1,5 +1,5 @@
 # Submission title: Contains Duplicate II
-# Submission url  : https://leetcode.com/problems/contains-duplicate-ii/description/"
+# Submission url  : https://leetcode.com/problems/contains-duplicate-ii/description/
 # Submission url  : https://leetcode.com/submissions/detail/995750994/"
 
 

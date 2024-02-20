@@ -1,5 +1,5 @@
 // Submission title: Sort List
-// Submission url  : https://leetcode.com/problems/sort-list/description/"
+// Submission url  : https://leetcode.com/problems/sort-list/description/
 // Submission url  : https://leetcode.com/submissions/detail/1089829638/"
 package submissions
 

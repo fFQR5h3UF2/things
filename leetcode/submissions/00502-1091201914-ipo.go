@@ -1,5 +1,5 @@
 // Submission title: IPO
-// Submission url  : https://leetcode.com/problems/ipo/description/"
+// Submission url  : https://leetcode.com/problems/ipo/description/
 // Submission url  : https://leetcode.com/submissions/detail/1091201914/"
 package submissions
 

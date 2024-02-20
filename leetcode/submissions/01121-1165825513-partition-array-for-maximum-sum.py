@@ -1,5 +1,5 @@
 # Submission title: Partition Array for Maximum Sum
-# Submission url  : https://leetcode.com/problems/partition-array-for-maximum-sum/description/"
+# Submission url  : https://leetcode.com/problems/partition-array-for-maximum-sum/description/
 # Submission url  : https://leetcode.com/submissions/detail/1165825513/"
 
 

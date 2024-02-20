@@ -1,5 +1,5 @@
 # Submission title: Maximum Length of a Concatenated String with Unique Characters
-# Submission url  : https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/description/"
+# Submission url  : https://leetcode.com/problems/maximum-length-of-a-concatenated-string-with-unique-characters/description/
 # Submission url  : https://leetcode.com/submissions/detail/1154381353/"
 
 

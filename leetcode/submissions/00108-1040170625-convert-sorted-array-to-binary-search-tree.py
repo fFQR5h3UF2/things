@@ -1,5 +1,5 @@
 # Submission title: Convert Sorted Array to Binary Search Tree
-# Submission url  : https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/description/"
+# Submission url  : https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/description/
 # Submission url  : https://leetcode.com/submissions/detail/1040170625/"
 
 

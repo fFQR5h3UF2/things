@@ -1,5 +1,5 @@
 // Submission title: Contains Duplicate
-// Submission url  : https://leetcode.com/problems/contains-duplicate/description/"
+// Submission url  : https://leetcode.com/problems/contains-duplicate/description/
 // Submission url  : https://leetcode.com/submissions/detail/691371448/"
 package submissions
 

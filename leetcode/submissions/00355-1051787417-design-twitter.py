@@ -1,5 +1,5 @@
 # Submission title: Design Twitter
-# Submission url  : https://leetcode.com/problems/design-twitter/description/"
+# Submission url  : https://leetcode.com/problems/design-twitter/description/
 # Submission url  : https://leetcode.com/submissions/detail/1051787417/"
 
 

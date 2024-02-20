@@ -1,5 +1,5 @@
 # Submission title: Design Parking System
-# Submission url  : https://leetcode.com/problems/design-parking-system/description/"
+# Submission url  : https://leetcode.com/problems/design-parking-system/description/
 # Submission url  : https://leetcode.com/submissions/detail/1047433200/"
 
 

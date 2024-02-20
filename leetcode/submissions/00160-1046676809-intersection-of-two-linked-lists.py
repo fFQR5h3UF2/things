@@ -1,5 +1,5 @@
 # Submission title: Intersection of Two Linked Lists
-# Submission url  : https://leetcode.com/problems/intersection-of-two-linked-lists/description/"
+# Submission url  : https://leetcode.com/problems/intersection-of-two-linked-lists/description/
 # Submission url  : https://leetcode.com/submissions/detail/1046676809/"
 
 

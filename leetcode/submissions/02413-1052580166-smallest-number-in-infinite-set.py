@@ -1,5 +1,5 @@
 # Submission title: Smallest Number in Infinite Set
-# Submission url  : https://leetcode.com/problems/smallest-number-in-infinite-set/description/"
+# Submission url  : https://leetcode.com/problems/smallest-number-in-infinite-set/description/
 # Submission url  : https://leetcode.com/submissions/detail/1052580166/"
 
 

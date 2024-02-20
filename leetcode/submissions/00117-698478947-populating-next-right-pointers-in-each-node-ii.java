@@ -1,5 +1,5 @@
 // Submission title: Populating Next Right Pointers in Each Node II
-// Submission url  : https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/description/"
+// Submission url  : https://leetcode.com/problems/populating-next-right-pointers-in-each-node-ii/description/
 // Submission url  : https://leetcode.com/submissions/detail/698478947/"
 com.shishifubing.dotfiles.submissions
 class Solution {

@@ -1,5 +1,5 @@
 // Submission title: Find Median from Data Stream
-// Submission url  : https://leetcode.com/problems/find-median-from-data-stream/description/"
+// Submission url  : https://leetcode.com/problems/find-median-from-data-stream/description/
 // Submission url  : https://leetcode.com/submissions/detail/1091202059/"
 package submissions
 

@@ -1,5 +1,5 @@
 // Submission title: Count Odd Numbers in an Interval Range
-// Submission url  : https://leetcode.com/problems/count-odd-numbers-in-an-interval-range/description/"
+// Submission url  : https://leetcode.com/problems/count-odd-numbers-in-an-interval-range/description/
 // Submission url  : https://leetcode.com/submissions/detail/691609936/"
 package submissions
 

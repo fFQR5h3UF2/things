@@ -1,5 +1,5 @@
 # Submission title: Median of Two Sorted Arrays
-# Submission url  : https://leetcode.com/problems/median-of-two-sorted-arrays/description/"
+# Submission url  : https://leetcode.com/problems/median-of-two-sorted-arrays/description/
 # Submission url  : https://leetcode.com/submissions/detail/1055193922/"
 
 

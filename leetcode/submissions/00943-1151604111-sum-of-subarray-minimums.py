@@ -1,5 +1,5 @@
 # Submission title: Sum of Subarray Minimums
-# Submission url  : https://leetcode.com/problems/sum-of-subarray-minimums/description/"
+# Submission url  : https://leetcode.com/problems/sum-of-subarray-minimums/description/
 # Submission url  : https://leetcode.com/submissions/detail/1151604111/"
 
 

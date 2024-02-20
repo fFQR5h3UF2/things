@@ -1,5 +1,5 @@
 # Submission title: Minimum Path Sum
-# Submission url  : https://leetcode.com/problems/minimum-path-sum/description/"
+# Submission url  : https://leetcode.com/problems/minimum-path-sum/description/
 # Submission url  : https://leetcode.com/submissions/detail/1015877410/"
 
 

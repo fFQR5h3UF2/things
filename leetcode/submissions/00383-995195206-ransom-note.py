@@ -1,5 +1,5 @@
 # Submission title: Ransom Note
-# Submission url  : https://leetcode.com/problems/ransom-note/description/"
+# Submission url  : https://leetcode.com/problems/ransom-note/description/
 # Submission url  : https://leetcode.com/submissions/detail/995195206/"
 
 

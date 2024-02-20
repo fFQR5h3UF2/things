@@ -1,5 +1,5 @@
 // Submission title: Reverse Linked List
-// Submission url  : https://leetcode.com/problems/reverse-linked-list/description/"
+// Submission url  : https://leetcode.com/problems/reverse-linked-list/description/
 // Submission url  : https://leetcode.com/submissions/detail/1096520085/"
 
 

@@ -1,5 +1,5 @@
 # Submission title: Find the Difference
-# Submission url  : https://leetcode.com/problems/find-the-difference/description/"
+# Submission url  : https://leetcode.com/problems/find-the-difference/description/
 # Submission url  : https://leetcode.com/submissions/detail/1058460034/"
 
 

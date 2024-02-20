@@ -1,5 +1,5 @@
 # Submission title: Search a 2D Matrix
-# Submission url  : https://leetcode.com/problems/search-a-2d-matrix/description/"
+# Submission url  : https://leetcode.com/problems/search-a-2d-matrix/description/
 # Submission url  : https://leetcode.com/submissions/detail/1014540797/"
 
 

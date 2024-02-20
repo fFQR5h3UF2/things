@@ -1,5 +1,5 @@
 // Submission title: Deepest Leaves Sum
-// Submission url  : https://leetcode.com/problems/deepest-leaves-sum/description/"
+// Submission url  : https://leetcode.com/problems/deepest-leaves-sum/description/
 // Submission url  : https://leetcode.com/submissions/detail/700092884/"
 com.shishifubing.dotfiles.submissions
 /**

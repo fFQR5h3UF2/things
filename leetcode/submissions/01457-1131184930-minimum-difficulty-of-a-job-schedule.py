@@ -1,5 +1,5 @@
 # Submission title: Minimum Difficulty of a Job Schedule
-# Submission url  : https://leetcode.com/problems/minimum-difficulty-of-a-job-schedule/description/"
+# Submission url  : https://leetcode.com/problems/minimum-difficulty-of-a-job-schedule/description/
 # Submission url  : https://leetcode.com/submissions/detail/1131184930/"
 
 

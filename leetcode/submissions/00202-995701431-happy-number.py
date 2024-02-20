@@ -1,5 +1,5 @@
 # Submission title: Happy Number
-# Submission url  : https://leetcode.com/problems/happy-number/description/"
+# Submission url  : https://leetcode.com/problems/happy-number/description/
 # Submission url  : https://leetcode.com/submissions/detail/995701431/"
 
 

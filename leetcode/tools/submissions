@@ -22,13 +22,13 @@ generate_submission_dir() {
         generate
     poetry run black --quiet "${submissions_dir}"
     gofmt -w "${submissions_dir}"
-    poetry run pre-commit run --files "${submissions_dir}"/* || true
+    poetry run pre-commit run --files "${submissions_file}" "${submissions_dir}"/* || true
 }
 
 update() {
     git checkout -B "${branch}"
     update_submission_file
-    generate_submissions
+    generate_submission_dir
     git add "${submissions_file}" "${submissions_dir}"
     git commit -m "${commit}"
     git push origin "${branch}"

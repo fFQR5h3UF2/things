@@ -1,5 +1,5 @@
 # Submission title: Design an Ordered Stream
-# Submission url  : https://leetcode.com/problems/design-an-ordered-stream/description/"
+# Submission url  : https://leetcode.com/problems/design-an-ordered-stream/description/
 # Submission url  : https://leetcode.com/submissions/detail/1051126004/"
 
 

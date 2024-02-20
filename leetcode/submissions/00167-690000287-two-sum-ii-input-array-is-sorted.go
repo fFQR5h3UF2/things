@@ -1,5 +1,5 @@
 // Submission title: Two Sum II - Input Array Is Sorted
-// Submission url  : https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/"
+// Submission url  : https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/description/
 // Submission url  : https://leetcode.com/submissions/detail/690000287/"
 package submissions
 

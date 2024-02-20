@@ -1,5 +1,5 @@
 // Submission title: Construct Binary Tree from Preorder and Inorder Traversal
-// Submission url  : https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/"
+// Submission url  : https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/
 // Submission url  : https://leetcode.com/submissions/detail/1091200227/"
 package submissions
 

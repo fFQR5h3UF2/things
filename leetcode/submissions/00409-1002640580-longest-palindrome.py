@@ -1,5 +1,5 @@
 # Submission title: Longest Palindrome
-# Submission url  : https://leetcode.com/problems/longest-palindrome/description/"
+# Submission url  : https://leetcode.com/problems/longest-palindrome/description/
 # Submission url  : https://leetcode.com/submissions/detail/1002640580/"
 
 

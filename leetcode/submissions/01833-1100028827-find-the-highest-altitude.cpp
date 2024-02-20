@@ -1,5 +1,5 @@
 // Submission title: Find the Highest Altitude
-// Submission url  : https://leetcode.com/problems/find-the-highest-altitude/description/"
+// Submission url  : https://leetcode.com/problems/find-the-highest-altitude/description/
 // Submission url  : https://leetcode.com/submissions/detail/1100028827/"
 
 class Solution {

@@ -1,5 +1,5 @@
 // Submission title: Remove Linked List Elements
-// Submission url  : https://leetcode.com/problems/remove-linked-list-elements/description/"
+// Submission url  : https://leetcode.com/problems/remove-linked-list-elements/description/
 // Submission url  : https://leetcode.com/submissions/detail/1096538732/"
 
 /**

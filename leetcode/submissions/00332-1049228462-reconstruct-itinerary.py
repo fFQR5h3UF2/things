@@ -1,5 +1,5 @@
 # Submission title: Reconstruct Itinerary
-# Submission url  : https://leetcode.com/problems/reconstruct-itinerary/description/"
+# Submission url  : https://leetcode.com/problems/reconstruct-itinerary/description/
 # Submission url  : https://leetcode.com/submissions/detail/1049228462/"
 
 

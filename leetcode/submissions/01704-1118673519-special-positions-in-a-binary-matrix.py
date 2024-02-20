@@ -1,5 +1,5 @@
 # Submission title: Special Positions in a Binary Matrix
-# Submission url  : https://leetcode.com/problems/special-positions-in-a-binary-matrix/description/"
+# Submission url  : https://leetcode.com/problems/special-positions-in-a-binary-matrix/description/
 # Submission url  : https://leetcode.com/submissions/detail/1118673519/"
 
 

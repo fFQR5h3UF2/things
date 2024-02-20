@@ -1,5 +1,5 @@
 // Submission title: Count Number of Homogenous Substrings
-// Submission url  : https://leetcode.com/problems/count-number-of-homogenous-substrings/description/"
+// Submission url  : https://leetcode.com/problems/count-number-of-homogenous-substrings/description/
 // Submission url  : https://leetcode.com/submissions/detail/1095037372/"
 package submissions
 

@@ -1,5 +1,5 @@
 # Submission title: Prime Number of Set Bits in Binary Representation
-# Submission url  : https://leetcode.com/problems/prime-number-of-set-bits-in-binary-representation/description/"
+# Submission url  : https://leetcode.com/problems/prime-number-of-set-bits-in-binary-representation/description/
 # Submission url  : https://leetcode.com/submissions/detail/1056027873/"
 
 

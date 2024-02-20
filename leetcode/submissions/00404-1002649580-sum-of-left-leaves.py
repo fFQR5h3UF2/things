@@ -1,5 +1,5 @@
 # Submission title: Sum of Left Leaves
-# Submission url  : https://leetcode.com/problems/sum-of-left-leaves/description/"
+# Submission url  : https://leetcode.com/problems/sum-of-left-leaves/description/
 # Submission url  : https://leetcode.com/submissions/detail/1002649580/"
 
 

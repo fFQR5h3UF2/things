@@ -1,5 +1,5 @@
 # Submission title: Rotate List
-# Submission url  : https://leetcode.com/problems/rotate-list/description/"
+# Submission url  : https://leetcode.com/problems/rotate-list/description/
 # Submission url  : https://leetcode.com/submissions/detail/1057148257/"
 
 

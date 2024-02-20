@@ -1,5 +1,5 @@
 # Submission title: Intersection of Two Arrays
-# Submission url  : https://leetcode.com/problems/intersection-of-two-arrays/description/"
+# Submission url  : https://leetcode.com/problems/intersection-of-two-arrays/description/
 # Submission url  : https://leetcode.com/submissions/detail/1002668315/"
 
 

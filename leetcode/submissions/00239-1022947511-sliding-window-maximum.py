@@ -1,5 +1,5 @@
 # Submission title: Sliding Window Maximum
-# Submission url  : https://leetcode.com/problems/sliding-window-maximum/description/"
+# Submission url  : https://leetcode.com/problems/sliding-window-maximum/description/
 # Submission url  : https://leetcode.com/submissions/detail/1022947511/"
 
 import sortedcontainers

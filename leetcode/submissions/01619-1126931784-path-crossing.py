@@ -1,5 +1,5 @@
 # Submission title: Path Crossing
-# Submission url  : https://leetcode.com/problems/path-crossing/description/"
+# Submission url  : https://leetcode.com/problems/path-crossing/description/
 # Submission url  : https://leetcode.com/submissions/detail/1126931784/"
 
 

@@ -1,5 +1,5 @@
 # Submission title: Maximum Difference Between Node and Ancestor
-# Submission url  : https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/description/"
+# Submission url  : https://leetcode.com/problems/maximum-difference-between-node-and-ancestor/description/
 # Submission url  : https://leetcode.com/submissions/detail/1143178340/"
 
 

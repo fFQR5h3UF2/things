@@ -1,5 +1,5 @@
 # Submission title: Poor Pigs
-# Submission url  : https://leetcode.com/problems/poor-pigs/description/"
+# Submission url  : https://leetcode.com/problems/poor-pigs/description/
 # Submission url  : https://leetcode.com/submissions/detail/1086938416/"
 
 

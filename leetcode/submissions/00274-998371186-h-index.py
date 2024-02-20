@@ -1,5 +1,5 @@
 # Submission title: H-Index
-# Submission url  : https://leetcode.com/problems/h-index/description/"
+# Submission url  : https://leetcode.com/problems/h-index/description/
 # Submission url  : https://leetcode.com/submissions/detail/998371186/"
 
 

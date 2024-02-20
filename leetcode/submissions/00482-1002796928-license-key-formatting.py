@@ -1,5 +1,5 @@
 # Submission title: License Key Formatting
-# Submission url  : https://leetcode.com/problems/license-key-formatting/description/"
+# Submission url  : https://leetcode.com/problems/license-key-formatting/description/
 # Submission url  : https://leetcode.com/submissions/detail/1002796928/"
 
 

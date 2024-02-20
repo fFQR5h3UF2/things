@@ -1,5 +1,5 @@
 # Submission title: Decoded String at Index
-# Submission url  : https://leetcode.com/problems/decoded-string-at-index/description/"
+# Submission url  : https://leetcode.com/problems/decoded-string-at-index/description/
 # Submission url  : https://leetcode.com/submissions/detail/1060597351/"
 
 

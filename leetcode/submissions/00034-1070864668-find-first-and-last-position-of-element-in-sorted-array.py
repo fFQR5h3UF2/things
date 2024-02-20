@@ -1,5 +1,5 @@
 # Submission title: Find First and Last Position of Element in Sorted Array
-# Submission url  : https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/"
+# Submission url  : https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/description/
 # Submission url  : https://leetcode.com/submissions/detail/1070864668/"
 
 

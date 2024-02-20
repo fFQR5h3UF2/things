@@ -1,5 +1,5 @@
 // Submission title: Flatten Binary Tree to Linked List
-// Submission url  : https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/"
+// Submission url  : https://leetcode.com/problems/flatten-binary-tree-to-linked-list/description/
 // Submission url  : https://leetcode.com/submissions/detail/1090504012/"
 package submissions
 

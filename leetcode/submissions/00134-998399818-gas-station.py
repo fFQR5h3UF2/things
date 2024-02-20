@@ -1,5 +1,5 @@
 # Submission title: Gas Station
-# Submission url  : https://leetcode.com/problems/gas-station/description/"
+# Submission url  : https://leetcode.com/problems/gas-station/description/
 # Submission url  : https://leetcode.com/submissions/detail/998399818/"
 
 

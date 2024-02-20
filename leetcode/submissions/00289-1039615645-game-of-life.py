@@ -1,5 +1,5 @@
 # Submission title: Game of Life
-# Submission url  : https://leetcode.com/problems/game-of-life/description/"
+# Submission url  : https://leetcode.com/problems/game-of-life/description/
 # Submission url  : https://leetcode.com/submissions/detail/1039615645/"
 
 

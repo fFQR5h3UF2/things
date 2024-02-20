@@ -1,5 +1,5 @@
 // Submission title: Eliminate Maximum Number of Monsters
-// Submission url  : https://leetcode.com/problems/eliminate-maximum-number-of-monsters/description/"
+// Submission url  : https://leetcode.com/problems/eliminate-maximum-number-of-monsters/description/
 // Submission url  : https://leetcode.com/submissions/detail/1093720985/"
 package submissions
 

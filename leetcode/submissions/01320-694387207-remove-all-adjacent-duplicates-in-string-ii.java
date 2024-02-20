@@ -1,5 +1,5 @@
 // Submission title: Remove All Adjacent Duplicates in String II
-// Submission url  : https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/description/"
+// Submission url  : https://leetcode.com/problems/remove-all-adjacent-duplicates-in-string-ii/description/
 // Submission url  : https://leetcode.com/submissions/detail/694387207/"
 com.shishifubing.dotfiles.submissions
 class Solution {

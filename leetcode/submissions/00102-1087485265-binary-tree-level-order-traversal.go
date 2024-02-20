@@ -1,5 +1,5 @@
 // Submission title: Binary Tree Level Order Traversal
-// Submission url  : https://leetcode.com/problems/binary-tree-level-order-traversal/description/"
+// Submission url  : https://leetcode.com/problems/binary-tree-level-order-traversal/description/
 // Submission url  : https://leetcode.com/submissions/detail/1087485265/"
 package submissions
 

@@ -1,5 +1,5 @@
 # Submission title: Design Add and Search Words Data Structure
-# Submission url  : https://leetcode.com/problems/design-add-and-search-words-data-structure/description/"
+# Submission url  : https://leetcode.com/problems/design-add-and-search-words-data-structure/description/
 # Submission url  : https://leetcode.com/submissions/detail/1083730897/"
 
 

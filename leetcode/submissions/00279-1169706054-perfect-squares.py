@@ -1,5 +1,5 @@
 # Submission title: Perfect Squares
-# Submission url  : https://leetcode.com/problems/perfect-squares/description/"
+# Submission url  : https://leetcode.com/problems/perfect-squares/description/
 # Submission url  : https://leetcode.com/submissions/detail/1169706054/"
 
 

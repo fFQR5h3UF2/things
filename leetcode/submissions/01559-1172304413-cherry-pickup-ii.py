@@ -1,5 +1,5 @@
 # Submission title: Cherry Pickup II
-# Submission url  : https://leetcode.com/problems/cherry-pickup-ii/description/"
+# Submission url  : https://leetcode.com/problems/cherry-pickup-ii/description/
 # Submission url  : https://leetcode.com/submissions/detail/1172304413/"
 
 

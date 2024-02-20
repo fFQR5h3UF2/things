@@ -1,5 +1,5 @@
 # Submission title: Minimum Number of Taps to Open to Water a Garden
-# Submission url  : https://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/description/"
+# Submission url  : https://leetcode.com/problems/minimum-number-of-taps-to-open-to-water-a-garden/description/
 # Submission url  : https://leetcode.com/submissions/detail/1036785038/"
 
 

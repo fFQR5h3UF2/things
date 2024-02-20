@@ -1,5 +1,5 @@
 # Submission title: Check if There is a Valid Partition For The Array
-# Submission url  : https://leetcode.com/problems/check-if-there-is-a-valid-partition-for-the-array/description/"
+# Submission url  : https://leetcode.com/problems/check-if-there-is-a-valid-partition-for-the-array/description/
 # Submission url  : https://leetcode.com/submissions/detail/1020320273/"
 
 

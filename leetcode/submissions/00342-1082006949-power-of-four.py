@@ -1,5 +1,5 @@
 # Submission title: Power of Four
-# Submission url  : https://leetcode.com/problems/power-of-four/description/"
+# Submission url  : https://leetcode.com/problems/power-of-four/description/
 # Submission url  : https://leetcode.com/submissions/detail/1082006949/"
 
 

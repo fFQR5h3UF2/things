@@ -1,5 +1,5 @@
 # Submission title: Longest Increasing Subsequence
-# Submission url  : https://leetcode.com/problems/longest-increasing-subsequence/description/"
+# Submission url  : https://leetcode.com/problems/longest-increasing-subsequence/description/
 # Submission url  : https://leetcode.com/submissions/detail/1137494224/"
 
 

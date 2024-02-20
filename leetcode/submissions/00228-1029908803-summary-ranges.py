@@ -1,5 +1,5 @@
 # Submission title: Summary Ranges
-# Submission url  : https://leetcode.com/problems/summary-ranges/description/"
+# Submission url  : https://leetcode.com/problems/summary-ranges/description/
 # Submission url  : https://leetcode.com/submissions/detail/1029908803/"
 
 

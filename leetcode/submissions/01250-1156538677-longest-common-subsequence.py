@@ -1,5 +1,5 @@
 # Submission title: Longest Common Subsequence
-# Submission url  : https://leetcode.com/problems/longest-common-subsequence/description/"
+# Submission url  : https://leetcode.com/problems/longest-common-subsequence/description/
 # Submission url  : https://leetcode.com/submissions/detail/1156538677/"
 
 

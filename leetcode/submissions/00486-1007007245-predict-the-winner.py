@@ -1,5 +1,5 @@
 # Submission title: Predict the Winner
-# Submission url  : https://leetcode.com/problems/predict-the-winner/description/"
+# Submission url  : https://leetcode.com/problems/predict-the-winner/description/
 # Submission url  : https://leetcode.com/submissions/detail/1007007245/"
 
 

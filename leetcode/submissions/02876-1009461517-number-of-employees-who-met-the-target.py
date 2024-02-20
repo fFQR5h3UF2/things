@@ -1,5 +1,5 @@
 # Submission title: Number of Employees Who Met the Target
-# Submission url  : https://leetcode.com/problems/number-of-employees-who-met-the-target/description/"
+# Submission url  : https://leetcode.com/problems/number-of-employees-who-met-the-target/description/
 # Submission url  : https://leetcode.com/submissions/detail/1009461517/"
 
 

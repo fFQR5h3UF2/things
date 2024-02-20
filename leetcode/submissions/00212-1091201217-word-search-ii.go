@@ -1,5 +1,5 @@
 // Submission title: Word Search II
-// Submission url  : https://leetcode.com/problems/word-search-ii/description/"
+// Submission url  : https://leetcode.com/problems/word-search-ii/description/
 // Submission url  : https://leetcode.com/submissions/detail/1091201217/"
 package submissions
 

@@ -1,5 +1,5 @@
 # Submission title: Minimum Penalty for a Shop
-# Submission url  : https://leetcode.com/problems/minimum-penalty-for-a-shop/description/"
+# Submission url  : https://leetcode.com/problems/minimum-penalty-for-a-shop/description/
 # Submission url  : https://leetcode.com/submissions/detail/1034869404/"
 
 

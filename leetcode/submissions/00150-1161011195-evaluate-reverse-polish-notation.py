@@ -1,5 +1,5 @@
 # Submission title: Evaluate Reverse Polish Notation
-# Submission url  : https://leetcode.com/problems/evaluate-reverse-polish-notation/description/"
+# Submission url  : https://leetcode.com/problems/evaluate-reverse-polish-notation/description/
 # Submission url  : https://leetcode.com/submissions/detail/1161011195/"
 
 

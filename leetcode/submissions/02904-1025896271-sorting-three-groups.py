@@ -1,5 +1,5 @@
 # Submission title: Sorting Three Groups
-# Submission url  : https://leetcode.com/problems/sorting-three-groups/description/"
+# Submission url  : https://leetcode.com/problems/sorting-three-groups/description/
 # Submission url  : https://leetcode.com/submissions/detail/1025896271/"
 
 

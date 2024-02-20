@@ -1,5 +1,5 @@
 # Submission title: Count Complete Tree Nodes
-# Submission url  : https://leetcode.com/problems/count-complete-tree-nodes/description/"
+# Submission url  : https://leetcode.com/problems/count-complete-tree-nodes/description/
 # Submission url  : https://leetcode.com/submissions/detail/1032267446/"
 
 

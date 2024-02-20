@@ -1,5 +1,5 @@
 # Submission title: Minimum Falling Path Sum
-# Submission url  : https://leetcode.com/problems/minimum-falling-path-sum/description/"
+# Submission url  : https://leetcode.com/problems/minimum-falling-path-sum/description/
 # Submission url  : https://leetcode.com/submissions/detail/1150545529/"
 
 

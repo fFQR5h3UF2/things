@@ -1,5 +1,5 @@
 // Submission title: Sort Vowels in a String
-// Submission url  : https://leetcode.com/problems/sort-vowels-in-a-string/description/"
+// Submission url  : https://leetcode.com/problems/sort-vowels-in-a-string/description/
 // Submission url  : https://leetcode.com/submissions/detail/1097740468/"
 
 class Solution {

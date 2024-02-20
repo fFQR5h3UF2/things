@@ -1,5 +1,5 @@
 # Submission title: Largest Divisible Subset
-# Submission url  : https://leetcode.com/problems/largest-divisible-subset/description/"
+# Submission url  : https://leetcode.com/problems/largest-divisible-subset/description/
 # Submission url  : https://leetcode.com/submissions/detail/1170736139/"
 
 

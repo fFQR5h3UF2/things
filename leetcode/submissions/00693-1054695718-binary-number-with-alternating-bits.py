@@ -1,5 +1,5 @@
 # Submission title: Binary Number with Alternating Bits
-# Submission url  : https://leetcode.com/problems/binary-number-with-alternating-bits/description/"
+# Submission url  : https://leetcode.com/problems/binary-number-with-alternating-bits/description/
 # Submission url  : https://leetcode.com/submissions/detail/1054695718/"
 
 

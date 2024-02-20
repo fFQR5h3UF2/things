@@ -1,5 +1,5 @@
 # Submission title: Word Break
-# Submission url  : https://leetcode.com/problems/word-break/description/"
+# Submission url  : https://leetcode.com/problems/word-break/description/
 # Submission url  : https://leetcode.com/submissions/detail/1014586880/"
 
 

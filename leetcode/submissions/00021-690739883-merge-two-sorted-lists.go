@@ -1,5 +1,5 @@
 // Submission title: Merge Two Sorted Lists
-// Submission url  : https://leetcode.com/problems/merge-two-sorted-lists/description/"
+// Submission url  : https://leetcode.com/problems/merge-two-sorted-lists/description/
 // Submission url  : https://leetcode.com/submissions/detail/690739883/"
 package submissions
 

@@ -1,5 +1,5 @@
 # Submission title: Binary Gap
-# Submission url  : https://leetcode.com/problems/binary-gap/description/"
+# Submission url  : https://leetcode.com/problems/binary-gap/description/
 # Submission url  : https://leetcode.com/submissions/detail/1056094367/"
 
 

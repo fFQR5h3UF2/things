@@ -1,5 +1,5 @@
 # Submission title: 132 Pattern
-# Submission url  : https://leetcode.com/problems/132-pattern/description/"
+# Submission url  : https://leetcode.com/problems/132-pattern/description/
 # Submission url  : https://leetcode.com/submissions/detail/1062846682/"
 
 

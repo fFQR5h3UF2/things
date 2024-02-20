@@ -1,5 +1,5 @@
 # Submission title: Non-overlapping Intervals
-# Submission url  : https://leetcode.com/problems/non-overlapping-intervals/description/"
+# Submission url  : https://leetcode.com/problems/non-overlapping-intervals/description/
 # Submission url  : https://leetcode.com/submissions/detail/998281526/"
 
 

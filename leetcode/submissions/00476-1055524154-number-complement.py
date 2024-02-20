@@ -1,5 +1,5 @@
 # Submission title: Number Complement
-# Submission url  : https://leetcode.com/problems/number-complement/description/"
+# Submission url  : https://leetcode.com/problems/number-complement/description/
 # Submission url  : https://leetcode.com/submissions/detail/1055524154/"
 
 

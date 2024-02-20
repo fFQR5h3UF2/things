@@ -1,5 +1,5 @@
 # Submission title: Smallest Sufficient Team
-# Submission url  : https://leetcode.com/problems/smallest-sufficient-team/description/"
+# Submission url  : https://leetcode.com/problems/smallest-sufficient-team/description/
 # Submission url  : https://leetcode.com/submissions/detail/1013887989/"
 
 

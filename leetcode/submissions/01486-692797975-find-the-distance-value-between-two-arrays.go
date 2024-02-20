@@ -1,5 +1,5 @@
 // Submission title: Find the Distance Value Between Two Arrays
-// Submission url  : https://leetcode.com/problems/find-the-distance-value-between-two-arrays/description/"
+// Submission url  : https://leetcode.com/problems/find-the-distance-value-between-two-arrays/description/
 // Submission url  : https://leetcode.com/submissions/detail/692797975/"
 package submissions
 

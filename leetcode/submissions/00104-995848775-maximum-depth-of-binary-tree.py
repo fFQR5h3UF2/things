@@ -1,5 +1,5 @@
 # Submission title: Maximum Depth of Binary Tree
-# Submission url  : https://leetcode.com/problems/maximum-depth-of-binary-tree/description/"
+# Submission url  : https://leetcode.com/problems/maximum-depth-of-binary-tree/description/
 # Submission url  : https://leetcode.com/submissions/detail/995848775/"
 
 

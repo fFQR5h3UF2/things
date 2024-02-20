@@ -1,5 +1,5 @@
 # Submission title: Champagne Tower
-# Submission url  : https://leetcode.com/problems/champagne-tower/description/"
+# Submission url  : https://leetcode.com/problems/champagne-tower/description/
 # Submission url  : https://leetcode.com/submissions/detail/1057784011/"
 
 

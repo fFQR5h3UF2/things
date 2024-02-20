@@ -1,5 +1,5 @@
 # Submission title: Root Equals Sum of Children
-# Submission url  : https://leetcode.com/problems/root-equals-sum-of-children/description/"
+# Submission url  : https://leetcode.com/problems/root-equals-sum-of-children/description/
 # Submission url  : https://leetcode.com/submissions/detail/1000085540/"
 
 

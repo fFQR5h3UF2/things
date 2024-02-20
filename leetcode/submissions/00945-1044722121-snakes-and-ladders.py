@@ -1,5 +1,5 @@
 # Submission title: Snakes and Ladders
-# Submission url  : https://leetcode.com/problems/snakes-and-ladders/description/"
+# Submission url  : https://leetcode.com/problems/snakes-and-ladders/description/
 # Submission url  : https://leetcode.com/submissions/detail/1044722121/"
 
 

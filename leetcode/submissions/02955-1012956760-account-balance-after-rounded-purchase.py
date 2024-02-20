@@ -1,5 +1,5 @@
 # Submission title: Account Balance After Rounded Purchase
-# Submission url  : https://leetcode.com/problems/account-balance-after-rounded-purchase/description/"
+# Submission url  : https://leetcode.com/problems/account-balance-after-rounded-purchase/description/
 # Submission url  : https://leetcode.com/submissions/detail/1012956760/"
 
 

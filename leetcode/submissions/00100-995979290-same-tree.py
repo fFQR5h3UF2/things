@@ -1,5 +1,5 @@
 # Submission title: Same Tree
-# Submission url  : https://leetcode.com/problems/same-tree/description/"
+# Submission url  : https://leetcode.com/problems/same-tree/description/
 # Submission url  : https://leetcode.com/submissions/detail/995979290/"
 
 

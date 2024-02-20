@@ -1,5 +1,5 @@
 // Submission title: Find Words That Can Be Formed by Characters
-// Submission url  : https://leetcode.com/problems/find-words-that-can-be-formed-by-characters/description/"
+// Submission url  : https://leetcode.com/problems/find-words-that-can-be-formed-by-characters/description/
 // Submission url  : https://leetcode.com/submissions/detail/1111055227/"
 
 class Solution {

@@ -1,5 +1,5 @@
 // Submission title: Binary Search
-// Submission url  : https://leetcode.com/problems/binary-search/description/"
+// Submission url  : https://leetcode.com/problems/binary-search/description/
 // Submission url  : https://leetcode.com/submissions/detail/691642817/"
 package submissions
 

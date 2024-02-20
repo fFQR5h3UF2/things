@@ -1,5 +1,5 @@
 # Submission title: Unique Number of Occurrences
-# Submission url  : https://leetcode.com/problems/unique-number-of-occurrences/description/"
+# Submission url  : https://leetcode.com/problems/unique-number-of-occurrences/description/
 # Submission url  : https://leetcode.com/submissions/detail/1148942931/"
 
 

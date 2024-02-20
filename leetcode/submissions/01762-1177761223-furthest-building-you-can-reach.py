@@ -1,5 +1,5 @@
 # Submission title: Furthest Building You Can Reach
-# Submission url  : https://leetcode.com/problems/furthest-building-you-can-reach/description/"
+# Submission url  : https://leetcode.com/problems/furthest-building-you-can-reach/description/
 # Submission url  : https://leetcode.com/submissions/detail/1177761223/"
 
 

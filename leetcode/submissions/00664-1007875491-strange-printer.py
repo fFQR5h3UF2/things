@@ -1,5 +1,5 @@
 # Submission title: Strange Printer
-# Submission url  : https://leetcode.com/problems/strange-printer/description/"
+# Submission url  : https://leetcode.com/problems/strange-printer/description/
 # Submission url  : https://leetcode.com/submissions/detail/1007875491/"
 
 

@@ -1,5 +1,5 @@
 // Submission title: Flatten Nested List Iterator
-// Submission url  : https://leetcode.com/problems/flatten-nested-list-iterator/description/"
+// Submission url  : https://leetcode.com/problems/flatten-nested-list-iterator/description/
 // Submission url  : https://leetcode.com/submissions/detail/695536827/"
 com.shishifubing.dotfiles.submissions
 public class NestedIterator implements Iterator<Integer> {

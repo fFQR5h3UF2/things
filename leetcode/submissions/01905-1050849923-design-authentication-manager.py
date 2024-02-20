@@ -1,5 +1,5 @@
 # Submission title: Design Authentication Manager
-# Submission url  : https://leetcode.com/problems/design-authentication-manager/description/"
+# Submission url  : https://leetcode.com/problems/design-authentication-manager/description/
 # Submission url  : https://leetcode.com/submissions/detail/1050849923/"
 
 

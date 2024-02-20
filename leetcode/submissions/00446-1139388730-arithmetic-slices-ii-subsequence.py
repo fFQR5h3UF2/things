@@ -1,5 +1,5 @@
 # Submission title: Arithmetic Slices II - Subsequence
-# Submission url  : https://leetcode.com/problems/arithmetic-slices-ii-subsequence/description/"
+# Submission url  : https://leetcode.com/problems/arithmetic-slices-ii-subsequence/description/
 # Submission url  : https://leetcode.com/submissions/detail/1139388730/"
 
 

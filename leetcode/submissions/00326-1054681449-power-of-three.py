@@ -1,5 +1,5 @@
 # Submission title: Power of Three
-# Submission url  : https://leetcode.com/problems/power-of-three/description/"
+# Submission url  : https://leetcode.com/problems/power-of-three/description/
 # Submission url  : https://leetcode.com/submissions/detail/1054681449/"
 
 

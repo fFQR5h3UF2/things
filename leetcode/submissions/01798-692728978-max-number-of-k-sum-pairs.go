@@ -1,5 +1,5 @@
 // Submission title: Max Number of K-Sum Pairs
-// Submission url  : https://leetcode.com/problems/max-number-of-k-sum-pairs/description/"
+// Submission url  : https://leetcode.com/problems/max-number-of-k-sum-pairs/description/
 // Submission url  : https://leetcode.com/submissions/detail/692728978/"
 package submissions
 

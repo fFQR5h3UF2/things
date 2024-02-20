@@ -1,5 +1,5 @@
 # Submission title: Best Time to Buy and Sell Stock
-# Submission url  : https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/"
+# Submission url  : https://leetcode.com/problems/best-time-to-buy-and-sell-stock/description/
 # Submission url  : https://leetcode.com/submissions/detail/993675107/"
 
 

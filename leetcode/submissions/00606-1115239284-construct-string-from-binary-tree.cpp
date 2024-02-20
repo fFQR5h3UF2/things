@@ -1,5 +1,5 @@
 // Submission title: Construct String from Binary Tree
-// Submission url  : https://leetcode.com/problems/construct-string-from-binary-tree/description/"
+// Submission url  : https://leetcode.com/problems/construct-string-from-binary-tree/description/
 // Submission url  : https://leetcode.com/submissions/detail/1115239284/"
 
 class Solution {

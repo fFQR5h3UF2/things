@@ -1,5 +1,5 @@
 # Submission title: Seat Reservation Manager
-# Submission url  : https://leetcode.com/problems/seat-reservation-manager/description/"
+# Submission url  : https://leetcode.com/problems/seat-reservation-manager/description/
 # Submission url  : https://leetcode.com/submissions/detail/1050843067/"
 
 

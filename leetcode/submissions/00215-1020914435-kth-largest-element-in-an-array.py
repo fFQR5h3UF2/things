@@ -1,5 +1,5 @@
 # Submission title: Kth Largest Element in an Array
-# Submission url  : https://leetcode.com/problems/kth-largest-element-in-an-array/description/"
+# Submission url  : https://leetcode.com/problems/kth-largest-element-in-an-array/description/
 # Submission url  : https://leetcode.com/submissions/detail/1020914435/"
 
 

@@ -1,5 +1,5 @@
 // Submission title: Course Schedule II
-// Submission url  : https://leetcode.com/problems/course-schedule-ii/description/"
+// Submission url  : https://leetcode.com/problems/course-schedule-ii/description/
 // Submission url  : https://leetcode.com/submissions/detail/1091200613/"
 package submissions
 

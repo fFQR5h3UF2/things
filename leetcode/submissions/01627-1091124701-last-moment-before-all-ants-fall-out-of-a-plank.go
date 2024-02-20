@@ -1,5 +1,5 @@
 // Submission title: Last Moment Before All Ants Fall Out of a Plank
-// Submission url  : https://leetcode.com/problems/last-moment-before-all-ants-fall-out-of-a-plank/description/"
+// Submission url  : https://leetcode.com/problems/last-moment-before-all-ants-fall-out-of-a-plank/description/
 // Submission url  : https://leetcode.com/submissions/detail/1091124701/"
 package submissions
 

@@ -1,5 +1,5 @@
 // Submission title: Insert Interval
-// Submission url  : https://leetcode.com/problems/insert-interval/description/"
+// Submission url  : https://leetcode.com/problems/insert-interval/description/
 // Submission url  : https://leetcode.com/submissions/detail/1091198577/"
 package submissions
 

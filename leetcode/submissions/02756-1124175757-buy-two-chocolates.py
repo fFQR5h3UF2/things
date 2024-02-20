@@ -1,5 +1,5 @@
 # Submission title: Buy Two Chocolates
-# Submission url  : https://leetcode.com/problems/buy-two-chocolates/description/"
+# Submission url  : https://leetcode.com/problems/buy-two-chocolates/description/
 # Submission url  : https://leetcode.com/submissions/detail/1124175757/"
 
 

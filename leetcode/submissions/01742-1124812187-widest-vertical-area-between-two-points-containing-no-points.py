@@ -1,5 +1,5 @@
 # Submission title: Widest Vertical Area Between Two Points Containing No Points
-# Submission url  : https://leetcode.com/problems/widest-vertical-area-between-two-points-containing-no-points/description/"
+# Submission url  : https://leetcode.com/problems/widest-vertical-area-between-two-points-containing-no-points/description/
 # Submission url  : https://leetcode.com/submissions/detail/1124812187/"
 
 

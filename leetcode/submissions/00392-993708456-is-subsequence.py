@@ -1,5 +1,5 @@
 # Submission title: Is Subsequence
-# Submission url  : https://leetcode.com/problems/is-subsequence/description/"
+# Submission url  : https://leetcode.com/problems/is-subsequence/description/
 # Submission url  : https://leetcode.com/submissions/detail/993708456/"
 
 

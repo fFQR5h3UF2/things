@@ -1,5 +1,5 @@
 # Submission title: Number of Good Pairs
-# Submission url  : https://leetcode.com/problems/number-of-good-pairs/description/"
+# Submission url  : https://leetcode.com/problems/number-of-good-pairs/description/
 # Submission url  : https://leetcode.com/submissions/detail/1065620395/"
 
 

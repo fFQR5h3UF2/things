@@ -1,5 +1,5 @@
 // Submission title: Unique Length-3 Palindromic Subsequences
-// Submission url  : https://leetcode.com/problems/unique-length-3-palindromic-subsequences/description/"
+// Submission url  : https://leetcode.com/problems/unique-length-3-palindromic-subsequences/description/
 // Submission url  : https://leetcode.com/submissions/detail/1098636058/"
 
 class Solution {

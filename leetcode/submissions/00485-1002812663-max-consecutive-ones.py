@@ -1,5 +1,5 @@
 # Submission title: Max Consecutive Ones
-# Submission url  : https://leetcode.com/problems/max-consecutive-ones/description/"
+# Submission url  : https://leetcode.com/problems/max-consecutive-ones/description/
 # Submission url  : https://leetcode.com/submissions/detail/1002812663/"
 
 

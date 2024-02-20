@@ -1,5 +1,5 @@
 # Submission title: Frequency Tracker
-# Submission url  : https://leetcode.com/problems/frequency-tracker/description/"
+# Submission url  : https://leetcode.com/problems/frequency-tracker/description/
 # Submission url  : https://leetcode.com/submissions/detail/1049407796/"
 
 

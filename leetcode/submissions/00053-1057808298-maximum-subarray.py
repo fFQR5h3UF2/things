@@ -1,5 +1,5 @@
 # Submission title: Maximum Subarray
-# Submission url  : https://leetcode.com/problems/maximum-subarray/description/"
+# Submission url  : https://leetcode.com/problems/maximum-subarray/description/
 # Submission url  : https://leetcode.com/submissions/detail/1057808298/"
 
 

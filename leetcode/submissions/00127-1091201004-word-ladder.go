@@ -1,5 +1,5 @@
 // Submission title: Word Ladder
-// Submission url  : https://leetcode.com/problems/word-ladder/description/"
+// Submission url  : https://leetcode.com/problems/word-ladder/description/
 // Submission url  : https://leetcode.com/submissions/detail/1091201004/"
 package submissions
 

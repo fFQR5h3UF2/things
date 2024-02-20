@@ -1,5 +1,5 @@
 # Submission title: Minimum Time to Make Rope Colorful
-# Submission url  : https://leetcode.com/problems/minimum-time-to-make-rope-colorful/description/"
+# Submission url  : https://leetcode.com/problems/minimum-time-to-make-rope-colorful/description/
 # Submission url  : https://leetcode.com/submissions/detail/1129545299/"
 
 

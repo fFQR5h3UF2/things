@@ -1,5 +1,5 @@
 # Submission title: Text Justification
-# Submission url  : https://leetcode.com/problems/text-justification/description/"
+# Submission url  : https://leetcode.com/problems/text-justification/description/
 # Submission url  : https://leetcode.com/submissions/detail/1037760198/"
 
 

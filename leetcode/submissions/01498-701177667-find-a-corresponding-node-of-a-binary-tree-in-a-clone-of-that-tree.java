@@ -1,5 +1,5 @@
 // Submission title: Find a Corresponding Node of a Binary Tree in a Clone of That Tree
-// Submission url  : https://leetcode.com/problems/find-a-corresponding-node-of-a-binary-tree-in-a-clone-of-that-tree/description/"
+// Submission url  : https://leetcode.com/problems/find-a-corresponding-node-of-a-binary-tree-in-a-clone-of-that-tree/description/
 // Submission url  : https://leetcode.com/submissions/detail/701177667/"
 com.shishifubing.dotfiles.submissions
 class Solution {

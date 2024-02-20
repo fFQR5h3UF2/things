@@ -1,5 +1,5 @@
 # Submission title: Validate Binary Tree Nodes
-# Submission url  : https://leetcode.com/problems/validate-binary-tree-nodes/description/"
+# Submission url  : https://leetcode.com/problems/validate-binary-tree-nodes/description/
 # Submission url  : https://leetcode.com/submissions/detail/1077634667/"
 
 

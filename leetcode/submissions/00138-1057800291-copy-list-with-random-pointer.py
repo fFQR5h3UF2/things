@@ -1,5 +1,5 @@
 # Submission title: Copy List with Random Pointer
-# Submission url  : https://leetcode.com/problems/copy-list-with-random-pointer/description/"
+# Submission url  : https://leetcode.com/problems/copy-list-with-random-pointer/description/
 # Submission url  : https://leetcode.com/submissions/detail/1057800291/"
 
 """

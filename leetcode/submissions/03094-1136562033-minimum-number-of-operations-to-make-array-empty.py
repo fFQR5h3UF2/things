@@ -1,5 +1,5 @@
 # Submission title: Minimum Number of Operations to Make Array Empty
-# Submission url  : https://leetcode.com/problems/minimum-number-of-operations-to-make-array-empty/description/"
+# Submission url  : https://leetcode.com/problems/minimum-number-of-operations-to-make-array-empty/description/
 # Submission url  : https://leetcode.com/submissions/detail/1136562033/"
 
 

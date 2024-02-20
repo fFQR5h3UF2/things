@@ -1,5 +1,5 @@
 # Submission title: House Robber
-# Submission url  : https://leetcode.com/problems/house-robber/description/"
+# Submission url  : https://leetcode.com/problems/house-robber/description/
 # Submission url  : https://leetcode.com/submissions/detail/1014573838/"
 
 

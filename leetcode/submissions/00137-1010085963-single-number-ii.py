@@ -1,5 +1,5 @@
 # Submission title: Single Number II
-# Submission url  : https://leetcode.com/problems/single-number-ii/description/"
+# Submission url  : https://leetcode.com/problems/single-number-ii/description/
 # Submission url  : https://leetcode.com/submissions/detail/1010085963/"
 
 

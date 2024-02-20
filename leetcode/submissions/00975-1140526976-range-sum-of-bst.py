@@ -1,5 +1,5 @@
 # Submission title: Range Sum of BST
-# Submission url  : https://leetcode.com/problems/range-sum-of-bst/description/"
+# Submission url  : https://leetcode.com/problems/range-sum-of-bst/description/
 # Submission url  : https://leetcode.com/submissions/detail/1140526976/"
 
 

@@ -1,5 +1,5 @@
 # Submission title: Frog Jump
-# Submission url  : https://leetcode.com/problems/frog-jump/description/"
+# Submission url  : https://leetcode.com/problems/frog-jump/description/
 # Submission url  : https://leetcode.com/submissions/detail/1033274823/"
 
 

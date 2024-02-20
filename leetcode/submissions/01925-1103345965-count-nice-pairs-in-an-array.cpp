@@ -1,5 +1,5 @@
 // Submission title: Count Nice Pairs in an Array
-// Submission url  : https://leetcode.com/problems/count-nice-pairs-in-an-array/description/"
+// Submission url  : https://leetcode.com/problems/count-nice-pairs-in-an-array/description/
 // Submission url  : https://leetcode.com/submissions/detail/1103345965/"
 
 class Solution {

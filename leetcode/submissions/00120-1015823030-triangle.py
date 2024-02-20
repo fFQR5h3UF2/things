@@ -1,5 +1,5 @@
 # Submission title: Triangle
-# Submission url  : https://leetcode.com/problems/triangle/description/"
+# Submission url  : https://leetcode.com/problems/triangle/description/
 # Submission url  : https://leetcode.com/submissions/detail/1015823030/"
 
 

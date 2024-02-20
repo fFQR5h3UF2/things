@@ -1,5 +1,5 @@
 # Submission title: Leaf-Similar Trees
-# Submission url  : https://leetcode.com/problems/leaf-similar-trees/description/"
+# Submission url  : https://leetcode.com/problems/leaf-similar-trees/description/
 # Submission url  : https://leetcode.com/submissions/detail/1141624613/"
 
 

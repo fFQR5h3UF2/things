@@ -1,5 +1,5 @@
 // Submission title: Binary Tree Maximum Path Sum
-// Submission url  : https://leetcode.com/problems/binary-tree-maximum-path-sum/description/"
+// Submission url  : https://leetcode.com/problems/binary-tree-maximum-path-sum/description/
 // Submission url  : https://leetcode.com/submissions/detail/1091200483/"
 package submissions
 

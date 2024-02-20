@@ -1,5 +1,5 @@
 // Submission title: Find Nearest Point That Has the Same X or Y Coordinate
-// Submission url  : https://leetcode.com/problems/find-nearest-point-that-has-the-same-x-or-y-coordinate/description/"
+// Submission url  : https://leetcode.com/problems/find-nearest-point-that-has-the-same-x-or-y-coordinate/description/
 // Submission url  : https://leetcode.com/submissions/detail/692748993/"
 package submissions
 

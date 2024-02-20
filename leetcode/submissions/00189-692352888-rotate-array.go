@@ -1,5 +1,5 @@
 // Submission title: Rotate Array
-// Submission url  : https://leetcode.com/problems/rotate-array/description/"
+// Submission url  : https://leetcode.com/problems/rotate-array/description/
 // Submission url  : https://leetcode.com/submissions/detail/692352888/"
 package submissions
 

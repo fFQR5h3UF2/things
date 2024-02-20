@@ -1,5 +1,5 @@
 # Submission title: Set Mismatch
-# Submission url  : https://leetcode.com/problems/set-mismatch/description/"
+# Submission url  : https://leetcode.com/problems/set-mismatch/description/
 # Submission url  : https://leetcode.com/submissions/detail/1153445153/"
 
 

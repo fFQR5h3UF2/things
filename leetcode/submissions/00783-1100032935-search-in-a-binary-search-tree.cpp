@@ -1,5 +1,5 @@
 // Submission title: Search in a Binary Search Tree
-// Submission url  : https://leetcode.com/problems/search-in-a-binary-search-tree/description/"
+// Submission url  : https://leetcode.com/problems/search-in-a-binary-search-tree/description/
 // Submission url  : https://leetcode.com/submissions/detail/1100032935/"
 
 /**

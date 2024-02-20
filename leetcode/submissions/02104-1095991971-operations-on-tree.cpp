@@ -1,5 +1,5 @@
 // Submission title: Operations on Tree
-// Submission url  : https://leetcode.com/problems/operations-on-tree/description/"
+// Submission url  : https://leetcode.com/problems/operations-on-tree/description/
 // Submission url  : https://leetcode.com/submissions/detail/1095991971/"
 
 class LockingTree {

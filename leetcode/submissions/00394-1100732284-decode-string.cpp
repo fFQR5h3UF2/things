@@ -1,5 +1,5 @@
 // Submission title: Decode String
-// Submission url  : https://leetcode.com/problems/decode-string/description/"
+// Submission url  : https://leetcode.com/problems/decode-string/description/
 // Submission url  : https://leetcode.com/submissions/detail/1100732284/"
 
 class Solution {

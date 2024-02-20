@@ -1,5 +1,5 @@
 # Submission title: Integer Break
-# Submission url  : https://leetcode.com/problems/integer-break/description/"
+# Submission url  : https://leetcode.com/problems/integer-break/description/
 # Submission url  : https://leetcode.com/submissions/detail/1068473154/"
 
 

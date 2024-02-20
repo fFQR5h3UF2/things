@@ -1,5 +1,5 @@
 # Submission title: Island Perimeter
-# Submission url  : https://leetcode.com/problems/island-perimeter/description/"
+# Submission url  : https://leetcode.com/problems/island-perimeter/description/
 # Submission url  : https://leetcode.com/submissions/detail/1002756779/"
 
 

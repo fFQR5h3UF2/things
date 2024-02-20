@@ -1,5 +1,5 @@
 // Submission title: Dota2 Senate
-// Submission url  : https://leetcode.com/problems/dota2-senate/description/"
+// Submission url  : https://leetcode.com/problems/dota2-senate/description/
 // Submission url  : https://leetcode.com/submissions/detail/1100801416/"
 
 class Solution {

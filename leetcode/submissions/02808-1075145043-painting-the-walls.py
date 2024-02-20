@@ -1,5 +1,5 @@
 # Submission title: Painting the Walls
-# Submission url  : https://leetcode.com/problems/painting-the-walls/description/"
+# Submission url  : https://leetcode.com/problems/painting-the-walls/description/
 # Submission url  : https://leetcode.com/submissions/detail/1075145043/"
 
 

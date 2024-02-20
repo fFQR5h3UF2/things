@@ -1,5 +1,5 @@
 # Submission title: Maximum Product Difference Between Two Pairs
-# Submission url  : https://leetcode.com/problems/maximum-product-difference-between-two-pairs/description/"
+# Submission url  : https://leetcode.com/problems/maximum-product-difference-between-two-pairs/description/
 # Submission url  : https://leetcode.com/submissions/detail/1122499093/"
 
 

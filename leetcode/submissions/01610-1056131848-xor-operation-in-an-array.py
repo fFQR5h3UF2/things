@@ -1,5 +1,5 @@
 # Submission title: XOR Operation in an Array
-# Submission url  : https://leetcode.com/problems/xor-operation-in-an-array/description/"
+# Submission url  : https://leetcode.com/problems/xor-operation-in-an-array/description/
 # Submission url  : https://leetcode.com/submissions/detail/1056131848/"
 
 

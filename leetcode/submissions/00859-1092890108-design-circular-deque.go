@@ -1,5 +1,5 @@
 // Submission title: Design Circular Deque
-// Submission url  : https://leetcode.com/problems/design-circular-deque/description/"
+// Submission url  : https://leetcode.com/problems/design-circular-deque/description/
 // Submission url  : https://leetcode.com/submissions/detail/1092890108/"
 package submissions
 

@@ -1,5 +1,5 @@
 # Submission title: Linked List Cycle
-# Submission url  : https://leetcode.com/problems/linked-list-cycle/description/"
+# Submission url  : https://leetcode.com/problems/linked-list-cycle/description/
 # Submission url  : https://leetcode.com/submissions/detail/995769608/"
 
 # Definition for singly-linked list.

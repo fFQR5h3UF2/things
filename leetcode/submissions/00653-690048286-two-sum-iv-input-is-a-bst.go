@@ -1,5 +1,5 @@
 // Submission title: Two Sum IV - Input is a BST
-// Submission url  : https://leetcode.com/problems/two-sum-iv-input-is-a-bst/description/"
+// Submission url  : https://leetcode.com/problems/two-sum-iv-input-is-a-bst/description/
 // Submission url  : https://leetcode.com/submissions/detail/690048286/"
 package submissions
 

@@ -1,5 +1,5 @@
 # Submission title: Palindrome Number
-# Submission url  : https://leetcode.com/problems/palindrome-number/description/"
+# Submission url  : https://leetcode.com/problems/palindrome-number/description/
 # Submission url  : https://leetcode.com/submissions/detail/997657948/"
 
 

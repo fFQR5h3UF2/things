@@ -1,5 +1,5 @@
 // Submission title: Intersection of Two Arrays II
-// Submission url  : https://leetcode.com/problems/intersection-of-two-arrays-ii/description/"
+// Submission url  : https://leetcode.com/problems/intersection-of-two-arrays-ii/description/
 // Submission url  : https://leetcode.com/submissions/detail/692914276/"
 package submissions
 

@@ -1,5 +1,5 @@
 // Submission title: Excel Sheet Column Number
-// Submission url  : https://leetcode.com/problems/excel-sheet-column-number/description/"
+// Submission url  : https://leetcode.com/problems/excel-sheet-column-number/description/
 // Submission url  : https://leetcode.com/submissions/detail/1102790598/"
 
 class Solution {

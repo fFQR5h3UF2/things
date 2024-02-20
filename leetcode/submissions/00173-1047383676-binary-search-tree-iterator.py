@@ -1,5 +1,5 @@
 # Submission title: Binary Search Tree Iterator
-# Submission url  : https://leetcode.com/problems/binary-search-tree-iterator/description/"
+# Submission url  : https://leetcode.com/problems/binary-search-tree-iterator/description/
 # Submission url  : https://leetcode.com/submissions/detail/1047383676/"
 
 

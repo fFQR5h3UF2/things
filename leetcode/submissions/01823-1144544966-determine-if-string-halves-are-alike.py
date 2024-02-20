@@ -1,5 +1,5 @@
 # Submission title: Determine if String Halves Are Alike
-# Submission url  : https://leetcode.com/problems/determine-if-string-halves-are-alike/description/"
+# Submission url  : https://leetcode.com/problems/determine-if-string-halves-are-alike/description/
 # Submission url  : https://leetcode.com/submissions/detail/1144544966/"
 
 

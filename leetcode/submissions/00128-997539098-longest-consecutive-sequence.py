@@ -1,5 +1,5 @@
 # Submission title: Longest Consecutive Sequence
-# Submission url  : https://leetcode.com/problems/longest-consecutive-sequence/description/"
+# Submission url  : https://leetcode.com/problems/longest-consecutive-sequence/description/
 # Submission url  : https://leetcode.com/submissions/detail/997539098/"
 
 

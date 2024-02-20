@@ -1,5 +1,5 @@
 # Submission title: Fizz Buzz
-# Submission url  : https://leetcode.com/problems/fizz-buzz/description/"
+# Submission url  : https://leetcode.com/problems/fizz-buzz/description/
 # Submission url  : https://leetcode.com/submissions/detail/1000092993/"
 
 

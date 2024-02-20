@@ -1,5 +1,5 @@
 # Submission title: Path With Minimum Effort
-# Submission url  : https://leetcode.com/problems/path-with-minimum-effort/description/"
+# Submission url  : https://leetcode.com/problems/path-with-minimum-effort/description/
 # Submission url  : https://leetcode.com/submissions/detail/1050711409/"
 
 

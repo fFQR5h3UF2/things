@@ -1,5 +1,5 @@
 # Submission title: String Compression II
-# Submission url  : https://leetcode.com/problems/string-compression-ii/description/"
+# Submission url  : https://leetcode.com/problems/string-compression-ii/description/
 # Submission url  : https://leetcode.com/submissions/detail/1130330804/"
 
 

@@ -1,5 +1,5 @@
 # Submission title: Minimum Operations to Reduce X to Zero
-# Submission url  : https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/description/"
+# Submission url  : https://leetcode.com/problems/minimum-operations-to-reduce-x-to-zero/description/
 # Submission url  : https://leetcode.com/submissions/detail/1054343833/"
 
 

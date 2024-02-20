@@ -1,5 +1,5 @@
 # Submission title: Power of Two
-# Submission url  : https://leetcode.com/problems/power-of-two/description/"
+# Submission url  : https://leetcode.com/problems/power-of-two/description/
 # Submission url  : https://leetcode.com/submissions/detail/1000178930/"
 
 

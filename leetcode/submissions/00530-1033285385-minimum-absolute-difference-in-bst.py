@@ -1,5 +1,5 @@
 # Submission title: Minimum Absolute Difference in BST
-# Submission url  : https://leetcode.com/problems/minimum-absolute-difference-in-bst/description/"
+# Submission url  : https://leetcode.com/problems/minimum-absolute-difference-in-bst/description/
 # Submission url  : https://leetcode.com/submissions/detail/1033285385/"
 
 

@@ -1,5 +1,5 @@
 # Submission title: Construct the Rectangle
-# Submission url  : https://leetcode.com/problems/construct-the-rectangle/description/"
+# Submission url  : https://leetcode.com/problems/construct-the-rectangle/description/
 # Submission url  : https://leetcode.com/submissions/detail/1002826029/"
 
 

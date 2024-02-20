@@ -1,5 +1,5 @@
 // Submission title: Palindrome Linked List
-// Submission url  : https://leetcode.com/problems/palindrome-linked-list/description/"
+// Submission url  : https://leetcode.com/problems/palindrome-linked-list/description/
 // Submission url  : https://leetcode.com/submissions/detail/1113522285/"
 
 class Solution {

@@ -1,5 +1,5 @@
 // Submission title: Count Sorted Vowel Strings
-// Submission url  : https://leetcode.com/problems/count-sorted-vowel-strings/description/"
+// Submission url  : https://leetcode.com/problems/count-sorted-vowel-strings/description/
 // Submission url  : https://leetcode.com/submissions/detail/697487494/"
 com.shishifubing.dotfiles.submissions
 class Solution {

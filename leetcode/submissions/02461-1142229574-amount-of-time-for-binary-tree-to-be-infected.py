@@ -1,5 +1,5 @@
 # Submission title: Amount of Time for Binary Tree to Be Infected
-# Submission url  : https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/description/"
+# Submission url  : https://leetcode.com/problems/amount-of-time-for-binary-tree-to-be-infected/description/
 # Submission url  : https://leetcode.com/submissions/detail/1142229574/"
 
 

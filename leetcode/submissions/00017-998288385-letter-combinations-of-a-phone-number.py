@@ -1,5 +1,5 @@
 # Submission title: Letter Combinations of a Phone Number
-# Submission url  : https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/"
+# Submission url  : https://leetcode.com/problems/letter-combinations-of-a-phone-number/description/
 # Submission url  : https://leetcode.com/submissions/detail/998288385/"
 
 

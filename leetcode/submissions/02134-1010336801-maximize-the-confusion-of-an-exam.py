@@ -1,5 +1,5 @@
 # Submission title: Maximize the Confusion of an Exam
-# Submission url  : https://leetcode.com/problems/maximize-the-confusion-of-an-exam/description/"
+# Submission url  : https://leetcode.com/problems/maximize-the-confusion-of-an-exam/description/
 # Submission url  : https://leetcode.com/submissions/detail/1010336801/"
 
 

@@ -1,5 +1,5 @@
 # Submission title: Find Consecutive Integers from a Data Stream
-# Submission url  : https://leetcode.com/problems/find-consecutive-integers-from-a-data-stream/description/"
+# Submission url  : https://leetcode.com/problems/find-consecutive-integers-from-a-data-stream/description/
 # Submission url  : https://leetcode.com/submissions/detail/1052587062/"
 
 

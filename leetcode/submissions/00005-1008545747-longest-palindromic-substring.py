@@ -1,5 +1,5 @@
 # Submission title: Longest Palindromic Substring
-# Submission url  : https://leetcode.com/problems/longest-palindromic-substring/description/"
+# Submission url  : https://leetcode.com/problems/longest-palindromic-substring/description/
 # Submission url  : https://leetcode.com/submissions/detail/1008545747/"
 
 

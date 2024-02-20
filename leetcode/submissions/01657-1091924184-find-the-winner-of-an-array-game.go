@@ -1,5 +1,5 @@
 // Submission title: Find the Winner of an Array Game
-// Submission url  : https://leetcode.com/problems/find-the-winner-of-an-array-game/description/"
+// Submission url  : https://leetcode.com/problems/find-the-winner-of-an-array-game/description/
 // Submission url  : https://leetcode.com/submissions/detail/1091924184/"
 package submissions
 

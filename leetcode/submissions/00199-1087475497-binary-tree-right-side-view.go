@@ -1,5 +1,5 @@
 // Submission title: Binary Tree Right Side View
-// Submission url  : https://leetcode.com/problems/binary-tree-right-side-view/description/"
+// Submission url  : https://leetcode.com/problems/binary-tree-right-side-view/description/
 // Submission url  : https://leetcode.com/submissions/detail/1087475497/"
 package submissions
 

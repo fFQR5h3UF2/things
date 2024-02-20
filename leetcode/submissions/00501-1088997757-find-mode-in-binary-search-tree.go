@@ -1,5 +1,5 @@
 // Submission title: Find Mode in Binary Search Tree
-// Submission url  : https://leetcode.com/problems/find-mode-in-binary-search-tree/description/"
+// Submission url  : https://leetcode.com/problems/find-mode-in-binary-search-tree/description/
 // Submission url  : https://leetcode.com/submissions/detail/1088997757/"
 package submissions
 

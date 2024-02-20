@@ -1,5 +1,5 @@
 # Submission title: Running Sum of 1d Array
-# Submission url  : https://leetcode.com/problems/running-sum-of-1d-array/description/"
+# Submission url  : https://leetcode.com/problems/running-sum-of-1d-array/description/
 # Submission url  : https://leetcode.com/submissions/detail/1000087386/"
 
 

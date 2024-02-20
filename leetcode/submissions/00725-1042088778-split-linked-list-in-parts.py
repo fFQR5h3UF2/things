@@ -1,5 +1,5 @@
 # Submission title: Split Linked List in Parts
-# Submission url  : https://leetcode.com/problems/split-linked-list-in-parts/description/"
+# Submission url  : https://leetcode.com/problems/split-linked-list-in-parts/description/
 # Submission url  : https://leetcode.com/submissions/detail/1042088778/"
 
 

@@ -1,5 +1,5 @@
 # Submission title: Map Sum Pairs
-# Submission url  : https://leetcode.com/problems/map-sum-pairs/description/"
+# Submission url  : https://leetcode.com/problems/map-sum-pairs/description/
 # Submission url  : https://leetcode.com/submissions/detail/1033978238/"
 
 

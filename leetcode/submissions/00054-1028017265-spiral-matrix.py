@@ -1,5 +1,5 @@
 # Submission title: Spiral Matrix
-# Submission url  : https://leetcode.com/problems/spiral-matrix/description/"
+# Submission url  : https://leetcode.com/problems/spiral-matrix/description/
 # Submission url  : https://leetcode.com/submissions/detail/1028017265/"
 
 

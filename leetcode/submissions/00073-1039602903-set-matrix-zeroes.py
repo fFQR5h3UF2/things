@@ -1,5 +1,5 @@
 # Submission title: Set Matrix Zeroes
-# Submission url  : https://leetcode.com/problems/set-matrix-zeroes/description/"
+# Submission url  : https://leetcode.com/problems/set-matrix-zeroes/description/
 # Submission url  : https://leetcode.com/submissions/detail/1039602903/"
 
 

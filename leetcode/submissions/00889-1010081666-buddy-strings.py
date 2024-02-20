@@ -1,5 +1,5 @@
 # Submission title: Buddy Strings
-# Submission url  : https://leetcode.com/problems/buddy-strings/description/"
+# Submission url  : https://leetcode.com/problems/buddy-strings/description/
 # Submission url  : https://leetcode.com/submissions/detail/1010081666/"
 
 

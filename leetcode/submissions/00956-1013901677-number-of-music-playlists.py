@@ -1,5 +1,5 @@
 # Submission title: Number of Music Playlists
-# Submission url  : https://leetcode.com/problems/number-of-music-playlists/description/"
+# Submission url  : https://leetcode.com/problems/number-of-music-playlists/description/
 # Submission url  : https://leetcode.com/submissions/detail/1013901677/"
 
 

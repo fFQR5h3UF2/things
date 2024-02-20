@@ -1,5 +1,5 @@
 // Submission title: Valid Perfect Square
-// Submission url  : https://leetcode.com/problems/valid-perfect-square/description/"
+// Submission url  : https://leetcode.com/problems/valid-perfect-square/description/
 // Submission url  : https://leetcode.com/submissions/detail/692766447/"
 package submissions
 

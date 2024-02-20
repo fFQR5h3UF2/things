@@ -1,5 +1,5 @@
 # Submission title: Maximum Running Time of N Computers
-# Submission url  : https://leetcode.com/problems/maximum-running-time-of-n-computers/description/"
+# Submission url  : https://leetcode.com/problems/maximum-running-time-of-n-computers/description/
 # Submission url  : https://leetcode.com/submissions/detail/1005165062/"
 
 

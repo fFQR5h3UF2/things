@@ -1,5 +1,5 @@
 # Submission title: Sort Array By Parity
-# Submission url  : https://leetcode.com/problems/sort-array-by-parity/description/"
+# Submission url  : https://leetcode.com/problems/sort-array-by-parity/description/
 # Submission url  : https://leetcode.com/submissions/detail/1061185383/"
 
 

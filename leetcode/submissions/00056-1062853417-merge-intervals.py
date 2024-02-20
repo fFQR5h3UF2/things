@@ -1,5 +1,5 @@
 # Submission title: Merge Intervals
-# Submission url  : https://leetcode.com/problems/merge-intervals/description/"
+# Submission url  : https://leetcode.com/problems/merge-intervals/description/
 # Submission url  : https://leetcode.com/submissions/detail/1062853417/"
 
 

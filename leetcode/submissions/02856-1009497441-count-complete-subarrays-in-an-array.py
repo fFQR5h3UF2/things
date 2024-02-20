@@ -1,5 +1,5 @@
 # Submission title: Count Complete Subarrays in an Array
-# Submission url  : https://leetcode.com/problems/count-complete-subarrays-in-an-array/description/"
+# Submission url  : https://leetcode.com/problems/count-complete-subarrays-in-an-array/description/
 # Submission url  : https://leetcode.com/submissions/detail/1009497441/"
 
 

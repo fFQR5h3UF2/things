@@ -1,5 +1,5 @@
 // Submission title: Find Unique Binary String
-// Submission url  : https://leetcode.com/problems/find-unique-binary-string/description/"
+// Submission url  : https://leetcode.com/problems/find-unique-binary-string/description/
 // Submission url  : https://leetcode.com/submissions/detail/1099952562/"
 
 class Solution {

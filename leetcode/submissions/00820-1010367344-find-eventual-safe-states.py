@@ -1,5 +1,5 @@
 # Submission title: Find Eventual Safe States
-# Submission url  : https://leetcode.com/problems/find-eventual-safe-states/description/"
+# Submission url  : https://leetcode.com/problems/find-eventual-safe-states/description/
 # Submission url  : https://leetcode.com/submissions/detail/1010367344/"
 
 

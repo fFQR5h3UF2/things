@@ -1,5 +1,5 @@
 # Submission title: Unique Binary Search Trees II
-# Submission url  : https://leetcode.com/problems/unique-binary-search-trees-ii/description/"
+# Submission url  : https://leetcode.com/problems/unique-binary-search-trees-ii/description/
 # Submission url  : https://leetcode.com/submissions/detail/1012746905/"
 
 

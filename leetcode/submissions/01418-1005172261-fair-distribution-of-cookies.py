@@ -1,5 +1,5 @@
 # Submission title: Fair Distribution of Cookies
-# Submission url  : https://leetcode.com/problems/fair-distribution-of-cookies/description/"
+# Submission url  : https://leetcode.com/problems/fair-distribution-of-cookies/description/
 # Submission url  : https://leetcode.com/submissions/detail/1005172261/"
 
 

@@ -1,5 +1,5 @@
 # Submission title: Rotate Image
-# Submission url  : https://leetcode.com/problems/rotate-image/description/"
+# Submission url  : https://leetcode.com/problems/rotate-image/description/
 # Submission url  : https://leetcode.com/submissions/detail/1038443511/"
 
 

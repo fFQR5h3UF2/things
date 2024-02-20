@@ -1,5 +1,5 @@
 # Submission title: Candy
-# Submission url  : https://leetcode.com/problems/candy/description/"
+# Submission url  : https://leetcode.com/problems/candy/description/
 # Submission url  : https://leetcode.com/submissions/detail/1057811172/"
 
 

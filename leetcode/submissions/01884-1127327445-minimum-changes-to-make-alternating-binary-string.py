@@ -1,5 +1,5 @@
 # Submission title: Minimum Changes To Make Alternating Binary String
-# Submission url  : https://leetcode.com/problems/minimum-changes-to-make-alternating-binary-string/description/"
+# Submission url  : https://leetcode.com/problems/minimum-changes-to-make-alternating-binary-string/description/
 # Submission url  : https://leetcode.com/submissions/detail/1127327445/"
 
 

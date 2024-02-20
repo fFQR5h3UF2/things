@@ -1,5 +1,5 @@
 # Submission title: Number of Dice Rolls With Target Sum
-# Submission url  : https://leetcode.com/problems/number-of-dice-rolls-with-target-sum/description/"
+# Submission url  : https://leetcode.com/problems/number-of-dice-rolls-with-target-sum/description/
 # Submission url  : https://leetcode.com/submissions/detail/1128708587/"
 
 

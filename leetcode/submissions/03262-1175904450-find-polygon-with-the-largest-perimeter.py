@@ -1,5 +1,5 @@
 # Submission title: Find Polygon With the Largest Perimeter
-# Submission url  : https://leetcode.com/problems/find-polygon-with-the-largest-perimeter/description/"
+# Submission url  : https://leetcode.com/problems/find-polygon-with-the-largest-perimeter/description/
 # Submission url  : https://leetcode.com/submissions/detail/1175904450/"
 
 

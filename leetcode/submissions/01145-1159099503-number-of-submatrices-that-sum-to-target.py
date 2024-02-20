@@ -1,5 +1,5 @@
 # Submission title: Number of Submatrices That Sum to Target
-# Submission url  : https://leetcode.com/problems/number-of-submatrices-that-sum-to-target/description/"
+# Submission url  : https://leetcode.com/problems/number-of-submatrices-that-sum-to-target/description/
 # Submission url  : https://leetcode.com/submissions/detail/1159099503/"
 
 

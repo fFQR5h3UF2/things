@@ -1,5 +1,5 @@
 // Submission title: Network Delay Time
-// Submission url  : https://leetcode.com/problems/network-delay-time/description/"
+// Submission url  : https://leetcode.com/problems/network-delay-time/description/
 // Submission url  : https://leetcode.com/submissions/detail/699249675/"
 com.shishifubing.dotfiles.submissions
 class Solution {

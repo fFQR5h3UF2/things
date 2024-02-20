@@ -1,5 +1,5 @@
 # Submission title: Design Bitset
-# Submission url  : https://leetcode.com/problems/design-bitset/description/"
+# Submission url  : https://leetcode.com/problems/design-bitset/description/
 # Submission url  : https://leetcode.com/submissions/detail/1053831460/"
 
 

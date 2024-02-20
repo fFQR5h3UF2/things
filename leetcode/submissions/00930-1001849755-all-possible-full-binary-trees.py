@@ -1,5 +1,5 @@
 # Submission title: All Possible Full Binary Trees
-# Submission url  : https://leetcode.com/problems/all-possible-full-binary-trees/description/"
+# Submission url  : https://leetcode.com/problems/all-possible-full-binary-trees/description/
 # Submission url  : https://leetcode.com/submissions/detail/1001849755/"
 
 

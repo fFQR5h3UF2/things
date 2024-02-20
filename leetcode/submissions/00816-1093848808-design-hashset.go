@@ -1,5 +1,5 @@
 // Submission title: Design HashSet
-// Submission url  : https://leetcode.com/problems/design-hashset/description/"
+// Submission url  : https://leetcode.com/problems/design-hashset/description/
 // Submission url  : https://leetcode.com/submissions/detail/1093848808/"
 package submissions
 
