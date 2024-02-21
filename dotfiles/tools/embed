@@ -12,11 +12,14 @@ cat - >"${output_path}" <<EOF
 #!/usr/bin/env sh
 set -o errexit -o nounset -o xtrace
 install=\$(mktemp)
-archive=\$(mktemp)
 trap "rm -rf '\${install}'" EXIT
+archive=\$(mktemp)
 trap "rm -rf '\${archive}'" EXIT
 chmod u+x "\${install}"
-base64 -d >"\${install}" <<<'${install_base64}'
-base64 -d >"\${archive}" <<<'${archive_base64}'
+install_base64='${install_base64}'
+archive_base64='${archive_base64}'
+
+echo "\${install_base64}" | base64 -d >"\${install}"
+echo "\${archive_base64}" | base64 -d >"\${archive}"
 "\${install}" "\${archive}" "\${@}"
 EOF
