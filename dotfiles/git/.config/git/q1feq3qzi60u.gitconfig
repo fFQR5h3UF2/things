@@ -1,15 +1,4 @@
 [user]
-        email = 97828377+q1feq3qzi60u@users.noreply.github.com
-        name = q1feq3qzi60u
-        signingkey = 7301715772B07CC3
-[commit]
-        gpgsign = true
-[tag]
-        gpgsign = true
-[push]
-        default = current
-        gpgsign = if-asked
-[init]
-	defaultBranch = main
-[include]
-	path = ~/.config/git/work.gitconfig
+    email = 97828377+q1feq3qzi60u@users.noreply.github.com
+    name = q1feq3qzi60u
+    signingkey = 7301715772B07CC3

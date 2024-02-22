@@ -3,29 +3,11 @@
 # tools
 
 #######################################
-# Bazel wrapper using bazelisk
-# Globals:
-#   GOPATH
-#   HOME
-#######################################
-run_bazel() {
-    package="github.com/bazelbuild/bazelisk"
-    version="c7c6c19799ff408c48bdce6b7557217ad0050b17" # v1.19.0
-    bin="${GOPATH:-${HOME}/go}/bin/bazelisk"
-    if [ ! -x "${bin}" ]; then
-        go install "${package}@${version}"
-    fi
-    cd "$(git rev-parse --show-toplevel)"
-    . ./tools/env.sh
-    exec "${bin}" "${@}"
-}
-
-#######################################
 # Fix for generated golang files not available to IDEs
 #   https://github.com/bazelbuild/rules_go/wiki/Editor-setup
 #######################################
 run_gopackagesdriver() {
-    run_bazel run -- @io_bazel_rules_go//go/tools/gopackagesdriver "${@}"
+    exec "$(dirname "${0}")/../bazel" run -- @rules_go//go/tools/gopackagesdriver "${@}"
 }
 
 get_functions() {
@@ -40,16 +22,16 @@ get_functions() {
 #######################################
 get_cur_version() {
     git fetch origin --depth=100
-    tag=$(git describe --tags --long --match="[0-9][0-9][0-9][0-9].[0-9][0-9].[0-9][0-9]")
-    hash="${tag##*-}"
-    patch="${tag#*-}"
-    patch="${patch%-*}"
-    major="${tag%%.*}"
-    minor="${tag#*.}"
-    minor="${minor%%.*}"
-    version="${major}.${minor}.${patch}+${hash}"
-    echo "tag: ${tag}, major: ${major}, patch: ${patch}, hash: ${hash}" >&2
-    echo "${version}"
+    _tag=$(git describe --tags --long --match="[0-9][0-9][0-9][0-9].[0-9][0-9].[0-9][0-9]")
+    _hash="${_tag##*-}"
+    _patch="${_tag#*-}"
+    _patch="${_patch%-*}"
+    _major="${_tag%%.*}"
+    _minor="${_tag#*.}"
+    _minor="${_minor%%.*}"
+    _version="${_major}.${_minor}.${_patch}+${_hash}"
+    echo "tag: ${_tag}, major: ${_major}, patch: ${_patch}, hash: ${_hash}" >&2
+    echo "${_version}"
 }
 
 #######################################

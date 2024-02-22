@@ -1,0 +1,13 @@
+[commit]
+    gpgSign = true
+[tag]
+    gpgSign = true
+[push]
+    default = current
+    gpgSign = if-asked
+[init]
+    defaultBranch = main
+[include]
+    path = ~/.config/git/work.gitconfig
+[includeIf "gitdir:~/repos/shishifubing/"]
+    path = ~/.config/git/q1feq3qzi60u.gitconfig
