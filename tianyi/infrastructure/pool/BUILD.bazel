@@ -1,0 +1,18 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "pool",
+    srcs = [
+        "context_infrastructure.go",
+        "pool_infrastructure.go",
+    ],
+    importpath = "shishifubing.com/tianyi/infrastructure/pool",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//tianyi/infrastructure/config",
+        "//tianyi/usecase/job",
+        "//tianyi/usecase/pool",
+        "@com_github_gocraft_work//:work",
+        "@com_github_gomodule_redigo//redis",
+    ],
+)

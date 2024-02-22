@@ -4,8 +4,8 @@ import (
 	"github.com/google/uuid"
 	"gorm.io/gorm"
 
-	"gitlab.com/kongrentian-group/tianyi/v1/entity"
-	usecaseProject "gitlab.com/kongrentian-group/tianyi/v1/usecase/project"
+	"shishifubing.com/tianyi/entity"
+	usecaseProject "shishifubing.com/tianyi/usecase/project"
 )
 
 type repository struct {

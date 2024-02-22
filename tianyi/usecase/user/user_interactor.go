@@ -2,8 +2,8 @@ package useUser
 
 import (
 	"github.com/google/uuid"
-	"gitlab.com/kongrentian-group/tianyi/v1/entity"
-	"gitlab.com/kongrentian-group/tianyi/v1/pkg"
+	"shishifubing.com/tianyi/entity"
+	"shishifubing.com/tianyi/pkg"
 )
 
 type userInteractor struct {

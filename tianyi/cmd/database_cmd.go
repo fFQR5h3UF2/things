@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
-	infra "gitlab.com/kongrentian-group/tianyi/v1/infrastructure"
+	infra "shishifubing.com/tianyi/infrastructure"
 )
 
 var databaseCmd = &cobra.Command{

@@ -3,10 +3,10 @@ package controller
 import (
 	"github.com/gofiber/fiber/v2"
 
-	"gitlab.com/kongrentian-group/tianyi/v1/api/presenter"
-	"gitlab.com/kongrentian-group/tianyi/v1/entity"
-	useBranch "gitlab.com/kongrentian-group/tianyi/v1/usecase/branch"
-	useProject "gitlab.com/kongrentian-group/tianyi/v1/usecase/project"
+	"shishifubing.com/tianyi/api/presenter"
+	"shishifubing.com/tianyi/entity"
+	useBranch "shishifubing.com/tianyi/usecase/branch"
+	useProject "shishifubing.com/tianyi/usecase/project"
 )
 
 type Branch interface {

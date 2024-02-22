@@ -1,7 +1,7 @@
 package usePool
 
 import (
-	"gitlab.com/kongrentian-group/tianyi/v1/entity"
+	"shishifubing.com/tianyi/entity"
 )
 
 type (

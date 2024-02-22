@@ -5,9 +5,9 @@ import (
 
 	"github.com/gocraft/work"
 	"github.com/gomodule/redigo/redis"
-	infraConfig "gitlab.com/kongrentian-group/tianyi/v1/infrastructure/config"
-	useJob "gitlab.com/kongrentian-group/tianyi/v1/usecase/job"
-	usePool "gitlab.com/kongrentian-group/tianyi/v1/usecase/pool"
+	infraConfig "shishifubing.com/tianyi/infrastructure/config"
+	useJob "shishifubing.com/tianyi/usecase/job"
+	usePool "shishifubing.com/tianyi/usecase/pool"
 )
 
 type pool struct {

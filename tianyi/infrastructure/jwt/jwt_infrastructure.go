@@ -6,11 +6,11 @@ import (
 
 	"github.com/golang-jwt/jwt/v4"
 	"github.com/mitchellh/mapstructure"
-	"gitlab.com/kongrentian-group/tianyi/v1/entity"
-	"gitlab.com/kongrentian-group/tianyi/v1/pkg"
+	"shishifubing.com/tianyi/entity"
+	"shishifubing.com/tianyi/pkg"
 
-	infraConfig "gitlab.com/kongrentian-group/tianyi/v1/infrastructure/config"
-	useJWT "gitlab.com/kongrentian-group/tianyi/v1/usecase/jwt"
+	infraConfig "shishifubing.com/tianyi/infrastructure/config"
+	useJWT "shishifubing.com/tianyi/usecase/jwt"
 )
 
 type interactor struct {

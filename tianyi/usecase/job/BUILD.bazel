@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "job",
+    srcs = [
+        "job_interactor.go",
+        "job_interface.go",
+    ],
+    importpath = "shishifubing.com/tianyi/usecase/job",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//tianyi/entity",
+        "@com_github_google_uuid//:uuid",
+    ],
+)

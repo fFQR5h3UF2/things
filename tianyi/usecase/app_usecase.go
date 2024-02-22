@@ -1,15 +1,15 @@
 package usecase
 
 import (
-	useBranch "gitlab.com/kongrentian-group/tianyi/v1/usecase/branch"
-	useJob "gitlab.com/kongrentian-group/tianyi/v1/usecase/job"
-	useJWT "gitlab.com/kongrentian-group/tianyi/v1/usecase/jwt"
-	useLifecycle "gitlab.com/kongrentian-group/tianyi/v1/usecase/lifecycle"
-	usePipeline "gitlab.com/kongrentian-group/tianyi/v1/usecase/pipeline"
-	usePool "gitlab.com/kongrentian-group/tianyi/v1/usecase/pool"
-	useProject "gitlab.com/kongrentian-group/tianyi/v1/usecase/project"
-	useSession "gitlab.com/kongrentian-group/tianyi/v1/usecase/session"
-	useUser "gitlab.com/kongrentian-group/tianyi/v1/usecase/user"
+	useBranch "shishifubing.com/tianyi/usecase/branch"
+	useJob "shishifubing.com/tianyi/usecase/job"
+	useJWT "shishifubing.com/tianyi/usecase/jwt"
+	useLifecycle "shishifubing.com/tianyi/usecase/lifecycle"
+	usePipeline "shishifubing.com/tianyi/usecase/pipeline"
+	usePool "shishifubing.com/tianyi/usecase/pool"
+	useProject "shishifubing.com/tianyi/usecase/project"
+	useSession "shishifubing.com/tianyi/usecase/session"
+	useUser "shishifubing.com/tianyi/usecase/user"
 )
 
 type Interactor interface {

@@ -5,8 +5,8 @@ import (
 	"net/http"
 
 	"github.com/gofiber/fiber/v2"
-	"gitlab.com/kongrentian-group/tianyi/v1/api/presenter"
-	pkgError "gitlab.com/kongrentian-group/tianyi/v1/pkg/error"
+	"shishifubing.com/tianyi/api/presenter"
+	pkgError "shishifubing.com/tianyi/pkg/error"
 )
 
 // global fiber error handler

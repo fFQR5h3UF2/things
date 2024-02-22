@@ -1,6 +1,6 @@
 package useJWT
 
-import "gitlab.com/kongrentian-group/tianyi/v1/entity"
+import "shishifubing.com/tianyi/entity"
 
 type Interactor interface {
 	// generate user jwt
