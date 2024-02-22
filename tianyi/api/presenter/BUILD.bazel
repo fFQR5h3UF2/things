@@ -1,0 +1,21 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "presenter",
+    srcs = [
+        "branch_presenter.go",
+        "common_presenter.go",
+        "error_presenter.go",
+        "lifecycle_presenter.go",
+        "pipeline_presenter.go",
+        "project_presenter.go",
+        "session_presenter.go",
+        "user_presenter.go",
+    ],
+    importpath = "shishifubing.com/tianyi/api/presenter",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//tianyi/pkg/error",
+        "@com_github_gofiber_fiber_v2//:fiber",
+    ],
+)

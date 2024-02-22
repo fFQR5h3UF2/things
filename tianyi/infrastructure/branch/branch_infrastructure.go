@@ -11,8 +11,8 @@ import (
 	"github.com/hashicorp/hcl/v2/hclsimple"
 	"gorm.io/gorm"
 
-	"gitlab.com/kongrentian-group/tianyi/v1/entity"
-	useBranch "gitlab.com/kongrentian-group/tianyi/v1/usecase/branch"
+	"shishifubing.com/tianyi/entity"
+	useBranch "shishifubing.com/tianyi/usecase/branch"
 )
 
 type repository struct {

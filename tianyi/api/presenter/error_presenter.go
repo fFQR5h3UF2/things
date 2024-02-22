@@ -2,7 +2,7 @@ package presenter
 
 import (
 	"github.com/gofiber/fiber/v2"
-	pkgError "gitlab.com/kongrentian-group/tianyi/v1/pkg/error"
+	pkgError "shishifubing.com/tianyi/pkg/error"
 )
 
 func Error(context *fiber.Ctx, err pkgError.Error) error {

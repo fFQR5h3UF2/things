@@ -1,0 +1,15 @@
+load("@io_bazel_rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "tianyi_lib",
+    srcs = ["main.go"],
+    importpath = "shishifubing.com/tianyi",
+    visibility = ["//visibility:private"],
+    deps = ["//tianyi/cmd"],
+)
+
+go_binary(
+    name = "tianyi",
+    embed = [":tianyi_lib"],
+    visibility = ["//visibility:public"],
+)

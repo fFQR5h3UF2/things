@@ -1,5 +1,5 @@
 load("@rules_license//rules:license.bzl", "license")
-load("@bazel_gazelle//:def.bzl", "gazelle")
+load("@gazelle//:def.bzl", "gazelle")
 
 gazelle(name = "gazelle")
 

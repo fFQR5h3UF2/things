@@ -2,10 +2,10 @@ package controller
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"gitlab.com/kongrentian-group/tianyi/v1/api/presenter"
-	"gitlab.com/kongrentian-group/tianyi/v1/entity"
-	useSession "gitlab.com/kongrentian-group/tianyi/v1/usecase/session"
-	useUser "gitlab.com/kongrentian-group/tianyi/v1/usecase/user"
+	"shishifubing.com/tianyi/api/presenter"
+	"shishifubing.com/tianyi/entity"
+	useSession "shishifubing.com/tianyi/usecase/session"
+	useUser "shishifubing.com/tianyi/usecase/user"
 )
 
 type User interface {

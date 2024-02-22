@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	pkgError "gitlab.com/kongrentian-group/tianyi/v1/pkg/error"
+	pkgError "shishifubing.com/tianyi/pkg/error"
 )
 
 func InvalidLoginOrPassword() error {

@@ -5,8 +5,8 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	"github.com/google/uuid"
-	"gitlab.com/kongrentian-group/tianyi/v1/api/presenter"
-	"gitlab.com/kongrentian-group/tianyi/v1/pkg"
+	"shishifubing.com/tianyi/api/presenter"
+	"shishifubing.com/tianyi/pkg"
 )
 
 const (

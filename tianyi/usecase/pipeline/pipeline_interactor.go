@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"gitlab.com/kongrentian-group/tianyi/v1/entity"
-	usecaseJob "gitlab.com/kongrentian-group/tianyi/v1/usecase/job"
+	"shishifubing.com/tianyi/entity"
+	usecaseJob "shishifubing.com/tianyi/usecase/job"
 )
 
 type pipeline struct {

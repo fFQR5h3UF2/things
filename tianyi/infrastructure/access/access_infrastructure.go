@@ -5,7 +5,7 @@ import (
 
 	"github.com/casbin/casbin/v2"
 	gormadapter "github.com/casbin/gorm-adapter/v3"
-	useAccess "gitlab.com/kongrentian-group/tianyi/v1/usecase/access"
+	useAccess "shishifubing.com/tianyi/usecase/access"
 	"gorm.io/gorm"
 )
 

@@ -2,9 +2,9 @@ package controller
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"gitlab.com/kongrentian-group/tianyi/v1/api/presenter"
-	useJWT "gitlab.com/kongrentian-group/tianyi/v1/usecase/jwt"
-	useSession "gitlab.com/kongrentian-group/tianyi/v1/usecase/session"
+	"shishifubing.com/tianyi/api/presenter"
+	useJWT "shishifubing.com/tianyi/usecase/jwt"
+	useSession "shishifubing.com/tianyi/usecase/session"
 )
 
 var UnauthorizedRoutes = map[string]bool{

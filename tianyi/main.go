@@ -1,6 +1,6 @@
 package main
 
-import "gitlab.com/kongrentian-group/tianyi/v1/cmd"
+import "shishifubing.com/tianyi/cmd"
 
 func main() {
 	cmd.Execute()

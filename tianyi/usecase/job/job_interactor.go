@@ -1,6 +1,6 @@
 package useJob
 
-import "gitlab.com/kongrentian-group/tianyi/v1/entity"
+import "shishifubing.com/tianyi/entity"
 
 type interactor struct {
 	repository Repository

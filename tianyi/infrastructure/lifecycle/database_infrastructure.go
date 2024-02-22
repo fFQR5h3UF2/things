@@ -7,7 +7,7 @@ import (
 	"os"
 	"time"
 
-	infraConfig "gitlab.com/kongrentian-group/tianyi/v1/infrastructure/config"
+	infraConfig "shishifubing.com/tianyi/infrastructure/config"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"

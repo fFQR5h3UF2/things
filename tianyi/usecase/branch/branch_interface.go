@@ -2,7 +2,7 @@ package useBranch
 
 import (
 	"github.com/google/uuid"
-	"gitlab.com/kongrentian-group/tianyi/v1/entity"
+	"shishifubing.com/tianyi/entity"
 )
 
 // interactor for entity.branch

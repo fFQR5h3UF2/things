@@ -7,7 +7,7 @@ import (
 	"github.com/gofiber/fiber/v2"
 	"github.com/gofiber/fiber/v2/middleware/session"
 	"github.com/gofiber/storage/redis"
-	useSession "gitlab.com/kongrentian-group/tianyi/v1/usecase/session"
+	useSession "shishifubing.com/tianyi/usecase/session"
 )
 
 type repository struct {

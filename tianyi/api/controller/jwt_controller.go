@@ -6,7 +6,7 @@ import (
 
 	"github.com/gofiber/fiber/v2"
 	jwtware "github.com/gofiber/jwt/v3"
-	pkgError "gitlab.com/kongrentian-group/tianyi/v1/pkg/error"
+	pkgError "shishifubing.com/tianyi/pkg/error"
 )
 
 type JWT interface {
