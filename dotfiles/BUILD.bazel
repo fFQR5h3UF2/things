@@ -52,17 +52,17 @@ genrule(
 sh_binary(
     name = "nvim-lazy-sync",
     srcs = [":lib_scripts"],
+    args = ["nvim_lazy_sync"],
     data = [":install"],
     visibility = ["//visibility:public"],
-    args = ["nvim_lazy_sync"],
 )
 
 sh_binary(
     name = "nvim-lazy-update-lockfile",
     srcs = [":lib_scripts"],
+    args = ["nvim_lazy_update_lockfile"],
     data = [":install"],
     visibility = ["//visibility:public"],
-    args = ["nvim_lazy_update_lockfile"],
 )
 
 sh_binary(
