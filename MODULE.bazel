@@ -54,6 +54,7 @@ use_repo(python, "python_versions")
 go_deps = use_extension("@gazelle//:extensions.bzl", "go_deps")
 go_deps.from_file(go_mod = "//:go.mod")
 go_deps.module_override(
+    # fix for https://github.com/bazelbuild/bazel-gazelle/issues/1421
     path = "github.com/cloudflare/circl",
     patch_strip = 1,
     patches = [
