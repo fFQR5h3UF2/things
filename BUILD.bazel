@@ -1,7 +1,17 @@
 load("@rules_license//rules:license.bzl", "license")
 load("@gazelle//:def.bzl", "gazelle")
+load("@com_github_bazelbuild_buildtools//buildifier:def.bzl", "buildifier")
 
-gazelle(name = "gazelle")
+gazelle(
+    name = "gazelle",
+    mode = "fix",
+)
+
+#buildifier(
+#    name = "buildifier",
+#    lint_mode = "fix",
+#    lint_warnings = ["all"],
+#)
 
 package(
     default_applicable_licenses = [":license"],
