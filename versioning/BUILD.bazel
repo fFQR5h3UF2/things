@@ -1,0 +1,20 @@
+load("@rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "versioning_lib",
+    srcs = ["main.go"],
+    importpath = "shishifubing.com/versioning",
+    visibility = ["//visibility:private"],
+    deps = [
+        "@com_github_go_git_go_git_v5//:go-git",
+        "@com_github_go_git_go_git_v5//plumbing",
+        "@com_github_go_git_go_git_v5//plumbing/object",
+        "@org_golang_x_mod//semver",
+    ],
+)
+
+go_binary(
+    name = "versioning",
+    embed = [":versioning_lib"],
+    visibility = ["//visibility:public"],
+)
