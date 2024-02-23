@@ -1,12 +1,15 @@
 load("@rules_license//rules:license.bzl", "license")
 load("@gazelle//:def.bzl", "gazelle")
-load("@com_github_bazelbuild_buildtools//buildifier:def.bzl", "buildifier")
 
 gazelle(
     name = "gazelle",
-    mode = "fix",
+    command = "fix",
 )
 
+# this export is needed to run git scripts
+exports_files([".git"])
+
+#load("@com_github_bazelbuild_buildtools//buildifier:def.bzl", "buildifier")
 #buildifier(
 #    name = "buildifier",
 #    lint_mode = "fix",

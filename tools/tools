@@ -15,34 +15,6 @@ get_functions() {
     printf "functions:\n%s" "${_functions}" >&2
 }
 
-#######################################
-# Calculate the current version and output it
-# Outputs:
-#   Writes current version to stdout
-#######################################
-get_cur_version() {
-    git fetch origin --depth=100
-    _tag=$(git describe --tags --long --match="[0-9][0-9][0-9][0-9].[0-9][0-9].[0-9][0-9]")
-    _hash="${_tag##*-}"
-    _patch="${_tag#*-}"
-    _patch="${_patch%-*}"
-    _major="${_tag%%.*}"
-    _minor="${_tag#*.}"
-    _minor="${_minor%%.*}"
-    _version="${_major}.${_minor}.${_patch}+${_hash}"
-    echo "tag: ${_tag}, major: ${_major}, patch: ${_patch}, hash: ${_hash}" >&2
-    echo "${_version}"
-}
-
-#######################################
-# Calculate the new version and output it
-# Outputs:
-#   Writes new version to stdout
-#######################################
-get_new_version() {
-    date "+%G.%-V.0"
-}
-
 if [ "${#}" -gt 0 ]; then
     set -o errexit -o nounset -o xtrace
     "${@}"

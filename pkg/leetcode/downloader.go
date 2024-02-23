@@ -1,4 +1,4 @@
-package core
+package leetcode
 
 import (
 	"context"
@@ -10,7 +10,7 @@ import (
 	"net/url"
 	"strings"
 
-	"shishifubing.com/leetcode/model"
+	"shishifubing.com/pkg/leetcode/model"
 )
 
 const SUBMISSIONS_REQUEST_LIMIT = 20

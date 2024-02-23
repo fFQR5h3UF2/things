@@ -1,6 +1,6 @@
 syntax = "proto3";
-package com.shishifubing.leetcode.model;
-option go_package = "shishifubing.com/leetcode/model";
+package com.shishifubing.pkg.leetcode.proto;
+option go_package = "shishifubing.com/pkg/leetcode/model";
 
 enum CliAction {
   DOWNLOAD = 0;

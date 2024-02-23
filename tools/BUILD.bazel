@@ -1,9 +1,12 @@
 sh_binary(
-    name = "run_get_cur_version",
-    srcs = ["get_cur_version"],
+    name = "update",
+    srcs = ["leetcode"],
+    visibility = ["//visibility:public"],
 )
 
 sh_binary(
-    name = "run_get_new_version",
-    srcs = ["get_new_version"],
+    name = "generate",
+    srcs = ["leetcode"],
+    args = ["generate_submission_dir"],
+    visibility = ["//visibility:public"],
 )
