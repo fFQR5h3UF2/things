@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# shellcheck source=functions.sh
 . "${HOME}/.config/dotfiles/shell/functions.sh"
 
 export FZF_DEFAULT_COMMAND="fd --type f"
@@ -20,7 +21,8 @@ export XDG_STATE_HOME="${HOME}/.local/state"
 export NVM_DIR="${XDG_CONFIG_HOME}/nvm"
 ## the main prompt variable
 # https://stackoverflow.com/a/28938235
-export PS1='\[\e[35;1m\]\u\[\e[m\]@\[\e[35;1m\]\h\[\e[m\] \[\e[36;1m\]\w\[\e[m\] \[\e[1m\]$(__git_ps1 "%s")\[\e[m\]\n\$ '
+export PS1='\[\e[35;1m\]\u\[\e[m\]@\[\e[35;1m\]\h\[\e[m\] \[\e[36;1m\]\w\[\e[m\] \[\e[1m\]$(__git_ps1 "%s")\[\e[m\]\n'
+export PS2=""
 export PROMPT_COMMAND="d_prompt_command"
 # git prompt variables
 export GIT_PS1_SHOWDIRTYSTATE="true"

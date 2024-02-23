@@ -11,7 +11,6 @@ proto_library(
 go_library(
     name = "model",
     srcs = ["main.go"],
-    embed = [":model_go_proto"],
     embedsrcs = [
         "config.json",
         "submission.txt.tmpl",

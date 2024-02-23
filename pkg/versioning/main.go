@@ -31,7 +31,7 @@ func Run(
 	if err != nil {
 		return fmt.Errorf("could not open %s: %w", dir, err)
 	}
-	ver, err := svc.CurrentVersion(repo)
+	ver, err := svc.CurrentVersion(repo, svc.FilterTagSemver)
 	if err != nil {
 		return fmt.Errorf("could not get version from %s: %w", dir, err)
 	}
@@ -43,10 +43,12 @@ type VersionService struct {
 	logger *slog.Logger
 }
 
+type TagFilter func(tag *object.Tag) (bool, error)
+
 func (s *VersionService) FilterTags(repo *git.Repository, filter func(tag *object.Tag) (bool, error)) ([]*object.Tag, error) {
 	tags, err := repo.Tags()
 	if err != nil {
-		return nil, fmt.Errorf("could not get tags: %w", tags)
+		return nil, fmt.Errorf("could not get tags: %w", err)
 	}
 	res := []*object.Tag{}
 	err = tags.ForEach(func(ref *plumbing.Reference) error {
@@ -76,25 +78,25 @@ func (s *VersionService) FilterTags(repo *git.Repository, filter func(tag *objec
 	return res, nil
 }
 
-func (s *VersionService) NewVersion() (string, error) {
+func (s *VersionService) NewVersion() string {
 	now := time.Now()
 	year, week := now.ISOWeek()
-	return fmt.Sprintf("%s.%s.0", year, week), nil
+	return fmt.Sprintf("%d.%d.0", year, week)
 }
 
 func (s *VersionService) FilterTagSemver(tag *object.Tag) (bool, error) {
 	return semver.IsValid(tag.Name), nil
 }
 
-func (s *VersionService) CurrentVersion(repo *git.Repository) (string, error) {
-	tags, err := s.FilterTags(repo, s.FilterTagSemver)
+func (s *VersionService) CurrentVersion(repo *git.Repository, filter TagFilter) (string, error) {
+	tags, err := s.FilterTags(repo, filter)
 	if err != nil {
 		return "", fmt.Errorf("could not filter tags: %w", err)
 	}
 	length := len(tags)
 	s.logger.Info(fmt.Sprintf("filtered %d tags", length))
 	if length == 0 {
-		return s.NewVersion()
+		return s.NewVersion(), nil
 	}
 	tagNames := make([]string, length)
 	for i, tag := range tags {
