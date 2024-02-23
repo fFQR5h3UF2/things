@@ -5,7 +5,7 @@ go_library(
     srcs = ["main.go"],
     importpath = "shishifubing.com/cmd/versioning",
     visibility = ["//visibility:private"],
-    deps = ["//pkg/versioning:versioning_lib"],
+    deps = ["//pkg/versioning"],
 )
 
 go_binary(

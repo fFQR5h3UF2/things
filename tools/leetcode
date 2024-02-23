@@ -9,14 +9,14 @@ branch="dev/add-${date}-leetcode-submissions"
 commit="feat(leetcode): add ${date} submissions"
 
 update_submission_file() {
-    bazel run leetcode -- \
+    bazel run cmd/leetcode -- \
         --submissions-file "${submissions_file}" \
         --submissions-dir "${submissions_dir}" \
         update
 }
 
 generate_submission_dir() {
-    bazel run leetcode -- \
+    bazel run cmd/leetcode -- \
         --submissions-file "${submissions_file}" \
         --submissions-dir "${submissions_dir}" \
         generate

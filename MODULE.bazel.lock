@@ -1635,11 +1635,11 @@
       "general": {
         "bzlTransitiveDigest": "zP01muRk4s4xWGK3gNPXOyDMQkOPsIhu99akeKWFFQ0=",
         "accumulatedFileDigests": {
-          "@@//:go.mod": "3f5d4367dab6f14440d56a24abb5c025b4aa3178ddc3fdee9ab70dd2583127fa",
+          "@@//:go.mod": "1e5dcdbaf1a9a43aecff20295e928b82e0b820bca844a27ada330eb774a6f3e9",
           "@@rules_python_gazelle_plugin~0.29.0//:go.mod": "9130dcd6d4428c99df11ad5a5cca2ad8f6392f240442842cfb8396162bfe7a3f",
           "@@rules_go~0.46.0//:go.sum": "d56fdb19b21a5f12bcf625c49432371ac39c2def0f564098fbda107f7c080f40",
           "@@rules_python_gazelle_plugin~0.29.0//:go.sum": "3fb54fe8f7444afc4b826a2027de14993adcdd7a00b1fdc0c960c8feb122ef25",
-          "@@//:go.sum": "10c299bcee6295236bb71cded42ea46e32a6bff81fd3537c19100824b6d30ee8",
+          "@@//:go.sum": "bdc2b9bca7407f582d6e0785826c3f36683046f906bc7b5099a902bc5c5b33e1",
           "@@gazelle~0.35.0//:go.mod": "48dc6e771c3028ee1c18b9ffc81e596fd5f6d7e0016c5ef280e30f2821f60473",
           "@@gazelle~0.35.0//:go.sum": "7c4460e8ecb5dd8691a51d4fa2e9e4751108b933636497ce46db499fc2e7a88d",
           "@@rules_go~0.46.0//:go.mod": "de22304b720f7f61350ec1c9739de6c0a1b1103fd22bfeb6e92c6c843ddc6d6e"
@@ -2121,9 +2121,9 @@
               "build_extra_args": [],
               "patches": [],
               "patch_args": [],
-              "sum": "h1:zdAyfUGbYmuVokhzVmghFl2ZJh5QhcfebBgmVPFYA+8=",
+              "sum": "h1:k8NLag8AGHnn+PHbl7g43CtqZAwG60vZkLqgyZgIHgQ=",
               "replace": "",
-              "version": "v0.15.0"
+              "version": "v0.18.0"
             }
           },
           "com_github_kevinburke_ssh_config": {
@@ -3184,6 +3184,22 @@
               "version": "v3.21.0"
             }
           },
+          "com_github_cweill_gotests": {
+            "bzlFile": "@@gazelle~0.35.0//internal:go_repository.bzl",
+            "ruleClassName": "go_repository",
+            "attributes": {
+              "name": "gazelle~0.35.0~go_deps~com_github_cweill_gotests",
+              "importpath": "github.com/cweill/gotests",
+              "build_directives": [],
+              "build_file_generation": "auto",
+              "build_extra_args": [],
+              "patches": [],
+              "patch_args": [],
+              "sum": "h1:KJx+/p4EweijYzqPb4Y/8umDCip1Cv6hEVyOx0mE9W8=",
+              "replace": "",
+              "version": "v1.6.0"
+            }
+          },
           "com_github_mitchellh_go_wordwrap": {
             "bzlFile": "@@gazelle~0.35.0//internal:go_repository.bzl",
             "ruleClassName": "go_repository",
@@ -3615,6 +3631,7 @@
                 "com_github_casbin_govaluate": "github.com/casbin/govaluate",
                 "com_github_cespare_xxhash_v2": "github.com/cespare/xxhash/v2",
                 "com_github_cloudflare_circl": "github.com/cloudflare/circl",
+                "com_github_cweill_gotests": "github.com/cweill/gotests",
                 "com_github_cyphar_filepath_securejoin": "github.com/cyphar/filepath-securejoin",
                 "com_github_dgryski_go_rendezvous": "github.com/dgryski/go-rendezvous",
                 "com_github_dustin_go_humanize": "github.com/dustin/go-humanize",
