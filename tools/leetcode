@@ -2,8 +2,8 @@
 set -o errexit -o nounset -o xtrace
 
 project_dir=$(git -C "${BUILD_WORKING_DIRECTORY}" rev-parse --show-toplevel)
-submissions_file="${project_dir}/leetcode/submissions.json"
-submissions_dir="${project_dir}/leetcode/submissions"
+submissions_file="${project_dir}/assets/leetcode/submissions.json"
+submissions_dir="${project_dir}/assets/leetcode/submissions"
 date=$(date '+%y-%m-%d')
 branch="dev/add-${date}-leetcode-submissions"
 commit="feat(leetcode): add ${date} submissions"

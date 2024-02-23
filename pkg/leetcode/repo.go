@@ -1,4 +1,4 @@
-package core
+package leetcode
 
 import (
 	"context"
@@ -7,7 +7,7 @@ import (
 	"log/slog"
 	"os"
 
-	"shishifubing.com/leetcode/model"
+	"shishifubing.com/pkg/leetcode/model"
 )
 
 type Repo struct {

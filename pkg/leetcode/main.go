@@ -1,4 +1,4 @@
-package cmd
+package leetcode
 
 import (
 	"context"
@@ -11,8 +11,7 @@ import (
 	"os/signal"
 	"strings"
 
-	"shishifubing.com/leetcode/core"
-	"shishifubing.com/leetcode/model"
+	"shishifubing.com/pkg/leetcode/model"
 )
 
 func Run(
@@ -29,15 +28,15 @@ func Run(
 	if err != nil {
 		return err
 	}
-	repo := core.NewRepo(config, ctx, logger)
+	repo := NewRepo(config, ctx, logger)
 	if err != nil {
 		return err
 	}
-	downloader, err := core.NewDownloader(config, ctx, logger)
+	downloader, err := NewDownloader(config, ctx, logger)
 	if err != nil {
 		return err
 	}
-	generator, err := core.NewGenerator(config, ctx, logger)
+	generator, err := NewGenerator(config, ctx, logger)
 	if err != nil {
 		return err
 	}
@@ -51,6 +50,7 @@ func Run(
 		if err != nil {
 			return err
 		}
+		text = append(text, '\n')
 		stdout.Write(text)
 	case model.CliAction_UPDATE:
 		submissions, err := downloader.GetSubmissions(config.Offset, config.Limit)

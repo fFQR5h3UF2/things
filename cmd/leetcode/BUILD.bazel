@@ -1,0 +1,23 @@
+load("@rules_go//go:def.bzl", "go_binary", "go_library")
+
+go_library(
+    name = "cmd",
+    srcs = ["cmd.go"],
+    importpath = "shishifubing.com/packages/leetcode/cmd",
+    visibility = ["//visibility:public"],
+    deps = ["//packages/leetcode/model:model_go_proto"],
+)
+
+go_library(
+    name = "leetcode_lib",
+    srcs = ["main.go"],
+    importpath = "shishifubing.com/cmd/leetcode",
+    visibility = ["//visibility:private"],
+    deps = ["//pkg/leetcode"],
+)
+
+go_binary(
+    name = "leetcode",
+    embed = [":leetcode_lib"],
+    visibility = ["//visibility:public"],
+)

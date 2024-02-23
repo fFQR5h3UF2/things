@@ -1,4 +1,4 @@
-package core
+package leetcode
 
 import (
 	"bytes"
@@ -9,7 +9,7 @@ import (
 	"os"
 	"path/filepath"
 
-	"shishifubing.com/leetcode/model"
+	"shishifubing.com/pkg/leetcode/model"
 )
 
 type Generator struct {
@@ -53,6 +53,7 @@ func (g *Generator) write(submission *model.Submission) error {
 	if err != nil {
 		return err
 	}
+	content = append(content, '\n')
 	filePath := filepath.Join(g.config.SubmissionsDir, name)
 	err = os.WriteFile(filePath, content, 0644)
 	if err != nil {
