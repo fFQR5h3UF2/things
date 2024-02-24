@@ -1,4 +1,12 @@
 load("@rules_pkg//pkg:tar.bzl", "pkg_tar")
+load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+
+http_archive(
+    name = "my_ssl",
+    build_file = "@//:openssl.BUILD",
+    sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    url = "http://example.com/openssl.zip",
+)
 
 filegroup(
     name = "packages",

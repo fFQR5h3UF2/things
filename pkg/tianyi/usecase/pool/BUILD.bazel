@@ -1,0 +1,12 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "pool",
+    srcs = [
+        "pool_interactor.go",
+        "pool_interface.go",
+    ],
+    importpath = "shishifubing.com/tianyi/usecase/pool",
+    visibility = ["//visibility:public"],
+    deps = ["//tianyi/entity"],
+)

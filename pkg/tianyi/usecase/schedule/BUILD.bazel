@@ -1,0 +1,11 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "schedule",
+    srcs = [
+        "schedule_interactor.go",
+        "schedule_interface.go",
+    ],
+    importpath = "shishifubing.com/tianyi/usecase/schedule",
+    visibility = ["//visibility:public"],
+)

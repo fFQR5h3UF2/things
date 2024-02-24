@@ -1,0 +1,16 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "branch",
+    srcs = [
+        "branch_interactor.go",
+        "branch_interface.go",
+    ],
+    importpath = "shishifubing.com/tianyi/usecase/branch",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//tianyi/entity",
+        "//tianyi/pkg",
+        "@com_github_google_uuid//:uuid",
+    ],
+)

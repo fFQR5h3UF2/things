@@ -1,0 +1,14 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "user",
+    srcs = ["user_infrastructure.go"],
+    importpath = "shishifubing.com/tianyi/infrastructure/user",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//tianyi/entity",
+        "//tianyi/usecase/user",
+        "@com_github_google_uuid//:uuid",
+        "@io_gorm_gorm//:gorm",
+    ],
+)

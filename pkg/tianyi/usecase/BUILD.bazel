@@ -1,0 +1,22 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "usecase",
+    srcs = [
+        "app_usecase.go",
+        "doc_usecase.go",
+    ],
+    importpath = "shishifubing.com/tianyi/usecase",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//tianyi/usecase/branch",
+        "//tianyi/usecase/job",
+        "//tianyi/usecase/jwt",
+        "//tianyi/usecase/lifecycle",
+        "//tianyi/usecase/pipeline",
+        "//tianyi/usecase/pool",
+        "//tianyi/usecase/project",
+        "//tianyi/usecase/session",
+        "//tianyi/usecase/user",
+    ],
+)

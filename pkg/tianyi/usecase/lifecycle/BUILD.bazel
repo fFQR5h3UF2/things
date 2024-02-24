@@ -1,0 +1,11 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "lifecycle",
+    srcs = [
+        "lifecycle_interactor.go",
+        "lifecycle_interface.go",
+    ],
+    importpath = "shishifubing.com/tianyi/usecase/lifecycle",
+    visibility = ["//visibility:public"],
+)
