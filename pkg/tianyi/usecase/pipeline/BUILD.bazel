@@ -1,0 +1,16 @@
+load("@rules_go//go:def.bzl", "go_library")
+
+go_library(
+    name = "pipeline",
+    srcs = [
+        "pipeline_interactor.go",
+        "pipeline_interface.go",
+    ],
+    importpath = "shishifubing.com/tianyi/usecase/pipeline",
+    visibility = ["//visibility:public"],
+    deps = [
+        "//tianyi/entity",
+        "//tianyi/usecase/job",
+        "@com_github_google_uuid//:uuid",
+    ],
+)

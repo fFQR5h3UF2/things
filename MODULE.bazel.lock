@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 3,
-  "moduleFileHash": "08c415f068e7dc3870d76ed0a1a821740229d2a5055cb8cb21245ddee1c13e53",
+  "moduleFileHash": "524137f003908a4eabcc8bd19e297add6bf53d01d90651a1ccd9af5a40c132b8",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -161,6 +161,21 @@
           ],
           "hasDevUseExtension": false,
           "hasNonDevUseExtension": true
+        },
+        {
+          "extensionBzlFile": "//:MODULE.bazel",
+          "extensionName": "_repo_rules",
+          "usingModule": "<root>",
+          "location": {
+            "file": "@@//:MODULE.bazel",
+            "line": 0,
+            "column": 0
+          },
+          "imports": {},
+          "devImports": [],
+          "tags": [],
+          "hasDevUseExtension": false,
+          "hasNonDevUseExtension": false
         }
       ],
       "deps": {

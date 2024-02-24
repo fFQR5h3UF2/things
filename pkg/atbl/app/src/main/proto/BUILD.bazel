@@ -1,0 +1,15 @@
+load("@rules_proto//proto:defs.bzl", "proto_library")
+load("@rules_go//proto:def.bzl", "go_proto_library")
+
+proto_library(
+    name = "LauncherState_proto",
+    srcs = ["LauncherState.proto"],
+    visibility = ["//visibility:public"],
+)
+
+go_proto_library(
+    name = "LauncherState_go_proto",
+    importpath = "shishifubing.com/atbl/app/src/main/proto",
+    proto = ":LauncherState_proto",
+    visibility = ["//visibility:public"],
+)
