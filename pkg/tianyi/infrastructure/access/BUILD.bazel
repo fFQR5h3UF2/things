@@ -3,10 +3,10 @@ load("@rules_go//go:def.bzl", "go_library")
 go_library(
     name = "access",
     srcs = ["access_infrastructure.go"],
-    importpath = "shishifubing.com/tianyi/infrastructure/access",
+    importpath = "shishifubing.com/pkg/tianyi/infrastructure/access",
     visibility = ["//visibility:public"],
     deps = [
-        "//tianyi/usecase/access",
+        "//pkg/tianyi/usecase/access",
         "@com_github_casbin_casbin_v2//:casbin",
         "@com_github_casbin_gorm_adapter_v3//:gorm-adapter",
         "@io_gorm_gorm//:gorm",

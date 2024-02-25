@@ -5,9 +5,9 @@ import (
 	"strings"
 
 	"github.com/google/uuid"
-	"shishifubing.com/tianyi/entity"
-	"shishifubing.com/tianyi/pkg"
-	usecaseBranch "shishifubing.com/tianyi/usecase/branch"
+	"shishifubing.com/pkg/tianyi/entity"
+	"shishifubing.com/pkg/tianyi/pkg"
+	usecaseBranch "shishifubing.com/pkg/tianyi/usecase/branch"
 )
 
 type interactor struct {

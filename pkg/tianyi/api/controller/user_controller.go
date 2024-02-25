@@ -2,10 +2,10 @@ package controller
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"shishifubing.com/tianyi/api/presenter"
-	"shishifubing.com/tianyi/entity"
-	useSession "shishifubing.com/tianyi/usecase/session"
-	useUser "shishifubing.com/tianyi/usecase/user"
+	"shishifubing.com/pkg/tianyi/api/presenter"
+	"shishifubing.com/pkg/tianyi/entity"
+	useSession "shishifubing.com/pkg/tianyi/usecase/session"
+	useUser "shishifubing.com/pkg/tianyi/usecase/user"
 )
 
 type User interface {

@@ -2,7 +2,7 @@ package useUser
 
 import (
 	"github.com/google/uuid"
-	"shishifubing.com/tianyi/entity"
+	"shishifubing.com/pkg/tianyi/entity"
 )
 
 // interactor for entity.User

@@ -3,7 +3,7 @@ load("@rules_go//go:def.bzl", "go_library")
 go_library(
     name = "jwt",
     srcs = ["jwt_interface.go"],
-    importpath = "shishifubing.com/tianyi/usecase/jwt",
+    importpath = "shishifubing.com/pkg/tianyi/usecase/jwt",
     visibility = ["//visibility:public"],
-    deps = ["//tianyi/entity"],
+    deps = ["//pkg/tianyi/entity"],
 )

@@ -3,13 +3,13 @@ load("@rules_go//go:def.bzl", "go_library")
 go_library(
     name = "jwt",
     srcs = ["jwt_infrastructure.go"],
-    importpath = "shishifubing.com/tianyi/infrastructure/jwt",
+    importpath = "shishifubing.com/pkg/tianyi/infrastructure/jwt",
     visibility = ["//visibility:public"],
     deps = [
-        "//tianyi/entity",
-        "//tianyi/infrastructure/config",
-        "//tianyi/pkg",
-        "//tianyi/usecase/jwt",
+        "//pkg/tianyi/entity",
+        "//pkg/tianyi/infrastructure/config",
+        "//pkg/tianyi/pkg",
+        "//pkg/tianyi/usecase/jwt",
         "@com_github_golang_jwt_jwt_v4//:jwt",
         "@com_github_mitchellh_mapstructure//:mapstructure",
     ],

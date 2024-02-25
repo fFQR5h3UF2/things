@@ -3,11 +3,11 @@ load("@rules_go//go:def.bzl", "go_library")
 go_library(
     name = "job",
     srcs = ["job_infrastructure.go"],
-    importpath = "shishifubing.com/tianyi/infrastructure/job",
+    importpath = "shishifubing.com/pkg/tianyi/infrastructure/job",
     visibility = ["//visibility:public"],
     deps = [
-        "//tianyi/entity",
-        "//tianyi/usecase/job",
+        "//pkg/tianyi/entity",
+        "//pkg/tianyi/usecase/job",
         "@com_github_google_uuid//:uuid",
         "@io_gorm_gorm//:gorm",
     ],

@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"shishifubing.com/tianyi/entity"
-	usecaseJob "shishifubing.com/tianyi/usecase/job"
+	"shishifubing.com/pkg/tianyi/entity"
+	usecaseJob "shishifubing.com/pkg/tianyi/usecase/job"
 )
 
 type pipeline struct {

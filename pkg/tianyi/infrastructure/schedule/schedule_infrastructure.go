@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/go-redis/redis/v8"
-	useSchedule "shishifubing.com/tianyi/usecase/schedule"
+	useSchedule "shishifubing.com/pkg/tianyi/usecase/schedule"
 )
 
 type jobTypes map[string]useSchedule.Job

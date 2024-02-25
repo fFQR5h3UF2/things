@@ -12,10 +12,10 @@ go_library(
         "session_presenter.go",
         "user_presenter.go",
     ],
-    importpath = "shishifubing.com/tianyi/api/presenter",
+    importpath = "shishifubing.com/pkg/tianyi/api/presenter",
     visibility = ["//visibility:public"],
     deps = [
-        "//tianyi/pkg/error",
+        "//pkg/tianyi/pkg/error",
         "@com_github_gofiber_fiber_v2//:fiber",
     ],
 )

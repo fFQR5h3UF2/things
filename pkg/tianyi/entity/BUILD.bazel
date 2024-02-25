@@ -10,7 +10,7 @@ go_library(
         "project_entity.go",
         "user_entity.go",
     ],
-    importpath = "shishifubing.com/tianyi/entity",
+    importpath = "shishifubing.com/pkg/tianyi/entity",
     visibility = ["//visibility:public"],
     deps = ["@com_github_google_uuid//:uuid"],
 )

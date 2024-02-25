@@ -1,6 +1,6 @@
 package main
 
-import "shishifubing.com/tianyi/cmd"
+import "shishifubing.com/pkg/tianyi/cmd"
 
 func main() {
 	cmd.Execute()

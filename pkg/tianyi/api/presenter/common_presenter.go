@@ -5,7 +5,7 @@ import (
 	"net/http"
 
 	"github.com/gofiber/fiber/v2"
-	pkgError "shishifubing.com/tianyi/pkg/error"
+	pkgError "shishifubing.com/pkg/tianyi/pkg/error"
 )
 
 type Response[Template any] struct {

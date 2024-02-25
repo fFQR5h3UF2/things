@@ -4,8 +4,8 @@ import (
 	"github.com/google/uuid"
 	"gorm.io/gorm"
 
-	"shishifubing.com/tianyi/entity"
-	useJob "shishifubing.com/tianyi/usecase/job"
+	"shishifubing.com/pkg/tianyi/entity"
+	useJob "shishifubing.com/pkg/tianyi/usecase/job"
 )
 
 type repository struct {

@@ -3,6 +3,6 @@ load("@rules_go//go:def.bzl", "go_library")
 go_library(
     name = "error",
     srcs = ["error_pkg.go"],
-    importpath = "shishifubing.com/tianyi/pkg/error",
+    importpath = "shishifubing.com/pkg/tianyi/pkg/error",
     visibility = ["//visibility:public"],
 )

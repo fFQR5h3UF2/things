@@ -6,6 +6,6 @@ go_library(
         "lifecycle_interactor.go",
         "lifecycle_interface.go",
     ],
-    importpath = "shishifubing.com/tianyi/usecase/lifecycle",
+    importpath = "shishifubing.com/pkg/tianyi/usecase/lifecycle",
     visibility = ["//visibility:public"],
 )

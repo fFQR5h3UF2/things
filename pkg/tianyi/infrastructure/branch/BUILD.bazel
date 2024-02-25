@@ -3,11 +3,11 @@ load("@rules_go//go:def.bzl", "go_library")
 go_library(
     name = "branch",
     srcs = ["branch_infrastructure.go"],
-    importpath = "shishifubing.com/tianyi/infrastructure/branch",
+    importpath = "shishifubing.com/pkg/tianyi/infrastructure/branch",
     visibility = ["//visibility:public"],
     deps = [
-        "//tianyi/entity",
-        "//tianyi/usecase/branch",
+        "//pkg/tianyi/entity",
+        "//pkg/tianyi/usecase/branch",
         "@com_github_go_git_go_billy_v5//memfs",
         "@com_github_go_git_go_git_v5//:go-git",
         "@com_github_go_git_go_git_v5//plumbing",

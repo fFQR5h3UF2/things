@@ -3,10 +3,10 @@ load("@rules_go//go:def.bzl", "go_library")
 go_library(
     name = "session",
     srcs = ["session_infrastructure.go"],
-    importpath = "shishifubing.com/tianyi/infrastructure/session",
+    importpath = "shishifubing.com/pkg/tianyi/infrastructure/session",
     visibility = ["//visibility:public"],
     deps = [
-        "//tianyi/usecase/session",
+        "//pkg/tianyi/usecase/session",
         "@com_github_gofiber_fiber_v2//:fiber",
         "@com_github_gofiber_fiber_v2//middleware/session",
         "@com_github_gofiber_storage_redis//:redis",

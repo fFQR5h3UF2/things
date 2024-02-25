@@ -3,6 +3,6 @@ load("@rules_go//go:def.bzl", "go_library")
 go_library(
     name = "api",
     srcs = ["doc_api.go"],
-    importpath = "shishifubing.com/tianyi/api",
+    importpath = "shishifubing.com/pkg/tianyi/api",
     visibility = ["//visibility:public"],
 )

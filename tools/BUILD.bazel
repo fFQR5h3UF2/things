@@ -1,12 +1,25 @@
 sh_binary(
-    name = "update",
+    name = "leetcode_update",
     srcs = ["leetcode"],
+    args = [
+        "$(location //cmd/leetcode)",
+        "update",
+    ],
+    data = [
+        "//cmd/leetcode",
+    ],
     visibility = ["//visibility:public"],
 )
 
 sh_binary(
-    name = "generate",
+    name = "leetcode_generate",
     srcs = ["leetcode"],
-    args = ["generate_submission_dir"],
+    args = [
+        "$(location //cmd/leetcode)",
+        "generate_submission_dir",
+    ],
+    data = [
+        "//cmd/leetcode",
+    ],
     visibility = ["//visibility:public"],
 )

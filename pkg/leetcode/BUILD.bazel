@@ -1,5 +1,4 @@
 load("@rules_go//go:def.bzl", "go_library")
-load("@bazel_skylib//lib:paths.bzl", "paths")
 
 go_library(
     name = "leetcode",
@@ -11,4 +10,5 @@ go_library(
     ],
     importpath = "shishifubing.com/pkg/leetcode",
     visibility = ["//visibility:public"],
+    deps = ["//pkg/leetcode/model"],
 )

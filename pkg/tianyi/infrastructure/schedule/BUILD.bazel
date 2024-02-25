@@ -3,10 +3,10 @@ load("@rules_go//go:def.bzl", "go_library")
 go_library(
     name = "schedule",
     srcs = ["schedule_infrastructure.go"],
-    importpath = "shishifubing.com/tianyi/infrastructure/schedule",
+    importpath = "shishifubing.com/pkg/tianyi/infrastructure/schedule",
     visibility = ["//visibility:public"],
     deps = [
-        "//tianyi/usecase/schedule",
+        "//pkg/tianyi/usecase/schedule",
         "@com_github_go_redis_redis_v8//:redis",
     ],
 )
