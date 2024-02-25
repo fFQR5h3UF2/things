@@ -1,6 +1,6 @@
 package useJWT
 
-import "shishifubing.com/tianyi/entity"
+import "shishifubing.com/pkg/tianyi/entity"
 
 type Interactor interface {
 	// generate user jwt

@@ -10,7 +10,7 @@ go_library(
         "swagger.json",
         "swagger.yaml",
     ],
-    importpath = "shishifubing.com/tianyi/docs",
+    importpath = "shishifubing.com/pkg/tianyi/docs",
     visibility = ["//visibility:public"],
     deps = ["@com_github_swaggo_swag//:swag"],
 )

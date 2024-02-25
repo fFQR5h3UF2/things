@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"net/http"
 
-	pkgError "shishifubing.com/tianyi/pkg/error"
+	pkgError "shishifubing.com/pkg/tianyi/pkg/error"
 )
 
 func InvalidLoginOrPassword() error {

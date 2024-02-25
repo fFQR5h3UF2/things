@@ -6,7 +6,7 @@ go_library(
         "pool_interactor.go",
         "pool_interface.go",
     ],
-    importpath = "shishifubing.com/tianyi/usecase/pool",
+    importpath = "shishifubing.com/pkg/tianyi/usecase/pool",
     visibility = ["//visibility:public"],
-    deps = ["//tianyi/entity"],
+    deps = ["//pkg/tianyi/entity"],
 )

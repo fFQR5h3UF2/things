@@ -6,10 +6,10 @@ go_library(
         "job_interactor.go",
         "job_interface.go",
     ],
-    importpath = "shishifubing.com/tianyi/usecase/job",
+    importpath = "shishifubing.com/pkg/tianyi/usecase/job",
     visibility = ["//visibility:public"],
     deps = [
-        "//tianyi/entity",
+        "//pkg/tianyi/entity",
         "@com_github_google_uuid//:uuid",
     ],
 )

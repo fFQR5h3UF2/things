@@ -2,7 +2,7 @@ package useBranch
 
 import (
 	"github.com/google/uuid"
-	"shishifubing.com/tianyi/entity"
+	"shishifubing.com/pkg/tianyi/entity"
 )
 
 // interactor for entity.branch

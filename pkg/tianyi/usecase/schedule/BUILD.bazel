@@ -6,6 +6,6 @@ go_library(
         "schedule_interactor.go",
         "schedule_interface.go",
     ],
-    importpath = "shishifubing.com/tianyi/usecase/schedule",
+    importpath = "shishifubing.com/pkg/tianyi/usecase/schedule",
     visibility = ["//visibility:public"],
 )

@@ -6,6 +6,6 @@ go_library(
         "session_interactor.go",
         "session_interface.go",
     ],
-    importpath = "shishifubing.com/tianyi/usecase/session",
+    importpath = "shishifubing.com/pkg/tianyi/usecase/session",
     visibility = ["//visibility:public"],
 )

@@ -6,11 +6,11 @@ go_library(
         "user_interactor.go",
         "user_interface.go",
     ],
-    importpath = "shishifubing.com/tianyi/usecase/user",
+    importpath = "shishifubing.com/pkg/tianyi/usecase/user",
     visibility = ["//visibility:public"],
     deps = [
-        "//tianyi/entity",
-        "//tianyi/pkg",
+        "//pkg/tianyi/entity",
+        "//pkg/tianyi/pkg",
         "@com_github_google_uuid//:uuid",
     ],
 )

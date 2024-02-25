@@ -3,6 +3,6 @@ load("@rules_go//go:def.bzl", "go_library")
 go_library(
     name = "web",
     srcs = ["dist.go"],
-    importpath = "shishifubing.com/tianyi/web",
+    importpath = "shishifubing.com/pkg/tianyi/web",
     visibility = ["//visibility:public"],
 )

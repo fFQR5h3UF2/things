@@ -1,6 +1,6 @@
 package useJob
 
-import "shishifubing.com/tianyi/entity"
+import "shishifubing.com/pkg/tianyi/entity"
 
 type interactor struct {
 	repository Repository

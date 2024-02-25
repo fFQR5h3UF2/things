@@ -3,9 +3,9 @@ package controller
 import (
 	"github.com/gofiber/fiber/v2"
 
-	"shishifubing.com/tianyi/api/presenter"
-	"shishifubing.com/tianyi/entity"
-	usecaseProject "shishifubing.com/tianyi/usecase/project"
+	"shishifubing.com/pkg/tianyi/api/presenter"
+	"shishifubing.com/pkg/tianyi/entity"
+	usecaseProject "shishifubing.com/pkg/tianyi/usecase/project"
 )
 
 type Project interface {

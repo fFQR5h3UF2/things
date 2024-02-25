@@ -6,11 +6,11 @@ import (
 	"github.com/gofiber/fiber/v2/middleware/etag"
 	"github.com/gofiber/fiber/v2/middleware/logger"
 	"github.com/gofiber/fiber/v2/middleware/recover"
-	"shishifubing.com/tianyi/api/controller"
-	"shishifubing.com/tianyi/api/middleware"
-	"shishifubing.com/tianyi/api/presenter"
-	_ "shishifubing.com/tianyi/docs"
-	infraConfig "shishifubing.com/tianyi/infrastructure/config"
+	"shishifubing.com/pkg/tianyi/api/controller"
+	"shishifubing.com/pkg/tianyi/api/middleware"
+	"shishifubing.com/pkg/tianyi/api/presenter"
+	_ "shishifubing.com/pkg/tianyi/docs"
+	infraConfig "shishifubing.com/pkg/tianyi/infrastructure/config"
 )
 
 func newRouter(config *fiber.Config) *fiber.App {

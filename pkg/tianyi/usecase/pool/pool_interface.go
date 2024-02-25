@@ -1,7 +1,7 @@
 package usePool
 
 import (
-	"shishifubing.com/tianyi/entity"
+	"shishifubing.com/pkg/tianyi/entity"
 )
 
 type (

@@ -7,7 +7,7 @@ go_library(
         "password_pkg.go",
         "validate_pkg.go",
     ],
-    importpath = "shishifubing.com/tianyi/pkg",
+    importpath = "shishifubing.com/pkg/tianyi/pkg",
     visibility = ["//visibility:public"],
     deps = [
         "@com_github_go_playground_validator_v10//:validator",

@@ -2,8 +2,8 @@ package controller
 
 import (
 	"github.com/gofiber/fiber/v2"
-	"shishifubing.com/tianyi/api/presenter"
-	useLifecycle "shishifubing.com/tianyi/usecase/lifecycle"
+	"shishifubing.com/pkg/tianyi/api/presenter"
+	useLifecycle "shishifubing.com/pkg/tianyi/usecase/lifecycle"
 )
 
 type Lifecycle interface {

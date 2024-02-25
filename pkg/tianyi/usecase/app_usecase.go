@@ -1,15 +1,15 @@
 package usecase
 
 import (
-	useBranch "shishifubing.com/tianyi/usecase/branch"
-	useJob "shishifubing.com/tianyi/usecase/job"
-	useJWT "shishifubing.com/tianyi/usecase/jwt"
-	useLifecycle "shishifubing.com/tianyi/usecase/lifecycle"
-	usePipeline "shishifubing.com/tianyi/usecase/pipeline"
-	usePool "shishifubing.com/tianyi/usecase/pool"
-	useProject "shishifubing.com/tianyi/usecase/project"
-	useSession "shishifubing.com/tianyi/usecase/session"
-	useUser "shishifubing.com/tianyi/usecase/user"
+	useBranch "shishifubing.com/pkg/tianyi/usecase/branch"
+	useJob "shishifubing.com/pkg/tianyi/usecase/job"
+	useJWT "shishifubing.com/pkg/tianyi/usecase/jwt"
+	useLifecycle "shishifubing.com/pkg/tianyi/usecase/lifecycle"
+	usePipeline "shishifubing.com/pkg/tianyi/usecase/pipeline"
+	usePool "shishifubing.com/pkg/tianyi/usecase/pool"
+	useProject "shishifubing.com/pkg/tianyi/usecase/project"
+	useSession "shishifubing.com/pkg/tianyi/usecase/session"
+	useUser "shishifubing.com/pkg/tianyi/usecase/user"
 )
 
 type Interactor interface {

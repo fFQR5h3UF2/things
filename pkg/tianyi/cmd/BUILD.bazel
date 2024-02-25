@@ -7,10 +7,10 @@ go_library(
         "root_cmd.go",
         "server_cmd.go",
     ],
-    importpath = "shishifubing.com/tianyi/cmd",
+    importpath = "shishifubing.com/pkg/tianyi/cmd",
     visibility = ["//visibility:public"],
     deps = [
-        "//tianyi/infrastructure",
+        "//pkg/tianyi/infrastructure",
         "@com_github_spf13_cobra//:cobra",
         "@com_github_spf13_viper//:viper",
     ],
