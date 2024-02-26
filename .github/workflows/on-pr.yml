@@ -4,10 +4,10 @@ concurrency:
   group: ${{ github.workflow }}/${{ github.event.pull_request.head.label || github.head_ref || github.ref }}
   cancel-in-progress: true
 jobs:
-  test:
+  test-all:
     runs-on: ubuntu-latest
-    container:
-      image: gcr.io/bazel-public/bazel:latest
+    #container:
+    #  image: gcr.io/bazel-public/bazel:latest
     steps:
       - uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
       - run: ./bazel test //...
