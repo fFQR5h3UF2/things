@@ -1,2 +1,5 @@
 # gazelle:exclude submissions
-exports_files(["submissions", "submissions.json"])
+exports_files([
+    "submissions",
+    "submissions.json",
+])
