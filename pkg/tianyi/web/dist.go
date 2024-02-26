@@ -9,7 +9,7 @@ import (
 var (
 	FrontendFilesystem http.FileSystem
 	// embeds directory into the variable
-	//go:embed dist
+	// //go:embed dist
 	dist embed.FS
 )
 
