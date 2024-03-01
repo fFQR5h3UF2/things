@@ -3,12 +3,12 @@ set -o errexit -o nounset -o xtrace
 
 project_dir=$(git -C "${BUILD_WORKING_DIRECTORY}" rev-parse --show-toplevel)
 leetcode_bin="${PWD}/${1:?missing bin path}"
+shift
 submissions_file="${project_dir}/assets/leetcode/submissions.json"
 submissions_dir="${project_dir}/assets/leetcode/submissions"
-shift
 date=$(date '+%y-%m-%d')
 branch="dev/add-${date}-leetcode-submissions"
-commit="feat(leetcode): add ${date} submissions"
+commit="chore(leetcode): add ${date} submissions"
 
 update_submission_file() {
     "${leetcode_bin}" \

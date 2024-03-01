@@ -10,7 +10,5 @@ bin="${GOPATH:-${HOME}/go}/bin/bazelisk"
 if [ ! -x "${bin}" ]; then
     go install "${package}@${version}"
 fi
-dir="$(dirname "${0}")"
-cd "${dir}" || exit "${?}"
-. "./tools/env.sh"
+. "$(dirname "${0}")/tools/env.sh"
 exec "${bin}" "${@}"
