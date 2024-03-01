@@ -1,4 +1,4 @@
-package versioning
+package main
 
 import (
 	"context"
@@ -14,6 +14,14 @@ import (
 	"golang.org/x/mod/semver"
 )
 
+func main() {
+	ctx := context.Background()
+	if err := Run(ctx, os.Args[1:], os.Getenv, os.Stdin, os.Stdout, os.Stderr); err != nil {
+		fmt.Fprintln(os.Stderr, err)
+		os.Exit(1)
+	}
+}
+
 func Run(
 	ctx context.Context,
 	args []string,
@@ -21,7 +29,8 @@ func Run(
 	stdin io.Reader,
 	stdout, stderr io.Writer,
 ) error {
-	logger := slog.New(slog.NewTextHandler(stderr, &slog.HandlerOptions{Level: slog.LevelInfo}))
+	loggerOpts := &slog.HandlerOptions{Level: slog.LevelInfo}
+	logger := slog.New(slog.NewTextHandler(stderr, loggerOpts))
 	svc := &VersionService{logger: logger}
 	dir, err := os.Getwd()
 	if err != nil {
@@ -31,7 +40,7 @@ func Run(
 	if err != nil {
 		return fmt.Errorf("could not open %s: %w", dir, err)
 	}
-	ver, err := svc.CurrentVersion(repo, svc.FilterTagSemver)
+	ver, err := svc.CurrentVersion(ctx, repo, svc.FilterTagSemver)
 	if err != nil {
 		return fmt.Errorf("could not get version from %s: %w", dir, err)
 	}
@@ -45,13 +54,19 @@ type VersionService struct {
 
 type TagFilter func(tag *object.Tag) (bool, error)
 
-func (s *VersionService) FilterTags(repo *git.Repository, filter func(tag *object.Tag) (bool, error)) ([]*object.Tag, error) {
+func (s *VersionService) FilterTags(ctx context.Context, repo *git.Repository, filter TagFilter) ([]*object.Tag, error) {
 	tags, err := repo.Tags()
 	if err != nil {
 		return nil, fmt.Errorf("could not get tags: %w", err)
 	}
 	res := []*object.Tag{}
 	err = tags.ForEach(func(ref *plumbing.Reference) error {
+		select {
+		case _, ok := <-ctx.Done():
+			if ok {
+				return fmt.Errorf("context cancelled")
+			}
+		}
 		hash := ref.Hash()
 		obj, err := repo.TagObject(hash)
 		switch err {
@@ -78,18 +93,22 @@ func (s *VersionService) FilterTags(repo *git.Repository, filter func(tag *objec
 	return res, nil
 }
 
+// NewVersion constructs a new version using current year and weak number
 func (s *VersionService) NewVersion() string {
 	now := time.Now()
 	year, week := now.ISOWeek()
 	return fmt.Sprintf("%d.%d.0", year, week)
 }
 
+// FilterTagSemver returns true if the name of the tag is valid semver
 func (s *VersionService) FilterTagSemver(tag *object.Tag) (bool, error) {
 	return semver.IsValid(tag.Name), nil
 }
 
-func (s *VersionService) CurrentVersion(repo *git.Repository, filter TagFilter) (string, error) {
-	tags, err := s.FilterTags(repo, filter)
+// CurrentVersion filters tags using TagFiler, sorts found tags using semver.Sort,
+// then returns the last one
+func (s *VersionService) CurrentVersion(ctx context.Context, repo *git.Repository, filter TagFilter) (string, error) {
+	tags, err := s.FilterTags(ctx, repo, filter)
 	if err != nil {
 		return "", fmt.Errorf("could not filter tags: %w", err)
 	}

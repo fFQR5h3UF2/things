@@ -1,4 +1,4 @@
-package versioning
+package main
 
 import (
 	"bytes"
@@ -74,7 +74,7 @@ func TestVersionService_FilterTags(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := tt.s.FilterTags(tt.args.repo, tt.args.filter)
+			got, err := tt.s.FilterTags(nil, tt.args.repo, tt.args.filter)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("VersionService.FilterTags() error = %v, wantErr %v", err, tt.wantErr)
 				return
@@ -129,7 +129,7 @@ func TestVersionService_CurrentVersion(t *testing.T) {
 	}
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			got, err := tt.s.CurrentVersion(tt.args.repo, tt.args.filter)
+			got, err := tt.s.CurrentVersion(nil, tt.args.repo, tt.args.filter)
 			if (err != nil) != tt.wantErr {
 				t.Errorf("VersionService.CurrentVersion() error = %v, wantErr %v", err, tt.wantErr)
 				return

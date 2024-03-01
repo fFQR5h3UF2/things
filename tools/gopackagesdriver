@@ -1,2 +1,7 @@
 #!/usr/bin/env sh
-"$(dirname "${0}")/tools" run_gopackagesdriver "${@}"
+#
+# Fix for generated golang files not available to IDEs
+#   https://github.com/bazelbuild/rules_go/wiki/Editor-setup
+
+set -o errexit -o nounset -o xtrace
+exec "$(dirname "${0}")/../bazel" run -- @io_bazel_rules_go//go/tools/gopackagesdriver "${@}"
