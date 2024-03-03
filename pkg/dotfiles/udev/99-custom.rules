@@ -1,2 +1,7 @@
-# ergohaven K:02e
+# copy to /etc/udev/rules.d/99-vial.rules and run
+# `udevadm control --reload-rules && udevadm trigger`
+
+# ergohaven K:03
 KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="feed", ATTRS{idProduct}=="9918", MODE="0660", GROUP="${USER}", TAG+="uaccess", TAG+="udev-acl"
+# ergohaven K:03
+KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{idVendor}=="feed", ATTRS{idProduct}=="0003", MODE="0660", GROUP="${USER}", TAG+="uaccess", TAG+="udev-acl"
