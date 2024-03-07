@@ -1,7 +1,7 @@
 module(
-    name = "stuff",
-    #repo_name = "stuff",
+    name = "things",
     version = "0.72.0",
+    compatibility_level = 1,
 )
 
 # https://github.com/bazelbuild/rules_pkg/releases/
@@ -14,13 +14,16 @@ bazel_dep(name = "rules_license", version = "0.0.8")
 bazel_dep(name = "rules_python", version = "0.29.0")
 bazel_dep(name = "rules_python_gazelle_plugin", version = "0.29.0")
 
+# https://github.com/aspect-build/rules_py/releases/
+bazel_dep(name = "aspect_rules_py", version = "0.7.1")
+
 # https://github.com/bazelbuild/bazel-gazelle/releases/
-bazel_dep(name = "gazelle", version = "0.35.0")
+bazel_dep(name = "gazelle", version = "0.35.0", repo_name = "bazel_gazelle")
 
 # https://github.com/bazelbuild/rules_go/releases/
 bazel_dep(name = "rules_go", version = "0.46.0", repo_name = "io_bazel_rules_go")
 
-# https://github.com/bazelbuild/bazel-skylib/releases/tag/
+# https://github.com/bazelbuild/bazel-skylib/releases/
 bazel_dep(name = "bazel_skylib", version = "1.5.0")
 
 # dev dependencies
@@ -29,29 +32,17 @@ bazel_dep(name = "bazel_skylib", version = "1.5.0")
 bazel_dep(name = "stardoc", version = "0.6.2", dev_dependency = True, repo_name = "io_bazel_stardoc")
 
 # setup python
+# https://github.com/bazelbuild/rules_python/tree/main/examples/bzlmod_build_file_generation
 python = use_extension("@rules_python//python/extensions:python.bzl", "python")
-python.toolchain(
-    configure_coverage_tool = True,
-    python_version = "3.9",
-)
-python.toolchain(
-    configure_coverage_tool = True,
-    python_version = "3.10",
-)
-python.toolchain(
-    configure_coverage_tool = True,
-    python_version = "3.11",
-)
-python.toolchain(
-    configure_coverage_tool = True,
-    is_default = True,
-    python_version = "3.12",
-)
-use_repo(python, "python_versions")
+python.toolchain(python_version = "3.12", is_default = True, configure_coverage_tool = True)
+python.toolchain(python_version = "3.11", configure_coverage_tool = True)
+python.toolchain(python_version = "3.10", configure_coverage_tool = True)
+python.toolchain(python_version = "3.9", configure_coverage_tool = True)
+use_repo(python, python = "python_versions")
 
 # setup go
 # https://github.com/bazelbuild/rules_go/blob/master/docs/go/core/bzlmod.md
-go_deps = use_extension("@gazelle//:extensions.bzl", "go_deps")
+go_deps = use_extension("@bazel_gazelle//:extensions.bzl", "go_deps")
 go_deps.from_file(go_mod = "//:go.mod")
 go_deps.module_override(
     # fix for https://github.com/bazelbuild/bazel-gazelle/issues/1421

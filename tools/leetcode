@@ -14,7 +14,7 @@ update_submission_file() {
     "${leetcode_bin}" \
         --submissions-file "${submissions_file}" \
         --submissions-dir "${submissions_dir}" \
-        update
+        update "${@}"
 }
 
 generate_submission_dir() {
@@ -29,7 +29,7 @@ generate_submission_dir() {
 
 update() {
     git checkout -B "${branch}"
-    update_submission_file
+    update_submission_file "${@}"
     generate_submission_dir
     git add "${submissions_file}" "${submissions_dir}"
     git commit -m "${commit}"

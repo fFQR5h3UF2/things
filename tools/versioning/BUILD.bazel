@@ -25,7 +25,7 @@ go_library(
 
 go_binary(
     name = "versioning",
+    data = ["//:.git"],
     embed = [":versioning_lib"],
     visibility = ["//visibility:public"],
-    data = ["//:.git"],
 )

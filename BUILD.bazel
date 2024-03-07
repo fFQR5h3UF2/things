@@ -1,9 +1,24 @@
 load("@rules_license//rules:license.bzl", "license")
-load("@gazelle//:def.bzl", "gazelle")
+load("@bazel_gazelle//:def.bzl", "DEFAULT_LANGUAGES", "gazelle", "gazelle_binary")
 
+# gazelle generates BUILD.bazel files - https://github.com/bazelbuild/bazel-gazelle
+# gazelle:map_kind py_library py_library @aspect_rules_py//py:defs.bzl
+# gazelle:map_kind py_binary py_binary @aspect_rules_py//py:defs.bzl
+# gazelle:map_kind py_test py_test @aspect_rules_py//py:defs.bzl
+# gazelle:exclude pkg/autoscroll/**
+# gazelle:exclude pkg/django_assignment/**
+# gazelle:exclude pkg/telegram_currency_converter/**
+# gazelle:exclude pkg/web_crawler_book_creator/**
 gazelle(
     name = "gazelle",
-    command = "fix",
+    gazelle = "//:gazelle_binary",
+    visibility = ["//visibility:public"],
+)
+
+gazelle_binary(
+    name = "gazelle_binary",
+    languages = DEFAULT_LANGUAGES + ["@rules_python_gazelle_plugin//python"],
+    visibility = ["//visibility:public"],
 )
 
 # this export is needed to run git scripts

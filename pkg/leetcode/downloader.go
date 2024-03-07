@@ -65,11 +65,20 @@ func (d *Downloader) getSubmissions(offset uint64, limit uint64) (*model.Submiss
 	if err != nil {
 		return nil, fmt.Errorf("request '%s' failed: %w", reqUrl, err)
 	}
-	request.Header.Set("content-type", "application/json; charset=utf-8")
-	request.Header.Set("origin", d.config.BaseUrl)
-	request.Header.Set("referer", d.config.BaseUrl)
-	request.Header.Set("user-agent", "Mozilla/5.0 LeetCode API")
-	request.Header.Set("cookie", fmt.Sprintf("LEETCODE_SESSION=%s", d.config.Session))
+	request.Header.Set("Origin", d.config.BaseUrl)
+	request.Header.Set("Referer", d.config.BaseUrl)
+	request.Header.Set("Cookie", fmt.Sprintf("LEETCODE_SESSION=%s; csrftoken=%s", d.config.Session, d.config.CsrfToken))
+	request.Header.Set("Content-Type", "application/json; charset=utf-8")
+	request.Header.Set("User-Agent", "Mozilla/5.0 (Windows NT 10.0; rv:123.0) Gecko/20100101 Firefox/123.0")
+	request.Header.Set("Accept", "*/*")
+	request.Header.Set("Accept-Language", "en-US,en;q=0.5")
+	request.Header.Set("DNT", "1")
+	request.Header.Set("Connection", "keep-alive")
+	request.Header.Set("Sec-Fetch-Dest", "empty")
+	request.Header.Set("Sec-Fetch-Mode", "cors")
+	request.Header.Set("Sec-Fetch-Site", "same-origin")
+	request.Header.Set("Pragma", "no-cache")
+	request.Header.Set("Cache-Control", "no-cache")
 
 	response, err := d.client.Do(request)
 	if err != nil {
