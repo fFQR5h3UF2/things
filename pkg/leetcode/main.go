@@ -53,9 +53,18 @@ func Run(
 		text = append(text, '\n')
 		stdout.Write(text)
 	case model.CliAction_UPDATE:
-		submissions, err := downloader.GetSubmissions(config.Offset, config.Limit)
-		if err != nil {
-			return err
+		var submissions []*model.Submission
+		if len(config.ActionArgs) > 0 {
+			response := &model.SubmissonsResponse{}
+			if err = json.Unmarshal([]byte(config.ActionArgs[0]), response); err != nil {
+				return fmt.Errorf("could not parse submissions from stdin: %w", err)
+			}
+			submissions = response.SubmissionsDump
+		} else {
+			submissions, err = downloader.GetSubmissions(config.Offset, config.Limit)
+			if err != nil {
+				return fmt.Errorf("could not download submissions: %w", err)
+			}
 		}
 		return repo.AddSubmissions(submissions)
 	case model.CliAction_GENERATE:
@@ -86,7 +95,8 @@ func parseArgs(args []string, getenv func(string) string) (*model.Config, error)
 	const sessionReplace = "${LEETCODE_SESSION}"
 	flagset := flag.NewFlagSet("flags", flag.ContinueOnError)
 	flagset.StringVar(&config.BaseUrl, "base_url", configDefault.BaseUrl, "")
-	flagset.StringVar(&config.Session, "session", sessionReplace, "")
+	flagset.StringVar(&config.Session, "session", getenv("LEETCODE_SESSION_COOKIE"), "")
+	flagset.StringVar(&config.CsrfToken, "csrf-token", getenv("LEETCODE_CSRF_COOKIE"), "")
 	flagset.StringVar(&config.SubmissionsFile, "submissions-file", configDefault.SubmissionsFile, "")
 	flagset.StringVar(&config.SubmissionsDir, "submissions-dir", configDefault.SubmissionsDir, "")
 	flagset.Uint64Var(&config.Offset, "offset", configDefault.Offset, "")
@@ -95,21 +105,18 @@ func parseArgs(args []string, getenv func(string) string) (*model.Config, error)
 	if err != nil {
 		return nil, err
 	}
-	if config.Session == sessionReplace {
-		config.Session = getenv("LEETCODE_SESSION")
-	}
 	action := flagset.Args()
 	if len(action) == 0 {
-		config.Action = model.CliAction_DOWNLOAD
-	} else if len(action) == 1 {
-		actionName := action[0]
-		val, ok := model.CliAction_value[strings.ToUpper(actionName)]
-		if !ok {
-			return nil, fmt.Errorf("invalid action %s", actionName)
-		}
-		config.Action = model.CliAction(val)
-	} else {
-		return nil, fmt.Errorf("too many positional arguments")
+		return nil, fmt.Errorf("action is not specified")
+	}
+	actionName := action[0]
+	val, ok := model.CliAction_value[strings.ToUpper(actionName)]
+	if !ok {
+		return nil, fmt.Errorf("invalid action %s", actionName)
+	}
+	config.Action = model.CliAction(val)
+	if len(action) > 1 {
+		config.ActionArgs = action[1:]
 	}
 	return config, nil
 }

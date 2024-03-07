@@ -1,5 +1,5 @@
 syntax = "proto3";
-package com.shishifubing.pkg.leetcode.proto;
+package com.shishifubing.pkg.leetcode.model;
 option go_package = "shishifubing.com/pkg/leetcode/model";
 
 enum CliAction {
@@ -13,6 +13,8 @@ message Config {
   string submissions_file = 2;
   string submissions_dir = 3;
   string session = 4;
+  string csrf_token = 11;
+  repeated string action_args = 12;
   CliAction action = 5;
   uint64 offset = 6;
   uint64 limit = 7;
