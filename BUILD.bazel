@@ -1,7 +1,7 @@
 load("@rules_license//rules:license.bzl", "license")
 load("@bazel_gazelle//:def.bzl", "DEFAULT_LANGUAGES", "gazelle", "gazelle_binary")
 
-# gazelle generates BUILD.bazel files - https://github.com/bazelbuild/bazel-gazelle
+# gazelle generates BUILD files - https://github.com/bazelbuild/bazel-gazelle
 # gazelle:map_kind py_library py_library @aspect_rules_py//py:defs.bzl
 # gazelle:map_kind py_binary py_binary @aspect_rules_py//py:defs.bzl
 # gazelle:map_kind py_test py_test @aspect_rules_py//py:defs.bzl
@@ -17,7 +17,9 @@ gazelle(
 
 gazelle_binary(
     name = "gazelle_binary",
-    languages = DEFAULT_LANGUAGES + ["@rules_python_gazelle_plugin//python"],
+    languages = DEFAULT_LANGUAGES + [
+        "@rules_python_gazelle_plugin//python",
+    ],
     visibility = ["//visibility:public"],
 )
 
