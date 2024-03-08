@@ -1,42 +1,54 @@
 import enum
-from typing import Literal, Optional, Union
+from typing import Any, Literal, Optional, TypeVar, Union
 
+import deepmerge
 import pydantic
 
+T = TypeVar("T", bound="BaseModel")
 
-class Job(pydantic.BaseModel):
+
+class BaseModel(pydantic.BaseModel):
+
+    def dump(self) -> dict[str, Any]:
+        return self.model_dump(mode="json", exclude_none=True)
+
+    def extend(self, next: T) -> T:
+        return deepmerge.always_merger.merge(self.dump(), next.dump())
+
+
+class Job(BaseModel, use_enum_values=True):
     """https://docs.gitlab.com/ee/ci/yaml/index.html#job-keywords"""
 
-    class Retry(pydantic.BaseModel):
+    class RetryWhen(str, enum.Enum):
+        """https://docs.gitlab.com/ee/ci/yaml/index.html#retrywhen"""
+
+        always = "always"
+        unknown_failure = "unknown_failure"
+        script_failure = "script_failure"
+        api_failure = "api_failure"
+        stuck_or_timeout_failure = "stuck_or_timeout_failure"
+        runner_system_failure = "runner_system_failure"
+        runner_unsupported = "runner_unsupported"
+        stale_schedule = "stale_schedule"
+        job_execution_timeout = "job_execution_timeout"
+        archived_failure = "archived_failure"
+        unmet_prerequisites = "unmet_prerequisites"
+        scheduler_failure = "scheduler_failure"
+        data_integrity_failure = "data_integrity_failure"
+
+    class Retry(BaseModel, use_enum_values=True):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#retry"""
-
-        class RetryWhenValue(str, enum.Enum):
-            """https://docs.gitlab.com/ee/ci/yaml/index.html#retrywhen"""
-
-            always = "always"
-            unknown_failure = "unknown_failure"
-            script_failure = "script_failure"
-            api_failure = "api_failure"
-            stuck_or_timeout_failure = "stuck_or_timeout_failure"
-            runner_system_failure = "runner_system_failure"
-            runner_unsupported = "runner_unsupported"
-            stale_schedule = "stale_schedule"
-            job_execution_timeout = "job_execution_timeout"
-            archived_failure = "archived_failure"
-            unmet_prerequisites = "unmet_prerequisites"
-            scheduler_failure = "scheduler_failure"
-            data_integrity_failure = "data_integrity_failure"
 
         max: Optional[Literal[0, 1, 2]] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#retry"""
 
-        when: Optional[tuple[RetryWhenValue]] = None
+        when: Optional[list["Job.RetryWhen"]] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#retrywhen"""
 
-        exit_codes: Optional[tuple[int]] = None
+        exit_codes: Optional[list[int]] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#retryexit_codes"""
 
-    class Cache(pydantic.BaseModel):
+    class Cache(BaseModel, use_enum_values=True):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#cache"""
 
         class When(str, enum.Enum):
@@ -53,16 +65,16 @@ class Job(pydantic.BaseModel):
             push = "push"
             pull_push = "pull-push"
 
-        class Key(pydantic.BaseModel):
+        class Key(BaseModel):
             """https://docs.gitlab.com/ee/ci/yaml/index.html#cachekey"""
 
-            files: Optional[tuple[str]] = None
+            files: Optional[list[str]] = None
             """https://docs.gitlab.com/ee/ci/yaml/index.html#cachekeyfiles"""
 
             prefix: Optional[str] = None
             """https://docs.gitlab.com/ee/ci/yaml/index.html#cachekeyprefix"""
 
-        paths: Optional[tuple[str]] = None
+        paths: Optional[list[str]] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#cachepaths"""
 
         key: Optional[str] = None
@@ -80,10 +92,10 @@ class Job(pydantic.BaseModel):
         policy: Optional[Policy | str] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#cachepolicy"""
 
-        fallback_keys: Optional[tuple[str]] = None
+        fallback_keys: Optional[list[str]] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#cachefallback_keys"""
 
-    class Artifacts(pydantic.BaseModel):
+    class Artifacts(BaseModel, use_enum_values=True):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#artifacts"""
 
         class When(str, enum.Enum):
@@ -93,7 +105,7 @@ class Job(pydantic.BaseModel):
             on_success = "on_success"
             on_failure = "on_failure"
 
-        class Reports(pydantic.BaseModel):
+        class Reports(BaseModel, use_enum_values=True):
             """https://docs.gitlab.com/ee/ci/yaml/index.html#artifactsreports"""
 
             accessibility: Optional[str] = None
@@ -120,7 +132,7 @@ class Job(pydantic.BaseModel):
             coverage_fuzzing: Optional[str] = None
             """https://docs.gitlab.com/ee/ci/yaml/artifacts_reports.html#artifactsreportscoverage_fuzzing"""
 
-            cyclonedx: Optional[tuple[str]] = None
+            cyclonedx: Optional[list[str]] = None
             """https://docs.gitlab.com/ee/ci/yaml/artifacts_reports.html#artifactsreportscyclonedx"""
 
             dast: Optional[str] = None
@@ -156,10 +168,10 @@ class Job(pydantic.BaseModel):
             terraform: Optional[str] = None
             """https://docs.gitlab.com/ee/ci/yaml/artifacts_reports.html#artifactsreportsterraform"""
 
-        paths: Optional[tuple[str]] = None
+        paths: Optional[list[str]] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#artifactspaths"""
 
-        exclude: Optional[tuple[str]] = None
+        exclude: Optional[list[str]] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#artifactsexclude"""
 
         expire_in: Optional[str] = None
@@ -183,7 +195,7 @@ class Job(pydantic.BaseModel):
         when: Optional[When] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#artifactswhen"""
 
-    class Service(pydantic.BaseModel):
+    class Service(BaseModel, use_enum_values=True):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#services"""
 
         class PullPolicy(str, enum.Enum):
@@ -193,7 +205,7 @@ class Job(pydantic.BaseModel):
             if_not_present = "if-not-present"
             never = "never"
 
-        class Docker(pydantic.BaseModel):
+        class Docker(BaseModel):
             """https://docs.gitlab.com/ee/ci/yaml/index.html#servicesdocker"""
 
             user: Optional[str] = None
@@ -201,18 +213,18 @@ class Job(pydantic.BaseModel):
 
         name: Optional[str] = None
         alias: Optional[str] = None
-        entrypoint: Optional[tuple[str]] = None
-        command: Optional[tuple[str]] = None
+        entrypoint: Optional[list[str]] = None
+        command: Optional[list[str]] = None
 
-        pull_policy: Optional[tuple[PullPolicy]] = None
+        pull_policy: Optional[list[PullPolicy]] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#servicespull_policy"""
 
-    class IdToken(pydantic.BaseModel):
+    class IdToken(BaseModel):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#id_tokens"""
 
-        aud: Optional[tuple[str]] = None
+        aud: Optional[list[str]] = None
 
-    class Image(pydantic.BaseModel):
+    class Image(BaseModel, use_enum_values=True):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#image"""
 
         class PullPolicy(str, enum.Enum):
@@ -222,7 +234,7 @@ class Job(pydantic.BaseModel):
             if_not_present = "if-not-present"
             never = "never"
 
-        class DockerOptions(pydantic.BaseModel):
+        class DockerOptions(BaseModel):
             """https://docs.gitlab.com/ee/ci/yaml/index.html#imagedocker"""
 
             platform: Optional[str] = None
@@ -231,7 +243,7 @@ class Job(pydantic.BaseModel):
         name: Optional[str] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#imagename"""
 
-        entrypoint: Optional[tuple[str]] = None
+        entrypoint: Optional[list[str]] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#imageentrypoint"""
 
         docker_options: Optional[DockerOptions] = None
@@ -245,33 +257,33 @@ class Job(pydantic.BaseModel):
 
         google_cloud = "google_cloud"
 
-    class Inherit(pydantic.BaseModel):
+    class Inherit(BaseModel):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#inherit"""
 
-        default: Optional[bool | tuple[str]] = None
+        default: Optional[bool | list[str]] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#inheritdefault"""
 
-        variables: Optional[bool | tuple[str]] = None
+        variables: Optional[bool | list[str]] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#inheritvariables"""
 
-    class DastConfiguration(pydantic.BaseModel):
+    class DastConfiguration(BaseModel):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#dast_configuration"""
 
         site_profile: Optional[str] = None
         scanner_profile: Optional[str] = None
 
-    class AllowFailure(pydantic.BaseModel):
+    class AllowFailure(BaseModel):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#allow_failureexit_codes"""
 
-        exit_codes: tuple[int]
+        exit_codes: list[int]
 
-    class Hooks(pydantic.BaseModel):
+    class Hooks(BaseModel):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#hooks"""
 
-        pre_get_sources_script: Optional[tuple[str]] = None
+        pre_get_sources_script: Optional[list[str]] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#hookspre_get_sources_script"""
 
-    class Environment(pydantic.BaseModel):
+    class Environment(BaseModel, use_enum_values=True):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#environment"""
 
         class Action(str, enum.Enum):
@@ -292,7 +304,7 @@ class Job(pydantic.BaseModel):
             development = "development"
             other = "other"
 
-        class Kubernetes(pydantic.BaseModel):
+        class Kubernetes(BaseModel, use_enum_values=True):
             """https://docs.gitlab.com/ee/ci/yaml/index.html#environmentkubernetes"""
 
             namespace: Optional[str] = None
@@ -318,13 +330,13 @@ class Job(pydantic.BaseModel):
         deployment_tier: Optional[DeploymentTier] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#environmentdeployment_tier"""
 
-    class Parallel(pydantic.BaseModel):
+    class Parallel(BaseModel, use_enum_values=True):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#parallel"""
 
-        matrix: Optional[dict[str, tuple[str]]] = None
+        matrix: Optional[dict[str, list[str]]] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#needsparallelmatrix"""
 
-    class Needs(pydantic.BaseModel):
+    class Needs(BaseModel, use_enum_values=True):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#needs"""
 
         artifacts: Optional[bool] = None
@@ -342,13 +354,13 @@ class Job(pydantic.BaseModel):
         optional: Optional[str] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#needsoptional"""
 
-    class Rule(pydantic.BaseModel):
+    class Rule(BaseModel, use_enum_values=True):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#rules"""
 
-        class Changes(pydantic.BaseModel):
+        class Changes(BaseModel, use_enum_values=True):
             """https://docs.gitlab.com/ee/ci/yaml/index.html#ruleschanges"""
 
-            paths: Optional[tuple[str]] = None
+            paths: Optional[list[str]] = None
             """https://docs.gitlab.com/ee/ci/yaml/index.html#ruleschangespaths"""
 
             compare_to: Optional[str] = None
@@ -360,7 +372,7 @@ class Job(pydantic.BaseModel):
         changes: Optional[Changes] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#ruleschanges"""
 
-        exists: Optional[tuple[str]] = None
+        exists: Optional[list[str]] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#rulesexists"""
 
         allow_failure: Optional[bool] = None
@@ -375,10 +387,10 @@ class Job(pydantic.BaseModel):
         interruptible: Optional[bool] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#rulesinterruptible"""
 
-    class Release(pydantic.BaseModel):
+    class Release(BaseModel, use_enum_values=True):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#release"""
 
-        class Asset(pydantic.BaseModel):
+        class Asset(BaseModel, use_enum_values=True):
             """https://docs.gitlab.com/ee/ci/yaml/index.html#releaseassetslinks"""
 
             name: Optional[str] = None
@@ -386,10 +398,10 @@ class Job(pydantic.BaseModel):
             filepath: Optional[str] = None
             link_type: Optional[str] = None
 
-        class Assets(pydantic.BaseModel):
+        class Assets(BaseModel, use_enum_values=True):
             """https://docs.gitlab.com/ee/ci/yaml/index.html#releaseassetslinks"""
 
-            links: Optional[tuple["Job.Release.Asset"]] = None
+            links: Optional[list["Job.Release.Asset"]] = None
 
         tag_name: Optional[str] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#releasetag_name"""
@@ -406,7 +418,7 @@ class Job(pydantic.BaseModel):
         ref: Optional[str] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#releaseref"""
 
-        milestones: Optional[tuple[str]] = None
+        milestones: Optional[list[str]] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#releasemilestones"""
 
         released_at: Optional[str] = None
@@ -426,21 +438,21 @@ class Job(pydantic.BaseModel):
 
         depend = "depend"
 
-    class TriggerInclude(pydantic.BaseModel):
+    class TriggerInclude(BaseModel, use_enum_values=True):
         """https://docs.gitlab.com/ee/ci/pipelines/downstream_pipelines.html#trigger-a-downstream-pipeline-from-a-job-in-the-gitlab-ciyml-file"""
 
         local: Optional[str] = None
 
-    class TriggerForward(pydantic.BaseModel):
+    class TriggerForward(BaseModel, use_enum_values=True):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#triggerforward"""
 
         yaml_variables: Optional[bool] = None
         pipeline_variables: Optional[bool] = None
 
-    class Trigger(pydantic.BaseModel):
+    class Trigger(BaseModel, use_enum_values=True):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#trigger"""
 
-        include: Optional[tuple["Job.TriggerInclude"]] = None
+        include: Optional[list["Job.TriggerInclude"]] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#triggerinclude"""
 
         project: Optional[str] = None
@@ -462,7 +474,7 @@ class Job(pydantic.BaseModel):
         manual = "manual"
         delayed = "delayed"
 
-    after_script: Optional[tuple[str]] = None
+    after_script: Optional[list[str]] = None
     """https://docs.gitlab.com/ee/ci/yaml/index.html#after_script"""
 
     allow_failure: Optional[Union[bool, AllowFailure]] = None
@@ -471,7 +483,7 @@ class Job(pydantic.BaseModel):
     artifacts: Optional[Artifacts] = None
     """https://docs.gitlab.com/ee/ci/yaml/index.html#artifacts"""
 
-    before_script: Optional[tuple[str]] = None
+    before_script: Optional[list[str]] = None
     """https://docs.gitlab.com/ee/ci/yaml/index.html#before_script"""
 
     cache: Optional[Cache] = None
@@ -507,7 +519,7 @@ class Job(pydantic.BaseModel):
     interruptible: Optional[bool] = None
     """https://docs.gitlab.com/ee/ci/yaml/index.html#interruptible"""
 
-    needs: Optional[tuple[Needs]] = None
+    needs: Optional[list[Needs]] = None
     """https://docs.gitlab.com/ee/ci/yaml/index.html#needs"""
 
     parallel: Optional[int | Parallel] = None
@@ -522,19 +534,19 @@ class Job(pydantic.BaseModel):
     retry: Optional[Retry] = None
     """https://docs.gitlab.com/ee/ci/yaml/index.html#retry"""
 
-    rules: Optional[tuple[Rule]] = None
+    rules: Optional[list[Rule]] = None
     """https://docs.gitlab.com/ee/ci/yaml/index.html#rules"""
 
-    script: Optional[tuple[str]] = None
+    script: Optional[list[str]] = None
     """https://docs.gitlab.com/ee/ci/yaml/index.html#script"""
 
-    services: Optional[tuple[Service]] = None
+    services: Optional[list[Service]] = None
     """https://docs.gitlab.com/ee/ci/yaml/index.html#services"""
 
     stage: Optional[str | Stage] = None
     """https://docs.gitlab.com/ee/ci/yaml/index.html#stage"""
 
-    tags: Optional[tuple[str]] = None
+    tags: Optional[list[str]] = None
     """https://docs.gitlab.com/ee/ci/yaml/index.html#tags"""
 
     timeout: Optional[str] = None
@@ -550,11 +562,11 @@ class Job(pydantic.BaseModel):
     """https://docs.gitlab.com/ee/ci/yaml/index.html#when"""
 
 
-class Default(pydantic.BaseModel):
-    before_script: Optional[tuple[str]] = None
+class Default(BaseModel, use_enum_values=True):
+    before_script: Optional[list[str]] = None
     """https://docs.gitlab.com/ee/ci/yaml/index.html#before_script"""
 
-    after_script: Optional[tuple[str]] = None
+    after_script: Optional[list[str]] = None
     """https://docs.gitlab.com/ee/ci/yaml/index.html#after_script"""
 
     artifacts: Optional[Job.Artifacts] = None
@@ -578,18 +590,18 @@ class Default(pydantic.BaseModel):
     retry: Optional[Job.Retry] = None
     """https://docs.gitlab.com/ee/ci/yaml/index.html#retry"""
 
-    services: Optional[tuple[Job.Service]] = None
+    services: Optional[list[Job.Service]] = None
     """https://docs.gitlab.com/ee/ci/yaml/index.html#services"""
 
-    tags: Optional[tuple[str]] = None
+    tags: Optional[list[str]] = None
     """https://docs.gitlab.com/ee/ci/yaml/index.html#tags"""
 
     identity: Optional[Job.Identity] = None
     """https://docs.gitlab.com/ee/ci/yaml/index.html#identity"""
 
 
-class Meta(pydantic.BaseModel):
-    class Variable(pydantic.BaseModel):
+class Meta(BaseModel, use_enum_values=True):
+    class Variable(BaseModel):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#variables"""
 
         description: Optional[str] = None
@@ -598,17 +610,17 @@ class Meta(pydantic.BaseModel):
         value: Optional[str] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#variablesvalue"""
 
-        options: Optional[tuple[str]] = None
+        options: Optional[list[str]] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#variablesoptions"""
 
         expand: Optional[bool] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#variablesexpand"""
 
-    stages: Optional[tuple[Job.Stage | str]] = None
+    stages: Optional[list[Job.Stage | str]] = None
     variables: Optional[dict[str, Variable]] = None
     default: Optional[Default] = None
 
 
-class Pipeline(pydantic.BaseModel):
-    jobs: dict[str, Job]
-    meta: Meta
+class Pipeline(BaseModel, use_enum_values=True):
+    jobs: Optional[dict[str, Job]] = None
+    meta: Optional[Meta] = None
