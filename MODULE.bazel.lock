@@ -1,6 +1,6 @@
 {
   "lockFileVersion": 3,
-  "moduleFileHash": "57838939ce512a7514432c37f5beb0ee3f805f7d9be2cd43b0e2e704d20b65ec",
+  "moduleFileHash": "8227a9715d4d4b72e96cf8a809509c98d415a9597b778cd2a5437b0da40d4199",
   "flags": {
     "cmdRegistries": [
       "https://bcr.bazel.build/"
@@ -30,7 +30,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 35,
+            "line": 36,
             "column": 23
           },
           "imports": {
@@ -48,7 +48,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 36,
+                "line": 37,
                 "column": 17
               }
             },
@@ -61,7 +61,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 37,
+                "line": 42,
                 "column": 17
               }
             },
@@ -74,7 +74,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 38,
+                "line": 46,
                 "column": 17
               }
             },
@@ -87,8 +87,86 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 39,
+                "line": 50,
                 "column": 17
+              }
+            }
+          ],
+          "hasDevUseExtension": false,
+          "hasNonDevUseExtension": true
+        },
+        {
+          "extensionBzlFile": "@rules_python//python/extensions:pip.bzl",
+          "extensionName": "pip",
+          "usingModule": "<root>",
+          "location": {
+            "file": "@@//:MODULE.bazel",
+            "line": 55,
+            "column": 20
+          },
+          "imports": {
+            "pypi": "pypi"
+          },
+          "devImports": [],
+          "tags": [
+            {
+              "tagName": "parse",
+              "attributeValues": {
+                "hub_name": "pypi",
+                "python_version": "3.12",
+                "requirements_lock": "//build/requirements:requirements_lock_3_12.txt",
+                "requirements_windows": "//build/requirements:requirements_lock_3_12_windows.txt"
+              },
+              "devDependency": false,
+              "location": {
+                "file": "@@//:MODULE.bazel",
+                "line": 57,
+                "column": 10
+              }
+            },
+            {
+              "tagName": "parse",
+              "attributeValues": {
+                "hub_name": "pypi",
+                "python_version": "3.11",
+                "requirements_lock": "//build/requirements:requirements_lock_3_11.txt",
+                "requirements_windows": "//build/requirements:requirements_lock_3_11_windows.txt"
+              },
+              "devDependency": false,
+              "location": {
+                "file": "@@//:MODULE.bazel",
+                "line": 63,
+                "column": 10
+              }
+            },
+            {
+              "tagName": "parse",
+              "attributeValues": {
+                "hub_name": "pypi",
+                "python_version": "3.10",
+                "requirements_lock": "//build/requirements:requirements_lock_3_10.txt",
+                "requirements_windows": "//build/requirements:requirements_lock_3_10_windows.txt"
+              },
+              "devDependency": false,
+              "location": {
+                "file": "@@//:MODULE.bazel",
+                "line": 69,
+                "column": 10
+              }
+            },
+            {
+              "tagName": "parse",
+              "attributeValues": {
+                "hub_name": "pypi",
+                "python_version": "3.9",
+                "requirements_lock": "//build/requirements:requirements_lock_3_9.txt",
+                "requirements_windows": "//build/requirements:requirements_lock_3_9_windows.txt"
+              },
+              "devDependency": false,
+              "location": {
+                "file": "@@//:MODULE.bazel",
+                "line": 75,
+                "column": 10
               }
             }
           ],
@@ -101,7 +179,7 @@
           "usingModule": "<root>",
           "location": {
             "file": "@@//:MODULE.bazel",
-            "line": 44,
+            "line": 84,
             "column": 24
           },
           "imports": {
@@ -138,7 +216,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 45,
+                "line": 85,
                 "column": 18
               }
             },
@@ -154,7 +232,7 @@
               "devDependency": false,
               "location": {
                 "file": "@@//:MODULE.bazel",
-                "line": 46,
+                "line": 86,
                 "column": 24
               }
             }

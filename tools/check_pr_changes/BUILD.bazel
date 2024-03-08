@@ -1,18 +1,18 @@
 load("@aspect_rules_py//py:defs.bzl", "py_binary", "py_library", "py_test")
 
 py_binary(
-    name = "check_pr_changes",
-    srcs = ["check_pr_changes.py"],
+    name = "main",
+    srcs = ["main.py"],
     visibility = ["//:__subpackages__"],
 )
 
 py_library(
     name = "check_pr_changes",
-    srcs = ["check_pr_changes.py"],
+    srcs = ["main.py"],
     visibility = ["//:__subpackages__"],
 )
 
 py_test(
-    name = "test_check_pr_changes",
-    srcs = ["test_check_pr_changes.py"],
+    name = "main_test",
+    srcs = ["main_test.py"],
 )
