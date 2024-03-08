@@ -1,2 +1,1 @@
-requests
-mypy
+pydantic==2.6.3
