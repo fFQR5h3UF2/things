@@ -1,18 +1,47 @@
-load("@aspect_rules_py//py:defs.bzl", "py_binary", "py_library")
+load("@aspect_rules_py//py:defs.bzl", "py_binary", "py_library", "py_test")
+
+filegroup(
+    name = "schema",
+    srcs = ["schema.json"],
+)
 
 py_binary(
     name = "main",
     srcs = ["main.py"],
+    data = [":schema"],
     visibility = ["//:__subpackages__"],
-    deps = ["@pip//pydantic"],
+    deps = [
+        ":gitlab_pipeline_generator",
+        "@pip//deepmerge",
+        "@pip//jsonschema",
+        "@pip//pydantic",
+    ],
 )
 
 py_library(
     name = "gitlab_pipeline_generator",
     srcs = [
+        "__init__.py",
         "main.py",
         "types.py",
     ],
+    data = [":schema"],
     visibility = ["//:__subpackages__"],
-    deps = ["@pip//pydantic"],
+    deps = [
+        "@pip//deepmerge",
+        "@pip//jsonschema",
+        "@pip//pydantic",
+    ],
+)
+
+py_test(
+    name = "main_test",
+    size = "small",
+    srcs = ["main_test.py"],
+    data = [":schema"],
+    deps = [
+        ":gitlab_pipeline_generator",
+        "@pip//jsonschema",
+        "@pip//pytest",
+    ],
 )

@@ -1,1 +1,3 @@
---output_base=./out1
+test --test_output=errors
+test --verbose_failures
+build --verbose_failures
