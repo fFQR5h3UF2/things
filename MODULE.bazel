@@ -53,31 +53,31 @@ python.toolchain(
 )
 use_repo(python, python = "python_versions")
 pip = use_extension("@rules_python//python/extensions:pip.bzl", "pip")
-use_repo(pip, "pypi")
 pip.parse(
-    hub_name = "pypi",
+    hub_name = "pip",
     python_version = "3.12",
     requirements_lock = "//build/requirements:requirements_lock_3_12.txt",
     requirements_windows = "//build/requirements:requirements_lock_3_12_windows.txt",
 )
 pip.parse(
-    hub_name = "pypi",
+    hub_name = "pip",
     python_version = "3.11",
     requirements_lock = "//build/requirements:requirements_lock_3_11.txt",
     requirements_windows = "//build/requirements:requirements_lock_3_11_windows.txt",
 )
 pip.parse(
-    hub_name = "pypi",
+    hub_name = "pip",
     python_version = "3.10",
     requirements_lock = "//build/requirements:requirements_lock_3_10.txt",
     requirements_windows = "//build/requirements:requirements_lock_3_10_windows.txt",
 )
 pip.parse(
-    hub_name = "pypi",
+    hub_name = "pip",
     python_version = "3.9",
     requirements_lock = "//build/requirements:requirements_lock_3_9.txt",
     requirements_windows = "//build/requirements:requirements_lock_3_9_windows.txt",
 )
+use_repo(pip, "pip")
 
 # setup go
 # https://github.com/bazelbuild/rules_go/blob/master/docs/go/core/bzlmod.md

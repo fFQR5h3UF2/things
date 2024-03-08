@@ -4,10 +4,15 @@ py_binary(
     name = "main",
     srcs = ["main.py"],
     visibility = ["//:__subpackages__"],
+    deps = ["@pip//pydantic"],
 )
 
 py_library(
     name = "gitlab_pipeline_generator",
-    srcs = ["main.py"],
+    srcs = [
+        "main.py",
+        "types.py",
+    ],
     visibility = ["//:__subpackages__"],
+    deps = ["@pip//pydantic"],
 )

@@ -1,0 +1,83 @@
+# GENERATED FILE - DO NOT EDIT!
+#
+# To update this file, run:
+#   bazel run //:gazelle_python_manifest.update
+
+manifest:
+  modules_mapping:
+    annotated_types: annotated_types
+    annotated_types.test_cases: annotated_types
+    pydantic: pydantic
+    pydantic.alias_generators: pydantic
+    pydantic.aliases: pydantic
+    pydantic.annotated_handlers: pydantic
+    pydantic.class_validators: pydantic
+    pydantic.color: pydantic
+    pydantic.config: pydantic
+    pydantic.dataclasses: pydantic
+    pydantic.datetime_parse: pydantic
+    pydantic.decorator: pydantic
+    pydantic.deprecated: pydantic
+    pydantic.deprecated.class_validators: pydantic
+    pydantic.deprecated.config: pydantic
+    pydantic.deprecated.copy_internals: pydantic
+    pydantic.deprecated.decorator: pydantic
+    pydantic.deprecated.json: pydantic
+    pydantic.deprecated.parse: pydantic
+    pydantic.deprecated.tools: pydantic
+    pydantic.env_settings: pydantic
+    pydantic.error_wrappers: pydantic
+    pydantic.errors: pydantic
+    pydantic.fields: pydantic
+    pydantic.functional_serializers: pydantic
+    pydantic.functional_validators: pydantic
+    pydantic.generics: pydantic
+    pydantic.json: pydantic
+    pydantic.json_schema: pydantic
+    pydantic.main: pydantic
+    pydantic.mypy: pydantic
+    pydantic.networks: pydantic
+    pydantic.parse: pydantic
+    pydantic.plugin: pydantic
+    pydantic.root_model: pydantic
+    pydantic.schema: pydantic
+    pydantic.tools: pydantic
+    pydantic.type_adapter: pydantic
+    pydantic.types: pydantic
+    pydantic.typing: pydantic
+    pydantic.utils: pydantic
+    pydantic.v1: pydantic
+    pydantic.v1.annotated_types: pydantic
+    pydantic.v1.class_validators: pydantic
+    pydantic.v1.color: pydantic
+    pydantic.v1.config: pydantic
+    pydantic.v1.dataclasses: pydantic
+    pydantic.v1.datetime_parse: pydantic
+    pydantic.v1.decorator: pydantic
+    pydantic.v1.env_settings: pydantic
+    pydantic.v1.error_wrappers: pydantic
+    pydantic.v1.errors: pydantic
+    pydantic.v1.fields: pydantic
+    pydantic.v1.generics: pydantic
+    pydantic.v1.json: pydantic
+    pydantic.v1.main: pydantic
+    pydantic.v1.mypy: pydantic
+    pydantic.v1.networks: pydantic
+    pydantic.v1.parse: pydantic
+    pydantic.v1.schema: pydantic
+    pydantic.v1.tools: pydantic
+    pydantic.v1.types: pydantic
+    pydantic.v1.typing: pydantic
+    pydantic.v1.utils: pydantic
+    pydantic.v1.validators: pydantic
+    pydantic.v1.version: pydantic
+    pydantic.validate_call_decorator: pydantic
+    pydantic.validators: pydantic
+    pydantic.version: pydantic
+    pydantic.warnings: pydantic
+    pydantic_core: pydantic_core
+    pydantic_core.core_schema: pydantic_core
+    typing_extensions: typing_extensions
+  pip_repository:
+    name: pip
+integrity: a05bd2bf4d2cf9d9f460f4be83b29f2d6244c5a83e60d4635db6ed4f2874b429
