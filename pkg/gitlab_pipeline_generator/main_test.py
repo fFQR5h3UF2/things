@@ -8,10 +8,19 @@ import pytest
 
 from pkg.gitlab_pipeline_generator.main import Renderer, Validator
 from pkg.gitlab_pipeline_generator.types import (
+    Artifacts,
+    ArtifactsWhen,
+    Cache,
     Job,
-    Meta,
+    JobWhen,
     Pipeline,
     PredefinedVar,
+    Retry,
+    RetryWhen,
+    Rule,
+    Trigger,
+    TriggerInclude,
+    Workflow,
 )
 
 
@@ -31,22 +40,20 @@ def test_renderer_should_render_pipeline_with_extends(
     base_job = Job(
         name=".job:base",
         stage="jobs",
-        artifacts=Job.Artifacts(
-            expire_in="1 day", when=Job.Artifacts.When.ALWAYS
-        ),
-        cache=Job.Cache(),
+        artifacts=Artifacts(expire_in="1 day", when=ArtifactsWhen.ALWAYS),
+        cache=Cache(),
         interruptible=True,
         script=["base-job"],
         variables={
             "var_base": "var_base",
             "job_id": f"${PredefinedVar.CI_JOB_ID}",
         },
-        retry=Job.Retry(
+        retry=Retry(
             max=1,
             when=[
-                Job.RetryWhen.DATA_INTEGRITY_FAILURE,
-                Job.RetryWhen.API_FAILURE,
-                Job.RetryWhen.UNKNOWN_FAILURE,
+                RetryWhen.DATA_INTEGRITY_FAILURE,
+                RetryWhen.API_FAILURE,
+                RetryWhen.UNKNOWN_FAILURE,
             ],
         ),
     )
@@ -54,7 +61,7 @@ def test_renderer_should_render_pipeline_with_extends(
         name="job-1",
         extends=[base_job],
         script=["job-1"],
-        artifacts=Job.Artifacts(paths=["./out/upload"], expire_in="30 minutes"),
+        artifacts=Artifacts(paths=["./out/upload"], expire_in="30 minutes"),
         variables={"var_1": "var_1", "var_base": "var_1"},
     )
     job_2 = Job(
@@ -64,7 +71,7 @@ def test_renderer_should_render_pipeline_with_extends(
         interruptible=False,
         resource_group="job-2",
     )
-    pipeline = Pipeline(meta=Meta(stages=["jobs"]), jobs=[job_1, job_2])
+    pipeline = Pipeline(stages=["jobs"], jobs=[job_1, job_2])
     assert renderer.render(pipeline) == {
         "stages": ["jobs"],
         "job-1": {
@@ -131,8 +138,8 @@ def test_renderer_should_render_pipeline_with_extends(
                     Job(
                         name="trigger-with-script",
                         script=[],
-                        trigger=Job.Trigger(
-                            include=[Job.TriggerInclude(local="path.yml")]
+                        trigger=Trigger(
+                            include=[TriggerInclude(local="path.yml")]
                         ),
                     )
                 ]
@@ -144,11 +151,9 @@ def test_renderer_should_render_pipeline_with_extends(
                 jobs=[
                     Job(
                         name="trigger-without-script-invalid-path",
-                        trigger=Job.Trigger(
+                        trigger=Trigger(
                             include=[
-                                Job.TriggerInclude(
-                                    local="path-without-extension"
-                                )
+                                TriggerInclude(local="path-without-extension")
                             ]
                         ),
                     )
@@ -161,8 +166,8 @@ def test_renderer_should_render_pipeline_with_extends(
                 jobs=[
                     Job(
                         name="trigger-without-script-correct-path",
-                        trigger=Job.Trigger(
-                            include=[Job.TriggerInclude(local="path.yml")]
+                        trigger=Trigger(
+                            include=[TriggerInclude(local="path.yml")]
                         ),
                     )
                 ]
@@ -171,20 +176,18 @@ def test_renderer_should_render_pipeline_with_extends(
         ),
         (
             Pipeline(
-                meta=Meta(
-                    workflow=Meta.Workflow(
-                        name=f"${PredefinedVar.CI_COMMIT_TITLE}",
-                        rules=[
-                            Job.Rule(
-                                if_=f"${PredefinedVar.CI_PIPELINE_SOURCE} != 'push' && ${PredefinedVar.CI_OPEN_MERGE_REQUESTS}",
-                                when=Job.When.NEVER,
-                            ),
-                            Job.Rule(
-                                when=Job.When.ALWAYS,
-                            ),
-                        ],
-                    ),
-                )
+                workflow=Workflow(
+                    name=f"${PredefinedVar.CI_COMMIT_TITLE}",
+                    rules=[
+                        Rule(
+                            if_=f"${PredefinedVar.CI_PIPELINE_SOURCE} != 'push' && ${PredefinedVar.CI_OPEN_MERGE_REQUESTS}",
+                            when=JobWhen.NEVER,
+                        ),
+                        Rule(
+                            when=JobWhen.ALWAYS,
+                        ),
+                    ],
+                ),
             ),
             contextlib.nullcontext(),
         ),
@@ -194,9 +197,7 @@ def test_renderer_should_render_pipeline_with_extends(
         ),
         (
             Pipeline(
-                extends=[
-                    Pipeline(extends=[Pipeline(meta=Meta(stages=["stage-1"]))])
-                ],
+                extends=[Pipeline(extends=[Pipeline(stages=["stage-1"])])],
                 jobs=[Job(name="non-empty-script", script=["check"])],
             ),
             contextlib.nullcontext(),
@@ -255,7 +256,7 @@ def test_validator_should_validate_pipeline_as_dict(
     [
         (Pipeline(), "{}", contextlib.nullcontext()),
         (
-            Pipeline(meta=Meta(workflow=Meta.Workflow(name="check"))),
+            Pipeline(workflow=Workflow(name="check")),
             json.dumps({"workflow": {"name": "check"}}, indent=4),
             contextlib.nullcontext(),
         ),

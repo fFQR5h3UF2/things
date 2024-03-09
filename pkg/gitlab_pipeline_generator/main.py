@@ -30,8 +30,13 @@ class Renderer:
 
     def render(self, pipeline: Pipeline) -> dict[str, Any]:
         pipeline = self._apply_extends(pipeline)
-        res = pipeline.meta.dump()
+        res = pipeline.dump(exclude=["jobs", "extends"])
         for job in pipeline.jobs:
+            if job.name in res:
+                raise ValueError(
+                    "name collision: pipeline already has a job with name "
+                    f"'{job.name}'"
+                )
             res[job.name] = job.dump(exclude=["name", "extends"])
         self.validator.validate(res)
         return res
