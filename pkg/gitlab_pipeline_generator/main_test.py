@@ -1,21 +1,23 @@
 import contextlib
+import json
 import sys
 from typing import Any, ContextManager
 
 import jsonschema
 import pytest
 
-from pkg.gitlab_pipeline_generator.main import (
-    Renderer,
-    Validator,
-    load_validator_schema,
+from pkg.gitlab_pipeline_generator.main import Renderer, Validator
+from pkg.gitlab_pipeline_generator.types import (
+    Job,
+    Meta,
+    Pipeline,
+    PredefinedVar,
 )
-from pkg.gitlab_pipeline_generator.types import Job, Meta, Pipeline
 
 
 @pytest.fixture
 def validator() -> Validator:
-    return Validator(load_validator_schema())
+    return Validator()
 
 
 @pytest.fixture
@@ -23,40 +25,28 @@ def renderer(validator: Validator) -> Renderer:
     return Renderer(validator)
 
 
-def test_expand_extends(renderer: Renderer) -> None:
-    job_1 = Job(name="job-1", script=["job-1"])
-    job_2 = Job(
-        name="job-2", extends=[job_1], interruptible=True, script=["job-2"]
-    )
-    job_3 = Job(name="job-3", extends=[job_2], script=["job-3"])
-    expanded = renderer.expand_extends(job_3).dump()
-    must_equal = job_3.dump()
-    must_equal.update(
-        {
-            "script": ["job-1", "job-2", "job-3"],
-            "interruptible": True,
-            "extends": [],
-        }
-    )
-    assert expanded == must_equal
-
-
-def test_pipeline(renderer: Renderer) -> None:
+def test_renderer_should_render_pipeline_with_extends(
+    renderer: Renderer,
+) -> None:
     base_job = Job(
         name=".job:base",
         stage="jobs",
         artifacts=Job.Artifacts(
-            expire_in="1 day", when=Job.Artifacts.When.always
+            expire_in="1 day", when=Job.Artifacts.When.ALWAYS
         ),
         cache=Job.Cache(),
         interruptible=True,
         script=["base-job"],
+        variables={
+            "var_base": "var_base",
+            "job_id": f"${PredefinedVar.CI_JOB_ID}",
+        },
         retry=Job.Retry(
             max=1,
             when=[
-                Job.RetryWhen.data_integrity_failure,
-                Job.RetryWhen.api_failure,
-                Job.RetryWhen.unknown_failure,
+                Job.RetryWhen.DATA_INTEGRITY_FAILURE,
+                Job.RetryWhen.API_FAILURE,
+                Job.RetryWhen.UNKNOWN_FAILURE,
             ],
         ),
     )
@@ -65,6 +55,7 @@ def test_pipeline(renderer: Renderer) -> None:
         extends=[base_job],
         script=["job-1"],
         artifacts=Job.Artifacts(paths=["./out/upload"], expire_in="30 minutes"),
+        variables={"var_1": "var_1", "var_base": "var_1"},
     )
     job_2 = Job(
         name="job-2",
@@ -83,6 +74,11 @@ def test_pipeline(renderer: Renderer) -> None:
                 "when": "always",
                 "paths": ["./out/upload"],
             },
+            "variables": {
+                "var_1": "var_1",
+                "var_base": "var_1",
+                "job_id": "$CI_JOB_ID",
+            },
             "cache": {},
             "interruptible": True,
             "script": ["base-job", "job-1"],
@@ -100,6 +96,10 @@ def test_pipeline(renderer: Renderer) -> None:
             "artifacts": {
                 "expire_in": "1 day",
                 "when": "always",
+            },
+            "variables": {
+                "var_base": "var_base",
+                "job_id": "$CI_JOB_ID",
             },
             "cache": {},
             "interruptible": False,
@@ -120,6 +120,117 @@ def test_pipeline(renderer: Renderer) -> None:
 @pytest.mark.parametrize(
     "pipeline,expectation",
     [
+        (Pipeline(jobs=[]), contextlib.nullcontext()),
+        (
+            Pipeline(jobs=[Job(name="empty-script", script=[])]),
+            pytest.raises(jsonschema.ValidationError),
+        ),
+        (
+            Pipeline(
+                jobs=[
+                    Job(
+                        name="trigger-with-script",
+                        script=[],
+                        trigger=Job.Trigger(
+                            include=[Job.TriggerInclude(local="path.yml")]
+                        ),
+                    )
+                ]
+            ),
+            pytest.raises(jsonschema.ValidationError),
+        ),
+        (
+            Pipeline(
+                jobs=[
+                    Job(
+                        name="trigger-without-script-invalid-path",
+                        trigger=Job.Trigger(
+                            include=[
+                                Job.TriggerInclude(
+                                    local="path-without-extension"
+                                )
+                            ]
+                        ),
+                    )
+                ]
+            ),
+            pytest.raises(jsonschema.ValidationError),
+        ),
+        (
+            Pipeline(
+                jobs=[
+                    Job(
+                        name="trigger-without-script-correct-path",
+                        trigger=Job.Trigger(
+                            include=[Job.TriggerInclude(local="path.yml")]
+                        ),
+                    )
+                ]
+            ),
+            contextlib.nullcontext(),
+        ),
+        (
+            Pipeline(
+                meta=Meta(
+                    workflow=Meta.Workflow(
+                        name=f"${PredefinedVar.CI_COMMIT_TITLE}",
+                        rules=[
+                            Job.Rule(
+                                if_=f"${PredefinedVar.CI_PIPELINE_SOURCE} != 'push' && ${PredefinedVar.CI_OPEN_MERGE_REQUESTS}",
+                                when=Job.When.NEVER,
+                            ),
+                            Job.Rule(
+                                when=Job.When.ALWAYS,
+                            ),
+                        ],
+                    ),
+                )
+            ),
+            contextlib.nullcontext(),
+        ),
+        (
+            Pipeline(jobs=[Job(name="non-empty-script", script=["check"])]),
+            contextlib.nullcontext(),
+        ),
+        (
+            Pipeline(
+                extends=[
+                    Pipeline(extends=[Pipeline(meta=Meta(stages=["stage-1"]))])
+                ],
+                jobs=[Job(name="non-empty-script", script=["check"])],
+            ),
+            contextlib.nullcontext(),
+        ),
+        (
+            Pipeline(
+                extends=[Pipeline(jobs=[Job(name="non-empty-script")])],
+                jobs=[Job(name="non-empty-script", script=["check"])],
+            ),
+            contextlib.nullcontext(),
+        ),
+        (
+            Pipeline(
+                extends=[
+                    Pipeline(
+                        jobs=[Job(name="non-empty-script", script=["check"])]
+                    )
+                ],
+            ),
+            contextlib.nullcontext(),
+        ),
+        (None, pytest.raises(AttributeError)),
+    ],
+)
+def test_renderer_should_render_without_extends(
+    renderer: Renderer, pipeline: Pipeline, expectation: ContextManager
+) -> None:
+    with expectation:
+        renderer.render(pipeline)
+
+
+@pytest.mark.parametrize(
+    "pipeline,expectation",
+    [
         ({}, contextlib.nullcontext()),
         (
             {"job-empty-script": {"script": []}},
@@ -132,7 +243,7 @@ def test_pipeline(renderer: Renderer) -> None:
         (None, pytest.raises(jsonschema.ValidationError)),
     ],
 )
-def test_validator(
+def test_validator_should_validate_pipeline_as_dict(
     validator: Validator, pipeline: dict[str, Any], expectation: ContextManager
 ) -> None:
     with expectation:
@@ -140,25 +251,25 @@ def test_validator(
 
 
 @pytest.mark.parametrize(
-    "pipeline,expectation",
+    "pipeline,should_render,expectation",
     [
-        (Pipeline(jobs=[]), contextlib.nullcontext()),
+        (Pipeline(), "{}", contextlib.nullcontext()),
         (
-            Pipeline(jobs=[Job(name="empty-script", script=[])]),
-            pytest.raises(jsonschema.ValidationError),
-        ),
-        (
-            Pipeline(jobs=[Job(name="non-empty-script", script=["check"])]),
+            Pipeline(meta=Meta(workflow=Meta.Workflow(name="check"))),
+            json.dumps({"workflow": {"name": "check"}}, indent=4),
             contextlib.nullcontext(),
         ),
-        (None, pytest.raises(AttributeError)),
+        (None, "", pytest.raises(AttributeError)),
     ],
 )
-def test_renderer(
-    renderer: Renderer, pipeline: Pipeline, expectation: ContextManager
+def test_renderer_should_render_string(
+    renderer: Renderer,
+    pipeline: Pipeline,
+    should_render: str,
+    expectation: ContextManager,
 ) -> None:
     with expectation:
-        renderer.render(pipeline)
+        assert renderer.render_string(pipeline) == should_render
 
 
 if __name__ == "__main__":
