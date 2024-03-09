@@ -1,10 +1,7 @@
 import enum
-from typing import Any, Literal, Optional, TypeVar, Union
+from typing import Any, Literal, Optional, Union
 
-import deepmerge
 import pydantic
-
-T = TypeVar("T", bound="BaseModel")
 
 
 class BaseModel(pydantic.BaseModel):
@@ -14,37 +11,196 @@ class BaseModel(pydantic.BaseModel):
         kwargs.setdefault("exclude_none", True)
         return self.model_dump(*args, **kwargs)
 
-    def extends_(self, *next: "BaseModel") -> "BaseModel":
-        type_self = type(self)
-        res = self.dump()
-        for obj in next:
-            if not isinstance(obj, type_self):
-                raise ValueError(f"next is not {type_self}, but {type(next)}")
-            res = deepmerge.always_merger.merge(res, obj.dump())
-        return self.model_validate(res)
+
+class PredefinedVar(enum.Enum):
+    """https://docs.gitlab.com/ee/ci/variables/predefined_variables.html"""
+
+    def __repr__(self) -> str:
+        return self.name
+
+    def __str__(self) -> str:
+        return self.__repr__()
+
+    CHAT_CHANNEL = enum.auto()
+    CHAT_INPUT = enum.auto()
+    CHAT_USER_ID = enum.auto()
+    CI = enum.auto()
+    CI_API_V4_URL = enum.auto()
+    CI_API_GRAPHQL_URL = enum.auto()
+    CI_BUILDS_DIR = enum.auto()
+    CI_COMMIT_AUTHOR = enum.auto()
+    CI_COMMIT_BEFORE_SHA = enum.auto()
+    CI_COMMIT_BRANCH = enum.auto()
+    CI_COMMIT_DESCRIPTION = enum.auto()
+    CI_COMMIT_MESSAGE = enum.auto()
+    CI_COMMIT_REF_NAME = enum.auto()
+    CI_COMMIT_REF_PROTECTED = enum.auto()
+    CI_COMMIT_REF_SLUG = enum.auto()
+    CI_COMMIT_SHA = enum.auto()
+    CI_COMMIT_SHORT_SHA = enum.auto()
+    CI_COMMIT_TAG = enum.auto()
+    CI_COMMIT_TAG_MESSAGE = enum.auto()
+    CI_COMMIT_TIMESTAMP = enum.auto()
+    CI_COMMIT_TITLE = enum.auto()
+    CI_CONCURRENT_ID = enum.auto()
+    CI_CONCURRENT_PROJECT_ID = enum.auto()
+    CI_CONFIG_PATH = enum.auto()
+    CI_DEBUG_TRACE = enum.auto()
+    CI_DEBUG_SERVICES = enum.auto()
+    CI_DEFAULT_BRANCH = enum.auto()
+    CI_DEPENDENCY_PROXY_DIRECT_GROUP_IMAGE_PREFIX = enum.auto()
+    CI_DEPENDENCY_PROXY_GROUP_IMAGE_PREFIX = enum.auto()
+    CI_DEPENDENCY_PROXY_PASSWORD = enum.auto()
+    CI_DEPENDENCY_PROXY_SERVER = enum.auto()
+    CI_DEPENDENCY_PROXY_USER = enum.auto()
+    CI_DEPLOY_FREEZE = enum.auto()
+    CI_DEPLOY_PASSWORD = enum.auto()
+    CI_DEPLOY_USER = enum.auto()
+    CI_DISPOSABLE_ENVIRONMENT = enum.auto()
+    CI_ENVIRONMENT_NAME = enum.auto()
+    CI_ENVIRONMENT_SLUG = enum.auto()
+    CI_ENVIRONMENT_URL = enum.auto()
+    CI_ENVIRONMENT_ACTION = enum.auto()
+    CI_ENVIRONMENT_TIER = enum.auto()
+    CI_RELEASE_DESCRIPTION = enum.auto()
+    CI_GITLAB_FIPS_MODE = enum.auto()
+    CI_HAS_OPEN_REQUIREMENTS = enum.auto()
+    CI_JOB_ID = enum.auto()
+    CI_JOB_IMAGE = enum.auto()
+    CI_JOB_JWT = enum.auto()
+    CI_JOB_JWT_V1 = enum.auto()
+    CI_JOB_JWT_V2 = enum.auto()
+    CI_JOB_MANUAL = enum.auto()
+    CI_JOB_NAME = enum.auto()
+    CI_JOB_NAME_SLUG = enum.auto()
+    CI_JOB_STAGE = enum.auto()
+    CI_JOB_STATUS = enum.auto()
+    CI_JOB_TIMEOUT = enum.auto()
+    CI_JOB_TOKEN = enum.auto()
+    CI_JOB_URL = enum.auto()
+    CI_JOB_STARTED_AT = enum.auto()
+    CI_KUBERNETES_ACTIVE = enum.auto()
+    CI_NODE_INDEX = enum.auto()
+    CI_NODE_TOTAL = enum.auto()
+    CI_OPEN_MERGE_REQUESTS = enum.auto()
+    CI_PAGES_DOMAIN = enum.auto()
+    CI_PAGES_URL = enum.auto()
+    CI_PIPELINE_ID = enum.auto()
+    CI_PIPELINE_IID = enum.auto()
+    CI_PIPELINE_SOURCE = enum.auto()
+    CI_PIPELINE_TRIGGERED = enum.auto()
+    CI_PIPELINE_URL = enum.auto()
+    CI_PIPELINE_CREATED_AT = enum.auto()
+    CI_PIPELINE_NAME = enum.auto()
+    CI_PROJECT_DIR = enum.auto()
+    CI_PROJECT_ID = enum.auto()
+    CI_PROJECT_NAME = enum.auto()
+    CI_PROJECT_NAMESPACE = enum.auto()
+    CI_PROJECT_NAMESPACE_ID = enum.auto()
+    CI_PROJECT_PATH_SLUG = enum.auto()
+    CI_PROJECT_PATH = enum.auto()
+    CI_PROJECT_REPOSITORY_LANGUAGES = enum.auto()
+    CI_PROJECT_ROOT_NAMESPACE = enum.auto()
+    CI_PROJECT_TITLE = enum.auto()
+    CI_PROJECT_DESCRIPTION = enum.auto()
+    CI_PROJECT_URL = enum.auto()
+    CI_PROJECT_VISIBILITY = enum.auto()
+    CI_PROJECT_CLASSIFICATION_LABEL = enum.auto()
+    CI_REGISTRY = enum.auto()
+    CI_REGISTRY_IMAGE = enum.auto()
+    CI_REGISTRY_PASSWORD = enum.auto()
+    CI_REGISTRY_USER = enum.auto()
+    CI_REPOSITORY_URL = enum.auto()
+    CI_RUNNER_DESCRIPTION = enum.auto()
+    CI_RUNNER_EXECUTABLE_ARCH = enum.auto()
+    CI_RUNNER_ID = enum.auto()
+    CI_RUNNER_REVISION = enum.auto()
+    CI_RUNNER_SHORT_TOKEN = enum.auto()
+    CI_RUNNER_TAGS = enum.auto()
+    CI_RUNNER_VERSION = enum.auto()
+    CI_SERVER_FQDN = enum.auto()
+    CI_SERVER_HOST = enum.auto()
+    CI_SERVER_NAME = enum.auto()
+    CI_SERVER_PORT = enum.auto()
+    CI_SERVER_PROTOCOL = enum.auto()
+    CI_SERVER_SHELL_SSH_HOST = enum.auto()
+    CI_SERVER_SHELL_SSH_PORT = enum.auto()
+    CI_SERVER_REVISION = enum.auto()
+    CI_SERVER_TLS_CA_FILE = enum.auto()
+    CI_SERVER_TLS_CERT_FILE = enum.auto()
+    CI_SERVER_TLS_KEY_FILE = enum.auto()
+    CI_SERVER_URL = enum.auto()
+    CI_SERVER_VERSION_MAJOR = enum.auto()
+    CI_SERVER_VERSION_MINOR = enum.auto()
+    CI_SERVER_VERSION_PATCH = enum.auto()
+    CI_SERVER_VERSION = enum.auto()
+    CI_SERVER = enum.auto()
+    CI_SHARED_ENVIRONMENT = enum.auto()
+    CI_TEMPLATE_REGISTRY_HOST = enum.auto()
+    GITLAB_CI = enum.auto()
+    GITLAB_FEATURES = enum.auto()
+    GITLAB_USER_EMAIL = enum.auto()
+    GITLAB_USER_ID = enum.auto()
+    GITLAB_USER_LOGIN = enum.auto()
+    GITLAB_USER_NAME = enum.auto()
+    KUBECONFIG = enum.auto()
+    TRIGGER_PAYLOAD = enum.auto()
+    CI_MERGE_REQUEST_APPROVED = enum.auto()
+    CI_MERGE_REQUEST_ASSIGNEES = enum.auto()
+    CI_MERGE_REQUEST_DIFF_BASE_SHA = enum.auto()
+    CI_MERGE_REQUEST_DIFF_ID = enum.auto()
+    CI_MERGE_REQUEST_EVENT_TYPE = enum.auto()
+    CI_MERGE_REQUEST_DESCRIPTION = enum.auto()
+    CI_MERGE_REQUEST_DESCRIPTION_IS_TRUNCATED = enum.auto()
+    CI_MERGE_REQUEST_ID = enum.auto()
+    CI_MERGE_REQUEST_IID = enum.auto()
+    CI_MERGE_REQUEST_LABELS = enum.auto()
+    CI_MERGE_REQUEST_MILESTONE = enum.auto()
+    CI_MERGE_REQUEST_PROJECT_ID = enum.auto()
+    CI_MERGE_REQUEST_PROJECT_PATH = enum.auto()
+    CI_MERGE_REQUEST_PROJECT_URL = enum.auto()
+    CI_MERGE_REQUEST_REF_PATH = enum.auto()
+    CI_MERGE_REQUEST_SOURCE_BRANCH_NAME = enum.auto()
+    CI_MERGE_REQUEST_SOURCE_BRANCH_PROTECTED = enum.auto()
+    CI_MERGE_REQUEST_SOURCE_BRANCH_SHA = enum.auto()
+    CI_MERGE_REQUEST_SOURCE_PROJECT_ID = enum.auto()
+    CI_MERGE_REQUEST_SOURCE_PROJECT_PATH = enum.auto()
+    CI_MERGE_REQUEST_SOURCE_PROJECT_URL = enum.auto()
+    CI_MERGE_REQUEST_SQUASH_ON_MERGE = enum.auto()
+    CI_MERGE_REQUEST_TARGET_BRANCH_NAME = enum.auto()
+    CI_MERGE_REQUEST_TARGET_BRANCH_PROTECTED = enum.auto()
+    CI_MERGE_REQUEST_TARGET_BRANCH_SHA = enum.auto()
+    CI_MERGE_REQUEST_TITLE = enum.auto()
+    CI_EXTERNAL_PULL_REQUEST_IID = enum.auto()
+    CI_EXTERNAL_PULL_REQUEST_SOURCE_REPOSITORY = enum.auto()
+    CI_EXTERNAL_PULL_REQUEST_TARGET_REPOSITORY = enum.auto()
+    CI_EXTERNAL_PULL_REQUEST_SOURCE_BRANCH_NAME = enum.auto()
+    CI_EXTERNAL_PULL_REQUEST_SOURCE_BRANCH_SHA = enum.auto()
+    CI_EXTERNAL_PULL_REQUEST_TARGET_BRANCH_NAME = enum.auto()
+    CI_EXTERNAL_PULL_REQUEST_TARGET_BRANCH_SHA = enum.auto()
 
 
-class Job(BaseModel, use_enum_values=True):
+class Job(BaseModel):
     """https://docs.gitlab.com/ee/ci/yaml/index.html#job-keywords"""
 
     class RetryWhen(str, enum.Enum):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#retrywhen"""
 
-        always = "always"
-        unknown_failure = "unknown_failure"
-        script_failure = "script_failure"
-        api_failure = "api_failure"
-        stuck_or_timeout_failure = "stuck_or_timeout_failure"
-        runner_system_failure = "runner_system_failure"
-        runner_unsupported = "runner_unsupported"
-        stale_schedule = "stale_schedule"
-        job_execution_timeout = "job_execution_timeout"
-        archived_failure = "archived_failure"
-        unmet_prerequisites = "unmet_prerequisites"
-        scheduler_failure = "scheduler_failure"
-        data_integrity_failure = "data_integrity_failure"
+        ALWAYS = "always"
+        UNKNOWN_FAILURE = "unknown_failure"
+        SCRIPT_FAILURE = "script_failure"
+        API_FAILURE = "api_failure"
+        STUCK_OR_TIMEOUT_FAILURE = "stuck_or_timeout_failure"
+        RUNNER_SYSTEM_FAILURE = "runner_system_failure"
+        RUNNER_UNSUPPORTED = "runner_unsupported"
+        STALE_SCHEDULE = "stale_schedule"
+        JOB_EXECUTION_TIMEOUT = "job_execution_timeout"
+        ARCHIVED_FAILURE = "archived_failure"
+        UNMET_PREREQUISITES = "unmet_prerequisites"
+        SCHEDULER_FAILURE = "scheduler_failure"
+        DATA_INTEGRITY_FAILURE = "data_integrity_failure"
 
-    class Retry(BaseModel, use_enum_values=True):
+    class Retry(BaseModel):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#retry"""
 
         max: Optional[Literal[0, 1, 2]] = None
@@ -56,22 +212,22 @@ class Job(BaseModel, use_enum_values=True):
         exit_codes: Optional[list[int]] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#retryexit_codes"""
 
-    class Cache(BaseModel, use_enum_values=True):
+    class Cache(BaseModel):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#cache"""
 
         class When(str, enum.Enum):
             """https://docs.gitlab.com/ee/ci/yaml/index.html#cachewhen"""
 
-            always = "always"
-            on_success = "on_success"
-            on_failure = "on_failure"
+            ALWAYS = "always"
+            ON_SUCCESS = "on_success"
+            ON_FAILURE = "on_failure"
 
         class Policy(str, enum.Enum):
             """https://docs.gitlab.com/ee/ci/yaml/index.html#cachepolicy"""
 
-            pull = "pull"
-            push = "push"
-            pull_push = "pull-push"
+            PULL = "pull"
+            PUSH = "push"
+            PULL_PUSH = "pull-push"
 
         class Key(BaseModel):
             """https://docs.gitlab.com/ee/ci/yaml/index.html#cachekey"""
@@ -103,17 +259,17 @@ class Job(BaseModel, use_enum_values=True):
         fallback_keys: Optional[list[str]] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#cachefallback_keys"""
 
-    class Artifacts(BaseModel, use_enum_values=True):
+    class Artifacts(BaseModel):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#artifacts"""
 
         class When(str, enum.Enum):
             """https://docs.gitlab.com/ee/ci/yaml/index.html#artifactswhen"""
 
-            always = "always"
-            on_success = "on_success"
-            on_failure = "on_failure"
+            ALWAYS = "always"
+            ON_SUCCESS = "on_success"
+            ON_FAILURE = "on_failure"
 
-        class Reports(BaseModel, use_enum_values=True):
+        class Reports(BaseModel):
             """https://docs.gitlab.com/ee/ci/yaml/index.html#artifactsreports"""
 
             accessibility: Optional[str] = None
@@ -203,15 +359,15 @@ class Job(BaseModel, use_enum_values=True):
         when: Optional[When] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#artifactswhen"""
 
-    class Service(BaseModel, use_enum_values=True):
+    class Service(BaseModel):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#services"""
 
         class PullPolicy(str, enum.Enum):
             """https://docs.gitlab.com/ee/ci/yaml/index.html#servicespull_policy"""
 
-            always = "always"
-            if_not_present = "if-not-present"
-            never = "never"
+            ALWAYS = "always"
+            IF_NOT_PRESENT = "if-not-present"
+            NEVER = "never"
 
         class Docker(BaseModel):
             """https://docs.gitlab.com/ee/ci/yaml/index.html#servicesdocker"""
@@ -232,15 +388,15 @@ class Job(BaseModel, use_enum_values=True):
 
         aud: Optional[list[str]] = None
 
-    class Image(BaseModel, use_enum_values=True):
+    class Image(BaseModel):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#image"""
 
         class PullPolicy(str, enum.Enum):
             """https://docs.gitlab.com/ee/ci/yaml/index.html#imagepull_policy"""
 
-            always = "always"
-            if_not_present = "if-not-present"
-            never = "never"
+            ALWAYS = "always"
+            IF_NOT_PRESENT = "if-not-present"
+            NEVER = "never"
 
         class DockerOptions(BaseModel):
             """https://docs.gitlab.com/ee/ci/yaml/index.html#imagedocker"""
@@ -263,7 +419,7 @@ class Job(BaseModel, use_enum_values=True):
     class Identity(str, enum.Enum):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#identity"""
 
-        google_cloud = "google_cloud"
+        GOOGLE_CLOUD = "google_cloud"
 
     class Inherit(BaseModel):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#inherit"""
@@ -291,28 +447,28 @@ class Job(BaseModel, use_enum_values=True):
         pre_get_sources_script: Optional[list[str]] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#hookspre_get_sources_script"""
 
-    class Environment(BaseModel, use_enum_values=True):
+    class Environment(BaseModel):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#environment"""
 
         class Action(str, enum.Enum):
             """https://docs.gitlab.com/ee/ci/yaml/index.html#environmentaction"""
 
-            start = "start"
-            prepare = "prepare"
-            stop = "stop"
-            verify = "verify"
-            access = "access"
+            START = "start"
+            PREPARE = "prepare"
+            STOP = "stop"
+            VERIFY = "verify"
+            ACCESS = "access"
 
         class DeploymentTier(str, enum.Enum):
             """https://docs.gitlab.com/ee/ci/yaml/index.html#environmentdeployment_tier"""
 
-            production = "production"
-            staging = "staging"
-            testing = "testing"
-            development = "development"
-            other = "other"
+            PRODUCTION = "production"
+            STAGING = "staging"
+            TESTING = "testing"
+            DEVELOPMENT = "development"
+            OTHER = "other"
 
-        class Kubernetes(BaseModel, use_enum_values=True):
+        class Kubernetes(BaseModel):
             """https://docs.gitlab.com/ee/ci/yaml/index.html#environmentkubernetes"""
 
             namespace: Optional[str] = None
@@ -338,13 +494,13 @@ class Job(BaseModel, use_enum_values=True):
         deployment_tier: Optional[DeploymentTier] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#environmentdeployment_tier"""
 
-    class Parallel(BaseModel, use_enum_values=True):
+    class Parallel(BaseModel):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#parallel"""
 
         matrix: Optional[dict[str, list[str]]] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#needsparallelmatrix"""
 
-    class Needs(BaseModel, use_enum_values=True):
+    class Needs(BaseModel):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#needs"""
 
         artifacts: Optional[bool] = None
@@ -362,10 +518,10 @@ class Job(BaseModel, use_enum_values=True):
         optional: Optional[str] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#needsoptional"""
 
-    class Rule(BaseModel, use_enum_values=True):
+    class Rule(BaseModel):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#rules"""
 
-        class Changes(BaseModel, use_enum_values=True):
+        class Changes(BaseModel):
             """https://docs.gitlab.com/ee/ci/yaml/index.html#ruleschanges"""
 
             paths: Optional[list[str]] = None
@@ -374,7 +530,9 @@ class Job(BaseModel, use_enum_values=True):
             compare_to: Optional[str] = None
             """https://docs.gitlab.com/ee/ci/yaml/index.html#ruleschangescompare_to"""
 
-        if_: Optional[str] = pydantic.Field(alias="if", default=None)
+        if_: Optional[str] = pydantic.Field(
+            validation_alias="if", serialization_alias="if", default=None
+        )
         """https://docs.gitlab.com/ee/ci/yaml/index.html#rulesif"""
 
         changes: Optional[Changes] = None
@@ -395,10 +553,13 @@ class Job(BaseModel, use_enum_values=True):
         interruptible: Optional[bool] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#rulesinterruptible"""
 
-    class Release(BaseModel, use_enum_values=True):
+        when: Optional["Job.When"] = None
+        """https://docs.gitlab.com/ee/ci/yaml/index.html#when"""
+
+    class Release(BaseModel):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#release"""
 
-        class Asset(BaseModel, use_enum_values=True):
+        class Asset(BaseModel):
             """https://docs.gitlab.com/ee/ci/yaml/index.html#releaseassetslinks"""
 
             name: Optional[str] = None
@@ -406,7 +567,7 @@ class Job(BaseModel, use_enum_values=True):
             filepath: Optional[str] = None
             link_type: Optional[str] = None
 
-        class Assets(BaseModel, use_enum_values=True):
+        class Assets(BaseModel):
             """https://docs.gitlab.com/ee/ci/yaml/index.html#releaseassetslinks"""
 
             links: Optional[list["Job.Release.Asset"]] = None
@@ -438,26 +599,26 @@ class Job(BaseModel, use_enum_values=True):
     class Stage(str, enum.Enum):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#stage"""
 
-        pre = ".pre"
-        post = ".post"
+        PRE = ".pre"
+        POST = ".post"
 
     class TriggerStrategy(str, enum.Enum):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#triggerstrategy"""
 
-        depend = "depend"
+        DEPEND = "depend"
 
-    class TriggerInclude(BaseModel, use_enum_values=True):
+    class TriggerInclude(BaseModel):
         """https://docs.gitlab.com/ee/ci/pipelines/downstream_pipelines.html#trigger-a-downstream-pipeline-from-a-job-in-the-gitlab-ciyml-file"""
 
         local: Optional[str] = None
 
-    class TriggerForward(BaseModel, use_enum_values=True):
+    class TriggerForward(BaseModel):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#triggerforward"""
 
         yaml_variables: Optional[bool] = None
         pipeline_variables: Optional[bool] = None
 
-    class Trigger(BaseModel, use_enum_values=True):
+    class Trigger(BaseModel):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#trigger"""
 
         include: Optional[list["Job.TriggerInclude"]] = None
@@ -475,12 +636,12 @@ class Job(BaseModel, use_enum_values=True):
     class When(str, enum.Enum):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#when"""
 
-        on_success = "on_success"
-        on_failure = "on_failure"
-        never = "never"
-        always = "always"
-        manual = "manual"
-        delayed = "delayed"
+        ON_SUCCESS = "on_success"
+        ON_FAILURE = "on_failure"
+        NEVER = "never"
+        ALWAYS = "always"
+        MANUAL = "manual"
+        DELAYED = "delayed"
 
     after_script: Optional[list[str]] = None
     """https://docs.gitlab.com/ee/ci/yaml/index.html#after_script"""
@@ -573,7 +734,7 @@ class Job(BaseModel, use_enum_values=True):
     name: str
 
 
-class Default(BaseModel, use_enum_values=True):
+class Default(BaseModel):
     before_script: Optional[list[str]] = None
     """https://docs.gitlab.com/ee/ci/yaml/index.html#before_script"""
 
@@ -611,7 +772,7 @@ class Default(BaseModel, use_enum_values=True):
     """https://docs.gitlab.com/ee/ci/yaml/index.html#identity"""
 
 
-class Meta(BaseModel, use_enum_values=True):
+class Meta(BaseModel):
     class Variable(BaseModel):
         """https://docs.gitlab.com/ee/ci/yaml/index.html#variables"""
 
@@ -627,12 +788,33 @@ class Meta(BaseModel, use_enum_values=True):
         expand: Optional[bool] = None
         """https://docs.gitlab.com/ee/ci/yaml/index.html#variablesexpand"""
 
+    class WorkflowAutoCancel(BaseModel):
+        """https://docs.gitlab.com/ee/ci/yaml/index.html#workflowrulesauto_cancel"""
+
+        on_new_commit: Optional[
+            Literal["conservative", "interruptible", "none"]
+        ] = None
+        """https://docs.gitlab.com/ee/ci/yaml/index.html#workflowauto_cancelon_new_commit"""
+        on_job_failure: Optional[Literal["all", "none"]] = None
+        """https://docs.gitlab.com/ee/ci/yaml/index.html#workflowauto_cancelon_job_failure"""
+
+    class Workflow(BaseModel):
+        """https://docs.gitlab.com/ee/ci/yaml/index.html#workflow"""
+
+        auto_cancel: Optional["Meta.WorkflowAutoCancel"] = None
+        """https://docs.gitlab.com/ee/ci/yaml/index.html#workflowrulesauto_cancel"""
+        name: Optional[str] = None
+        """https://docs.gitlab.com/ee/ci/yaml/index.html#workflowname"""
+        rules: Optional[list["Job.Rule"]] = None
+        """https://docs.gitlab.com/ee/ci/yaml/index.html#workflowrules"""
+
     stages: Optional[list[Job.Stage | str]] = None
     variables: Optional[dict[str, Variable]] = None
     default: Optional[Default] = None
+    workflow: Optional[Workflow] = None
 
 
-class Pipeline(BaseModel, use_enum_values=True):
+class Pipeline(BaseModel):
     jobs: list[Job] = []
-    meta: Optional[Meta] = None
+    meta: Meta = Meta()
     extends: list["Pipeline"] = []

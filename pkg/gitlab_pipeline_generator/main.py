@@ -1,30 +1,27 @@
 import json
 import os
 import pathlib
-from typing import Any, TypeVar, Union
+from typing import Any, Optional
 
 import deepmerge
 import jsonschema
 
-from pkg.gitlab_pipeline_generator.types import Job, Pipeline
-
-T = TypeVar("T", bound=Union[Job, Pipeline])
-
-
-def load_validator_schema() -> dict[str, Any]:
-    schema_path = (
-        pathlib.Path(os.path.dirname(os.path.abspath(__file__))) / "schema.json"
-    )
-    with open(schema_path, "r") as file:
-        return json.loads(file.read())
+from pkg.gitlab_pipeline_generator.types import Pipeline
 
 
 class Validator:
-    def __init__(self, schema: dict[str, Any]) -> None:
-        self.schema = schema
+    def __init__(self, schema: Optional[dict[str, Any]] = None) -> None:
+        self.schema = schema or self.load_default_schema()
 
     def validate(self, pipeline: dict[str, Any]) -> None:
         jsonschema.validate(instance=pipeline, schema=self.schema)
+
+    @staticmethod
+    def load_default_schema() -> dict[str, Any]:
+        dir = pathlib.Path(os.path.dirname(os.path.abspath(__file__)))
+        schema_path = dir / "schema.json"
+        with open(schema_path, "r") as file:
+            return json.loads(file.read())
 
 
 class Renderer:
@@ -32,10 +29,9 @@ class Renderer:
         self.validator = validator
 
     def render(self, pipeline: Pipeline) -> dict[str, Any]:
-        pipeline = self._expand_extends(pipeline)
-        res = pipeline.dump(include=["meta"]).get("meta", {})
+        pipeline = self._apply_extends(pipeline)
+        res = pipeline.meta.dump()
         for job in pipeline.jobs:
-            job = self._expand_extends(job)
             res[job.name] = job.dump(exclude=["name", "extends"])
         self.validator.validate(res)
         return res
@@ -43,30 +39,25 @@ class Renderer:
     def render_string(self, pipeline: Pipeline) -> str:
         return json.dumps(self.render(pipeline), indent=4)
 
-    def render_to_file(self, pipeline: Pipeline, path: pathlib.Path) -> None:
+    def render_file(self, pipeline: Pipeline, path: pathlib.Path) -> None:
         content = self.render_string(pipeline)
         with open(path, "w") as file:
             file.write(content)
 
-    def _expand_extends(self, model: T) -> T:
-        if not model.extends:
-            return model
-        res = self._expand_extends_dict(model.dump())
-        if isinstance(model, Pipeline):
-            jobs = res.get("jobs", [])
-            for i in range(len(jobs)):
-                jobs[i] = self._expand_extends_dict(jobs[i])
-            res["jobs"] = jobs
+    def _apply_extends(self, model: Pipeline) -> Pipeline:
+        res = self._apply_extends_dict(model.dump(exclude=["jobs"]))
+        res["jobs"] = [
+            self._apply_extends_dict(job.dump()) for job in model.jobs
+        ]
         return model.model_validate(res)
 
-    def _expand_extends_dict(self, model: dict[str, Any]) -> dict[str, Any]:
+    def _apply_extends_dict(self, model: dict[str, Any]) -> dict[str, Any]:
         extends = model.get("extends", [])
         if not extends:
             return model
         res = {}
         for model_extends in extends:
-            expanded = self._expand_extends_dict(model_extends)
-            res = deepmerge.always_merger.merge(res, expanded)
+            applied = self._apply_extends_dict(model_extends)
+            res = deepmerge.always_merger.merge(res, applied)
         res = deepmerge.always_merger.merge(res, model)
-        res["extends"] = []
         return res
