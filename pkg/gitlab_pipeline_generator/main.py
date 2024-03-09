@@ -1,12 +1,14 @@
 import json
 import os
 import pathlib
-import sys
-from typing import Any
+from typing import Any, TypeVar, Union
 
+import deepmerge
 import jsonschema
 
-from pkg.gitlab_pipeline_generator.types import Pipeline
+from pkg.gitlab_pipeline_generator.types import Job, Pipeline
+
+T = TypeVar("T", bound=Union[Job, Pipeline])
 
 
 def load_validator_schema() -> dict[str, Any]:
@@ -30,13 +32,13 @@ class Renderer:
         self.validator = validator
 
     def render(self, pipeline: Pipeline) -> dict[str, Any]:
-        pipeline_dump = pipeline.dump()
-        pipeline_dict = {
-            **pipeline_dump.get("meta", {}),
-            **pipeline_dump.get("jobs", {}),
-        }
-        self.validator.validate(pipeline_dict)
-        return pipeline_dict
+        pipeline = self._expand_extends(pipeline)
+        res = pipeline.dump(include=["meta"]).get("meta", {})
+        for job in pipeline.jobs:
+            job = self._expand_extends(job)
+            res[job.name] = job.dump(exclude=["name", "extends"])
+        self.validator.validate(res)
+        return res
 
     def render_string(self, pipeline: Pipeline) -> str:
         return json.dumps(self.render(pipeline), indent=4)
@@ -46,6 +48,25 @@ class Renderer:
         with open(path, "w") as file:
             file.write(content)
 
+    def _expand_extends(self, model: T) -> T:
+        if not model.extends:
+            return model
+        res = self._expand_extends_dict(model.dump())
+        if isinstance(model, Pipeline):
+            jobs = res.get("jobs", [])
+            for i in range(len(jobs)):
+                jobs[i] = self._expand_extends_dict(jobs[i])
+            res["jobs"] = jobs
+        return model.model_validate(res)
 
-if __name__ == "__main__":
-    print(sys.version)
+    def _expand_extends_dict(self, model: dict[str, Any]) -> dict[str, Any]:
+        extends = model.get("extends", [])
+        if not extends:
+            return model
+        res = {}
+        for model_extends in extends:
+            expanded = self._expand_extends_dict(model_extends)
+            res = deepmerge.always_merger.merge(res, expanded)
+        res = deepmerge.always_merger.merge(res, model)
+        res["extends"] = []
+        return res
