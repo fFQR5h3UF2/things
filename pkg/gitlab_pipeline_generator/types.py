@@ -9,11 +9,19 @@ T = TypeVar("T", bound="BaseModel")
 
 class BaseModel(pydantic.BaseModel):
 
-    def dump(self) -> dict[str, Any]:
-        return self.model_dump(mode="json", exclude_none=True)
+    def dump(self, *args, **kwargs) -> dict[str, Any]:
+        kwargs.setdefault("mode", "json")
+        kwargs.setdefault("exclude_none", True)
+        return self.model_dump(*args, **kwargs)
 
-    def extend(self, next: T) -> T:
-        return deepmerge.always_merger.merge(self.dump(), next.dump())
+    def extends_(self, *next: "BaseModel") -> "BaseModel":
+        type_self = type(self)
+        res = self.dump()
+        for obj in next:
+            if not isinstance(obj, type_self):
+                raise ValueError(f"next is not {type_self}, but {type(next)}")
+            res = deepmerge.always_merger.merge(res, obj.dump())
+        return self.model_validate(res)
 
 
 class Job(BaseModel, use_enum_values=True):
@@ -561,6 +569,9 @@ class Job(BaseModel, use_enum_values=True):
     when: Optional[When] = None
     """https://docs.gitlab.com/ee/ci/yaml/index.html#when"""
 
+    extends: list["Job"] = []
+    name: str
+
 
 class Default(BaseModel, use_enum_values=True):
     before_script: Optional[list[str]] = None
@@ -622,5 +633,6 @@ class Meta(BaseModel, use_enum_values=True):
 
 
 class Pipeline(BaseModel, use_enum_values=True):
-    jobs: Optional[dict[str, Job]] = None
+    jobs: list[Job] = []
     meta: Optional[Meta] = None
+    extends: list["Pipeline"] = []

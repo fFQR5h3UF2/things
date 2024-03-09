@@ -23,8 +23,27 @@ def renderer(validator: Validator) -> Renderer:
     return Renderer(validator)
 
 
-def test_extend(renderer: Renderer) -> None:
+def test_expand_extends(renderer: Renderer) -> None:
+    job_1 = Job(name="job-1", script=["job-1"])
+    job_2 = Job(
+        name="job-2", extends=[job_1], interruptible=True, script=["job-2"]
+    )
+    job_3 = Job(name="job-3", extends=[job_2], script=["job-3"])
+    expanded = renderer.expand_extends(job_3).dump()
+    must_equal = job_3.dump()
+    must_equal.update(
+        {
+            "script": ["job-1", "job-2", "job-3"],
+            "interruptible": True,
+            "extends": [],
+        }
+    )
+    assert expanded == must_equal
+
+
+def test_pipeline(renderer: Renderer) -> None:
     base_job = Job(
+        name=".job:base",
         stage="jobs",
         artifacts=Job.Artifacts(
             expire_in="1 day", when=Job.Artifacts.When.always
@@ -41,20 +60,20 @@ def test_extend(renderer: Renderer) -> None:
             ],
         ),
     )
-    job_1 = base_job.extend(
-        Job(
-            script=["job-1"],
-            artifacts=Job.Artifacts(
-                paths=["./out/upload"], expire_in="30 minutes"
-            ),
-        ),
+    job_1 = Job(
+        name="job-1",
+        extends=[base_job],
+        script=["job-1"],
+        artifacts=Job.Artifacts(paths=["./out/upload"], expire_in="30 minutes"),
     )
-    job_2 = base_job.extend(
-        Job(script=["job-2"], interruptible=False, resource_group="job-2"),
+    job_2 = Job(
+        name="job-2",
+        extends=[base_job],
+        script=["job-2"],
+        interruptible=False,
+        resource_group="job-2",
     )
-    pipeline = Pipeline(
-        meta=Meta(stages=["jobs"]), jobs={"job-1": job_1, "job-2": job_2}
-    )
+    pipeline = Pipeline(meta=Meta(stages=["jobs"]), jobs=[job_1, job_2])
     assert renderer.render(pipeline) == {
         "stages": ["jobs"],
         "job-1": {
@@ -123,13 +142,13 @@ def test_validator(
 @pytest.mark.parametrize(
     "pipeline,expectation",
     [
-        (Pipeline(jobs={}), contextlib.nullcontext()),
+        (Pipeline(jobs=[]), contextlib.nullcontext()),
         (
-            Pipeline(jobs={"job-empty-script": Job(script=[])}),
+            Pipeline(jobs=[Job(name="empty-script", script=[])]),
             pytest.raises(jsonschema.ValidationError),
         ),
         (
-            Pipeline(jobs={"job-non-empty-script": Job(script=["check"])}),
+            Pipeline(jobs=[Job(name="non-empty-script", script=["check"])]),
             contextlib.nullcontext(),
         ),
         (None, pytest.raises(AttributeError)),
